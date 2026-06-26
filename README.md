@@ -21,15 +21,39 @@ npm run data:build      # regenerate map data from the registry (optional; outpu
 npm run dev             # Vite dev server  →  http://localhost:5173
 ```
 
-Full stack (SPA served by the Worker + live API):
+Full stack (SPA + D1-backed API). The client fetches content from the API, so the Worker +
+a seeded local D1 must be running:
 
 ```bash
 npm run build           # build the SPA into dist/
-npx wrangler dev        # http://localhost:8787  (serves SPA + /api/v1/*)
+npm run db:setup        # apply migrations + seed local D1 (one-time / after content changes)
+npx wrangler dev        # http://localhost:8787  (serves SPA + /api/v1/* from local D1)
 ```
 
-> Note: the React app reads the seed data directly, so `npm run dev` works without the Worker.
-> The Worker is the production API design (same data, with caching + response envelope).
+> `npm run dev` (Vite alone) serves the UI and proxies `/api` → `127.0.0.1:8787`, so run
+> `wrangler dev` alongside it for content to load.
+
+## Data: Cloudflare D1 (source of truth)
+
+Content lives in **D1** (Bible 013). It is authored as TypeScript seed for easy review
+(`src/data/destinations.ts`, `src/data/regions/*.ts`, `src/data/provinceContent.ts`), then
+generated into SQL:
+
+```bash
+npm run db:seed:build   # seed TS  -> db/seed.sql
+npm run db:setup        # migrations/0001_init.sql + db/seed.sql -> local D1
+```
+
+Schema: `migrations/0001_init.sql` (regions, provinces, destinations; arrays as JSON columns).
+The Worker queries D1 (`worker/db.ts`); the client never touches the DB.
+
+## Deploy (Cloudflare)
+
+Put `CLOUDFLARE_API_TOKEN` (Workers **and** D1 edit) + `CLOUDFLARE_ACCOUNT_ID` in `.env`, then:
+
+```bash
+bash scripts/deploy.sh   # creates+seeds remote D1, builds, deploys Worker + SPA
+```
 
 ## API (Worker)
 
