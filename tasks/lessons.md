@@ -18,3 +18,11 @@
 - **Always visually verify a visual product.** Typecheck + build + API tests all passed while the
   map was completely broken on screen. A headless screenshot (system Chrome via playwright-core)
   caught it.
+- **Node TS imports need explicit `.ts`** when running `node --experimental-strip-types` on a file
+  that imports other local TS (extensionless fails); tsconfig `allowImportingTsExtensions` lets
+  tsc + Vite accept them too.
+- **Cloudflare deploy gotchas:** (1) the API token needs **D1 Edit** in addition to Workers, else
+  `d1 create/list` → error 10000. (2) First Worker deploy fails if the account has no `workers.dev`
+  subdomain; register it via `PUT /accounts/{id}/workers/subdomain {"subdomain":"name"}` then
+  re-deploy. (3) Local D1 dev: `wrangler d1 migrations apply <db> --local` + `d1 execute --local
+  --file=db/seed.sql`; client now fetches from the API so `wrangler dev` must run with Vite.
