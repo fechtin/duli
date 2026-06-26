@@ -180,6 +180,16 @@
   }
 }
 
+/* Gentle sea drift (disabled under prefers-reduced-motion via the base layer). */
+@keyframes via-wave-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-160px, 0, 0);
+  }
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;

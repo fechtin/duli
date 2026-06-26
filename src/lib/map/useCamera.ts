@@ -249,5 +249,5 @@ export function useCamera(model: MapModel | null, { onZoomLevel }: Options = {})
     [onWheel, onPointerDown, onPointerMove, endPointer, onDoubleClick],
   );
 
-  return { containerRef, transform, handlers, fitAll, focusBox, focusPoint, panBy, zoomCenter, scale: k, setK };
+  return { containerRef, transform, handlers, fitAll, focusBox, focusPoint, panBy, zoomCenter, scale: k, x, y, size, setK };
 }
