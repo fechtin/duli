@@ -21,6 +21,12 @@
 - **Node TS imports need explicit `.ts`** when running `node --experimental-strip-types` on a file
   that imports other local TS (extensionless fails); tsconfig `allowImportingTsExtensions` lets
   tsc + Vite accept them too.
+- **Local D1 is keyed by `database_id`:** changing `database_id` in wrangler.toml (e.g. when
+  `deploy.sh` pins the real remote id) points `wrangler dev` at a *different, empty* local D1 →
+  `no such table`. Re-run `npm run db:setup` after the id changes.
+- **Wikimedia Commons throttles bursts:** concurrency 2 + 250ms delay + retry/backoff + `maxlag`,
+  and make the fetch **resumable** (preload existing manifest, skip fully-covered places). Running
+  it a few times converges coverage; ~79/115 had photos, the rest fall back to illustrations.
 - **Cloudflare deploy gotchas:** (1) the API token needs **D1 Edit** in addition to Workers, else
   `d1 create/list` → error 10000. (2) First Worker deploy fails if the account has no `workers.dev`
   subdomain; register it via `PUT /accounts/{id}/workers/subdomain {"subdomain":"name"}` then
