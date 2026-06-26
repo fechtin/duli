@@ -1,0 +1,22 @@
+name = "vietnam-atlas"
+main = "worker/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Resolve the "@/..." source alias when esbuild bundles the Worker.
+[alias]
+"@" = "./src"
+
+# Serve the built SPA; the Worker handles /api/* and falls back to static assets.
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+# D1 — content source of truth (Bible 013). Local dev uses miniflare's SQLite (no account).
+# For remote deploy, replace database_id with the real id from `wrangler d1 create atlas_db`.
+[[d1_databases]]
+binding = "DB"
+database_name = "atlas_db"
+database_id = "local-atlas-db"
+migrations_dir = "migrations"

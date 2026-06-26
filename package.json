@@ -1,0 +1,46 @@
+{
+  "name": "vietnam-interactive-tourism-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Vietnam Interactive Tourism Atlas — a living interactive map to explore Vietnam.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "test": "vitest run",
+    "worker:dev": "wrangler dev",
+    "data:build": "node scripts/build-map.mjs",
+    "seo:build": "node --experimental-strip-types scripts/build-sitemap.mjs",
+    "db:seed:build": "node --experimental-strip-types scripts/build-d1-seed.mjs",
+    "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "d3-geo": "^3.1.1",
+    "lucide-react": "^0.544.0",
+    "motion": "^12.23.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.1",
+    "tailwind-merge": "^3.3.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/d3-geo": "^3.1.0",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.3",
+    "hono": "^4.9.8",
+    "mapshaper": "^0.7.33",
+    "playwright-core": "^1.61.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vitest": "^4.1.9",
+    "wrangler": "^4.40.0"
+  }
+}

@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/*
+ * Vietnam Interactive Tourism Atlas — Design Tokens
+ * Source of truth for color, radius, elevation, typography and motion.
+ * Bible refs: 002 (Design Philosophy), 006 (Motion), 007 (UI Design System).
+ * Rule: components must never hard-code colors, radii, spacing or durations.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Surfaces — Cloud White, warm and calm (Bible 002 §8) */
+  --background: #f5f4ef;
+  --surface: #ffffff;
+  --surface-2: #efeee8;
+  --overlay: rgba(28, 31, 30, 0.32);
+
+  /* Text */
+  --foreground: #1b1f1d;
+  --muted: #6c706c;
+  --faint: #9aa09b;
+
+  /* Lines */
+  --border: #e4e2da;
+  --border-strong: #d3d1c8;
+
+  /* Brand — nature of Vietnam (Bible 002 §8, 007 §8) */
+  --primary: #16715a; /* Forest Green */
+  --primary-soft: #e3efe9;
+  --primary-foreground: #ffffff;
+  --secondary: #246c88; /* Ocean Blue */
+  --accent: #b9842a; /* Rice Gold */
+  --lotus: #d68aa3; /* Lotus Pink — very limited accent */
+
+  /* Status */
+  --danger: #d2604f; /* Coral Red */
+  --success: #4c9a6a; /* Leaf Green */
+  --warning: #d89a33; /* Amber */
+
+  /* Map terrain */
+  --map-sea: #dfeaee;
+  --map-land: #eef0e8;
+  --map-land-2: #e6e9df;
+
+  --ring: var(--primary);
+
+  /* Elevation (Bible 007 §7) — calm, never heavy (002 §19) */
+  --elevation-1: 0 1px 2px rgba(28, 31, 30, 0.06), 0 1px 1px rgba(28, 31, 30, 0.04);
+  --elevation-2: 0 6px 20px rgba(28, 31, 30, 0.1), 0 2px 6px rgba(28, 31, 30, 0.06);
+  --elevation-3: 0 18px 50px rgba(28, 31, 30, 0.16), 0 6px 16px rgba(28, 31, 30, 0.08);
+}
+
+.dark {
+  --background: #111315; /* Stone Black — never pure black (Bible 002 §8) */
+  --surface: #16191b;
+  --surface-2: #1d2123;
+  --overlay: rgba(0, 0, 0, 0.48);
+
+  --foreground: #ecedea;
+  --muted: #9ba09c;
+  --faint: #707571;
+
+  --border: #2a2f31;
+  --border-strong: #363c3e;
+
+  --primary: #3fa185;
+  --primary-soft: #1a2c27;
+  --primary-foreground: #08110d;
+  --secondary: #58a6c4;
+  --accent: #d9ad55;
+  --lotus: #d68aa3;
+
+  --danger: #e0796a;
+  --success: #62b07f;
+  --warning: #e0aa48;
+
+  --map-sea: #131a1e;
+  --map-land: #1c2123;
+  --map-land-2: #232a2c;
+
+  --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --elevation-2: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --elevation-3: 0 20px 56px rgba(0, 0, 0, 0.6);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-overlay: var(--overlay);
+
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-lotus: var(--lotus);
+
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
+  --color-map-sea: var(--map-sea);
+  --color-map-land: var(--map-land);
+  --color-map-land-2: var(--map-land-2);
+
+  --color-ring: var(--ring);
+
+  /* Radius scale (Bible 007 §5) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-card: 20px;
+  --radius-sheet: 28px;
+  --radius-panel: 24px;
+
+  /* Typography (Bible 002 §7) — max 2 families */
+  --font-display: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Geist Mono", monospace;
+
+  /* Shadows mapped to elevation */
+  --shadow-e1: var(--elevation-1);
+  --shadow-e2: var(--elevation-2);
+  --shadow-e3: var(--elevation-3);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  /* Focus ring always visible (Bible 002 §18) */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Reduced Motion (Bible 006 §16) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* Safe-area helpers for one-hand mobile UX (Bible 003 §2.6) */
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .pt-safe {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
+}

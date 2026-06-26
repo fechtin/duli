@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vietnam-atlas.pages.dev/sitemap.xml

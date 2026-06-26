@@ -1,0 +1,14 @@
+{
+  "name": "Vietnam Interactive Tourism Atlas",
+  "short_name": "Vietnam Atlas",
+  "description": "Khám phá Việt Nam qua một tấm bản đồ sống động.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#111315",
+  "theme_color": "#16715a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
