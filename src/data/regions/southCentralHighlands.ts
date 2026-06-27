@@ -72,8 +72,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
     tags: ["beach", "history", "nature", "culture"],
     gallery: [
       { seed: "sahuynh-bai", caption: "Bãi cát vàng cong hình lưỡi liềm", ratio: "16/9" },
-      { seed: "sahuynh-muoi", caption: "Cánh đồng muối trắng buổi trưa", ratio: "4/3" },
-      { seed: "sahuynh-thuyen", caption: "Thuyền thúng làng chài cập bến", ratio: "1/1" },
+      { seed: "sahuynh-muoi", caption: "Bãi cát vàng cong dài ôm vịnh biển lặng", ratio: "4/3" },
+      { seed: "sahuynh-thuyen", caption: "Cung đường ven biển uốn lượn bên bờ cát", ratio: "1/1" },
     ],
     nearby: ["qng-ly-son"],
   },
@@ -148,7 +148,7 @@ export const southCentralHighlandsDestinations: Destination[] = [
     gallery: [
       { seed: "banhit-chinh", caption: "Tháp Chính uy nghi trên đồi", ratio: "16/9" },
       { seed: "banhit-yenngua", caption: "Tháp Yên Ngựa mái cong độc đáo", ratio: "4/3" },
-      { seed: "banhit-phudieu", caption: "Phù điêu chạm khắc trên gạch nung", ratio: "1/1" },
+      { seed: "banhit-phudieu", caption: "Cụm tháp Chăm cổ nhô lên giữa rừng xanh", ratio: "1/1" },
     ],
     nearby: ["bdi-ky-co-eo-gio"],
   },
@@ -220,8 +220,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
     badges: ["popular", "verified", "hidden-gem"],
     tags: ["beach", "nature", "photography"],
     gallery: [
-      { seed: "baixep-doico", caption: "Đồi cỏ xanh bên ghềnh đá", ratio: "16/9" },
-      { seed: "baixep-binhminh", caption: "Bình minh trên Bãi Xép", ratio: "4/3" },
+      { seed: "baixep-doico", caption: "Triền đồi xương rồng nghiêng xuống bãi biển vắng", ratio: "16/9" },
+      { seed: "baixep-binhminh", caption: "Mặt trời ló rạng sau mỏm núi, sóng vỗ bờ cát", ratio: "4/3" },
       { seed: "baixep-ghenh", caption: "Ghềnh đá đen nhô ra biển", ratio: "1/1" },
     ],
     nearby: ["pye-ganh-da-dia"],
@@ -258,7 +258,7 @@ export const southCentralHighlandsDestinations: Destination[] = [
     tags: ["beach", "nature", "island", "photography"],
     gallery: [
       { seed: "vinhhy-vinh", caption: "Vịnh Vĩnh Hy xanh ngọc ôm rừng núi", ratio: "16/9" },
-      { seed: "vinhhy-sanho", caption: "Rạn san hô nhìn qua thuyền đáy kính", ratio: "4/3" },
+      { seed: "vinhhy-sanho", caption: "Vịnh nhỏ neo đậu hàng trăm thuyền cá", ratio: "4/3" },
       { seed: "vinhhy-duongven", caption: "Cung đường ven biển Núi Chúa", ratio: "1/1" },
     ],
     nearby: ["ntn-po-klong-garai"],
@@ -297,7 +297,7 @@ export const southCentralHighlandsDestinations: Destination[] = [
     gallery: [
       { seed: "poklong-chinh", caption: "Tháp Chính trên đồi Trầu", ratio: "16/9" },
       { seed: "poklong-kate", caption: "Lễ hội Katê của người Chăm", ratio: "4/3" },
-      { seed: "poklong-phudieu", caption: "Phù điêu thần Shiva trên thân tháp", ratio: "1/1" },
+      { seed: "poklong-phudieu", caption: "Quần thể tháp gạch Chăm rêu phong trên đồi cỏ", ratio: "1/1" },
     ],
     nearby: ["ntn-vinh-vinh-hy"],
   },
@@ -370,7 +370,7 @@ export const southCentralHighlandsDestinations: Destination[] = [
     badges: ["trending", "new", "ai-recommended"],
     tags: ["mountain", "nature", "photography", "food"],
     gallery: [
-      { seed: "mangden-thong", caption: "Rừng thông bạt ngàn trong sương", ratio: "16/9" },
+      { seed: "mangden-thong", caption: "Thác nước trắng xóa đổ xuống hồ xanh giữa rừng", ratio: "16/9" },
       { seed: "mangden-pasy", caption: "Thác Pa Sỹ trắng xóa giữa rừng", ratio: "4/3" },
       { seed: "mangden-ho", caption: "Hồ Đăk Ke phẳng lặng buổi sớm", ratio: "1/1" },
     ],

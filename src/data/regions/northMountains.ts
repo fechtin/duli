@@ -34,8 +34,8 @@ export const northMountainsDestinations: Destination[] = [
     tags: ["nature", "photography", "mountain"],
     gallery: [
       { seed: "ban-gioc-waterfall-1", caption: "Ba tầng thác Bản Giốc mùa nước đổ", ratio: "16/9" },
-      { seed: "ban-gioc-waterfall-2", caption: "Bè tre dưới chân thác", ratio: "4/3" },
-      { seed: "ban-gioc-waterfall-3", caption: "Ruộng lúa chín bên thác", ratio: "1/1" },
+      { seed: "ban-gioc-waterfall-2", caption: "Du khách tắm mát dưới chân thác trắng xóa", ratio: "4/3" },
+      { seed: "ban-gioc-waterfall-3", caption: "Dòng thác đổ trắng xóa giữa rừng xanh", ratio: "1/1" },
     ],
     nearby: ["nguom-ngao-cave"],
     featured: true,
@@ -107,8 +107,8 @@ export const northMountainsDestinations: Destination[] = [
     tags: ["nature", "photography", "culture"],
     gallery: [
       { seed: "ba-be-lake-1", caption: "Thuyền độc mộc trên hồ Ba Bể", ratio: "16/9" },
-      { seed: "ba-be-lake-2", caption: "Rừng nguyên sinh soi bóng nước", ratio: "4/3" },
-      { seed: "ba-be-lake-3", caption: "Nhà sàn bản Pác Ngòi", ratio: "1/1" },
+      { seed: "ba-be-lake-2", caption: "Mặt hồ lấp lánh ôm đảo nhỏ trong sương sớm", ratio: "4/3" },
+      { seed: "ba-be-lake-3", caption: "Hồ nước phẳng lặng giữa núi non mờ sương", ratio: "1/1" },
     ],
     nearby: [],
     featured: true,

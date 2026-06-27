@@ -45,7 +45,7 @@ export const destinations: Destination[] = [
       { seed: "lungcu-1", caption: "Lá cờ Tổ quốc trên đỉnh núi Rồng", ratio: "16/9" },
       { seed: "lungcu-2", caption: "Đường lên cột cờ", ratio: "4/3" },
       { seed: "lungcu-3", caption: "Cao nguyên đá nhìn từ trên cao", ratio: "1/1" },
-      { seed: "lungcu-4", caption: "Ruộng bậc thang mùa lúa chín", ratio: "4/3" },
+      { seed: "lungcu-4", caption: "Cột cờ uy nghiêm, lá cờ đỏ tung bay trong sương", ratio: "4/3" },
     ],
     nearby: ["dong-van-old-town", "ma-pi-leng-pass"],
     featured: true,
@@ -220,7 +220,7 @@ export const destinations: Destination[] = [
     tags: ["nature", "history", "photography"],
     gallery: [
       { seed: "trangan-1", caption: "Thuyền nan giữa núi đá", ratio: "16/9" },
-      { seed: "trangan-2", caption: "Hang xuyên thủy", ratio: "4/3" },
+      { seed: "trangan-2", caption: "Thuyền nhỏ lướt giữa hồ nước phẳng dưới chân núi đá", ratio: "4/3" },
       { seed: "trangan-3", caption: "Toàn cảnh từ Hang Múa", ratio: "1/1" },
     ],
     nearby: [],
@@ -257,8 +257,8 @@ export const destinations: Destination[] = [
     tags: ["history", "culture", "city"],
     gallery: [
       { seed: "hoankiem-1", caption: "Tháp Rùa giữa hồ", ratio: "16/9" },
-      { seed: "hoankiem-2", caption: "Cầu Thê Húc đỏ rực", ratio: "4/3" },
-      { seed: "hoankiem-3", caption: "Phố đi bộ cuối tuần", ratio: "1/1" },
+      { seed: "hoankiem-2", caption: "Chàng trai lặng ngồi ngắm mặt hồ bên gốc cây", ratio: "4/3" },
+      { seed: "hoankiem-3", caption: "Cành cây trơ lá in bóng trên mặt hồ mờ sương", ratio: "1/1" },
     ],
     nearby: ["old-quarter-hanoi"],
     featured: true,
@@ -324,7 +324,7 @@ export const destinations: Destination[] = [
     tags: ["history", "culture", "temple"],
     gallery: [
       { seed: "hue-1", caption: "Ngọ Môn uy nghi", ratio: "16/9" },
-      { seed: "hue-2", caption: "Điện Thái Hòa", ratio: "4/3" },
+      { seed: "hue-2", caption: "Ngọ Môn cổ kính nhìn từ lối vào lát đá", ratio: "4/3" },
       { seed: "hue-3", caption: "Sông Hương chiều buông", ratio: "1/1" },
     ],
     nearby: [],
@@ -394,7 +394,7 @@ export const destinations: Destination[] = [
     tags: ["culture", "history", "food", "photography"],
     gallery: [
       { seed: "hoian-1", caption: "Đèn lồng đêm phố cổ", ratio: "16/9" },
-      { seed: "hoian-2", caption: "Chùa Cầu", ratio: "4/3" },
+      { seed: "hoian-2", caption: "Bóng dừa đổ dài trên tường vàng, người đội nón lá đi qua", ratio: "4/3" },
       { seed: "hoian-3", caption: "Thả đèn hoa đăng trên sông Hoài", ratio: "1/1" },
       { seed: "hoian-4", caption: "Phố cổ ban ngày", ratio: "4/3" },
     ],
@@ -500,8 +500,8 @@ export const destinations: Destination[] = [
     badges: ["unesco", "popular", "verified"],
     tags: ["nature", "history", "photography"],
     gallery: [
-      { seed: "phongnha-1", caption: "Thuyền vào cửa Động Phong Nha", ratio: "16/9" },
-      { seed: "phongnha-2", caption: "Thạch nhũ trong lòng hang", ratio: "4/3" },
+      { seed: "phongnha-1", caption: "Vòm hang sâu thẳm ánh lên sắc đá nâu đỏ", ratio: "16/9" },
+      { seed: "phongnha-2", caption: "Thạch nhũ huyền ảo trong lòng hang tĩnh lặng", ratio: "4/3" },
       { seed: "phongnha-3", caption: "Dòng sông ngầm Son", ratio: "1/1" },
     ],
     nearby: ["son-doong-cave"],
@@ -536,8 +536,8 @@ export const destinations: Destination[] = [
     tags: ["nature", "mountain", "photography"],
     gallery: [
       { seed: "sondoong-1", caption: "Cột sáng giếng trời trong hang", ratio: "16/9" },
-      { seed: "sondoong-2", caption: "Rừng nguyên sinh trong lòng đất", ratio: "4/3" },
-      { seed: "sondoong-3", caption: "Lều trại giữa hang khổng lồ", ratio: "1/1" },
+      { seed: "sondoong-2", caption: "Lòng hang đá nâu đỏ uốn cong dẫn vào sâu", ratio: "4/3" },
+      { seed: "sondoong-3", caption: "Đoàn người nhỏ bé dưới giếng trời rừng xanh trong hang", ratio: "1/1" },
     ],
     nearby: ["phong-nha-cave"],
   },
@@ -644,7 +644,7 @@ export const destinations: Destination[] = [
     gallery: [
       { seed: "phuquoc-1", caption: "Hoàng hôn trên Bãi Trường", ratio: "16/9" },
       { seed: "phuquoc-2", caption: "Cáp treo vượt biển Hòn Thơm", ratio: "4/3" },
-      { seed: "phuquoc-3", caption: "Làng chài bình dị", ratio: "1/1" },
+      { seed: "phuquoc-3", caption: "Cáp treo vượt biển xanh ngắt giữa những hòn đảo", ratio: "1/1" },
     ],
     nearby: ["bai-sao-beach"],
     featured: true,
@@ -714,7 +714,7 @@ export const destinations: Destination[] = [
     gallery: [
       { seed: "trasu-1", caption: "Xuồng trôi giữa thảm bèo xanh", ratio: "16/9" },
       { seed: "trasu-2", caption: "Rừng tràm soi bóng nước", ratio: "4/3" },
-      { seed: "trasu-3", caption: "Đàn cò trắng bay rợp trời", ratio: "1/1" },
+      { seed: "trasu-3", caption: "Rừng tràm soi bóng trên thảm bèo xanh mướt", ratio: "1/1" },
     ],
     nearby: ["mieu-ba-chua-xu"],
     featured: true,
@@ -888,7 +888,7 @@ export const destinations: Destination[] = [
     badges: ["popular", "verified"],
     tags: ["beach", "nature", "photography"],
     gallery: [
-      { seed: "muine-1", caption: "Đồi cát vàng uốn lượn lúc hoàng hôn", ratio: "16/9" },
+      { seed: "muine-1", caption: "Làng chài tấp nập thuyền ghe neo đậu ven biển", ratio: "16/9" },
       { seed: "muine-2", caption: "Cát đỏ Mũi Né", ratio: "4/3" },
       { seed: "muine-3", caption: "Trượt cát trên đỉnh đồi", ratio: "1/1" },
     ],
@@ -926,8 +926,8 @@ export const destinations: Destination[] = [
     tags: ["market", "culture", "food"],
     gallery: [
       { seed: "cairang-1", caption: "Ghe thuyền tụ về chợ nổi sáng sớm", ratio: "16/9" },
-      { seed: "cairang-2", caption: "Cây bẹo treo hàng rao bán", ratio: "4/3" },
-      { seed: "cairang-3", caption: "Ăn sáng trên ghe", ratio: "1/1" },
+      { seed: "cairang-2", caption: "Ghe hàng treo cây bẹo dập dềnh trên sông buổi sớm", ratio: "4/3" },
+      { seed: "cairang-3", caption: "Người phụ nữ chèo ghe chở đầy bắp cải đi bán", ratio: "1/1" },
     ],
     nearby: [],
     featured: true,

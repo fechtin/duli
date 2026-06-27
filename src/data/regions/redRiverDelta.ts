@@ -144,8 +144,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     tags: ["village", "culture", "history"],
     gallery: [
       { seed: "bn-dong-ho-1", caption: "Nghệ nhân in tranh trên giấy điệp", ratio: "16/9" },
-      { seed: "bn-dong-ho-2", caption: "Bức tranh Đám cưới chuột", ratio: "4/3" },
-      { seed: "bn-dong-ho-3", caption: "Bản khắc gỗ truyền thống", ratio: "1/1" },
+      { seed: "bn-dong-ho-2", caption: "Tranh thờ Táo Quân rực rỡ sắc màu dân gian", ratio: "4/3" },
+      { seed: "bn-dong-ho-3", caption: "Tranh đàn cá chép bơi giữa sen", ratio: "1/1" },
     ],
     nearby: ["bn-den-do"],
   },

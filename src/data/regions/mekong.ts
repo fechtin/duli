@@ -70,8 +70,8 @@ export const mekongDestinations: Destination[] = [
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["nature", "park", "photography"],
     gallery: [
-      { seed: "langsen-birds", caption: "Đàn chim nước về trú ngụ mùa nước nổi", ratio: "16/9" },
-      { seed: "langsen-lotus", caption: "Cánh đồng sen và súng trải dài", ratio: "4/3" },
+      { seed: "langsen-birds", caption: "Lạch nước lặng lờ len giữa bụi cây ngập nước", ratio: "16/9" },
+      { seed: "langsen-lotus", caption: "Đồng cỏ ngập nước xanh trải tới chân trời", ratio: "4/3" },
       { seed: "langsen-canal", caption: "Xuồng len giữa kênh rạch yên ả", ratio: "1/1" },
     ],
     nearby: ["long-an-lang-noi-tan-lap"],
@@ -145,7 +145,7 @@ export const mekongDestinations: Destination[] = [
     tags: ["market", "culture", "food", "photography"],
     gallery: [
       { seed: "caibe-floating", caption: "Ghe thuyền tấp nập họp chợ trên sông", ratio: "16/9" },
-      { seed: "caibe-beo", caption: "Cây bẹo treo hàng hóa rao bán", ratio: "4/3" },
+      { seed: "caibe-beo", caption: "Người chèo ghe nón lá qua sông dưới chân cầu", ratio: "4/3" },
       { seed: "caibe-fruits", caption: "Trái cây tươi chất đầy ghe", ratio: "1/1" },
     ],
     nearby: ["tien-giang-cu-lao-thoi-son"],
@@ -369,7 +369,7 @@ export const mekongDestinations: Destination[] = [
     gallery: [
       { seed: "tramchim-crane", caption: "Sếu đầu đỏ về tìm ăn mùa khô", ratio: "16/9" },
       { seed: "tramchim-lotus", caption: "Cánh đồng sen súng bạt ngàn", ratio: "4/3" },
-      { seed: "tramchim-boat", caption: "Tắc ráng lướt trên kênh rừng tràm", ratio: "1/1" },
+      { seed: "tramchim-boat", caption: "Tháp canh gỗ giữa đầm sen ngày mưa", ratio: "1/1" },
     ],
     nearby: ["dong-thap-lang-hoa-sa-dec"],
     featured: true,
@@ -480,7 +480,7 @@ export const mekongDestinations: Destination[] = [
     gallery: [
       { seed: "lungngochoang-tram", caption: "Rừng tràm nguyên sinh tĩnh lặng", ratio: "16/9" },
       { seed: "lungngochoang-canal", caption: "Xuồng len giữa lung bàu chằng chịt", ratio: "4/3" },
-      { seed: "lungngochoang-birds", caption: "Chim nước về trú ngụ trong khu bảo tồn", ratio: "1/1" },
+      { seed: "lungngochoang-birds", caption: "Cầu tre len giữa rừng tràm dưới trời xanh", ratio: "1/1" },
     ],
     nearby: ["hau-giang-cho-noi-nga-bay"],
   },
@@ -591,7 +591,7 @@ export const mekongDestinations: Destination[] = [
     gallery: [
       { seed: "baclieu-turbines", caption: "Tua bin gió vươn ra biển", ratio: "16/9" },
       { seed: "baclieu-path", caption: "Con đường dẫn ra giữa cánh đồng quạt gió", ratio: "4/3" },
-      { seed: "baclieu-sunset", caption: "Hoàng hôn nhuộm đỏ cánh đồng điện gió", ratio: "1/1" },
+      { seed: "baclieu-sunset", caption: "Hàng tuabin điện gió mọc sau rặng cây xanh", ratio: "1/1" },
     ],
     nearby: ["bac-lieu-nha-cong-tu"],
     featured: true,

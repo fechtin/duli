@@ -1,7 +1,15 @@
 # Lessons & Patterns
 
 ## User corrections
-- (none yet)
+- **Photos must match the named place, not just pass a search.** The first image pipeline trusted
+  the top Wikipedia/Commons text-search result blindly → ~38% of 296 images were flat wrong
+  (Golden Gate SF for Cầu Vàng, Chinatown LA for a Bình Dương temple, maps/logos/manuscripts/
+  insect specimens, foreign places sharing a name). Root-cause fix: select by **Commons geosearch
+  on the destination lat/lng** (geotagged = actually taken there), validate text/wiki candidates
+  against name tokens, reject non-photos (JUNK + BIO regex on title+categories, mime jpeg/png,
+  width≥700, down-rank portraits = signs/docs), dedupe globally, and **record provenance**
+  (sourceTitle/sourceUrl/via) in the manifest. When no valid candidate exists, **leave the seed
+  blank** so the illustrated SVG fallback shows — never display a known-wrong image.
 
 ## Patterns established
 - **d3-geo winding:** spherical geoPath wants CLOCKWISE exterior rings (opposite of RFC 7946).
@@ -27,6 +35,11 @@
 - **Wikimedia Commons throttles bursts:** concurrency 2 + 250ms delay + retry/backoff + `maxlag`,
   and make the fetch **resumable** (preload existing manifest, skip fully-covered places). Running
   it a few times converges coverage; ~79/115 had photos, the rest fall back to illustrations.
+- **Map perf with richer visuals:** keep 60fps by (1) viewport-culling markers/labels via an
+  rAF-throttled camera subscription (`cam.x/y/scale.on("change")`), (2) memoizing the static
+  province SVG layer so camera-driven re-renders skip it (stable `useCallback` handlers), (3)
+  avoiding per-frame SVG blur filters — use a crisp offset silhouette for the "raised island"
+  shadow. Measured ~16.7ms/frame (60fps) under continuous zoom with 115 destinations.
 - **Cloudflare deploy gotchas:** (1) the API token needs **D1 Edit** in addition to Workers, else
   `d1 create/list` → error 10000. (2) First Worker deploy fails if the account has no `workers.dev`
   subdomain; register it via `PUT /accounts/{id}/workers/subdomain {"subdomain":"name"}` then

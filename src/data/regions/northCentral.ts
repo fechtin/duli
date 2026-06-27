@@ -72,7 +72,7 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "sam-son-binh-minh", caption: "Bình minh trên bãi tắm Sầm Sơn", ratio: "16/9" },
       { seed: "sam-son-trong-mai", caption: "Hòn Trống Mái lừng danh", ratio: "4/3" },
-      { seed: "sam-son-hai-san", caption: "Hải sản tươi bên bờ biển", ratio: "1/1" },
+      { seed: "sam-son-hai-san", caption: "Bãi tắm rợp dù che nhìn từ trên cao", ratio: "1/1" },
     ],
     nearby: ["thanh-nha-ho"],
   },
@@ -179,8 +179,8 @@ export const northCentralDestinations: Destination[] = [
     badges: ["popular", "trending"],
     tags: ["beach", "food", "nature"],
     gallery: [
-      { seed: "cua-lo-bai-cat", caption: "Bãi cát trắng dài bất tận", ratio: "16/9" },
-      { seed: "cua-lo-muc-nhay", caption: "Mực nhảy tươi roi rói", ratio: "4/3" },
+      { seed: "cua-lo-bai-cat", caption: "Đại lộ ven biển rợp bóng cây buổi sớm", ratio: "16/9" },
+      { seed: "cua-lo-muc-nhay", caption: "Phố biển lên đèn lung linh lúc hoàng hôn", ratio: "4/3" },
       { seed: "cua-lo-dao-lan-chau", caption: "Đảo Lan Châu sát bờ", ratio: "1/1" },
     ],
     nearby: ["khu-di-tich-kim-lien"],
@@ -215,7 +215,7 @@ export const northCentralDestinations: Destination[] = [
     badges: ["hidden-gem", "verified", "ai-recommended"],
     tags: ["nature", "mountain", "photography"],
     gallery: [
-      { seed: "pu-mat-thac-khe-kem", caption: "Thác Khe Kèm trắng xóa", ratio: "16/9" },
+      { seed: "pu-mat-thac-khe-kem", caption: "Nhà sàn mái lá nép bên đại ngàn xanh thẳm", ratio: "16/9" },
       { seed: "pu-mat-rung-nguyen-sinh", caption: "Rừng nguyên sinh đại ngàn", ratio: "4/3" },
       { seed: "pu-mat-song-giang", caption: "Dòng sông Giăng trong vắt", ratio: "1/1" },
     ],
@@ -253,7 +253,7 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "huong-tich-chua-co", caption: "Chùa cổ giữa rừng Hồng Lĩnh", ratio: "16/9" },
       { seed: "huong-tich-bac-da", caption: "Bậc đá rêu phong lên chùa", ratio: "4/3" },
-      { seed: "huong-tich-may-trang", caption: "Mây trắng vờn đỉnh núi", ratio: "1/1" },
+      { seed: "huong-tich-may-trang", caption: "Bậc đá rêu phong khuất trong sương mờ", ratio: "1/1" },
     ],
     nearby: ["bien-thien-cam"],
   },
@@ -324,7 +324,7 @@ export const northCentralDestinations: Destination[] = [
     tags: ["history", "culture"],
     gallery: [
       { seed: "dong-loc-mo-liet-si", caption: "Mười ngôi mộ nữ thanh niên xung phong", ratio: "16/9" },
-      { seed: "dong-loc-thap-chuong", caption: "Tháp chuông tưởng niệm", ratio: "4/3" },
+      { seed: "dong-loc-thap-chuong", caption: "Hàng mộ trắng phủ hoa cúc tưởng niệm", ratio: "4/3" },
       { seed: "dong-loc-ho-bom", caption: "Dấu tích hố bom năm xưa", ratio: "1/1" },
     ],
     nearby: ["bien-thien-cam"],
@@ -361,7 +361,7 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "thanh-co-dai-tuong-niem", caption: "Đài tưởng niệm trung tâm", ratio: "16/9" },
       { seed: "thanh-co-cong-thanh", caption: "Cổng thành cổ rêu phong", ratio: "4/3" },
-      { seed: "thanh-co-thach-han", caption: "Dòng sông Thạch Hãn", ratio: "1/1" },
+      { seed: "thanh-co-thach-han", caption: "Lối vào đài tưởng niệm thành cổ rợp bóng cây", ratio: "1/1" },
     ],
     nearby: ["dia-dao-vinh-moc"],
     featured: true,

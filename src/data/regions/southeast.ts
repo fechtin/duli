@@ -107,8 +107,8 @@ export const southeastDestinations: Destination[] = [
     tags: ["park", "nature", "photography"],
     gallery: [
       { seed: "cattien-forest", caption: "Rừng nguyên sinh xanh thẳm", ratio: "16/9" },
-      { seed: "cattien-bausau", caption: "Bàu Sấu ngập nước mênh mông", ratio: "4/3" },
-      { seed: "cattien-tung", caption: "Cây tung cổ thụ rễ bạnh", ratio: "1/1" },
+      { seed: "cattien-bausau", caption: "Hoàng hôn vàng rực, thuyền nhỏ trôi trên mặt hồ", ratio: "4/3" },
+      { seed: "cattien-tung", caption: "Gà rừng kiếm ăn trên thảm lá khô", ratio: "1/1" },
     ],
     nearby: ["thac-giang-dien"],
     featured: true,
@@ -324,9 +324,9 @@ export const southeastDestinations: Destination[] = [
     badges: ["festival", "trending", "popular", "verified"],
     tags: ["mountain", "temple", "culture", "nature", "photography"],
     gallery: [
-      { seed: "badennui-bienmay", caption: "Biển mây trắng dưới chân núi", ratio: "16/9" },
+      { seed: "badennui-bienmay", caption: "Núi Bà Đen in bóng tím dưới hoàng hôn ven hồ", ratio: "16/9" },
       { seed: "badennui-phatba", caption: "Tượng Phật Bà trên đỉnh núi", ratio: "4/3" },
-      { seed: "badennui-captreo", caption: "Cáp treo hiện đại lên đỉnh", ratio: "1/1" },
+      { seed: "badennui-captreo", caption: "Tượng Phật Bà vươn lên giữa biển mây trắng", ratio: "1/1" },
     ],
     nearby: ["toa-thanh-cao-dai-tay-ninh"],
     featured: true,
