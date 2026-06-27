@@ -80,4 +80,22 @@ export const ja: Record<TranslationKey, string> = {
   "common.error": "読み込めませんでした。少し時間をおいて、もう一度お試しください。",
   "common.region": "地方",
   "common.aiBadge": "AI",
+
+  "panel.aria": "スポットの詳細",
+
+  "badge.unesco": "UNESCO",
+  "badge.trending": "話題",
+  "badge.festival": "祭り",
+  "badge.popular": "人気",
+  "badge.verified": "確認済み",
+  "badge.new": "新着",
+  "badge.hidden-gem": "穴場",
+  "badge.ai-recommended": "AIおすすめ",
+
+  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.explored": "探訪済み",
+  "share.provinces": "省・市",
+  "share.checkins": "チェックイン",
+  "share.badges": "バッジ",
+  "share.tagline": "ベトナム探訪の旅",
 };

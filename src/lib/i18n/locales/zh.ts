@@ -80,4 +80,22 @@ export const zh: Record<TranslationKey, string> = {
   "common.error": "无法加载此内容。请稍后再试。",
   "common.region": "区域",
   "common.aiBadge": "AI",
+
+  "panel.aria": "景点详情",
+
+  "badge.unesco": "UNESCO",
+  "badge.trending": "热门",
+  "badge.festival": "节庆",
+  "badge.popular": "人气",
+  "badge.verified": "已验证",
+  "badge.new": "最新",
+  "badge.hidden-gem": "小众秘境",
+  "badge.ai-recommended": "AI 推荐",
+
+  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.explored": "已探索",
+  "share.provinces": "个省份",
+  "share.checkins": "打卡",
+  "share.badges": "徽章",
+  "share.tagline": "探索越南之旅",
 };

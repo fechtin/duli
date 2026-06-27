@@ -32,7 +32,7 @@ export function ResponsivePanel({ open, onClose, children, contentKey }: Props) 
             exit={{ x: "100%" }}
             transition={panelTransition}
             className="absolute right-0 top-0 z-30 flex h-full w-[400px] flex-col border-l border-border bg-surface shadow-[var(--shadow-e3)]"
-            aria-label="Destination details"
+            aria-label={t("panel.aria")}
           >
             <button
               onClick={onClose}

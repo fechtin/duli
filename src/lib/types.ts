@@ -1,5 +1,40 @@
 // Domain types (aligned with Bible 013 data model, trimmed for the client).
 
+/**
+ * Languages that editorial CONTENT (destinations/provinces) can be translated into.
+ * Vietnamese is the base/source language and the fallback, so it is excluded here.
+ * To add a new content language: add its code here and provide a translation file
+ * under src/data/i18n/<region>/<code>.ts (see src/data/i18n/README.md).
+ */
+export type ContentLocale = "en" | "ko" | "ja" | "zh";
+
+/** Translatable fields of a destination (a subset of Destination, all optional). */
+export interface DestinationTranslation {
+  name?: string;
+  summary?: string;
+  story?: string;
+  facts?: string[];
+  travelTips?: string[];
+  bestTime?: string;
+  visitDuration?: string;
+  ticket?: string;
+  openingHours?: string;
+  /** Gallery captions, aligned by index with Destination.gallery. */
+  galleryCaptions?: string[];
+}
+
+/** Translatable fields of province editorial content. */
+export interface ProvinceTranslation {
+  name?: string;
+  summary?: string;
+  story?: string;
+  bestTime?: string;
+  specialties?: string[];
+}
+
+export type DestinationI18n = Partial<Record<ContentLocale, DestinationTranslation>>;
+export type ProvinceI18n = Partial<Record<ContentLocale, ProvinceTranslation>>;
+
 export type RegionId =
   | "northeast"
   | "northwest"
@@ -75,6 +110,8 @@ export interface Destination {
   /** Slugs of nearby destinations. */
   nearby: string[];
   featured?: boolean;
+  /** Per-locale translations of the textual fields. VI fields above are the fallback. */
+  i18n?: DestinationI18n;
 }
 
 export interface ProvinceContent {
@@ -85,6 +122,8 @@ export interface ProvinceContent {
   specialties: string[];
   /** ids of destinations in this province. */
   destinationIds: string[];
+  /** Per-locale translations of the textual fields. VI fields above are the fallback. */
+  i18n?: ProvinceI18n;
 }
 
 /** Aggregated province view returned by the API (Bible 015 §Read Optimized). */

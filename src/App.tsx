@@ -9,6 +9,7 @@ import { useDocumentMeta } from "@/lib/seo/useDocumentMeta";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useUrlSync } from "@/lib/store/useUrlSync";
+import { useI18n } from "@/lib/i18n";
 
 const Overlays = lazy(() => import("@/components/Overlays"));
 
@@ -16,14 +17,19 @@ export default function App() {
   const applyTheme = useUIStore((s) => s.applyTheme);
   const setSearchOpen = useUIStore((s) => s.setSearchOpen);
   const loadContent = useContentStore((s) => s.load);
+  const { locale } = useI18n();
 
   useUrlSync();
   useDocumentMeta();
 
   useEffect(() => {
     applyTheme();
-    loadContent();
-  }, [applyTheme, loadContent]);
+  }, [applyTheme]);
+
+  // (Re)load lightweight content whenever the language changes.
+  useEffect(() => {
+    loadContent(locale);
+  }, [loadContent, locale]);
 
   // Global search shortcut (Cmd/Ctrl+K or "/").
   useEffect(() => {

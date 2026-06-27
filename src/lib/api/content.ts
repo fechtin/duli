@@ -1,5 +1,6 @@
 import geoMeta from "@/data/generated/geo-meta.json";
 import { apiGet } from "./client";
+import type { Locale } from "@/lib/i18n/dictionaries";
 import type { Destination, DestinationLight, ProvinceBundle, ProvinceMeta, Region, RegionId } from "@/lib/types";
 
 // Province + region META and the map bounds are reference data tied to the geometry, so they
@@ -26,31 +27,42 @@ export function getRegion(id: RegionId): Region | undefined {
   return regionById.get(id);
 }
 
-// ── Async content (cached) ────────────────────────────────
+// ── Async content (cached per-locale) ─────────────────────
+// Content is localized server-side (Worker overlays the i18n column; missing fields fall
+// back to Vietnamese). Caches are keyed by "<locale>:<id>" so switching language refetches.
 const bundleCache = new Map<string, Promise<ProvinceBundle | null>>();
 const destCache = new Map<string, Promise<Destination | null>>();
-let lightPromise: Promise<DestinationLight[]> | null = null;
+const lightCache = new Map<Locale, Promise<DestinationLight[]>>();
 
-/** Lightweight destination list (markers + search), fetched once. */
-export function fetchDestinationsLight(): Promise<DestinationLight[]> {
-  if (!lightPromise) lightPromise = apiGet<DestinationLight[]>("/destinations").catch(() => []);
-  return lightPromise;
-}
+/** `?locale=` query, omitted for Vietnamese (the base/source language). */
+const localeQuery = (locale?: Locale) => (locale && locale !== "vi" ? `?locale=${locale}` : "");
 
-export function fetchProvinceBundle(slug: string): Promise<ProvinceBundle | null> {
-  let p = bundleCache.get(slug);
+/** Lightweight destination list (markers + search), fetched once per locale. */
+export function fetchDestinationsLight(locale: Locale = "vi"): Promise<DestinationLight[]> {
+  let p = lightCache.get(locale);
   if (!p) {
-    p = apiGet<ProvinceBundle>(`/province/${slug}`).catch(() => null);
-    bundleCache.set(slug, p);
+    p = apiGet<DestinationLight[]>(`/destinations${localeQuery(locale)}`).catch(() => []);
+    lightCache.set(locale, p);
   }
   return p;
 }
 
-export function fetchDestination(id: string): Promise<Destination | null> {
-  let p = destCache.get(id);
+export function fetchProvinceBundle(slug: string, locale: Locale = "vi"): Promise<ProvinceBundle | null> {
+  const key = `${locale}:${slug}`;
+  let p = bundleCache.get(key);
   if (!p) {
-    p = apiGet<Destination>(`/destination/${id}`).catch(() => null);
-    destCache.set(id, p);
+    p = apiGet<ProvinceBundle>(`/province/${slug}${localeQuery(locale)}`).catch(() => null);
+    bundleCache.set(key, p);
+  }
+  return p;
+}
+
+export function fetchDestination(id: string, locale: Locale = "vi"): Promise<Destination | null> {
+  const key = `${locale}:${id}`;
+  let p = destCache.get(key);
+  if (!p) {
+    p = apiGet<Destination>(`/destination/${id}${localeQuery(locale)}`).catch(() => null);
+    destCache.set(key, p);
   }
   return p;
 }

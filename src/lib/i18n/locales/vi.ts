@@ -79,6 +79,24 @@ export const vi = {
   "common.error": "Không thể tải nội dung này. Hãy thử lại sau giây lát.",
   "common.region": "Vùng",
   "common.aiBadge": "AI",
+
+  "panel.aria": "Chi tiết địa điểm",
+
+  "badge.unesco": "UNESCO",
+  "badge.trending": "Thịnh hành",
+  "badge.festival": "Lễ hội",
+  "badge.popular": "Nổi bật",
+  "badge.verified": "Đã xác minh",
+  "badge.new": "Mới",
+  "badge.hidden-gem": "Viên ngọc ẩn",
+  "badge.ai-recommended": "AI gợi ý",
+
+  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.explored": "ĐÃ KHÁM PHÁ",
+  "share.provinces": "tỉnh thành",
+  "share.checkins": "Lượt check-in",
+  "share.badges": "Huy hiệu",
+  "share.tagline": "Hành trình khám phá Việt Nam",
 };
 
 export type TranslationKey = keyof typeof vi;

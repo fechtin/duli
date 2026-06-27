@@ -1,23 +1,28 @@
 import { create } from "zustand";
 import { fetchDestinationsLight } from "@/lib/api/content";
 import type { DestinationLight } from "@/lib/types";
+import type { Locale } from "@/lib/i18n/dictionaries";
 
 interface ContentState {
   destinations: DestinationLight[];
   ready: boolean;
   error: boolean;
-  load: () => void;
+  locale: Locale | null;
+  load: (locale: Locale) => void;
 }
 
-/** Lightweight destinations loaded once from the API — feeds map markers + search. */
+/** Lightweight destinations loaded from the API — feeds map markers + search.
+ *  Refetches when the locale changes so marker/search names follow the language. */
 export const useContentStore = create<ContentState>((set, get) => ({
   destinations: [],
   ready: false,
   error: false,
-  load: () => {
-    if (get().ready || get().destinations.length) return;
-    fetchDestinationsLight()
-      .then((destinations) => set({ destinations, ready: true }))
+  locale: null,
+  load: (locale) => {
+    if (get().locale === locale && get().ready) return;
+    set({ locale });
+    fetchDestinationsLight(locale)
+      .then((destinations) => set({ destinations, ready: true, error: false }))
       .catch(() => set({ error: true, ready: true }));
   },
 }));

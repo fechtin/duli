@@ -6,7 +6,8 @@ import { useCamera } from "@/lib/map/useCamera";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { getRegions } from "@/lib/api/content";
-import { useT } from "@/lib/i18n";
+import { useI18n, useT } from "@/lib/i18n";
+import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { cn } from "@/lib/utils/cn";
 import { Landmark } from "./landmarks";
 import { MapHint } from "./MapHint";
@@ -143,6 +144,7 @@ const ISLAND_FLAGS = [
 
 export function MapEngine() {
   const t = useT();
+  const { locale } = useI18n();
   const [model, setModel] = useState<MapModel | null>(null);
   const [error, setError] = useState(false);
   const [vp, setVp] = useState<Box | null>(null);
@@ -231,9 +233,9 @@ export function MapEngine() {
       const members = model.provinces.filter((p) => p.regionId === r.id);
       const cx = members.reduce((s, p) => s + p.cx, 0) / (members.length || 1);
       const cy = members.reduce((s, p) => s + p.cy, 0) / (members.length || 1);
-      return { id: r.id, name: r.name, cx, cy };
+      return { id: r.id, name: localizeRegionName(r.id, r.name, locale), cx, cy };
     });
-  }, [model, regions]);
+  }, [model, regions, locale]);
 
   const projectedDestinations = useMemo(() => {
     if (!model) return [];
@@ -362,7 +364,7 @@ export function MapEngine() {
             .map((p) => (
               <Label key={p.slug} x={p.cx} y={p.cy - 14} invK={invK}>
                 <span className="whitespace-nowrap rounded-full bg-surface/80 px-2 py-0.5 text-[11px] font-medium text-muted shadow-[var(--shadow-e1)] backdrop-blur">
-                  {p.name}
+                  {localizeProvinceName(p.slug, p.name, p.nameEn, locale)}
                 </span>
               </Label>
             ))}

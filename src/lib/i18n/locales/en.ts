@@ -80,4 +80,22 @@ export const en: Record<TranslationKey, string> = {
   "common.error": "We couldn't load this. Please try again in a moment.",
   "common.region": "Region",
   "common.aiBadge": "AI",
+
+  "panel.aria": "Destination details",
+
+  "badge.unesco": "UNESCO",
+  "badge.trending": "Trending",
+  "badge.festival": "Festival",
+  "badge.popular": "Popular",
+  "badge.verified": "Verified",
+  "badge.new": "New",
+  "badge.hidden-gem": "Hidden gem",
+  "badge.ai-recommended": "AI pick",
+
+  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.explored": "EXPLORED",
+  "share.provinces": "provinces",
+  "share.checkins": "Check-ins",
+  "share.badges": "Badges",
+  "share.tagline": "Exploring Vietnam",
 };

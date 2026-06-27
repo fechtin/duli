@@ -6,12 +6,14 @@ import { getProvinces } from "@/lib/api/content";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
-import { useT } from "@/lib/i18n";
+import { useI18n, useT } from "@/lib/i18n";
+import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { springSoft, duration, easeOut } from "@/design/motion";
 import { cn } from "@/lib/utils/cn";
 
 export function SearchOverlay() {
   const t = useT();
+  const { locale } = useI18n();
   const open = useUIStore((s) => s.searchOpen);
   const setOpen = useUIStore((s) => s.setSearchOpen);
   const selectProvince = useMapStore((s) => s.selectProvince);
@@ -24,6 +26,18 @@ export function SearchOverlay() {
 
   const destinations = useContentStore((s) => s.destinations);
   const provinces = useMemo(() => getProvinces(), []);
+  const provBySlug = useMemo(() => new Map(provinces.map((p) => [p.slug, p])), [provinces]);
+  // Destination titles come from the API already localized; province names live in geo-meta.
+  const titleOf = (r: SearchResult) => {
+    if (r.kind !== "province") return r.title;
+    const m = provBySlug.get(r.id);
+    return m ? localizeProvinceName(m.slug, m.name, m.nameEn, locale) : r.title;
+  };
+  const subtitleOf = (r: SearchResult) => {
+    if (r.kind !== "province") return r.subtitle;
+    const m = provBySlug.get(r.id);
+    return m ? localizeRegionName(m.regionId, m.regionName, locale) : r.subtitle;
+  };
   const results = useMemo(
     () => (query.trim() ? searchContent(query, provinces, destinations, 8) : []),
     [query, provinces, destinations],
@@ -138,8 +152,8 @@ export function SearchOverlay() {
                 >
                   <MapPin size={16} className={r.kind === "province" ? "text-secondary" : "text-primary"} />
                   <span className="flex-1">
-                    <span className="block text-sm font-medium text-foreground">{r.title}</span>
-                    {r.subtitle && <span className="block text-xs text-muted">{r.subtitle}</span>}
+                    <span className="block text-sm font-medium text-foreground">{titleOf(r)}</span>
+                    {subtitleOf(r) && <span className="block text-xs text-muted">{subtitleOf(r)}</span>}
                   </span>
                   <span className="text-[10px] uppercase tracking-wide text-faint">
                     {r.kind === "province" ? t("search.provinces") : t("search.destinations")}

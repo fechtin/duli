@@ -80,4 +80,22 @@ export const ko: Record<TranslationKey, string> = {
   "common.error": "콘텐츠를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
   "common.region": "권역",
   "common.aiBadge": "AI",
+
+  "panel.aria": "명소 상세 정보",
+
+  "badge.unesco": "UNESCO",
+  "badge.trending": "인기 급상승",
+  "badge.festival": "축제",
+  "badge.popular": "인기",
+  "badge.verified": "검증됨",
+  "badge.new": "신규",
+  "badge.hidden-gem": "숨은 명소",
+  "badge.ai-recommended": "AI 추천",
+
+  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.explored": "탐험 완료",
+  "share.provinces": "개 성·시",
+  "share.checkins": "체크인",
+  "share.badges": "배지",
+  "share.tagline": "베트남 탐험 여정",
 };

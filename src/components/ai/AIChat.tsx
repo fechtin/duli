@@ -26,12 +26,12 @@ export function AIChat() {
 
   // Fetch grounding content for the current selection (Bible 010 §4 context-aware).
   const { data: dest } = useAsync(
-    () => (selectedDestination ? fetchDestination(selectedDestination) : Promise.resolve(null)),
-    [selectedDestination],
+    () => (selectedDestination ? fetchDestination(selectedDestination, locale) : Promise.resolve(null)),
+    [selectedDestination, locale],
   );
   const { data: bundle } = useAsync(
-    () => (provinceSlug ? fetchProvinceBundle(provinceSlug) : Promise.resolve(null)),
-    [provinceSlug],
+    () => (provinceSlug ? fetchProvinceBundle(provinceSlug, locale) : Promise.resolve(null)),
+    [provinceSlug, locale],
   );
 
   const context = useMemo<AIContext>(

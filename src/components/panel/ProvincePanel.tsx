@@ -3,6 +3,7 @@ import { fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
 import { useAsync } from "@/lib/utils/useAsync";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
+import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Chip } from "@/components/ui/Chip";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -14,7 +15,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
   const t = useT();
   const { locale } = useI18n();
   const meta = getProvinceMeta(slug);
-  const { data: bundle, loading } = useAsync(() => fetchProvinceBundle(slug), [slug]);
+  const { data: bundle, loading } = useAsync(() => fetchProvinceBundle(slug, locale), [slug, locale]);
   const selectDestination = useMapStore((s) => s.selectDestination);
 
   if (!meta) return null;
@@ -28,9 +29,11 @@ export function ProvincePanel({ slug }: { slug: string }) {
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent p-5 pt-12">
           <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <MapPin size={13} />
-            {meta.regionName}
+            {localizeRegionName(meta.regionId, meta.regionName, locale)}
           </div>
-          <h2 className="font-display text-2xl font-bold text-white">{meta.name}</h2>
+          <h2 className="font-display text-2xl font-bold text-white">
+            {localizeProvinceName(meta.slug, meta.name, meta.nameEn, locale)}
+          </h2>
         </div>
       </div>
 

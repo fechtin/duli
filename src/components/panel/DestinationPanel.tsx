@@ -7,6 +7,7 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useI18n, useT } from "@/lib/i18n";
+import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -18,7 +19,7 @@ import { Section, InfoRow, Divider } from "./primitives";
 export function DestinationPanel({ id }: { id: string }) {
   const t = useT();
   const { locale } = useI18n();
-  const { data: dest, loading } = useAsync(() => fetchDestination(id), [id]);
+  const { data: dest, loading } = useAsync(() => fetchDestination(id, locale), [id, locale]);
   const allDestinations = useContentStore((s) => s.destinations);
   const selectDestination = useMapStore((s) => s.selectDestination);
   const setAiOpen = useUIStore((s) => s.setAiOpen);
@@ -47,7 +48,8 @@ export function DestinationPanel({ id }: { id: string }) {
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent p-5 pt-12">
           <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <MapPin size={13} />
-            {province?.name} · {province?.regionName}
+            {province && localizeProvinceName(province.slug, province.name, province.nameEn, locale)} ·{" "}
+            {province && localizeRegionName(province.regionId, province.regionName, locale)}
           </div>
           <h2 className="font-display text-2xl font-bold text-white">{dest.name}</h2>
         </div>

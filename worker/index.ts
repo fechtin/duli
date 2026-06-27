@@ -19,17 +19,20 @@ api.use("*", cors());
 api.get("/health", (c) => ok(c, { status: "ok" }, 0));
 
 // ── Content from D1 (Bible 013/015) ───────────────────────
+// `locale` selects translated content; missing fields fall back to Vietnamese (db.ts).
+const loc = (c: { req: { query: (k: string) => string | undefined } }) => c.req.query("locale");
+
 api.get("/regions", async (c) => ok(c, await db.getRegions(c.env.DB), 3600));
-api.get("/provinces", async (c) => ok(c, await db.getProvinces(c.env.DB), 3600));
-api.get("/destinations", async (c) => ok(c, await db.getDestinationsLight(c.env.DB), 600));
+api.get("/provinces", async (c) => ok(c, await db.getProvinces(c.env.DB, loc(c)), 3600));
+api.get("/destinations", async (c) => ok(c, await db.getDestinationsLight(c.env.DB, loc(c)), 600));
 
 api.get("/province/:slug", async (c) => {
-  const bundle = await db.getProvinceBundle(c.env.DB, c.req.param("slug"));
+  const bundle = await db.getProvinceBundle(c.env.DB, c.req.param("slug"), loc(c));
   return bundle ? ok(c, bundle, 600) : fail(c, "not_found", "Province not found", 404);
 });
 
 api.get("/destination/:id", async (c) => {
-  const d = await db.getDestination(c.env.DB, c.req.param("id"));
+  const d = await db.getDestination(c.env.DB, c.req.param("id"), loc(c));
   return d ? ok(c, d, 600) : fail(c, "not_found", "Destination not found", 404);
 });
 

@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { useT } from "@/lib/i18n";
 
 interface Props {
   provincesVisited: number;
@@ -11,6 +12,7 @@ interface Props {
 // rasterizes cleanly to PNG.
 export const ShareCard = forwardRef<SVGSVGElement, Props>(
   ({ provincesVisited, checkins, badges, total = 63 }, ref) => {
+    const t = useT();
     const W = 600;
     const H = 750;
     const pct = Math.min(1, provincesVisited / total);
@@ -34,10 +36,10 @@ export const ShareCard = forwardRef<SVGSVGElement, Props>(
         <rect x="20" y="20" width={W - 40} height={H - 40} rx="20" fill="none" stroke="#ffffff22" strokeWidth="1.5" />
 
         <text x={W / 2} y="96" textAnchor="middle" fontFamily="sans-serif" fontSize="26" fill="#ffffffcc">
-          🇻🇳 Vietnam Passport
+          {t("share.brand")}
         </text>
         <text x={W / 2} y="132" textAnchor="middle" fontFamily="sans-serif" fontSize="15" fill="#ffffff88" letterSpacing="3">
-          ĐÃ KHÁM PHÁ
+          {t("share.explored")}
         </text>
 
         <text x={W / 2} y="250" textAnchor="middle" fontFamily="sans-serif" fontSize="92" fontWeight="700" fill="#ffffff">
@@ -45,7 +47,7 @@ export const ShareCard = forwardRef<SVGSVGElement, Props>(
           <tspan fontSize="40" fill="#ffffff99"> / {total}</tspan>
         </text>
         <text x={W / 2} y="290" textAnchor="middle" fontFamily="sans-serif" fontSize="18" fill="#ffffffaa">
-          tỉnh thành
+          {t("share.provinces")}
         </text>
 
         {/* progress */}
@@ -58,19 +60,19 @@ export const ShareCard = forwardRef<SVGSVGElement, Props>(
             {checkins}
           </text>
           <text x="170" y="500" fontSize="15" fill="#ffffff99">
-            Check-in
+            {t("share.checkins")}
           </text>
           <text x="430" y="470" fontSize="48" fontWeight="700" fill="#ffffff">
             {badges}
           </text>
           <text x="430" y="500" fontSize="15" fill="#ffffff99">
-            Huy hiệu
+            {t("share.badges")}
           </text>
         </g>
         <line x1="300" y1="440" x2="300" y2="500" stroke="#ffffff22" strokeWidth="1.5" />
 
         <text x={W / 2} y="660" textAnchor="middle" fontFamily="sans-serif" fontSize="20" fill="#ffffffcc" fontWeight="600">
-          Hành trình khám phá Việt Nam
+          {t("share.tagline")}
         </text>
         <text x={W / 2} y="694" textAnchor="middle" fontFamily="sans-serif" fontSize="14" fill="#ffffff77">
           vietnam-atlas
