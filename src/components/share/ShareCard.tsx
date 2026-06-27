@@ -9,233 +9,299 @@ interface Props {
   total?: number;
 }
 
-// Vietnam outline path — normalized to ~100×250 coordinate space
-const VN_PATH =
+// Fixed card dimensions
+const W = 600;
+const H = 900;
+
+// Vietnam outline path (100×250 coordinate space, used with transform)
+const VN =
   "M50,5 C65,8 75,25 75,45 C76,62 64,73 62,87 C60,100 66,112 76,122 C85,131 84,150 78,165 C72,181 70,198 72,212 C74,226 68,240 60,249 L57,244 C51,233 52,219 55,206 C58,194 58,181 56,169 C54,157 55,143 58,130 C61,117 62,104 59,91 C56,78 50,66 49,53 C47,40 43,23 50,10 Z";
-
-// Compass rose
-function CompassRose({ x, y, r }: { x: number; y: number; r: number }) {
-  return (
-    <>
-      <circle cx={x} cy={y} r={r} stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
-      <circle cx={x} cy={y} r={r * 0.6} stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" fill="none" />
-      <polygon points={`${x},${y - r * 0.88} ${x - 5},${y} ${x + 5},${y}`} fill="rgba(255,255,255,0.8)" />
-      <polygon points={`${x},${y + r * 0.88} ${x - 5},${y} ${x + 5},${y}`} fill="rgba(255,255,255,0.35)" />
-      <polygon points={`${x - r * 0.88},${y} ${x},${y - 5} ${x},${y + 5}`} fill="rgba(255,255,255,0.35)" />
-      <polygon points={`${x + r * 0.88},${y} ${x},${y - 5} ${x},${y + 5}`} fill="rgba(255,255,255,0.35)" />
-      <circle cx={x} cy={y} r={4} fill="rgba(255,255,255,0.7)" />
-    </>
-  );
-}
-
-// Badge circle for the share card
-function BadgeCircle({ cx, cy, badge }: { cx: number; cy: number; badge: AwardedBadge }) {
-  return (
-    <g>
-      {/* Outer ring */}
-      <circle cx={cx} cy={cy} r={32} fill="#0a2028" stroke="#d4a84b" strokeWidth="2" />
-      {/* Inner glow ring */}
-      <circle cx={cx} cy={cy} r={28} fill="none" stroke="rgba(212,168,75,0.25)" strokeWidth="1" />
-      {/* Emoji */}
-      <text x={cx} y={cy + 9} textAnchor="middle" fontSize="24" fontFamily="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">
-        {badge.emoji}
-      </text>
-    </g>
-  );
-}
 
 export const ShareCard = forwardRef<SVGSVGElement, Props>(
   ({ provincesVisited, visitedRegions, checkins, badges, total = 63 }, ref) => {
-    const W = 600;
-    const H = 960;
     const pct = Math.min(1, provincesVisited / total);
-    const barW = 460;
-    const barX = 70;
+    // Cap display items so card height never blows out
+    const topCheckins = checkins.slice(0, 4);
+    const topBadges = badges.slice(0, 5);
 
-    const recentCheckins = checkins.slice(0, 5);
-    const displayBadges = badges.slice(0, 5);
-    const badgeSpacing = displayBadges.length > 0 ? Math.min(90, 400 / displayBadges.length) : 80;
-    const badgeStartX = W / 2 - ((displayBadges.length - 1) * badgeSpacing) / 2;
+    // ── Fixed layout constants ──
+    const HERO_H = 264;
+    const STATS_Y = HERO_H + 32;          // 296
+    const DIV_Y   = STATS_Y + 88;         // 384
+    const LIST_Y  = DIV_Y + 20;           // 404
+    const LIST_ROW = 52;
+    const LIST_END = LIST_Y + topCheckins.length * LIST_ROW + 20; // ≤ 628
+    const BADGE_Y  = LIST_END + 16;       // ≤ 644
+    const FOOTER_Y = BADGE_Y + 120;       // ≤ 764  (always < 900)
+
+    const BAR_X = 48;
+    const BAR_W = W - 96;
 
     return (
       <svg ref={ref} viewBox={`0 0 ${W} ${H}`} width={W} height={H} xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="sc-bg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0a2028" />
-            <stop offset="50%" stopColor="#0f3a30" />
-            <stop offset="100%" stopColor="#122820" />
+          <linearGradient id="g-hero" x1="0" y1="0" x2="0.3" y2="1">
+            <stop offset="0%"   stopColor="#0c2830" />
+            <stop offset="60%"  stopColor="#10423a" />
+            <stop offset="100%" stopColor="#0c3028" />
           </linearGradient>
-          <linearGradient id="sc-hero" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0d2a35" />
-            <stop offset="100%" stopColor="#16504a" />
+          <linearGradient id="g-body" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stopColor="#0d1f18" />
+            <stop offset="100%" stopColor="#091510" />
           </linearGradient>
-          <linearGradient id="sc-bar" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#d4a84b" />
-            <stop offset="100%" stopColor="#f0d080" />
+          <linearGradient id="g-bar" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stopColor="#c8922a" />
+            <stop offset="100%" stopColor="#f0d070" />
           </linearGradient>
-          <linearGradient id="sc-mid" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0e2a1e" />
-            <stop offset="100%" stopColor="#0a2018" />
+          <linearGradient id="g-badge" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stopColor="#1a3828" />
+            <stop offset="100%" stopColor="#0e2018" />
           </linearGradient>
         </defs>
 
-        {/* Full background */}
-        <rect width={W} height={H} fill="url(#sc-bg)" />
+        {/* ── BG ── */}
+        <rect width={W} height={H} fill="url(#g-body)" />
 
-        {/* ── HERO SECTION ── */}
-        <rect width={W} height={440} fill="url(#sc-hero)" />
+        {/* Outer frame */}
+        <rect x="12" y="12" width={W-24} height={H-24} rx="3"
+          fill="none" stroke="rgba(200,146,42,0.28)" strokeWidth="1.5" />
 
-        {/* Outer decorative border */}
-        <rect x="14" y="14" width={W - 28} height={H - 28} rx="4" fill="none" stroke="rgba(212,168,75,0.3)" strokeWidth="1.5" />
-        <rect x="20" y="20" width={W - 40} height={H - 40} rx="2" fill="none" stroke="rgba(212,168,75,0.12)" strokeWidth="0.5" />
+        {/* ═══════════════ HERO ═══════════════ */}
+        <rect width={W} height={HERO_H} fill="url(#g-hero)" />
 
-        {/* Vietnam map outline — large decorative, right side */}
-        <g transform="translate(390, 40) scale(1.9)" opacity="0.08">
-          <path d={VN_PATH} fill="white" />
+        {/* Inner hero frame */}
+        <rect x="18" y="18" width={W-36} height={HERO_H-18} rx="2"
+          fill="none" stroke="rgba(200,146,42,0.15)" strokeWidth="0.75" />
+
+        {/* Vietnam map — right watermark */}
+        <g transform="translate(400, 18) scale(1.92)" opacity="0.1">
+          <path d={VN} fill="white" />
         </g>
 
-        {/* Compass rose — left side watermark */}
-        <g opacity="0.12">
-          <CompassRose x={105} y={210} r={72} />
-        </g>
+        {/* Compass rose — left */}
+        <CompRose cx={90} cy={140} r={58} />
 
-        {/* Gold star / emblem */}
-        <g transform="translate(100, 85)">
-          <circle cx={0} cy={0} r={32} fill="rgba(212,168,75,0.12)" stroke="rgba(212,168,75,0.5)" strokeWidth="1.5" />
-          <circle cx={0} cy={0} r={26} fill="none" stroke="rgba(212,168,75,0.2)" strokeWidth="0.5" />
-          {/* 5-point star */}
-          <polygon
-            points="0,-18 4,-7 16,-7 7,1 11,12 0,5 -11,12 -7,1 -16,-7 -4,-7"
-            fill="#d4a84b"
-            opacity="0.9"
-          />
-        </g>
+        {/* Gold star emblem */}
+        <circle cx={90} cy={58} r={30} fill="rgba(200,146,42,0.14)"
+          stroke="rgba(200,146,42,0.55)" strokeWidth="1.5" />
+        <circle cx={90} cy={58} r={24} fill="none"
+          stroke="rgba(200,146,42,0.2)" strokeWidth="0.5" />
+        <Star cx={90} cy={58} r={16} fill="#c8922a" />
 
-        {/* Title */}
-        <text x={162} y={78} fontFamily="'Georgia','Times New Roman',serif" fontSize="13" fill="rgba(212,168,75,0.85)" letterSpacing="5">
-          VIETNAM
-        </text>
-        <text x={162} y={108} fontFamily="'Georgia','Times New Roman',serif" fontSize="28" fontWeight="700" fill="white" letterSpacing="3">
-          PASSPORT
-        </text>
-        <text x={162} y={132} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="11" fill="rgba(255,255,255,0.5)" letterSpacing="4">
-          HÀNH TRÌNH CỦA BẠN
-        </text>
-
-        {/* VIETNAM ATLAS at bottom of emblem area */}
-        <text x={100} y={137} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="8" fill="rgba(255,255,255,0.35)" textAnchor="middle" letterSpacing="2">
+        {/* VIETNAM ATLAS below emblem */}
+        <text x={90} y={102} textAnchor="middle"
+          fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="7.5"
+          fill="rgba(255,255,255,0.35)" letterSpacing="2.5">
           VIETNAM ATLAS
         </text>
 
-        {/* ── PROVINCE STATS ── */}
-        {/* Big number */}
-        <text x={barX} y={210} fontFamily="'Georgia','Times New Roman',serif" fontSize="72" fontWeight="700" fill="white">
+        {/* Title block */}
+        <text x={162} y={44}
+          fontFamily="'Georgia','Times New Roman',serif" fontSize="11"
+          fill="rgba(200,146,42,0.9)" letterSpacing="6">
+          VIETNAM
+        </text>
+        <text x={162} y={82}
+          fontFamily="'Georgia','Times New Roman',serif" fontSize="36"
+          fontWeight="700" fill="#ffffff" letterSpacing="2">
+          PASSPORT
+        </text>
+        <text x={162} y={106}
+          fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10"
+          fill="rgba(255,255,255,0.42)" letterSpacing="4.5">
+          HÀNH TRÌNH CỦA BẠN
+        </text>
+
+        {/* Thin gold rule under title */}
+        <line x1={162} y1={116} x2={450} y2={116}
+          stroke="rgba(200,146,42,0.35)" strokeWidth="0.75" />
+
+        {/* Province big number inside hero */}
+        <text x={162} y={172}
+          fontFamily="'Georgia','Times New Roman',serif"
+          fontSize="68" fontWeight="700" fill="white">
           {provincesVisited}
         </text>
-        <text x={barX + (provincesVisited > 9 ? 95 : 54)} y={210} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="28" fill="rgba(255,255,255,0.4)">
+        <text x={162 + (provincesVisited >= 10 ? 92 : 52)} y={172}
+          fontFamily="'Helvetica Neue',Arial,sans-serif"
+          fontSize="24" fill="rgba(255,255,255,0.38)">
           /{total}
         </text>
-        <text x={barX} y={236} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="11" fill="rgba(255,255,255,0.45)" letterSpacing="3">
+        <text x={162} y={196}
+          fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10"
+          fill="rgba(255,255,255,0.42)" letterSpacing="3">
           TỈNH THÀNH ĐÃ KHÁM PHÁ
         </text>
 
-        {/* Progress bar */}
-        <rect x={barX} y={252} width={barW} height={10} rx={5} fill="rgba(255,255,255,0.12)" />
-        <rect x={barX} y={252} width={Math.max(10, barW * pct)} height={10} rx={5} fill="url(#sc-bar)" />
+        {/* Progress bar inside hero */}
+        <rect x={162} y={212} width={BAR_W - 114} height={7} rx={3.5}
+          fill="rgba(255,255,255,0.1)" />
+        <rect x={162} y={212} width={Math.max(8, (BAR_W - 114) * pct)} height={7} rx={3.5}
+          fill="url(#g-bar)" />
 
-        {/* 4-stat mini grid */}
+        {/* ═══════════════ STATS ROW ═══════════════ */}
         {[
-          { label: "Tỉnh thành", val: provincesVisited },
-          { label: "Vùng miền", val: visitedRegions },
-          { label: "Điểm đến", val: checkins.length },
-          { label: "Huy hiệu", val: badges.length },
+          { v: provincesVisited, lbl: "Tỉnh thành" },
+          { v: visitedRegions,   lbl: "Vùng miền"  },
+          { v: checkins.length,  lbl: "Điểm đến"   },
+          { v: badges.length,    lbl: "Huy hiệu"   },
         ].map((s, i) => {
-          const sx = barX + i * 118;
+          const sx = BAR_X + i * 132;
           return (
-            <g key={s.label}>
-              <text x={sx} y={302} fontFamily="'Georgia','Times New Roman',serif" fontSize="32" fontWeight="700" fill="white">
-                {s.val}
+            <g key={s.lbl}>
+              <text x={sx} y={STATS_Y + 34}
+                fontFamily="'Georgia','Times New Roman',serif"
+                fontSize="36" fontWeight="700" fill="white">
+                {s.v}
               </text>
-              <text x={sx} y={320} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10" fill="rgba(255,255,255,0.45)" letterSpacing="1">
-                {s.label}
+              <text x={sx} y={STATS_Y + 54}
+                fontFamily="'Helvetica Neue',Arial,sans-serif"
+                fontSize="10" fill="rgba(255,255,255,0.38)" letterSpacing="0.5">
+                {s.lbl}
               </text>
             </g>
           );
         })}
 
-        {/* Divider */}
-        <line x1={barX} y1={348} x2={barX + barW} y2={348} stroke="rgba(212,168,75,0.3)" strokeWidth="0.5" />
+        {/* Stat separators */}
+        {[1,2,3].map(i => (
+          <line key={i}
+            x1={BAR_X + i * 132 - 16} y1={STATS_Y + 8}
+            x2={BAR_X + i * 132 - 16} y2={STATS_Y + 60}
+            stroke="rgba(255,255,255,0.1)" strokeWidth="0.75" />
+        ))}
 
-        {/* ── CHECKINS SECTION ── */}
-        <rect y={380} width={W} height={recentCheckins.length > 0 ? recentCheckins.length * 72 + 60 : 0} fill="url(#sc-mid)" />
+        {/* ═══════════════ DIVIDER ═══════════════ */}
+        <line x1={BAR_X} y1={DIV_Y} x2={W - BAR_X} y2={DIV_Y}
+          stroke="rgba(200,146,42,0.25)" strokeWidth="0.75" />
 
-        {recentCheckins.length > 0 && (
-          <>
-            <text x={barX} y={414} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10" fill="rgba(212,168,75,0.8)" letterSpacing="4">
+        {/* ═══════════════ CHECKINS ═══════════════ */}
+        {topCheckins.length > 0 && (
+          <g>
+            <text x={BAR_X} y={LIST_Y - 4}
+              fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="9"
+              fill="rgba(200,146,42,0.75)" letterSpacing="3.5">
               NHỮNG NƠI ĐÃ GHÉ
             </text>
-            {recentCheckins.map((c, i) => {
-              const cy = 440 + i * 72;
+            {topCheckins.map((c, i) => {
+              const ry = LIST_Y + 16 + i * LIST_ROW;
               return (
                 <g key={c.id}>
-                  {/* Number circle */}
-                  <circle cx={barX + 16} cy={cy} r={16} fill="rgba(212,168,75,0.15)" stroke="rgba(212,168,75,0.5)" strokeWidth="1" />
-                  <text x={barX + 16} y={cy + 5} textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="12" fontWeight="700" fill="#d4a84b">
+                  {/* Number pill */}
+                  <circle cx={BAR_X + 14} cy={ry} r={13}
+                    fill="rgba(200,146,42,0.14)"
+                    stroke="rgba(200,146,42,0.45)" strokeWidth="1" />
+                  <text x={BAR_X + 14} y={ry + 5} textAnchor="middle"
+                    fontFamily="'Helvetica Neue',Arial,sans-serif"
+                    fontSize="11" fontWeight="700" fill="#c8922a">
                     {i + 1}
                   </text>
-                  {/* Name + caption */}
-                  <text x={barX + 42} y={cy - 5} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="16" fontWeight="600" fill="white">
+                  {/* Name */}
+                  <text x={BAR_X + 36} y={ry - 3}
+                    fontFamily="'Helvetica Neue',Arial,sans-serif"
+                    fontSize="15" fontWeight="600" fill="rgba(255,255,255,0.92)">
                     {c.destinationName}
                   </text>
-                  <text x={barX + 42} y={cy + 16} fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="11" fill="rgba(255,255,255,0.45)">
-                    {c.caption.length > 52 ? c.caption.slice(0, 52) + "…" : c.caption}
+                  {/* Caption — max 48 chars */}
+                  <text x={BAR_X + 36} y={ry + 16}
+                    fontFamily="'Helvetica Neue',Arial,sans-serif"
+                    fontSize="10.5" fill="rgba(255,255,255,0.35)">
+                    {c.caption.length > 48 ? c.caption.slice(0, 48) + "…" : c.caption}
                   </text>
-                  {/* Subtle separator */}
-                  {i < recentCheckins.length - 1 && (
-                    <line x1={barX + 42} y1={cy + 34} x2={barX + barW} y2={cy + 34} stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
-                  )}
                 </g>
               );
             })}
-          </>
+          </g>
         )}
 
-        {/* ── BADGES SECTION ── */}
-        {displayBadges.length > 0 && (() => {
-          const badgesY = recentCheckins.length > 0 ? 380 + recentCheckins.length * 72 + 70 : 400;
-          return (
-            <g>
-              <text x={W / 2} y={badgesY} textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10" fill="rgba(212,168,75,0.8)" letterSpacing="4">
-                HUY HIỆU
-              </text>
-              {displayBadges.map((b, i) => {
-                const bx = badgeStartX + i * badgeSpacing;
-                const by = badgesY + 55;
-                return (
-                  <g key={b.id}>
-                    <BadgeCircle cx={bx} cy={by} badge={b} />
-                    <text x={bx} y={by + 50} textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="9" fill="rgba(255,255,255,0.55)" letterSpacing="0.5">
-                      {b.label.length > 14 ? b.label.slice(0, 14) + "…" : b.label}
-                    </text>
-                  </g>
-                );
-              })}
-            </g>
-          );
-        })()}
+        {/* ═══════════════ BADGES ═══════════════ */}
+        {topBadges.length > 0 && (
+          <g>
+            {/* Section bg */}
+            <rect x={0} y={BADGE_Y - 12} width={W} height={108}
+              fill="url(#g-badge)" />
+            <line x1={BAR_X} y1={BADGE_Y - 12} x2={W - BAR_X} y2={BADGE_Y - 12}
+              stroke="rgba(200,146,42,0.2)" strokeWidth="0.75" />
 
-        {/* ── FOOTER ── */}
-        <g>
-          <line x1={barX} y1={H - 80} x2={barX + barW} y2={H - 80} stroke="rgba(212,168,75,0.2)" strokeWidth="0.5" />
-          <text x={W / 2} y={H - 52} textAnchor="middle" fontFamily="'Georgia','Times New Roman',serif" fontSize="18" fill="rgba(255,255,255,0.6)" letterSpacing="3">
-            🇻🇳 VIETNAM ATLAS
-          </text>
-          <text x={W / 2} y={H - 30} textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="11" fill="rgba(255,255,255,0.3)" letterSpacing="1">
-            vietnam-atlas.fechtin.workers.dev
-          </text>
-        </g>
+            <text x={W / 2} y={BADGE_Y + 8} textAnchor="middle"
+              fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="9"
+              fill="rgba(200,146,42,0.75)" letterSpacing="3.5">
+              HUY HIỆU
+            </text>
+
+            {topBadges.map((b, i) => {
+              const gap = Math.min(96, (W - 80) / topBadges.length);
+              const bx = W / 2 + (i - (topBadges.length - 1) / 2) * gap;
+              const by = BADGE_Y + 54;
+              return (
+                <g key={b.id}>
+                  <circle cx={bx} cy={by} r={30}
+                    fill="#0a2028" stroke="#c8922a" strokeWidth="1.75" />
+                  <circle cx={bx} cy={by} r={24}
+                    fill="none" stroke="rgba(200,146,42,0.22)" strokeWidth="0.75" />
+                  <text x={bx} y={by + 9} textAnchor="middle"
+                    fontSize="20"
+                    fontFamily="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">
+                    {b.emoji}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+        )}
+
+        {/* ═══════════════ FOOTER ═══════════════ */}
+        <line x1={BAR_X} y1={FOOTER_Y} x2={W - BAR_X} y2={FOOTER_Y}
+          stroke="rgba(200,146,42,0.18)" strokeWidth="0.75" />
+        <text x={W / 2} y={FOOTER_Y + 30} textAnchor="middle"
+          fontFamily="'Georgia','Times New Roman',serif" fontSize="15"
+          fill="rgba(255,255,255,0.5)" letterSpacing="4">
+          🇻🇳  VIETNAM ATLAS
+        </text>
+        <text x={W / 2} y={FOOTER_Y + 52} textAnchor="middle"
+          fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10"
+          fill="rgba(255,255,255,0.22)" letterSpacing="1">
+          vietnam-atlas.fechtin.workers.dev
+        </text>
       </svg>
     );
   },
 );
 ShareCard.displayName = "ShareCard";
+
+// ── helpers ──────────────────────────────────────────────────────────────────
+
+function Star({ cx, cy, r, fill }: { cx: number; cy: number; r: number; fill: string }) {
+  const pts = Array.from({ length: 5 }, (_, i) => {
+    const outer = ((i * 4 - 2) * Math.PI) / 10;
+    const inner = outer + Math.PI / 5;
+    return [
+      cx + Math.cos(outer) * r, cy + Math.sin(outer) * r,
+      cx + Math.cos(inner) * (r * 0.42), cy + Math.sin(inner) * (r * 0.42),
+    ];
+  }).flat();
+  const d = pts.reduce((acc, v, i) =>
+    i === 0 ? `M${v}` : i % 2 === 0 ? `${acc} L${v}` : `${acc},${v}`, "") + " Z";
+  return <path d={d} fill={fill} />;
+}
+
+function CompRose({ cx, cy, r }: { cx: number; cy: number; r: number }) {
+  return (
+    <g opacity="0.18">
+      <circle cx={cx} cy={cy} r={r} stroke="white" strokeWidth="1" fill="none" />
+      <circle cx={cx} cy={cy} r={r * 0.62} stroke="white" strokeWidth="0.5" fill="none" />
+      <polygon points={`${cx},${cy - r * 0.9} ${cx - 5},${cy} ${cx + 5},${cy}`} fill="white" />
+      <polygon points={`${cx},${cy + r * 0.9} ${cx - 5},${cy} ${cx + 5},${cy}`} fill="rgba(255,255,255,0.5)" />
+      <polygon points={`${cx - r * 0.9},${cy} ${cx},${cy - 5} ${cx},${cy + 5}`} fill="rgba(255,255,255,0.5)" />
+      <polygon points={`${cx + r * 0.9},${cy} ${cx},${cy - 5} ${cx},${cy + 5}`} fill="rgba(255,255,255,0.5)" />
+      {[0,45,90,135,180,225,270,315].map(deg => {
+        const rad = deg * Math.PI / 180;
+        return <line key={deg}
+          x1={cx + Math.cos(rad) * (r * 0.68)} y1={cy + Math.sin(rad) * (r * 0.68)}
+          x2={cx + Math.cos(rad) * (r * 0.82)} y2={cy + Math.sin(rad) * (r * 0.82)}
+          stroke="white" strokeWidth="0.75" />;
+      })}
+      <circle cx={cx} cy={cy} r={4} fill="white" />
+    </g>
+  );
+}
