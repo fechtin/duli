@@ -10,6 +10,7 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useUrlSync } from "@/lib/store/useUrlSync";
 import { useI18n } from "@/lib/i18n";
+import { DailyBrief } from "@/components/brief/DailyBrief";
 
 const Overlays = lazy(() => import("@/components/Overlays"));
 
@@ -52,6 +53,7 @@ export default function App() {
       <MobileTopBar />
       <BottomNav />
 
+      <DailyBrief />
       <PanelContainer />
       <OfflineIndicator />
       <Suspense fallback={null}>

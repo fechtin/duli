@@ -1,0 +1,86 @@
+{
+  "1": [
+    { "destinationId": "hoi-an-old-town", "state": "Tết cổ truyền", "icon": "🏮", "mood": "festive" },
+    { "destinationId": "ha-long-bay", "state": "Trời lạnh, sương mù huyền ảo", "icon": "🌫", "mood": "mystic" },
+    { "destinationId": "sapa-terraces", "state": "Hoa đào nở rộ", "icon": "🌸", "mood": "bloom" },
+    { "destinationId": "moc-chau-plateau", "state": "Hoa mận trắng xoá", "icon": "🌸", "mood": "bloom" },
+    { "destinationId": "da-lat-city", "state": "Thành phố hoa mùa Tết", "icon": "🌺", "mood": "bloom" }
+  ],
+  "2": [
+    { "destinationId": "perfume-pagoda", "state": "Lễ hội Chùa Hương", "icon": "🏯", "mood": "festive" },
+    { "destinationId": "moc-chau-plateau", "state": "Hoa mơ, hoa mận nở muộn", "icon": "🌸", "mood": "bloom" },
+    { "destinationId": "sapa-terraces", "state": "Hoa đào vẫn rực rỡ", "icon": "🌸", "mood": "bloom" },
+    { "destinationId": "hoi-an-old-town", "state": "Hội đèn lồng rằm tháng Giêng", "icon": "🏮", "mood": "festive" },
+    { "destinationId": "ninh-binh-trang-an", "state": "Lễ hội Tràng An", "icon": "🎉", "mood": "festive" }
+  ],
+  "3": [
+    { "destinationId": "ha-giang-loop", "state": "Hoa tam giác mạch nở sớm", "icon": "🌼", "mood": "bloom" },
+    { "destinationId": "phu-yen-coast", "state": "Biển xanh đẹp nhất năm", "icon": "🌊", "mood": "beach" },
+    { "destinationId": "hoi-an-old-town", "state": "Phố cổ dịu mát, ít mưa", "icon": "☀", "mood": "calm" },
+    { "destinationId": "da-lat-city", "state": "Mùa hoa anh đào", "icon": "🌸", "mood": "bloom" },
+    { "destinationId": "phu-quoc-island", "state": "Mùa biển đẹp, nước trong vắt", "icon": "🏝", "mood": "beach" }
+  ],
+  "4": [
+    { "destinationId": "hue-imperial-city", "state": "Festival Huế", "icon": "🎭", "mood": "festive" },
+    { "destinationId": "da-nang-coast", "state": "Lễ hội pháo hoa quốc tế", "icon": "🎆", "mood": "festive" },
+    { "destinationId": "phu-quoc-island", "state": "Biển trong, ít sóng", "icon": "🏝", "mood": "beach" },
+    { "destinationId": "nha-trang-coast", "state": "Biển đẹp trước mùa mưa", "icon": "🌊", "mood": "beach" },
+    { "destinationId": "mu-cang-chai-terraces", "state": "Mùa nước đổ bắt đầu", "icon": "💧", "mood": "scenic" }
+  ],
+  "5": [
+    { "destinationId": "phu-quoc-island", "state": "Mùa biển yên tĩnh nhất", "icon": "🏝", "mood": "beach" },
+    { "destinationId": "ha-long-bay", "state": "Thời tiết đẹp, ít sóng", "icon": "⛵", "mood": "calm" },
+    { "destinationId": "phong-nha-caves", "state": "Khí hậu mát mẻ trong hang", "icon": "🕌", "mood": "explore" },
+    { "destinationId": "hue-imperial-city", "state": "Trước mùa mưa, thời tiết dễ chịu", "icon": "☀", "mood": "calm" },
+    { "destinationId": "mu-cang-chai-terraces", "state": "Ruộng bậc thang mùa cấy lúa", "icon": "🌿", "mood": "scenic" }
+  ],
+  "6": [
+    { "destinationId": "sapa-terraces", "state": "Ruộng bậc thang xanh mướt", "icon": "🌿", "mood": "scenic" },
+    { "destinationId": "da-lat-city", "state": "Mùa hoa dã quỳ vàng", "icon": "🌻", "mood": "bloom" },
+    { "destinationId": "phu-quoc-island", "state": "Bắt đầu mùa mưa, ít khách", "icon": "🌧", "mood": "quiet" },
+    { "destinationId": "cat-ba-island", "state": "Leo núi mùa hè", "icon": "🏔", "mood": "adventure" },
+    { "destinationId": "ho-chi-minh-city", "state": "Mùa mưa chiều, sáng nắng đẹp", "icon": "⛅", "mood": "city" }
+  ],
+  "7": [
+    { "destinationId": "sapa-terraces", "state": "Lúa bắt đầu lên xanh", "icon": "🌾", "mood": "scenic" },
+    { "destinationId": "ha-long-bay", "state": "Mùa hè nhộn nhịp", "icon": "⛵", "mood": "popular" },
+    { "destinationId": "da-nang-coast", "state": "Mùa biển sôi động", "icon": "🌊", "mood": "beach" },
+    { "destinationId": "nha-trang-coast", "state": "Lễ hội biển", "icon": "🏖", "mood": "festive" },
+    { "destinationId": "phan-thiet-coast", "state": "Biển Mũi Né sóng to lý tưởng", "icon": "🏄", "mood": "adventure" }
+  ],
+  "8": [
+    { "destinationId": "hoi-an-old-town", "state": "Lễ hội Trung Thu sắp đến", "icon": "🌕", "mood": "festive" },
+    { "destinationId": "mu-cang-chai-terraces", "state": "Lúa bắt đầu chín vàng", "icon": "🌾", "mood": "scenic" },
+    { "destinationId": "ha-giang-loop", "state": "Đường đèo sương mù đẹp nhất", "icon": "🌫", "mood": "mystic" },
+    { "destinationId": "da-lat-city", "state": "Festival Hoa Đà Lạt", "icon": "🌺", "mood": "festive" },
+    { "destinationId": "sapa-terraces", "state": "Ruộng bậc thang bắt đầu chuyển vàng", "icon": "🌾", "mood": "scenic" }
+  ],
+  "9": [
+    { "destinationId": "mu-cang-chai-terraces", "state": "Mùa lúa chín rực vàng — đẹp nhất năm", "icon": "🌾", "mood": "peak" },
+    { "destinationId": "sapa-terraces", "state": "Ruộng bậc thang vàng ươm", "icon": "🌾", "mood": "peak" },
+    { "destinationId": "ha-giang-loop", "state": "Hoa tam giác mạch nở đầu mùa", "icon": "🌼", "mood": "bloom" },
+    { "destinationId": "hoi-an-old-town", "state": "Rằm Trung Thu — đêm đèn lồng huyền ảo", "icon": "🏮", "mood": "festive" },
+    { "destinationId": "ninh-binh-trang-an", "state": "Lúa chín vàng giữa núi đá vôi", "icon": "🌾", "mood": "scenic" }
+  ],
+  "10": [
+    { "destinationId": "ha-giang-loop", "state": "Hoa tam giác mạch nở rực rỡ nhất", "icon": "🌼", "mood": "peak" },
+    { "destinationId": "mu-cang-chai-terraces", "state": "Ruộng bậc thang cuối mùa gặt", "icon": "🌾", "mood": "scenic" },
+    { "destinationId": "hoi-an-old-town", "state": "Phố cổ mùa thu dịu mát", "icon": "🍂", "mood": "calm" },
+    { "destinationId": "da-lat-city", "state": "Hoa dã quỳ vàng khắp nơi", "icon": "🌻", "mood": "bloom" },
+    { "destinationId": "phu-yen-coast", "state": "Mùa nắng trở lại, biển xanh", "icon": "🌊", "mood": "beach" }
+  ],
+  "11": [
+    { "destinationId": "moc-chau-plateau", "state": "Hoa cải trắng nở rộ", "icon": "🌿", "mood": "bloom" },
+    { "destinationId": "da-lat-city", "state": "Mùa hoa mimosa và hồng", "icon": "🌸", "mood": "bloom" },
+    { "destinationId": "hoi-an-old-town", "state": "Mùa mưa nhẹ, phố cổ bình yên", "icon": "🌧", "mood": "quiet" },
+    { "destinationId": "phu-quoc-island", "state": "Mùa biển đẹp trở lại", "icon": "🏝", "mood": "beach" },
+    { "destinationId": "ha-long-bay", "state": "Mùa đông sương mù huyền ảo", "icon": "🌫", "mood": "mystic" }
+  ],
+  "12": [
+    { "destinationId": "sapa-terraces", "state": "Tuyết trên đỉnh Fansipan", "icon": "❄", "mood": "winter" },
+    { "destinationId": "da-lat-city", "state": "Đà Lạt Giáng sinh lãng mạn", "icon": "🎄", "mood": "festive" },
+    { "destinationId": "moc-chau-plateau", "state": "Hoa cải trắng mùa đông", "icon": "🌿", "mood": "bloom" },
+    { "destinationId": "phu-quoc-island", "state": "Mùa khô đẹp nhất, nắng vàng", "icon": "☀", "mood": "peak" },
+    { "destinationId": "hoi-an-old-town", "state": "Hội An đêm Giáng sinh", "icon": "🎄", "mood": "festive" }
+  ]
+}

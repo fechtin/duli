@@ -11,6 +11,7 @@ import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeNam
 import { cn } from "@/lib/utils/cn";
 import { Landmark } from "./landmarks";
 import { MapHint } from "./MapHint";
+import { useLivingStore } from "@/lib/store/useLivingStore";
 
 type Box = { x0: number; y0: number; x1: number; y1: number };
 
@@ -225,6 +226,15 @@ export function MapEngine() {
 
   const destinations = useContentStore((s) => s.destinations);
   const regions = getRegions();
+
+  // Init heartbeat scores once destinations are loaded
+  const initLiving = useLivingStore((s) => s.init);
+  const getHeartbeat = useLivingStore((s) => s.getHeartbeat);
+  useEffect(() => {
+    if (destinations.length > 0) {
+      initLiving(destinations.map((d) => d.id));
+    }
+  }, [destinations, initLiving]);
   const active = useMemo(() => new Set(destinations.map((d) => d.provinceSlug)), [destinations]);
 
   const regionLabels = useMemo(() => {
@@ -375,26 +385,63 @@ export function MapEngine() {
             .filter((d) => inView(d.x, d.y))
             .map((d) => {
               const isSelected = selectedDestination === d.id;
+              const hb = getHeartbeat(d.id);
+              const isTrending = hb?.signals.includes("trending");
+              const isFestival = hb?.signals.includes("festival");
+              const isSeasonal = hb?.signals.includes("seasonal");
+              const isPerfect  = hb?.signals.includes("perfect-weather");
+              // Glow color based on dominant signal
+              const glowColor = isFestival  ? "rgba(185,132,42,0.55)"  // accent/gold
+                              : isTrending  ? "rgba(210,96,79,0.50)"   // danger/red
+                              : isSeasonal  ? "rgba(22,113,90,0.45)"   // primary/green
+                              : isPerfect   ? "rgba(36,108,136,0.40)"  // secondary/blue
+                              : null;
+              const showPulse = (isTrending || isFestival) && !isSelected;
+              const showDot   = (isSeasonal || isPerfect)  && !isSelected && !showPulse;
               return (
                 <Label key={d.id} x={d.x} y={d.y} invK={invK} z={isSelected ? 30 : 20}>
-                  <button
-                    aria-label={d.name}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (down.current?.moved) return;
-                      selectDestination(d.id, d.provinceSlug);
-                      requestFocus({ kind: "point", lng: d.lng, lat: d.lat, zoom: 7 });
-                    }}
-                    className={cn(
-                      "group flex items-center gap-1.5 rounded-full border bg-surface/95 py-1 pl-1 pr-2.5 shadow-[var(--shadow-e2)] backdrop-blur transition-transform duration-150 hover:scale-[1.06]",
-                      isSelected ? "border-primary ring-2 ring-primary/30" : "border-border",
+                  <div className="relative">
+                    {/* Pulse ring for trending/festival destinations */}
+                    {showPulse && (
+                      <span
+                        aria-hidden
+                        className="heartbeat-ring pointer-events-none absolute inset-0 rounded-full"
+                        style={{ background: glowColor ?? "rgba(22,113,90,0.4)" }}
+                      />
                     )}
-                  >
-                    <span className="grid h-7 w-7 place-items-center rounded-full bg-surface-2">
-                      <Landmark type={d.type} className="h-5 w-5" />
-                    </span>
-                    <span className="max-w-[7.5rem] truncate text-[11px] font-semibold text-foreground">{d.name}</span>
-                  </button>
+                    <button
+                      aria-label={d.name}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (down.current?.moved) return;
+                        selectDestination(d.id, d.provinceSlug);
+                        requestFocus({ kind: "point", lng: d.lng, lat: d.lat, zoom: 7 });
+                      }}
+                      className={cn(
+                        "group flex items-center gap-1.5 rounded-full border bg-surface/95 py-1 pl-1 pr-2.5 shadow-[var(--shadow-e2)] backdrop-blur transition-transform duration-150 hover:scale-[1.06]",
+                        isSelected ? "border-primary ring-2 ring-primary/30" : "border-border",
+                      )}
+                    >
+                      <span className="relative grid h-7 w-7 place-items-center rounded-full bg-surface-2">
+                        <Landmark type={d.type} className="h-5 w-5" />
+                        {/* Seasonal glow dot */}
+                        {showDot && (
+                          <span
+                            aria-hidden
+                            className="seasonal-dot absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-surface"
+                            style={{ background: glowColor ?? "var(--color-primary)" }}
+                          />
+                        )}
+                        {/* Season emoji badge */}
+                        {hb?.seasonalIcon && !showPulse && (
+                          <span className="absolute -bottom-1 -right-1 text-[9px] leading-none select-none">
+                            {hb.seasonalIcon}
+                          </span>
+                        )}
+                      </span>
+                      <span className="max-w-[7.5rem] truncate text-[11px] font-semibold text-foreground">{d.name}</span>
+                    </button>
+                  </div>
                 </Label>
               );
             })}

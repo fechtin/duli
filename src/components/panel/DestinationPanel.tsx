@@ -15,6 +15,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { AISummary } from "./AISummary";
 import { Gallery } from "./Gallery";
 import { Section, InfoRow, Divider } from "./primitives";
+import { HeartbeatSection } from "./HeartbeatSection";
 
 export function DestinationPanel({ id }: { id: string }) {
   const t = useT();
@@ -63,6 +64,9 @@ export function DestinationPanel({ id }: { id: string }) {
           ))}
         </div>
       )}
+
+      {/* Heartbeat score + signals */}
+      <HeartbeatSection destinationId={dest.id} />
 
       {/* 3. Summary */}
       <Section index={0}>

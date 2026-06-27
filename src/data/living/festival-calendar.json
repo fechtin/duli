@@ -1,0 +1,104 @@
+{
+  "festivals": [
+    {
+      "id": "tet-nguyen-dan",
+      "name": "Tết Nguyên Đán",
+      "nameEn": "Lunar New Year",
+      "months": [1, 2],
+      "icon": "🏮",
+      "mood": "festive",
+      "destinationIds": ["hoi-an-old-town", "hue-imperial-city", "ha-noi-old-quarter", "ho-chi-minh-city"],
+      "description": "Lễ tết lớn nhất năm, cả nước đón xuân với hoa đào, bánh chưng và pháo hoa."
+    },
+    {
+      "id": "chua-huong",
+      "name": "Lễ hội Chùa Hương",
+      "nameEn": "Perfume Pagoda Festival",
+      "months": [2, 3],
+      "icon": "⛩",
+      "mood": "spiritual",
+      "destinationIds": ["perfume-pagoda"],
+      "description": "Hành hương lớn nhất miền Bắc, hàng triệu phật tử về Chùa Hương."
+    },
+    {
+      "id": "festival-hue",
+      "name": "Festival Huế",
+      "nameEn": "Hue Festival",
+      "months": [4],
+      "icon": "🎭",
+      "mood": "cultural",
+      "destinationIds": ["hue-imperial-city"],
+      "description": "Lễ hội văn hoá quốc tế, trình diễn nghệ thuật cung đình và đương đại."
+    },
+    {
+      "id": "phao-hoa-da-nang",
+      "name": "Lễ hội pháo hoa Đà Nẵng",
+      "nameEn": "Da Nang International Fireworks Festival",
+      "months": [6, 7],
+      "icon": "🎆",
+      "mood": "spectacular",
+      "destinationIds": ["da-nang-coast"],
+      "description": "Cuộc thi pháo hoa quốc tế hàng đầu châu Á, bên sông Hàn."
+    },
+    {
+      "id": "trung-thu",
+      "name": "Tết Trung Thu",
+      "nameEn": "Mid-Autumn Festival",
+      "months": [9],
+      "icon": "🌕",
+      "mood": "festive",
+      "destinationIds": ["hoi-an-old-town", "ha-noi-old-quarter"],
+      "description": "Hội An thắp ngàn đèn lồng, phố Hàng Mã Hà Nội rực rỡ."
+    },
+    {
+      "id": "tam-giac-mach",
+      "name": "Lễ hội hoa tam giác mạch",
+      "nameEn": "Buckwheat Flower Festival",
+      "months": [10, 11],
+      "icon": "🌼",
+      "mood": "bloom",
+      "destinationIds": ["ha-giang-loop", "dong-van-old-town"],
+      "description": "Hoa tam giác mạch nở hồng cả cao nguyên đá Đồng Văn."
+    },
+    {
+      "id": "festival-hoa-da-lat",
+      "name": "Festival Hoa Đà Lạt",
+      "nameEn": "Da Lat Flower Festival",
+      "months": [11, 12],
+      "icon": "🌺",
+      "mood": "festive",
+      "destinationIds": ["da-lat-city"],
+      "description": "Lễ hội hoa lớn nhất Tây Nguyên, rực rỡ khắp thành phố sương mù."
+    },
+    {
+      "id": "giang-sinh",
+      "name": "Giáng sinh",
+      "nameEn": "Christmas",
+      "months": [12],
+      "icon": "🎄",
+      "mood": "festive",
+      "destinationIds": ["da-lat-city", "hoi-an-old-town", "ho-chi-minh-city"],
+      "description": "Đà Lạt lung linh trong sương, Hội An rực đèn lồng đêm Noel."
+    },
+    {
+      "id": "kate",
+      "name": "Lễ hội Katê",
+      "nameEn": "Kate Festival",
+      "months": [9, 10],
+      "icon": "🎉",
+      "mood": "cultural",
+      "destinationIds": ["phan-rang-ninh-thuan"],
+      "description": "Lễ hội lớn nhất của người Chăm, tại tháp Po Klong Garai."
+    },
+    {
+      "id": "trang-an",
+      "name": "Lễ hội Tràng An",
+      "nameEn": "Trang An Festival",
+      "months": [2, 3],
+      "icon": "⛵",
+      "mood": "spiritual",
+      "destinationIds": ["ninh-binh-trang-an"],
+      "description": "Hành hương trên thuyền qua hàng chục hang động thiên nhiên."
+    }
+  ]
+}

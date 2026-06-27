@@ -1,0 +1,63 @@
+{
+  "1":  [
+    { "destinationId": "sapa-terraces",      "flower": "Hoa đào",         "icon": "🌸" },
+    { "destinationId": "moc-chau-plateau",   "flower": "Hoa mận trắng",   "icon": "🌸" },
+    { "destinationId": "da-lat-city",        "flower": "Hoa hồng Tết",    "icon": "🌹" }
+  ],
+  "2":  [
+    { "destinationId": "moc-chau-plateau",   "flower": "Hoa mơ, hoa mận", "icon": "🌸" },
+    { "destinationId": "sapa-terraces",      "flower": "Hoa đào cuối mùa","icon": "🌸" },
+    { "destinationId": "ha-giang-loop",      "flower": "Hoa lê trắng",    "icon": "⚪" }
+  ],
+  "3":  [
+    { "destinationId": "da-lat-city",        "flower": "Hoa anh đào",     "icon": "🌸" },
+    { "destinationId": "ha-long-bay",        "flower": "Hoa sưa trắng",   "icon": "⚪" },
+    { "destinationId": "ninh-binh-trang-an", "flower": "Hoa súng tím",    "icon": "💜" }
+  ],
+  "4":  [
+    { "destinationId": "da-lat-city",        "flower": "Hoa phượng tím",  "icon": "💜" },
+    { "destinationId": "hue-imperial-city",  "flower": "Sen trắng hồ Tịnh Tâm", "icon": "🪷" },
+    { "destinationId": "ha-noi-old-quarter", "flower": "Hoa loa kèn",     "icon": "🤍" }
+  ],
+  "5":  [
+    { "destinationId": "ha-noi-old-quarter", "flower": "Hoa loa kèn",     "icon": "🤍" },
+    { "destinationId": "hue-imperial-city",  "flower": "Sen Tịnh Tâm",    "icon": "🪷" },
+    { "destinationId": "ninh-binh-trang-an", "flower": "Hoa sen đồng",    "icon": "🪷" }
+  ],
+  "6":  [
+    { "destinationId": "da-lat-city",        "flower": "Hoa dã quỳ vàng", "icon": "🌻" },
+    { "destinationId": "sapa-terraces",      "flower": "Ruộng lúa xanh",  "icon": "🌿" },
+    { "destinationId": "mu-cang-chai-terraces","flower":"Ruộng bậc thang xanh","icon":"🌿"}
+  ],
+  "7":  [
+    { "destinationId": "da-lat-city",        "flower": "Hoa lavender",    "icon": "💜" },
+    { "destinationId": "sapa-terraces",      "flower": "Hoa hồng leo",    "icon": "🌹" },
+    { "destinationId": "ha-giang-loop",      "flower": "Hoa dong riềng đỏ","icon":"🔴" }
+  ],
+  "8":  [
+    { "destinationId": "mu-cang-chai-terraces","flower":"Lúa chuyển vàng đầu","icon":"🌾"},
+    { "destinationId": "ha-giang-loop",      "flower": "Hoa tam giác mạch nở sớm","icon":"🌼"},
+    { "destinationId": "sapa-terraces",      "flower": "Ruộng bậc thang chín dần","icon":"🌾"}
+  ],
+  "9":  [
+    { "destinationId": "mu-cang-chai-terraces","flower":"Lúa chín vàng rực","icon":"🌾"},
+    { "destinationId": "sapa-terraces",      "flower": "Ruộng bậc thang vàng","icon":"🌾"},
+    { "destinationId": "ha-giang-loop",      "flower": "Hoa tam giác mạch","icon":"🌼"},
+    { "destinationId": "ninh-binh-trang-an", "flower": "Lúa vàng giữa núi","icon":"🌾"}
+  ],
+  "10": [
+    { "destinationId": "ha-giang-loop",      "flower": "Hoa tam giác mạch rực nhất","icon":"🌼"},
+    { "destinationId": "da-lat-city",        "flower": "Hoa dã quỳ vàng", "icon": "🌻" },
+    { "destinationId": "moc-chau-plateau",   "flower": "Rừng lá vàng đỏ", "icon": "🍂" }
+  ],
+  "11": [
+    { "destinationId": "moc-chau-plateau",   "flower": "Hoa cải trắng",   "icon": "🤍" },
+    { "destinationId": "da-lat-city",        "flower": "Hoa mimosa vàng", "icon": "💛" },
+    { "destinationId": "ha-giang-loop",      "flower": "Hoa tam giác mạch cuối mùa","icon":"🌼"}
+  ],
+  "12": [
+    { "destinationId": "moc-chau-plateau",   "flower": "Hoa cải trắng mùa đông","icon":"🤍"},
+    { "destinationId": "da-lat-city",        "flower": "Hoa hồng Giáng sinh","icon":"🌹"},
+    { "destinationId": "sapa-terraces",      "flower": "Hoa mận tuyết",   "icon": "❄" }
+  ]
+}
