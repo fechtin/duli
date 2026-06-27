@@ -34,11 +34,19 @@ export const usePassportStore = create<PassportState>()(
         const { checkins } = get();
         const provinces = new Set(checkins.map((c) => c.provinceSlug));
         const out: AwardedBadge[] = [];
-        if (checkins.length >= 1) out.push({ id: "first-step", emoji: "🧭", label: "Bước chân đầu tiên" });
-        if (checkins.length >= 5) out.push({ id: "explorer", emoji: "🗺️", label: "Người khám phá" });
-        if (provinces.size >= 3) out.push({ id: "wanderer", emoji: "🚲", label: "Kẻ lữ hành" });
-        if (provinces.size >= 10) out.push({ id: "north-south", emoji: "🇻🇳", label: "Dọc miền đất nước" });
+        // Khám phá
+        if (checkins.length >= 1)  out.push({ id: "first-step",   emoji: "🧭", label: "Bước chân đầu tiên" });
+        if (checkins.length >= 5)  out.push({ id: "explorer",     emoji: "🗺️", label: "Nhà khám phá" });
+        if (checkins.length >= 20) out.push({ id: "veteran",      emoji: "⛵", label: "Lữ hành kỳ cựu" });
+        if (checkins.length >= 40) out.push({ id: "conqueror",    emoji: "🏔️", label: "Chinh phục Việt Nam" });
+        // Tỉnh thành
+        if (provinces.size >= 3)  out.push({ id: "wanderer",     emoji: "🚲", label: "Kẻ lữ hành" });
+        if (provinces.size >= 10) out.push({ id: "north-south",  emoji: "🇻🇳", label: "Dọc miền đất nước" });
+        if (provinces.size >= 30) out.push({ id: "half-country", emoji: "🌄", label: "Nửa dải đất nước" });
+        if (provinces.size >= 63) out.push({ id: "full-country", emoji: "💎", label: "Trọn vẹn Việt Nam" });
+        // Trải nghiệm
         if (checkins.length >= 12) out.push({ id: "storyteller", emoji: "📷", label: "Người kể chuyện" });
+        if (checkins.length >= 3)  out.push({ id: "foodie",      emoji: "🍜", label: "Tín đồ ẩm thực" });
         return out;
       },
     }),

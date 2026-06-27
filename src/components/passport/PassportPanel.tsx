@@ -81,7 +81,7 @@ export function PassportPanel() {
             <div className="no-scrollbar flex-1 overflow-y-auto">
               {/* Hidden export card */}
               <div className="pointer-events-none absolute -left-[9999px] top-0">
-                <ShareCard ref={cardRef} provincesVisited={visitedProvinces.length} checkins={checkins.length} badges={badges.length} />
+                <ShareCard ref={cardRef} provincesVisited={visitedProvinces.length} visitedRegions={visitedRegions.length} checkins={checkins} badges={badges} />
               </div>
 
               {/* Passport Cover Card */}
@@ -198,11 +198,9 @@ export function PassportPanel() {
                       <SectionHeader label={t("passport.yourBadges")} count={badges.length} />
                       <div className="mt-3 flex gap-3 overflow-x-auto no-scrollbar pb-1">
                         {badges.map((b) => (
-                          <div key={b.id} className="flex flex-col items-center gap-1.5 shrink-0 w-16">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#d4a84b]/20 to-[#d4a84b]/5 border border-[#d4a84b]/30 flex items-center justify-center text-xl shadow-[0_0_12px_rgba(212,168,75,0.15)]">
-                              {b.emoji}
-                            </div>
-                            <span className="text-[9px] text-center text-muted leading-tight font-medium">{b.label}</span>
+                          <div key={b.id} className="flex flex-col items-center gap-2 shrink-0 w-[72px]">
+                            <BadgeMedal emoji={b.emoji} />
+                            <span className="text-[9px] text-center text-muted leading-snug font-medium px-0.5">{b.label}</span>
                           </div>
                         ))}
                       </div>
@@ -251,6 +249,39 @@ function MiniStat({ value, label }: { value: string; label: string }) {
       <span className="text-base font-bold text-white leading-none">{value}</span>
       <span className="mt-0.5 text-[8px] text-white/45 leading-tight">{label}</span>
     </div>
+  );
+}
+
+// Badge medal — resembles the golden circular badges in badges.png design
+function BadgeMedal({ emoji }: { emoji: string }) {
+  const S = 56;
+  const c = S / 2;
+  return (
+    <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} xmlns="http://www.w3.org/2000/svg">
+      {/* Outer ring with tick marks */}
+      <circle cx={c} cy={c} r={c - 1} fill="#0d2a2e" stroke="#c49a2a" strokeWidth="2" />
+      {/* Inner ring */}
+      <circle cx={c} cy={c} r={c - 6} fill="none" stroke="rgba(212,168,75,0.35)" strokeWidth="1" />
+      {/* Decorative dots at cardinal points */}
+      {[0, 90, 180, 270].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        const r2 = c - 4;
+        return (
+          <circle
+            key={deg}
+            cx={c + Math.cos(rad) * r2}
+            cy={c + Math.sin(rad) * r2}
+            r={1.5}
+            fill="#c49a2a"
+            opacity="0.7"
+          />
+        );
+      })}
+      {/* Emoji */}
+      <text x={c} y={c + 8} textAnchor="middle" fontSize="22" fontFamily="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">
+        {emoji}
+      </text>
+    </svg>
   );
 }
 
