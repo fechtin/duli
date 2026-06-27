@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X, Sparkles, Check, ArrowLeft, Share2 } from "lucide-react";
+import { X, Sparkles, Check, ArrowLeft, Share2, Camera, Loader2 } from "lucide-react";
 import { ai } from "@/lib/ai";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
@@ -10,6 +10,7 @@ import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Button } from "@/components/ui/Button";
 import { panelTransition, springSoft } from "@/design/motion";
 import { cn } from "@/lib/utils/cn";
+import { uploadCheckinPhoto } from "@/lib/share/uploadPhoto";
 
 const steps = ["checkin.step.photo", "checkin.step.caption", "checkin.step.share"] as const;
 
@@ -25,8 +26,12 @@ export function CheckinFlow() {
   const dest = targetId ? destinations.find((d) => d.id === targetId) : undefined;
   const [step, setStep] = useState(0);
   const [photo, setPhoto] = useState<string | null>(null);
+  const [uploadedUrl, setUploadedUrl] = useState<string | null>(null);
+  const [uploadedPreview, setUploadedPreview] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
   const [caption, setCaption] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
   const open = Boolean(dest);
 
   // Reset when a new target opens.
@@ -34,11 +39,35 @@ export function CheckinFlow() {
     if (!targetId) return;
     setStep(0);
     setPhoto(destinations.find((d) => d.id === targetId)?.gallery[0]?.seed ?? null);
+    setUploadedUrl(null);
+    setUploadedPreview(null);
     setCaption("");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetId]);
 
   if (!dest) return null;
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Immediate local preview
+    const preview = URL.createObjectURL(file);
+    setUploadedPreview(preview);
+    setUploadedUrl(null);
+    setPhoto(null); // clear gallery selection
+
+    // Upload in background
+    setUploading(true);
+    try {
+      const url = await uploadCheckinPhoto(file, dest.id);
+      setUploadedUrl(url);
+    } catch {
+      // Upload failed — keep local preview, photoUrl will be null on save
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const writeWithAI = async () => {
     setAiBusy(true);
@@ -54,9 +83,13 @@ export function CheckinFlow() {
       provinceSlug: dest.provinceSlug,
       caption: caption.trim() || dest.name,
       photoSeed: photo ?? dest.id,
+      photoUrl: uploadedUrl ?? undefined,
     });
     setStep(2);
   };
+
+  const selectedSeed = photo;
+  const hasPhoto = Boolean(selectedSeed || uploadedPreview);
 
   return (
     <AnimatePresence>
@@ -99,21 +132,60 @@ export function CheckinFlow() {
               {step === 0 && (
                 <div>
                   <p className="mb-3 text-sm text-muted">{t("checkin.addPhoto")}</p>
-                  <div className="grid grid-cols-3 gap-2">
-                    {dest.gallery.map((g) => (
-                      <button
-                        key={g.seed}
-                        onClick={() => setPhoto(g.seed)}
-                        className={cn(
-                          "overflow-hidden rounded-[var(--radius-md)] ring-2 transition",
-                          photo === g.seed ? "ring-primary" : "ring-transparent hover:ring-border-strong",
-                        )}
-                      >
-                        <IllustratedImage seed={g.seed} ratio="1/1" rounded={false} />
-                      </button>
-                    ))}
-                  </div>
-                  <Button className="mt-5 w-full" onClick={() => setStep(1)} disabled={!photo}>
+
+                  {/* Upload from device */}
+                  <input
+                    ref={fileRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleFileChange}
+                  />
+                  <button
+                    onClick={() => fileRef.current?.click()}
+                    className={cn(
+                      "mb-3 flex w-full items-center gap-2.5 rounded-[var(--radius-md)] border-2 border-dashed px-4 py-3 text-sm transition",
+                      uploadedPreview
+                        ? "border-primary/60 bg-primary/5 text-primary"
+                        : "border-border text-muted hover:border-primary/50 hover:text-foreground",
+                    )}
+                  >
+                    {uploading ? (
+                      <Loader2 size={16} className="animate-spin shrink-0" />
+                    ) : (
+                      <Camera size={16} className="shrink-0" />
+                    )}
+                    <span className="truncate">
+                      {uploading
+                        ? "Đang tải ảnh lên..."
+                        : uploadedPreview
+                          ? "Ảnh của bạn đã chọn ✓"
+                          : "Tải ảnh từ thiết bị"}
+                    </span>
+                    {uploadedPreview && (
+                      <img src={uploadedPreview} className="ml-auto h-10 w-10 shrink-0 rounded object-cover" />
+                    )}
+                  </button>
+
+                  {/* Gallery fallback */}
+                  {!uploadedPreview && (
+                    <div className="grid grid-cols-3 gap-2">
+                      {dest.gallery.map((g) => (
+                        <button
+                          key={g.seed}
+                          onClick={() => setPhoto(g.seed)}
+                          className={cn(
+                            "overflow-hidden rounded-[var(--radius-md)] ring-2 transition",
+                            photo === g.seed ? "ring-primary" : "ring-transparent hover:ring-border-strong",
+                          )}
+                        >
+                          <IllustratedImage seed={g.seed} ratio="1/1" rounded={false} />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  <Button className="mt-5 w-full" onClick={() => setStep(1)} disabled={!hasPhoto}>
                     {t("checkin.next")}
                   </Button>
                 </div>
@@ -121,7 +193,13 @@ export function CheckinFlow() {
 
               {step === 1 && (
                 <div>
-                  {photo && <IllustratedImage seed={photo} ratio="16/9" className="mb-3" />}
+                  {uploadedPreview ? (
+                    <div className="mb-3 overflow-hidden rounded-[var(--radius-md)] aspect-video w-full bg-surface-2">
+                      <img src={uploadedPreview} className="h-full w-full object-cover" />
+                    </div>
+                  ) : (
+                    selectedSeed && <IllustratedImage seed={selectedSeed} ratio="16/9" className="mb-3" />
+                  )}
                   <textarea
                     value={caption}
                     onChange={(e) => setCaption(e.target.value)}
@@ -137,8 +215,8 @@ export function CheckinFlow() {
                     <Sparkles size={13} />
                     {aiBusy ? t("ai.thinking") : t("checkin.aiCaption")}
                   </button>
-                  <Button className="mt-5 w-full" onClick={finish}>
-                    {t("checkin.done")}
+                  <Button className="mt-5 w-full" onClick={finish} disabled={uploading}>
+                    {uploading ? "Đang tải ảnh..." : t("checkin.done")}
                   </Button>
                 </div>
               )}
@@ -149,7 +227,13 @@ export function CheckinFlow() {
                     <Check size={28} />
                   </div>
                   <p className="mb-1 font-display text-lg font-semibold text-foreground">{t("checkin.success")}</p>
-                  {photo && <IllustratedImage seed={photo} ratio="16/9" caption={caption || dest.name} className="mt-4" />}
+                  {uploadedPreview ? (
+                    <div className="mt-4 overflow-hidden rounded-[var(--radius-md)] aspect-video w-full bg-surface-2">
+                      <img src={uploadedPreview} className="h-full w-full object-cover" />
+                    </div>
+                  ) : (
+                    selectedSeed && <IllustratedImage seed={selectedSeed} ratio="16/9" caption={caption || dest.name} className="mt-4" />
+                  )}
                   <div className="mt-5 flex gap-2">
                     <Button
                       variant="secondary"

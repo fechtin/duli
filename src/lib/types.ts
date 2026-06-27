@@ -167,6 +167,8 @@ export interface Checkin {
   provinceSlug: string;
   caption: string;
   photoSeed: string;
+  /** URL to user-uploaded photo (Firebase Storage). Falls back to photoSeed if absent. */
+  photoUrl?: string;
   createdAt: number;
 }
 

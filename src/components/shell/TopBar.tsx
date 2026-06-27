@@ -3,6 +3,7 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useT } from "@/lib/i18n";
 import { LanguageMenu } from "./LanguageMenu";
+import { LoginButton } from "@/components/auth/LoginButton";
 
 /** Desktop top bar — minimal, floating over the map (Bible 007 §16). */
 export function TopBar() {
@@ -50,6 +51,7 @@ export function TopBar() {
         >
           🛂
         </button>
+        <LoginButton />
         <LanguageMenu />
         <button
           aria-label={t("nav.theme")}

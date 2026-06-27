@@ -10,6 +10,7 @@ import { ok, fail, streamText } from "./respond";
 interface Env {
   ASSETS: { fetch: (req: Request) => Promise<Response> };
   DB: D1Like;
+  UPLOADS: R2Bucket;
 }
 
 const app = new Hono<{ Bindings: Env }>();
@@ -80,6 +81,38 @@ api.post("/ai/summary", async (c) => {
 api.post("/ai/caption", async (c) => {
   const body = await c.req.json<Record<string, unknown>>();
   return ok(c, { caption: await ai.caption(await aiContext(c.env, body)) }, 0);
+});
+
+// ── File uploads → R2 ─────────────────────────────────────────
+api.post("/upload", async (c) => {
+  const form = await c.req.formData();
+  const file = form.get("file");
+  if (!(file instanceof File)) return fail(c, "bad_request", "No file", 400);
+
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "jpg";
+  const allowed = ["jpg", "jpeg", "png", "webp", "gif"];
+  if (!allowed.includes(ext)) return fail(c, "bad_request", "Unsupported file type", 400);
+  if (file.size > 10 * 1024 * 1024) return fail(c, "bad_request", "File too large (max 10 MB)", 400);
+
+  const prefix = (form.get("prefix") as string | null) ?? "uploads";
+  const key = `${prefix}/${crypto.randomUUID()}.${ext}`;
+
+  await c.env.UPLOADS.put(key, file.stream(), {
+    httpMetadata: { contentType: file.type || "image/jpeg" },
+  });
+
+  return ok(c, { url: `/api/v1/uploads/${key}` }, 0);
+});
+
+// Serve uploaded files from R2
+api.get("/uploads/*", async (c) => {
+  const key = c.req.path.replace("/api/v1/uploads/", "");
+  const obj = await c.env.UPLOADS.get(key);
+  if (!obj) return fail(c, "not_found", "File not found", 404);
+  const headers = new Headers();
+  obj.writeHttpMetadata(headers);
+  headers.set("Cache-Control", "public, max-age=31536000, immutable");
+  return new Response(obj.body, { headers });
 });
 
 api.notFound((c) => fail(c, "not_found", "Unknown endpoint", 404));

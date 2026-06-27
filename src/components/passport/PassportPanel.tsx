@@ -1,17 +1,20 @@
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X, Share2, Compass, MapPin, Star } from "lucide-react";
+import { X, Share2, Compass, MapPin, Star, Loader2 } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useContentStore } from "@/lib/store/useContentStore";
+import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { useT } from "@/lib/i18n";
 import { panelTransition } from "@/design/motion";
 import { Button } from "@/components/ui/Button";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { ShareCard } from "@/components/share/ShareCard";
-import { shareOrDownload } from "@/lib/share/exportPng";
+import { shareOrDownload, fetchCheckinPhotos } from "@/lib/share/exportPng";
+import { getMapModel } from "@/lib/map/mapModelCache";
+import type { ProvinceShape } from "@/lib/map/projection";
 import geoMeta from "@/data/generated/geo-meta.json";
 
 const provinceToRegion: Record<string, string> = Object.fromEntries(
@@ -24,6 +27,8 @@ export function PassportPanel() {
   const open = useUIStore((s) => s.passportOpen);
   const setOpen = useUIStore((s) => s.setPassportOpen);
   const checkins = usePassportStore((s) => s.checkins);
+  const user = useAuthStore((s) => s.user);
+  const customAvatarUrl = useAuthStore((s) => s.customAvatarUrl);
 
   const visitedProvinces = useMemo(() => [...new Set(checkins.map((c) => c.provinceSlug))], [checkins]);
   const visitedRegions = useMemo(
@@ -37,8 +42,37 @@ export function PassportPanel() {
   const destinations = useContentStore((s) => s.destinations);
   const cardRef = useRef<SVGSVGElement>(null);
 
-  const onShare = () => {
-    if (cardRef.current) shareOrDownload(cardRef.current);
+  // Map model for mini-map
+  const [mapProvinces, setMapProvinces] = useState<ProvinceShape[]>([]);
+  const [mapWidth, setMapWidth] = useState(1000);
+  const [mapHeight, setMapHeight] = useState(2200);
+
+  // Pre-fetched photos for canvas export
+  const [photosBase64, setPhotosBase64] = useState<Record<string, string>>({});
+  const [exporting, setExporting] = useState(false);
+
+  useEffect(() => {
+    getMapModel().then((m) => {
+      setMapProvinces(m.provinces);
+      setMapWidth(m.width);
+      setMapHeight(m.height);
+    });
+  }, []);
+
+  // Pre-fetch photos when checkins change
+  useEffect(() => {
+    if (checkins.length === 0) return;
+    fetchCheckinPhotos(checkins).then(setPhotosBase64);
+  }, [checkins]);
+
+  const onShare = async () => {
+    if (!cardRef.current) return;
+    setExporting(true);
+    try {
+      await shareOrDownload(cardRef.current);
+    } finally {
+      setExporting(false);
+    }
   };
 
   const openDestination = (destinationId: string, provinceSlug: string) => {
@@ -79,23 +113,31 @@ export function PassportPanel() {
             </div>
 
             <div className="no-scrollbar flex-1 overflow-y-auto">
-              {/* Hidden export card */}
+              {/* Hidden export card — off-screen, renders with all data */}
               <div className="pointer-events-none absolute -left-[9999px] top-0">
-                <ShareCard ref={cardRef} provincesVisited={visitedProvinces.length} visitedRegions={visitedRegions.length} checkins={checkins} badges={badges} />
+                <ShareCard
+                  ref={cardRef}
+                  provincesVisited={visitedProvinces.length}
+                  visitedRegions={visitedRegions.length}
+                  visitedProvinceSlugs={visitedProvinces}
+                  checkins={checkins}
+                  badges={badges}
+                  user={user}
+                  customAvatarUrl={customAvatarUrl}
+                  photosBase64={photosBase64}
+                  mapProvinces={mapProvinces}
+                  mapWidth={mapWidth}
+                  mapHeight={mapHeight}
+                />
               </div>
 
               {/* Passport Cover Card */}
               <div className="relative overflow-hidden mx-0"
                 style={{ background: "linear-gradient(160deg, #0d2a35 0%, #16504a 55%, #0e3030 100%)" }}>
-                {/* Decorative border */}
                 <div className="absolute inset-[10px] rounded-none border border-white/10 pointer-events-none" />
-
-                {/* Compass watermark */}
                 <div className="absolute bottom-4 right-6 opacity-10">
                   <CompassRoseSvg size={80} />
                 </div>
-
-                {/* Vietnam map watermark */}
                 <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-[0.07]">
                   <VietnamOutlineSvg size={70} />
                 </div>
@@ -104,14 +146,28 @@ export function PassportPanel() {
                   {/* Left: emblem + title */}
                   <div className="flex flex-col items-center gap-2 shrink-0">
                     <div className="relative">
-                      <div className="w-16 h-16 rounded-full bg-white/5 border border-[#d4a84b]/40 flex items-center justify-center">
-                        <VietnamOutlineSvg size={38} color="#d4a84b" />
-                      </div>
+                      {user ? (
+                        <div className="w-16 h-16 rounded-full overflow-hidden border border-[#d4a84b]/40">
+                          {(customAvatarUrl || user.photoURL) ? (
+                            <img src={customAvatarUrl || user.photoURL} alt={user.displayName} className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="w-full h-full bg-white/5 flex items-center justify-center text-[#d4a84b] text-xl font-bold">
+                              {user.displayName[0].toUpperCase()}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="w-16 h-16 rounded-full bg-white/5 border border-[#d4a84b]/40 flex items-center justify-center">
+                          <VietnamOutlineSvg size={38} color="#d4a84b" />
+                        </div>
+                      )}
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#d4a84b]/20 border border-[#d4a84b]/50 flex items-center justify-center">
                         <Star size={9} fill="#d4a84b" color="#d4a84b" />
                       </div>
                     </div>
-                    <p className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-medium">VIETNAM ATLAS</p>
+                    <p className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-medium">
+                      {user?.displayName ? user.displayName.split(" ").slice(-1)[0].toUpperCase() : "VIETNAM ATLAS"}
+                    </p>
                   </div>
 
                   {/* Right: title + stats */}
@@ -123,7 +179,6 @@ export function PassportPanel() {
                       VIETNAM<br />PASSPORT
                     </h2>
 
-                    {/* Province progress */}
                     <div className="mt-3">
                       <div className="flex items-end justify-between mb-1">
                         <span className="text-[10px] text-white/50 uppercase tracking-wider">{t("passport.explored")}</span>
@@ -142,7 +197,6 @@ export function PassportPanel() {
                       </div>
                     </div>
 
-                    {/* 4-stat grid */}
                     <div className="mt-3 grid grid-cols-4 gap-1 text-center">
                       <MiniStat value={String(visitedProvinces.length)} label={t("passport.provincesLabel")} />
                       <MiniStat value={String(visitedRegions.length)} label={t("passport.regions")} />
@@ -155,9 +209,9 @@ export function PassportPanel() {
 
               {/* Share button */}
               <div className="px-5 pt-3 pb-1">
-                <Button className="w-full" variant="secondary" onClick={onShare} disabled={checkins.length === 0}>
-                  <Share2 size={15} />
-                  {t("passport.share")}
+                <Button className="w-full" variant="secondary" onClick={onShare} disabled={checkins.length === 0 || exporting}>
+                  {exporting ? <Loader2 size={15} className="animate-spin" /> : <Share2 size={15} />}
+                  {exporting ? "Đang xuất ảnh..." : t("passport.share")}
                 </Button>
               </div>
 
@@ -175,8 +229,13 @@ export function PassportPanel() {
                           onClick={() => openDestination(c.destinationId, c.provinceSlug)}
                           className="group relative overflow-hidden rounded-[var(--radius-md)] border border-border text-left transition-all hover:border-primary/40 hover:shadow-[var(--elevation-1)]"
                         >
-                          <IllustratedImage seed={c.photoSeed} ratio="4/3" className="w-full" />
-                          {/* Number badge */}
+                          {c.photoUrl ? (
+                            <div className="aspect-[4/3] w-full overflow-hidden">
+                              <img src={c.photoUrl} alt={c.destinationName} className="h-full w-full object-cover" />
+                            </div>
+                          ) : (
+                            <IllustratedImage seed={c.photoSeed} ratio="4/3" className="w-full" />
+                          )}
                           <div className="absolute top-2 left-2 w-5 h-5 rounded-full bg-black/60 flex items-center justify-center">
                             <span className="text-[9px] font-bold text-white">{i + 1}</span>
                           </div>
@@ -219,7 +278,11 @@ export function PassportPanel() {
                               className="flex flex-col items-center gap-1.5 w-20 hover:opacity-80 transition-opacity"
                             >
                               <div className="w-8 h-8 rounded-full bg-primary/10 border-2 border-primary/40 flex items-center justify-center overflow-hidden">
-                                <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full object-cover" />
+                                {c.photoUrl ? (
+                                  <img src={c.photoUrl} alt={c.destinationName} className="w-full h-full object-cover" />
+                                ) : (
+                                  <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full object-cover" />
+                                )}
                               </div>
                               <span className="text-[9px] text-center text-muted leading-tight px-1 font-medium">
                                 {c.destinationName}
@@ -252,33 +315,22 @@ function MiniStat({ value, label }: { value: string; label: string }) {
   );
 }
 
-// Badge medal — resembles the golden circular badges in badges.png design
 function BadgeMedal({ emoji }: { emoji: string }) {
   const S = 56;
   const c = S / 2;
   return (
     <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Outer ring with tick marks */}
       <circle cx={c} cy={c} r={c - 1} fill="#0d2a2e" stroke="#c49a2a" strokeWidth="2" />
-      {/* Inner ring */}
       <circle cx={c} cy={c} r={c - 6} fill="none" stroke="rgba(212,168,75,0.35)" strokeWidth="1" />
-      {/* Decorative dots at cardinal points */}
       {[0, 90, 180, 270].map((deg) => {
         const rad = (deg * Math.PI) / 180;
         const r2 = c - 4;
         return (
-          <circle
-            key={deg}
-            cx={c + Math.cos(rad) * r2}
-            cy={c + Math.sin(rad) * r2}
-            r={1.5}
-            fill="#c49a2a"
-            opacity="0.7"
-          />
+          <circle key={deg} cx={c + Math.cos(rad) * r2} cy={c + Math.sin(rad) * r2} r={1.5} fill="#c49a2a" opacity="0.7" />
         );
       })}
-      {/* Emoji */}
-      <text x={c} y={c + 8} textAnchor="middle" fontSize="22" fontFamily="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">
+      <text x={c} y={c + 8} textAnchor="middle" fontSize="22"
+        fontFamily="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">
         {emoji}
       </text>
     </svg>
@@ -318,13 +370,6 @@ function VietnamOutlineSvg({ size = 40, color = "currentColor" }: { size?: numbe
         fill={color}
         opacity="0.9"
       />
-      <path
-        d="M20 2 C24 2 28 5 30 9 C32 13 31 18 29 22 C27 26 28 30 29 34 C30 38 29 42 27 45 C25 48 24 52 25 56 C26 60 24 64 21 68 C18 72 15 78 12 84 C10 88 9 92 10 94"
-        stroke={color}
-        strokeWidth="1.5"
-        fill="none"
-        opacity="0.5"
-      />
     </svg>
   );
 }
@@ -336,7 +381,6 @@ function CompassRoseSvg({ size = 60 }: { size?: number }) {
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx={c} cy={c} r={r} stroke="white" strokeWidth="1" opacity="0.4" />
       <circle cx={c} cy={c} r={r * 0.6} stroke="white" strokeWidth="0.5" opacity="0.3" />
-      {/* Cardinal arrows */}
       <polygon points={`${c},${c - r * 0.9} ${c - 4},${c} ${c + 4},${c}`} fill="white" opacity="0.9" />
       <polygon points={`${c},${c + r * 0.9} ${c - 4},${c} ${c + 4},${c}`} fill="white" opacity="0.5" />
       <polygon points={`${c - r * 0.9},${c} ${c},${c - 4} ${c},${c + 4}`} fill="white" opacity="0.5" />

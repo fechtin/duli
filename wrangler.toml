@@ -20,3 +20,7 @@ binding = "DB"
 database_name = "atlas_db"
 database_id = "275462e3-549f-40e2-8c23-9d025703f1df"
 migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "atlas-uploads"
