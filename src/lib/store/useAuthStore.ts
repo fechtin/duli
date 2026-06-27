@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { usePassportStore } from "@/lib/store/usePassportStore";
 
 export interface AuthUser {
   uid: string;
@@ -47,6 +48,7 @@ export const useAuthStore = create<AuthState>()(
       signOut: async () => {
         await fbSignOut(auth);
         set({ user: null, customAvatarUrl: null });
+        usePassportStore.getState().clearForLogout();
       },
 
       updateAvatar: (url) => set({ customAvatarUrl: url }),
@@ -62,6 +64,8 @@ export const useAuthStore = create<AuthState>()(
                 email: u.email ?? "",
               },
             }));
+            // Sync travel history from server after login
+            usePassportStore.getState().syncFromServer();
           } else {
             set({ user: null });
           }
