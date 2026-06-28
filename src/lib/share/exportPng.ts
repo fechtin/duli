@@ -85,6 +85,15 @@ function fixOklabColors(original: HTMLElement, cloned: HTMLElement) {
   });
 }
 
+const OKLAB_RE = /oklab\([^)]*\)|oklch\([^)]*\)|color\(display-p3[^)]*\)/g;
+
+function fixStylesheets(doc: Document) {
+  doc.querySelectorAll("style").forEach((tag) => {
+    if (!tag.textContent) return;
+    tag.textContent = tag.textContent.replace(OKLAB_RE, (match) => resolveColor(match));
+  });
+}
+
 export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
   const fullHeight = el.scrollHeight;
   const canvas = await html2canvas(el, {
@@ -98,7 +107,10 @@ export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
     windowWidth: el.offsetWidth,
     windowHeight: fullHeight,
     scrollY: -el.scrollTop,
-    onclone: (_doc, cloned) => fixOklabColors(el, cloned),
+    onclone: (doc, cloned) => {
+      fixStylesheets(doc);
+      fixOklabColors(el, cloned);
+    },
   });
   return new Promise<Blob>((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"),
