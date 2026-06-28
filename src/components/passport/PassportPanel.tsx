@@ -239,7 +239,7 @@ export function PassportPanel() {
 
                   {/* ── Badges ── */}
                   {badges.length > 0 && (
-                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
+                    <section className="rounded-2xl" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <div className="px-5 pt-5 pb-4">
                         <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
                           {t("passport.yourBadges")}
