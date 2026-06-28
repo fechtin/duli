@@ -8,6 +8,7 @@ export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
     backgroundColor: "#081420",
     width: el.offsetWidth,
     height: el.scrollHeight,
+    skipFonts: true,
   });
   if (!blob) throw new Error("blob");
   return blob;
