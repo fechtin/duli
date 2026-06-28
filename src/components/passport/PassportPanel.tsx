@@ -132,7 +132,7 @@ export function PassportPanel() {
                     <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
                       Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
                     </p>
-                    <p className="text-[10px] mt-0.5 italic leading-snug max-w-[220px]" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    <p className="text-[10px] mt-0.5 italic truncate" style={{ color: "rgba(255,255,255,0.35)", maxWidth: 260 }}>
                       "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
                     </p>
                   </div>
