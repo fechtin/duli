@@ -89,21 +89,22 @@ export function PassportPanel() {
           <motion.aside
             {...motionProps}
             transition={panelTransition}
-            className="absolute z-50 flex flex-col border-border bg-surface shadow-[var(--shadow-e3)] inset-x-0 bottom-0 max-h-[92%] rounded-t-[var(--radius-sheet)] border-t md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-l"
+            className="absolute z-50 flex flex-col shadow-[var(--shadow-e3)] inset-x-0 bottom-0 max-h-[92%] rounded-t-[var(--radius-sheet)] border-t md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-l"
+            style={{ background: "#07111a", borderColor: "rgba(200,146,42,0.15)" }}
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-border px-5 py-3.5">
-              <p className="font-display text-base font-semibold text-foreground">{t("passport.title")}</p>
-              <button onClick={() => setOpen(false)} aria-label={t("panel.close")} className="text-muted hover:text-foreground">
+            <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+              <p className="font-display text-base font-semibold" style={{ color: "rgba(255,255,255,0.9)" }}>{t("passport.title")}</p>
+              <button onClick={() => setOpen(false)} aria-label={t("panel.close")} style={{ color: "rgba(255,255,255,0.4)" }} className="hover:opacity-80">
                 <X size={18} />
               </button>
             </div>
 
-            <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto">
+            <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto" style={{ background: "#07111a" }}>
 
               {/* ── Cover header ── */}
               <div className="relative overflow-hidden"
-                style={{ background: "linear-gradient(160deg, #0a2030 0%, #0f3d38 55%, #0b2828 100%)" }}>
+                style={{ background: "linear-gradient(160deg, #0b2535 0%, #103e3a 55%, #0c2d2d 100%)" }}>
 
                 {/* Top bar: greeting + share */}
                 <div className="flex items-start justify-between px-5 pt-5 pb-3">
@@ -197,12 +198,12 @@ export function PassportPanel() {
               ) : (
                 <div className="pb-6 space-y-3 mt-3" style={{ padding: "0 12px 24px" }}>
                   {/* ── Visited places ── */}
-                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0b1c28", border: "1px solid rgba(200,146,42,0.12)" }}>
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0c1d2a", border: "1px solid rgba(255,255,255,0.07)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-4">
-                      <h3 className="text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "#c8922a" }}>
+                      <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
                         {t("passport.visitedPlaces")}
                       </h3>
-                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#c8922a" }}>
+                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
                         Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
@@ -220,22 +221,22 @@ export function PassportPanel() {
                               <div className="absolute inset-0"><IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full" /></div>
                             )}
                             {/* Rich gradient overlay */}
-                            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0) 35%, rgba(5,15,25,0.95) 100%)" }} />
+                            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0) 25%, rgba(4,12,22,0.98) 100%)" }} />
                             {/* Heart */}
-                            <div className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "rgba(10,20,35,0.55)", backdropFilter: "blur(6px)", border: "1px solid rgba(255,255,255,0.15)" }}>
-                              <Heart size={11} className="text-white/70" />
+                            <div className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "rgba(7,17,26,0.6)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                              <Heart size={11} style={{ color: "rgba(255,255,255,0.65)" }} />
                             </div>
                             {/* Text */}
-                            <div className="absolute bottom-0 left-0 right-0 px-2.5 pb-2.5">
+                            <div className="absolute bottom-0 left-0 right-0 px-2.5 pb-3">
                               <div className="flex items-center gap-1 mb-0.5">
                                 <MapPin size={9} style={{ color: "#d4a84b" }} className="shrink-0" />
-                                <span className="text-[11px] font-bold leading-tight" style={{ color: "#fff" }}>{c.destinationName}</span>
+                                <span className="text-[11px] font-bold leading-tight" style={{ color: "#ffffff" }}>{c.destinationName}</span>
                               </div>
                               <div className="flex items-start gap-1 mb-1.5">
-                                <MapPin size={8} className="shrink-0 mt-px" style={{ color: "rgba(255,255,255,0.35)" }} />
-                                <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.5)" }}>{c.caption}</p>
+                                <MapPin size={8} className="shrink-0 mt-px" style={{ color: "rgba(255,255,255,0.3)" }} />
+                                <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>{c.caption}</p>
                               </div>
-                              <p className="text-[9px]" style={{ color: "rgba(212,168,75,0.7)" }}>{dateLabel}</p>
+                              <p className="text-[9px] font-medium" style={{ color: "rgba(212,168,75,0.75)" }}>{dateLabel}</p>
                             </div>
                           </button>
                         );
@@ -245,9 +246,9 @@ export function PassportPanel() {
 
                   {/* ── Badges ── */}
                   {badges.length > 0 && (
-                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0b1c28", border: "1px solid rgba(200,146,42,0.12)" }}>
+                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0c1d2a", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <div className="px-5 pt-5 pb-4">
-                        <h3 className="text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "#c8922a" }}>
+                        <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
                           {t("passport.yourBadges")}
                         </h3>
                       </div>
@@ -259,7 +260,7 @@ export function PassportPanel() {
                               {b.label}
                             </span>
                             {b.description && (
-                              <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(200,146,42,0.7)" }}>
+                              <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(212,168,75,0.65)" }}>
                                 {b.description}
                               </span>
                             )}
@@ -270,12 +271,12 @@ export function PassportPanel() {
                   )}
 
                   {/* ── Timeline ── */}
-                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0b1c28", border: "1px solid rgba(200,146,42,0.12)" }}>
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0c1d2a", border: "1px solid rgba(255,255,255,0.07)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-3">
-                      <h3 className="text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "#c8922a" }}>
+                      <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
                         {t("passport.timeline")}
                       </h3>
-                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#c8922a" }}>
+                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
                         Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
@@ -305,7 +306,7 @@ export function PassportPanel() {
                                     className="flex flex-col items-center hover:opacity-80 transition-opacity shrink-0"
                                     style={{ width: ITEM_W }}
                                   >
-                                    <span className="text-[9px] mb-2 font-medium" style={{ color: "rgba(200,146,42,0.8)" }}>{dateLabel}</span>
+                                    <span className="text-[9px] mb-2 font-medium" style={{ color: "rgba(212,168,75,0.7)" }}>{dateLabel}</span>
                                     {/* Dot */}
                                     <div className="w-3.5 h-3.5 rounded-full z-10 mb-2.5 shrink-0" style={{
                                       background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
@@ -314,7 +315,7 @@ export function PassportPanel() {
                                     <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
                                       {c.destinationName}
                                     </span>
-                                    <span className="text-[9px] text-center mt-1 leading-snug line-clamp-2 px-0.5" style={{ color: "rgba(255,255,255,0.38)" }}>
+                                    <span className="text-[9px] text-center mt-1 leading-snug line-clamp-2 px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
                                       {c.caption}
                                     </span>
                                   </button>
@@ -332,7 +333,7 @@ export function PassportPanel() {
                                   borderRadius: 2,
                                 }} />
                                 <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
-                                <span className="text-[9px] text-center mt-1 leading-snug px-0.5" style={{ color: "rgba(255,255,255,0.38)" }}>Còn nhiều nơi đang chờ bạn</span>
+                                <span className="text-[9px] text-center mt-1 leading-snug px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>Còn nhiều nơi đang chờ bạn</span>
                               </div>
                             </div>
                           </div>
