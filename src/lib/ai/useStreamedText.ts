@@ -12,10 +12,12 @@ export function useStreamedText(start: (() => AsyncGenerator<string>) | null, de
     setDone(false);
     (async () => {
       try {
+        let full = "";
         for await (const tk of start()) {
           if (!alive) return;
-          setText((p) => p + tk);
+          full += tk;
         }
+        if (alive) setText(full);
       } finally {
         if (alive) setDone(true);
       }

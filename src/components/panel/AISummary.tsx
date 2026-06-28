@@ -1,14 +1,24 @@
 import { Sparkles } from "lucide-react";
-import { ai, type AIContext } from "@/lib/ai";
-import { useStreamedText } from "@/lib/ai/useStreamedText";
-import { useI18n, useT } from "@/lib/i18n";
+import type { AIContext } from "@/lib/ai";
+import { useT } from "@/lib/i18n";
 
-/** Streaming AI summary block (Bible 003 §9 step 4, marked as AI per 004 §20). */
+function buildSummary(ctx: AIContext): string {
+  const { destination: dest, provinceBundle: bundle, locale } = ctx;
+  if (dest) {
+    const tip = dest.travelTips[0] ? ` ${dest.travelTips[0]}` : "";
+    if (locale === "vi")
+      return `${dest.summary} Nên đến vào ${dest.bestTime.toLowerCase()}, dành khoảng ${dest.visitDuration.toLowerCase()}.${tip}`;
+    return `${dest.summary} Best visited ${dest.bestTime.toLowerCase()}, plan about ${dest.visitDuration.toLowerCase()}.${tip}`;
+  }
+  if (bundle?.content) {
+    return `${bundle.content.summary} ${bundle.content.story.split(".")[0]}.`;
+  }
+  return locale === "vi" ? "Một nơi đang chờ được khám phá." : "A place waiting to be explored.";
+}
+
 export function AISummary({ context }: { context: AIContext }) {
   const t = useT();
-  const { locale } = useI18n();
-  const key = `${context.destinationId ?? context.provinceSlug ?? ""}-${locale}`;
-  const { text, done } = useStreamedText(() => ai.summary(context), [key]);
+  const text = buildSummary(context);
 
   return (
     <div className="rounded-[var(--radius-md)] border border-primary/20 bg-primary-soft/60 p-4">
@@ -19,10 +29,7 @@ export function AISummary({ context }: { context: AIContext }) {
           {t("common.aiBadge")}
         </span>
       </div>
-      <p className="text-sm leading-relaxed text-foreground/90">
-        {text}
-        {!done && <span className="ml-0.5 inline-block h-3.5 w-0.5 animate-pulse bg-primary align-middle" />}
-      </p>
+      <p className="text-sm leading-relaxed text-foreground/90">{text}</p>
     </div>
   );
 }
