@@ -239,28 +239,28 @@ export function PassportPanel() {
 
                   {/* ── Badges ── */}
                   {badges.length > 0 && (
-                    <section className="rounded-2xl" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
+                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <div className="px-5 pt-5 pb-4">
                         <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
                           {t("passport.yourBadges")}
                         </h3>
                       </div>
-                      <div className="overflow-x-auto no-scrollbar pb-5">
-                        <div className="flex" style={{ gap: 10, paddingLeft: 16, paddingRight: 16 }}>
-                          {badges.map((b) => (
-                            <div key={b.id} className="flex flex-col items-center gap-2 shrink-0" style={{ width: 72 }}>
-                              <BadgeMedal emoji={b.emoji} />
-                              <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
-                                {b.label}
+                      {/* Grid wraps to multiple rows (5/row) — a scroll container would be
+                          clipped when the passport is captured to a static share image. */}
+                      <div className="grid px-4 pb-5" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 10 }}>
+                        {badges.map((b) => (
+                          <div key={b.id} className="flex flex-col items-center gap-2 min-w-0">
+                            <BadgeMedal emoji={b.emoji} />
+                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                              {b.label}
+                            </span>
+                            {b.description && (
+                              <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(212,168,75,0.65)" }}>
+                                {b.description}
                               </span>
-                              {b.description && (
-                                <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(212,168,75,0.65)" }}>
-                                  {b.description}
-                                </span>
-                              )}
-                            </div>
-                          ))}
-                        </div>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </section>
                   )}
