@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X, Share2, Compass, MapPin, Star, Loader2 } from "lucide-react";
+import { X, Share2, Compass, MapPin, Star, Loader2, ChevronRight, Heart } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useMapStore } from "@/lib/store/useMapStore";
@@ -218,48 +218,72 @@ export function PassportPanel() {
               {checkins.length === 0 ? (
                 <EmptyState t={t} setOpen={setOpen} />
               ) : (
-                <div className="px-5 pb-6 space-y-6 mt-4">
+                <div className="px-4 pb-6 space-y-3 mt-3">
                   {/* Visited places */}
-                  <section>
-                    <SectionHeader label={t("passport.visitedPlaces")} count={checkins.length} />
-                    <div className="mt-3 grid grid-cols-2 gap-2.5">
-                      {checkins.map((c, i) => (
-                        <button
-                          key={c.id}
-                          onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                          className="group relative overflow-hidden rounded-[var(--radius-md)] border border-border text-left transition-all hover:border-primary/40 hover:shadow-[var(--elevation-1)]"
-                        >
-                          {c.photoUrl ? (
-                            <div className="aspect-[4/3] w-full overflow-hidden">
-                              <img src={c.photoUrl} alt={c.destinationName} className="h-full w-full object-cover" />
+                  <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
+                    <div className="flex items-center justify-between px-4 pt-4 pb-3">
+                      <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
+                        {t("passport.visitedPlaces")}
+                      </h3>
+                      <button className="flex items-center gap-0.5 text-[10px]" style={{ color: "#c8922a" }}>
+                        Xem tất cả <ChevronRight size={12} />
+                      </button>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 px-3 pb-4">
+                      {checkins.map((c) => {
+                        const d = new Date(c.createdAt);
+                        const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+                        return (
+                          <button
+                            key={c.id}
+                            onClick={() => openDestination(c.destinationId, c.provinceSlug)}
+                            className="group relative overflow-hidden rounded-lg text-left transition-all hover:opacity-90"
+                            style={{ background: "#0a1520" }}
+                          >
+                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-lg">
+                              {c.photoUrl ? (
+                                <img src={c.photoUrl} alt={c.destinationName} className="h-full w-full object-cover" />
+                              ) : (
+                                <IllustratedImage seed={c.photoSeed} ratio="4/3" className="w-full" />
+                              )}
+                              <div className="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-black/40 flex items-center justify-center">
+                                <Heart size={11} className="text-white/70" />
+                              </div>
                             </div>
-                          ) : (
-                            <IllustratedImage seed={c.photoSeed} ratio="4/3" className="w-full" />
-                          )}
-                          <div className="absolute top-2 left-2 w-5 h-5 rounded-full bg-black/60 flex items-center justify-center">
-                            <span className="text-[9px] font-bold text-white">{i + 1}</span>
-                          </div>
-                          <div className="p-2">
-                            <div className="flex items-center gap-1">
-                              <MapPin size={10} className="text-primary shrink-0" />
-                              <span className="text-xs font-semibold text-foreground truncate">{c.destinationName}</span>
+                            <div className="px-2.5 py-2">
+                              <div className="flex items-center gap-1 mb-0.5">
+                                <MapPin size={9} style={{ color: "#c8922a" }} className="shrink-0" />
+                                <span className="text-[11px] font-semibold truncate" style={{ color: "#c8922a" }}>
+                                  {c.destinationName}
+                                </span>
+                              </div>
+                              <p className="text-[9px] leading-relaxed line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>
+                                {c.caption}
+                              </p>
+                              <p className="mt-1 text-[9px]" style={{ color: "rgba(255,255,255,0.3)" }}>{dateLabel}</p>
                             </div>
-                            <p className="mt-0.5 text-[10px] text-muted line-clamp-2 leading-relaxed">{c.caption}</p>
-                          </div>
-                        </button>
-                      ))}
+                          </button>
+                        );
+                      })}
                     </div>
                   </section>
 
                   {/* Badges */}
                   {badges.length > 0 && (
-                    <section>
-                      <SectionHeader label={t("passport.yourBadges")} count={badges.length} />
-                      <div className="mt-3 flex gap-3 overflow-x-auto no-scrollbar pb-1">
+                    <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
+                      <div className="flex items-center justify-between px-4 pt-4 pb-3">
+                        <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
+                          {t("passport.yourBadges")}
+                        </h3>
+                        <span className="text-[10px]" style={{ color: "#c8922a" }}>{badges.length}</span>
+                      </div>
+                      <div className="flex gap-4 overflow-x-auto no-scrollbar px-4 pb-4">
                         {badges.map((b) => (
-                          <div key={b.id} className="flex flex-col items-center gap-2 shrink-0 w-[72px]">
+                          <div key={b.id} className="flex flex-col items-center gap-1.5 shrink-0 w-[70px]">
                             <BadgeMedal emoji={b.emoji} />
-                            <span className="text-[9px] text-center text-muted leading-snug font-medium px-0.5">{b.label}</span>
+                            <span className="text-[10px] font-semibold text-center leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
+                              {b.label}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -267,32 +291,41 @@ export function PassportPanel() {
                   )}
 
                   {/* Timeline */}
-                  <section>
-                    <SectionHeader label={t("passport.timeline")} />
-                    <div className="mt-3 overflow-x-auto no-scrollbar">
-                      <div className="flex items-start gap-0 min-w-max">
-                        {[...checkins].reverse().map((c, i, arr) => (
-                          <div key={c.id} className="flex items-start">
-                            <button
-                              onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                              className="flex flex-col items-center gap-1.5 w-20 hover:opacity-80 transition-opacity"
-                            >
-                              <div className="w-8 h-8 rounded-full bg-primary/10 border-2 border-primary/40 flex items-center justify-center overflow-hidden">
-                                {c.photoUrl ? (
-                                  <img src={c.photoUrl} alt={c.destinationName} className="w-full h-full object-cover" />
-                                ) : (
-                                  <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full object-cover" />
-                                )}
-                              </div>
-                              <span className="text-[9px] text-center text-muted leading-tight px-1 font-medium">
-                                {c.destinationName}
-                              </span>
-                            </button>
-                            {i < arr.length - 1 && (
-                              <div className="h-0.5 w-4 bg-border mt-4 shrink-0" />
-                            )}
-                          </div>
-                        ))}
+                  <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
+                    <div className="flex items-center justify-between px-4 pt-4 pb-3">
+                      <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
+                        {t("passport.timeline")}
+                      </h3>
+                      <button className="flex items-center gap-0.5 text-[10px]" style={{ color: "#c8922a" }}>
+                        Xem tất cả <ChevronRight size={12} />
+                      </button>
+                    </div>
+                    <div className="overflow-x-auto no-scrollbar px-4 pb-4">
+                      <div className="flex items-start min-w-max">
+                        {[...checkins].reverse().map((c, i, arr) => {
+                          const d = new Date(c.createdAt);
+                          const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+                          return (
+                            <div key={c.id} className="flex items-center">
+                              <button
+                                onClick={() => openDestination(c.destinationId, c.provinceSlug)}
+                                className="flex flex-col items-center hover:opacity-80 transition-opacity w-[88px]"
+                              >
+                                <span className="text-[9px] mb-1.5 font-medium" style={{ color: "#c8922a" }}>{dateLabel}</span>
+                                <div className="w-3 h-3 rounded-full border-2 mb-2 shrink-0" style={{ background: "#c8922a", borderColor: "rgba(200,146,42,0.4)" }} />
+                                <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.9)" }}>
+                                  {c.destinationName}
+                                </span>
+                                <span className="text-[9px] text-center mt-0.5 leading-tight line-clamp-2 px-1" style={{ color: "rgba(255,255,255,0.4)" }}>
+                                  {c.caption}
+                                </span>
+                              </button>
+                              {i < arr.length - 1 && (
+                                <div className="h-px w-5 shrink-0 mb-6" style={{ background: "rgba(200,146,42,0.35)", borderTop: "1px dashed rgba(200,146,42,0.35)" }} />
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </section>
@@ -337,16 +370,6 @@ function BadgeMedal({ emoji }: { emoji: string }) {
   );
 }
 
-function SectionHeader({ label, count }: { label: string; count?: number }) {
-  return (
-    <div className="flex items-center justify-between">
-      <h3 className="text-sm font-semibold text-foreground">{label}</h3>
-      {count !== undefined && (
-        <span className="text-xs text-muted bg-surface-2 rounded-full px-2 py-0.5">{count}</span>
-      )}
-    </div>
-  );
-}
 
 function EmptyState({ t, setOpen }: { t: (k: string) => string; setOpen: (v: boolean) => void }) {
   return (
