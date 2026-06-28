@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X, Share2, Compass, MapPin, Star, Loader2, ChevronRight, Heart } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
@@ -11,10 +11,8 @@ import { useT } from "@/lib/i18n";
 import { panelTransition } from "@/design/motion";
 import { Button } from "@/components/ui/Button";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
-import { ShareCard } from "@/components/share/ShareCard";
-import { shareOrDownload, fetchCheckinPhotos } from "@/lib/share/exportPng";
-import { getMapModel } from "@/lib/map/mapModelCache";
-import type { ProvinceShape } from "@/lib/map/projection";
+import { PassportExportCard } from "@/components/passport/PassportExportCard";
+import { shareOrDownload } from "@/lib/share/exportPng";
 import geoMeta from "@/data/generated/geo-meta.json";
 
 const provinceToRegion: Record<string, string> = Object.fromEntries(
@@ -40,30 +38,9 @@ export function PassportPanel() {
   const selectDestination = useMapStore((s) => s.selectDestination);
   const requestFocus = useMapStore((s) => s.requestFocus);
   const destinations = useContentStore((s) => s.destinations);
-  const cardRef = useRef<SVGSVGElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  // Map model for mini-map
-  const [mapProvinces, setMapProvinces] = useState<ProvinceShape[]>([]);
-  const [mapWidth, setMapWidth] = useState(1000);
-  const [mapHeight, setMapHeight] = useState(2200);
-
-  // Pre-fetched photos for canvas export
-  const [photosBase64, setPhotosBase64] = useState<Record<string, string>>({});
   const [exporting, setExporting] = useState(false);
-
-  useEffect(() => {
-    getMapModel().then((m) => {
-      setMapProvinces(m.provinces);
-      setMapWidth(m.width);
-      setMapHeight(m.height);
-    });
-  }, []);
-
-  // Pre-fetch photos when checkins change
-  useEffect(() => {
-    if (checkins.length === 0) return;
-    fetchCheckinPhotos(checkins).then(setPhotosBase64);
-  }, [checkins]);
 
   const onShare = async () => {
     if (!cardRef.current) return;
@@ -113,21 +90,16 @@ export function PassportPanel() {
             </div>
 
             <div className="no-scrollbar flex-1 overflow-y-auto">
-              {/* Hidden export card — off-screen, renders with all data */}
+              {/* Hidden export card — off-screen, same HTML as panel for pixel-perfect export */}
               <div className="pointer-events-none absolute -left-[9999px] top-0">
-                <ShareCard
+                <PassportExportCard
                   ref={cardRef}
-                  provincesVisited={visitedProvinces.length}
-                  visitedRegions={visitedRegions.length}
-                  visitedProvinceSlugs={visitedProvinces}
                   checkins={checkins}
                   badges={badges}
+                  visitedProvincesCount={visitedProvinces.length}
+                  visitedRegionsCount={visitedRegions.length}
                   user={user}
                   customAvatarUrl={customAvatarUrl}
-                  photosBase64={photosBase64}
-                  mapProvinces={mapProvinces}
-                  mapWidth={mapWidth}
-                  mapHeight={mapHeight}
                 />
               </div>
 
