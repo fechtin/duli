@@ -275,7 +275,8 @@ export function PassportPanel() {
                     </div>
                     <div className="overflow-x-auto no-scrollbar px-4 pb-5">
                       {(() => {
-                        const items = [...checkins].reverse().slice(0, 5);
+                        // Most recent first (index 0 = newest), older ones scroll right
+                        const items = checkins.slice(0, 5);
                         const ITEM_W = 88;
                         const total = items.length + 1; // +1 for "Tiếp tục"
                         return (
@@ -314,17 +315,16 @@ export function PassportPanel() {
                                   </button>
                                 );
                               })}
-                              {/* "Tiếp tục" placeholder */}
+                              {/* Arrow end node */}
                               <div className="flex flex-col items-center shrink-0" style={{ width: ITEM_W }}>
                                 <span className="text-[9px] mb-2" style={{ color: "transparent" }}>—</span>
-                                {/* Diamond dot */}
-                                <div className="z-10 mb-2.5 shrink-0" style={{
-                                  width: 14, height: 14,
-                                  background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
-                                  boxShadow: "0 0 8px rgba(200,146,42,0.7)",
-                                  transform: "rotate(45deg)",
-                                  borderRadius: 2,
-                                }} />
+                                {/* Arrow → */}
+                                <div className="z-10 mb-2.5 shrink-0 flex items-center justify-center" style={{ width: 26, height: 14 }}>
+                                  <svg width="26" height="14" viewBox="0 0 26 14" fill="none">
+                                    <line x1="0" y1="7" x2="18" y2="7" stroke="#d4a84b" strokeWidth="2" />
+                                    <polyline points="13,2 20,7 13,12" stroke="#d4a84b" strokeWidth="2" strokeLinejoin="round" fill="none" />
+                                  </svg>
+                                </div>
                                 <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
                                 <span className="text-[9px] text-center mt-1 leading-snug px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>Còn nhiều nơi đang chờ bạn</span>
                               </div>
