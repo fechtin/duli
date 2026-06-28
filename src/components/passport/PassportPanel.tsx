@@ -217,8 +217,8 @@ export function PassportPanel() {
                         Xem tất cả <ChevronRight size={12} />
                       </button>
                     </div>
-                    {/* 4-card horizontal scroll — most recent first */}
-                    <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-4">
+                    {/* 4-card grid — fits panel width */}
+                    <div className="grid grid-cols-4 gap-2 px-3 pb-4">
                       {checkins.slice(0, 4).map((c) => {
                         const d = new Date(c.createdAt);
                         const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
@@ -226,8 +226,8 @@ export function PassportPanel() {
                           <button
                             key={c.id}
                             onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                            className="relative shrink-0 overflow-hidden rounded-2xl text-left transition-all hover:opacity-90"
-                            style={{ width: 160, height: 240 }}
+                            className="relative overflow-hidden rounded-xl text-left transition-all hover:opacity-90"
+                            style={{ height: 200 }}
                           >
                             {/* Photo */}
                             {c.photoUrl ? (
