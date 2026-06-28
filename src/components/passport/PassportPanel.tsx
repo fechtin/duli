@@ -104,7 +104,7 @@ export function PassportPanel() {
 
               {/* ── Cover header ── */}
               <div className="relative overflow-hidden"
-                style={{ background: "linear-gradient(160deg, #0b2535 0%, #103e3a 55%, #0c2d2d 100%)" }}>
+                style={{ background: "#0c1d2a", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
 
                 {/* Top bar: greeting + share */}
                 <div className="flex items-start justify-between px-5 pt-5 pb-3">
@@ -112,25 +112,27 @@ export function PassportPanel() {
                     <div className="relative shrink-0">
                       {(customAvatarUrl || user?.photoURL) ? (
                         <img src={customAvatarUrl || user?.photoURL} alt={user?.displayName}
-                          className="w-11 h-11 rounded-full object-cover border border-[#d4a84b]/40" />
+                          className="w-11 h-11 rounded-full object-cover"
+                          style={{ border: "1.5px solid rgba(212,168,75,0.5)" }} />
                       ) : (
-                        <div className="w-11 h-11 rounded-full bg-white/10 border border-[#d4a84b]/40 flex items-center justify-center text-[#d4a84b] font-bold">
+                        <div className="w-11 h-11 rounded-full flex items-center justify-center font-bold"
+                          style={{ background: "rgba(212,168,75,0.1)", border: "1.5px solid rgba(212,168,75,0.4)", color: "#d4a84b" }}>
                           {user?.displayName?.[0]?.toUpperCase() ?? "V"}
                         </div>
                       )}
                     </div>
                     <div>
-                      <p className="text-[13px] font-semibold text-white leading-tight">
-                        Xin chào, <span className="text-[#d4a84b]">{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
+                      <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                        Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
                       </p>
-                      <p className="text-[10px] text-white/40 mt-0.5 italic leading-snug max-w-[200px]">
+                      <p className="text-[10px] mt-0.5 italic leading-snug max-w-[200px]" style={{ color: "rgba(255,255,255,0.35)" }}>
                         "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
                       </p>
                     </div>
                   </div>
                   <button data-html2canvas-ignore="true" onClick={onShare} disabled={checkins.length === 0 || exporting}
-                    className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
-                    style={{ borderColor: "rgba(212,168,75,0.5)", color: "#d4a84b", background: "rgba(212,168,75,0.08)" }}>
+                    className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
+                    style={{ border: "1px solid rgba(212,168,75,0.4)", color: "#d4a84b", background: "rgba(212,168,75,0.07)" }}>
                     {exporting ? <Loader2 size={11} className="animate-spin" /> : <Share2 size={11} />}
                     Chia sẻ hành trình
                   </button>
@@ -143,23 +145,18 @@ export function PassportPanel() {
                   const offsetX = (MAP_W - mapMeta.width * scale) / 2;
                   const offsetY = (MAP_H - mapMeta.height * scale) / 2;
                   return (
-                    <div className="relative mx-4 mb-4 rounded-xl overflow-hidden" style={{ height: MAP_H }}>
+                    <div className="relative mx-4 mb-4 rounded-xl overflow-hidden" style={{ height: MAP_H, background: "#07111a" }}>
                       <svg width="100%" height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0">
-                        {/* Sea bg */}
-                        <rect width={MAP_W} height={MAP_H} fill="rgba(5,25,40,0.6)" />
+                        <rect width={MAP_W} height={MAP_H} fill="#07111a" />
                         <g transform={`translate(${offsetX},${offsetY}) scale(${scale})`}>
                           {mapProvinces.map((p) => (
                             <path key={p.slug} d={p.d}
-                              fill={visitedSet.has(p.slug) ? "rgba(180,130,40,0.75)" : "rgba(20,70,55,0.6)"}
-                              stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.6)" : "rgba(200,146,42,0.1)"}
-                              strokeWidth={visitedSet.has(p.slug) ? 2.5 : 1.5}
+                              fill={visitedSet.has(p.slug) ? "rgba(212,168,75,0.7)" : "rgba(255,255,255,0.05)"}
+                              stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.55)" : "rgba(255,255,255,0.08)"}
+                              strokeWidth={visitedSet.has(p.slug) ? 2 : 1}
                             />
                           ))}
                         </g>
-                        {/* Glow on visited provinces */}
-                        {visitedSet.size > 0 && (
-                          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
-                        )}
                       </svg>
                     </div>
                   );
@@ -167,13 +164,13 @@ export function PassportPanel() {
 
                 {/* Stats */}
                 <div className="px-5 pb-5">
-                  <p className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-0.5">Bạn đã khám phá</p>
+                  <p className="text-[9px] tracking-[0.22em] uppercase mb-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>Bạn đã khám phá</p>
                   <div className="flex items-end gap-1 mb-2">
-                    <span className="text-4xl font-bold text-white leading-none">{visitedProvinces.length}</span>
-                    <span className="text-lg text-white/40 mb-0.5">/ 63</span>
-                    <span className="text-[10px] uppercase tracking-wider text-white/40 mb-1 ml-1">tỉnh thành</span>
+                    <span className="text-4xl font-bold leading-none" style={{ color: "#ffffff" }}>{visitedProvinces.length}</span>
+                    <span className="text-lg mb-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>/ 63</span>
+                    <span className="text-[10px] uppercase tracking-wider mb-1 ml-1" style={{ color: "rgba(255,255,255,0.35)" }}>tỉnh thành</span>
                   </div>
-                  <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-4">
+                  <div className="h-1.5 rounded-full overflow-hidden mb-4" style={{ background: "rgba(255,255,255,0.08)" }}>
                     <div className="h-full rounded-full transition-all duration-700"
                       style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,#c8922a,#f0d070)" }} />
                   </div>
@@ -184,9 +181,9 @@ export function PassportPanel() {
                       { v: badges.length, l: "Huy hiệu" },
                       { v: visitedProvinces.length, l: "Tỉnh thành" },
                     ].map(({ v, l }) => (
-                      <div key={l} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(255,255,255,0.05)" }}>
-                        <div className="text-xl font-bold text-white leading-none">{v}</div>
-                        <div className="text-[9px] text-white/40 mt-1">{l}</div>
+                      <div key={l} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                        <div className="text-xl font-bold leading-none" style={{ color: "#ffffff" }}>{v}</div>
+                        <div className="text-[9px] mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>{l}</div>
                       </div>
                     ))}
                   </div>
