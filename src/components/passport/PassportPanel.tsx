@@ -245,8 +245,8 @@ export function PassportPanel() {
                           {t("passport.yourBadges")}
                         </h3>
                       </div>
-                      <div className="overflow-x-auto no-scrollbar px-4 pb-5">
-                        <div className="flex" style={{ gap: 10 }}>
+                      <div className="overflow-x-auto no-scrollbar pb-5">
+                        <div className="flex" style={{ gap: 10, paddingLeft: 16, paddingRight: 16 }}>
                           {badges.map((b) => (
                             <div key={b.id} className="flex flex-col items-center gap-2 shrink-0" style={{ width: 72 }}>
                               <BadgeMedal emoji={b.emoji} />
