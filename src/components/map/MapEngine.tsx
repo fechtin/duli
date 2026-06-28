@@ -251,7 +251,8 @@ export function MapEngine() {
     if (!model) return [];
     return destinations.map((d) => {
       const [x, y] = model.project([d.lng, d.lat]);
-      return { ...d, x, y };
+      const tier = d.featured ? 1 : d.badges.some((b) => b === "popular" || b === "trending") ? 2 : 3;
+      return { ...d, x, y, tier };
     });
   }, [model, destinations]);
 
@@ -296,6 +297,8 @@ export function MapEngine() {
 
   const showProvinceLabels = zoomLevel >= 1;
   const showMarkers = zoomLevel >= 2;
+  // Max tier shown: tier 1 (featured) → tier 2 (popular/trending) → tier 3 (rest).
+  const maxMarkerTier = zoomLevel >= 4 ? 3 : zoomLevel >= 3 ? 2 : 1;
 
   return (
     <div
@@ -379,10 +382,10 @@ export function MapEngine() {
               </Label>
             ))}
 
-        {/* Destination markers — illustrated landmarks, culled to viewport. */}
+        {/* Destination markers — illustrated landmarks, culled to viewport and tier. */}
         {showMarkers &&
           projectedDestinations
-            .filter((d) => inView(d.x, d.y))
+            .filter((d) => d.tier <= maxMarkerTier && inView(d.x, d.y))
             .map((d) => {
               const isSelected = selectedDestination === d.id;
               const hb = getHeartbeat(d.id);
