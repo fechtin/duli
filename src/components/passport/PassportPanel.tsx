@@ -240,15 +240,21 @@ export function PassportPanel() {
                   {/* ── Badges ── */}
                   {badges.length > 0 && (
                     <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
-                      <div className="px-5 pt-5 pb-4">
+                      <div className="flex items-center justify-between px-5 pt-5 pb-4">
                         <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
                           {t("passport.yourBadges")}
                         </h3>
+                        {badges.length > 5 && (
+                          <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
+                            Xem tất cả <ChevronRight size={13} />
+                          </button>
+                        )}
                       </div>
-                      {/* Grid wraps to multiple rows (5/row) — a scroll container would be
-                          clipped when the passport is captured to a static share image. */}
+                      {/* Show the 5 most valuable badges in a single row (rarity desc).
+                          A single row never overflows the fixed 5-col grid, so it captures
+                          cleanly to the static share image; the rest live behind "Xem tất cả". */}
                       <div className="grid px-4 pb-5" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 10 }}>
-                        {badges.map((b) => (
+                        {badges.slice(0, 5).map((b) => (
                           <div key={b.id} className="flex flex-col items-center gap-2 min-w-0">
                             <BadgeMedal emoji={b.emoji} />
                             <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
