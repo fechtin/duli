@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X, Share2, Compass, MapPin, Star, Loader2, ChevronRight, Heart } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/Button";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { PassportExportCard } from "@/components/passport/PassportExportCard";
 import { shareOrDownload } from "@/lib/share/exportPng";
+import { getMapModel } from "@/lib/map/mapModelCache";
+import type { ProvinceShape } from "@/lib/map/projection";
 import geoMeta from "@/data/generated/geo-meta.json";
 
 const provinceToRegion: Record<string, string> = Object.fromEntries(
@@ -39,8 +41,18 @@ export function PassportPanel() {
   const requestFocus = useMapStore((s) => s.requestFocus);
   const destinations = useContentStore((s) => s.destinations);
   const cardRef = useRef<HTMLDivElement>(null);
-
+  const [mapProvinces, setMapProvinces] = useState<ProvinceShape[]>([]);
+  const [mapWidth, setMapWidth] = useState(1000);
+  const [mapHeight, setMapHeight] = useState(2200);
   const [exporting, setExporting] = useState(false);
+
+  useEffect(() => {
+    getMapModel().then((m) => {
+      setMapProvinces(m.provinces);
+      setMapWidth(m.width);
+      setMapHeight(m.height);
+    });
+  }, []);
 
   const onShare = async () => {
     if (!cardRef.current) return;
@@ -98,8 +110,12 @@ export function PassportPanel() {
                   badges={badges}
                   visitedProvincesCount={visitedProvinces.length}
                   visitedRegionsCount={visitedRegions.length}
+                  visitedProvinceSlugs={visitedProvinces}
                   user={user}
                   customAvatarUrl={customAvatarUrl}
+                  mapProvinces={mapProvinces}
+                  mapWidth={mapWidth}
+                  mapHeight={mapHeight}
                 />
               </div>
 

@@ -8,14 +8,19 @@ import { Star } from "lucide-react";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import type { Checkin, AwardedBadge } from "@/lib/types";
 import type { AuthUser } from "@/lib/store/useAuthStore";
+import type { ProvinceShape } from "@/lib/map/projection";
 
 interface Props {
   checkins: Checkin[];
   badges: AwardedBadge[];
   visitedProvincesCount: number;
   visitedRegionsCount: number;
+  visitedProvinceSlugs?: string[];
   user: AuthUser | null;
   customAvatarUrl?: string | null;
+  mapProvinces?: ProvinceShape[];
+  mapWidth?: number;
+  mapHeight?: number;
 }
 
 const GOLD = "#c8922a";
@@ -23,9 +28,18 @@ const CARD_BG = "#0d1e2b";
 const ROOT_BG = "#081420";
 
 export const PassportExportCard = forwardRef<HTMLDivElement, Props>(
-  ({ checkins, badges, visitedProvincesCount, visitedRegionsCount, user, customAvatarUrl }, ref) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ({
+    checkins, badges, visitedProvincesCount, visitedRegionsCount,
+    visitedProvinceSlugs = [], user, customAvatarUrl,
+    mapProvinces = [], mapWidth = 1000, mapHeight = 2200,
+  }, ref) => {
     const progressPct = Math.min(1, visitedProvincesCount / 63);
+    const visitedSet = new Set(visitedProvinceSlugs);
+
+    // Fit mini-map into a 120×200 area
+    const MAP_W = 110;
+    const MAP_H = 200;
+    const mapScale = Math.min(MAP_W / mapWidth, MAP_H / mapHeight);
 
     return (
       <div
@@ -85,8 +99,33 @@ export const PassportExportCard = forwardRef<HTMLDivElement, Props>(
             </p>
           </div>
 
+          {/* Mini Vietnam map — absolute right side */}
+          {mapProvinces.length > 0 && (
+            <div style={{
+              position: "absolute", right: 16, top: 0, bottom: 0,
+              display: "flex", alignItems: "center", opacity: 0.85,
+              pointerEvents: "none",
+            }}>
+              <svg width={MAP_W} height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`} xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx={MAP_W / 2} cy={MAP_H / 2} rx={MAP_W * 0.48} ry={MAP_H * 0.46}
+                  fill="rgba(200,146,42,0.04)" />
+                <g transform={`translate(${(MAP_W - mapWidth * mapScale) / 2}, ${(MAP_H - mapHeight * mapScale) / 2}) scale(${mapScale})`}>
+                  {mapProvinces.map((p) => (
+                    <path
+                      key={p.slug}
+                      d={p.d}
+                      fill={visitedSet.has(p.slug) ? "#c8922a" : "rgba(0,80,60,0.35)"}
+                      stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.6)" : "rgba(200,146,42,0.15)"}
+                      strokeWidth={visitedSet.has(p.slug) ? 3 : 2}
+                    />
+                  ))}
+                </g>
+              </svg>
+            </div>
+          )}
+
           {/* Title + stats */}
-          <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ flex: 1, minWidth: 0, paddingRight: mapProvinces.length > 0 ? MAP_W + 8 : 0 }}>
             <p style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: `${GOLD}cc`, margin: "0 0 2px" }}>
               Hộ chiếu du lịch
             </p>
