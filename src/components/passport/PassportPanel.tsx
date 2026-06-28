@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X, Share2, Compass, MapPin, Star, Loader2, ChevronRight, Heart } from "lucide-react";
+import { X, Share2, Compass, MapPin, Loader2, ChevronRight, Heart } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useMapStore } from "@/lib/store/useMapStore";
@@ -43,12 +43,14 @@ export function PassportPanel() {
   const [exporting, setExporting] = useState(false);
   const [mapProvinces, setMapProvinces] = useState<ProvinceShape[]>([]);
   const [mapMeta, setMapMeta] = useState({ width: 1000, height: 2200 });
+  const [mapProject, setMapProject] = useState<((ll: [number, number]) => [number, number]) | null>(null);
   const visitedSet = useMemo(() => new Set(visitedProvinces), [visitedProvinces]);
 
   useEffect(() => {
     getMapModel().then((m) => {
       setMapProvinces(m.provinces);
       setMapMeta({ width: m.width, height: m.height });
+      setMapProject(() => m.project);
     });
   }, []);
 
@@ -101,106 +103,123 @@ export function PassportPanel() {
 
             <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto">
 
-              {/* Passport Cover Card */}
-              <div className="relative overflow-hidden mx-0"
-                style={{ background: "linear-gradient(160deg, #0d2a35 0%, #16504a 55%, #0e3030 100%)" }}>
-                <div className="absolute inset-[10px] rounded-none border border-white/10 pointer-events-none" />
-                <div className="absolute bottom-4 right-6 opacity-10">
-                  <CompassRoseSvg size={80} />
+              {/* ── Cover header ── */}
+              <div className="relative overflow-hidden"
+                style={{ background: "linear-gradient(160deg, #0a2030 0%, #0f3d38 55%, #0b2828 100%)" }}>
+
+                {/* Top bar: greeting + share */}
+                <div className="flex items-start justify-between px-5 pt-5 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="relative shrink-0">
+                      {(customAvatarUrl || user?.photoURL) ? (
+                        <img src={customAvatarUrl || user?.photoURL} alt={user?.displayName}
+                          className="w-11 h-11 rounded-full object-cover border border-[#d4a84b]/40" />
+                      ) : (
+                        <div className="w-11 h-11 rounded-full bg-white/10 border border-[#d4a84b]/40 flex items-center justify-center text-[#d4a84b] font-bold">
+                          {user?.displayName?.[0]?.toUpperCase() ?? "V"}
+                        </div>
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-[13px] font-semibold text-white leading-tight">
+                        Xin chào, <span className="text-[#d4a84b]">{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
+                      </p>
+                      <p className="text-[10px] text-white/40 mt-0.5 italic leading-snug max-w-[200px]">
+                        "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
+                      </p>
+                    </div>
+                  </div>
+                  <button data-html2canvas-ignore="true" onClick={onShare} disabled={checkins.length === 0 || exporting}
+                    className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
+                    style={{ borderColor: "rgba(212,168,75,0.5)", color: "#d4a84b", background: "rgba(212,168,75,0.08)" }}>
+                    {exporting ? <Loader2 size={11} className="animate-spin" /> : <Share2 size={11} />}
+                    Chia sẻ hành trình
+                  </button>
                 </div>
 
-                {/* Mini Vietnam map — right side */}
+                {/* Big Vietnam map */}
                 {mapProvinces.length > 0 && (() => {
-                  const MAP_W = 100, MAP_H = 190;
+                  const MAP_W = 388, MAP_H = 300;
                   const scale = Math.min(MAP_W / mapMeta.width, MAP_H / mapMeta.height);
+                  const offsetX = (MAP_W - mapMeta.width * scale) / 2;
+                  const offsetY = (MAP_H - mapMeta.height * scale) / 2;
+                  const pins = checkins.slice(0, 6).filter(c => {
+                    const dest = destinations.find(d => d.id === c.destinationId);
+                    return !!dest;
+                  }).map(c => {
+                    const dest = destinations.find(d => d.id === c.destinationId)!;
+                    const [px, py] = mapProject ? mapProject([dest.lng, dest.lat]) : [0, 0];
+                    return { c, x: offsetX + px * scale, y: offsetY + py * scale };
+                  });
                   return (
-                    <div className="absolute right-4 top-0 bottom-0 flex items-center pointer-events-none">
-                      <svg width={MAP_W} height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`}>
-                        <g transform={`translate(${(MAP_W - mapMeta.width * scale) / 2},${(MAP_H - mapMeta.height * scale) / 2}) scale(${scale})`}>
+                    <div className="relative mx-4 mb-4 rounded-xl overflow-hidden" style={{ height: MAP_H }}>
+                      <svg width="100%" height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0">
+                        {/* Sea bg */}
+                        <rect width={MAP_W} height={MAP_H} fill="rgba(5,25,40,0.6)" />
+                        <g transform={`translate(${offsetX},${offsetY}) scale(${scale})`}>
                           {mapProvinces.map((p) => (
                             <path key={p.slug} d={p.d}
-                              fill={visitedSet.has(p.slug) ? "#c8922a" : "rgba(0,80,60,0.4)"}
-                              stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.5)" : "rgba(200,146,42,0.12)"}
-                              strokeWidth={visitedSet.has(p.slug) ? 3 : 2}
+                              fill={visitedSet.has(p.slug) ? "rgba(180,130,40,0.75)" : "rgba(20,70,55,0.6)"}
+                              stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.6)" : "rgba(200,146,42,0.1)"}
+                              strokeWidth={visitedSet.has(p.slug) ? 2.5 : 1.5}
                             />
                           ))}
                         </g>
+                        {/* Glow on visited provinces */}
+                        {visitedSet.size > 0 && (
+                          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+                        )}
                       </svg>
+                      {/* Photo pins */}
+                      {pins.map(({ c, x, y }) => (
+                        <button key={c.id}
+                          onClick={() => openDestination(c.destinationId, c.provinceSlug)}
+                          className="absolute hover:scale-110 transition-transform"
+                          style={{ left: x, top: y, transform: "translate(-50%,-50%)" }}>
+                          <div className="w-9 h-9 rounded-full overflow-hidden border-2 shadow-lg"
+                            style={{ borderColor: "#d4a84b", boxShadow: "0 0 8px rgba(212,168,75,0.6)" }}>
+                            {c.photoUrl ? (
+                              <img src={c.photoUrl} alt={c.destinationName} className="w-full h-full object-cover" />
+                            ) : (
+                              <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full" />
+                            )}
+                          </div>
+                          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] font-semibold text-white px-1 rounded"
+                            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}>
+                            {c.destinationName}
+                          </div>
+                        </button>
+                      ))}
                     </div>
                   );
                 })()}
 
-                <div className="relative flex items-center gap-6 px-6 py-6">
-                  {/* Left: emblem + title */}
-                  <div className="flex flex-col items-center gap-2 shrink-0">
-                    <div className="relative">
-                      {user ? (
-                        <div className="w-16 h-16 rounded-full overflow-hidden border border-[#d4a84b]/40">
-                          {(customAvatarUrl || user.photoURL) ? (
-                            <img src={customAvatarUrl || user.photoURL} alt={user.displayName} className="w-full h-full object-cover" />
-                          ) : (
-                            <div className="w-full h-full bg-white/5 flex items-center justify-center text-[#d4a84b] text-xl font-bold">
-                              {user.displayName[0].toUpperCase()}
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <div className="w-16 h-16 rounded-full bg-white/5 border border-[#d4a84b]/40 flex items-center justify-center">
-                          <VietnamOutlineSvg size={38} color="#d4a84b" />
-                        </div>
-                      )}
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#d4a84b]/20 border border-[#d4a84b]/50 flex items-center justify-center">
-                        <Star size={9} fill="#d4a84b" color="#d4a84b" />
-                      </div>
-                    </div>
-                    <p className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-medium">
-                      {user?.displayName ? user.displayName.split(" ").slice(-1)[0].toUpperCase() : "VIETNAM ATLAS"}
-                    </p>
+                {/* Stats */}
+                <div className="px-5 pb-5">
+                  <p className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-0.5">Bạn đã khám phá</p>
+                  <div className="flex items-end gap-1 mb-2">
+                    <span className="text-4xl font-bold text-white leading-none">{visitedProvinces.length}</span>
+                    <span className="text-lg text-white/40 mb-0.5">/ 63</span>
+                    <span className="text-[10px] uppercase tracking-wider text-white/40 mb-1 ml-1">tỉnh thành</span>
                   </div>
-
-                  {/* Right: title + stats */}
-                  <div className="flex-1 min-w-0" style={{ paddingRight: mapProvinces.length > 0 ? 108 : 0 }}>
-                    <p className="text-[10px] tracking-[0.18em] uppercase text-[#d4a84b]/80 font-medium mb-0.5">
-                      {t("passport.subtitle")}
-                    </p>
-                    <h2 className="font-display text-xl font-bold text-white leading-tight">
-                      VIETNAM<br />PASSPORT
-                    </h2>
-
-                    <div className="mt-3">
-                      <div className="flex items-end justify-between mb-1">
-                        <span className="text-[10px] text-white/50 uppercase tracking-wider">{t("passport.explored")}</span>
-                        <span className="text-sm font-bold text-white">
-                          {visitedProvinces.length}<span className="text-white/40 font-normal text-xs">/63</span>
-                        </span>
+                  <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-4">
+                    <div className="h-full rounded-full transition-all duration-700"
+                      style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,#c8922a,#f0d070)" }} />
+                  </div>
+                  <div className="grid grid-cols-4 gap-2">
+                    {[
+                      { v: checkins.length, l: "Check-in" },
+                      { v: visitedRegions.length, l: "Vùng miền" },
+                      { v: badges.length, l: "Huy hiệu" },
+                      { v: visitedProvinces.length, l: "Tỉnh thành" },
+                    ].map(({ v, l }) => (
+                      <div key={l} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(255,255,255,0.05)" }}>
+                        <div className="text-xl font-bold text-white leading-none">{v}</div>
+                        <div className="text-[9px] text-white/40 mt-1">{l}</div>
                       </div>
-                      <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
-                        <div
-                          className="h-full rounded-full transition-all duration-700"
-                          style={{
-                            width: `${Math.max(progressPct * 100, checkins.length > 0 ? 3 : 0)}%`,
-                            background: "linear-gradient(90deg, #d4a84b, #e8c878)",
-                          }}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="mt-3 grid grid-cols-4 gap-1 text-center">
-                      <MiniStat value={String(visitedProvinces.length)} label={t("passport.provincesLabel")} />
-                      <MiniStat value={String(visitedRegions.length)} label={t("passport.regions")} />
-                      <MiniStat value={String(checkins.length)} label={t("passport.checkins")} />
-                      <MiniStat value={String(badges.length)} label={t("passport.badges")} />
-                    </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-
-              {/* Share button — data-html2canvas-ignore hides it from the exported image */}
-              <div className="px-5 pt-3 pb-1" data-html2canvas-ignore="true">
-                <Button className="w-full" variant="secondary" onClick={onShare} disabled={checkins.length === 0 || exporting}>
-                  {exporting ? <Loader2 size={15} className="animate-spin" /> : <Share2 size={15} />}
-                  {exporting ? "Đang xuất ảnh..." : t("passport.share")}
-                </Button>
               </div>
 
               {checkins.length === 0 ? (
@@ -368,14 +387,6 @@ export function PassportPanel() {
   );
 }
 
-function MiniStat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="flex flex-col items-center">
-      <span className="text-base font-bold text-white leading-none">{value}</span>
-      <span className="mt-0.5 text-[8px] text-white/45 leading-tight">{label}</span>
-    </div>
-  );
-}
 
 function BadgeMedal({ emoji }: { emoji: string }) {
   const S = 56;
@@ -414,30 +425,3 @@ function EmptyState({ t, setOpen }: { t: (k: string) => string; setOpen: (v: boo
   );
 }
 
-function VietnamOutlineSvg({ size = 40, color = "currentColor" }: { size?: number; color?: string }) {
-  return (
-    <svg width={size} height={size * 2.4} viewBox="0 0 40 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M20 2 C24 2 28 5 30 9 C32 13 31 18 29 22 C27 26 28 30 29 34 C30 38 29 42 27 45 C25 48 24 52 25 56 C26 60 24 64 21 68 C18 72 15 78 12 84 C10 88 9 92 10 94 C8 90 6 85 7 80 C8 75 10 70 12 65 C14 60 14 56 12 52 C10 48 9 44 11 40 C13 36 14 32 13 28 C12 24 13 19 15 14 C17 9 16 5 18 3 Z"
-        fill={color}
-        opacity="0.9"
-      />
-    </svg>
-  );
-}
-
-function CompassRoseSvg({ size = 60 }: { size?: number }) {
-  const c = size / 2;
-  const r = size * 0.42;
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx={c} cy={c} r={r} stroke="white" strokeWidth="1" opacity="0.4" />
-      <circle cx={c} cy={c} r={r * 0.6} stroke="white" strokeWidth="0.5" opacity="0.3" />
-      <polygon points={`${c},${c - r * 0.9} ${c - 4},${c} ${c + 4},${c}`} fill="white" opacity="0.9" />
-      <polygon points={`${c},${c + r * 0.9} ${c - 4},${c} ${c + 4},${c}`} fill="white" opacity="0.5" />
-      <polygon points={`${c - r * 0.9},${c} ${c},${c - 4} ${c},${c + 4}`} fill="white" opacity="0.5" />
-      <polygon points={`${c + r * 0.9},${c} ${c},${c - 4} ${c},${c + 4}`} fill="white" opacity="0.5" />
-      <circle cx={c} cy={c} r={3} fill="white" opacity="0.8" />
-    </svg>
-  );
-}
