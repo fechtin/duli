@@ -371,8 +371,15 @@ export const ShareCard = forwardRef<SVGSVGElement, Props>(
             {timelineItems.map((c, i) => {
               const itemW = (W - PAD * 2) / timelineItems.length;
               const tx = PAD + i * itemW + itemW / 2;
+              const d = new Date(c.createdAt);
+              const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getFullYear()).slice(2)}`;
               return (
                 <g key={c.id}>
+                  <text x={tx} y={TIMELINE_Y + 30} textAnchor="middle"
+                    fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="7.5"
+                    fill="rgba(200,146,42,0.75)">
+                    {dateLabel}
+                  </text>
                   <circle cx={tx} cy={TIMELINE_Y + 40} r={5}
                     fill="#c8922a" stroke="rgba(240,208,112,0.5)" strokeWidth="1.5" />
                   <text x={tx} y={TIMELINE_Y + 60} textAnchor="middle"
