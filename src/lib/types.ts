@@ -176,6 +176,7 @@ export interface AwardedBadge {
   id: string;
   emoji: string;
   label: string;
+  description?: string;
 }
 
 /** Map focus intents dispatched from anywhere; the engine animates to them. */

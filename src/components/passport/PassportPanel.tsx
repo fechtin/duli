@@ -261,22 +261,26 @@ export function PassportPanel() {
                     </div>
                   </section>
 
-                  {/* Badges */}
+                  {/* Badges — top 6 rarest, equal-width columns */}
                   {badges.length > 0 && (
                     <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
-                      <div className="flex items-center justify-between px-4 pt-4 pb-3">
+                      <div className="px-4 pt-4 pb-3">
                         <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
                           {t("passport.yourBadges")}
                         </h3>
-                        <span className="text-[10px]" style={{ color: "#c8922a" }}>{badges.length}</span>
                       </div>
-                      <div className="flex gap-4 overflow-x-auto no-scrollbar px-4 pb-4">
+                      <div className="grid px-3 pb-4" style={{ gridTemplateColumns: `repeat(${badges.length}, 1fr)`, gap: 8 }}>
                         {badges.map((b) => (
-                          <div key={b.id} className="flex flex-col items-center gap-1.5 shrink-0 w-[70px]">
+                          <div key={b.id} className="flex flex-col items-center gap-1.5">
                             <BadgeMedal emoji={b.emoji} />
-                            <span className="text-[10px] font-semibold text-center leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
+                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.9)" }}>
                               {b.label}
                             </span>
+                            {b.description && (
+                              <span className="text-[9px] text-center" style={{ color: "rgba(255,255,255,0.4)" }}>
+                                {b.description}
+                              </span>
+                            )}
                           </div>
                         ))}
                       </div>
