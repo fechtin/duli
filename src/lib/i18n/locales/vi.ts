@@ -72,7 +72,7 @@ export const vi = {
   "passport.provincesLabel": "Tỉnh thành",
   "passport.visitedPlaces": "Những nơi đã ghé",
   "passport.yourBadges": "Huy hiệu của bạn",
-  "passport.timeline": "Dòng thời gian hành trình",
+  "passport.timeline": "Dòng thời gian",
   "passport.empty": "Hành trình của bạn bắt đầu từ đây. Hãy check-in nơi đầu tiên!",
   "passport.share": "Chia sẻ hộ chiếu",
   "passport.startExploring": "Bắt đầu khám phá",
