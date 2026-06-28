@@ -138,55 +138,60 @@ export function PassportPanel() {
                   </button>
                 </div>
 
-                {/* Big Vietnam map */}
-                {mapProvinces.length > 0 && (() => {
-                  const MAP_W = 388, MAP_H = 300;
-                  const scale = Math.min(MAP_W / mapMeta.width, MAP_H / mapMeta.height);
-                  const offsetX = (MAP_W - mapMeta.width * scale) / 2;
-                  const offsetY = (MAP_H - mapMeta.height * scale) / 2;
-                  return (
-                    <div className="relative mx-4 mb-4 rounded-xl overflow-hidden" style={{ height: MAP_H, background: "#07111a" }}>
-                      <svg width="100%" height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0">
-                        <rect width={MAP_W} height={MAP_H} fill="#07111a" />
-                        <g transform={`translate(${offsetX},${offsetY}) scale(${scale})`}>
-                          {mapProvinces.map((p) => (
-                            <path key={p.slug} d={p.d}
-                              fill={visitedSet.has(p.slug) ? "rgba(212,168,75,0.7)" : "rgba(255,255,255,0.05)"}
-                              stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.55)" : "rgba(255,255,255,0.08)"}
-                              strokeWidth={visitedSet.has(p.slug) ? 2 : 1}
-                            />
-                          ))}
-                        </g>
-                      </svg>
-                    </div>
-                  );
-                })()}
-
-                {/* Stats */}
-                <div className="px-5 pb-5">
-                  <p className="text-[9px] tracking-[0.22em] uppercase mb-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>Bạn đã khám phá</p>
-                  <div className="flex items-end gap-1 mb-2">
-                    <span className="text-4xl font-bold leading-none" style={{ color: "#ffffff" }}>{visitedProvinces.length}</span>
-                    <span className="text-lg mb-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>/ 63</span>
-                    <span className="text-[10px] uppercase tracking-wider mb-1 ml-1" style={{ color: "rgba(255,255,255,0.35)" }}>tỉnh thành</span>
-                  </div>
-                  <div className="h-1.5 rounded-full overflow-hidden mb-4" style={{ background: "rgba(255,255,255,0.08)" }}>
-                    <div className="h-full rounded-full transition-all duration-700"
-                      style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,#c8922a,#f0d070)" }} />
-                  </div>
-                  <div className="grid grid-cols-4 gap-2">
-                    {[
-                      { v: checkins.length, l: "Check-in" },
-                      { v: visitedRegions.length, l: "Vùng miền" },
-                      { v: badges.length, l: "Huy hiệu" },
-                      { v: visitedProvinces.length, l: "Tỉnh thành" },
-                    ].map(({ v, l }) => (
-                      <div key={l} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                        <div className="text-xl font-bold leading-none" style={{ color: "#ffffff" }}>{v}</div>
-                        <div className="text-[9px] mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>{l}</div>
+                {/* Map left/right split */}
+                <div className="flex px-4 pb-5 gap-3" style={{ minHeight: 320 }}>
+                  {/* Left: stats */}
+                  <div className="flex flex-col justify-between shrink-0" style={{ width: 148 }}>
+                    <div>
+                      <p className="text-[8px] tracking-[0.22em] uppercase mb-1" style={{ color: "rgba(255,255,255,0.35)" }}>Bạn đã khám phá</p>
+                      <div className="flex items-baseline gap-1 mb-0.5">
+                        <span className="font-bold leading-none" style={{ fontSize: 52, color: "#ffffff" }}>{visitedProvinces.length}</span>
+                        <span className="text-2xl" style={{ color: "rgba(255,255,255,0.3)" }}>/ 63</span>
                       </div>
-                    ))}
+                      <p className="text-[9px] uppercase tracking-[0.2em] mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>Tỉnh thành</p>
+                      <div className="h-1.5 rounded-full overflow-hidden mb-4" style={{ background: "rgba(255,255,255,0.08)" }}>
+                        <div className="h-full rounded-full transition-all duration-700"
+                          style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,#c8922a,#f0d070)" }} />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { v: checkins.length, l: "Check-in" },
+                        { v: visitedRegions.length, l: "Vùng miền" },
+                        { v: badges.length, l: "Huy hiệu" },
+                        { v: visitedProvinces.length, l: "Tỉnh thành" },
+                      ].map(({ v, l }) => (
+                        <div key={l} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                          <div className="text-xl font-bold leading-none" style={{ color: "#ffffff" }}>{v}</div>
+                          <div className="text-[9px] mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>{l}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Right: map */}
+                  {mapProvinces.length > 0 && (() => {
+                    const MAP_W = 200, MAP_H = 320;
+                    const scale = Math.min(MAP_W / mapMeta.width, MAP_H / mapMeta.height);
+                    const offsetX = (MAP_W - mapMeta.width * scale) / 2;
+                    const offsetY = (MAP_H - mapMeta.height * scale) / 2;
+                    return (
+                      <div className="flex-1 rounded-xl overflow-hidden relative" style={{ background: "#07111a", minHeight: MAP_H }}>
+                        <svg width="100%" height="100%" viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0" preserveAspectRatio="xMidYMid meet">
+                          <rect width={MAP_W} height={MAP_H} fill="#07111a" />
+                          <g transform={`translate(${offsetX},${offsetY}) scale(${scale})`}>
+                            {mapProvinces.map((p) => (
+                              <path key={p.slug} d={p.d}
+                                fill={visitedSet.has(p.slug) ? "rgba(212,168,75,0.72)" : "rgba(255,255,255,0.05)"}
+                                stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.5)" : "rgba(255,255,255,0.08)"}
+                                strokeWidth={visitedSet.has(p.slug) ? 2 : 1}
+                              />
+                            ))}
+                          </g>
+                        </svg>
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
 
