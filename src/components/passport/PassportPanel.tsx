@@ -289,7 +289,7 @@ export function PassportPanel() {
 
                   {/* Timeline */}
                   <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
-                    <div className="flex items-center justify-between px-4 pt-4 pb-3">
+                    <div className="flex items-center justify-between px-4 pt-4 pb-2">
                       <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
                         {t("passport.timeline")}
                       </h3>
@@ -297,33 +297,65 @@ export function PassportPanel() {
                         Xem tất cả <ChevronRight size={12} />
                       </button>
                     </div>
-                    <div className="overflow-x-auto no-scrollbar px-4 pb-4">
-                      <div className="flex items-start min-w-max">
-                        {[...checkins].reverse().map((c, i, arr) => {
-                          const d = new Date(c.createdAt);
-                          const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
-                          return (
-                            <div key={c.id} className="flex items-center">
-                              <button
-                                onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                                className="flex flex-col items-center hover:opacity-80 transition-opacity w-[88px]"
-                              >
-                                <span className="text-[9px] mb-1.5 font-medium" style={{ color: "#c8922a" }}>{dateLabel}</span>
-                                <div className="w-3 h-3 rounded-full border-2 mb-2 shrink-0" style={{ background: "#c8922a", borderColor: "rgba(200,146,42,0.4)" }} />
-                                <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.9)" }}>
-                                  {c.destinationName}
-                                </span>
-                                <span className="text-[9px] text-center mt-0.5 leading-tight line-clamp-2 px-1" style={{ color: "rgba(255,255,255,0.4)" }}>
-                                  {c.caption}
-                                </span>
-                              </button>
-                              {i < arr.length - 1 && (
-                                <div className="h-px w-5 shrink-0 mb-6" style={{ background: "rgba(200,146,42,0.35)", borderTop: "1px dashed rgba(200,146,42,0.35)" }} />
-                              )}
+                    <div className="overflow-x-auto no-scrollbar px-4 pb-5">
+                      {(() => {
+                        const items = [...checkins].reverse().slice(0, 5);
+                        const ITEM_W = 88;
+                        const total = items.length + 1; // +1 for "Tiếp tục"
+                        return (
+                          <div className="relative" style={{ minWidth: total * ITEM_W + (total - 1) * 8 }}>
+                            {/* Continuous gold line */}
+                            <div className="absolute" style={{
+                              top: 28, left: ITEM_W / 2,
+                              right: ITEM_W / 2,
+                              height: 2,
+                              background: "linear-gradient(90deg, #c8922a, #f0d070, #c8922a)",
+                              boxShadow: "0 0 6px rgba(200,146,42,0.5)",
+                            }} />
+                            <div className="flex" style={{ gap: 8 }}>
+                              {items.map((c) => {
+                                const d = new Date(c.createdAt);
+                                const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+                                return (
+                                  <button
+                                    key={c.id}
+                                    onClick={() => openDestination(c.destinationId, c.provinceSlug)}
+                                    className="flex flex-col items-center hover:opacity-80 transition-opacity shrink-0"
+                                    style={{ width: ITEM_W }}
+                                  >
+                                    <span className="text-[9px] mb-2 font-medium" style={{ color: "rgba(200,146,42,0.8)" }}>{dateLabel}</span>
+                                    {/* Dot */}
+                                    <div className="w-3.5 h-3.5 rounded-full z-10 mb-2.5 shrink-0" style={{
+                                      background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
+                                      boxShadow: "0 0 8px rgba(200,146,42,0.7)",
+                                    }} />
+                                    <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                                      {c.destinationName}
+                                    </span>
+                                    <span className="text-[9px] text-center mt-1 leading-snug line-clamp-2 px-0.5" style={{ color: "rgba(255,255,255,0.38)" }}>
+                                      {c.caption}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                              {/* "Tiếp tục" placeholder */}
+                              <div className="flex flex-col items-center shrink-0" style={{ width: ITEM_W }}>
+                                <span className="text-[9px] mb-2" style={{ color: "transparent" }}>—</span>
+                                {/* Diamond dot */}
+                                <div className="z-10 mb-2.5 shrink-0" style={{
+                                  width: 14, height: 14,
+                                  background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
+                                  boxShadow: "0 0 8px rgba(200,146,42,0.7)",
+                                  transform: "rotate(45deg)",
+                                  borderRadius: 2,
+                                }} />
+                                <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
+                                <span className="text-[9px] text-center mt-1 leading-snug px-0.5" style={{ color: "rgba(255,255,255,0.38)" }}>Còn nhiều nơi đang chờ bạn</span>
+                              </div>
                             </div>
-                          );
-                        })}
-                      </div>
+                          </div>
+                        );
+                      })()}
                     </div>
                   </section>
                 </div>
