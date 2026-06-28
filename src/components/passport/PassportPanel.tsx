@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X, Share2, Compass, MapPin, Star, Loader2, ChevronRight, Heart } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
@@ -12,6 +12,8 @@ import { panelTransition } from "@/design/motion";
 import { Button } from "@/components/ui/Button";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { shareOrDownload } from "@/lib/share/exportPng";
+import { getMapModel } from "@/lib/map/mapModelCache";
+import type { ProvinceShape } from "@/lib/map/projection";
 import geoMeta from "@/data/generated/geo-meta.json";
 
 const provinceToRegion: Record<string, string> = Object.fromEntries(
@@ -39,6 +41,16 @@ export function PassportPanel() {
   const destinations = useContentStore((s) => s.destinations);
   const cardRef = useRef<HTMLDivElement>(null);
   const [exporting, setExporting] = useState(false);
+  const [mapProvinces, setMapProvinces] = useState<ProvinceShape[]>([]);
+  const [mapMeta, setMapMeta] = useState({ width: 1000, height: 2200 });
+  const visitedSet = useMemo(() => new Set(visitedProvinces), [visitedProvinces]);
+
+  useEffect(() => {
+    getMapModel().then((m) => {
+      setMapProvinces(m.provinces);
+      setMapMeta({ width: m.width, height: m.height });
+    });
+  }, []);
 
   const onShare = async () => {
     if (!cardRef.current) return;
@@ -96,9 +108,27 @@ export function PassportPanel() {
                 <div className="absolute bottom-4 right-6 opacity-10">
                   <CompassRoseSvg size={80} />
                 </div>
-                <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-[0.07]">
-                  <VietnamOutlineSvg size={70} />
-                </div>
+
+                {/* Mini Vietnam map — right side */}
+                {mapProvinces.length > 0 && (() => {
+                  const MAP_W = 100, MAP_H = 190;
+                  const scale = Math.min(MAP_W / mapMeta.width, MAP_H / mapMeta.height);
+                  return (
+                    <div className="absolute right-4 top-0 bottom-0 flex items-center pointer-events-none">
+                      <svg width={MAP_W} height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`}>
+                        <g transform={`translate(${(MAP_W - mapMeta.width * scale) / 2},${(MAP_H - mapMeta.height * scale) / 2}) scale(${scale})`}>
+                          {mapProvinces.map((p) => (
+                            <path key={p.slug} d={p.d}
+                              fill={visitedSet.has(p.slug) ? "#c8922a" : "rgba(0,80,60,0.4)"}
+                              stroke={visitedSet.has(p.slug) ? "rgba(240,208,112,0.5)" : "rgba(200,146,42,0.12)"}
+                              strokeWidth={visitedSet.has(p.slug) ? 3 : 2}
+                            />
+                          ))}
+                        </g>
+                      </svg>
+                    </div>
+                  );
+                })()}
 
                 <div className="relative flex items-center gap-6 px-6 py-6">
                   {/* Left: emblem + title */}
@@ -129,7 +159,7 @@ export function PassportPanel() {
                   </div>
 
                   {/* Right: title + stats */}
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0" style={{ paddingRight: mapProvinces.length > 0 ? 108 : 0 }}>
                     <p className="text-[10px] tracking-[0.18em] uppercase text-[#d4a84b]/80 font-medium mb-0.5">
                       {t("passport.subtitle")}
                     </p>
