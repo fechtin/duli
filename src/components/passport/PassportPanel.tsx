@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X, Share2, Compass, MapPin, Loader2, ChevronRight, Heart } from "lucide-react";
+import { X, Share2, Compass, Loader2, ChevronRight, Heart } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useMapStore } from "@/lib/store/useMapStore";
@@ -211,8 +211,6 @@ export function PassportPanel() {
                     </div>
                     <div className="grid grid-cols-4 gap-2.5 px-4 pb-5">
                       {checkins.slice(0, 4).map((c) => {
-                        const d = new Date(c.createdAt);
-                        const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
                         return (
                           <button key={c.id} onClick={() => openDestination(c.destinationId, c.provinceSlug)}
                             className="relative overflow-hidden text-left transition-all hover:scale-[1.02]"
