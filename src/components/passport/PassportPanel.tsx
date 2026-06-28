@@ -43,14 +43,12 @@ export function PassportPanel() {
   const [exporting, setExporting] = useState(false);
   const [mapProvinces, setMapProvinces] = useState<ProvinceShape[]>([]);
   const [mapMeta, setMapMeta] = useState({ width: 1000, height: 2200 });
-  const [mapProject, setMapProject] = useState<((ll: [number, number]) => [number, number]) | null>(null);
   const visitedSet = useMemo(() => new Set(visitedProvinces), [visitedProvinces]);
 
   useEffect(() => {
     getMapModel().then((m) => {
       setMapProvinces(m.provinces);
       setMapMeta({ width: m.width, height: m.height });
-      setMapProject(() => m.project);
     });
   }, []);
 
@@ -143,20 +141,6 @@ export function PassportPanel() {
                   const scale = Math.min(MAP_W / mapMeta.width, MAP_H / mapMeta.height);
                   const offsetX = (MAP_W - mapMeta.width * scale) / 2;
                   const offsetY = (MAP_H - mapMeta.height * scale) / 2;
-                  // 1 most-recent checkin per region, max 6
-                  const seenRegions = new Set<string>();
-                  const pins = checkins.filter(c => {
-                    const dest = destinations.find(d => d.id === c.destinationId);
-                    if (!dest) return false;
-                    const region = provinceToRegion[c.provinceSlug];
-                    if (!region || seenRegions.has(region)) return false;
-                    seenRegions.add(region);
-                    return true;
-                  }).slice(0, 6).map(c => {
-                    const dest = destinations.find(d => d.id === c.destinationId)!;
-                    const [px, py] = mapProject ? mapProject([dest.lng, dest.lat]) : [0, 0];
-                    return { c, x: offsetX + px * scale, y: offsetY + py * scale };
-                  });
                   return (
                     <div className="relative mx-4 mb-4 rounded-xl overflow-hidden" style={{ height: MAP_H }}>
                       <svg width="100%" height={MAP_H} viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0">
@@ -176,26 +160,6 @@ export function PassportPanel() {
                           <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
                         )}
                       </svg>
-                      {/* Photo pins */}
-                      {pins.map(({ c, x, y }) => (
-                        <button key={c.id}
-                          onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                          className="absolute hover:scale-110 transition-transform"
-                          style={{ left: x, top: y, transform: "translate(-50%,-50%)" }}>
-                          <div className="w-9 h-9 rounded-full overflow-hidden border-2 shadow-lg"
-                            style={{ borderColor: "#d4a84b", boxShadow: "0 0 8px rgba(212,168,75,0.6)" }}>
-                            {c.photoUrl ? (
-                              <img src={c.photoUrl} alt={c.destinationName} className="w-full h-full object-cover" />
-                            ) : (
-                              <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full" />
-                            )}
-                          </div>
-                          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] font-semibold text-white px-1 rounded"
-                            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}>
-                            {c.destinationName}
-                          </div>
-                        </button>
-                      ))}
                     </div>
                   );
                 })()}
