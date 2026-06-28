@@ -225,54 +225,47 @@ export function PassportPanel() {
               {checkins.length === 0 ? (
                 <EmptyState t={t} setOpen={setOpen} />
               ) : (
-                <div className="px-4 pb-6 space-y-3 mt-3">
-                  {/* Visited places */}
-                  <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
-                    <div className="flex items-center justify-between px-4 pt-4 pb-3">
-                      <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
+                <div className="pb-6 space-y-3 mt-3" style={{ padding: "0 12px 24px" }}>
+                  {/* ── Visited places ── */}
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0b1c28", border: "1px solid rgba(200,146,42,0.12)" }}>
+                    <div className="flex items-center justify-between px-5 pt-5 pb-4">
+                      <h3 className="text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "#c8922a" }}>
                         {t("passport.visitedPlaces")}
                       </h3>
-                      <button className="flex items-center gap-0.5 text-[10px]" style={{ color: "#c8922a" }}>
-                        Xem tất cả <ChevronRight size={12} />
+                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#c8922a" }}>
+                        Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
-                    {/* 4-card grid — fits panel width */}
-                    <div className="grid grid-cols-4 gap-2 px-3 pb-4">
+                    <div className="grid grid-cols-4 gap-2.5 px-4 pb-5">
                       {checkins.slice(0, 4).map((c) => {
                         const d = new Date(c.createdAt);
                         const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
                         return (
-                          <button
-                            key={c.id}
-                            onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                            className="relative overflow-hidden rounded-xl text-left transition-all hover:opacity-90"
-                            style={{ height: 200 }}
-                          >
-                            {/* Photo */}
+                          <button key={c.id} onClick={() => openDestination(c.destinationId, c.provinceSlug)}
+                            className="relative overflow-hidden text-left transition-all hover:scale-[1.02]"
+                            style={{ height: 210, borderRadius: 14 }}>
                             {c.photoUrl ? (
                               <img src={c.photoUrl} alt={c.destinationName} className="absolute inset-0 h-full w-full object-cover" />
                             ) : (
-                              <div className="absolute inset-0">
-                                <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full" />
-                              </div>
+                              <div className="absolute inset-0"><IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full" /></div>
                             )}
-                            {/* Gradient overlay */}
-                            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.75) 100%)" }} />
+                            {/* Rich gradient overlay */}
+                            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0) 35%, rgba(5,15,25,0.95) 100%)" }} />
                             {/* Heart */}
-                            <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(0,0,0,0.35)", backdropFilter: "blur(4px)" }}>
-                              <Heart size={13} className="text-white/80" />
+                            <div className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "rgba(10,20,35,0.55)", backdropFilter: "blur(6px)", border: "1px solid rgba(255,255,255,0.15)" }}>
+                              <Heart size={11} className="text-white/70" />
                             </div>
-                            {/* Text overlay */}
-                            <div className="absolute bottom-0 left-0 right-0 p-3">
+                            {/* Text */}
+                            <div className="absolute bottom-0 left-0 right-0 px-2.5 pb-2.5">
                               <div className="flex items-center gap-1 mb-0.5">
-                                <MapPin size={10} style={{ color: "#c8922a" }} className="shrink-0" />
-                                <span className="text-[12px] font-bold text-white truncate">{c.destinationName}</span>
+                                <MapPin size={9} style={{ color: "#d4a84b" }} className="shrink-0" />
+                                <span className="text-[11px] font-bold leading-tight" style={{ color: "#fff" }}>{c.destinationName}</span>
                               </div>
-                              <div className="flex items-start gap-1 mb-1">
-                                <MapPin size={9} className="text-white/40 shrink-0 mt-0.5" />
-                                <p className="text-[10px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.55)" }}>{c.caption}</p>
+                              <div className="flex items-start gap-1 mb-1.5">
+                                <MapPin size={8} className="shrink-0 mt-px" style={{ color: "rgba(255,255,255,0.35)" }} />
+                                <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.5)" }}>{c.caption}</p>
                               </div>
-                              <p className="text-[10px]" style={{ color: "rgba(255,255,255,0.4)" }}>{dateLabel}</p>
+                              <p className="text-[9px]" style={{ color: "rgba(212,168,75,0.7)" }}>{dateLabel}</p>
                             </div>
                           </button>
                         );
@@ -280,23 +273,23 @@ export function PassportPanel() {
                     </div>
                   </section>
 
-                  {/* Badges — top 6 rarest, equal-width columns */}
+                  {/* ── Badges ── */}
                   {badges.length > 0 && (
-                    <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
-                      <div className="px-4 pt-4 pb-3">
-                        <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
+                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0b1c28", border: "1px solid rgba(200,146,42,0.12)" }}>
+                      <div className="px-5 pt-5 pb-4">
+                        <h3 className="text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "#c8922a" }}>
                           {t("passport.yourBadges")}
                         </h3>
                       </div>
-                      <div className="grid px-3 pb-4" style={{ gridTemplateColumns: `repeat(${badges.length}, 1fr)`, gap: 8 }}>
+                      <div className="grid px-4 pb-5" style={{ gridTemplateColumns: `repeat(${Math.min(badges.length, 6)}, 1fr)`, gap: 10 }}>
                         {badges.map((b) => (
-                          <div key={b.id} className="flex flex-col items-center gap-1.5">
+                          <div key={b.id} className="flex flex-col items-center gap-2">
                             <BadgeMedal emoji={b.emoji} />
-                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.9)" }}>
+                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
                               {b.label}
                             </span>
                             {b.description && (
-                              <span className="text-[9px] text-center" style={{ color: "rgba(255,255,255,0.4)" }}>
+                              <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(200,146,42,0.7)" }}>
                                 {b.description}
                               </span>
                             )}
@@ -306,14 +299,14 @@ export function PassportPanel() {
                     </section>
                   )}
 
-                  {/* Timeline */}
-                  <section className="rounded-xl overflow-hidden" style={{ background: "#0d1e2b" }}>
-                    <div className="flex items-center justify-between px-4 pt-4 pb-2">
-                      <h3 className="text-[10px] font-bold tracking-[0.22em] uppercase" style={{ color: "#c8922a" }}>
+                  {/* ── Timeline ── */}
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0b1c28", border: "1px solid rgba(200,146,42,0.12)" }}>
+                    <div className="flex items-center justify-between px-5 pt-5 pb-3">
+                      <h3 className="text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "#c8922a" }}>
                         {t("passport.timeline")}
                       </h3>
-                      <button className="flex items-center gap-0.5 text-[10px]" style={{ color: "#c8922a" }}>
-                        Xem tất cả <ChevronRight size={12} />
+                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#c8922a" }}>
+                        Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
                     <div className="overflow-x-auto no-scrollbar px-4 pb-5">
@@ -389,20 +382,35 @@ export function PassportPanel() {
 
 
 function BadgeMedal({ emoji }: { emoji: string }) {
-  const S = 56;
+  const S = 60;
   const c = S / 2;
+  // Octagon points
+  const oct = (r: number) => Array.from({ length: 8 }, (_, i) => {
+    const a = (i * Math.PI) / 4 - Math.PI / 8;
+    return `${c + r * Math.cos(a)},${c + r * Math.sin(a)}`;
+  }).join(" ");
   return (
     <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} xmlns="http://www.w3.org/2000/svg">
-      <circle cx={c} cy={c} r={c - 1} fill="#0d2a2e" stroke="#c49a2a" strokeWidth="2" />
-      <circle cx={c} cy={c} r={c - 6} fill="none" stroke="rgba(212,168,75,0.35)" strokeWidth="1" />
-      {[0, 90, 180, 270].map((deg) => {
-        const rad = (deg * Math.PI) / 180;
-        const r2 = c - 4;
-        return (
-          <circle key={deg} cx={c + Math.cos(rad) * r2} cy={c + Math.sin(rad) * r2} r={1.5} fill="#c49a2a" opacity="0.7" />
-        );
+      <defs>
+        <radialGradient id={`bg-${emoji.codePointAt(0)}`} cx="40%" cy="35%">
+          <stop offset="0%" stopColor="#1a3d3a" />
+          <stop offset="100%" stopColor="#0a1e20" />
+        </radialGradient>
+      </defs>
+      {/* Outer octagon — gold border */}
+      <polygon points={oct(c - 1)} fill={`url(#bg-${emoji.codePointAt(0)})`} stroke="#c49a2a" strokeWidth="2" />
+      {/* Inner octagon ring */}
+      <polygon points={oct(c - 5)} fill="none" stroke="rgba(212,168,75,0.3)" strokeWidth="0.75" />
+      {/* Corner diamonds */}
+      {Array.from({ length: 8 }, (_, i) => {
+        const a = (i * Math.PI) / 4 - Math.PI / 8;
+        const r = c - 2.5;
+        return <circle key={i} cx={c + r * Math.cos(a)} cy={c + r * Math.sin(a)} r={1.2} fill="#c49a2a" opacity="0.8" />;
       })}
-      <text x={c} y={c + 8} textAnchor="middle" fontSize="22"
+      {/* Subtle inner glow ring */}
+      <circle cx={c} cy={c} r={c - 10} fill="none" stroke="rgba(212,168,75,0.15)" strokeWidth="1" />
+      {/* Emoji */}
+      <text x={c} y={c + 8} textAnchor="middle" fontSize="23"
         fontFamily="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">
         {emoji}
       </text>
