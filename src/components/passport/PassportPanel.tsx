@@ -132,7 +132,7 @@ export function PassportPanel() {
                     <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
                       Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ")[0] ?? "bạn"}</span>!
                     </p>
-                    <p className="text-[10px] mt-0.5 italic" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    <p className="text-[9px] mt-0.5 italic whitespace-nowrap" style={{ color: "rgba(255,255,255,0.35)" }}>
                       "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
                     </p>
                   </div>
@@ -202,7 +202,7 @@ export function PassportPanel() {
                   {/* ── Visited places ── */}
                   <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-4">
-                      <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
+                      <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
                         {t("passport.visitedPlaces")}
                       </h3>
                       <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
@@ -241,7 +241,7 @@ export function PassportPanel() {
                   {badges.length > 0 && (
                     <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <div className="px-5 pt-5 pb-4">
-                        <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
+                        <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
                           {t("passport.yourBadges")}
                         </h3>
                       </div>
@@ -266,7 +266,7 @@ export function PassportPanel() {
                   {/* ── Timeline ── */}
                   <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-3">
-                      <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
+                      <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
                         {t("passport.timeline")}
                       </h3>
                       <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
@@ -278,7 +278,7 @@ export function PassportPanel() {
                       {(() => {
                         // Chronological order: oldest left → newest right, arrow at far right
                         const items = [...checkins].reverse().slice(0, 5);
-                        const ITEM_W = 88;
+                        const ITEM_W = 96;
                         const total = items.length + 1;
                         return (
                           <div className="relative" style={{ minWidth: total * ITEM_W + (total - 1) * 8 }}>
@@ -306,7 +306,7 @@ export function PassportPanel() {
                                       background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
                                       boxShadow: "0 0 8px rgba(200,146,42,0.7)",
                                     }} />
-                                    <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                                    <span className="text-[10px] font-bold text-center leading-tight line-clamp-1" style={{ color: "rgba(255,255,255,0.92)" }}>
                                       {c.destinationName}
                                     </span>
                                     <span className="text-[9px] text-center mt-1 leading-snug line-clamp-2 px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
@@ -324,7 +324,7 @@ export function PassportPanel() {
                                     <polyline points="18,2 26,7 18,12" stroke="#d4a84b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                                   </svg>
                                 </div>
-                                <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
+                                <span className="text-[10px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
                                 <span className="text-[9px] text-center mt-1 leading-snug px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>Còn nhiều nơi đang chờ bạn</span>
                               </div>
                             </div>
