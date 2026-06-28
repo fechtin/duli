@@ -143,10 +143,16 @@ export function PassportPanel() {
                   const scale = Math.min(MAP_W / mapMeta.width, MAP_H / mapMeta.height);
                   const offsetX = (MAP_W - mapMeta.width * scale) / 2;
                   const offsetY = (MAP_H - mapMeta.height * scale) / 2;
-                  const pins = checkins.slice(0, 6).filter(c => {
+                  // 1 most-recent checkin per region, max 6
+                  const seenRegions = new Set<string>();
+                  const pins = checkins.filter(c => {
                     const dest = destinations.find(d => d.id === c.destinationId);
-                    return !!dest;
-                  }).map(c => {
+                    if (!dest) return false;
+                    const region = provinceToRegion[c.provinceSlug];
+                    if (!region || seenRegions.has(region)) return false;
+                    seenRegions.add(region);
+                    return true;
+                  }).slice(0, 6).map(c => {
                     const dest = destinations.find(d => d.id === c.destinationId)!;
                     const [px, py] = mapProject ? mapProject([dest.lng, dest.lat]) : [0, 0];
                     return { c, x: offsetX + px * scale, y: offsetY + py * scale };
