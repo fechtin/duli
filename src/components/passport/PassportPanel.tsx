@@ -230,15 +230,8 @@ export function PassportPanel() {
                             </div>
                             {/* Text */}
                             <div className="absolute bottom-0 left-0 right-0 px-2.5 pb-3">
-                              <div className="flex items-center gap-1 mb-0.5">
-                                <MapPin size={9} style={{ color: "#d4a84b" }} className="shrink-0" />
-                                <span className="text-[11px] font-bold leading-tight" style={{ color: "#ffffff" }}>{c.destinationName}</span>
-                              </div>
-                              <div className="flex items-start gap-1 mb-1.5">
-                                <MapPin size={8} className="shrink-0 mt-px" style={{ color: "rgba(255,255,255,0.3)" }} />
-                                <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>{c.caption}</p>
-                              </div>
-                              <p className="text-[9px] font-medium" style={{ color: "rgba(212,168,75,0.75)" }}>{dateLabel}</p>
+                              <span className="text-[11px] font-bold leading-tight block mb-1" style={{ color: "#ffffff" }}>{c.destinationName}</span>
+                              <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>{c.caption}</p>
                             </div>
                           </button>
                         );
