@@ -90,7 +90,7 @@ export function PassportPanel() {
             {...motionProps}
             transition={panelTransition}
             className="absolute z-50 flex flex-col shadow-[var(--shadow-e3)] inset-x-0 bottom-0 max-h-[92%] rounded-t-[var(--radius-sheet)] border-t md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-l"
-            style={{ background: "#07111a", borderColor: "rgba(200,146,42,0.15)" }}
+            style={{ background: "#091e24", borderColor: "rgba(200,146,42,0.15)" }}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
@@ -100,11 +100,11 @@ export function PassportPanel() {
               </button>
             </div>
 
-            <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto" style={{ background: "#07111a" }}>
+            <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto" style={{ background: "#091e24" }}>
 
               {/* ── Cover header ── */}
               <div className="relative overflow-hidden"
-                style={{ background: "#0c1d2a", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+                style={{ background: "#0d2830", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
 
                 {/* Top bar: greeting + share */}
                 <div className="flex items-start justify-between px-5 pt-5 pb-3">
@@ -176,9 +176,9 @@ export function PassportPanel() {
                     const offsetX = (MAP_W - mapMeta.width * scale) / 2;
                     const offsetY = (MAP_H - mapMeta.height * scale) / 2;
                     return (
-                      <div className="flex-1 rounded-xl overflow-hidden relative" style={{ background: "#07111a", minHeight: MAP_H }}>
+                      <div className="flex-1 rounded-xl overflow-hidden relative" style={{ background: "#091e24", minHeight: MAP_H }}>
                         <svg width="100%" height="100%" viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0" preserveAspectRatio="xMidYMid meet">
-                          <rect width={MAP_W} height={MAP_H} fill="#07111a" />
+                          <rect width={MAP_W} height={MAP_H} fill="#091e24" />
                           <g transform={`translate(${offsetX},${offsetY}) scale(${scale})`}>
                             {mapProvinces.map((p) => (
                               <path key={p.slug} d={p.d}
@@ -200,7 +200,7 @@ export function PassportPanel() {
               ) : (
                 <div className="pb-6 space-y-3 mt-3" style={{ padding: "0 12px 24px" }}>
                   {/* ── Visited places ── */}
-                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0c1d2a", border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-4">
                       <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
                         {t("passport.visitedPlaces")}
@@ -248,7 +248,7 @@ export function PassportPanel() {
 
                   {/* ── Badges ── */}
                   {badges.length > 0 && (
-                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0c1d2a", border: "1px solid rgba(255,255,255,0.07)" }}>
+                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <div className="px-5 pt-5 pb-4">
                         <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
                           {t("passport.yourBadges")}
@@ -273,7 +273,7 @@ export function PassportPanel() {
                   )}
 
                   {/* ── Timeline ── */}
-                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0c1d2a", border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-3">
                       <h3 className="text-[12px] font-bold tracking-[0.28em] uppercase" style={{ color: "#d4a84b" }}>
                         {t("passport.timeline")}

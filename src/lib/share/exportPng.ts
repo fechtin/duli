@@ -5,7 +5,7 @@ import { toBlob } from "html-to-image";
 export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
   const blob = await toBlob(el, {
     pixelRatio: scale,
-    backgroundColor: "#081420",
+    backgroundColor: "#091e24",
     width: el.offsetWidth,
     height: el.scrollHeight,
     skipFonts: true,
