@@ -245,20 +245,22 @@ export function PassportPanel() {
                           {t("passport.yourBadges")}
                         </h3>
                       </div>
-                      <div className="grid px-4 pb-5" style={{ gridTemplateColumns: `repeat(${Math.min(badges.length, 6)}, 1fr)`, gap: 10 }}>
-                        {badges.map((b) => (
-                          <div key={b.id} className="flex flex-col items-center gap-2">
-                            <BadgeMedal emoji={b.emoji} />
-                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
-                              {b.label}
-                            </span>
-                            {b.description && (
-                              <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(212,168,75,0.65)" }}>
-                                {b.description}
+                      <div className="overflow-x-auto no-scrollbar px-4 pb-5">
+                        <div className="flex" style={{ gap: 10 }}>
+                          {badges.map((b) => (
+                            <div key={b.id} className="flex flex-col items-center gap-2 shrink-0" style={{ width: 72 }}>
+                              <BadgeMedal emoji={b.emoji} />
+                              <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                                {b.label}
                               </span>
-                            )}
-                          </div>
-                        ))}
+                              {b.description && (
+                                <span className="text-[9px] text-center -mt-1" style={{ color: "rgba(212,168,75,0.65)" }}>
+                                  {b.description}
+                                </span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </section>
                   )}

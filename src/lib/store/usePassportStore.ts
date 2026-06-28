@@ -82,8 +82,8 @@ export const usePassportStore = create<PassportState>()(
         if (p >= 30) out.push({ id: "half-country", emoji: "🌄", label: "Nửa dải đất nước",     description: `${p} tỉnh` });
         if (n >= 40) out.push({ id: "conqueror",    emoji: "🏔️", label: "Chinh phục Việt Nam",  description: `${n} check-in` });
         if (p >= 63) out.push({ id: "full-country", emoji: "💎", label: "Trọn vẹn Việt Nam",    description: "63 tỉnh" });
-        // Return top 6 by rarity (highest threshold first = end of array)
-        return out.slice(-6).reverse();
+        // Return by rarity desc (highest threshold first = end of array)
+        return out.reverse();
       },
     }),
     {
