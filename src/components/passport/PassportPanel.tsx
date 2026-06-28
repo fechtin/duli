@@ -195,8 +195,8 @@ export function PassportPanel() {
                 </div>
               </div>
 
-              {/* Share button */}
-              <div className="px-5 pt-3 pb-1">
+              {/* Share button — data-html2canvas-ignore hides it from the exported image */}
+              <div className="px-5 pt-3 pb-1" data-html2canvas-ignore="true">
                 <Button className="w-full" variant="secondary" onClick={onShare} disabled={checkins.length === 0 || exporting}>
                   {exporting ? <Loader2 size={15} className="animate-spin" /> : <Share2 size={15} />}
                   {exporting ? "Đang xuất ảnh..." : t("passport.share")}

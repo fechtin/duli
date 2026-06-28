@@ -9,6 +9,7 @@ export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
     width: el.offsetWidth,
     height: el.scrollHeight,
     skipFonts: true,
+    filter: (node) => !(node instanceof HTMLElement && node.hasAttribute("data-html2canvas-ignore")),
   });
   if (!blob) throw new Error("blob");
   return blob;
