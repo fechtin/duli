@@ -64,13 +64,22 @@ const COLOR_PROPS = [
   "outline-color", "fill", "stroke",
 ];
 
-function fixOklabColors(root: HTMLElement) {
-  root.querySelectorAll<HTMLElement>("*").forEach((el) => {
-    const computed = window.getComputedStyle(el);
+/**
+ * Read computed styles from the LIVE (rendered) original element tree,
+ * resolve any oklab/oklch values, then apply as inline styles to the clone.
+ * The cloned document is not rendered so getComputedStyle on it returns nothing.
+ */
+function fixOklabColors(original: HTMLElement, cloned: HTMLElement) {
+  const origEls = [original, ...Array.from(original.querySelectorAll<HTMLElement>("*"))];
+  const cloneEls = [cloned, ...Array.from(cloned.querySelectorAll<HTMLElement>("*"))];
+  origEls.forEach((orig, i) => {
+    const clone = cloneEls[i];
+    if (!clone) return;
+    const computed = window.getComputedStyle(orig);
     for (const prop of COLOR_PROPS) {
       const val = computed.getPropertyValue(prop);
       if (val && /oklab|oklch|color\(/.test(val)) {
-        el.style.setProperty(prop, resolveColor(val));
+        clone.style.setProperty(prop, resolveColor(val));
       }
     }
   });
@@ -89,7 +98,7 @@ export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
     windowWidth: el.offsetWidth,
     windowHeight: fullHeight,
     scrollY: -el.scrollTop,
-    onclone: (_doc, cloned) => fixOklabColors(cloned),
+    onclone: (_doc, cloned) => fixOklabColors(el, cloned),
   });
   return new Promise<Blob>((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"),
