@@ -42,8 +42,41 @@ export async function fetchAvatarBase64(avatarUrl: string | null | undefined): P
   return urlToBase64(avatarUrl);
 }
 
+/** Convert any oklab/oklch/color() value the browser understands but html2canvas doesn't. */
+function resolveColor(raw: string): string {
+  if (!/oklab|oklch|color\(/.test(raw)) return raw;
+  try {
+    const c = document.createElement("canvas");
+    c.width = c.height = 1;
+    const ctx = c.getContext("2d")!;
+    ctx.fillStyle = raw;
+    ctx.fillRect(0, 0, 1, 1);
+    const [r, g, b, a] = ctx.getImageData(0, 0, 1, 1).data;
+    return `rgba(${r},${g},${b},${+(a / 255).toFixed(3)})`;
+  } catch {
+    return raw;
+  }
+}
+
+const COLOR_PROPS = [
+  "color", "background-color", "border-color",
+  "border-top-color", "border-right-color", "border-bottom-color", "border-left-color",
+  "outline-color", "fill", "stroke",
+];
+
+function fixOklabColors(root: HTMLElement) {
+  root.querySelectorAll<HTMLElement>("*").forEach((el) => {
+    const computed = window.getComputedStyle(el);
+    for (const prop of COLOR_PROPS) {
+      const val = computed.getPropertyValue(prop);
+      if (val && /oklab|oklch|color\(/.test(val)) {
+        el.style.setProperty(prop, resolveColor(val));
+      }
+    }
+  });
+}
+
 export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
-  // Capture full scrollable height, not just visible viewport
   const fullHeight = el.scrollHeight;
   const canvas = await html2canvas(el, {
     scale,
@@ -56,6 +89,7 @@ export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
     windowWidth: el.offsetWidth,
     windowHeight: fullHeight,
     scrollY: -el.scrollTop,
+    onclone: (_doc, cloned) => fixOklabColors(cloned),
   });
   return new Promise<Blob>((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"),
