@@ -217,38 +217,43 @@ export function PassportPanel() {
                         Xem tất cả <ChevronRight size={12} />
                       </button>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 px-3 pb-4">
-                      {checkins.map((c) => {
+                    {/* 4-card horizontal scroll — most recent first */}
+                    <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-4">
+                      {checkins.slice(0, 4).map((c) => {
                         const d = new Date(c.createdAt);
                         const dateLabel = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
                         return (
                           <button
                             key={c.id}
                             onClick={() => openDestination(c.destinationId, c.provinceSlug)}
-                            className="group relative overflow-hidden rounded-lg text-left transition-all hover:opacity-90"
-                            style={{ background: "#0a1520" }}
+                            className="relative shrink-0 overflow-hidden rounded-2xl text-left transition-all hover:opacity-90"
+                            style={{ width: 160, height: 240 }}
                           >
-                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-lg">
-                              {c.photoUrl ? (
-                                <img src={c.photoUrl} alt={c.destinationName} className="h-full w-full object-cover" />
-                              ) : (
-                                <IllustratedImage seed={c.photoSeed} ratio="4/3" className="w-full" />
-                              )}
-                              <div className="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-black/40 flex items-center justify-center">
-                                <Heart size={11} className="text-white/70" />
+                            {/* Photo */}
+                            {c.photoUrl ? (
+                              <img src={c.photoUrl} alt={c.destinationName} className="absolute inset-0 h-full w-full object-cover" />
+                            ) : (
+                              <div className="absolute inset-0">
+                                <IllustratedImage seed={c.photoSeed} ratio="1/1" className="w-full h-full" />
                               </div>
+                            )}
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.75) 100%)" }} />
+                            {/* Heart */}
+                            <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(0,0,0,0.35)", backdropFilter: "blur(4px)" }}>
+                              <Heart size={13} className="text-white/80" />
                             </div>
-                            <div className="px-2.5 py-2">
+                            {/* Text overlay */}
+                            <div className="absolute bottom-0 left-0 right-0 p-3">
                               <div className="flex items-center gap-1 mb-0.5">
-                                <MapPin size={9} style={{ color: "#c8922a" }} className="shrink-0" />
-                                <span className="text-[11px] font-semibold truncate" style={{ color: "#c8922a" }}>
-                                  {c.destinationName}
-                                </span>
+                                <MapPin size={10} style={{ color: "#c8922a" }} className="shrink-0" />
+                                <span className="text-[12px] font-bold text-white truncate">{c.destinationName}</span>
                               </div>
-                              <p className="text-[9px] leading-relaxed line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>
-                                {c.caption}
-                              </p>
-                              <p className="mt-1 text-[9px]" style={{ color: "rgba(255,255,255,0.3)" }}>{dateLabel}</p>
+                              <div className="flex items-start gap-1 mb-1">
+                                <MapPin size={9} className="text-white/40 shrink-0 mt-0.5" />
+                                <p className="text-[10px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.55)" }}>{c.caption}</p>
+                              </div>
+                              <p className="text-[10px]" style={{ color: "rgba(255,255,255,0.4)" }}>{dateLabel}</p>
                             </div>
                           </button>
                         );
