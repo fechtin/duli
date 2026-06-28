@@ -284,10 +284,10 @@ export function PassportPanel() {
                     <div className="overflow-x-auto no-scrollbar px-4 pb-5"
                       ref={(el) => { if (el) el.scrollLeft = el.scrollWidth; }}>
                       {(() => {
-                        // Chronological order: oldest left → newest right, arrow at far right
+                        // Chronological order: oldest left → newest right
                         const items = [...checkins].reverse().slice(0, 5);
                         const ITEM_W = 96;
-                        const total = items.length + 1;
+                        const total = items.length;
                         return (
                           <div className="relative" style={{ minWidth: total * ITEM_W + (total - 1) * 8 }}>
                             {/* Continuous gold line */}
@@ -323,18 +323,6 @@ export function PassportPanel() {
                                   </button>
                                 );
                               })}
-                              {/* Arrow end node */}
-                              <div className="flex flex-col items-center shrink-0" style={{ width: ITEM_W }}>
-                                <span className="text-[9px] mb-2" style={{ color: "transparent" }}>—</span>
-                                <div className="z-10 mb-2.5 shrink-0 flex items-center justify-center" style={{ width: ITEM_W, height: 14 }}>
-                                  <svg width="32" height="14" viewBox="0 0 32 14" fill="none" style={{ overflow: "visible" }}>
-                                    <line x1="0" y1="7" x2="24" y2="7" stroke="#d4a84b" strokeWidth="2" strokeLinecap="round" />
-                                    <polyline points="18,2 26,7 18,12" stroke="#d4a84b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                                  </svg>
-                                </div>
-                                <span className="text-[10px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
-                                <span className="text-[9px] text-center mt-1 leading-snug px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>Còn nhiều nơi đang chờ bạn</span>
-                              </div>
                             </div>
                           </div>
                         );
