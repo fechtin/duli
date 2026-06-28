@@ -43,12 +43,19 @@ export async function fetchAvatarBase64(avatarUrl: string | null | undefined): P
 }
 
 export async function htmlToPngBlob(el: HTMLElement, scale = 2): Promise<Blob> {
+  // Capture full scrollable height, not just visible viewport
+  const fullHeight = el.scrollHeight;
   const canvas = await html2canvas(el, {
     scale,
     useCORS: true,
     allowTaint: false,
-    backgroundColor: null,
+    backgroundColor: "#081420",
     logging: false,
+    width: el.offsetWidth,
+    height: fullHeight,
+    windowWidth: el.offsetWidth,
+    windowHeight: fullHeight,
+    scrollY: -el.scrollTop,
   });
   return new Promise<Blob>((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"),
