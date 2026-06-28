@@ -130,7 +130,7 @@ export function PassportPanel() {
                   </div>
                   <div>
                     <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
-                      Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
+                      Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ")[0] ?? "bạn"}</span>!
                     </p>
                     <p className="text-[10px] mt-0.5 italic truncate" style={{ color: "rgba(255,255,255,0.35)", maxWidth: 260 }}>
                       "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
@@ -273,12 +273,13 @@ export function PassportPanel() {
                         Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
-                    <div className="overflow-x-auto no-scrollbar px-4 pb-5">
+                    <div className="overflow-x-auto no-scrollbar px-4 pb-5"
+                      ref={(el) => { if (el) el.scrollLeft = el.scrollWidth; }}>
                       {(() => {
-                        // Most recent first (index 0 = newest), older ones scroll right
-                        const items = checkins.slice(0, 5);
+                        // Chronological order: oldest left → newest right, arrow at far right
+                        const items = [...checkins].reverse().slice(0, 5);
                         const ITEM_W = 88;
-                        const total = items.length + 1; // +1 for "Tiếp tục"
+                        const total = items.length + 1;
                         return (
                           <div className="relative" style={{ minWidth: total * ITEM_W + (total - 1) * 8 }}>
                             {/* Continuous gold line */}
@@ -301,7 +302,6 @@ export function PassportPanel() {
                                     style={{ width: ITEM_W }}
                                   >
                                     <span className="text-[9px] mb-2 font-medium" style={{ color: "rgba(212,168,75,0.7)" }}>{dateLabel}</span>
-                                    {/* Dot */}
                                     <div className="w-3.5 h-3.5 rounded-full z-10 mb-2.5 shrink-0" style={{
                                       background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
                                       boxShadow: "0 0 8px rgba(200,146,42,0.7)",
@@ -318,11 +318,10 @@ export function PassportPanel() {
                               {/* Arrow end node */}
                               <div className="flex flex-col items-center shrink-0" style={{ width: ITEM_W }}>
                                 <span className="text-[9px] mb-2" style={{ color: "transparent" }}>—</span>
-                                {/* Arrow → */}
-                                <div className="z-10 mb-2.5 shrink-0 flex items-center justify-center" style={{ width: 26, height: 14 }}>
-                                  <svg width="26" height="14" viewBox="0 0 26 14" fill="none">
-                                    <line x1="0" y1="7" x2="18" y2="7" stroke="#d4a84b" strokeWidth="2" />
-                                    <polyline points="13,2 20,7 13,12" stroke="#d4a84b" strokeWidth="2" strokeLinejoin="round" fill="none" />
+                                <div className="z-10 mb-2.5 shrink-0 flex items-center justify-center" style={{ width: ITEM_W, height: 14 }}>
+                                  <svg width="32" height="14" viewBox="0 0 32 14" fill="none" style={{ overflow: "visible" }}>
+                                    <line x1="0" y1="7" x2="24" y2="7" stroke="#d4a84b" strokeWidth="2" strokeLinecap="round" />
+                                    <polyline points="18,2 26,7 18,12" stroke="#d4a84b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                                   </svg>
                                 </div>
                                 <span className="text-[11px] font-bold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>Tiếp tục...</span>
