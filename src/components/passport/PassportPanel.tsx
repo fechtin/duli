@@ -92,12 +92,20 @@ export function PassportPanel() {
             className="absolute z-50 flex flex-col shadow-[var(--shadow-e3)] inset-x-0 bottom-0 max-h-[92%] rounded-t-[var(--radius-sheet)] border-t md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-l"
             style={{ background: "#091e24", borderColor: "rgba(200,146,42,0.15)" }}
           >
-            {/* Header */}
-            <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+            {/* Header — title + share + close, same bg as body */}
+            <div className="flex items-center justify-between px-5 py-3.5" style={{ background: "#0d2830", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
               <p className="font-display text-base font-semibold" style={{ color: "rgba(255,255,255,0.9)" }}>{t("passport.title")}</p>
-              <button onClick={() => setOpen(false)} aria-label={t("panel.close")} style={{ color: "rgba(255,255,255,0.4)" }} className="hover:opacity-80">
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-2">
+                <button data-html2canvas-ignore="true" onClick={onShare} disabled={checkins.length === 0 || exporting}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
+                  style={{ border: "1px solid rgba(212,168,75,0.4)", color: "#d4a84b", background: "rgba(212,168,75,0.07)" }}>
+                  {exporting ? <Loader2 size={11} className="animate-spin" /> : <Share2 size={11} />}
+                  Chia sẻ hành trình
+                </button>
+                <button onClick={() => setOpen(false)} aria-label={t("panel.close")} style={{ color: "rgba(255,255,255,0.4)" }} className="hover:opacity-80 ml-1">
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto" style={{ background: "#091e24" }}>
@@ -106,36 +114,28 @@ export function PassportPanel() {
               <div className="relative overflow-hidden"
                 style={{ background: "#0d2830", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
 
-                {/* Top bar: greeting + share */}
-                <div className="flex items-start justify-between px-5 pt-5 pb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="relative shrink-0">
-                      {(customAvatarUrl || user?.photoURL) ? (
-                        <img src={customAvatarUrl || user?.photoURL} alt={user?.displayName}
-                          className="w-11 h-11 rounded-full object-cover"
-                          style={{ border: "1.5px solid rgba(212,168,75,0.5)" }} />
-                      ) : (
-                        <div className="w-11 h-11 rounded-full flex items-center justify-center font-bold"
-                          style={{ background: "rgba(212,168,75,0.1)", border: "1.5px solid rgba(212,168,75,0.4)", color: "#d4a84b" }}>
-                          {user?.displayName?.[0]?.toUpperCase() ?? "V"}
-                        </div>
-                      )}
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
-                        Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
-                      </p>
-                      <p className="text-[10px] mt-0.5 italic leading-snug max-w-[200px]" style={{ color: "rgba(255,255,255,0.35)" }}>
-                        "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
-                      </p>
-                    </div>
+                {/* Greeting */}
+                <div className="flex items-center gap-3 px-5 pt-5 pb-3">
+                  <div className="relative shrink-0">
+                    {(customAvatarUrl || user?.photoURL) ? (
+                      <img src={customAvatarUrl || user?.photoURL} alt={user?.displayName}
+                        className="w-11 h-11 rounded-full object-cover"
+                        style={{ border: "1.5px solid rgba(212,168,75,0.5)" }} />
+                    ) : (
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center font-bold"
+                        style={{ background: "rgba(212,168,75,0.1)", border: "1.5px solid rgba(212,168,75,0.4)", color: "#d4a84b" }}>
+                        {user?.displayName?.[0]?.toUpperCase() ?? "V"}
+                      </div>
+                    )}
                   </div>
-                  <button data-html2canvas-ignore="true" onClick={onShare} disabled={checkins.length === 0 || exporting}
-                    className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
-                    style={{ border: "1px solid rgba(212,168,75,0.4)", color: "#d4a84b", background: "rgba(212,168,75,0.07)" }}>
-                    {exporting ? <Loader2 size={11} className="animate-spin" /> : <Share2 size={11} />}
-                    Chia sẻ hành trình
-                  </button>
+                  <div>
+                    <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                      Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ").pop() ?? "bạn"}</span>!
+                    </p>
+                    <p className="text-[10px] mt-0.5 italic leading-snug max-w-[220px]" style={{ color: "rgba(255,255,255,0.35)" }}>
+                      "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
+                    </p>
+                  </div>
                 </div>
 
                 {/* Map left/right split */}
