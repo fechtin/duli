@@ -3,27 +3,35 @@ import { X, Compass } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { generateBrief, type BriefContent } from "@/lib/living/briefGenerator";
 import { useMapStore } from "@/lib/store/useMapStore";
+import { useUIStore } from "@/lib/store/useUIStore";
 
-// Show the brief once per session, dismissed on close or on first map interaction.
-const SESSION_KEY = "vivel:brief-dismissed";
+// Morning Brief popup is shown only the first time per DAY (023 §Morning Brief Redesign).
+// After that the persistent AI Companion Card carries the brief.
+const DAY_KEY = "vivel:brief-popup";
+const today = () => new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 export function DailyBrief() {
   const [brief, setBrief] = useState<BriefContent | null>(null);
   const [visible, setVisible] = useState(false);
   const requestFocus = useMapStore((s) => s.requestFocus);
+  const setBriefOpen = useUIStore((s) => s.setBriefOpen);
 
   useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY)) return;
+    if (localStorage.getItem(DAY_KEY) === today()) return;
     const b = generateBrief();
     setBrief(b);
     // Small delay so the map loads first
-    const tid = setTimeout(() => setVisible(true), 1200);
+    const tid = setTimeout(() => {
+      setVisible(true);
+      setBriefOpen(true);
+    }, 1200);
     return () => clearTimeout(tid);
-  }, []);
+  }, [setBriefOpen]);
 
   const dismiss = () => {
     setVisible(false);
-    sessionStorage.setItem(SESSION_KEY, "1");
+    setBriefOpen(false);
+    localStorage.setItem(DAY_KEY, today());
   };
 
   const onDiscover = () => {

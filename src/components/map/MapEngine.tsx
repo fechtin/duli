@@ -12,8 +12,22 @@ import { cn } from "@/lib/utils/cn";
 import { Landmark } from "./landmarks";
 import { MapHint } from "./MapHint";
 import { useLivingStore } from "@/lib/store/useLivingStore";
+import type { HeartbeatResult } from "@/lib/living/types";
 
 type Box = { x0: number; y0: number; x1: number; y1: number };
+
+/** Dominant heartbeat signal → ambient glow color (festival > trending > seasonal > ai-pick >
+ *  perfect-weather). Drives both the always-on glow halo and the marker pulse/dot (023). */
+function heartbeatGlow(hb?: HeartbeatResult): string | null {
+  if (!hb) return null;
+  const s = hb.signals;
+  if (s.includes("festival"))        return "rgba(185,132,42,0.55)"; // accent / gold
+  if (s.includes("trending"))        return "rgba(210,96,79,0.50)";  // danger / red
+  if (s.includes("seasonal"))        return "rgba(22,113,90,0.45)";  // primary / green
+  if (s.includes("ai-pick"))         return "rgba(139,92,246,0.42)"; // violet halo
+  if (s.includes("perfect-weather")) return "rgba(36,108,136,0.40)"; // secondary / blue
+  return null;
+}
 
 /** Lighten (amt>0) / darken (amt<0) a hex color. */
 function shade(hex: string, amt: number): string {
@@ -382,6 +396,27 @@ export function MapEngine() {
               </Label>
             ))}
 
+        {/* Ambient heartbeat glow — a soft breathing halo at every destination with a live
+            signal, shown at ALL zoom levels. At overview zoom (markers hidden) this is the only
+            cue → "ánh sáng nhẹ, không icon, không popup" (023 §Heartbeat Redesign). */}
+        {projectedDestinations
+          .filter((d) => inView(d.x, d.y))
+          .map((d) => {
+            const hb = getHeartbeat(d.id);
+            const glow = heartbeatGlow(hb);
+            if (!glow) return null;
+            const size = 30 + Math.round(((hb?.score ?? 0) / 100) * 38); // 30..68px screen
+            return (
+              <Label key={`glow-${d.id}`} x={d.x} y={d.y} invK={invK} z={5}>
+                <span
+                  aria-hidden
+                  className="ambient-glow pointer-events-none block"
+                  style={{ width: size, height: size, background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }}
+                />
+              </Label>
+            );
+          })}
+
         {/* Destination markers — illustrated landmarks, culled to viewport and tier. */}
         {showMarkers &&
           projectedDestinations
@@ -393,12 +428,7 @@ export function MapEngine() {
               const isFestival = hb?.signals.includes("festival");
               const isSeasonal = hb?.signals.includes("seasonal");
               const isPerfect  = hb?.signals.includes("perfect-weather");
-              // Glow color based on dominant signal
-              const glowColor = isFestival  ? "rgba(185,132,42,0.55)"  // accent/gold
-                              : isTrending  ? "rgba(210,96,79,0.50)"   // danger/red
-                              : isSeasonal  ? "rgba(22,113,90,0.45)"   // primary/green
-                              : isPerfect   ? "rgba(36,108,136,0.40)"  // secondary/blue
-                              : null;
+              const glowColor = heartbeatGlow(hb);
               const showPulse = (isTrending || isFestival) && !isSelected;
               const showDot   = (isSeasonal || isPerfect)  && !isSelected && !showPulse;
               return (

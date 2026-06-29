@@ -11,6 +11,7 @@ import { useContentStore } from "@/lib/store/useContentStore";
 import { useUrlSync } from "@/lib/store/useUrlSync";
 import { useI18n } from "@/lib/i18n";
 import { DailyBrief } from "@/components/brief/DailyBrief";
+import { CompanionCard } from "@/components/companion/CompanionCard";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 
 const Overlays = lazy(() => import("@/components/Overlays"));
@@ -61,6 +62,7 @@ export default function App() {
       <BottomNav />
 
       <DailyBrief />
+      <CompanionCard />
       <PanelContainer />
       <OfflineIndicator />
       <Suspense fallback={null}>

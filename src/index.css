@@ -198,6 +198,17 @@
   animation: seasonal-glow 3s ease-in-out infinite;
 }
 
+/* Ambient heartbeat glow — soft breathing halo shown on the map at every zoom level so the
+   country always feels alive (023 §Heartbeat Redesign). No icon, no popup at overview zoom. */
+@keyframes ambient-glow {
+  0%, 100% { transform: scale(1);    opacity: 0.55; }
+  50%      { transform: scale(1.14); opacity: 0.9;  }
+}
+.ambient-glow {
+  border-radius: 9999px;
+  animation: ambient-glow 3.6s ease-in-out infinite;
+}
+
 /* Gentle sea drift (disabled under prefers-reduced-motion via the base layer). */
 @keyframes via-wave-drift {
   from {

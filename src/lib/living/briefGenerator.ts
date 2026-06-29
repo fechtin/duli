@@ -6,6 +6,10 @@ export type BriefPeriod = "morning" | "afternoon" | "evening" | "weekend" | "hol
 
 export interface BriefContent {
   period: BriefPeriod;
+  /** Period emoji for the collapsed Companion Card. */
+  emoji: string;
+  /** One-line, time-aware teaser shown when the Companion Card is collapsed (023 §Dynamic Brief). */
+  teaser: string;
   greeting: string;
   heroStory: string;
   highlights: string[];
@@ -13,6 +17,24 @@ export interface BriefContent {
   hiddenGem: string;
   month: number;
 }
+
+const PERIOD_EMOJI: Record<BriefPeriod, string> = {
+  morning:   "🌸",
+  afternoon: "☀️",
+  evening:   "🌙",
+  weekend:   "🧭",
+  holiday:   "🎉",
+};
+
+// Time-aware teaser prompts — the 1-line headline (023: 09:00 Good Morning · 15:00 "Chiều nay
+// nên đi đâu?" · 20:00 "Khám phá Việt Nam về đêm").
+const TEASERS: Record<BriefPeriod, string> = {
+  morning:   "Chào buổi sáng",
+  afternoon: "Chiều nay nên đi đâu?",
+  evening:   "Khám phá Việt Nam về đêm",
+  weekend:   "Cuối tuần — đi đâu đó thôi",
+  holiday:   "Kỳ nghỉ đã đến",
+};
 
 type SeasonEntry = { destinationId: string; state: string; icon: string; mood: string };
 type FestivalEntry = { id: string; name: string; months: number[]; icon: string; destinationIds: string[]; description: string };
@@ -47,6 +69,21 @@ const DEST_NAMES: Record<string, string> = {
   "mieu-ba-chua-xu":          "Miếu Bà Chúa Xứ",
   "hoan-kiem-lake":           "Hồ Hoàn Kiếm",
   "ben-thanh-market":         "Chợ Bến Thành",
+  // IDs used by the living calendars (seasonal/festival/flower) — distinct from content IDs above.
+  "cat-ba-island":            "Cát Bà",
+  "da-nang-coast":            "Đà Nẵng",
+  "ha-giang-loop":            "Hà Giang",
+  "ha-noi-old-quarter":       "Hà Nội",
+  "ho-chi-minh-city":         "TP. Hồ Chí Minh",
+  "hoi-an-old-town":          "Hội An",
+  "mu-cang-chai-terraces":    "Mù Cang Chải",
+  "nha-trang-coast":          "Nha Trang",
+  "ninh-binh-trang-an":       "Ninh Bình",
+  "perfume-pagoda":           "Chùa Hương",
+  "phan-thiet-coast":         "Phan Thiết",
+  "phong-nha-caves":          "Phong Nha",
+  "phu-yen-coast":            "Phú Yên",
+  "sapa-terraces":            "Sa Pa",
 };
 
 function destName(id: string): string {
@@ -131,6 +168,8 @@ export function generateBrief(): BriefContent {
 
   return {
     period,
+    emoji:           PERIOD_EMOJI[period],
+    teaser:          `${TEASERS[period]} · ${heroName} ${heroState.toLowerCase()}`,
     greeting:        GREETINGS[period],
     heroStory:       HERO_INTROS[period],
     highlights:      highlights.slice(0, 5),

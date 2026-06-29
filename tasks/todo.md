@@ -52,3 +52,52 @@ use a winding-free MultiPoint frame (a lon/lat polygon frame is mis-read as the 
 
 Deferred (post-MVP): real photos via R2, real AI provider, more provinces' editorial content,
 offline/service-worker cache, full KO/JA/ZH dictionaries, unit/integration tests.
+
+---
+
+# 023.md — AI Discovery Experience Layer (2026-06-29)
+
+Hiện thực hoá đề xuất UX 2.0. Chia 6 phase, mỗi phase deploy độc lập.
+**Phạm vi lần này: Phase 1 + Phase 3** (AI giữ static/mock; model thật + KV để Phase 6).
+
+## Hiện trạng (đã verify)
+- Heartbeat: tính sẵn lúc load nhưng panel chỉ hiện khi click; map chỉ pulse/glow ở zoom ≥2.
+  `lib/living/heartbeat.ts`, `store/useLivingStore.ts`, `map/MapEngine.tsx`, `panel/HeartbeatSection.tsx`
+- Morning Brief: popup 1.2s, dismiss 1 lần/session rồi biến mất; nội dung static theo tháng+giờ.
+  `brief/DailyBrief.tsx`, `lib/living/briefGenerator.ts`
+- Camera fly-to sẵn: `useMapStore.requestFocus` + `useCamera.focusPoint/focusBox`.
+- CSS sẵn: `heartbeat-ring`, `seasonal-dot` trong `src/index.css`.
+
+## PHASE 1 — Ambient Heartbeat phân tầng theo zoom
+- [ ] 1.1 `index.css`: keyframe `ambient-glow` (breathing nhẹ) + class.
+- [ ] 1.2 `MapEngine.tsx`: helper `heartbeatGlow(hb)` → màu theo signal trội.
+- [ ] 1.3 `MapEngine.tsx`: `GlowLayer` render sau province, trước markers, ở mọi zoom.
+      Zoom toàn quốc (markers ẩn) → chỉ quầng sáng = ánh sáng nhẹ, không icon/popup.
+- [ ] 1.4 Cường độ theo `hb.score`; cull viewport (`inView`).
+
+## PHASE 3 — AI Companion Card (thay popup Brief)
+- [ ] 3.1 `useUIStore.ts`: cờ `briefOpen` + setter.
+- [ ] 3.2 `DailyBrief.tsx`: popup 1 lần/NGÀY (localStorage); set `briefOpen`.
+- [ ] 3.3 `companion/CompanionCard.tsx`: collapsed 1 dòng teaser theo giờ; expand → 5 điểm +
+      Hidden Gem + AI Pick + CTA; desktop dưới Search; mobile sticky đáy kéo lên (Apple Maps).
+- [ ] 3.4 `App.tsx`: mount `<CompanionCard />`.
+
+## Verify
+- [x] `tsc --noEmit` + `npm run build` pass (2296 modules, built 1.67s).
+- [ ] App (visual, chưa chạy): quầng sáng zoom toàn quốc; card luôn hiện; expand/collapse; mobile drag.
+
+## Review (2026-06-29)
+Phase 1 + 3 đã code xong, build pass. Files:
+- `src/index.css` — keyframe + class `ambient-glow`.
+- `src/components/map/MapEngine.tsx` — helper `heartbeatGlow()` + `GlowLayer` (quầng sáng mọi zoom,
+  cull viewport, size theo score); marker tái dùng helper.
+- `src/lib/store/useUIStore.ts` — cờ `briefOpen` + `setBriefOpen`.
+- `src/components/brief/DailyBrief.tsx` — popup 1 lần/NGÀY (localStorage `vivel:brief-popup`).
+- `src/lib/living/briefGenerator.ts` — thêm `emoji` + `teaser` (Dynamic Brief theo giờ).
+- `src/components/companion/CompanionCard.tsx` — MỚI, desktop dưới search + mobile draggable.
+- `src/App.tsx` — mount `<CompanionCard />`.
+Còn lại: visual verification trên browser (quầng sáng + card desktop/mobile).
+
+## Phase sau (ngoài phạm vi)
+- P2 Heartbeat Timeline · P4 Discovery Feed + Ambient Suggestions · P5 Discovery Mode + Queue ·
+  P6 Cloudflare KV + Claude thật.

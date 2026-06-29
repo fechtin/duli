@@ -14,6 +14,8 @@ interface UIState {
   searchOpen: boolean;
   aiOpen: boolean;
   passportOpen: boolean;
+  /** Once-a-day Morning Brief popup is showing — Companion Card hides while it is open (023). */
+  briefOpen: boolean;
   /** Destination id pending a check-in flow, or null. */
   checkinTarget: string | null;
 
@@ -22,6 +24,7 @@ interface UIState {
   setSearchOpen: (v: boolean) => void;
   setAiOpen: (v: boolean) => void;
   setPassportOpen: (v: boolean) => void;
+  setBriefOpen: (v: boolean) => void;
   openCheckin: (destinationId: string) => void;
   closeCheckin: () => void;
 }
@@ -31,6 +34,7 @@ export const useUIStore = create<UIState>((set, get) => ({
   searchOpen: false,
   aiOpen: false,
   passportOpen: false,
+  briefOpen: false,
   checkinTarget: null,
 
   toggleTheme: () => {
@@ -49,6 +53,7 @@ export const useUIStore = create<UIState>((set, get) => ({
   setSearchOpen: (v) => set({ searchOpen: v }),
   setAiOpen: (v) => set({ aiOpen: v }),
   setPassportOpen: (v) => set({ passportOpen: v }),
+  setBriefOpen: (v) => set({ briefOpen: v }),
   openCheckin: (destinationId) => set({ checkinTarget: destinationId, aiOpen: false }),
   closeCheckin: () => set({ checkinTarget: null }),
 }));
