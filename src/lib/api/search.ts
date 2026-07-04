@@ -1,5 +1,5 @@
 import { normalize } from "@/lib/utils/normalize";
-import type { DestinationLight, ProvinceMeta } from "@/lib/types";
+import type { DestinationLight, Dish, ProvinceMeta } from "@/lib/types";
 
 export { normalize };
 
@@ -20,7 +20,7 @@ const aliases: Record<string, string> = {
   danang: "da-nang",
 };
 
-export type SearchResultKind = "province" | "destination";
+export type SearchResultKind = "province" | "destination" | "dish";
 
 export interface SearchResult {
   kind: SearchResultKind;
@@ -37,6 +37,7 @@ export function searchContent(
   provinces: ProvinceMeta[],
   destinations: DestinationLight[],
   limit = 8,
+  dishes: Dish[] = [],
 ): SearchResult[] {
   const q = normalize(query);
   if (!q) return [];
@@ -69,6 +70,20 @@ export function searchContent(
         subtitle: provinceName.get(d.provinceSlug) ?? "",
         provinceSlug: d.provinceSlug,
         score: s - 3,
+      });
+  }
+
+  // Food Explorer (026 §Search) — find a dish without knowing its province.
+  for (const d of dishes) {
+    const s = score(normalize([d.name, d.nameEn, d.tags.join(" "), d.ingredients.join(" ")].join(" ")), false);
+    if (s > 0)
+      results.push({
+        kind: "dish",
+        id: d.id,
+        title: `${d.emoji} ${d.name}`,
+        subtitle: "Ẩm thực",
+        provinceSlug: d.originProvince,
+        score: s - 5,
       });
   }
 

@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion, useTransform } from "motion/react";
-import { Minus, Plus, Locate } from "lucide-react";
+import { Minus, Plus, Locate, UtensilsCrossed } from "lucide-react";
+import { useFoodStore } from "@/lib/store/useFoodStore";
 import { buildMapModel, type MapModel } from "@/lib/map/projection";
 import { useCamera } from "@/lib/map/useCamera";
 import { COAST_GLOW, regionColor } from "@/lib/map/regionPalette";
@@ -304,6 +305,16 @@ export function MapEngine() {
   const destinations = useContentStore((s) => s.destinations);
   const regions = getRegions();
 
+  // Food layer (026 §Food Explorer Map) — an open dish projects its restaurants.
+  const openDishData = useFoodStore((s) => s.dish);
+  const projectedRestaurants = useMemo(() => {
+    if (!model || !openDishData) return [];
+    return openDishData.restaurants.map((r) => {
+      const [x, y] = model.project([r.lng, r.lat]);
+      return { ...r, x, y };
+    });
+  }, [model, openDishData]);
+
   // Init heartbeat scores once destinations are loaded
   const initLiving = useLivingStore((s) => s.init);
   const getHeartbeat = useLivingStore((s) => s.getHeartbeat);
@@ -581,6 +592,28 @@ export function MapEngine() {
                 </Label>
               );
             })}
+
+        {/* Restaurant markers — visible while a dish is open (026 §Food Explorer Map). */}
+        {projectedRestaurants
+          .filter((r) => inView(r.x, r.y))
+          .map((r) => (
+            <Label key={`rest-${r.id}`} x={r.x} y={r.y} invK={invK} z={26}>
+              <button
+                aria-label={r.name}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (down.current?.moved) return;
+                  requestFocus({ kind: "point", lng: r.lng, lat: r.lat, zoom: 9 });
+                }}
+                className="group flex items-center gap-1.5 rounded-full border border-accent/50 bg-surface/95 py-1 pl-1 pr-2.5 shadow-[var(--shadow-e2)] backdrop-blur transition-transform duration-150 hover:-translate-y-0.5 hover:scale-[1.06]"
+              >
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-accent/15 text-accent">
+                  <UtensilsCrossed size={13} />
+                </span>
+                <span className="max-w-[8rem] truncate text-[11px] font-semibold text-foreground">{r.name}</span>
+              </button>
+            </Label>
+          ))}
         </motion.div>
 
         {/* Intro overlay — the coastline draws itself in glow color, then fades out. */}

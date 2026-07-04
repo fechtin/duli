@@ -184,3 +184,48 @@ export type FocusTarget =
   | { kind: "reset" }
   | { kind: "province"; slug: string }
   | { kind: "point"; lng: number; lat: number; zoom: number };
+
+// ── Food Explorer (Bible 026) ─────────────────────────────────
+export type DishTag =
+  | "noodle" | "spicy" | "vegetarian-option" | "coffee" | "street"
+  | "breakfast" | "late-night" | "dessert" | "seafood" | "rice";
+
+export type RestaurantLabel =
+  | "ai-pick" | "local-favorite" | "atlas-pick" | "street-food" | "fine-dining" | "family";
+
+export interface Dish {
+  id: string; // slug
+  name: string;
+  nameEn: string;
+  emoji: string;
+  summary: string;
+  story: string;
+  originProvince: string;
+  provinceSlugs: string[];
+  ingredients: string[];
+  flavor: string;
+  bestTime: string;
+  tags: DishTag[];
+  featured?: boolean;
+}
+
+export interface Restaurant {
+  id: string;
+  dishId: string;
+  name: string;
+  provinceSlug: string;
+  address: string;
+  lng: number;
+  lat: number;
+  priceRange: string;
+  openHours: string;
+  labels: RestaurantLabel[];
+  /** 026 §Atlas Score — FechTin Go's own composite (editorial in Phase 1). */
+  atlasScore: number;
+  /** 026 §AI Recommendation — every pick must explain itself. */
+  reasons: string[];
+}
+
+export interface DishWithRestaurants extends Dish {
+  restaurants: Restaurant[];
+}

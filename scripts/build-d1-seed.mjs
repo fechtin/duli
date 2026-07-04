@@ -8,6 +8,7 @@ import { dirname, resolve } from "node:path";
 import { destinations } from "../src/data/destinations.ts";
 import { provinceContent } from "../src/data/provinceContent.ts";
 import { destinationI18n, provinceI18n } from "../src/data/i18n/index.ts";
+import { dishes, restaurants } from "../src/data/food.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -27,6 +28,8 @@ lines.push("PRAGMA foreign_keys = OFF;");
 lines.push("DELETE FROM destinations;");
 lines.push("DELETE FROM provinces;");
 lines.push("DELETE FROM regions;");
+lines.push("DELETE FROM restaurants;");
+lines.push("DELETE FROM dishes;");
 
 geo.regions.forEach((rg, i) => {
   lines.push(
@@ -52,10 +55,26 @@ for (const d of destinations) {
   );
 }
 
+// Food Explorer (026)
+for (const d of dishes) {
+  lines.push(
+    `INSERT OR REPLACE INTO dishes (id, slug, name, name_en, emoji, summary, story, origin_province, province_slugs, ingredients, flavor, best_time, tags, featured) VALUES (` +
+      `${q(d.id)}, ${q(d.id)}, ${q(d.name)}, ${q(d.nameEn)}, ${q(d.emoji)}, ${q(d.summary)}, ${q(d.story)}, ${q(d.originProvince)}, ` +
+      `${j(d.provinceSlugs)}, ${j(d.ingredients)}, ${q(d.flavor)}, ${q(d.bestTime)}, ${j(d.tags)}, ${d.featured ? 1 : 0});`,
+  );
+}
+for (const rst of restaurants) {
+  lines.push(
+    `INSERT OR REPLACE INTO restaurants (id, dish_id, name, province_slug, address, lng, lat, price_range, open_hours, labels, atlas_score, reasons) VALUES (` +
+      `${q(rst.id)}, ${q(rst.dishId)}, ${q(rst.name)}, ${q(rst.provinceSlug)}, ${q(rst.address)}, ${num(rst.lng)}, ${num(rst.lat)}, ` +
+      `${q(rst.priceRange)}, ${q(rst.openHours)}, ${j(rst.labels)}, ${num(rst.atlasScore)}, ${j(rst.reasons)});`,
+  );
+}
+
 lines.push("PRAGMA foreign_keys = ON;");
 
 mkdirSync(r("db"), { recursive: true });
 writeFileSync(r("db/seed.sql"), lines.join("\n") + "\n");
 console.log(
-  `[build-d1-seed] ${geo.regions.length} regions, ${geo.provinces.length} provinces, ${destinations.length} destinations -> db/seed.sql`,
+  `[build-d1-seed] ${geo.regions.length} regions, ${geo.provinces.length} provinces, ${destinations.length} destinations, ${dishes.length} dishes, ${restaurants.length} restaurants -> db/seed.sql`,
 );

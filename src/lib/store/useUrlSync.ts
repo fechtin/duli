@@ -44,15 +44,19 @@ export function useUrlSync() {
     return () => window.removeEventListener("popstate", applyFromUrl);
   }, [applyFromUrl]);
 
-  // Reflect selection changes back into the URL.
+  // Reflect selection changes back into the URL. Read LIVE store state (not the subscribed
+  // props): on first mount this effect runs in the same commit as applyFromUrl, whose
+  // selectProvince() already updated the store synchronously — the props here are still the
+  // stale nulls from the initial render and would clobber a deep-link URL back to "/".
   useEffect(() => {
     if (!applied.current) return;
+    const live = useMapStore.getState();
     let path = "/";
-    if (selectedDestination) {
-      const d = useContentStore.getState().destinations.find((x) => x.id === selectedDestination);
+    if (live.selectedDestination) {
+      const d = useContentStore.getState().destinations.find((x) => x.id === live.selectedDestination);
       if (d) path = `/${d.provinceSlug}/${d.slug}`;
-    } else if (selectedProvince) {
-      path = `/${selectedProvince}`;
+    } else if (live.selectedProvince) {
+      path = `/${live.selectedProvince}`;
     }
     if (path !== window.location.pathname) window.history.replaceState(null, "", path);
   }, [selectedProvince, selectedDestination]);

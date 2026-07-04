@@ -5,10 +5,13 @@ import { fetchServerCheckins, saveServerCheckin, deleteServerCheckin } from "@/l
 
 interface PassportState {
   checkins: Checkin[];
+  /** Food Passport (026) — dish ids the user has tasted. */
+  tastedDishes: string[];
   synced: boolean; // true after first successful server sync
   addCheckin: (c: Omit<Checkin, "id" | "createdAt">) => void;
   removeCheckin: (id: string) => void;
   hasVisited: (destinationId: string) => boolean;
+  toggleTasted: (dishId: string) => void;
   visitedProvinceSlugs: () => string[];
   badges: () => AwardedBadge[];
   /** Called on login: fetch server checkins and merge (server wins for same id). */
@@ -24,6 +27,7 @@ export const usePassportStore = create<PassportState>()(
   persist(
     (set, get) => ({
       checkins: [],
+      tastedDishes: [],
       synced: false,
 
       addCheckin: (c) => {
@@ -39,6 +43,13 @@ export const usePassportStore = create<PassportState>()(
       },
 
       hasVisited: (destinationId) => get().checkins.some((c) => c.destinationId === destinationId),
+
+      toggleTasted: (dishId) =>
+        set((s) => ({
+          tastedDishes: s.tastedDishes.includes(dishId)
+            ? s.tastedDishes.filter((d) => d !== dishId)
+            : [...s.tastedDishes, dishId],
+        })),
 
       visitedProvinceSlugs: () => [...new Set(get().checkins.map((c) => c.provinceSlug))],
 
@@ -67,11 +78,16 @@ export const usePassportStore = create<PassportState>()(
       clearForLogout: () => set({ checkins: [], synced: false }),
 
       badges: () => {
-        const { checkins } = get();
+        const { checkins, tastedDishes } = get();
         const provinces = new Set(checkins.map((c) => c.provinceSlug));
         const n = checkins.length;
         const p = provinces.size;
+        const f = tastedDishes.length;
         const out: AwardedBadge[] = [];
+        // Food badges (026 §Food Badges)
+        if (f >= 1)  out.push({ id: "first-bite",    emoji: "🥢", label: "Miếng đầu tiên",      description: "1 món đã thử" });
+        if (f >= 5)  out.push({ id: "food-hunter",   emoji: "🍜", label: "Thợ săn ẩm thực",     description: `${f} món đã thử` });
+        if (f >= 10) out.push({ id: "food-master",   emoji: "👨‍🍳", label: "Bậc thầy vị giác",  description: `${f} món đã thử` });
         if (n >= 1)  out.push({ id: "first-step",   emoji: "🧭", label: "Bước chân đầu tiên", description: "1 check-in" });
         if (n >= 3)  out.push({ id: "foodie",       emoji: "🍜", label: "Tín đồ ẩm thực",      description: `${n} check-in` });
         if (n >= 5)  out.push({ id: "explorer",     emoji: "🗺️", label: "Nhà khám phá",         description: `${n} check-in` });
@@ -88,7 +104,7 @@ export const usePassportStore = create<PassportState>()(
     }),
     {
       name: "via.passport",
-      partialize: (s) => ({ checkins: s.checkins }),
+      partialize: (s) => ({ checkins: s.checkins, tastedDishes: s.tastedDishes }),
     },
   ),
 );

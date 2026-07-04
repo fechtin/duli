@@ -189,3 +189,59 @@ export async function getProvinceBundle(db: D1Like, slug: string, locale?: strin
     : null;
   return { meta: toProvinceMeta(row, locale), content, destinations: dests };
 }
+
+// ── Food Explorer (Bible 026) ─────────────────────────────────
+import type { Dish, DishWithRestaurants, Restaurant } from "../src/lib/types";
+
+interface DishRow {
+  id: string; name: string; name_en: string; emoji: string | null;
+  summary: string; story: string; origin_province: string | null;
+  province_slugs: string; ingredients: string; flavor: string | null;
+  best_time: string | null; tags: string; featured: number;
+}
+
+interface RestaurantRow {
+  id: string; dish_id: string; name: string; province_slug: string;
+  address: string | null; lng: number; lat: number; price_range: string | null;
+  open_hours: string | null; labels: string; atlas_score: number; reasons: string;
+}
+
+const arr = <T>(s: string | null): T[] => {
+  try { return s ? (JSON.parse(s) as T[]) : []; } catch { return []; }
+};
+
+function mapDish(r: DishRow): Dish {
+  return {
+    id: r.id, name: r.name, nameEn: r.name_en, emoji: r.emoji ?? "🍽️",
+    summary: r.summary, story: r.story, originProvince: r.origin_province ?? "",
+    provinceSlugs: arr(r.province_slugs), ingredients: arr(r.ingredients),
+    flavor: r.flavor ?? "", bestTime: r.best_time ?? "",
+    tags: arr(r.tags), featured: r.featured === 1,
+  };
+}
+
+function mapRestaurant(r: RestaurantRow): Restaurant {
+  return {
+    id: r.id, dishId: r.dish_id, name: r.name, provinceSlug: r.province_slug,
+    address: r.address ?? "", lng: r.lng, lat: r.lat,
+    priceRange: r.price_range ?? "", openHours: r.open_hours ?? "",
+    labels: arr(r.labels), atlasScore: r.atlas_score, reasons: arr(r.reasons),
+  };
+}
+
+/** All dishes, optionally only those that are a specialty of one province. */
+export async function getDishes(db: D1Like, provinceSlug?: string): Promise<Dish[]> {
+  const rows = await db.prepare("SELECT * FROM dishes ORDER BY featured DESC, name").bind().all<DishRow>();
+  const list = rows.results.map(mapDish);
+  return provinceSlug ? list.filter((d) => d.provinceSlugs.includes(provinceSlug)) : list;
+}
+
+export async function getDish(db: D1Like, id: string): Promise<DishWithRestaurants | null> {
+  const row = await db.prepare("SELECT * FROM dishes WHERE id = ?").bind(id).first<DishRow>();
+  if (!row) return null;
+  const rests = await db
+    .prepare("SELECT * FROM restaurants WHERE dish_id = ? ORDER BY atlas_score DESC")
+    .bind(id)
+    .all<RestaurantRow>();
+  return { ...mapDish(row), restaurants: rests.results.map(mapRestaurant) };
+}

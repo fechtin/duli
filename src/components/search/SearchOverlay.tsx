@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Search as SearchIcon, MapPin, X, Compass } from "lucide-react";
+import { Search as SearchIcon, MapPin, X, Compass, UtensilsCrossed } from "lucide-react";
 import { searchContent, type SearchResult } from "@/lib/api/search";
 import { getProvinces } from "@/lib/api/content";
+import { fetchDishes } from "@/lib/api/food";
+import { useAsync } from "@/lib/utils/useAsync";
+import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
@@ -38,9 +41,10 @@ export function SearchOverlay() {
     const m = provBySlug.get(r.id);
     return m ? localizeRegionName(m.regionId, m.regionName, locale) : r.subtitle;
   };
+  const { data: dishes } = useAsync(() => fetchDishes(), []);
   const results = useMemo(
-    () => (query.trim() ? searchContent(query, provinces, destinations, 8) : []),
-    [query, provinces, destinations],
+    () => (query.trim() ? searchContent(query, provinces, destinations, 8, dishes ?? []) : []),
+    [query, provinces, destinations, dishes],
   );
   const featured = useMemo(() => destinations.filter((d) => d.featured).slice(0, 5), [destinations]);
 
@@ -55,7 +59,9 @@ export function SearchOverlay() {
   useEffect(() => setActive(0), [query]);
 
   const go = (r: SearchResult) => {
-    if (r.kind === "province") {
+    if (r.kind === "dish") {
+      useFoodStore.getState().openDish(r.id);
+    } else if (r.kind === "province") {
       selectProvince(r.id);
     } else {
       const d = destinations.find((x) => x.id === r.id);
@@ -150,13 +156,17 @@ export function SearchOverlay() {
                     i === active ? "bg-surface-2" : "hover:bg-surface-2",
                   )}
                 >
-                  <MapPin size={16} className={r.kind === "province" ? "text-secondary" : "text-primary"} />
+                  {r.kind === "dish" ? (
+                    <UtensilsCrossed size={16} className="text-accent" />
+                  ) : (
+                    <MapPin size={16} className={r.kind === "province" ? "text-secondary" : "text-primary"} />
+                  )}
                   <span className="flex-1">
                     <span className="block text-sm font-medium text-foreground">{titleOf(r)}</span>
                     {subtitleOf(r) && <span className="block text-xs text-muted">{subtitleOf(r)}</span>}
                   </span>
                   <span className="text-[10px] uppercase tracking-wide text-faint">
-                    {r.kind === "province" ? t("search.provinces") : t("search.destinations")}
+                    {r.kind === "province" ? t("search.provinces") : r.kind === "dish" ? "Ẩm thực" : t("search.destinations")}
                   </span>
                 </motion.button>
               ))}

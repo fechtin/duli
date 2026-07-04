@@ -105,6 +105,16 @@ api.get("/destination/:id", async (c) => {
   return d ? ok(c, d, 600) : fail(c, "not_found", "Destination not found", 404);
 });
 
+// ── Food Explorer (Bible 026) ─────────────────────────────────
+api.get("/food/dishes", async (c) =>
+  ok(c, await db.getDishes(c.env.DB, c.req.query("province") || undefined), 86400),
+);
+
+api.get("/food/dish/:id", async (c) => {
+  const d = await db.getDish(c.env.DB, c.req.param("id"));
+  return d ? ok(c, d, 43200) : fail(c, "not_found", "Dish not found", 404);
+});
+
 // ── Search ────────────────────────────────────────────────────
 api.get("/search", async (c) => {
   const q = (c.req.query("q") ?? "").toLowerCase().trim();
@@ -120,9 +130,15 @@ api.get("/search", async (c) => {
   )
     .bind(like, like)
     .all<{ id: string; name: string; province_slug: string }>();
+  const dishRows = await c.env.DB.prepare(
+    "SELECT id, name, emoji, origin_province FROM dishes WHERE lower(name) LIKE ? OR lower(name_en) LIKE ? LIMIT 5",
+  )
+    .bind(like, like)
+    .all<{ id: string; name: string; emoji: string | null; origin_province: string | null }>();
   return ok(c, [
     ...provinces.results.map((p) => ({ kind: "province", id: p.slug, title: p.name, subtitle: p.region_name, provinceSlug: p.slug })),
     ...dests.results.map((d) => ({ kind: "destination", id: d.id, title: d.name, subtitle: "", provinceSlug: d.province_slug })),
+    ...dishRows.results.map((d) => ({ kind: "dish", id: d.id, title: `${d.emoji ?? "🍽️"} ${d.name}`, subtitle: "Ẩm thực", provinceSlug: d.origin_province ?? "" })),
   ], 60);
 });
 

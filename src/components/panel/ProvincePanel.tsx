@@ -1,6 +1,8 @@
 import { MapPin, ChevronRight, Utensils } from "lucide-react";
 import { fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
+import { fetchDishesForProvince } from "@/lib/api/food";
 import { useAsync } from "@/lib/utils/useAsync";
+import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
 import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
@@ -16,7 +18,9 @@ export function ProvincePanel({ slug }: { slug: string }) {
   const { locale } = useI18n();
   const meta = getProvinceMeta(slug);
   const { data: bundle, loading } = useAsync(() => fetchProvinceBundle(slug, locale), [slug, locale]);
+  const { data: dishes } = useAsync(() => fetchDishesForProvince(slug), [slug]);
   const selectDestination = useMapStore((s) => s.selectDestination);
+  const openDish = useFoodStore((s) => s.openDish);
 
   if (!meta) return null;
   const content = bundle?.content ?? null;
@@ -65,15 +69,38 @@ export function ProvincePanel({ slug }: { slug: string }) {
             <p className="text-sm leading-relaxed text-foreground/85">{content.story}</p>
           </Section>
 
-          {content.specialties.length > 0 && (
+          {((dishes?.length ?? 0) > 0 || content.specialties.length > 0) && (
             <Section index={3} title={t("panel.specialties")}>
+              {/* Food Explorer dishes (026 §Entry Points — start from the DISH, not the restaurant) */}
+              {(dishes?.length ?? 0) > 0 && (
+                <div className="mb-2 flex flex-col gap-2">
+                  {dishes!.map((d) => (
+                    <button
+                      key={d.id}
+                      onClick={() => openDish(d.id)}
+                      className="group flex items-center gap-3 rounded-[var(--radius-md)] border border-border p-2.5 text-left transition-colors hover:bg-surface-2"
+                    >
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent/12 text-xl">
+                        {d.emoji}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-semibold text-foreground">{d.name}</p>
+                        <p className="mt-0.5 line-clamp-1 text-xs text-muted">{d.summary}</p>
+                      </div>
+                      <ChevronRight size={16} className="shrink-0 text-faint transition-transform group-hover:translate-x-0.5" />
+                    </button>
+                  ))}
+                </div>
+              )}
               <div className="flex flex-wrap gap-1.5">
-                {content.specialties.map((s) => (
-                  <span key={s} className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-xs text-foreground/85">
-                    <Utensils size={12} className="text-accent" />
-                    {s}
-                  </span>
-                ))}
+                {content.specialties
+                  .filter((s) => !dishes?.some((d) => s.toLowerCase().includes(d.name.toLowerCase())))
+                  .map((s) => (
+                    <span key={s} className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-xs text-foreground/85">
+                      <Utensils size={12} className="text-accent" />
+                      {s}
+                    </span>
+                  ))}
               </div>
             </Section>
           )}
