@@ -23,12 +23,26 @@ type Box = { x0: number; y0: number; x1: number; y1: number };
 function heartbeatGlow(hb?: HeartbeatResult): string | null {
   if (!hb) return null;
   const s = hb.signals;
-  if (s.includes("festival"))        return "rgba(185,132,42,0.55)"; // accent / gold
-  if (s.includes("trending"))        return "rgba(210,96,79,0.50)";  // danger / red
-  if (s.includes("seasonal"))        return "rgba(22,113,90,0.45)";  // primary / green
-  if (s.includes("ai-pick"))         return "rgba(139,92,246,0.42)"; // violet halo
-  if (s.includes("perfect-weather")) return "rgba(36,108,136,0.40)"; // secondary / blue
+  if (s.includes("festival"))        return "#b9842a"; // accent / gold
+  if (s.includes("trending"))        return "#d2604f"; // danger / red
+  if (s.includes("seasonal"))        return "#16715a"; // primary / green
+  if (s.includes("ai-pick"))         return "#8b5cf6"; // violet halo
+  if (s.includes("perfect-weather")) return "#246c88"; // secondary / blue
   return null;
+}
+
+/** Hex → rgba() at the given alpha. */
+function rgba(hex: string, a: number): string {
+  const n = parseInt(hex.slice(1), 16);
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
+}
+
+/** Stable per-destination phase offset so live signals breathe out of sync (organic, not a
+ *  metronome). Negative delay starts each animation mid-cycle. */
+function signalPhase(id: string): string {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) | 0;
+  return `${-(Math.abs(h) % 3600)}ms`;
 }
 
 /** Lighten (amt>0) / darken (amt<0) a hex color. */
@@ -459,16 +473,32 @@ export function MapEngine() {
           .filter((d) => inView(d.x, d.y))
           .map((d) => {
             const hb = getHeartbeat(d.id);
-            const glow = heartbeatGlow(hb);
-            if (!glow) return null;
-            const size = 30 + Math.round(((hb?.score ?? 0) / 100) * 38); // 30..68px screen
+            const glowHex = heartbeatGlow(hb);
+            if (!glowHex) return null;
+            const size = 34 + Math.round(((hb?.score ?? 0) / 100) * 38); // 34..72px screen
+            const phase = signalPhase(d.id);
             return (
               <Label key={`glow-${d.id}`} x={d.x} y={d.y} invK={invK} z={5}>
-                <span
-                  aria-hidden
-                  className="ambient-glow pointer-events-none block"
-                  style={{ width: size, height: size, background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }}
-                />
+                <span aria-hidden className="pointer-events-none relative block" style={{ width: size, height: size }}>
+                  {/* Breathing halo — soft, wide falloff */}
+                  <span
+                    className="ambient-glow absolute inset-0"
+                    style={{
+                      background: `radial-gradient(circle, ${rgba(glowHex, 0.5)} 0%, ${rgba(glowHex, 0.18)} 45%, transparent 70%)`,
+                      animationDelay: phase,
+                    }}
+                  />
+                  {/* Radar ring — expands past the halo and fades */}
+                  <span
+                    className="signal-ping absolute inset-0"
+                    style={{ border: `1.5px solid ${rgba(glowHex, 0.85)}`, animationDelay: phase }}
+                  />
+                  {/* Luminous core — crisp center with a white keyline so it reads on light seas */}
+                  <span
+                    className="signal-core absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 border border-white/80"
+                    style={{ background: glowHex, boxShadow: `0 0 8px 2px ${rgba(glowHex, 0.65)}`, animationDelay: phase }}
+                  />
+                </span>
               </Label>
             );
           })}
@@ -495,7 +525,7 @@ export function MapEngine() {
                       <span
                         aria-hidden
                         className="heartbeat-ring pointer-events-none absolute inset-0 rounded-full"
-                        style={{ background: glowColor ?? "rgba(22,113,90,0.4)" }}
+                        style={{ background: glowColor ? rgba(glowColor, 0.4) : "rgba(22,113,90,0.4)" }}
                       />
                     )}
                     <button

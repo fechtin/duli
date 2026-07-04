@@ -223,14 +223,31 @@
 }
 
 /* Ambient heartbeat glow — soft breathing halo shown on the map at every zoom level so the
-   country always feels alive (023 §Heartbeat Redesign). No icon, no popup at overview zoom. */
+   country always feels alive (023 §Heartbeat Redesign). No icon, no popup at overview zoom.
+   Three layers (025): crisp luminous core + breathing halo + expanding radar ring. */
 @keyframes ambient-glow {
-  0%, 100% { transform: scale(1);    opacity: 0.55; }
-  50%      { transform: scale(1.14); opacity: 0.9;  }
+  0%, 100% { transform: scale(1);    opacity: 0.5; }
+  50%      { transform: scale(1.14); opacity: 0.85; }
 }
 .ambient-glow {
   border-radius: 9999px;
   animation: ambient-glow 3.6s ease-in-out infinite;
+}
+@keyframes signal-ping {
+  0%       { transform: scale(0.3); opacity: 0.7; }
+  75%, 100% { transform: scale(1);  opacity: 0;   }
+}
+.signal-ping {
+  border-radius: 9999px;
+  animation: signal-ping 3.6s cubic-bezier(0.16, 0.8, 0.4, 1) infinite;
+}
+@keyframes signal-core {
+  0%, 100% { opacity: 0.95; }
+  50%      { opacity: 0.65; }
+}
+.signal-core {
+  border-radius: 9999px;
+  animation: signal-core 3.6s ease-in-out infinite;
 }
 
 /* Gentle sea drift (disabled under prefers-reduced-motion via the base layer). */
