@@ -86,7 +86,9 @@ export function DishPanel() {
 
       {/* Facts */}
       <Section index={2} title="Hương vị & thành phần">
-        <InfoRow label="Hương vị" value={dish.flavor} />
+        <div>
+          <InfoRow label="Hương vị" value={dish.flavor} />
+        </div>
         <div className="mt-3 flex flex-wrap gap-1.5">
           {dish.ingredients.map((ing) => (
             <span key={ing} className="rounded-full bg-surface-2 px-2.5 py-1 text-[11px] font-medium text-foreground/80">
@@ -94,15 +96,19 @@ export function DishPanel() {
             </span>
           ))}
         </div>
-        <div className="mt-3">
-          <InfoRow label="Nên ăn lúc" value={dish.bestTime} />
-        </div>
+      </Section>
+
+      <Divider />
+
+      {/* When to eat — its own section */}
+      <Section index={3} title="Nên ăn lúc">
+        <p className="text-sm font-medium text-foreground">{dish.bestTime}</p>
       </Section>
 
       <Divider />
 
       {/* Top restaurants (026 §Restaurant Card + §AI Recommendation) */}
-      <Section index={3} title="Ăn ở đâu ngon nhất">
+      <Section index={4} title="Ăn ở đâu ngon nhất">
         <div className="flex flex-col gap-3">
           {dish.restaurants.map((r) => (
             <RestaurantCard key={r.id} restaurant={r} />
