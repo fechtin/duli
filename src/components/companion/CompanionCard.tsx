@@ -1,11 +1,16 @@
-import { useMemo, useState } from "react";
-import { ChevronDown, Compass } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { ChevronDown, Compass, Gem, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { generateBrief, type BriefContent } from "@/lib/living/briefGenerator";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { cn } from "@/lib/utils/cn";
+
+// Story dock (025 §1.4): the brief's ONLY home — no blocking popup. The first time each day
+// the dock opens itself for a moment so the story is seen, then folds back to a 1-line teaser.
+const DAY_KEY = "vivel:brief-popup";
+const today = () => new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 /**
  * AI Companion Card — the persistent home of the Morning Brief (023 §AI Companion Card).
@@ -17,8 +22,17 @@ export function CompanionCard() {
   const brief = useMemo(() => generateBrief(), []);
   const [expanded, setExpanded] = useState(false);
 
+  // First visit of the day: auto-expand after the map intro settles.
+  useEffect(() => {
+    if (localStorage.getItem(DAY_KEY) === today()) return;
+    const tid = setTimeout(() => {
+      setExpanded(true);
+      localStorage.setItem(DAY_KEY, today());
+    }, 2800);
+    return () => clearTimeout(tid);
+  }, []);
+
   const searchOpen = useUIStore((s) => s.searchOpen);
-  const briefOpen = useUIStore((s) => s.briefOpen);
   const aiOpen = useUIStore((s) => s.aiOpen);
   const passportOpen = useUIStore((s) => s.passportOpen);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
@@ -28,7 +42,7 @@ export function CompanionCard() {
 
   const panelOpen = Boolean(selectedDestination || selectedProvince);
   // Hide under any full-screen overlay; on mobile also hide when a panel/sheet is open.
-  const hidden = searchOpen || briefOpen || aiOpen || passportOpen || (!isDesktop && panelOpen);
+  const hidden = searchOpen || aiOpen || passportOpen || (!isDesktop && panelOpen);
   if (hidden) return null;
 
   const onDiscover = () => {
@@ -39,7 +53,9 @@ export function CompanionCard() {
   const teaserRow = (
     <>
       <span className="text-base leading-none">{brief.emoji}</span>
-      <span className="min-w-0 flex-1 truncate text-[13px] font-medium text-foreground">{brief.teaser}</span>
+      <span className="min-w-0 flex-1 truncate text-[13px] font-medium text-foreground">
+        {expanded ? "Bản tin hôm nay" : brief.teaser}
+      </span>
       <ChevronDown
         size={16}
         className={cn("shrink-0 text-muted transition-transform duration-200", expanded && "rotate-180")}
@@ -143,17 +159,23 @@ function CompanionBody({ brief, onDiscover }: { brief: BriefContent; onDiscover:
       )}
 
       <div className="mt-3 rounded-[var(--radius-md)] bg-primary-soft px-3.5 py-2.5">
-        <p className="mb-0.5 text-[11px] font-semibold text-primary">🤖 AI đề xuất</p>
-        <p className="text-[12px] leading-relaxed text-foreground/80">{brief.aiRecommendation}</p>
+        <p className="mb-0.5 flex items-center gap-1.5 text-[11px] font-semibold text-primary">
+          <Sparkles size={12} /> AI đề xuất
+        </p>
+        <p className="type-caption text-foreground/80">{brief.aiRecommendation}</p>
       </div>
 
-      <p className="mt-3 text-[11px] text-muted">
-        <span className="font-semibold text-accent">💎 Hidden Gem hôm nay:</span> {brief.hiddenGem}
+      <p className="mt-3 flex items-baseline gap-1.5 text-[11px] text-muted">
+        <span className="flex shrink-0 items-center gap-1 font-semibold text-accent">
+          <Gem size={11} className="translate-y-px" /> Hidden Gem hôm nay:
+        </span>
+        <span>{brief.hiddenGem}</span>
       </p>
 
       <button
         onClick={onDiscover}
-        className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-primary py-2.5 text-[13px] font-semibold text-primary-foreground shadow-[var(--shadow-e1)] transition-opacity hover:opacity-90"
+        className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-primary py-2.5 text-[13px] font-semibold text-primary-foreground shadow-[var(--shadow-e1)] transition-[opacity,transform] hover:opacity-90 active:scale-[0.98]"
+        style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.14), transparent 55%)" }}
       >
         <Compass size={15} />
         Khám phá

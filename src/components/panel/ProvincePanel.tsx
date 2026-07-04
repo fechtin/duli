@@ -26,12 +26,18 @@ export function ProvincePanel({ slug }: { slug: string }) {
     <div>
       <div className="relative">
         <IllustratedImage seed={`province-${slug}`} ratio="16/9" rounded={false} />
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent p-5 pt-12">
+        <div
+          className="absolute inset-x-0 bottom-0 p-5 pt-16"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.38) 45%, rgba(0,0,0,0.12) 75%, transparent 100%)",
+          }}
+        >
           <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <MapPin size={13} />
             {localizeRegionName(meta.regionId, meta.regionName, locale)}
           </div>
-          <h2 className="font-display text-2xl font-bold text-white">
+          <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
             {localizeProvinceName(meta.slug, meta.name, meta.nameEn, locale)}
           </h2>
         </div>

@@ -46,13 +46,21 @@ export function DestinationPanel({ id }: { id: string }) {
       {/* 1. Hero + 2. Name */}
       <div className="relative">
         <IllustratedImage seed={dest.gallery[0]?.seed ?? dest.id} ratio="4/3" rounded={false} className="md:rounded-none" />
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent p-5 pt-12">
+        {/* Editorial two-layer scrim: a long soft ramp + a denser base so the display title
+            always sits on solid ground without flattening the photo (025 §GĐ3). */}
+        <div
+          className="absolute inset-x-0 bottom-0 p-5 pt-16"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.38) 45%, rgba(0,0,0,0.12) 75%, transparent 100%)",
+          }}
+        >
           <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <MapPin size={13} />
             {province && localizeProvinceName(province.slug, province.name, province.nameEn, locale)} ·{" "}
             {province && localizeRegionName(province.regionId, province.regionName, locale)}
           </div>
-          <h2 className="font-display text-2xl font-bold text-white">{dest.name}</h2>
+          <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{dest.name}</h2>
         </div>
       </div>
 

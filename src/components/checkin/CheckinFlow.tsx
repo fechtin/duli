@@ -227,13 +227,36 @@ export function CheckinFlow() {
                     <Check size={28} />
                   </div>
                   <p className="mb-1 font-display text-lg font-semibold text-foreground">{t("checkin.success")}</p>
-                  {uploadedPreview ? (
-                    <div className="mt-4 overflow-hidden rounded-[var(--radius-md)] aspect-video w-full bg-surface-2">
-                      <img src={uploadedPreview} className="h-full w-full object-cover" />
-                    </div>
-                  ) : (
-                    selectedSeed && <IllustratedImage seed={selectedSeed} ratio="16/9" caption={caption || dest.name} className="mt-4" />
-                  )}
+                  <div className="relative mt-4">
+                    {uploadedPreview ? (
+                      <div className="overflow-hidden rounded-[var(--radius-md)] aspect-video w-full bg-surface-2">
+                        <img src={uploadedPreview} className="h-full w-full object-cover" />
+                      </div>
+                    ) : (
+                      selectedSeed && <IllustratedImage seed={selectedSeed} ratio="16/9" caption={caption || dest.name} />
+                    )}
+                    {/* Passport stamp slams onto the photo (025 §GĐ3). */}
+                    <motion.div
+                      initial={{ scale: 1.9, opacity: 0, rotate: -26 }}
+                      animate={{ scale: 1, opacity: 1, rotate: -12 }}
+                      transition={{ type: "spring", stiffness: 380, damping: 22, delay: 0.3 }}
+                      className="passport-theme pointer-events-none absolute right-3 top-3"
+                      aria-hidden
+                    >
+                      <span
+                        className="block rounded-[10px] border-[3px] px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em]"
+                        style={{
+                          borderColor: "var(--pp-gold)",
+                          color: "var(--pp-gold-bright)",
+                          background: "rgba(9,30,36,0.35)",
+                          boxShadow: "inset 0 0 0 1px var(--pp-gold-border)",
+                          textShadow: "0 0 8px rgba(0,0,0,0.45)",
+                        }}
+                      >
+                        Đã check-in
+                      </span>
+                    </motion.div>
+                  </div>
                   <div className="mt-5 flex gap-2">
                     <Button
                       variant="secondary"

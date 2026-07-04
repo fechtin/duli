@@ -1,4 +1,4 @@
-import { Search, Sun, Moon, Sparkles, Compass } from "lucide-react";
+import { Search, Sun, Moon, Sparkles, Compass, BookMarked } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useT } from "@/lib/i18n";
@@ -49,7 +49,7 @@ export function TopBar() {
           onClick={() => setPassportOpen(true)}
           className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
         >
-          🛂
+          <BookMarked size={18} />
         </button>
         <LoginButton />
         <LanguageMenu />

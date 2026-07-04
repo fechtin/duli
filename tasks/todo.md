@@ -101,3 +101,15 @@ Còn lại: visual verification trên browser (quầng sáng + card desktop/mobi
 ## Phase sau (ngoài phạm vi)
 - P2 Heartbeat Timeline · P4 Discovery Feed + Ambient Suggestions · P5 Discovery Mode + Queue ·
   P6 Cloudflare KV + Claude thật.
+
+## UI Elevation — "Living Atlas" (2026-07-04, spec docs/025.md)
+- [x] Tokens: regionPalette.ts (light/dark), map atmosphere tokens, type-scale utilities
+- [x] Map: palette mới + coastal glow 2 lớp + vignette + sea sâu hơn
+- [x] Night Atlas: dark land/sea riêng, bờ biển phát sáng
+- [x] Nhãn: region/province = text+halo (bỏ pill), marker phân hạng theo tier
+- [x] Intro cinematic: coastline draw + land fade so le (skip khi reduced-motion)
+- [x] Story dock: xóa DailyBrief popup, CompanionCard auto-expand lần đầu/ngày
+- [x] Emoji→lucide (🛂🤖💎), radius về token
+- [x] Panel: hero scrim 2 lớp + type-display, Heartbeat gauge SVG
+- [x] Passport: token --pp-* (.passport-theme), stamp animation khi check-in
+- [x] Verify: build + test + screenshots 4 trạng thái trước/sau

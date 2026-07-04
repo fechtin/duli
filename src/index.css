@@ -40,8 +40,12 @@
 
   /* Map terrain */
   --map-sea: #dfeaee;
+  --map-sea-hi: #edf4f6; /* sunlit center of the sea gradient */
+  --map-sea-lo: #c9d9df; /* deep edge */
   --map-land: #eef0e8;
   --map-land-2: #e6e9df;
+  --map-land-base: #eceadf; /* opaque base under the relief gradients */
+  --map-vignette: rgba(28, 31, 30, 0.14);
 
   --ring: var(--primary);
 
@@ -75,9 +79,13 @@
   --success: #62b07f;
   --warning: #e0aa48;
 
-  --map-sea: #131a1e;
+  --map-sea: #0b141a;
+  --map-sea-hi: #14313a; /* moonlit center */
+  --map-sea-lo: #05080b;
   --map-land: #1c2123;
   --map-land-2: #232a2c;
+  --map-land-base: #14201e;
+  --map-vignette: rgba(0, 0, 0, 0.5);
 
   --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.4);
   --elevation-2: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -180,6 +188,22 @@
   }
 }
 
+/* Passport sub-theme (025 §GĐ3) — the passport keeps its lacquer-and-gold identity, but as
+   FORMAL tokens instead of scattered inline hex. Plain rgba/hex only (html2canvas-safe). */
+.passport-theme {
+  --pp-bg: #091e24;
+  --pp-surface: #0d2830;
+  --pp-border: rgba(255, 255, 255, 0.07);
+  --pp-gold: #d4a84b;
+  --pp-gold-deep: #c8922a;
+  --pp-gold-bright: #f0d070;
+  --pp-gold-border: rgba(212, 168, 75, 0.4);
+  --pp-gold-soft: rgba(212, 168, 75, 0.07);
+  --pp-text: rgba(255, 255, 255, 0.92);
+  --pp-text-dim: rgba(255, 255, 255, 0.45);
+  --pp-text-faint: rgba(255, 255, 255, 0.35);
+}
+
 /* Heartbeat pulse ring — Living Vietnam (020/021). Disabled via base layer reduced-motion. */
 @keyframes heartbeat-pulse {
   0%   { transform: scale(1);   opacity: 0.7; }
@@ -220,6 +244,52 @@
 }
 
 @layer utilities {
+  /* Type scale (025 §GĐ2) — semantic text utilities; new/touched surfaces use these
+     instead of ad-hoc pixel sizes. */
+  .type-display {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .type-title {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .type-heading {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+  .type-body {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+  .type-caption {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+  .type-micro {
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Cartographic label halo — text sits directly on the map, legible over any terrain. */
+  .map-label-halo {
+    text-shadow:
+      0 1px 2px var(--map-sea),
+      0 0 4px var(--map-sea),
+      0 0 10px var(--map-sea);
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

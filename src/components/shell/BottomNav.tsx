@@ -1,4 +1,4 @@
-import { Compass, Search, Sparkles } from "lucide-react";
+import { BookMarked, Compass, Search, Sparkles } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useT } from "@/lib/i18n";
@@ -15,7 +15,7 @@ export function BottomNav() {
     { key: "explore", label: t("nav.explore"), icon: <Compass size={20} />, onClick: reset },
     { key: "search", label: t("nav.search"), icon: <Search size={20} />, onClick: () => setSearchOpen(true) },
     { key: "guide", label: t("nav.guide"), icon: <Sparkles size={20} />, onClick: () => setAiOpen(true) },
-    { key: "passport", label: t("nav.passport"), icon: <span className="text-lg leading-none">🛂</span>, onClick: () => setPassportOpen(true) },
+    { key: "passport", label: t("nav.passport"), icon: <BookMarked size={20} />, onClick: () => setPassportOpen(true) },
   ];
 
   return (

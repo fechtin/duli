@@ -1,9 +1,11 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { motion, useTransform } from "motion/react";
+import { motion, useReducedMotion, useTransform } from "motion/react";
 import { Minus, Plus, Locate } from "lucide-react";
 import { buildMapModel, type MapModel } from "@/lib/map/projection";
 import { useCamera } from "@/lib/map/useCamera";
+import { COAST_GLOW, regionColor } from "@/lib/map/regionPalette";
 import { useMapStore } from "@/lib/store/useMapStore";
+import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { getRegions } from "@/lib/api/content";
 import { useI18n, useT } from "@/lib/i18n";
@@ -51,6 +53,7 @@ const ProvinceLayer = memo(function ProvinceLayer({
   active,
   selectedProvince,
   hovered,
+  dark,
   onEnter,
   onLeave,
   onSelect,
@@ -60,10 +63,12 @@ const ProvinceLayer = memo(function ProvinceLayer({
   active: Set<string>;
   selectedProvince: string | null;
   hovered: string | null;
+  dark: boolean;
   onEnter: (slug: string) => void;
   onLeave: () => void;
   onSelect: (slug: string) => void;
 }) {
+  const glow = dark ? COAST_GLOW.dark : COAST_GLOW.light;
   return (
     <svg
       width={model.width}
@@ -72,17 +77,43 @@ const ProvinceLayer = memo(function ProvinceLayer({
       className="absolute inset-0 overflow-visible"
     >
       <defs>
-        {regions.map((r) => (
-          <linearGradient key={r.id} id={`relief-${r.id}`} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor={shade(r.color, 0.22)} />
-            <stop offset="55%" stopColor={r.color} />
-            <stop offset="100%" stopColor={shade(r.color, -0.26)} />
-          </linearGradient>
-        ))}
+        {regions.map((r) => {
+          const base = regionColor(r.id, dark, r.color);
+          return (
+            <linearGradient key={r.id} id={`relief-${r.id}`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor={shade(base, dark ? 0.14 : 0.2)} />
+              <stop offset="55%" stopColor={base} />
+              <stop offset="100%" stopColor={shade(base, dark ? -0.3 : -0.24)} />
+            </linearGradient>
+          );
+        })}
       </defs>
 
-      {/* Raised-island shadow — overlapping fills form one silhouette, offset down (cheap, no blur). */}
-      <g transform="translate(3 14)" fill="#0a201c" opacity="0.22" aria-hidden>
+      {/* Coastline glow — two layered strokes; fill+stroke inside a group with GROUP opacity
+          so overlapping province paths composite into one uniform silhouette halo (no seams,
+          no SVG blur — 025 §Ràng buộc). Land is repainted opaquely on top. */}
+      <g fill={glow.color} stroke={glow.color} strokeWidth={11} strokeLinejoin="round" opacity={glow.wide} aria-hidden>
+        {model.provinces.map((p) => (
+          <path key={p.slug} d={p.d} vectorEffect="non-scaling-stroke" />
+        ))}
+      </g>
+      <g fill={glow.color} stroke={glow.color} strokeWidth={3.5} strokeLinejoin="round" opacity={glow.near} aria-hidden>
+        {model.provinces.map((p) => (
+          <path key={p.slug} d={p.d} vectorEffect="non-scaling-stroke" />
+        ))}
+      </g>
+
+      {/* Raised-island shadow (daylight only — Night Atlas gets its depth from the glow). */}
+      {!dark && (
+        <g transform="translate(3 14)" fill="#0a201c" opacity="0.18" aria-hidden>
+          {model.provinces.map((p) => (
+            <path key={p.slug} d={p.d} />
+          ))}
+        </g>
+      )}
+
+      {/* Opaque land base — keeps the translucent relief fills from mixing with the glow. */}
+      <g fill="var(--map-land-base)" aria-hidden>
         {model.provinces.map((p) => (
           <path key={p.slug} d={p.d} />
         ))}
@@ -93,14 +124,15 @@ const ProvinceLayer = memo(function ProvinceLayer({
         const isSelected = selectedProvince === p.slug;
         const isHovered = hovered === p.slug;
         const isActive = active.has(p.slug);
+        const base = regionColor(p.regionId, dark, p.color);
         return (
           <path
             key={p.slug}
             d={p.d}
             data-slug={p.slug}
             fill={`url(#relief-${p.regionId})`}
-            fillOpacity={isSelected ? 1 : isHovered ? 0.92 : isActive ? 0.84 : 0.7}
-            stroke={isSelected || isHovered ? "var(--color-surface)" : shade(p.color, -0.3)}
+            fillOpacity={isSelected ? 1 : isHovered ? 0.97 : isActive ? 0.92 : 0.82}
+            stroke={isSelected || isHovered ? (dark ? glow.color : "var(--color-surface)") : shade(base, dark ? 0.4 : -0.3)}
             strokeOpacity={isSelected || isHovered ? 0.95 : 0.4}
             strokeWidth={isSelected ? 1.6 : 0.6}
             strokeLinejoin="round"
@@ -124,7 +156,7 @@ function MapSea() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 50% 18%, color-mix(in srgb, var(--color-map-sea) 70%, white) 0%, var(--color-map-sea) 45%, color-mix(in srgb, var(--color-map-sea) 80%, black) 100%)",
+            "radial-gradient(120% 90% at 50% 18%, var(--map-sea-hi) 0%, var(--color-map-sea) 45%, var(--map-sea-lo) 100%)",
         }}
       />
       <svg className="absolute -inset-x-1/4 inset-y-0 h-full w-[150%] opacity-[0.05]" preserveAspectRatio="none" aria-hidden>
@@ -178,6 +210,23 @@ export function MapEngine() {
   const cam = useCamera(model, { onZoomLevel: setZoomLevel });
   const invK = useTransform(cam.scale, (v) => 1 / v);
   const down = useRef<{ x: number; y: number; moved: boolean } | null>(null);
+
+  const dark = useUIStore((s) => s.theme) === "dark";
+  const glow = dark ? COAST_GLOW.dark : COAST_GLOW.light;
+
+  // Cinematic intro (025 §1.4) — coastline draws itself, then the land fades in.
+  const reducedMotion = useReducedMotion();
+  const [intro, setIntro] = useState(true);
+  useEffect(() => {
+    if (!model || !intro) return;
+    if (reducedMotion) {
+      setIntro(false);
+      return;
+    }
+    const tid = setTimeout(() => setIntro(false), 2400);
+    return () => clearTimeout(tid);
+  }, [model, intro, reducedMotion]);
+  const showIntro = intro && !reducedMotion;
 
   useEffect(() => {
     let alive = true;
@@ -354,12 +403,19 @@ export function MapEngine() {
         className="absolute left-0 top-0 origin-top-left"
         style={{ width: model.width, height: model.height, transform: cam.transform }}
       >
+        <motion.div
+          className="absolute inset-0"
+          initial={showIntro ? { opacity: 0 } : false}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.55, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+        >
         <ProvinceLayer
           model={model}
           regions={regions}
           active={active}
           selectedProvince={selectedProvince}
           hovered={hovered}
+          dark={dark}
           onEnter={onEnter}
           onLeave={onLeave}
           onSelect={onSelectProvince}
@@ -378,7 +434,7 @@ export function MapEngine() {
         {!showProvinceLabels &&
           regionLabels.map((r) => (
             <Label key={r.id} x={r.cx} y={r.cy} invK={invK}>
-              <span className="rounded-full bg-surface/85 px-2.5 py-1 text-[13px] font-semibold text-foreground shadow-[var(--shadow-e1)] backdrop-blur">
+              <span className="map-label-halo whitespace-nowrap font-display text-[13px] font-semibold uppercase tracking-[0.2em] text-foreground/80">
                 {r.name}
               </span>
             </Label>
@@ -390,7 +446,7 @@ export function MapEngine() {
             .filter((p) => (active.has(p.slug) || selectedProvince === p.slug) && inView(p.cx, p.cy))
             .map((p) => (
               <Label key={p.slug} x={p.cx} y={p.cy - 14} invK={invK}>
-                <span className="whitespace-nowrap rounded-full bg-surface/80 px-2 py-0.5 text-[11px] font-medium text-muted shadow-[var(--shadow-e1)] backdrop-blur">
+                <span className="map-label-halo whitespace-nowrap text-[11px] font-medium tracking-[0.04em] text-foreground/75">
                   {localizeProvinceName(p.slug, p.name, p.nameEn, locale)}
                 </span>
               </Label>
@@ -451,12 +507,18 @@ export function MapEngine() {
                         requestFocus({ kind: "point", lng: d.lng, lat: d.lat, zoom: 7 });
                       }}
                       className={cn(
-                        "group flex items-center gap-1.5 rounded-full border bg-surface/95 py-1 pl-1 pr-2.5 shadow-[var(--shadow-e2)] backdrop-blur transition-transform duration-150 hover:scale-[1.06]",
+                        "group flex items-center rounded-full border bg-surface/95 shadow-[var(--shadow-e2)] backdrop-blur transition-transform duration-150 hover:-translate-y-0.5 hover:scale-[1.06]",
+                        d.tier === 1 ? "gap-1.5 py-1 pl-1 pr-2.5" : d.tier === 2 ? "gap-1.5 py-0.5 pl-0.5 pr-2" : "gap-1 py-0.5 pl-0.5 pr-1.5",
                         isSelected ? "border-primary ring-2 ring-primary/30" : "border-border",
                       )}
                     >
-                      <span className="relative grid h-7 w-7 place-items-center rounded-full bg-surface-2">
-                        <Landmark type={d.type} className="h-5 w-5" />
+                      <span
+                        className={cn(
+                          "relative grid place-items-center rounded-full bg-surface-2",
+                          d.tier === 1 ? "h-7 w-7" : d.tier === 2 ? "h-6 w-6" : "h-5 w-5",
+                        )}
+                      >
+                        <Landmark type={d.type} className={d.tier === 1 ? "h-5 w-5" : "h-4 w-4"} />
                         {/* Seasonal glow dot */}
                         {showDot && (
                           <span
@@ -472,13 +534,59 @@ export function MapEngine() {
                           </span>
                         )}
                       </span>
-                      <span className="max-w-[7.5rem] truncate text-[11px] font-semibold text-foreground">{d.name}</span>
+                      <span
+                        className={cn(
+                          "truncate text-foreground",
+                          d.tier === 1
+                            ? "max-w-[7.5rem] text-[11px] font-semibold"
+                            : d.tier === 2
+                              ? "max-w-[6.5rem] text-[10.5px] font-medium"
+                              : "max-w-[5.5rem] text-[10px] font-medium",
+                        )}
+                      >
+                        {d.name}
+                      </span>
                     </button>
                   </div>
                 </Label>
               );
             })}
+        </motion.div>
+
+        {/* Intro overlay — the coastline draws itself in glow color, then fades out. */}
+        {showIntro && (
+          <svg
+            width={model.width}
+            height={model.height}
+            viewBox={`0 0 ${model.width} ${model.height}`}
+            className="pointer-events-none absolute inset-0 overflow-visible"
+            aria-hidden
+          >
+            <g fill="none" stroke={glow.color} strokeWidth={1.6} strokeLinejoin="round">
+              {model.provinces.map((p) => (
+                <motion.path
+                  key={p.slug}
+                  d={p.d}
+                  vectorEffect="non-scaling-stroke"
+                  initial={{ pathLength: 0, opacity: 0.9 }}
+                  animate={{ pathLength: 1, opacity: 0 }}
+                  transition={{
+                    pathLength: { duration: 1.3, ease: "easeInOut" },
+                    opacity: { delay: 1.5, duration: 0.7 },
+                  }}
+                />
+              ))}
+            </g>
+          </svg>
+        )}
       </motion.div>
+
+      {/* Atmospheric vignette — draws the eye to the country (screen-space, above the map). */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10"
+        style={{ background: "radial-gradient(120% 100% at 50% 45%, transparent 58%, var(--map-vignette) 100%)" }}
+      />
 
       <MapControls
         onZoomIn={() => cam.setK(cam.scale.get() * 1.5)}

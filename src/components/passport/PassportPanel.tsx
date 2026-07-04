@@ -89,16 +89,16 @@ export function PassportPanel() {
           <motion.aside
             {...motionProps}
             transition={panelTransition}
-            className="absolute z-50 flex flex-col shadow-[var(--shadow-e3)] inset-x-0 bottom-0 max-h-[92%] rounded-t-[var(--radius-sheet)] border-t md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-l"
-            style={{ background: "#091e24", borderColor: "rgba(200,146,42,0.15)" }}
+            className="passport-theme absolute z-50 flex flex-col shadow-[var(--shadow-e3)] inset-x-0 bottom-0 max-h-[92%] rounded-t-[var(--radius-sheet)] border-t md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-l"
+            style={{ background: "var(--pp-bg)", borderColor: "rgba(200,146,42,0.15)" }}
           >
             {/* Header — title + share + close, same bg as body */}
-            <div className="flex items-center justify-between px-5 py-3.5" style={{ background: "#0d2830", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
-              <p className="font-display text-base font-semibold" style={{ color: "rgba(255,255,255,0.9)" }}>{t("passport.title")}</p>
+            <div className="flex items-center justify-between px-5 py-3.5" style={{ background: "var(--pp-surface)", borderBottom: "1px solid var(--pp-border)" }}>
+              <p className="font-display text-base font-semibold" style={{ color: "var(--pp-text)" }}>{t("passport.title")}</p>
               <div className="flex items-center gap-2">
                 <button data-html2canvas-ignore="true" onClick={onShare} disabled={checkins.length === 0 || exporting}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
-                  style={{ border: "1px solid rgba(212,168,75,0.4)", color: "#d4a84b", background: "rgba(212,168,75,0.07)" }}>
+                  style={{ border: "1px solid var(--pp-gold-border)", color: "var(--pp-gold)", background: "var(--pp-gold-soft)" }}>
                   {exporting ? <Loader2 size={11} className="animate-spin" /> : <Share2 size={11} />}
                   Chia sẻ hành trình
                 </button>
@@ -108,11 +108,11 @@ export function PassportPanel() {
               </div>
             </div>
 
-            <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto" style={{ background: "#091e24" }}>
+            <div ref={cardRef} className="no-scrollbar flex-1 overflow-y-auto" style={{ background: "var(--pp-bg)" }}>
 
               {/* ── Cover header ── */}
               <div className="relative overflow-hidden"
-                style={{ background: "#0d2830", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+                style={{ background: "var(--pp-surface)", borderBottom: "1px solid var(--pp-border)" }}>
 
                 {/* Greeting */}
                 <div className="flex items-center gap-3 px-5 pt-5 pb-3">
@@ -120,19 +120,19 @@ export function PassportPanel() {
                     {(customAvatarUrl || user?.photoURL) ? (
                       <img src={customAvatarUrl || user?.photoURL} alt={user?.displayName}
                         className="w-11 h-11 rounded-full object-cover"
-                        style={{ border: "1.5px solid rgba(212,168,75,0.5)" }} />
+                        style={{ border: "1.5px solid var(--pp-gold-border)" }} />
                     ) : (
                       <div className="w-11 h-11 rounded-full flex items-center justify-center font-bold"
-                        style={{ background: "rgba(212,168,75,0.1)", border: "1.5px solid rgba(212,168,75,0.4)", color: "#d4a84b" }}>
+                        style={{ background: "rgba(212,168,75,0.1)", border: "1.5px solid var(--pp-gold-border)", color: "var(--pp-gold)" }}>
                         {user?.displayName?.[0]?.toUpperCase() ?? "V"}
                       </div>
                     )}
                   </div>
                   <div>
-                    <p className="text-[13px] font-semibold leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
-                      Xin chào, <span style={{ color: "#d4a84b" }}>{user?.displayName?.split(" ")[0] ?? "bạn"}</span>!
+                    <p className="text-[13px] font-semibold leading-tight" style={{ color: "var(--pp-text)" }}>
+                      Xin chào, <span style={{ color: "var(--pp-gold)" }}>{user?.displayName?.split(" ")[0] ?? "bạn"}</span>!
                     </p>
-                    <p className="text-[9px] mt-0.5 italic whitespace-nowrap" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    <p className="text-[9px] mt-0.5 italic whitespace-nowrap" style={{ color: "var(--pp-text-faint)" }}>
                       "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
                     </p>
                   </div>
@@ -143,15 +143,15 @@ export function PassportPanel() {
                   {/* Left: stats */}
                   <div className="flex flex-col justify-between shrink-0" style={{ width: 148 }}>
                     <div>
-                      <p className="text-[8px] tracking-[0.22em] uppercase mb-1" style={{ color: "rgba(255,255,255,0.35)" }}>Bạn đã khám phá</p>
+                      <p className="text-[8px] tracking-[0.22em] uppercase mb-1" style={{ color: "var(--pp-text-faint)" }}>Bạn đã khám phá</p>
                       <div className="flex items-baseline gap-1 mb-0.5">
                         <span className="font-bold leading-none" style={{ fontSize: 52, color: "#ffffff" }}>{visitedProvinces.length}</span>
                         <span className="text-2xl" style={{ color: "rgba(255,255,255,0.3)" }}>/ 63</span>
                       </div>
-                      <p className="text-[9px] uppercase tracking-[0.2em] mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>Tỉnh thành</p>
+                      <p className="text-[9px] uppercase tracking-[0.2em] mb-3" style={{ color: "var(--pp-text-faint)" }}>Tỉnh thành</p>
                       <div className="h-1.5 rounded-full overflow-hidden mb-4" style={{ background: "rgba(255,255,255,0.08)" }}>
                         <div className="h-full rounded-full transition-all duration-700"
-                          style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,#c8922a,#f0d070)" }} />
+                          style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,var(--pp-gold-deep),var(--pp-gold-bright))" }} />
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
@@ -176,9 +176,9 @@ export function PassportPanel() {
                     const offsetX = (MAP_W - mapMeta.width * scale) / 2;
                     const offsetY = (MAP_H - mapMeta.height * scale) / 2;
                     return (
-                      <div className="flex-1 rounded-xl overflow-hidden relative" style={{ background: "#091e24", minHeight: MAP_H }}>
+                      <div className="flex-1 rounded-xl overflow-hidden relative" style={{ background: "var(--pp-bg)", minHeight: MAP_H }}>
                         <svg width="100%" height="100%" viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0" preserveAspectRatio="xMidYMid meet">
-                          <rect width={MAP_W} height={MAP_H} fill="#091e24" />
+                          <rect width={MAP_W} height={MAP_H} fill="var(--pp-bg)" />
                           <g transform={`translate(${offsetX},${offsetY}) scale(${scale})`}>
                             {mapProvinces.map((p) => (
                               <path key={p.slug} d={p.d}
@@ -200,12 +200,12 @@ export function PassportPanel() {
               ) : (
                 <div className="pb-6 space-y-3 mt-3" style={{ padding: "0 12px 24px" }}>
                   {/* ── Visited places ── */}
-                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "var(--pp-surface)", border: "1px solid var(--pp-border)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-4">
-                      <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
+                      <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "var(--pp-gold)" }}>
                         {t("passport.visitedPlaces")}
                       </h3>
-                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
+                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "var(--pp-gold)" }}>
                         Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
@@ -229,7 +229,7 @@ export function PassportPanel() {
                             {/* Text */}
                             <div className="absolute bottom-0 left-0 right-0 px-2.5 pb-3">
                               <span className="text-[11px] font-bold leading-tight block mb-1" style={{ color: "#ffffff" }}>{c.destinationName}</span>
-                              <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>{c.caption}</p>
+                              <p className="text-[9px] leading-snug line-clamp-2" style={{ color: "var(--pp-text-dim)" }}>{c.caption}</p>
                             </div>
                           </button>
                         );
@@ -239,13 +239,13 @@ export function PassportPanel() {
 
                   {/* ── Badges ── */}
                   {badges.length > 0 && (
-                    <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
+                    <section className="rounded-2xl overflow-hidden" style={{ background: "var(--pp-surface)", border: "1px solid var(--pp-border)" }}>
                       <div className="flex items-center justify-between px-5 pt-5 pb-4">
-                        <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
+                        <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "var(--pp-gold)" }}>
                           {t("passport.yourBadges")}
                         </h3>
                         {badges.length > 5 && (
-                          <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
+                          <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "var(--pp-gold)" }}>
                             Xem tất cả <ChevronRight size={13} />
                           </button>
                         )}
@@ -257,7 +257,7 @@ export function PassportPanel() {
                         {badges.slice(0, 5).map((b) => (
                           <div key={b.id} className="flex flex-col items-center gap-2 min-w-0">
                             <BadgeMedal emoji={b.emoji} />
-                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "rgba(255,255,255,0.92)" }}>
+                            <span className="text-[10px] font-semibold text-center leading-tight" style={{ color: "var(--pp-text)" }}>
                               {b.label}
                             </span>
                             {b.description && (
@@ -272,12 +272,12 @@ export function PassportPanel() {
                   )}
 
                   {/* ── Timeline ── */}
-                  <section className="rounded-2xl overflow-hidden" style={{ background: "#0d2830", border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <section className="rounded-2xl overflow-hidden" style={{ background: "var(--pp-surface)", border: "1px solid var(--pp-border)" }}>
                     <div className="flex items-center justify-between px-5 pt-5 pb-3">
-                      <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "#d4a84b" }}>
+                      <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "var(--pp-gold)" }}>
                         {t("passport.timeline")}
                       </h3>
-                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "#d4a84b" }}>
+                      <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "var(--pp-gold)" }}>
                         Xem tất cả <ChevronRight size={13} />
                       </button>
                     </div>
@@ -295,7 +295,7 @@ export function PassportPanel() {
                               top: 28, left: ITEM_W / 2,
                               right: ITEM_W / 2,
                               height: 2,
-                              background: "linear-gradient(90deg, #c8922a, #f0d070, #c8922a)",
+                              background: "linear-gradient(90deg, var(--pp-gold-deep), var(--pp-gold-bright), var(--pp-gold-deep))",
                               boxShadow: "0 0 6px rgba(200,146,42,0.5)",
                             }} />
                             <div className="flex" style={{ gap: 8 }}>
@@ -311,10 +311,10 @@ export function PassportPanel() {
                                   >
                                     <span className="text-[9px] mb-2 font-medium" style={{ color: "rgba(212,168,75,0.7)" }}>{dateLabel}</span>
                                     <div className="w-3.5 h-3.5 rounded-full z-10 mb-2.5 shrink-0" style={{
-                                      background: "radial-gradient(circle, #f0d070 0%, #c8922a 100%)",
+                                      background: "radial-gradient(circle, var(--pp-gold-bright) 0%, var(--pp-gold-deep) 100%)",
                                       boxShadow: "0 0 8px rgba(200,146,42,0.7)",
                                     }} />
-                                    <span className="text-[10px] font-bold text-center leading-tight line-clamp-1" style={{ color: "rgba(255,255,255,0.92)" }}>
+                                    <span className="text-[10px] font-bold text-center leading-tight line-clamp-1" style={{ color: "var(--pp-text)" }}>
                                       {c.destinationName}
                                     </span>
                                     <span className="text-[9px] text-center mt-1 leading-snug line-clamp-2 px-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
