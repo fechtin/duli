@@ -78,13 +78,13 @@ export function ProvincePanel({ slug }: { slug: string }) {
                     <button
                       key={d.id}
                       onClick={() => openDish(d.id)}
-                      className="group flex items-center gap-3 rounded-[var(--radius-md)] border border-border p-2.5 text-left transition-colors hover:bg-surface-2"
+                      className="group flex items-center gap-3 rounded-[var(--radius-md)] border border-border p-2 text-left transition-colors hover:bg-surface-2"
                     >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent/12 text-xl">
-                        {d.emoji}
-                      </span>
+                      <IllustratedImage seed={`dish-${d.id}`} ratio="1/1" className="w-14 shrink-0" />
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-semibold text-foreground">{d.name}</p>
+                        <p className="truncate text-sm font-semibold text-foreground">
+                          {d.emoji} {d.name}
+                        </p>
                         <p className="mt-0.5 line-clamp-1 text-xs text-muted">{d.summary}</p>
                       </div>
                       <ChevronRight size={16} className="shrink-0 text-faint transition-transform group-hover:translate-x-0.5" />
