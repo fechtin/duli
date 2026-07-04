@@ -86,16 +86,16 @@ export function DishPanel() {
 
       {/* Facts */}
       <Section index={2} title="Hương vị & thành phần">
-        <div>
-          <InfoRow label="Hương vị" value={dish.flavor} />
-          <InfoRow label="Nên ăn lúc" value={dish.bestTime} />
-        </div>
+        <InfoRow label="Hương vị" value={dish.flavor} />
         <div className="mt-3 flex flex-wrap gap-1.5">
           {dish.ingredients.map((ing) => (
             <span key={ing} className="rounded-full bg-surface-2 px-2.5 py-1 text-[11px] font-medium text-foreground/80">
               {ing}
             </span>
           ))}
+        </div>
+        <div className="mt-3">
+          <InfoRow label="Nên ăn lúc" value={dish.bestTime} />
         </div>
       </Section>
 
