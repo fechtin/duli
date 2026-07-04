@@ -15,7 +15,7 @@ export const centralDishes: Dish[] = [
     id: "banh-bot-loc", name: "Bánh bột lọc", nameEn: "Banh bot loc (tapioca dumplings)", emoji: "🥟",
     summary: "Viên bánh bột sắn trong vắt lộ nhân tôm rim đỏ au, gói lá chuối hấp — càng ăn càng cuốn.",
     story: "Từ Huế ra Quảng Trị, mỗi nhà có một nồi bánh bột lọc ngày giỗ chạp. Bột sắn lọc kỹ cho lớp vỏ trong dai, tôm đồng rim mặn ngọt làm nhân — chấm mắm ớt cay mới trọn vị.",
-    originProvince: "thua-thien-hue", provinceSlugs: ["thua-thien-hue", "quang-tri"],
+    originProvince: "thua-thien-hue", provinceSlugs: ["thua-thien-hue", "quang-tri", "quang-binh"],
     ingredients: ["Bột sắn lọc", "Tôm rim", "Ba chỉ", "Lá chuối", "Mắm ớt"],
     flavor: "Dai trong, mặn ngọt đậm", bestTime: "Chiều",
     tags: ["street"],
