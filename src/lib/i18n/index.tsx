@@ -20,6 +20,14 @@ function detectInitial(): Locale {
   return navigator.language?.toLowerCase().startsWith("vi") ? "vi" : "en";
 }
 
+/**
+ * Current locale outside React (stores/services). Mirrors `detectInitial` but is safe to
+ * call anywhere — used by data-fetch layers (e.g. the food store) that lack hook context.
+ */
+export function getStoredLocale(): Locale {
+  return detectInitial();
+}
+
 function interpolate(template: string, params?: TParams): string {
   if (!params) return template;
   return template.replace(/\{(\w+)\}/g, (_, k: string) => String(params[k] ?? `{${k}}`));

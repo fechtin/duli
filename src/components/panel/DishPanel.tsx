@@ -1,30 +1,50 @@
+import { useEffect } from "react";
 import { Check, Clock, MapPin, Sparkles, UtensilsCrossed, Wallet } from "lucide-react";
 import { getProvinceMeta } from "@/lib/api/content";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
+import { useT, useI18n } from "@/lib/i18n";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { cn } from "@/lib/utils/cn";
 import { Section, Divider, InfoRow } from "./primitives";
 import type { Restaurant, RestaurantLabel } from "@/lib/types";
 
-// 026 §Restaurant Categories — label chips (VI-first like the passport surfaces).
-const LABEL_META: Record<RestaurantLabel, { text: string; className: string }> = {
-  "ai-pick":        { text: "AI Pick",            className: "bg-primary-soft text-primary" },
-  "local-favorite": { text: "Người địa phương mê", className: "bg-accent/15 text-accent" },
-  "atlas-pick":     { text: "Atlas chọn",          className: "bg-secondary/15 text-secondary" },
-  "street-food":    { text: "Vỉa hè",              className: "bg-surface-2 text-muted" },
-  "fine-dining":    { text: "Cao cấp",             className: "bg-lotus/15 text-lotus" },
-  "family":         { text: "Gia đình",            className: "bg-success/15 text-success" },
+// 026 §Restaurant Categories — label chip styles; text comes from the i18n dictionary.
+const LABEL_STYLE: Record<RestaurantLabel, string> = {
+  "ai-pick":        "bg-primary-soft text-primary",
+  "local-favorite": "bg-accent/15 text-accent",
+  "atlas-pick":     "bg-secondary/15 text-secondary",
+  "street-food":    "bg-surface-2 text-muted",
+  "fine-dining":    "bg-lotus/15 text-lotus",
+  "family":         "bg-success/15 text-success",
+};
+const LABEL_KEY: Record<RestaurantLabel, string> = {
+  "ai-pick": "restaurant.label.aiPick",
+  "local-favorite": "restaurant.label.localFavorite",
+  "atlas-pick": "restaurant.label.atlasPick",
+  "street-food": "restaurant.label.streetFood",
+  "fine-dining": "restaurant.label.fineDining",
+  "family": "restaurant.label.family",
 };
 
 /** Dish page (026 §Dish Page) — story-first, then top restaurants with explained picks. */
 export function DishPanel() {
+  const t = useT();
+  const { locale } = useI18n();
   const dish = useFoodStore((s) => s.dish);
   const loading = useFoodStore((s) => s.loading);
+  const openDishId = useFoodStore((s) => s.openDishId);
+  const openDish = useFoodStore((s) => s.openDish);
   const tasted = usePassportStore((s) => s.tastedDishes);
   const toggleTasted = usePassportStore((s) => s.toggleTasted);
+
+  // Refetch the open dish in the new language when the user switches locale.
+  useEffect(() => {
+    if (openDishId) openDish(openDishId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locale]);
 
   if (loading || !dish)
     return (
@@ -52,7 +72,7 @@ export function DishPanel() {
         >
           <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <UtensilsCrossed size={13} />
-            Đặc sản {origin ? origin.name : "Việt Nam"}
+            {t("dish.specialtyOf", { place: origin ? origin.name : t("common.vietnam") })}
           </div>
           <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
             {dish.emoji} {dish.name}
@@ -73,21 +93,21 @@ export function DishPanel() {
           )}
         >
           <Check size={16} />
-          {isTasted ? "Đã thưởng thức — lưu trong Passport" : "Tôi đã thưởng thức món này"}
+          {isTasted ? t("dish.tasted") : t("dish.markTasted")}
         </button>
       </Section>
 
       {/* Story */}
-      <Section index={1} title="Câu chuyện">
+      <Section index={1} title={t("dish.storyTitle")}>
         <p className="whitespace-pre-line text-sm leading-relaxed text-foreground/85">{dish.story}</p>
       </Section>
 
       <Divider />
 
       {/* Facts */}
-      <Section index={2} title="Hương vị & thành phần">
+      <Section index={2} title={t("dish.flavorIngredients")}>
         <div>
-          <InfoRow label="Hương vị" value={dish.flavor} />
+          <InfoRow label={t("dish.flavor")} value={dish.flavor} />
         </div>
         <div className="mt-3 flex flex-wrap gap-1.5">
           {dish.ingredients.map((ing) => (
@@ -101,20 +121,20 @@ export function DishPanel() {
       <Divider />
 
       {/* When to eat — its own section */}
-      <Section index={3} title="Nên ăn lúc">
+      <Section index={3} title={t("dish.bestTime")}>
         <p className="text-sm font-medium text-foreground">{dish.bestTime}</p>
       </Section>
 
       <Divider />
 
       {/* Top restaurants (026 §Restaurant Card + §AI Recommendation) */}
-      <Section index={4} title="Ăn ở đâu ngon nhất">
+      <Section index={4} title={t("dish.whereToEat")}>
         <div className="flex flex-col gap-3">
           {dish.restaurants.map((r) => (
-            <RestaurantCard key={r.id} restaurant={r} />
+            <RestaurantCard key={r.id} restaurant={r} t={t} />
           ))}
           {dish.restaurants.length === 0 && (
-            <p className="text-sm text-muted">Chưa có gợi ý quán cho món này.</p>
+            <p className="text-sm text-muted">{t("dish.noRestaurants")}</p>
           )}
         </div>
       </Section>
@@ -122,7 +142,7 @@ export function DishPanel() {
   );
 }
 
-function RestaurantCard({ restaurant: r }: { restaurant: Restaurant }) {
+function RestaurantCard({ restaurant: r, t }: { restaurant: Restaurant; t: (k: string, p?: Record<string, string | number>) => string }) {
   const requestFocus = useMapStore((s) => s.requestFocus);
   const province = getProvinceMeta(r.provinceSlug);
   return (
@@ -146,8 +166,8 @@ function RestaurantCard({ restaurant: r }: { restaurant: Restaurant }) {
 
       <div className="mt-2 flex flex-wrap gap-1.5">
         {r.labels.map((l) => (
-          <span key={l} className={cn("rounded-full px-2 py-0.5 text-[10.5px] font-semibold", LABEL_META[l].className)}>
-            {LABEL_META[l].text}
+          <span key={l} className={cn("rounded-full px-2 py-0.5 text-[10.5px] font-semibold", LABEL_STYLE[l])}>
+            {t(LABEL_KEY[l])}
           </span>
         ))}
       </div>
@@ -161,7 +181,7 @@ function RestaurantCard({ restaurant: r }: { restaurant: Restaurant }) {
       {r.reasons.length > 0 && (
         <div className="mt-2.5 rounded-[var(--radius-md)] bg-primary-soft px-3 py-2.5">
           <p className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold text-primary">
-            <Sparkles size={12} /> Phù hợp với bạn vì
+            <Sparkles size={12} /> {t("dish.whyForYou")}
           </p>
           <ul className="space-y-0.5">
             {r.reasons.map((reason) => (
@@ -179,7 +199,7 @@ function RestaurantCard({ restaurant: r }: { restaurant: Restaurant }) {
         className="mt-2.5 flex w-full items-center justify-center gap-1.5 rounded-full border border-border py-2 text-xs font-semibold text-foreground transition-colors hover:bg-surface-2"
       >
         <MapPin size={13} />
-        Xem trên bản đồ
+        {t("dish.viewOnMap")}
       </button>
     </div>
   );

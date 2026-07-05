@@ -107,11 +107,11 @@ api.get("/destination/:id", async (c) => {
 
 // ── Food Explorer (Bible 026) ─────────────────────────────────
 api.get("/food/dishes", async (c) =>
-  ok(c, await db.getDishes(c.env.DB, c.req.query("province") || undefined), 86400),
+  ok(c, await db.getDishes(c.env.DB, c.req.query("province") || undefined, loc(c)), 86400),
 );
 
 api.get("/food/dish/:id", async (c) => {
-  const d = await db.getDish(c.env.DB, c.req.param("id"));
+  const d = await db.getDish(c.env.DB, c.req.param("id"), loc(c));
   return d ? ok(c, d, 43200) : fail(c, "not_found", "Dish not found", 404);
 });
 

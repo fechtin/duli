@@ -191,57 +191,71 @@ export async function getProvinceBundle(db: D1Like, slug: string, locale?: strin
 }
 
 // ── Food Explorer (Bible 026) ─────────────────────────────────
-import type { Dish, DishWithRestaurants, Restaurant } from "../src/lib/types";
+import type {
+  Dish, DishWithRestaurants, Restaurant, DishTranslation, RestaurantTranslation,
+} from "../src/lib/types";
 
 interface DishRow {
   id: string; name: string; name_en: string; emoji: string | null;
   summary: string; story: string; origin_province: string | null;
   province_slugs: string; ingredients: string; flavor: string | null;
-  best_time: string | null; tags: string; featured: number;
+  best_time: string | null; tags: string; featured: number; i18n: string | null;
 }
 
 interface RestaurantRow {
   id: string; dish_id: string; name: string; province_slug: string;
   address: string | null; lng: number; lat: number; price_range: string | null;
   open_hours: string | null; labels: string; atlas_score: number; reasons: string;
+  i18n: string | null;
 }
 
 const arr = <T>(s: string | null): T[] => {
   try { return s ? (JSON.parse(s) as T[]) : []; } catch { return []; }
 };
 
-function mapDish(r: DishRow): Dish {
+function mapDish(r: DishRow, locale?: string): Dish {
+  const tr = pickTranslation<DishTranslation>(r.i18n, locale);
   return {
-    id: r.id, name: r.name, nameEn: r.name_en, emoji: r.emoji ?? "🍽️",
-    summary: r.summary, story: r.story, originProvince: r.origin_province ?? "",
-    provinceSlugs: arr(r.province_slugs), ingredients: arr(r.ingredients),
-    flavor: r.flavor ?? "", bestTime: r.best_time ?? "",
+    id: r.id, name: tr && nonEmpty(tr.name) ? tr.name : r.name,
+    nameEn: r.name_en, emoji: r.emoji ?? "🍽️",
+    summary: tr && nonEmpty(tr.summary) ? tr.summary : r.summary,
+    story: tr && nonEmpty(tr.story) ? tr.story : r.story,
+    originProvince: r.origin_province ?? "",
+    provinceSlugs: arr(r.province_slugs),
+    ingredients: tr && hasItems(tr.ingredients) ? tr.ingredients : arr(r.ingredients),
+    flavor: tr && nonEmpty(tr.flavor) ? tr.flavor : (r.flavor ?? ""),
+    bestTime: tr && nonEmpty(tr.bestTime) ? tr.bestTime : (r.best_time ?? ""),
     tags: arr(r.tags), featured: r.featured === 1,
   };
 }
 
-function mapRestaurant(r: RestaurantRow): Restaurant {
+function mapRestaurant(r: RestaurantRow, locale?: string): Restaurant {
+  const tr = pickTranslation<RestaurantTranslation>(r.i18n, locale);
   return {
-    id: r.id, dishId: r.dish_id, name: r.name, provinceSlug: r.province_slug,
-    address: r.address ?? "", lng: r.lng, lat: r.lat,
+    id: r.id, dishId: r.dish_id,
+    name: tr && nonEmpty(tr.name) ? tr.name : r.name,
+    provinceSlug: r.province_slug,
+    address: tr && nonEmpty(tr.address) ? tr.address : (r.address ?? ""),
+    lng: r.lng, lat: r.lat,
     priceRange: r.price_range ?? "", openHours: r.open_hours ?? "",
-    labels: arr(r.labels), atlasScore: r.atlas_score, reasons: arr(r.reasons),
+    labels: arr(r.labels), atlasScore: r.atlas_score,
+    reasons: tr && hasItems(tr.reasons) ? tr.reasons : arr(r.reasons),
   };
 }
 
 /** All dishes, optionally only those that are a specialty of one province. */
-export async function getDishes(db: D1Like, provinceSlug?: string): Promise<Dish[]> {
+export async function getDishes(db: D1Like, provinceSlug?: string, locale?: string): Promise<Dish[]> {
   const rows = await db.prepare("SELECT * FROM dishes ORDER BY featured DESC, name").bind().all<DishRow>();
-  const list = rows.results.map(mapDish);
+  const list = rows.results.map((r) => mapDish(r, locale));
   return provinceSlug ? list.filter((d) => d.provinceSlugs.includes(provinceSlug)) : list;
 }
 
-export async function getDish(db: D1Like, id: string): Promise<DishWithRestaurants | null> {
+export async function getDish(db: D1Like, id: string, locale?: string): Promise<DishWithRestaurants | null> {
   const row = await db.prepare("SELECT * FROM dishes WHERE id = ?").bind(id).first<DishRow>();
   if (!row) return null;
   const rests = await db
     .prepare("SELECT * FROM restaurants WHERE dish_id = ? ORDER BY atlas_score DESC")
     .bind(id)
     .all<RestaurantRow>();
-  return { ...mapDish(row), restaurants: rests.results.map(mapRestaurant) };
+  return { ...mapDish(row, locale), restaurants: rests.results.map((r) => mapRestaurant(r, locale)) };
 }

@@ -18,7 +18,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
   const { locale } = useI18n();
   const meta = getProvinceMeta(slug);
   const { data: bundle, loading } = useAsync(() => fetchProvinceBundle(slug, locale), [slug, locale]);
-  const { data: dishes } = useAsync(() => fetchDishesForProvince(slug), [slug]);
+  const { data: dishes } = useAsync(() => fetchDishesForProvince(slug, locale), [slug, locale]);
   const selectDestination = useMapStore((s) => s.selectDestination);
   const openDish = useFoodStore((s) => s.openDish);
 

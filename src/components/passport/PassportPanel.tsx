@@ -11,7 +11,7 @@ import { useMapStore } from "@/lib/store/useMapStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
-import { useT } from "@/lib/i18n";
+import { useT, useI18n } from "@/lib/i18n";
 import { panelTransition } from "@/design/motion";
 import { Button } from "@/components/ui/Button";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
@@ -26,12 +26,13 @@ const provinceToRegion: Record<string, string> = Object.fromEntries(
 
 export function PassportPanel() {
   const t = useT();
+  const { locale } = useI18n();
   const isDesktop = useIsDesktop();
   const open = useUIStore((s) => s.passportOpen);
   const setOpen = useUIStore((s) => s.setPassportOpen);
   const checkins = usePassportStore((s) => s.checkins);
   const tastedDishes = usePassportStore((s) => s.tastedDishes);
-  const { data: allDishes } = useAsync(() => fetchDishes(), []);
+  const { data: allDishes } = useAsync(() => fetchDishes(locale), [locale]);
   const user = useAuthStore((s) => s.user);
   const customAvatarUrl = useAuthStore((s) => s.customAvatarUrl);
 

@@ -41,7 +41,7 @@ export function SearchOverlay() {
     const m = provBySlug.get(r.id);
     return m ? localizeRegionName(m.regionId, m.regionName, locale) : r.subtitle;
   };
-  const { data: dishes } = useAsync(() => fetchDishes(), []);
+  const { data: dishes } = useAsync(() => fetchDishes(locale), [locale]);
   const results = useMemo(
     () => (query.trim() ? searchContent(query, provinces, destinations, 8, dishes ?? []) : []),
     [query, provinces, destinations, dishes],
