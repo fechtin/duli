@@ -145,3 +145,29 @@ Nhân bản pattern i18n của destination/province cho Food. Nội dung món ă
 - [x] Panel: hero scrim 2 lớp + type-display, Heartbeat gauge SVG
 - [x] Passport: token --pp-* (.passport-theme), stamp animation khi check-in
 - [x] Verify: build + test + screenshots 4 trạng thái trước/sau
+
+## 027 — Adventure Premium UI Redesign (Left Sidebar)
+- [ ] Add `.sidebar-theme` teal/gold tokens to index.css
+- [ ] Extend useUIStore: sidebarCollapsed + mobile drawer state (persisted)
+- [ ] navHelpers.ts — daily hero picker + focusDestination resolver
+- [ ] SidebarHeader (logo + greeting)
+- [ ] SidebarNav (8-item menu, collapse-aware)
+- [ ] HeroBanner (daily image)
+- [ ] HighlightsSection (Today's Highlights cards)
+- [ ] AIRecommendation card
+- [ ] HiddenGemSection
+- [ ] FoodExplorerSection (fetch dishes)
+- [ ] FestivalSection (this month)
+- [ ] LeftSidebar shell (desktop rail + collapse + mobile drawer)
+- [ ] Wire into App.tsx; remove CompanionCard; adjust TopBar/MobileTopBar
+- [ ] typecheck + build + visual verify
+
+### 027 Review (done 2026-07-06)
+All items complete. New `src/components/sidebar/` (LeftSidebar + 8 sub-components + navHelpers).
+Sidebar uses `.sidebar-theme` fixed teal/gold tokens (index.css). useUIStore gained
+sidebarCollapsed(persisted)/sidebarMobileOpen. App renders <LeftSidebar/> instead of
+<CompanionCard/> (CompanionCard.tsx now UNUSED — kept, not deleted). TopBar offset right of
+sidebar + logo removed; MobileTopBar left button now opens the drawer.
+Verified: desktop expanded/collapsed, dark theme, mobile drawer (screenshots). tsc + build pass.
+Note: highlight/food/festival thumbnails using calendar-ids fall back to gradient (no manifest
+photo) — clean per project rule; hero uses verified seeds so it always shows a real photo.

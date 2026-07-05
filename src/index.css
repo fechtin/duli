@@ -204,6 +204,24 @@
   --pp-text-faint: rgba(255, 255, 255, 0.35);
 }
 
+/* Left Sidebar sub-theme (027 — Adventure Premium). The sidebar is ALWAYS a deep teal
+   lacquer surface (never white, in either app theme) and shares the passport's gold accent,
+   so the two "wings" of the app read as one system. Fixed tokens — no light/dark variants. */
+.sidebar-theme {
+  --sb-bg: #102b30;
+  --sb-surface: #17373c;
+  --sb-hover: #1f464d;
+  --sb-border: rgba(255, 255, 255, 0.07);
+  --sb-border-strong: rgba(255, 255, 255, 0.12);
+  --sb-gold: #d4a84b;
+  --sb-gold-soft: rgba(212, 168, 75, 0.12);
+  --sb-text: rgba(255, 255, 255, 0.94);
+  --sb-text-dim: rgba(255, 255, 255, 0.66);
+  --sb-text-faint: rgba(255, 255, 255, 0.42);
+  --sb-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+  --sb-shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
 /* Heartbeat pulse ring — Living Vietnam (020/021). Disabled via base layer reduced-motion. */
 @keyframes heartbeat-pulse {
   0%   { transform: scale(1);   opacity: 0.7; }

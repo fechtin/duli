@@ -10,7 +10,7 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useUrlSync } from "@/lib/store/useUrlSync";
 import { useI18n } from "@/lib/i18n";
-import { CompanionCard } from "@/components/companion/CompanionCard";
+import { LeftSidebar } from "@/components/sidebar/LeftSidebar";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 
 const Overlays = lazy(() => import("@/components/Overlays"));
@@ -56,11 +56,12 @@ export default function App() {
     <main className="relative h-[100dvh] w-full overflow-hidden bg-background">
       <MapEngine />
 
+      <LeftSidebar />
+
       <TopBar />
       <MobileTopBar />
       <BottomNav />
 
-      <CompanionCard />
       <PanelContainer />
       <OfflineIndicator />
       <Suspense fallback={null}>

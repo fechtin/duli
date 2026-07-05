@@ -9,11 +9,20 @@ function initialTheme(): Theme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
+function initialCollapsed(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.localStorage.getItem("via.sidebar.collapsed") === "1";
+}
+
 interface UIState {
   theme: Theme;
   searchOpen: boolean;
   aiOpen: boolean;
   passportOpen: boolean;
+  /** Left sidebar collapsed to the 72px icon rail (desktop, persisted). */
+  sidebarCollapsed: boolean;
+  /** Left sidebar drawer open (mobile only). */
+  sidebarMobileOpen: boolean;
   /** Destination id pending a check-in flow, or null. */
   checkinTarget: string | null;
 
@@ -22,6 +31,8 @@ interface UIState {
   setSearchOpen: (v: boolean) => void;
   setAiOpen: (v: boolean) => void;
   setPassportOpen: (v: boolean) => void;
+  toggleSidebar: () => void;
+  setSidebarMobileOpen: (v: boolean) => void;
   openCheckin: (destinationId: string) => void;
   closeCheckin: () => void;
 }
@@ -31,6 +42,8 @@ export const useUIStore = create<UIState>((set, get) => ({
   searchOpen: false,
   aiOpen: false,
   passportOpen: false,
+  sidebarCollapsed: initialCollapsed(),
+  sidebarMobileOpen: false,
   checkinTarget: null,
 
   toggleTheme: () => {
@@ -49,6 +62,12 @@ export const useUIStore = create<UIState>((set, get) => ({
   setSearchOpen: (v) => set({ searchOpen: v }),
   setAiOpen: (v) => set({ aiOpen: v }),
   setPassportOpen: (v) => set({ passportOpen: v }),
+  toggleSidebar: () => {
+    const next = !get().sidebarCollapsed;
+    set({ sidebarCollapsed: next });
+    window.localStorage.setItem("via.sidebar.collapsed", next ? "1" : "0");
+  },
+  setSidebarMobileOpen: (v) => set({ sidebarMobileOpen: v }),
   openCheckin: (destinationId) => set({ checkinTarget: destinationId, aiOpen: false }),
   closeCheckin: () => set({ checkinTarget: null }),
 }));

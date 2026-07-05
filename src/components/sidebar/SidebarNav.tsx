@@ -1,0 +1,75 @@
+import { Sparkles, Map, UtensilsCrossed, Gem, PartyPopper, Bot, Heart, Settings } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { useMapStore } from "@/lib/store/useMapStore";
+import { useUIStore } from "@/lib/store/useUIStore";
+import { cn } from "@/lib/utils/cn";
+
+type NavItem = {
+  key: string;
+  label: string;
+  icon: LucideIcon;
+  onClick: () => void;
+};
+
+/** Sidebar primary navigation (027 §Sidebar Structure — max 8 items, one icon style). */
+export function SidebarNav({ collapsed }: { collapsed: boolean }) {
+  const reset = useMapStore((s) => s.reset);
+  const setAiOpen = useUIStore((s) => s.setAiOpen);
+  const setPassportOpen = useUIStore((s) => s.setPassportOpen);
+  const toggleTheme = useUIStore((s) => s.toggleTheme);
+  const closeMobile = useUIStore((s) => s.setSidebarMobileOpen);
+
+  // In the expanded feed, sections scroll into view; overlay items open their store.
+  const scrollTo = (id: string) => {
+    reset();
+    closeMobile(false);
+    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  };
+
+  const items: NavItem[] = [
+    { key: "today", label: "Hôm nay", icon: Sparkles, onClick: () => scrollTo("sb-top") },
+    { key: "explore", label: "Khám phá", icon: Map, onClick: () => { reset(); closeMobile(false); } },
+    { key: "food", label: "Ẩm thực", icon: UtensilsCrossed, onClick: () => scrollTo("sb-food") },
+    { key: "gems", label: "Điểm ẩn", icon: Gem, onClick: () => scrollTo("sb-gem") },
+    { key: "festivals", label: "Lễ hội", icon: PartyPopper, onClick: () => scrollTo("sb-festival") },
+    { key: "ai", label: "AI Planner", icon: Bot, onClick: () => { setAiOpen(true); closeMobile(false); } },
+    { key: "saved", label: "Đã lưu", icon: Heart, onClick: () => { setPassportOpen(true); closeMobile(false); } },
+  ];
+
+  return (
+    <nav className="flex flex-col gap-0.5">
+      {items.map(({ key, label, icon: Icon, onClick }) => (
+        <NavButton key={key} label={label} Icon={Icon} onClick={onClick} collapsed={collapsed} />
+      ))}
+      <div className="my-1.5 h-px bg-[var(--sb-border)]" />
+      <NavButton label="Cài đặt" Icon={Settings} onClick={toggleTheme} collapsed={collapsed} />
+    </nav>
+  );
+}
+
+function NavButton({
+  label,
+  Icon,
+  onClick,
+  collapsed,
+}: {
+  label: string;
+  Icon: LucideIcon;
+  onClick: () => void;
+  collapsed: boolean;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      title={collapsed ? label : undefined}
+      className={cn(
+        "group flex items-center rounded-[14px] text-[color:var(--sb-text-dim)] transition-colors hover:bg-[var(--sb-hover)] hover:text-[color:var(--sb-text)]",
+        collapsed ? "justify-center px-0 py-2.5" : "gap-3 px-3 py-2.5",
+      )}
+    >
+      <Icon size={19} className="shrink-0" strokeWidth={1.9} />
+      {!collapsed && <span className="truncate text-[13.5px] font-medium">{label}</span>}
+    </button>
+  );
+}

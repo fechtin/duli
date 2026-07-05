@@ -1,11 +1,11 @@
-import { Search, Sun, Moon, Sparkles, Compass, BookMarked } from "lucide-react";
+import { Search, Sun, Moon, Sparkles, BookMarked } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
-import { useMapStore } from "@/lib/store/useMapStore";
 import { useT } from "@/lib/i18n";
 import { LanguageMenu } from "./LanguageMenu";
 import { LoginButton } from "@/components/auth/LoginButton";
+import { SIDEBAR_COLLAPSED, SIDEBAR_EXPANDED } from "@/components/sidebar/LeftSidebar";
 
-/** Desktop top bar — minimal, floating over the map (Bible 007 §16). */
+/** Desktop top bar — minimal, floating over the map, right of the sidebar (Bible 007 §16). */
 export function TopBar() {
   const t = useT();
   const theme = useUIStore((s) => s.theme);
@@ -13,24 +13,16 @@ export function TopBar() {
   const setSearchOpen = useUIStore((s) => s.setSearchOpen);
   const setAiOpen = useUIStore((s) => s.setAiOpen);
   const setPassportOpen = useUIStore((s) => s.setPassportOpen);
-  const reset = useMapStore((s) => s.reset);
+  const collapsed = useUIStore((s) => s.sidebarCollapsed);
 
   return (
-    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 hidden items-center justify-between gap-4 p-4 md:flex">
-      <button
-        onClick={reset}
-        aria-label={t("nav.home")}
-        className="pointer-events-auto flex items-center gap-2 rounded-full border border-border bg-surface/85 py-2 pl-3 pr-4 shadow-[var(--shadow-e1)] backdrop-blur transition-colors hover:bg-surface"
-      >
-        <span className="grid h-7 w-7 place-items-center rounded-full bg-primary text-primary-foreground">
-          <Compass size={16} />
-        </span>
-        <span className="font-display text-sm font-bold text-foreground">{t("app.name")}</span>
-      </button>
-
+    <header
+      className="pointer-events-none absolute inset-x-0 top-0 z-30 hidden items-center justify-end gap-4 p-4 transition-[padding] duration-[280ms] ease-out md:flex"
+      style={{ paddingLeft: (collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED) + 24 }}
+    >
       <button
         onClick={() => setSearchOpen(true)}
-        className="pointer-events-auto flex h-11 w-full max-w-sm items-center gap-2.5 rounded-full border border-border bg-surface/85 px-4 text-left text-sm text-muted shadow-[var(--shadow-e1)] backdrop-blur transition-colors hover:bg-surface"
+        className="pointer-events-auto mr-auto flex h-11 w-full max-w-sm items-center gap-2.5 rounded-full border border-border bg-surface/85 px-4 text-left text-sm text-muted shadow-[var(--shadow-e1)] backdrop-blur transition-colors hover:bg-surface"
       >
         <Search size={17} />
         {t("search.placeholder")}
