@@ -32,8 +32,27 @@ export interface ProvinceTranslation {
   specialties?: string[];
 }
 
+/** Translatable fields of a dish/specialty (all optional; arrays index-aligned with VN source). */
+export interface DishTranslation {
+  name?: string;
+  summary?: string;
+  story?: string;
+  ingredients?: string[];
+  flavor?: string;
+  bestTime?: string;
+}
+
+/** Translatable fields of a restaurant (arrays index-aligned with VN source). */
+export interface RestaurantTranslation {
+  name?: string;
+  address?: string;
+  reasons?: string[];
+}
+
 export type DestinationI18n = Partial<Record<ContentLocale, DestinationTranslation>>;
 export type ProvinceI18n = Partial<Record<ContentLocale, ProvinceTranslation>>;
+export type DishI18n = Partial<Record<ContentLocale, DishTranslation>>;
+export type RestaurantI18n = Partial<Record<ContentLocale, RestaurantTranslation>>;
 
 export type RegionId =
   | "northeast"
@@ -207,6 +226,7 @@ export interface Dish {
   bestTime: string;
   tags: DishTag[];
   featured?: boolean;
+  i18n?: DishI18n;
 }
 
 export interface Restaurant {
@@ -224,6 +244,7 @@ export interface Restaurant {
   atlasScore: number;
   /** 026 §AI Recommendation — every pick must explain itself. */
   reasons: string[];
+  i18n?: RestaurantI18n;
 }
 
 export interface DishWithRestaurants extends Dish {

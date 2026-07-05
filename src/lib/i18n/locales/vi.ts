@@ -103,6 +103,25 @@ export const vi = {
   "share.checkins": "Lượt check-in",
   "share.badges": "Huy hiệu",
   "share.tagline": "Hành trình khám phá Việt Nam",
+
+  "common.vietnam": "Việt Nam",
+  "dish.specialtyOf": "Đặc sản {place}",
+  "dish.tasted": "Đã thưởng thức — lưu trong Passport",
+  "dish.markTasted": "Tôi đã thưởng thức món này",
+  "dish.storyTitle": "Câu chuyện",
+  "dish.flavorIngredients": "Hương vị & thành phần",
+  "dish.flavor": "Hương vị",
+  "dish.bestTime": "Nên ăn lúc",
+  "dish.whereToEat": "Ăn ở đâu ngon nhất",
+  "dish.noRestaurants": "Chưa có gợi ý quán cho món này.",
+  "dish.whyForYou": "Phù hợp với bạn vì",
+  "dish.viewOnMap": "Xem trên bản đồ",
+  "restaurant.label.aiPick": "AI Pick",
+  "restaurant.label.localFavorite": "Người địa phương mê",
+  "restaurant.label.atlasPick": "Atlas chọn",
+  "restaurant.label.streetFood": "Vỉa hè",
+  "restaurant.label.fineDining": "Cao cấp",
+  "restaurant.label.family": "Gia đình",
 };
 
 export type TranslationKey = keyof typeof vi;

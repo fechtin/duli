@@ -102,6 +102,38 @@ Còn lại: visual verification trên browser (quầng sáng + card desktop/mobi
 - P2 Heartbeat Timeline · P4 Discovery Feed + Ambient Suggestions · P5 Discovery Mode + Queue ·
   P6 Cloudflare KV + Claude thật.
 
+---
+
+# Đa ngôn ngữ nội dung Food (2026-07-05)
+Ngôn ngữ: en, ko, ja, zh. Nội dung: 149 Dish (66 dish + 83 đặc sản) + 26 nhà hàng. Bản dịch: AI.
+Nhân bản đúng pattern destination/province i18n (cột i18n JSON + pickTranslation overlay).
+
+## A. Hạ tầng code
+- [x] types.ts: DishTranslation, RestaurantTranslation, DishI18n, RestaurantI18n; `i18n?` vào Dish & Restaurant
+- [x] migration mới 0005_food_i18n.sql: cột `i18n` cho bảng dishes & restaurants
+- [x] src/data/i18n/food/index.ts: dishI18n, restaurantI18n maps
+- [x] build-d1-seed.mjs: seed cột i18n cho dishes & restaurants
+- [x] worker/db.ts: pickTranslation overlay trong mapDish/getDishes/getDish + restaurants
+- [x] worker/index.ts: thread `?locale=` cho /food routes
+- [x] src/lib/api/food.ts: localeQuery + cache theo locale + getStoredLocale
+- [x] DishPanel.tsx: chuỗi hardcode → useT() + refetch khi đổi locale
+- [x] 5 locale UI dicts: key DishPanel
+
+## B. Sinh bản dịch (workflow wf_725298cf — 22 agent, 0 lỗi)
+- [x] Dịch 149 Dish × 4 lang → src/data/i18n/food/dishes.<locale>.ts (ingredients giữ đúng số phần tử)
+- [x] Dịch 26 Restaurant × 4 lang → src/data/i18n/food/restaurants.<locale>.ts (reasons giữ đúng số)
+
+## C. Kiểm chứng — ĐÃ QUA
+- [x] db:seed:build (149 dishes, 26 restaurants với cột i18n)
+- [x] tsc --noEmit sạch; npm run build pass
+- [x] db:setup (migration 0005 + seed local)
+- [x] wrangler dev: /food/dish/pho-bo?locale=ja|en|zh trả nội dung dịch; ?locale=vi fallback tiếng Việt
+
+## Review
+Nhân bản pattern i18n của destination/province cho Food. Nội dung món ăn/đặc sản/nhà hàng giờ
+đa ngôn ngữ (en/ko/ja/zh), fallback tiếng Việt khi thiếu. DishPanel dùng useT, tự refetch khi
+đổi ngôn ngữ. Bản dịch do AI sinh — nên rà soát lại trước khi production nếu cần độ chính xác cao.
+
 ## UI Elevation — "Living Atlas" (2026-07-04, spec docs/025.md)
 - [x] Tokens: regionPalette.ts (light/dark), map atmosphere tokens, type-scale utilities
 - [x] Map: palette mới + coastal glow 2 lớp + vignette + sea sâu hơn
