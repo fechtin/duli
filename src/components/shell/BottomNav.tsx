@@ -21,8 +21,8 @@ export function BottomNav() {
   ];
 
   return (
-    <nav className="pointer-events-none absolute inset-x-0 bottom-0 z-30 flex justify-center px-3 pb-safe md:hidden">
-      <div className="pointer-events-auto mb-3 flex w-full max-w-md items-stretch justify-around gap-1 rounded-[26px] border border-[var(--glass-border)] bg-[var(--glass-bg-strong)] p-1.5 shadow-[var(--glass-shadow)] backdrop-blur-xl">
+    <nav className="pointer-events-none absolute inset-x-0 bottom-0 z-30 md:hidden">
+      <div className="pointer-events-auto flex items-stretch justify-around gap-1 border-t border-[var(--glass-border)] bg-[var(--glass-bg-strong)] px-3 pt-1.5 pb-safe shadow-[var(--glass-shadow)] backdrop-blur-xl">
         {items.map(({ key, label, icon: Icon, active, onClick }) => (
           <button
             key={key}
