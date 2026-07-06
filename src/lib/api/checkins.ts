@@ -2,7 +2,7 @@ import type { Checkin } from "@/lib/types";
 import { auth } from "@/lib/firebase";
 
 async function authHeader(): Promise<Record<string, string>> {
-  const token = await auth.currentUser?.getIdToken();
+  const token = await auth?.currentUser?.getIdToken();
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
