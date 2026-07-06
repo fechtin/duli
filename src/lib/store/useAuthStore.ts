@@ -32,6 +32,7 @@ export const useAuthStore = create<AuthState>()(
       customAvatarUrl: null,
 
       signIn: async () => {
+        if (!auth) return;
         const provider = new GoogleAuthProvider();
         const result = await signInWithPopup(auth, provider);
         const u = result.user;
@@ -46,7 +47,7 @@ export const useAuthStore = create<AuthState>()(
       },
 
       signOut: async () => {
-        await fbSignOut(auth);
+        if (auth) await fbSignOut(auth);
         set({ user: null, customAvatarUrl: null });
         usePassportStore.getState().clearForLogout();
       },
@@ -54,6 +55,7 @@ export const useAuthStore = create<AuthState>()(
       updateAvatar: (url) => set({ customAvatarUrl: url }),
 
       init: () => {
+        if (!auth) return () => {};
         const unsub = onAuthStateChanged(auth, (u) => {
           if (u) {
             set((s) => ({
