@@ -1,7 +1,12 @@
-name = "fechtin-go"
+name = "go"
 main = "worker/index.ts"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
+account_id = "f88f5e7c7136bf1e6242c019433252fc"
+
+# go.fechtin.com được route vào worker này qua Cloudflare for SaaS
+# (custom hostname + Worker Route cấu hình thủ công trên dashboard) — không dùng
+# custom_domain của wrangler vì zone fechtin.com nằm ở account khác.
 
 # Resolve the "@/..." source alias when esbuild bundles the Worker.
 [alias]
