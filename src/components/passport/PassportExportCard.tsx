@@ -95,7 +95,7 @@ export const PassportExportCard = forwardRef<HTMLDivElement, Props>(
               </div>
             </div>
             <p style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", margin: 0 }}>
-              {user?.displayName ? user.displayName.split(" ").slice(-1)[0].toUpperCase() : "VIETNAM ATLAS"}
+              {user?.displayName ? user.displayName.split(" ").slice(-1)[0].toUpperCase() : "FECHTIN GO"}
             </p>
           </div>
 
@@ -266,8 +266,8 @@ export const PassportExportCard = forwardRef<HTMLDivElement, Props>(
 
           {/* Footer */}
           <div style={{ textAlign: "center", paddingTop: 8, paddingBottom: 4 }}>
-            <p style={{ fontSize: 13, letterSpacing: "0.3em", color: "rgba(255,255,255,0.3)", margin: 0 }}>🇻🇳  VIETNAM ATLAS</p>
-            <p style={{ fontSize: 9, color: "rgba(255,255,255,0.15)", marginTop: 4, letterSpacing: "0.05em" }}>vietnam-atlas.fechtin.workers.dev</p>
+            <p style={{ fontSize: 13, letterSpacing: "0.3em", color: "rgba(255,255,255,0.3)", margin: 0 }}>🇻🇳  FECHTIN GO</p>
+            <p style={{ fontSize: 9, color: "rgba(255,255,255,0.15)", marginTop: 4, letterSpacing: "0.05em" }}>go.fechtin.com</p>
           </div>
         </div>
       </div>

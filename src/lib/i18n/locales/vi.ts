@@ -1,6 +1,6 @@
 // Vietnamese — the source language (Bible 009 §5). All other locales mirror these keys.
 export const vi = {
-  "app.name": "Vietnam Atlas",
+  "app.name": "FechTin Go",
   "app.tagline": "Khám phá Việt Nam qua một tấm bản đồ sống",
 
   "nav.explore": "Khám phá",
@@ -122,6 +122,33 @@ export const vi = {
   "restaurant.label.streetFood": "Vỉa hè",
   "restaurant.label.fineDining": "Cao cấp",
   "restaurant.label.family": "Gia đình",
+
+  // Sidebar (027 Adventure Premium) — nav + daily discovery feed
+  "nav.today": "Hôm nay",
+  "nav.food": "Ẩm thực",
+  "nav.gems": "Điểm ẩn",
+  "nav.festivals": "Lễ hội",
+  "nav.aiPlanner": "AI Planner",
+  "nav.saved": "Đã lưu",
+  "nav.settings": "Cài đặt",
+  "sidebar.expand": "Mở rộng",
+  "sidebar.collapse": "Thu gọn",
+  "sidebar.highlights": "Nổi bật hôm nay",
+  "sidebar.festivalsTitle": "Lễ hội mùa này",
+  "sidebar.hiddenGemTitle": "Điểm ẩn hôm nay",
+  "sidebar.aiSuggests": "AI đề xuất",
+  "sidebar.planItinerary": "Lên lịch trình",
+  "sidebar.viewAll": "Tất cả",
+  "brief.greeting.morning": "Chào buổi sáng!",
+  "brief.greeting.afternoon": "Buổi chiều bình yên.",
+  "brief.greeting.evening": "Chúc buổi tối tuyệt vời.",
+  "brief.greeting.weekend": "Cuối tuần rồi — đi đâu đó thôi!",
+  "brief.greeting.holiday": "Kỳ nghỉ đã đến!",
+  "brief.aiRec.multi": "Tháng {month} là thời điểm lý tưởng để khám phá {a} và {b}. {state}.",
+  "brief.aiRec.single": "Tháng {month}, đừng bỏ lỡ {name} — {state}.",
+
+  // Panel labels
+  "panel.atlasScore": "Atlas Score",
 };
 
 export type TranslationKey = keyof typeof vi;

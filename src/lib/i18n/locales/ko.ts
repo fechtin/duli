@@ -1,7 +1,7 @@
 import type { TranslationKey } from "./vi";
 
 export const ko: Record<TranslationKey, string> = {
-  "app.name": "Vietnam Atlas",
+  "app.name": "FechTin Go",
   "app.tagline": "살아 숨 쉬는 한 장의 지도로 베트남을 만나다",
 
   "nav.explore": "둘러보기",
@@ -123,4 +123,30 @@ export const ko: Record<TranslationKey, string> = {
   "restaurant.label.streetFood": "길거리 음식",
   "restaurant.label.fineDining": "고급 레스토랑",
   "restaurant.label.family": "가족",
+
+  // Sidebar (027 Adventure Premium)
+  "nav.today": "오늘",
+  "nav.food": "미식",
+  "nav.gems": "숨은 명소",
+  "nav.festivals": "축제",
+  "nav.aiPlanner": "AI 플래너",
+  "nav.saved": "저장됨",
+  "nav.settings": "설정",
+  "sidebar.expand": "펼치기",
+  "sidebar.collapse": "접기",
+  "sidebar.highlights": "오늘의 하이라이트",
+  "sidebar.festivalsTitle": "이 계절의 축제",
+  "sidebar.hiddenGemTitle": "오늘의 숨은 명소",
+  "sidebar.aiSuggests": "AI 추천",
+  "sidebar.planItinerary": "일정 짜기",
+  "sidebar.viewAll": "전체",
+  "brief.greeting.morning": "좋은 아침이에요!",
+  "brief.greeting.afternoon": "평온한 오후예요.",
+  "brief.greeting.evening": "멋진 저녁 되세요.",
+  "brief.greeting.weekend": "주말이에요 — 어디론가 떠나요!",
+  "brief.greeting.holiday": "휴일이 왔어요!",
+  "brief.aiRec.multi": "{month}월은 {a}와(과) {b}을(를) 둘러보기 좋은 때예요. {state}.",
+  "brief.aiRec.single": "{month}월, {name}을(를) 놓치지 마세요 — {state}.",
+
+  "panel.atlasScore": "Atlas Score",
 };

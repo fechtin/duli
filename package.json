@@ -1,9 +1,9 @@
 {
-  "name": "vietnam-interactive-tourism-atlas",
+  "name": "fechtin-go",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Vietnam Interactive Tourism Atlas — a living interactive map to explore Vietnam.",
+  "description": "FechTin Go — a living interactive map to explore Vietnam.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

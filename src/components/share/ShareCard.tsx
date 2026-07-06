@@ -167,7 +167,7 @@ export const ShareCard = forwardRef<SVGSVGElement, Props>(
           <text x="30" y="12"
             fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="10"
             fill="rgba(255,255,255,0.38)">
-            Vietnam Atlas
+            FechTin Go
           </text>
         </g>
 
@@ -399,12 +399,12 @@ export const ShareCard = forwardRef<SVGSVGElement, Props>(
         <text x={W / 2} y={FOOTER_Y + 28} textAnchor="middle"
           fontFamily="'Georgia','Times New Roman',serif" fontSize="13"
           fill="rgba(255,255,255,0.45)" letterSpacing="4">
-          🇻🇳  VIETNAM ATLAS
+          🇻🇳  FECHTIN GO
         </text>
         <text x={W / 2} y={FOOTER_Y + 46} textAnchor="middle"
           fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="9"
           fill="rgba(255,255,255,0.2)" letterSpacing="1">
-          vietnam-atlas.fechtin.workers.dev
+          go.fechtin.com
         </text>
       </svg>
     );

@@ -1,7 +1,7 @@
 import type { TranslationKey } from "./vi";
 
 export const ja: Record<TranslationKey, string> = {
-  "app.name": "Vietnam Atlas",
+  "app.name": "FechTin Go",
   "app.tagline": "息づく一枚の地図でベトナムをめぐる",
 
   "nav.explore": "さがす",
@@ -123,4 +123,30 @@ export const ja: Record<TranslationKey, string> = {
   "restaurant.label.streetFood": "屋台",
   "restaurant.label.fineDining": "高級店",
   "restaurant.label.family": "ファミリー",
+
+  // Sidebar (027 Adventure Premium)
+  "nav.today": "今日",
+  "nav.food": "グルメ",
+  "nav.gems": "隠れた名所",
+  "nav.festivals": "祭り",
+  "nav.aiPlanner": "AIプランナー",
+  "nav.saved": "保存済み",
+  "nav.settings": "設定",
+  "sidebar.expand": "展開",
+  "sidebar.collapse": "折りたたむ",
+  "sidebar.highlights": "今日のハイライト",
+  "sidebar.festivalsTitle": "今の季節の祭り",
+  "sidebar.hiddenGemTitle": "今日の隠れた名所",
+  "sidebar.aiSuggests": "AIのおすすめ",
+  "sidebar.planItinerary": "旅程を作成",
+  "sidebar.viewAll": "すべて",
+  "brief.greeting.morning": "おはようございます！",
+  "brief.greeting.afternoon": "穏やかな午後を。",
+  "brief.greeting.evening": "素敵な夜を。",
+  "brief.greeting.weekend": "週末です — どこかへ出かけましょう！",
+  "brief.greeting.holiday": "休日がやってきました！",
+  "brief.aiRec.multi": "{month}月は{a}と{b}を巡るのに最適な時期です。{state}。",
+  "brief.aiRec.single": "{month}月、{name}をお見逃しなく — {state}。",
+
+  "panel.atlasScore": "Atlas Score",
 };

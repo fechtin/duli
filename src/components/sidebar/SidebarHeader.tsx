@@ -21,7 +21,7 @@ export function SidebarHeader({ greeting, collapsed }: { greeting: string; colla
       {!collapsed && (
         <span className="min-w-0">
           <span className="block truncate font-display text-[15px] font-bold text-[color:var(--sb-text)]">
-            Vietnam Atlas
+            FechTin Go
           </span>
           <span className="block truncate text-[11.5px] text-[color:var(--sb-text-dim)]">{greeting}</span>
         </span>

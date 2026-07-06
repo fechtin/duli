@@ -1,7 +1,7 @@
 import type { TranslationKey } from "./vi";
 
 export const en: Record<TranslationKey, string> = {
-  "app.name": "Vietnam Atlas",
+  "app.name": "FechTin Go",
   "app.tagline": "Explore Vietnam through one living map",
 
   "nav.explore": "Explore",

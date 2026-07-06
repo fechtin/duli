@@ -1,7 +1,7 @@
 import type { TranslationKey } from "./vi";
 
 export const zh: Record<TranslationKey, string> = {
-  "app.name": "Vietnam Atlas",
+  "app.name": "FechTin Go",
   "app.tagline": "在一张鲜活的地图上漫游越南",
 
   "nav.explore": "探索",
@@ -123,4 +123,30 @@ export const zh: Record<TranslationKey, string> = {
   "restaurant.label.streetFood": "街头小吃",
   "restaurant.label.fineDining": "高档餐厅",
   "restaurant.label.family": "家庭",
+
+  // Sidebar (027 Adventure Premium)
+  "nav.today": "今日",
+  "nav.food": "美食",
+  "nav.gems": "秘境",
+  "nav.festivals": "节庆",
+  "nav.aiPlanner": "AI 行程",
+  "nav.saved": "已保存",
+  "nav.settings": "设置",
+  "sidebar.expand": "展开",
+  "sidebar.collapse": "收起",
+  "sidebar.highlights": "今日精选",
+  "sidebar.festivalsTitle": "当季节庆",
+  "sidebar.hiddenGemTitle": "今日秘境",
+  "sidebar.aiSuggests": "AI 推荐",
+  "sidebar.planItinerary": "规划行程",
+  "sidebar.viewAll": "全部",
+  "brief.greeting.morning": "早上好！",
+  "brief.greeting.afternoon": "午后安好。",
+  "brief.greeting.evening": "祝你有个美好的夜晚。",
+  "brief.greeting.weekend": "周末啦——出发去看看吧！",
+  "brief.greeting.holiday": "假期到啦！",
+  "brief.aiRec.multi": "{month}月正是探索{a}和{b}的好时节。{state}。",
+  "brief.aiRec.single": "{month}月，别错过{name}——{state}。",
+
+  "panel.atlasScore": "Atlas Score",
 };

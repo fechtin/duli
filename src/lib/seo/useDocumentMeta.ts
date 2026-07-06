@@ -39,7 +39,7 @@ export function useDocumentMeta() {
   const destinations = useContentStore((s) => s.destinations);
 
   useEffect(() => {
-    const brand = "Vietnam Interactive Tourism Atlas";
+    const brand = "FechTin Go";
     let title = brand;
     let description =
       locale === "en"
