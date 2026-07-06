@@ -1,7 +1,8 @@
 import { PartyPopper, ArrowRight } from "lucide-react";
 import festivalCalendar from "@/data/living/festival-calendar.json";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
-import { useT } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
+import { localizeFestivalName, localizeFestivalDescription } from "@/lib/living/livingI18n";
 import { SectionTitle } from "./primitives";
 import { focusDestinationById, calendarSeed } from "./navHelpers";
 
@@ -16,7 +17,7 @@ type FestivalEntry = {
 
 /** Festivals this month — banner cards, not bare icons (027 §Festival Section). */
 export function FestivalSection() {
-  const t = useT();
+  const { t, locale } = useI18n();
   const month = new Date().getMonth() + 1;
   const festivals = (festivalCalendar as { festivals: FestivalEntry[] }).festivals
     .filter((f) => f.months.includes(month))
@@ -42,9 +43,11 @@ export function FestivalSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-3">
               <p className="font-display text-[15px] font-bold text-white drop-shadow-sm">
-                {f.icon} {f.name}
+                {f.icon} {localizeFestivalName(f.id, f.name, locale)}
               </p>
-              <p className="mt-0.5 line-clamp-1 text-[11.5px] text-white/85 drop-shadow-sm">{f.description}</p>
+              <p className="mt-0.5 line-clamp-1 text-[11.5px] text-white/85 drop-shadow-sm">
+                {localizeFestivalDescription(f.id, f.description, locale)}
+              </p>
             </div>
             <ArrowRight
               size={15}

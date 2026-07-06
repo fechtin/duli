@@ -49,6 +49,26 @@ export interface RestaurantTranslation {
   reasons?: string[];
 }
 
+/** Translatable fields of a living-calendar seasonal entry (client overlay). */
+export interface SeasonalTranslation {
+  state?: string;
+}
+
+/** Translatable fields of a living-calendar flower entry (client overlay). */
+export interface FlowerTranslation {
+  flower?: string;
+}
+
+/** Translatable fields of a living-calendar festival (client overlay). */
+export interface FestivalTranslation {
+  name?: string;
+  description?: string;
+}
+
+export type SeasonalI18n = Partial<Record<ContentLocale, SeasonalTranslation>>;
+export type FlowerI18n = Partial<Record<ContentLocale, FlowerTranslation>>;
+export type FestivalI18n = Partial<Record<ContentLocale, FestivalTranslation>>;
+
 export type DestinationI18n = Partial<Record<ContentLocale, DestinationTranslation>>;
 export type ProvinceI18n = Partial<Record<ContentLocale, ProvinceTranslation>>;
 export type DishI18n = Partial<Record<ContentLocale, DishTranslation>>;

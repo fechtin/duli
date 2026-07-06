@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { animate, motion, useMotionValue, useTransform } from "motion/react";
 import { useLivingStore } from "@/lib/store/useLivingStore";
 import { SIGNAL_META } from "@/lib/living/types";
-import { useT } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
+import {
+  localizeSeasonalState,
+  localizeFlower,
+  localizeFestivalName,
+} from "@/lib/living/livingI18n";
 
 interface Props {
   destinationId: string;
@@ -48,7 +53,7 @@ function ScoreRing({ score, colorClass }: { score: number; colorClass: string })
 }
 
 export function HeartbeatSection({ destinationId }: Props) {
-  const t = useT();
+  const { t, locale } = useI18n();
   const getHeartbeat = useLivingStore((s) => s.getHeartbeat);
   const initialized  = useLivingStore((s) => s.initialized);
   const hb = getHeartbeat(destinationId);
@@ -91,16 +96,21 @@ export function HeartbeatSection({ destinationId }: Props) {
           {hb.seasonalState && (
             <p className="type-caption text-foreground/80">
               <span className="mr-1">{hb.seasonalIcon}</span>
-              {hb.seasonalState}
+              {localizeSeasonalState(hb.month, hb.destinationId, hb.seasonalState, locale)}
             </p>
           )}
-          {hb.festivalName && (
+          {hb.festivalName && hb.festivalId && (
             <p className="type-caption font-medium text-foreground/80">
-              🎉 {t("heartbeat.festivalHappening", { name: hb.festivalName })}
+              🎉 {t("heartbeat.festivalHappening", { name: localizeFestivalName(hb.festivalId, hb.festivalName, locale) })}
             </p>
           )}
           {hb.flowerName && (
-            <p className="type-caption text-foreground/80">{t("heartbeat.flowerBlooming", { name: hb.flowerName })}</p>
+            <p className="type-caption text-foreground/80">
+              {hb.flowerIcon}{" "}
+              {t("heartbeat.flowerBlooming", {
+                name: localizeFlower(hb.month, hb.destinationId, hb.flowerName, locale),
+              })}
+            </p>
           )}
           {hb.weatherLabel && (
             <p className="type-caption text-foreground/80">☀ {hb.weatherLabel}</p>

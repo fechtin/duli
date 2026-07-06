@@ -147,12 +147,15 @@ export function computeHeartbeat(
 
   return {
     destinationId,
+    month,
     score,
     signals,
     seasonalState: seasonEntry?.state,
     seasonalIcon:  seasonEntry?.icon,
+    festivalId:    festivalEntry?.id,
     festivalName:  festivalEntry?.name,
-    flowerName:    flowerEntry ? `${flowerEntry.icon} ${flowerEntry.flower}` : undefined,
+    flowerName:    flowerEntry?.flower,
+    flowerIcon:    flowerEntry?.icon,
     weatherCode:   weather?.weatherCode,
     weatherLabel,
   };

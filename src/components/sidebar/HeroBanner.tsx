@@ -19,8 +19,10 @@ export function HeroBanner() {
       {/* Dark overlay for legible white text (027 §Hero Image overlay). */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />
       <div className="absolute inset-x-0 bottom-0 p-4">
-        <h2 className="font-display text-[22px] font-bold leading-tight text-white drop-shadow-sm">{hero.name}</h2>
-        <p className="mt-0.5 text-[12.5px] text-white/85 drop-shadow-sm">{hero.subtitle}</p>
+        <h2 className="font-display text-[22px] font-bold leading-tight text-white drop-shadow-sm">
+          {t(`place.${hero.id}`)}
+        </h2>
+        <p className="mt-0.5 text-[12.5px] text-white/85 drop-shadow-sm">{t(`hero.subtitle.${hero.id}`)}</p>
         <span className="mt-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-[12px] font-semibold text-white backdrop-blur-sm transition-colors group-hover:bg-[var(--sb-gold)] group-hover:text-[#102b30]">
           {t("nav.explore")}
           <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />

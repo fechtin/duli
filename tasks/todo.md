@@ -171,3 +171,54 @@ sidebar + logo removed; MobileTopBar left button now opens the drawer.
 Verified: desktop expanded/collapsed, dark theme, mobile drawer (screenshots). tsc + build pass.
 Note: highlight/food/festival thumbnails using calendar-ids fall back to gradient (no manifest
 photo) — clean per project rule; hero uses verified seeds so it always shows a real photo.
+
+---
+
+# 028 — Dọn sạch tiếng Việt rò ra sidebar khi đổi locale (i18n tổng thể) (2026-07-06)
+
+Bug: chọn ko/ja/zh/en nhưng sidebar vẫn còn nhiều chuỗi VI (highlight state, hidden gem summary,
+festival name/desc, AI rec đuôi câu). Debt 3 lớp, ánh xạ 2 hệ thống + mở rộng D1 cho living
+(quyết định của user: đồng nhất kiến trúc, chấp nhận living subsystem chuyển sync→async).
+
+## Workstream 1 — Scaffolding về dictionary (Lớp A) [system #1]
+- [ ] 1.1 Thêm keys `src/lib/i18n/locales/*.ts` (5 locale): `brief.teaser.*`, `brief.heroIntro.*`, `hero.subtitle.<id>` (7).
+- [ ] 1.2 `briefGenerator.ts`: xoá TEASERS/HERO_INTROS/DEST_NAMES → dùng `t()` + `t(\`province.${slug}\`)`; heroStory/teaser/highlights/hiddenGem qua t().
+- [ ] 1.3 `navHelpers.ts`: xoá CALENDAR_NAMES + HERO_PLACES.subtitle VI-hardcode → resolve qua t().
+- [ ] 1.4 check:i18n + typecheck xanh.
+
+## Workstream 2 — Living-calendar CLIENT overlay (Lớp B) [đổi từ D1 → client overlay]
+Lý do đổi: living data nhỏ, dev-author, đọc ĐỒNG BỘ trong hot path (computeHeartbeat/marker).
+D1 sẽ thêm round-trip vào hot path + loading state → lùi performance & UX. Client overlay bundle
+cùng chỗ với JSON gốc, giữ đồng bộ, đổi locale tức thì. Giữ nguyên ngữ nghĩa fallback VI như pickTranslation.
+- [ ] 2.1 types.ts: SeasonalTranslation/FestivalTranslation/FlowerTranslation + *I18n wrappers (client-only, không đụng D1).
+- [ ] 2.2 src/data/i18n/living/{seasonal,festival,flower}.<locale>.ts (4 locale) + index.ts aggregator (mirror food/index.ts).
+      Key: seasonal/flower = `${month}:${destId}`, festival = `id`. Bundle client (KHÔNG seed D1).
+- [ ] 2.3 Helper `resolveLiving` (src/lib/living/i18n.ts): (entry, locale) → field đã dịch, fallback VI. Ngữ nghĩa như pickTranslation.
+- [ ] 2.4 Consumers GIỮ ĐỒNG BỘ, thêm tham số locale: navHelpers.seasonalHighlights, FestivalSection, briefGenerator, heartbeat.ts (seasonalState/festivalName/flowerName).
+- [ ] 2.5 Dịch ~117 chuỗi × 4 locale (60 state + 20 festival + 37 flower) — subagent, index-aligned + fallback VI.
+- [ ] KHÔNG: migration, worker route, api fetcher, async refactor, loading state.
+
+## Workstream 3 — Sidebar dùng destination đã dịch (Lớp C) [system #2 có sẵn]
+- [ ] 3.1 HiddenGemSection: bỏ authoring `gemOfTheDay()` → fetch `fetchDestination(id, locale)`; giữ vòng quay theo ngày, resolve nội dung qua API.
+- [ ] 3.2 Kiểm tra 8 hidden-gem destination đã có bản dịch D1; bổ sung nếu thiếu.
+
+## Verify / Done
+- [ ] typecheck + check:i18n xanh.
+- [ ] db:seed:build + db:setup chạy, seed có 3 bảng living; wrangler dev trả nội dung dịch theo ?locale=.
+- [ ] Chạy app, đổi ko → chụp sidebar: không còn VI ngoài danh từ riêng địa danh.
+- [ ] Cập nhật memory: vivel-i18n (living ở D1), vivel-sidebar (sections async).
+
+## Review (2026-07-06) — HOÀN THÀNH
+Sửa triệt để rò tiếng Việt ở sidebar khi đổi locale. 3 workstream:
+- WS1: gộp 3 map VI hardcode (DEST_NAMES/CALENDAR_NAMES/HERO_PLACES.name+subtitle) thành 1 nguồn
+  dictionary `place.<id>` (26) + `hero.subtitle.<id>` (7), dịch 5 locale. briefGenerator slim còn
+  greeting+aiRecommendation, hết VI hardcode.
+- WS2: living-calendar overlay CLIENT-SIDE (không D1 — lý do: hot path đồng bộ, xem memory vivel-i18n).
+  src/data/i18n/living/{seasonal,flower,festival}.<locale>.ts (117 chuỗi ×4) + livingI18n.ts resolver.
+  Consumers giữ đồng bộ, nhận locale. Panel HeartbeatSection localize display-time.
+- WS3: HiddenGemSection fetch fetchDestination(id,locale) từ D1 (bản dịch đã có sẵn cho cả 8 gem).
+- Xoá CompanionCard.tsx (unused) theo yêu cầu user.
+Verify: tsc + check:i18n xanh, build pass. Chạy vite+wrangler, đổi ko → screenshot: toàn bộ sidebar
+(greeting, hero, highlights+state, AI rec, festival, hidden gem, food) tiếng Hàn. Không còn VI ngoài
+tên riêng đã chuyển tự. ("한(Hàn)강변" là chú thích phân biệt sông Hàn có chủ ý.)
+Còn VI ngoài scope (panel-only, task khác): heartbeat SIGNAL_META labels + weatherLabel.

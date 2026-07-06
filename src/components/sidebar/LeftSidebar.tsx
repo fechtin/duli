@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
 import { generateBrief } from "@/lib/living/briefGenerator";
-import { useT } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { cn } from "@/lib/utils/cn";
@@ -23,7 +23,7 @@ export const SIDEBAR_COLLAPSED = 72;
  * Map stays the hero; the sidebar is one of its two "wings" (the passport is the other).
  */
 export function LeftSidebar() {
-  const t = useT();
+  const { t, locale } = useI18n();
   const isDesktop = useIsDesktop();
   const collapsedPref = useUIStore((s) => s.sidebarCollapsed);
   const mobileOpen = useUIStore((s) => s.sidebarMobileOpen);
@@ -32,7 +32,7 @@ export function LeftSidebar() {
 
   // On mobile the drawer always shows the full feed; collapse is a desktop-only affordance.
   const collapsed = isDesktop && collapsedPref;
-  const brief = useMemo(() => generateBrief(t), [t]);
+  const brief = useMemo(() => generateBrief(t, locale), [t, locale]);
   const width = isDesktop ? (collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED) : SIDEBAR_EXPANDED;
 
   return (

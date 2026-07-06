@@ -1,14 +1,35 @@
+import { useEffect, useMemo, useState } from "react";
 import { Gem, ArrowRight } from "lucide-react";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
-import { useT } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
+import { fetchDestination } from "@/lib/api/content";
 import { SectionTitle } from "./primitives";
 import { gemOfTheDay, focusDestinationById } from "./navHelpers";
 
 /** Hidden Gem — an image-led editorial card (027 §Hidden Gem — "ảnh bắt buộc"). */
 export function HiddenGemSection() {
-  const t = useT();
-  const gem = gemOfTheDay();
+  const { t, locale } = useI18n();
+  const gem = useMemo(() => gemOfTheDay(), []);
+  // The gem is a real content destination, so its name/summary live in D1 with per-locale
+  // translations. gemOfTheDay() gives the Vietnamese baseline instantly; overlay the localized
+  // copy from the API (skipped for vi, which is already the base).
+  const [tr, setTr] = useState<{ name: string; summary: string } | null>(null);
+
+  useEffect(() => {
+    setTr(null);
+    if (!gem || locale === "vi") return;
+    let alive = true;
+    fetchDestination(gem.id, locale).then((d) => {
+      if (alive && d) setTr({ name: d.name, summary: d.summary });
+    });
+    return () => {
+      alive = false;
+    };
+  }, [gem, locale]);
+
   if (!gem) return null;
+  const name = tr?.name ?? gem.name;
+  const summary = tr?.summary ?? gem.summary;
 
   return (
     <section id="sb-gem">
@@ -26,8 +47,8 @@ export function HiddenGemSection() {
           />
         </div>
         <div className="p-3">
-          <p className="font-display text-[15px] font-semibold text-[color:var(--sb-text)]">{gem.name}</p>
-          <p className="mt-1 line-clamp-2 text-[12px] leading-snug text-[color:var(--sb-text-dim)]">{gem.summary}</p>
+          <p className="font-display text-[15px] font-semibold text-[color:var(--sb-text)]">{name}</p>
+          <p className="mt-1 line-clamp-2 text-[12px] leading-snug text-[color:var(--sb-text-dim)]">{summary}</p>
           <span className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[color:var(--sb-gold)]">
             {t("nav.explore")} <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5" />
           </span>

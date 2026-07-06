@@ -1,13 +1,19 @@
 import { destinations } from "@/data/destinations";
 import seasonalCalendar from "@/data/living/seasonal-calendar.json";
+import { localizeSeasonalState } from "@/lib/living/livingI18n";
+import type { Locale } from "@/lib/i18n";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 
-/** A curated hero place: reliable photo seed + coordinates for the daily Hero Banner. */
+/** Translate fn shape (matches i18n `t`) so these non-hook helpers stay hook-free. */
+type TFn = (key: string, params?: Record<string, string | number>) => string;
+
+/**
+ * A curated hero place: reliable photo seed + coordinates for the daily Hero Banner.
+ * Display name + subtitle are resolved from the dictionary (`place.<id>` / `hero.subtitle.<id>`).
+ */
 export interface HeroPlace {
   id: string;
-  name: string;
-  subtitle: string;
   /** image-manifest seed that is known to have a real photo. */
   seed: string;
   lng: number;
@@ -17,13 +23,13 @@ export interface HeroPlace {
 // Rotated daily. Every seed here is verified to resolve to a real photo in the manifest,
 // so the hero never falls back to a gradient (027 §Hero Image — "bắt buộc").
 export const HERO_PLACES: HeroPlace[] = [
-  { id: "sa-pa", name: "Sa Pa", subtitle: "Ruộng bậc thang mùa nước đổ", seed: "sapa-1", lng: 103.844, lat: 22.336 },
-  { id: "ha-long", name: "Vịnh Hạ Long", subtitle: "Kỳ quan giữa muôn đảo đá", seed: "halong-1", lng: 107.078, lat: 20.91 },
-  { id: "da-lat", name: "Đà Lạt", subtitle: "Thành phố ngàn thông sương phủ", seed: "dalat-1", lng: 108.458, lat: 11.94 },
-  { id: "hue", name: "Huế", subtitle: "Cố đô trầm mặc bên sông Hương", seed: "hue-1", lng: 107.59, lat: 16.463 },
-  { id: "golden-bridge", name: "Cầu Vàng", subtitle: "Bàn tay đá nâng cầu trên mây", seed: "goldenbridge-1", lng: 108.0, lat: 15.995 },
-  { id: "mu-cang-chai", name: "Mù Cang Chải", subtitle: "Mùa vàng trên đỉnh Tây Bắc", seed: "mu-cang-chai-terraces-1", lng: 104.15, lat: 21.71 },
-  { id: "ban-gioc", name: "Thác Bản Giốc", subtitle: "Thác nước hùng vĩ nơi biên cương", seed: "ban-gioc-waterfall-1", lng: 106.72, lat: 22.855 },
+  { id: "sa-pa", seed: "sapa-1", lng: 103.844, lat: 22.336 },
+  { id: "ha-long", seed: "halong-1", lng: 107.078, lat: 20.91 },
+  { id: "da-lat", seed: "dalat-1", lng: 108.458, lat: 11.94 },
+  { id: "hue", seed: "hue-1", lng: 107.59, lat: 16.463 },
+  { id: "golden-bridge", seed: "goldenbridge-1", lng: 108.0, lat: 15.995 },
+  { id: "mu-cang-chai", seed: "mu-cang-chai-terraces-1", lng: 104.15, lat: 21.71 },
+  { id: "ban-gioc", seed: "ban-gioc-waterfall-1", lng: 106.72, lat: 22.855 },
 ];
 
 /** Day-of-year rotation so the hero changes every day (027 §Hero Image). */
@@ -53,27 +59,6 @@ const CALENDAR_COORDS: Record<string, { lng: number; lat: number }> = {
   "phu-quoc-island": { lng: 103.96, lat: 10.22 },
   "phu-yen-coast": { lng: 109.3, lat: 13.09 },
   "sapa-terraces": { lng: 103.844, lat: 22.336 },
-};
-
-const CALENDAR_NAMES: Record<string, string> = {
-  "cat-ba-island": "Cát Bà",
-  "da-lat-city": "Đà Lạt",
-  "da-nang-coast": "Đà Nẵng",
-  "ha-giang-loop": "Hà Giang",
-  "ha-long-bay": "Hạ Long",
-  "ho-chi-minh-city": "TP. Hồ Chí Minh",
-  "hoi-an-old-town": "Hội An",
-  "hue-imperial-city": "Huế",
-  "moc-chau-plateau": "Mộc Châu",
-  "mu-cang-chai-terraces": "Mù Cang Chải",
-  "nha-trang-coast": "Nha Trang",
-  "ninh-binh-trang-an": "Ninh Bình",
-  "perfume-pagoda": "Chùa Hương",
-  "phan-thiet-coast": "Phan Thiết",
-  "phong-nha-caves": "Phong Nha",
-  "phu-quoc-island": "Phú Quốc",
-  "phu-yen-coast": "Phú Yên",
-  "sapa-terraces": "Sa Pa",
 };
 
 // Verified image-manifest seeds for living-calendar ids (their own id namespace has no photos).
@@ -110,13 +95,13 @@ export interface SeasonalHighlight {
 type SeasonEntry = { destinationId: string; state: string; icon: string; mood: string };
 
 /** Current-month "Today's Highlights" cards from the seasonal calendar (027 §Today's Highlights). */
-export function seasonalHighlights(limit = 4): SeasonalHighlight[] {
+export function seasonalHighlights(limit: number, t: TFn, locale: Locale): SeasonalHighlight[] {
   const month = new Date().getMonth() + 1;
   const entries = (seasonalCalendar as Record<string, SeasonEntry[]>)[String(month)] ?? [];
   return entries.slice(0, limit).map((e) => ({
     id: e.destinationId,
-    name: CALENDAR_NAMES[e.destinationId] ?? e.destinationId,
-    state: e.state,
+    name: t(`place.${e.destinationId}`),
+    state: localizeSeasonalState(month, e.destinationId, e.state, locale),
     icon: e.icon,
     seed: CALENDAR_SEEDS[e.destinationId] ?? e.destinationId,
   }));

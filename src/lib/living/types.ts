@@ -30,12 +30,20 @@ export const SIGNAL_META: Record<HeartbeatSignal, SignalMeta> = {
 
 export interface HeartbeatResult {
   destinationId: string;
+  /** Calendar month (1–12) this result was computed for — lets the display layer localize. */
+  month: number;
   score: number; // 0–100
   signals: HeartbeatSignal[];
+  /** Vietnamese base (fallback); localize via livingI18n with `month` + `destinationId`. */
   seasonalState?: string;
   seasonalIcon?: string;
+  /** Festival id — used to localize the name via the living overlay. */
+  festivalId?: string;
+  /** Vietnamese base festival name (fallback). */
   festivalName?: string;
+  /** Vietnamese base flower name, WITHOUT the icon (fallback). */
   flowerName?: string;
+  flowerIcon?: string;
   weatherCode?: number;
   weatherLabel?: string;
 }

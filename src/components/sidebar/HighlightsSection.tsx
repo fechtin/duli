@@ -1,12 +1,12 @@
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
-import { useT } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { SectionTitle } from "./primitives";
 import { seasonalHighlights, focusDestinationById } from "./navHelpers";
 
 /** Today's Highlights — seasonal cards, image-forward (027 §Today's Highlights). */
 export function HighlightsSection() {
-  const t = useT();
-  const items = seasonalHighlights(4);
+  const { t, locale } = useI18n();
+  const items = seasonalHighlights(4, t, locale);
   if (items.length === 0) return null;
 
   return (
