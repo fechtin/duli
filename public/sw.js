@@ -1,7 +1,7 @@
 // Service worker — offline support (Bible 003 §14, 012 §17).
 // Strategy: network-first for navigations (SPA shell fallback), stale-while-revalidate
 // for static assets / map data / fonts. Never caches the API.
-const VERSION = "via-v3";
+const VERSION = "via-v4";
 const SHELL = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 
