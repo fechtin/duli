@@ -23,6 +23,8 @@ interface UIState {
   sidebarCollapsed: boolean;
   /** Left sidebar drawer open (mobile only). */
   sidebarMobileOpen: boolean;
+  /** Settings sheet (language + theme) open. */
+  settingsOpen: boolean;
   /** Destination id pending a check-in flow, or null. */
   checkinTarget: string | null;
 
@@ -33,6 +35,7 @@ interface UIState {
   setPassportOpen: (v: boolean) => void;
   toggleSidebar: () => void;
   setSidebarMobileOpen: (v: boolean) => void;
+  setSettingsOpen: (v: boolean) => void;
   openCheckin: (destinationId: string) => void;
   closeCheckin: () => void;
 }
@@ -44,6 +47,7 @@ export const useUIStore = create<UIState>((set, get) => ({
   passportOpen: false,
   sidebarCollapsed: initialCollapsed(),
   sidebarMobileOpen: false,
+  settingsOpen: false,
   checkinTarget: null,
 
   toggleTheme: () => {
@@ -68,6 +72,7 @@ export const useUIStore = create<UIState>((set, get) => ({
     window.localStorage.setItem("via.sidebar.collapsed", next ? "1" : "0");
   },
   setSidebarMobileOpen: (v) => set({ sidebarMobileOpen: v }),
+  setSettingsOpen: (v) => set({ settingsOpen: v }),
   openCheckin: (destinationId) => set({ checkinTarget: destinationId, aiOpen: false }),
   closeCheckin: () => set({ checkinTarget: null }),
 }));

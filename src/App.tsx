@@ -3,6 +3,7 @@ import { MapEngine } from "@/components/map/MapEngine";
 import { PanelContainer } from "@/components/panel/PanelContainer";
 import { TopBar } from "@/components/shell/TopBar";
 import { MobileTopBar } from "@/components/shell/MobileTopBar";
+import { WeatherWidget } from "@/components/shell/WeatherWidget";
 import { BottomNav } from "@/components/shell/BottomNav";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
 import { useDocumentMeta } from "@/lib/seo/useDocumentMeta";
@@ -60,6 +61,7 @@ export default function App() {
 
       <TopBar />
       <MobileTopBar />
+      <WeatherWidget />
       <BottomNav />
 
       <PanelContainer />

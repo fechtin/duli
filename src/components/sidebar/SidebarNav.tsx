@@ -18,7 +18,7 @@ export function SidebarNav({ collapsed }: { collapsed: boolean }) {
   const reset = useMapStore((s) => s.reset);
   const setAiOpen = useUIStore((s) => s.setAiOpen);
   const setPassportOpen = useUIStore((s) => s.setPassportOpen);
-  const toggleTheme = useUIStore((s) => s.toggleTheme);
+  const setSettingsOpen = useUIStore((s) => s.setSettingsOpen);
   const closeMobile = useUIStore((s) => s.setSidebarMobileOpen);
 
   // In the expanded feed, sections scroll into view; overlay items open their store.
@@ -44,7 +44,12 @@ export function SidebarNav({ collapsed }: { collapsed: boolean }) {
         <NavButton key={key} label={label} Icon={Icon} onClick={onClick} collapsed={collapsed} />
       ))}
       <div className="my-1.5 h-px bg-[var(--sb-border)]" />
-      <NavButton label={t("nav.settings")} Icon={Settings} onClick={toggleTheme} collapsed={collapsed} />
+      <NavButton
+        label={t("nav.settings")}
+        Icon={Settings}
+        onClick={() => { setSettingsOpen(true); closeMobile(false); }}
+        collapsed={collapsed}
+      />
     </nav>
   );
 }

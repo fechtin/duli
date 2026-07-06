@@ -222,3 +222,34 @@ Verify: tsc + check:i18n xanh, build pass. Chạy vite+wrangler, đổi ko → s
 (greeting, hero, highlights+state, AI rec, festival, hidden gem, food) tiếng Hàn. Không còn VI ngoài
 tên riêng đã chuyển tự. ("한(Hàn)강변" là chú thích phân biệt sông Hàn có chủ ý.)
 Còn VI ngoài scope (panel-only, task khác): heartbeat SIGNAL_META labels + weatherLabel.
+
+---
+
+# 029 — Nâng cấp giao diện Mobile (2026-07-06)
+
+Mục tiêu: mobile home đẹp & pro như mockup. Trọng tâm MÀU. Bỏ 2 card "Gợi ý". Bỏ nút "Lớp bản đồ".
+Gom Ngôn ngữ + Light/Night vào Settings.
+
+- [x] Màu: sea teal richer + land lush (index.css + regionPalette)
+- [x] Glass tokens (teal-charcoal + gold) cho control nổi
+- [x] MobileTopBar → search bar full-width + avatar (bỏ lang/theme rời)
+- [x] WeatherWidget.tsx (mới) — glass card, Open-Meteo thật theo tỉnh
+- [x] MapControls restyle glass (KHÔNG nút Lớp bản đồ)
+- [x] BottomNav upgrade — active vàng, glass, chip bo tròn
+- [x] Marker pill — chip medallion màu theo loại (MARKER_TINT, bridge=tím)
+- [x] SettingsSheet.tsx (mới) + useUIStore.settingsOpen; wire sidebar Settings
+- [x] i18n keys 5 locale + typecheck/check:i18n xanh
+- [x] Visual verify light + dark + settings (screenshots)
+
+## Review (2026-07-06)
+Nâng cấp mobile home khớp mockup, tông glass teal-charcoal + gold thống nhất với sidebar/passport.
+- Màu bản đồ: sea light xám nhạt → aqua teal (`--map-sea*`); dark moonlit teal; land palette lush hơn.
+- Glass tokens `--glass-*` (index.css, cố định 2 theme) dùng cho weather/zoom/bottom-nav.
+- MobileTopBar: search full-width + avatar (LoginButton); bỏ language/theme rời.
+- WeatherWidget.tsx: card glass góc phải, dùng fetchCityWeather (Open-Meteo) theo destination/province, default Đà Nẵng.
+- BottomNav: pill glass nổi, active = gold chip. MapControls: glass bo 2xl, active gold.
+- Marker: medallion nền màu theo DestinationType (MARKER_TINT).
+- SettingsSheet.tsx (bottom sheet mobile/dialog desktop): Appearance (Light/Dark) + Language;
+  useUIStore.settingsOpen; mount trong Overlays; sidebar Settings mở sheet (thay toggleTheme placeholder).
+- i18n: settings.* + weather.cond.* × 5 locale. tsc + check:i18n + build xanh.
+Còn theo mockup nhưng CHƯA làm (user bỏ qua có chủ ý): 2 card "Gợi ý hôm nay" + "Gợi ý nhanh", nút "Lớp bản đồ".

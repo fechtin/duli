@@ -15,8 +15,28 @@ import { Landmark } from "./landmarks";
 import { MapHint } from "./MapHint";
 import { useLivingStore } from "@/lib/store/useLivingStore";
 import type { HeartbeatResult } from "@/lib/living/types";
+import type { DestinationType } from "@/lib/types";
 
 type Box = { x0: number; y0: number; x1: number; y1: number };
+
+/** Marker chip tint by destination type (029) — a legible color family for the icon medallion:
+ *  nature = forest green, water = ocean blue, culture = rice gold. */
+const MARKER_TINT: Record<DestinationType, { bg: string; fg: string }> = {
+  mountain:  { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
+  park:      { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
+  waterfall: { bg: "rgba(58, 169, 189, 0.16)", fg: "#2f95a8" },
+  cave:      { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
+  village:   { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
+  beach:     { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
+  island:    { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
+  lake:      { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
+  temple:    { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
+  unesco:    { bg: "rgba(210, 96, 79, 0.18)",  fg: "#c85340" },
+  museum:    { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
+  city:      { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
+  market:    { bg: "rgba(214, 138, 163, 0.18)", fg: "#c46b86" },
+  bridge:    { bg: "rgba(139, 116, 214, 0.18)", fg: "#7c6ad0" },
+};
 
 /** Dominant heartbeat signal → ambient glow color (festival > trending > seasonal > ai-pick >
  *  perfect-weather). Drives both the always-on glow halo and the marker pulse/dot (023). */
@@ -553,9 +573,10 @@ export function MapEngine() {
                     >
                       <span
                         className={cn(
-                          "relative grid place-items-center rounded-full bg-surface-2",
+                          "relative grid place-items-center rounded-full",
                           d.tier === 1 ? "h-7 w-7" : d.tier === 2 ? "h-6 w-6" : "h-5 w-5",
                         )}
+                        style={{ backgroundColor: MARKER_TINT[d.type].bg, color: MARKER_TINT[d.type].fg }}
                       >
                         <Landmark type={d.type} className={d.tier === 1 ? "h-5 w-5" : "h-4 w-4"} />
                         {/* Seasonal glow dot */}
@@ -693,22 +714,22 @@ function MapControls({
 }) {
   const t = useT();
   return (
-    <div className="absolute bottom-5 right-4 z-20 flex flex-col gap-2 md:bottom-6 md:right-5">
-      <div className="flex flex-col overflow-hidden rounded-full border border-border bg-surface/90 shadow-[var(--shadow-e2)] backdrop-blur">
-        <button aria-label={t("map.zoomIn")} onClick={onZoomIn} className="grid h-10 w-10 place-items-center hover:bg-surface-2">
-          <Plus size={18} />
+    <div className="absolute bottom-24 right-4 z-20 flex flex-col gap-2.5 md:bottom-6 md:right-5">
+      <div className="flex flex-col overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-bg)] text-[color:var(--glass-text)] shadow-[var(--glass-shadow)] backdrop-blur-xl">
+        <button aria-label={t("map.zoomIn")} onClick={onZoomIn} className="grid h-11 w-11 place-items-center transition-colors hover:bg-[var(--glass-hover)] active:text-[color:var(--glass-gold)]">
+          <Plus size={19} />
         </button>
-        <div className="mx-2 h-px bg-border" />
-        <button aria-label={t("map.zoomOut")} onClick={onZoomOut} className="grid h-10 w-10 place-items-center hover:bg-surface-2">
-          <Minus size={18} />
+        <div className="mx-2.5 h-px bg-[var(--glass-border)]" />
+        <button aria-label={t("map.zoomOut")} onClick={onZoomOut} className="grid h-11 w-11 place-items-center transition-colors hover:bg-[var(--glass-hover)] active:text-[color:var(--glass-gold)]">
+          <Minus size={19} />
         </button>
       </div>
       <button
         aria-label={t("map.reset")}
         onClick={onReset}
-        className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/90 shadow-[var(--shadow-e2)] backdrop-blur hover:bg-surface-2"
+        className="grid h-11 w-11 place-items-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-bg)] text-[color:var(--glass-text)] shadow-[var(--glass-shadow)] backdrop-blur-xl transition-colors hover:bg-[var(--glass-hover)] hover:text-[color:var(--glass-gold)]"
       >
-        <Locate size={18} />
+        <Locate size={19} />
       </button>
     </div>
   );

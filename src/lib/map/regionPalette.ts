@@ -6,14 +6,14 @@
 export type RegionPaletteEntry = { light: string; dark: string };
 
 export const REGION_PALETTE: Record<string, RegionPaletteEntry> = {
-  "northeast":           { light: "#478a6d", dark: "#245043" }, // emerald forest
-  "northwest":           { light: "#6f9a58", dark: "#31523a" }, // moss highlands
-  "red-river-delta":     { light: "#d6ab4c", dark: "#57492a" }, // rice gold
-  "north-central-coast": { light: "#5b93ad", dark: "#26495c" }, // sea blue
-  "south-central-coast": { light: "#45a3b5", dark: "#265761" }, // turquoise coast
-  "central-highlands":   { light: "#b08a52", dark: "#4f402a" }, // sunlit ochre
-  "southeast":           { light: "#c68f56", dark: "#55432c" }, // warm sand
-  "mekong-delta":        { light: "#5fae8c", dark: "#285d4e" }, // river green
+  "northeast":           { light: "#3f9070", dark: "#245043" }, // emerald forest
+  "northwest":           { light: "#6ba24f", dark: "#31523a" }, // moss highlands
+  "red-river-delta":     { light: "#dcae44", dark: "#57492a" }, // rice gold
+  "north-central-coast": { light: "#5497b3", dark: "#26495c" }, // sea blue
+  "south-central-coast": { light: "#3aa9bd", dark: "#265761" }, // turquoise coast
+  "central-highlands":   { light: "#b98d4c", dark: "#4f402a" }, // sunlit ochre
+  "southeast":           { light: "#cd9350", dark: "#55432c" }, // warm sand
+  "mekong-delta":        { light: "#54b48c", dark: "#285d4e" }, // river green
 };
 
 /** Coastline glow (two layered strokes — no SVG blur, GPU-cheap). */

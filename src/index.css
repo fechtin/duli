@@ -38,16 +38,28 @@
   --success: #4c9a6a; /* Leaf Green */
   --warning: #d89a33; /* Amber */
 
-  /* Map terrain */
-  --map-sea: #dfeaee;
-  --map-sea-hi: #edf4f6; /* sunlit center of the sea gradient */
-  --map-sea-lo: #c9d9df; /* deep edge */
+  /* Map terrain — richer coastal aqua (mockup-matched, still label-legible) */
+  --map-sea: #a9d6de;
+  --map-sea-hi: #d8eef1; /* sunlit center of the sea gradient */
+  --map-sea-lo: #77b4c3; /* deep edge */
   --map-land: #eef0e8;
   --map-land-2: #e6e9df;
   --map-land-base: #eceadf; /* opaque base under the relief gradients */
-  --map-vignette: rgba(28, 31, 30, 0.14);
+  --map-vignette: rgba(20, 46, 44, 0.16);
 
   --ring: var(--primary);
+
+  /* Floating map controls — fixed deep-teal glass + gold, matching the sidebar &
+     passport lacquer identity (not a light/dark variant; always this glass). */
+  --glass-bg: rgba(15, 34, 37, 0.68);
+  --glass-bg-strong: rgba(15, 34, 37, 0.85);
+  --glass-border: rgba(212, 168, 75, 0.22);
+  --glass-hover: rgba(255, 255, 255, 0.09);
+  --glass-text: rgba(255, 255, 255, 0.95);
+  --glass-text-dim: rgba(255, 255, 255, 0.62);
+  --glass-gold: #d4a84b;
+  --glass-gold-soft: rgba(212, 168, 75, 0.16);
+  --glass-shadow: 0 14px 38px rgba(0, 0, 0, 0.34);
 
   /* Elevation (Bible 007 §7) — calm, never heavy (002 §19) */
   --elevation-1: 0 1px 2px rgba(28, 31, 30, 0.06), 0 1px 1px rgba(28, 31, 30, 0.04);
@@ -79,9 +91,9 @@
   --success: #62b07f;
   --warning: #e0aa48;
 
-  --map-sea: #0b141a;
-  --map-sea-hi: #14313a; /* moonlit center */
-  --map-sea-lo: #05080b;
+  --map-sea: #0c1c24;
+  --map-sea-hi: #17414d; /* moonlit teal center */
+  --map-sea-lo: #050a0d;
   --map-land: #1c2123;
   --map-land-2: #232a2c;
   --map-land-base: #14201e;

@@ -1,30 +1,26 @@
-import { Sun, Moon } from "lucide-react";
+import { Search } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useT } from "@/lib/i18n";
-import { LanguageMenu } from "./LanguageMenu";
+import { LoginButton } from "@/components/auth/LoginButton";
 
-/** Compact floating header for mobile (brand + theme + language). The menu drawer is
- *  reached from the bottom-nav "Explore" tab, so no hamburger here. */
+/** Mobile header (029) — full-width search + account avatar floating over the map.
+ *  Language & theme now live in the Settings sheet (reached from the Explore drawer). */
 export function MobileTopBar() {
   const t = useT();
-  const theme = useUIStore((s) => s.theme);
-  const toggleTheme = useUIStore((s) => s.toggleTheme);
+  const setSearchOpen = useUIStore((s) => s.setSearchOpen);
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between p-3 pt-safe md:hidden">
-      <div className="pointer-events-auto flex items-center rounded-full border border-border bg-surface/85 py-1.5 px-3.5 shadow-[var(--shadow-e1)] backdrop-blur">
-        <span className="font-display text-xs font-bold text-foreground">{t("app.name")}</span>
-      </div>
+    <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center gap-2.5 p-3 pt-safe md:hidden">
+      <button
+        onClick={() => setSearchOpen(true)}
+        className="pointer-events-auto flex h-12 flex-1 items-center gap-2.5 rounded-full border border-border bg-surface/90 px-4 text-left text-sm text-muted shadow-[var(--shadow-e2)] backdrop-blur-xl transition-colors active:bg-surface"
+      >
+        <Search size={18} className="shrink-0 text-primary" />
+        <span className="truncate">{t("search.placeholder")}</span>
+      </button>
 
-      <div className="pointer-events-auto flex items-center rounded-full border border-border bg-surface/85 px-0.5 shadow-[var(--shadow-e1)] backdrop-blur">
-        <LanguageMenu />
-        <button
-          aria-label={t("nav.theme")}
-          onClick={toggleTheme}
-          className="grid h-10 w-10 place-items-center rounded-full text-muted hover:text-foreground"
-        >
-          {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-        </button>
+      <div className="pointer-events-auto grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-surface/90 shadow-[var(--shadow-e2)] backdrop-blur-xl">
+        <LoginButton />
       </div>
     </div>
   );
