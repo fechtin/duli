@@ -6,6 +6,7 @@ import { ai } from "../src/lib/ai";
 import type { AIContext, AIMessage } from "../src/lib/ai";
 import type { Locale } from "../src/lib/i18n/dictionaries";
 import { ok, fail, streamText } from "./respond";
+import { buildMeta, injectMeta } from "./meta";
 
 interface Env {
   ASSETS: { fetch: (req: Request) => Promise<Response> };
@@ -263,6 +264,12 @@ api.delete("/me/checkins/:id", async (c) => {
 
 api.notFound((c) => fail(c, "not_found", "Unknown endpoint", 404));
 
-app.all("*", (c) => c.env.ASSETS.fetch(c.req.raw));
+app.all("*", async (c) => {
+  const res = await c.env.ASSETS.fetch(c.req.raw);
+  // Only touch the SPA shell (index.html); static assets pass through untouched.
+  if (!(res.headers.get("content-type") ?? "").includes("text/html")) return res;
+  const meta = await buildMeta(c.env, new URL(c.req.url));
+  return meta ? injectMeta(res, meta) : res;
+});
 
 export default app;
