@@ -2,6 +2,7 @@ import { Sparkles, Map, UtensilsCrossed, Gem, PartyPopper, Bot, Heart, Settings 
 import type { LucideIcon } from "lucide-react";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
+import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils/cn";
 
 type NavItem = {
@@ -13,6 +14,7 @@ type NavItem = {
 
 /** Sidebar primary navigation (027 §Sidebar Structure — max 8 items, one icon style). */
 export function SidebarNav({ collapsed }: { collapsed: boolean }) {
+  const t = useT();
   const reset = useMapStore((s) => s.reset);
   const setAiOpen = useUIStore((s) => s.setAiOpen);
   const setPassportOpen = useUIStore((s) => s.setPassportOpen);
@@ -27,13 +29,13 @@ export function SidebarNav({ collapsed }: { collapsed: boolean }) {
   };
 
   const items: NavItem[] = [
-    { key: "today", label: "Hôm nay", icon: Sparkles, onClick: () => scrollTo("sb-top") },
-    { key: "explore", label: "Khám phá", icon: Map, onClick: () => { reset(); closeMobile(false); } },
-    { key: "food", label: "Ẩm thực", icon: UtensilsCrossed, onClick: () => scrollTo("sb-food") },
-    { key: "gems", label: "Điểm ẩn", icon: Gem, onClick: () => scrollTo("sb-gem") },
-    { key: "festivals", label: "Lễ hội", icon: PartyPopper, onClick: () => scrollTo("sb-festival") },
-    { key: "ai", label: "AI Planner", icon: Bot, onClick: () => { setAiOpen(true); closeMobile(false); } },
-    { key: "saved", label: "Đã lưu", icon: Heart, onClick: () => { setPassportOpen(true); closeMobile(false); } },
+    { key: "today", label: t("nav.today"), icon: Sparkles, onClick: () => scrollTo("sb-top") },
+    { key: "explore", label: t("nav.explore"), icon: Map, onClick: () => { reset(); closeMobile(false); } },
+    { key: "food", label: t("nav.food"), icon: UtensilsCrossed, onClick: () => scrollTo("sb-food") },
+    { key: "gems", label: t("nav.gems"), icon: Gem, onClick: () => scrollTo("sb-gem") },
+    { key: "festivals", label: t("nav.festivals"), icon: PartyPopper, onClick: () => scrollTo("sb-festival") },
+    { key: "ai", label: t("nav.aiPlanner"), icon: Bot, onClick: () => { setAiOpen(true); closeMobile(false); } },
+    { key: "saved", label: t("nav.saved"), icon: Heart, onClick: () => { setPassportOpen(true); closeMobile(false); } },
   ];
 
   return (
@@ -42,7 +44,7 @@ export function SidebarNav({ collapsed }: { collapsed: boolean }) {
         <NavButton key={key} label={label} Icon={Icon} onClick={onClick} collapsed={collapsed} />
       ))}
       <div className="my-1.5 h-px bg-[var(--sb-border)]" />
-      <NavButton label="Cài đặt" Icon={Settings} onClick={toggleTheme} collapsed={collapsed} />
+      <NavButton label={t("nav.settings")} Icon={Settings} onClick={toggleTheme} collapsed={collapsed} />
     </nav>
   );
 }

@@ -3,6 +3,7 @@ import { X, Camera, LogOut, Loader2 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { uploadAvatarPhoto } from "@/lib/share/uploadPhoto";
+import { useT } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
 import { panelTransition } from "@/design/motion";
 
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export function ProfileModal({ open, onClose }: Props) {
+  const t = useT();
   const user = useAuthStore((s) => s.user);
   const customAvatarUrl = useAuthStore((s) => s.customAvatarUrl);
   const updateAvatar = useAuthStore((s) => s.updateAvatar);
@@ -68,7 +70,7 @@ export function ProfileModal({ open, onClose }: Props) {
               <X size={18} />
             </button>
 
-            <h2 className="mb-5 text-sm font-semibold text-foreground">Hồ sơ của bạn</h2>
+            <h2 className="mb-5 text-sm font-semibold text-foreground">{t("auth.profile")}</h2>
 
             {/* Avatar */}
             <div className="flex flex-col items-center gap-3">
@@ -97,7 +99,7 @@ export function ProfileModal({ open, onClose }: Props) {
 
             <Button variant="secondary" className="mt-6 w-full" onClick={handleSignOut}>
               <LogOut size={15} />
-              Đăng xuất
+              {t("auth.signOut")}
             </Button>
           </motion.div>
         </div>

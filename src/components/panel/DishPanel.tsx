@@ -158,7 +158,7 @@ function RestaurantCard({ restaurant: r, t }: { restaurant: Restaurant; t: (k: s
         {/* Atlas Score (026 §Atlas Score — our own number, not Google's) */}
         <div
           className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary-soft font-display text-sm font-bold text-primary"
-          title="Atlas Score"
+          title={t("panel.atlasScore")}
         >
           {Math.round(r.atlasScore)}
         </div>

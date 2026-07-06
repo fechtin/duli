@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ChevronDown, Compass, Gem, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { generateBrief, type BriefContent } from "@/lib/living/briefGenerator";
+import { useT } from "@/lib/i18n";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
@@ -19,7 +20,8 @@ const today = () => new Date().toISOString().slice(0, 10); // YYYY-MM-DD
  * like Apple Maps. Hidden behind full-screen overlays so it never covers the map.
  */
 export function CompanionCard() {
-  const brief = useMemo(() => generateBrief(), []);
+  const t = useT();
+  const brief = useMemo(() => generateBrief(t), [t]);
   const [expanded, setExpanded] = useState(false);
 
   // First visit of the day: auto-expand after the map intro settles.
@@ -54,7 +56,7 @@ export function CompanionCard() {
     <>
       <span className="text-base leading-none">{brief.emoji}</span>
       <span className="min-w-0 flex-1 truncate text-[13px] font-medium text-foreground">
-        {expanded ? "Bản tin hôm nay" : brief.teaser}
+        {expanded ? t("brief.todayTitle") : brief.teaser}
       </span>
       <ChevronDown
         size={16}
@@ -73,7 +75,7 @@ export function CompanionCard() {
           <button
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            aria-label="Bản tin AI hôm nay"
+            aria-label={t("companion.aiBrief")}
             className="flex w-full items-center gap-2.5 px-4 py-2.5 text-left"
           >
             {teaserRow}
@@ -114,7 +116,7 @@ export function CompanionCard() {
         <button
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
-          aria-label="Bản tin AI hôm nay"
+          aria-label={t("companion.aiBrief")}
           className="w-full"
         >
           <span className="mx-auto mt-2 block h-1 w-9 rounded-full bg-border" aria-hidden />
@@ -143,6 +145,7 @@ export function CompanionCard() {
 
 /** Expanded brief — 5 highlights + AI pick + Hidden Gem + CTA (023 §Expandable Brief). */
 function CompanionBody({ brief, onDiscover }: { brief: BriefContent; onDiscover: () => void }) {
+  const t = useT();
   return (
     <div className="border-t border-border px-4 pb-4 pt-3">
       <h2 className="font-display text-[0.98rem] font-bold leading-snug text-foreground">{brief.greeting}</h2>
@@ -160,14 +163,14 @@ function CompanionBody({ brief, onDiscover }: { brief: BriefContent; onDiscover:
 
       <div className="mt-3 rounded-[var(--radius-md)] bg-primary-soft px-3.5 py-2.5">
         <p className="mb-0.5 flex items-center gap-1.5 text-[11px] font-semibold text-primary">
-          <Sparkles size={12} /> AI đề xuất
+          <Sparkles size={12} /> {t("sidebar.aiSuggests")}
         </p>
         <p className="type-caption text-foreground/80">{brief.aiRecommendation}</p>
       </div>
 
       <p className="mt-3 flex items-baseline gap-1.5 text-[11px] text-muted">
         <span className="flex shrink-0 items-center gap-1 font-semibold text-accent">
-          <Gem size={11} className="translate-y-px" /> Hidden Gem hôm nay:
+          <Gem size={11} className="translate-y-px" /> {t("companion.hiddenGemToday")}
         </span>
         <span>{brief.hiddenGem}</span>
       </p>
@@ -178,7 +181,7 @@ function CompanionBody({ brief, onDiscover }: { brief: BriefContent; onDiscover:
         style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.14), transparent 55%)" }}
       >
         <Compass size={15} />
-        Khám phá
+        {t("nav.explore")}
       </button>
     </div>
   );

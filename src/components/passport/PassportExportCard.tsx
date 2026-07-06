@@ -2,6 +2,9 @@
  * HTML export card — single source of truth for the shareable passport image.
  * Rendered off-screen at a fixed 420px width, then captured with html2canvas.
  * Must use only inline styles (no Tailwind) so html2canvas can read them.
+ *
+ * i18n-ignore-file — standalone Vietnamese-only branded artifact, not wired into the live UI.
+ * Localize by threading a `t` prop from its caller if it's ever re-enabled.
  */
 import { forwardRef } from "react";
 import { Star } from "lucide-react";

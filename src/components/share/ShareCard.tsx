@@ -1,3 +1,5 @@
+// i18n-ignore-file — standalone share-image card (Vietnamese-only branded artifact, not wired
+// into the live UI). Localize by threading a `t` prop from its caller if it's ever re-enabled.
 import { forwardRef } from "react";
 import type { AwardedBadge, Checkin } from "@/lib/types";
 import type { ProvinceShape } from "@/lib/map/projection";

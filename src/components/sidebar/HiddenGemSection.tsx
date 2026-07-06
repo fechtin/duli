@@ -1,16 +1,18 @@
 import { Gem, ArrowRight } from "lucide-react";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { useT } from "@/lib/i18n";
 import { SectionTitle } from "./primitives";
 import { gemOfTheDay, focusDestinationById } from "./navHelpers";
 
 /** Hidden Gem — an image-led editorial card (027 §Hidden Gem — "ảnh bắt buộc"). */
 export function HiddenGemSection() {
+  const t = useT();
   const gem = gemOfTheDay();
   if (!gem) return null;
 
   return (
     <section id="sb-gem">
-      <SectionTitle icon={<Gem size={12} />}>Điểm ẩn hôm nay</SectionTitle>
+      <SectionTitle icon={<Gem size={12} />}>{t("sidebar.hiddenGemTitle")}</SectionTitle>
       <button
         onClick={() => focusDestinationById(gem.id)}
         className="group block w-full overflow-hidden rounded-[20px] border border-[var(--sb-border)] bg-[var(--sb-surface)] text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--sb-shadow-hover)]"
@@ -27,7 +29,7 @@ export function HiddenGemSection() {
           <p className="font-display text-[15px] font-semibold text-[color:var(--sb-text)]">{gem.name}</p>
           <p className="mt-1 line-clamp-2 text-[12px] leading-snug text-[color:var(--sb-text-dim)]">{gem.summary}</p>
           <span className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[color:var(--sb-gold)]">
-            Khám phá <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5" />
+            {t("nav.explore")} <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5" />
           </span>
         </div>
       </button>

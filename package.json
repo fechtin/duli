@@ -9,6 +9,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
+    "check:i18n": "node scripts/check-i18n.mjs",
     "test": "vitest run",
     "worker:dev": "wrangler dev",
     "data:build": "node scripts/build-map.mjs",

@@ -108,7 +108,7 @@ export function PassportPanel() {
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"
                   style={{ border: "1px solid var(--pp-gold-border)", color: "var(--pp-gold)", background: "var(--pp-gold-soft)" }}>
                   {exporting ? <Loader2 size={11} className="animate-spin" /> : <Share2 size={11} />}
-                  Chia sẻ hành trình
+                  {t("passport.shareJourney")}
                 </button>
                 <button onClick={() => setOpen(false)} aria-label={t("panel.close")} style={{ color: "rgba(255,255,255,0.4)" }} className="hover:opacity-80 ml-1">
                   <X size={18} />
@@ -138,10 +138,10 @@ export function PassportPanel() {
                   </div>
                   <div>
                     <p className="text-[13px] font-semibold leading-tight" style={{ color: "var(--pp-text)" }}>
-                      Xin chào, <span style={{ color: "var(--pp-gold)" }}>{user?.displayName?.split(" ")[0] ?? "bạn"}</span>!
+                      {t("passport.greetingPrefix")}<span style={{ color: "var(--pp-gold)" }}>{user?.displayName?.split(" ")[0] ?? t("passport.you")}</span>!
                     </p>
                     <p className="text-[9px] mt-0.5 italic whitespace-nowrap" style={{ color: "var(--pp-text-faint)" }}>
-                      "Mỗi hành trình là một câu chuyện mà chỉ bạn mới có thể kể."
+                      {t("passport.quote")}
                     </p>
                   </div>
                 </div>
@@ -151,12 +151,12 @@ export function PassportPanel() {
                   {/* Left: stats */}
                   <div className="flex flex-col justify-between shrink-0" style={{ width: 148 }}>
                     <div>
-                      <p className="text-[8px] tracking-[0.22em] uppercase mb-1" style={{ color: "var(--pp-text-faint)" }}>Bạn đã khám phá</p>
+                      <p className="text-[8px] tracking-[0.22em] uppercase mb-1" style={{ color: "var(--pp-text-faint)" }}>{t("passport.youExplored")}</p>
                       <div className="flex items-baseline gap-1 mb-0.5">
                         <span className="font-bold leading-none" style={{ fontSize: 52, color: "#ffffff" }}>{visitedProvinces.length}</span>
                         <span className="text-2xl" style={{ color: "rgba(255,255,255,0.3)" }}>/ 63</span>
                       </div>
-                      <p className="text-[9px] uppercase tracking-[0.2em] mb-3" style={{ color: "var(--pp-text-faint)" }}>Tỉnh thành</p>
+                      <p className="text-[9px] uppercase tracking-[0.2em] mb-3" style={{ color: "var(--pp-text-faint)" }}>{t("passport.provincesLabel")}</p>
                       <div className="h-1.5 rounded-full overflow-hidden mb-4" style={{ background: "rgba(255,255,255,0.08)" }}>
                         <div className="h-full rounded-full transition-all duration-700"
                           style={{ width: `${Math.max(progressPct * 100, checkins.length > 0 ? 2 : 0)}%`, background: "linear-gradient(90deg,var(--pp-gold-deep),var(--pp-gold-bright))" }} />
@@ -164,10 +164,10 @@ export function PassportPanel() {
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       {[
-                        { v: checkins.length, l: "Check-in" },
-                        { v: visitedRegions.length, l: "Vùng miền" },
-                        { v: badges.length, l: "Huy hiệu" },
-                        { v: visitedProvinces.length, l: "Tỉnh thành" },
+                        { v: checkins.length, l: t("passport.checkins") },
+                        { v: visitedRegions.length, l: t("passport.regions") },
+                        { v: badges.length, l: t("passport.badges") },
+                        { v: visitedProvinces.length, l: t("passport.provincesLabel") },
                       ].map(({ v, l }) => (
                         <div key={l} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
                           <div className="text-xl font-bold leading-none" style={{ color: "#ffffff" }}>{v}</div>
@@ -214,7 +214,7 @@ export function PassportPanel() {
                         {t("passport.visitedPlaces")}
                       </h3>
                       <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "var(--pp-gold)" }}>
-                        Xem tất cả <ChevronRight size={13} />
+                        {t("passport.viewAll")} <ChevronRight size={13} />
                       </button>
                     </div>
                     <div className="grid grid-cols-4 gap-2.5 px-4 pb-5">
@@ -254,7 +254,7 @@ export function PassportPanel() {
                         </h3>
                         {badges.length > 5 && (
                           <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "var(--pp-gold)" }}>
-                            Xem tất cả <ChevronRight size={13} />
+                            {t("passport.viewAll")} <ChevronRight size={13} />
                           </button>
                         )}
                       </div>
@@ -298,7 +298,7 @@ export function PassportPanel() {
                         {t("passport.timeline")}
                       </h3>
                       <button className="flex items-center gap-0.5 text-[11px] font-medium" style={{ color: "var(--pp-gold)" }}>
-                        Xem tất cả <ChevronRight size={13} />
+                        {t("passport.viewAll")} <ChevronRight size={13} />
                       </button>
                     </div>
                     <div className="overflow-x-auto no-scrollbar px-4 pb-5"
@@ -370,16 +370,17 @@ function FoodSection({
   tasted: string[];
   onOpenDish: (id: string) => void;
 }) {
+  const t = useT();
   const done = dishes.filter((d) => tasted.includes(d.id)).length;
   const pct = dishes.length ? (done / dishes.length) * 100 : 0;
   return (
     <section className="rounded-2xl overflow-hidden" style={{ background: "var(--pp-surface)", border: "1px solid var(--pp-border)" }}>
       <div className="flex items-center justify-between px-5 pt-5 pb-2">
         <h3 className="text-[12px] font-bold tracking-[0.18em] uppercase" style={{ color: "var(--pp-gold)" }}>
-          Ẩm thực
+          {t("nav.food")}
         </h3>
         <span className="text-[11px] font-semibold tabular-nums" style={{ color: "var(--pp-text-dim)" }}>
-          {done}/{dishes.length} món
+          {t("passport.dishesCount", { done, total: dishes.length })}
         </span>
       </div>
       <div className="mx-5 mb-3 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>

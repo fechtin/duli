@@ -2,23 +2,28 @@ import { Sparkles } from "lucide-react";
 import type { AIContext } from "@/lib/ai";
 import { useT } from "@/lib/i18n";
 
-function buildSummary(ctx: AIContext): string {
-  const { destination: dest, provinceBundle: bundle, locale } = ctx;
+type TFn = (key: string, params?: Record<string, string | number>) => string;
+
+function buildSummary(ctx: AIContext, t: TFn): string {
+  const { destination: dest, provinceBundle: bundle } = ctx;
   if (dest) {
     const tip = dest.travelTips[0] ? ` ${dest.travelTips[0]}` : "";
-    if (locale === "vi")
-      return `${dest.summary} Nên đến vào ${dest.bestTime.toLowerCase()}, dành khoảng ${dest.visitDuration.toLowerCase()}.${tip}`;
-    return `${dest.summary} Best visited ${dest.bestTime.toLowerCase()}, plan about ${dest.visitDuration.toLowerCase()}.${tip}`;
+    return t("ai.summary.dest", {
+      summary: dest.summary,
+      time: dest.bestTime.toLowerCase(),
+      duration: dest.visitDuration.toLowerCase(),
+      tip,
+    });
   }
   if (bundle?.content) {
     return `${bundle.content.summary} ${bundle.content.story.split(".")[0]}.`;
   }
-  return locale === "vi" ? "Một nơi đang chờ được khám phá." : "A place waiting to be explored.";
+  return t("ai.summary.generic");
 }
 
 export function AISummary({ context }: { context: AIContext }) {
   const t = useT();
-  const text = buildSummary(context);
+  const text = buildSummary(context, t);
 
   return (
     <div className="rounded-[var(--radius-md)] border border-primary/20 bg-primary-soft/60 p-4">

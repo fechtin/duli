@@ -9,8 +9,7 @@ import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { getRegions } from "@/lib/api/content";
-import { useI18n, useT } from "@/lib/i18n";
-import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
+import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils/cn";
 import { Landmark } from "./landmarks";
 import { MapHint } from "./MapHint";
@@ -200,13 +199,12 @@ function Flag({ label }: { label: string }) {
 }
 
 const ISLAND_FLAGS = [
-  { id: "hoang-sa", name: "Quần đảo Hoàng Sa", lng: 111.8, lat: 16.5 },
-  { id: "truong-sa", name: "Quần đảo Trường Sa", lng: 114.3, lat: 9.2 },
+  { id: "hoang-sa", name: "Quần đảo Hoàng Sa", lng: 111.8, lat: 16.5 }, // i18n-ignore — geographic proper noun (map data)
+  { id: "truong-sa", name: "Quần đảo Trường Sa", lng: 114.3, lat: 9.2 }, // i18n-ignore — geographic proper noun (map data)
 ];
 
 export function MapEngine() {
   const t = useT();
-  const { locale } = useI18n();
   const [model, setModel] = useState<MapModel | null>(null);
   const [error, setError] = useState(false);
   const [vp, setVp] = useState<Box | null>(null);
@@ -331,9 +329,9 @@ export function MapEngine() {
       const members = model.provinces.filter((p) => p.regionId === r.id);
       const cx = members.reduce((s, p) => s + p.cx, 0) / (members.length || 1);
       const cy = members.reduce((s, p) => s + p.cy, 0) / (members.length || 1);
-      return { id: r.id, name: localizeRegionName(r.id, r.name, locale), cx, cy };
+      return { id: r.id, name: t(`region.${r.id}`), cx, cy };
     });
-  }, [model, regions, locale]);
+  }, [model, regions, t]);
 
   const projectedDestinations = useMemo(() => {
     if (!model) return [];
@@ -472,7 +470,7 @@ export function MapEngine() {
             .map((p) => (
               <Label key={p.slug} x={p.cx} y={p.cy - 14} invK={invK}>
                 <span className="map-label-halo whitespace-nowrap text-[11px] font-medium tracking-[0.04em] text-foreground/75">
-                  {localizeProvinceName(p.slug, p.name, p.nameEn, locale)}
+                  {t(`province.${p.slug}`)}
                 </span>
               </Label>
             ))}

@@ -157,10 +157,10 @@ export function CheckinFlow() {
                     )}
                     <span className="truncate">
                       {uploading
-                        ? "Đang tải ảnh lên..."
+                        ? t("checkin.uploadingPhoto")
                         : uploadedPreview
-                          ? "Ảnh của bạn đã chọn ✓"
-                          : "Tải ảnh từ thiết bị"}
+                          ? t("checkin.photoSelected")
+                          : t("checkin.uploadFromDevice")}
                     </span>
                     {uploadedPreview && (
                       <img src={uploadedPreview} className="ml-auto h-10 w-10 shrink-0 rounded object-cover" />
@@ -216,7 +216,7 @@ export function CheckinFlow() {
                     {aiBusy ? t("ai.thinking") : t("checkin.aiCaption")}
                   </button>
                   <Button className="mt-5 w-full" onClick={finish} disabled={uploading}>
-                    {uploading ? "Đang tải ảnh..." : t("checkin.done")}
+                    {uploading ? t("checkin.uploading") : t("checkin.done")}
                   </Button>
                 </div>
               )}
@@ -253,7 +253,7 @@ export function CheckinFlow() {
                           textShadow: "0 0 8px rgba(0,0,0,0.45)",
                         }}
                       >
-                        Đã check-in
+                        {t("checkin.stamp")}
                       </span>
                     </motion.div>
                   </div>

@@ -28,6 +28,14 @@ export function getStoredLocale(): Locale {
   return detectInitial();
 }
 
+// Warn once per unique message so a re-rendering component doesn't flood the console.
+const warned = new Set<string>();
+function warnOnce(msg: string): void {
+  if (warned.has(msg)) return;
+  warned.add(msg);
+  console.warn(`[i18n] ${msg}`);
+}
+
 function interpolate(template: string, params?: TParams): string {
   if (!params) return template;
   return template.replace(/\{(\w+)\}/g, (_, k: string) => String(params[k] ?? `{${k}}`));
@@ -48,6 +56,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const t = useCallback(
     (key: string, params?: TParams) => {
       const dict = dictionaries[locale];
+      // Dev guardrail: surface untranslated keys so new features can't silently ship missing
+      // translations (they'd otherwise fall through to vi / the raw key with no signal).
+      if (import.meta.env.DEV) {
+        if (!(key in dictionaries.vi)) warnOnce(`i18n: unknown key "${key}" (missing from vi.ts source)`);
+        else if (!(key in dict)) warnOnce(`i18n: key "${key}" missing for locale "${locale}"`);
+      }
       const value = dict[key] ?? dictionaries.vi[key] ?? key;
       return interpolate(value, params);
     },

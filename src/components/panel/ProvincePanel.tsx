@@ -5,7 +5,6 @@ import { useAsync } from "@/lib/utils/useAsync";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
-import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Chip } from "@/components/ui/Chip";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -39,10 +38,10 @@ export function ProvincePanel({ slug }: { slug: string }) {
         >
           <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <MapPin size={13} />
-            {localizeRegionName(meta.regionId, meta.regionName, locale)}
+            {t(`region.${meta.regionId}`)}
           </div>
           <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-            {localizeProvinceName(meta.slug, meta.name, meta.nameEn, locale)}
+            {t(`province.${meta.slug}`)}
           </h2>
         </div>
       </div>

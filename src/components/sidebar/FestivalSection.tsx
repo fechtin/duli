@@ -1,6 +1,7 @@
 import { PartyPopper, ArrowRight } from "lucide-react";
 import festivalCalendar from "@/data/living/festival-calendar.json";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { useT } from "@/lib/i18n";
 import { SectionTitle } from "./primitives";
 import { focusDestinationById, calendarSeed } from "./navHelpers";
 
@@ -15,6 +16,7 @@ type FestivalEntry = {
 
 /** Festivals this month — banner cards, not bare icons (027 §Festival Section). */
 export function FestivalSection() {
+  const t = useT();
   const month = new Date().getMonth() + 1;
   const festivals = (festivalCalendar as { festivals: FestivalEntry[] }).festivals
     .filter((f) => f.months.includes(month))
@@ -23,7 +25,7 @@ export function FestivalSection() {
 
   return (
     <section id="sb-festival">
-      <SectionTitle icon={<PartyPopper size={12} />}>Lễ hội mùa này</SectionTitle>
+      <SectionTitle icon={<PartyPopper size={12} />}>{t("sidebar.festivalsTitle")}</SectionTitle>
       <div className="flex flex-col gap-2">
         {festivals.map((f) => (
           <button

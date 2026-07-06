@@ -7,7 +7,6 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useI18n, useT } from "@/lib/i18n";
-import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -57,8 +56,8 @@ export function DestinationPanel({ id }: { id: string }) {
         >
           <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <MapPin size={13} />
-            {province && localizeProvinceName(province.slug, province.name, province.nameEn, locale)} ·{" "}
-            {province && localizeRegionName(province.regionId, province.regionName, locale)}
+            {province && t(`province.${province.slug}`)} ·{" "}
+            {province && t(`region.${province.regionId}`)}
           </div>
           <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{dest.name}</h2>
         </div>

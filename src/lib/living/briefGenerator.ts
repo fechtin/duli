@@ -2,6 +2,9 @@ import seasonalCalendar from "@/data/living/seasonal-calendar.json";
 import festivalCalendar from "@/data/living/festival-calendar.json";
 import flowerCalendar from "@/data/living/flower-calendar.json";
 
+/** Translate fn shape (matches i18n `t`) so this pure module stays hook-free. */
+type TFn = (key: string, params?: Record<string, string | number>) => string;
+
 export type BriefPeriod = "morning" | "afternoon" | "evening" | "weekend" | "holiday";
 
 export interface BriefContent {
@@ -120,7 +123,7 @@ const HIDDEN_GEMS = [
   "mieu-ba-chua-xu",
 ];
 
-export function generateBrief(): BriefContent {
+export function generateBrief(t: TFn): BriefContent {
   const month  = currentMonth();
   const period = getBriefPeriod();
 
@@ -140,24 +143,23 @@ export function generateBrief(): BriefContent {
   festivals.slice(0, 2).forEach((f) => highlights.push(`${f.icon} ${f.name} — ${f.description.slice(0, 50)}…`));
   flowers.slice(0, 1).forEach((fl) => highlights.push(`${fl.icon} ${fl.flower} đang nở tại ${destName(fl.destinationId)}`));
 
-  // AI recommendation text
+  // AI recommendation text (locale-aware scaffolding; place names + seasonal state stay
+  // in the source calendars until content localization covers them — see i18n playbook).
   const aiRec = seasonal.length > 1
-    ? `Tháng ${month} là thời điểm lý tưởng để khám phá ${destName(seasonal[0].destinationId)} và ${destName(seasonal[1].destinationId)}. ${seasonal[0].state}.`
-    : `Tháng ${month}, đừng bỏ lỡ ${heroName} — ${heroState}.`;
+    ? t("brief.aiRec.multi", {
+        month,
+        a: destName(seasonal[0].destinationId),
+        b: destName(seasonal[1].destinationId),
+        state: seasonal[0].state,
+      })
+    : t("brief.aiRec.single", { month, name: heroName, state: heroState });
 
   // Hidden gem of the day — rotate by day-of-year
   const doy = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
   const gem = HIDDEN_GEMS[doy % HIDDEN_GEMS.length];
 
-  // Greeting & heroStory by period
-  const GREETINGS: Record<BriefPeriod, string> = {
-    morning:   "Chào buổi sáng!",
-    afternoon: "Buổi chiều bình yên.",
-    evening:   "Chúc buổi tối tuyệt vời.",
-    weekend:   "Cuối tuần rồi — đi đâu đó thôi!",
-    holiday:   "Kỳ nghỉ đã đến!",
-  };
-
+  // Greeting by period — keyed through i18n. heroStory scaffolding stays inline (only the
+  // now-retired Companion Card consumes it; the live sidebar uses greeting + aiRecommendation).
   const HERO_INTROS: Record<BriefPeriod, string> = {
     morning:   `Hôm nay ${heroName} ${heroState.toLowerCase()}. Đây là những nơi đáng ghé thăm nhất trong ngày.`,
     afternoon: `Buổi chiều nay, ${heroName} ${heroState.toLowerCase()}. Còn rất nhiều nơi đang chờ bạn khám phá.`,
@@ -170,7 +172,7 @@ export function generateBrief(): BriefContent {
     period,
     emoji:           PERIOD_EMOJI[period],
     teaser:          `${TEASERS[period]} · ${heroName} ${heroState.toLowerCase()}`,
-    greeting:        GREETINGS[period],
+    greeting:        t(`brief.greeting.${period}`),
     heroStory:       HERO_INTROS[period],
     highlights:      highlights.slice(0, 5),
     aiRecommendation: aiRec,

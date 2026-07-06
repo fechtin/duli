@@ -1,9 +1,11 @@
 import { Compass } from "lucide-react";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
+import { useT } from "@/lib/i18n";
 
 /** Sidebar header — logo + a time-aware greeting (027 §Sidebar Header). */
 export function SidebarHeader({ greeting, collapsed }: { greeting: string; collapsed: boolean }) {
+  const t = useT();
   const reset = useMapStore((s) => s.reset);
   const closeMobile = useUIStore((s) => s.setSidebarMobileOpen);
 
@@ -21,7 +23,7 @@ export function SidebarHeader({ greeting, collapsed }: { greeting: string; colla
       {!collapsed && (
         <span className="min-w-0">
           <span className="block truncate font-display text-[15px] font-bold text-[color:var(--sb-text)]">
-            FechTin Go
+            {t("app.name")}
           </span>
           <span className="block truncate text-[11.5px] text-[color:var(--sb-text-dim)]">{greeting}</span>
         </span>

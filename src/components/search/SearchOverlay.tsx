@@ -10,7 +10,6 @@ import { useContentStore } from "@/lib/store/useContentStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
-import { localizeProvinceName, localizeRegionName } from "@/lib/i18n/localizeName";
 import { springSoft, duration, easeOut } from "@/design/motion";
 import { cn } from "@/lib/utils/cn";
 
@@ -30,16 +29,16 @@ export function SearchOverlay() {
   const destinations = useContentStore((s) => s.destinations);
   const provinces = useMemo(() => getProvinces(), []);
   const provBySlug = useMemo(() => new Map(provinces.map((p) => [p.slug, p])), [provinces]);
-  // Destination titles come from the API already localized; province names live in geo-meta.
+  // Destination titles come from the API already localized; province/region names via the dictionary.
   const titleOf = (r: SearchResult) => {
     if (r.kind !== "province") return r.title;
     const m = provBySlug.get(r.id);
-    return m ? localizeProvinceName(m.slug, m.name, m.nameEn, locale) : r.title;
+    return m ? t(`province.${m.slug}`) : r.title;
   };
   const subtitleOf = (r: SearchResult) => {
     if (r.kind !== "province") return r.subtitle;
     const m = provBySlug.get(r.id);
-    return m ? localizeRegionName(m.regionId, m.regionName, locale) : r.subtitle;
+    return m ? t(`region.${m.regionId}`) : r.subtitle;
   };
   const { data: dishes } = useAsync(() => fetchDishes(locale), [locale]);
   const results = useMemo(
@@ -166,7 +165,7 @@ export function SearchOverlay() {
                     {subtitleOf(r) && <span className="block text-xs text-muted">{subtitleOf(r)}</span>}
                   </span>
                   <span className="text-[10px] uppercase tracking-wide text-faint">
-                    {r.kind === "province" ? t("search.provinces") : r.kind === "dish" ? "Ẩm thực" : t("search.destinations")}
+                    {r.kind === "province" ? t("search.provinces") : r.kind === "dish" ? t("nav.food") : t("search.destinations")}
                   </span>
                 </motion.button>
               ))}

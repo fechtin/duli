@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { LogIn } from "lucide-react";
 import { useAuthStore } from "@/lib/store/useAuthStore";
+import { useT } from "@/lib/i18n";
 import { ProfileModal } from "./ProfileModal";
 
 export function LoginButton() {
+  const t = useT();
   const user = useAuthStore((s) => s.user);
   const customAvatarUrl = useAuthStore((s) => s.customAvatarUrl);
   const signIn = useAuthStore((s) => s.signIn);
@@ -26,7 +28,7 @@ export function LoginButton() {
       <button
         onClick={handleSignIn}
         disabled={signingIn}
-        aria-label="Đăng nhập"
+        aria-label={t("auth.signIn")}
         className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors hover:bg-surface-2 hover:text-foreground disabled:opacity-50"
       >
         <LogIn size={18} />
@@ -38,7 +40,7 @@ export function LoginButton() {
     <>
       <button
         onClick={() => setProfileOpen(true)}
-        aria-label="Hồ sơ của bạn"
+        aria-label={t("auth.profile")}
         className="grid h-10 w-10 place-items-center rounded-full transition-colors hover:ring-2 hover:ring-primary/50"
       >
         {avatarUrl ? (

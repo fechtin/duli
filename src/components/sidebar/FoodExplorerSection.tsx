@@ -4,13 +4,14 @@ import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { fetchDishes } from "@/lib/api/food";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useUIStore } from "@/lib/store/useUIStore";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, useT } from "@/lib/i18n";
 import type { Dish } from "@/lib/types";
 import { SectionTitle } from "./primitives";
 
 /** Food Explorer — a few flagship dishes as image-led cards (027 §Food Explorer). */
 export function FoodExplorerSection() {
   const { locale } = useI18n();
+  const t = useT();
   const [dishes, setDishes] = useState<Dish[]>([]);
   const openDish = useFoodStore((s) => s.openDish);
   const setSearchOpen = useUIStore((s) => s.setSearchOpen);
@@ -38,12 +39,12 @@ export function FoodExplorerSection() {
   return (
     <section id="sb-food">
       <div className="mb-2 flex items-center justify-between">
-        <SectionTitle icon={<UtensilsCrossed size={12} />}>Ẩm thực</SectionTitle>
+        <SectionTitle icon={<UtensilsCrossed size={12} />}>{t("nav.food")}</SectionTitle>
         <button
           onClick={() => setSearchOpen(true)}
           className="flex items-center gap-1 text-[11px] font-semibold text-[color:var(--sb-text-dim)] transition-colors hover:text-[color:var(--sb-gold)]"
         >
-          Tất cả <ArrowRight size={12} />
+          {t("sidebar.viewAll")} <ArrowRight size={12} />
         </button>
       </div>
       <div className="flex flex-col gap-2">

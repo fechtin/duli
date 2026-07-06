@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
 import { generateBrief } from "@/lib/living/briefGenerator";
+import { useT } from "@/lib/i18n";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { cn } from "@/lib/utils/cn";
@@ -22,6 +23,7 @@ export const SIDEBAR_COLLAPSED = 72;
  * Map stays the hero; the sidebar is one of its two "wings" (the passport is the other).
  */
 export function LeftSidebar() {
+  const t = useT();
   const isDesktop = useIsDesktop();
   const collapsedPref = useUIStore((s) => s.sidebarCollapsed);
   const mobileOpen = useUIStore((s) => s.sidebarMobileOpen);
@@ -30,7 +32,7 @@ export function LeftSidebar() {
 
   // On mobile the drawer always shows the full feed; collapse is a desktop-only affordance.
   const collapsed = isDesktop && collapsedPref;
-  const brief = useMemo(() => generateBrief(), []);
+  const brief = useMemo(() => generateBrief(t), [t]);
   const width = isDesktop ? (collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED) : SIDEBAR_EXPANDED;
 
   return (
@@ -65,7 +67,7 @@ export function LeftSidebar() {
           {!collapsed && (
             <button
               onClick={() => setMobileOpen(false)}
-              aria-label="Đóng"
+              aria-label={t("panel.close")}
               className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-[color:var(--sb-text-dim)] transition-colors hover:bg-[var(--sb-hover)] hover:text-[color:var(--sb-text)] md:hidden"
             >
               <X size={18} />
@@ -95,14 +97,14 @@ export function LeftSidebar() {
         {/* Collapse toggle (desktop only) */}
         <button
           onClick={toggleSidebar}
-          aria-label={collapsed ? "Mở rộng" : "Thu gọn"}
+          aria-label={collapsed ? t("sidebar.expand") : t("sidebar.collapse")}
           className={cn(
             "hidden shrink-0 items-center gap-2 border-t border-[var(--sb-border)] px-4 py-3 text-[color:var(--sb-text-dim)] transition-colors hover:bg-[var(--sb-hover)] hover:text-[color:var(--sb-text)] md:flex",
             collapsed && "justify-center px-0",
           )}
         >
           {collapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
-          {!collapsed && <span className="text-[12.5px] font-medium">Thu gọn</span>}
+          {!collapsed && <span className="text-[12.5px] font-medium">{t("sidebar.collapse")}</span>}
         </button>
       </aside>
     </>

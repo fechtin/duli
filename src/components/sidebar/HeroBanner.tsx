@@ -1,9 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { useT } from "@/lib/i18n";
 import { heroOfTheDay, focusPoint } from "./navHelpers";
 
 /** Daily Hero Banner — the sidebar's focal point (027 §Hero Banner / Hero Image). */
 export function HeroBanner() {
+  const t = useT();
   const hero = heroOfTheDay();
 
   return (
@@ -20,7 +22,7 @@ export function HeroBanner() {
         <h2 className="font-display text-[22px] font-bold leading-tight text-white drop-shadow-sm">{hero.name}</h2>
         <p className="mt-0.5 text-[12.5px] text-white/85 drop-shadow-sm">{hero.subtitle}</p>
         <span className="mt-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-[12px] font-semibold text-white backdrop-blur-sm transition-colors group-hover:bg-[var(--sb-gold)] group-hover:text-[#102b30]">
-          Khám phá
+          {t("nav.explore")}
           <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
         </span>
       </div>

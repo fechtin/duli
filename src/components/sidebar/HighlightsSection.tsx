@@ -1,15 +1,17 @@
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { useT } from "@/lib/i18n";
 import { SectionTitle } from "./primitives";
 import { seasonalHighlights, focusDestinationById } from "./navHelpers";
 
 /** Today's Highlights — seasonal cards, image-forward (027 §Today's Highlights). */
 export function HighlightsSection() {
+  const t = useT();
   const items = seasonalHighlights(4);
   if (items.length === 0) return null;
 
   return (
     <section>
-      <SectionTitle icon={<span>🌸</span>}>Nổi bật hôm nay</SectionTitle>
+      <SectionTitle icon={<span>🌸</span>}>{t("sidebar.highlights")}</SectionTitle>
       <div className="flex flex-col gap-2">
         {items.map((it) => (
           <button

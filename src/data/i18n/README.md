@@ -7,9 +7,11 @@ There are **two layers** of localization:
 
 | Layer | What | Where it lives | Served by |
 | --- | --- | --- | --- |
-| **UI chrome** | nav, buttons, section titles, badges, share card | `src/lib/i18n/locales/<locale>.ts` | client dictionary (`useT`) |
+| **Static client strings** | UI chrome (nav/buttons/titles/badges) **and** province & region names | `src/lib/i18n/locales/<locale>.ts` | client dictionary (`useT`) |
 | **Editorial content** | destination & province summary/story/facts/tips/captions/etc. | `src/data/i18n/content/<bucket>.<locale>.ts` → D1 `i18n` column | Worker overlay (`worker/db.ts`), keyed by `?locale=` |
-| **Place names** | province & region proper nouns | `provinceNames.ts`, `regionNames.ts` | client helper (`localizeName.ts`) |
+
+Place names (`province.<slug>` / `region.<id>`) were formerly a third client name-map; they are now
+just keys in the dictionary — access them with `t(\`province.${slug}\`)` like any other UI string.
 
 `bucket` ∈ `northMountains | redRiverDelta | northCentral | southCentralHighlands | southeast | mekong`
 (mirrors `src/data/regions/*.ts`). Each content file exports `destinations` (keyed by destination
@@ -26,13 +28,13 @@ Vietnamese source.
 
 ## Adding a NEW language (e.g. French `fr`)
 
-1. **UI:** add `src/lib/i18n/locales/fr.ts` (copy `vi.ts`, translate all keys), register it in
-   `src/lib/i18n/dictionaries.ts` (`Locale` union + `locales` list + `dictionaries`).
+1. **UI + names:** add `src/lib/i18n/locales/fr.ts` (copy `vi.ts`, translate all keys — this now
+   includes the `province.*` / `region.*` name keys), register it in `src/lib/i18n/dictionaries.ts`
+   (`Locale` union + `locales` list + `dictionaries`).
 2. **Content type:** add `"fr"` to `ContentLocale` in `src/lib/types.ts`.
 3. **Editorial content:** add `src/data/i18n/content/<bucket>.fr.ts` for each of the 6 buckets,
    then wire them into `byLocale.fr` in `src/data/i18n/index.ts`.
    (Re-run `scripts/prep-i18n-batches.mjs` to get fresh Vietnamese source JSON to translate from.)
-4. **Names:** add `fr` entries to `provinceNames.ts` and `regionNames.ts`.
-5. Run `npm run db:seed:build && npm run db:setup && npm run typecheck`.
+4. Run `npm run db:seed:build && npm run db:setup && npm run typecheck && npm run check:i18n`.
 
 Any field you don't translate simply falls back to Vietnamese — you can ship incrementally.
