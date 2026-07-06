@@ -1,13 +1,13 @@
 // Service worker — offline support (Bible 003 §14, 012 §17).
 // Strategy: network-first for navigations (SPA shell fallback), stale-while-revalidate
 // for static assets / map data / fonts. Never caches the API.
-const VERSION = "via-v1";
+const VERSION = "via-v2";
 const SHELL = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(SHELL).then((cache) => cache.addAll(["/", "/manifest.webmanifest", "/favicon.svg"])),
+    caches.open(SHELL).then((cache) => cache.addAll(["/", "/manifest.webmanifest", "/icons/icon-32.png"])),
   );
   self.skipWaiting();
 });
@@ -54,7 +54,7 @@ self.addEventListener("fetch", (event) => {
   // Static assets, map data (same-origin) + cross-origin fonts.
   const isAsset =
     url.origin === location.origin &&
-    (url.pathname.startsWith("/assets/") || url.pathname.startsWith("/geo/") || url.pathname === "/favicon.svg");
+    (url.pathname.startsWith("/assets/") || url.pathname.startsWith("/geo/") || url.pathname.startsWith("/icons/"));
   const isFont = url.hostname.includes("fonts.googleapis.com") || url.hostname.includes("fonts.gstatic.com");
 
   if (isAsset || isFont) {

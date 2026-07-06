@@ -1,4 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#16715a"/>
-  <path d="M16 6l2.6 5.3 5.9.9-4.2 4.1 1 5.8L16 19.3l-5.3 2.8 1-5.8-4.2-4.1 5.9-.9z" fill="#e0b354"/>
+  <defs>
+    <clipPath id="scene"><circle cx="16" cy="13.8" r="6.5"/></clipPath>
+  </defs>
+
+  <!-- background -->
+  <rect width="32" height="32" rx="8" fill="#1c4a44"/>
+
+  <!-- landscape scene inside the G -->
+  <g clip-path="url(#scene)">
+    <rect x="9" y="6" width="14" height="16" fill="#2f6f5d"/>
+    <circle cx="14.4" cy="11.6" r="2.5" fill="#f2ead0"/>
+    <path d="M8 21 L12.6 13.6 L17.4 21 Z" fill="#2f8060"/>
+    <path d="M13.5 21 L18.2 12.8 L24 21 Z" fill="#1f5f43"/>
+    <path d="M8 20.6 Q13 18.6 16 20.4 Q20 22.6 24 20.6 L24 22 L8 22 Z" fill="#3f9a74"/>
+    <path d="M15.6 21 C15.2 18.6 17 18 16.4 16.4 C16 15.4 16.9 14.6 16.4 13.6"
+          fill="none" stroke="#bfe8dd" stroke-width="0.9" stroke-linecap="round"/>
+  </g>
+
+  <!-- gold G / map-pin ring -->
+  <circle cx="16" cy="13.8" r="8.4" fill="none" stroke="#e0b354" stroke-width="2.7"/>
+  <!-- opening + crossbar of the G -->
+  <rect x="22.5" y="11.4" width="5" height="4.8" fill="#1c4a44"/>
+  <rect x="18.2" y="12.6" width="5" height="2.6" rx="0.4" fill="#e0b354"/>
+  <!-- pin tip -->
+  <path d="M10.9 20.2 L16 27.6 L21.1 20.2 Z" fill="#e0b354"/>
+
+  <!-- sparkle -->
+  <path d="M25.5 6.5 L26.2 8.6 L28.3 9.3 L26.2 10 L25.5 12.1 L24.8 10 L22.7 9.3 L24.8 8.6 Z" fill="#e6c26a"/>
 </svg>
