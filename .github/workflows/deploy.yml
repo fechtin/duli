@@ -30,9 +30,16 @@ jobs:
       - name: Build SPA
         run: npm run build
 
-      # NOTE: D1 schema migrations are NOT run here — the deploy token only has
-      # Workers edit rights, and migrations rarely change. When the schema does
-      # change, run `bash scripts/deploy.sh` locally (applies migrations + seed).
+      # Apply D1 schema migrations (idempotent — no-op when nothing is pending).
+      # Content re-seeding is NOT done here (destructive); run `bash scripts/deploy.sh`
+      # locally when seed data changes.
+      - name: Apply D1 migrations (remote)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: d1 migrations apply atlas_db --remote
+
       - name: Deploy Worker + assets
         uses: cloudflare/wrangler-action@v3
         with:
