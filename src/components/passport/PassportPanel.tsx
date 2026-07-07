@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X, Share2, Compass, Loader2, ChevronRight, Heart, Check } from "lucide-react";
+import { X, Share2, Compass, Loader2, ChevronRight, Heart } from "lucide-react";
 import { fetchDishes } from "@/lib/api/food";
 import { useAsync } from "@/lib/utils/useAsync";
-import { useFoodStore } from "@/lib/store/useFoodStore";
 import type { Dish } from "@/lib/types";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
@@ -281,14 +280,7 @@ export function PassportPanel() {
 
                   {/* ── Food Passport (026) ── */}
                   {(allDishes?.length ?? 0) > 0 && (
-                    <FoodSection
-                      dishes={allDishes!}
-                      tasted={tastedDishes}
-                      onOpenDish={(id) => {
-                        setOpen(false);
-                        useFoodStore.getState().openDish(id);
-                      }}
-                    />
+                    <FoodSection dishes={allDishes!} tasted={tastedDishes} />
                   )}
 
                   {/* ── Timeline ── */}
@@ -364,11 +356,9 @@ export function PassportPanel() {
 function FoodSection({
   dishes,
   tasted,
-  onOpenDish,
 }: {
   dishes: Dish[];
   tasted: string[];
-  onOpenDish: (id: string) => void;
 }) {
   const t = useT();
   const done = dishes.filter((d) => tasted.includes(d.id)).length;
@@ -383,40 +373,11 @@ function FoodSection({
           {t("passport.dishesCount", { done, total: dishes.length })}
         </span>
       </div>
-      <div className="mx-5 mb-3 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
+      <div className="mx-5 mb-5 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
         <div
           className="h-full rounded-full transition-all duration-700"
           style={{ width: `${Math.max(pct, done > 0 ? 3 : 0)}%`, background: "linear-gradient(90deg,var(--pp-gold-deep),var(--pp-gold-bright))" }}
         />
-      </div>
-      <div className="grid grid-cols-2 gap-1.5 px-4 pb-5">
-        {dishes.map((d) => {
-          const isTasted = tasted.includes(d.id);
-          return (
-            <button
-              key={d.id}
-              onClick={() => onOpenDish(d.id)}
-              className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-left transition-opacity hover:opacity-80"
-              style={{
-                background: isTasted ? "var(--pp-gold-soft)" : "rgba(255,255,255,0.03)",
-                border: `1px solid ${isTasted ? "var(--pp-gold-border)" : "var(--pp-border)"}`,
-              }}
-            >
-              <span
-                className="grid h-4 w-4 shrink-0 place-items-center rounded-full"
-                style={{
-                  background: isTasted ? "var(--pp-gold)" : "transparent",
-                  border: isTasted ? "none" : "1px solid rgba(255,255,255,0.2)",
-                }}
-              >
-                {isTasted && <Check size={10} color="#091e24" strokeWidth={3} />}
-              </span>
-              <span className="truncate text-[11px] font-medium" style={{ color: isTasted ? "var(--pp-text)" : "var(--pp-text-dim)" }}>
-                {d.emoji} {d.name}
-              </span>
-            </button>
-          );
-        })}
       </div>
     </section>
   );
