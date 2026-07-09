@@ -48,7 +48,7 @@ export function LeftSidebar() {
 
       <aside
         className={cn(
-          "sidebar-theme fixed left-0 top-0 z-40 flex h-[100dvh] flex-col border-r border-[var(--sb-border)] bg-[var(--sb-bg)]/95 backdrop-blur-[24px]",
+          "sidebar-theme fixed left-0 top-0 z-40 flex h-full flex-col border-r border-[var(--sb-border)] bg-[var(--sb-bg)]/95 backdrop-blur-[24px]",
           "transition-[width,transform] duration-[280ms] ease-out",
           mobileOpen ? "translate-x-0" : "-translate-x-full",
           "md:translate-x-0",

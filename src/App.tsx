@@ -54,7 +54,7 @@ export default function App() {
   }, [setSearchOpen]);
 
   return (
-    <main className="relative h-[100dvh] w-full overflow-hidden bg-background">
+    <main className="relative h-full w-full overflow-hidden bg-background">
       <MapEngine />
 
       <LeftSidebar />

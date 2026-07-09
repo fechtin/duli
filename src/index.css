@@ -165,7 +165,19 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
+    /* Lock the root to the real standalone-window viewport. iOS PWA reports
+       stale 100dvh during status-bar / safe-area transitions, which left a
+       blank strip below the map; fixed + inset:0 sidesteps dvh entirely. */
+    position: fixed;
+    inset: 0;
     margin: 0;
     background-color: var(--color-background);
     color: var(--color-foreground);
