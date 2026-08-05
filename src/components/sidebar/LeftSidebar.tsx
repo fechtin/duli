@@ -4,6 +4,7 @@ import { generateBrief } from "@/lib/living/briefGenerator";
 import { useI18n } from "@/lib/i18n";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useCountryStore } from "@/lib/store/useCountryStore";
+import { useContentStore } from "@/lib/store/useContentStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { cn } from "@/lib/utils/cn";
 import { SidebarHeader } from "./SidebarHeader";
@@ -31,10 +32,13 @@ export function LeftSidebar() {
   const toggleSidebar = useUIStore((s) => s.toggleSidebar);
   const setMobileOpen = useUIStore((s) => s.setSidebarMobileOpen);
   const country = useCountryStore((s) => s.country);
+  // The Korean brief reads localized place names out of the content store, so it has to recompute
+  // once the API fills that store in (same subscription the highlight cards use).
+  const destinations = useContentStore((s) => s.destinations);
 
   // On mobile the drawer always shows the full feed; collapse is a desktop-only affordance.
   const collapsed = isDesktop && collapsedPref;
-  const brief = useMemo(() => generateBrief(t, locale, country), [t, locale, country]);
+  const brief = useMemo(() => generateBrief(t, locale, country), [t, locale, country, destinations]);
   const width = isDesktop ? (collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED) : SIDEBAR_EXPANDED;
 
   return (

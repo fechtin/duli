@@ -6,6 +6,7 @@ import { localizeSeasonalState } from "@/lib/living/livingI18n";
 import type { Locale } from "@/lib/i18n";
 import type { CountryCode } from "@/lib/types";
 import { countryLabel } from "@/lib/country";
+import { useContentStore } from "@/lib/store/useContentStore";
 
 /** Translate fn shape (matches i18n `t`) so this pure module stays hook-free. */
 type TFn = (key: string, params?: Record<string, string | number>) => string;
@@ -54,10 +55,16 @@ export function generateBrief(t: TFn, locale: Locale, country: CountryCode = "vn
   const seasonal = (
     (isKr ? krSeasonalCalendar : (seasonalCalendar as Record<string, SeasonEntry[]>))[String(month)] ?? []
   ).slice(0, 2) as SeasonEntry[];
-  // Korea's calendar uses real destination ids, so names come from the authoring data;
-  // Vietnam's parallel calendar namespace resolves through the dictionary.
+  // Korea's calendar uses real destination ids, and the authoring data is Vietnamese — so prefer
+  // the localized copy the API already loaded into the content store (same rule as the sidebar
+  // cards in navHelpers), falling back to the source name. Vietnam's parallel calendar namespace
+  // resolves through the dictionary.
   const placeName = (id: string) =>
-    isKr ? (destinationsKr.find((d) => d.id === id)?.name ?? id) : t(`place.${id}`);
+    isKr
+      ? (useContentStore.getState().destinations.find((d) => d.id === id)?.name ??
+        destinationsKr.find((d) => d.id === id)?.name ??
+        id)
+      : t(`place.${id}`);
   const stateOf = (e: SeasonEntry) =>
     isKr
       ? krSeasonalState(month, e.destinationId, e.state, locale)
