@@ -1,7 +1,7 @@
 // Vietnamese — the source language (Bible 009 §5). All other locales mirror these keys.
 export const vi = {
   "app.name": "FechTin Go",
-  "app.tagline": "Khám phá Việt Nam qua một tấm bản đồ sống",
+  "app.tagline": "Khám phá {country} qua một tấm bản đồ sống",
 
   "nav.explore": "Khám phá",
   "nav.search": "Tìm kiếm",
@@ -21,7 +21,7 @@ export const vi = {
   "signal.perfect-weather": "Thời tiết đẹp",
   "signal.editor-pick": "Editor's Pick",
   "signal.ai-pick": "AI đề xuất",
-  "nav.home": "Về toàn cảnh Việt Nam",
+  "nav.home": "Về toàn cảnh {country}",
 
   "map.reset": "Toàn cảnh",
   "map.zoomIn": "Phóng to",
@@ -29,7 +29,7 @@ export const vi = {
   "map.regions": "vùng",
   "map.provinces": "tỉnh thành",
   "map.hint": "Kéo để di chuyển · Lăn chuột để phóng to · Nhấp để khám phá",
-  "map.loading": "Đang dựng bản đồ Việt Nam…",
+  "map.loading": "Đang dựng bản đồ {country}…",
 
   "search.placeholder": "Tìm tỉnh, địa điểm, món ăn…",
   "search.empty": "Không tìm thấy. Thử tên khác, ví dụ “Sài Gòn”.",
@@ -57,10 +57,9 @@ export const vi = {
   "ai.title": "Hướng dẫn viên",
   "ai.greeting": "Xin chào! Mình là hướng dẫn viên của bạn. Hãy hỏi mình bất cứ điều gì về nơi bạn đang xem.",
   "ai.placeholder": "Hỏi về {context}…",
-  "ai.placeholderGeneric": "Hỏi mình về Việt Nam…",
+  "ai.placeholderGeneric": "Hỏi mình về {country}…",
   "ai.send": "Gửi",
   "ai.thinking": "Đang soạn câu trả lời…",
-  "ai.contextVietnam": "Việt Nam",
 
   "checkin.title": "Check-in tại {name}",
   "checkin.step.photo": "Ảnh",
@@ -74,7 +73,7 @@ export const vi = {
   "checkin.done": "Hoàn tất check-in",
   "checkin.success": "Đã thêm vào hộ chiếu của bạn!",
 
-  "passport.title": "Hộ chiếu Việt Nam",
+  "passport.title": "Hộ chiếu {country}",
   "passport.subtitle": "Hành trình của bạn",
   "passport.explored": "Đã khám phá",
   "passport.provinces": "{count} / {total} tỉnh",
@@ -109,14 +108,12 @@ export const vi = {
   "badge.hidden-gem": "Viên ngọc ẩn",
   "badge.ai-recommended": "AI gợi ý",
 
-  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.brand": "{flag} {country} Passport",
   "share.explored": "ĐÃ KHÁM PHÁ",
   "share.provinces": "tỉnh thành",
   "share.checkins": "Lượt check-in",
   "share.badges": "Huy hiệu",
-  "share.tagline": "Hành trình khám phá Việt Nam",
-
-  "common.vietnam": "Việt Nam",
+  "share.tagline": "Hành trình khám phá {country}",
   "dish.specialtyOf": "Đặc sản {place}",
   "dish.tasted": "Đã thưởng thức — lưu trong Passport",
   "dish.markTasted": "Tôi đã thưởng thức món này",

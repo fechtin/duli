@@ -2,7 +2,7 @@ import type { TranslationKey } from "./vi";
 
 export const ko: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
-  "app.tagline": "살아 숨 쉬는 한 장의 지도로 베트남을 만나다",
+  "app.tagline": "살아 숨 쉬는 한 장의 지도로 {country}을 만나다",
 
   "nav.explore": "둘러보기",
   "nav.search": "검색",
@@ -22,7 +22,7 @@ export const ko: Record<TranslationKey, string> = {
   "signal.perfect-weather": "좋은 날씨",
   "signal.editor-pick": "에디터 추천",
   "signal.ai-pick": "AI 추천",
-  "nav.home": "베트남 전체 보기로 돌아가기",
+  "nav.home": "{country} 전체 보기로 돌아가기",
 
   "map.reset": "전체 보기",
   "map.zoomIn": "확대",
@@ -30,7 +30,7 @@ export const ko: Record<TranslationKey, string> = {
   "map.regions": "권역",
   "map.provinces": "성·시",
   "map.hint": "드래그하여 이동 · 스크롤하여 확대 · 클릭하여 탐색",
-  "map.loading": "베트남 지도를 그리는 중…",
+  "map.loading": "{country} 지도를 그리는 중…",
 
   "search.placeholder": "성·시, 명소, 음식을 찾아보세요…",
   "search.empty": "결과가 없습니다. 다른 이름으로 검색해 보세요, 예: “사이공”.",
@@ -58,10 +58,9 @@ export const ko: Record<TranslationKey, string> = {
   "ai.title": "가이드",
   "ai.greeting": "안녕하세요! 저는 현지 가이드입니다. 지금 보고 계신 곳에 대해 무엇이든 물어보세요.",
   "ai.placeholder": "{context}에 대해 물어보세요…",
-  "ai.placeholderGeneric": "베트남에 대해 물어보세요…",
+  "ai.placeholderGeneric": "{country}에 대해 물어보세요…",
   "ai.send": "보내기",
   "ai.thinking": "답변을 작성하는 중…",
-  "ai.contextVietnam": "베트남",
 
   "checkin.title": "{name}에서 체크인",
   "checkin.step.photo": "사진",
@@ -75,7 +74,7 @@ export const ko: Record<TranslationKey, string> = {
   "checkin.done": "체크인 완료",
   "checkin.success": "여권에 추가되었습니다!",
 
-  "passport.title": "베트남 여권",
+  "passport.title": "{country} 여권",
   "passport.subtitle": "나의 여정",
   "passport.explored": "탐험 완료",
   "passport.provinces": "{count} / {total}개 성·시",
@@ -110,14 +109,12 @@ export const ko: Record<TranslationKey, string> = {
   "badge.hidden-gem": "숨은 명소",
   "badge.ai-recommended": "AI 추천",
 
-  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.brand": "{flag} {country} Passport",
   "share.explored": "탐험 완료",
   "share.provinces": "개 성·시",
   "share.checkins": "체크인",
   "share.badges": "배지",
-  "share.tagline": "베트남 탐험 여정",
-
-  "common.vietnam": "베트남",
+  "share.tagline": "{country} 탐험 여정",
   "dish.specialtyOf": "{place} 특산 요리",
   "dish.tasted": "맛봄 — 여권에 저장됨",
   "dish.markTasted": "이 요리를 맛봤어요",

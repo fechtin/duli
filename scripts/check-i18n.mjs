@@ -14,6 +14,7 @@ import { dirname, join, relative } from "node:path";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const LOCALES_DIR = join(ROOT, "src/lib/i18n/locales");
+const TAGS_DIR = join(ROOT, "src/lib/i18n/tags");
 const SCAN_DIR = join(ROOT, "src");
 
 // Vietnamese-specific letters (diacritics + đ). ASCII English never matches this.
@@ -37,14 +38,14 @@ function checkParity() {
   return problems;
 }
 
-function walk(dir, out = []) {
+function walk(dir, out = [], ext = ".tsx") {
   for (const name of readdirSync(dir)) {
     const p = join(dir, name);
     const st = statSync(p);
     if (st.isDirectory()) {
       if (name === "node_modules" || name === "i18n") continue; // skip the dictionaries themselves
-      walk(p, out);
-    } else if (name.endsWith(".tsx")) {
+      walk(p, out, ext);
+    } else if (name.endsWith(ext)) {
       out.push(p);
     }
   }
@@ -77,7 +78,46 @@ function checkHardcoded() {
   return problems;
 }
 
-const parity = checkParity();
+// Tag labels live in their own modules (src/lib/i18n/tags) because they are content
+// vocabulary, not chrome, and 265 keys would push the locale files past 500 LOC. Their keys
+// are raw tag strings — diacritics and spaces — so they need their own key regex.
+function tagKeysOf(file) {
+  const src = readFileSync(join(TAGS_DIR, file), "utf8");
+  const keys = new Set();
+  for (const m of src.matchAll(/^\s*"((?:[^"\\]|\\.)+)":/gm)) keys.add(m[1]);
+  return keys;
+}
+
+function checkTagParity() {
+  const vi = tagKeysOf("vi.ts");
+  const problems = [];
+  for (const loc of ["en", "ko", "ja", "zh"]) {
+    const keys = tagKeysOf(`${loc}.ts`);
+    for (const k of vi) if (!keys.has(k)) problems.push(`  tags/${loc}.ts is MISSING tag "${k}"`);
+    for (const k of keys) if (!vi.has(k)) problems.push(`  tags/${loc}.ts has EXTRA tag "${k}" (not in tags/vi.ts)`);
+  }
+  return problems;
+}
+
+// Parity alone would not catch the real failure: a tag added to src/data that no dictionary
+// knows about. That renders as the raw Vietnamese word in the Korean UI — the bug this
+// dictionary exists to prevent — so check coverage against the data itself.
+function checkTagCoverage() {
+  const known = tagKeysOf("vi.ts");
+  const seen = new Map(); // tag -> first file that used it
+  for (const file of walk(join(ROOT, "src/data"), [], ".ts")) {
+    for (const m of readFileSync(file, "utf8").matchAll(/^\s*tags:\s*\[([^\]]*)\]/gm)) {
+      for (const q of m[1].matchAll(/"((?:[^"\\]|\\.)*)"/g)) {
+        if (!seen.has(q[1])) seen.set(q[1], relative(ROOT, file));
+      }
+    }
+  }
+  return [...seen]
+    .filter(([tag]) => !known.has(tag))
+    .map(([tag, file]) => `  tag "${tag}" (${file}) has no entry in src/lib/i18n/tags/vi.ts`);
+}
+
+const parity = [...checkParity(), ...checkTagParity(), ...checkTagCoverage()];
 const hardcoded = checkHardcoded();
 
 if (parity.length) {

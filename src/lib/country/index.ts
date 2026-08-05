@@ -59,6 +59,11 @@ export function getCountry(code: CountryCode): CountryConfig {
   return COUNTRIES[code];
 }
 
+/** Country name in the UI locale — for copy that names the atlas, e.g. the passport title. */
+export function countryLabel(code: CountryCode, locale: Locale): string {
+  return COUNTRIES[code].label[locale] ?? COUNTRIES[code].label.vi;
+}
+
 /** Full URL of a country's geometry file (respects Vite's BASE_URL). */
 export function geoUrl(code: CountryCode): string {
   return `${import.meta.env.BASE_URL}${COUNTRIES[code].geoFile}`;

@@ -6,6 +6,8 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useI18n, useT } from "@/lib/i18n";
+import { useCountryStore } from "@/lib/store/useCountryStore";
+import { countryLabel } from "@/lib/country";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Button } from "@/components/ui/Button";
 import { panelTransition, springSoft } from "@/design/motion";
@@ -17,6 +19,7 @@ const steps = ["checkin.step.photo", "checkin.step.caption", "checkin.step.share
 export function CheckinFlow() {
   const t = useT();
   const { locale } = useI18n();
+  const country = useCountryStore((s) => s.country);
   const targetId = useUIStore((s) => s.checkinTarget);
   const close = useUIStore((s) => s.closeCheckin);
   const setPassportOpen = useUIStore((s) => s.setPassportOpen);
@@ -267,7 +270,7 @@ export function CheckinFlow() {
                       }}
                     >
                       <Share2 size={16} />
-                      {t("passport.title")}
+                      {t("passport.title", { country: countryLabel(country, locale) })}
                     </Button>
                     <Button className="flex-1" onClick={close}>
                       {t("panel.close")}

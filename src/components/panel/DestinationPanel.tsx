@@ -7,6 +7,7 @@ import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useI18n, useT } from "@/lib/i18n";
+import { tagLabel } from "@/lib/i18n/tags";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -169,7 +170,7 @@ export function DestinationPanel({ id }: { id: string }) {
 
       {/* 9. Ticket icon footer spacer */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 px-5 pb-8 pt-2 text-xs text-faint">
-        <Ticket size={13} /> {dest.tags.join(" · ")}
+        <Ticket size={13} /> {dest.tags.map((tag) => tagLabel(tag, locale)).join(" · ")}
       </motion.div>
     </div>
   );

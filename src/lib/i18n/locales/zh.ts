@@ -2,7 +2,7 @@ import type { TranslationKey } from "./vi";
 
 export const zh: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
-  "app.tagline": "在一张鲜活的地图上漫游越南",
+  "app.tagline": "在一張鮮活的地圖上漫遊{country}",
 
   "nav.explore": "探索",
   "nav.search": "搜索",
@@ -22,7 +22,7 @@ export const zh: Record<TranslationKey, string> = {
   "signal.perfect-weather": "天氣極佳",
   "signal.editor-pick": "編輯推薦",
   "signal.ai-pick": "AI推薦",
-  "nav.home": "返回越南全景",
+  "nav.home": "返回{country}全景",
 
   "map.reset": "全景",
   "map.zoomIn": "放大",
@@ -30,7 +30,7 @@ export const zh: Record<TranslationKey, string> = {
   "map.regions": "区域",
   "map.provinces": "省份",
   "map.hint": "拖动移动 · 滚动缩放 · 点击探索",
-  "map.loading": "正在绘制越南地图…",
+  "map.loading": "正在繪製{country}地圖…",
 
   "search.placeholder": "查找省份、景点、美食…",
   "search.empty": "未找到结果。换个名字试试，例如“西贡”。",
@@ -58,10 +58,9 @@ export const zh: Record<TranslationKey, string> = {
   "ai.title": "向导",
   "ai.greeting": "你好！我是你的本地向导。关于你正在浏览的地方，尽管问我吧。",
   "ai.placeholder": "询问关于{context}的事…",
-  "ai.placeholderGeneric": "向我了解越南…",
+  "ai.placeholderGeneric": "向我了解{country}…",
   "ai.send": "发送",
   "ai.thinking": "正在撰写回复…",
-  "ai.contextVietnam": "越南",
 
   "checkin.title": "在{name}打卡",
   "checkin.step.photo": "照片",
@@ -75,7 +74,7 @@ export const zh: Record<TranslationKey, string> = {
   "checkin.done": "完成打卡",
   "checkin.success": "已添加到你的护照！",
 
-  "passport.title": "越南护照",
+  "passport.title": "{country}護照",
   "passport.subtitle": "你的旅程",
   "passport.explored": "已探索",
   "passport.provinces": "{count} / {total} 个省份",
@@ -110,14 +109,12 @@ export const zh: Record<TranslationKey, string> = {
   "badge.hidden-gem": "小众秘境",
   "badge.ai-recommended": "AI 推荐",
 
-  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.brand": "{flag} {country} Passport",
   "share.explored": "已探索",
   "share.provinces": "个省份",
   "share.checkins": "打卡",
   "share.badges": "徽章",
-  "share.tagline": "探索越南之旅",
-
-  "common.vietnam": "越南",
+  "share.tagline": "探索{country}之旅",
   "dish.specialtyOf": "{place}特色美食",
   "dish.tasted": "已品尝 — 已存入护照",
   "dish.markTasted": "我品尝过这道菜",

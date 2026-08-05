@@ -2,7 +2,7 @@ import type { TranslationKey } from "./vi";
 
 export const en: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
-  "app.tagline": "Explore Vietnam through one living map",
+  "app.tagline": "Explore {country} through one living map",
 
   "nav.explore": "Explore",
   "nav.search": "Search",
@@ -22,7 +22,7 @@ export const en: Record<TranslationKey, string> = {
   "signal.perfect-weather": "Perfect weather",
   "signal.editor-pick": "Editor's pick",
   "signal.ai-pick": "AI pick",
-  "nav.home": "Back to all of Vietnam",
+  "nav.home": "Back to all of {country}",
 
   "map.reset": "Overview",
   "map.zoomIn": "Zoom in",
@@ -30,7 +30,7 @@ export const en: Record<TranslationKey, string> = {
   "map.regions": "regions",
   "map.provinces": "provinces",
   "map.hint": "Drag to move · Scroll to zoom · Click to explore",
-  "map.loading": "Drawing the map of Vietnam…",
+  "map.loading": "Drawing the map of {country}…",
 
   "search.placeholder": "Find a province, place, food…",
   "search.empty": "Nothing found. Try another name, e.g. “Saigon”.",
@@ -58,10 +58,9 @@ export const en: Record<TranslationKey, string> = {
   "ai.title": "Guide",
   "ai.greeting": "Hello! I'm your local guide. Ask me anything about the place you're viewing.",
   "ai.placeholder": "Ask about {context}…",
-  "ai.placeholderGeneric": "Ask me about Vietnam…",
+  "ai.placeholderGeneric": "Ask me about {country}…",
   "ai.send": "Send",
   "ai.thinking": "Writing a reply…",
-  "ai.contextVietnam": "Vietnam",
 
   "checkin.title": "Check in at {name}",
   "checkin.step.photo": "Photo",
@@ -75,7 +74,7 @@ export const en: Record<TranslationKey, string> = {
   "checkin.done": "Finish check-in",
   "checkin.success": "Added to your passport!",
 
-  "passport.title": "Vietnam Passport",
+  "passport.title": "{country} Passport",
   "passport.subtitle": "Your journey",
   "passport.explored": "Explored",
   "passport.provinces": "{count} / {total} provinces",
@@ -110,14 +109,12 @@ export const en: Record<TranslationKey, string> = {
   "badge.hidden-gem": "Hidden gem",
   "badge.ai-recommended": "AI pick",
 
-  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.brand": "{flag} {country} Passport",
   "share.explored": "EXPLORED",
   "share.provinces": "provinces",
   "share.checkins": "Check-ins",
   "share.badges": "Badges",
-  "share.tagline": "Exploring Vietnam",
-
-  "common.vietnam": "Vietnam",
+  "share.tagline": "Exploring {country}",
   "dish.specialtyOf": "{place} specialty",
   "dish.tasted": "Tasted — saved to Passport",
   "dish.markTasted": "I've tasted this dish",

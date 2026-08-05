@@ -12,6 +12,7 @@ import { useContentStore } from "@/lib/store/useContentStore";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { getRegions } from "@/lib/api/content";
 import { useT } from "@/lib/i18n";
+import { useCountryName } from "@/lib/country/useCountryName";
 import { cn } from "@/lib/utils/cn";
 import { Landmark } from "./landmarks";
 import { MapHint } from "./MapHint";
@@ -230,6 +231,7 @@ const ISLAND_FLAGS = [
 export function MapEngine() {
   const t = useT();
   const country = useCountryStore((s) => s.country);
+  const { country: countryName } = useCountryName();
   const [model, setModel] = useState<MapModel | null>(null);
   const [error, setError] = useState(false);
   const [vp, setVp] = useState<Box | null>(null);
@@ -404,7 +406,7 @@ export function MapEngine() {
       <div className="grid h-full place-items-center bg-map-sea">
         <div className="flex flex-col items-center gap-3">
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-primary" />
-          <p className="text-sm text-muted">{t("map.loading")}</p>
+          <p className="text-sm text-muted">{t("map.loading", { country: countryName })}</p>
         </div>
       </div>
     );
@@ -420,7 +422,7 @@ export function MapEngine() {
       ref={cam.containerRef}
       className="relative h-full w-full touch-none overflow-hidden bg-map-sea outline-none [contain:strict]"
       role="application"
-      aria-label={t("app.tagline")}
+      aria-label={t("app.tagline", { country: countryName })}
       tabIndex={0}
       {...cam.handlers}
       onKeyDown={(e) => {

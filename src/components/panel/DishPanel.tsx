@@ -5,6 +5,7 @@ import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
 import { useT, useI18n } from "@/lib/i18n";
+import { useCountryName } from "@/lib/country/useCountryName";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { cn } from "@/lib/utils/cn";
@@ -33,6 +34,7 @@ const LABEL_KEY: Record<RestaurantLabel, string> = {
 export function DishPanel() {
   const t = useT();
   const { locale } = useI18n();
+  const { country: countryName } = useCountryName();
   const dish = useFoodStore((s) => s.dish);
   const loading = useFoodStore((s) => s.loading);
   const openDishId = useFoodStore((s) => s.openDishId);
@@ -72,7 +74,7 @@ export function DishPanel() {
         >
           <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-white/85">
             <UtensilsCrossed size={13} />
-            {t("dish.specialtyOf", { place: origin ? origin.name : t("common.vietnam") })}
+            {t("dish.specialtyOf", { place: origin ? origin.name : countryName })}
           </div>
           <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
             {dish.emoji} {dish.name}

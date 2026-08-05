@@ -11,6 +11,7 @@ import { useContentStore } from "@/lib/store/useContentStore";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { useT, useI18n } from "@/lib/i18n";
+import { countryLabel } from "@/lib/country";
 import { panelTransition } from "@/design/motion";
 import { Button } from "@/components/ui/Button";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
@@ -110,7 +111,7 @@ export function PassportPanel() {
           >
             {/* Header — title + share + close, same bg as body */}
             <div className="flex items-center justify-between px-5 py-3.5" style={{ background: "var(--pp-surface)", borderBottom: "1px solid var(--pp-border)" }}>
-              <p className="font-display text-base font-semibold" style={{ color: "var(--pp-text)" }}>{t("passport.title")}</p>
+              <p className="font-display text-base font-semibold" style={{ color: "var(--pp-text)" }}>{t("passport.title", { country: countryLabel(country, locale) })}</p>
               <div className="flex items-center gap-2">
                 <button data-html2canvas-ignore="true" onClick={onShare} disabled={checkins.length === 0 || exporting}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-opacity hover:opacity-80 disabled:opacity-40"

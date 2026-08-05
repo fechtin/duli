@@ -7,6 +7,7 @@ import { useMapStore } from "@/lib/store/useMapStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { fetchDestination, fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
 import { useAsync } from "@/lib/utils/useAsync";
+import { useCountryName } from "@/lib/country/useCountryName";
 import { useI18n, useT } from "@/lib/i18n";
 import { Chip } from "@/components/ui/Chip";
 import { panelTransition } from "@/design/motion";
@@ -15,6 +16,7 @@ import { cn } from "@/lib/utils/cn";
 export function AIChat() {
   const t = useT();
   const { locale } = useI18n();
+  const { country: countryName } = useCountryName();
   const open = useUIStore((s) => s.aiOpen);
   const setOpen = useUIStore((s) => s.setAiOpen);
   const selectedProvince = useMapStore((s) => s.selectedProvince);
@@ -45,7 +47,7 @@ export function AIChat() {
     [locale, selectedDestination, provinceSlug, dest, bundle],
   );
 
-  const contextLabel = lightDest?.name ?? provinceName ?? t("ai.contextVietnam");
+  const contextLabel = lightDest?.name ?? provinceName ?? countryName;
 
   const [messages, setMessages] = useState<AIMessage[]>([]);
   const [input, setInput] = useState("");

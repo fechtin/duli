@@ -2,7 +2,7 @@ import type { TranslationKey } from "./vi";
 
 export const ja: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
-  "app.tagline": "息づく一枚の地図でベトナムをめぐる",
+  "app.tagline": "息づく一枚の地図で{country}をめぐる",
 
   "nav.explore": "さがす",
   "nav.search": "検索",
@@ -22,7 +22,7 @@ export const ja: Record<TranslationKey, string> = {
   "signal.perfect-weather": "好天",
   "signal.editor-pick": "編集部おすすめ",
   "signal.ai-pick": "AIのおすすめ",
-  "nav.home": "ベトナム全体に戻る",
+  "nav.home": "{country}全体に戻る",
 
   "map.reset": "全体表示",
   "map.zoomIn": "拡大",
@@ -30,7 +30,7 @@ export const ja: Record<TranslationKey, string> = {
   "map.regions": "地方",
   "map.provinces": "省",
   "map.hint": "ドラッグで移動 · スクロールで拡大 · クリックでさがす",
-  "map.loading": "ベトナムの地図を描いています…",
+  "map.loading": "{country}の地図を描いています…",
 
   "search.placeholder": "省、スポット、グルメをさがす…",
   "search.empty": "見つかりませんでした。別の名前でお試しください。例：「サイゴン」。",
@@ -58,10 +58,9 @@ export const ja: Record<TranslationKey, string> = {
   "ai.title": "ガイド",
   "ai.greeting": "こんにちは！私はあなたの現地ガイドです。今ご覧の場所について、なんでも聞いてください。",
   "ai.placeholder": "{context}について聞く…",
-  "ai.placeholderGeneric": "ベトナムについて聞いてみる…",
+  "ai.placeholderGeneric": "{country}について聞いてみる…",
   "ai.send": "送信",
   "ai.thinking": "返信を書いています…",
-  "ai.contextVietnam": "ベトナム",
 
   "checkin.title": "{name}でチェックイン",
   "checkin.step.photo": "写真",
@@ -75,7 +74,7 @@ export const ja: Record<TranslationKey, string> = {
   "checkin.done": "チェックインを完了",
   "checkin.success": "パスポートに追加しました！",
 
-  "passport.title": "ベトナム・パスポート",
+  "passport.title": "{country}・パスポート",
   "passport.subtitle": "あなたの旅",
   "passport.explored": "探訪済み",
   "passport.provinces": "{count} / {total}省",
@@ -110,14 +109,12 @@ export const ja: Record<TranslationKey, string> = {
   "badge.hidden-gem": "穴場",
   "badge.ai-recommended": "AIおすすめ",
 
-  "share.brand": "🇻🇳 Vietnam Passport",
+  "share.brand": "{flag} {country} Passport",
   "share.explored": "探訪済み",
   "share.provinces": "省・市",
   "share.checkins": "チェックイン",
   "share.badges": "バッジ",
-  "share.tagline": "ベトナム探訪の旅",
-
-  "common.vietnam": "ベトナム",
+  "share.tagline": "{country}探訪の旅",
   "dish.specialtyOf": "{place}の名物",
   "dish.tasted": "実食済み — パスポートに保存",
   "dish.markTasted": "この料理を食べました",

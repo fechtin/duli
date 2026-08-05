@@ -5,6 +5,7 @@ import { destinationsKr } from "@/data/kr";
 import { localizeSeasonalState } from "@/lib/living/livingI18n";
 import type { Locale } from "@/lib/i18n";
 import type { CountryCode } from "@/lib/types";
+import { countryLabel } from "@/lib/country";
 
 /** Translate fn shape (matches i18n `t`) so this pure module stays hook-free. */
 type TFn = (key: string, params?: Record<string, string | number>) => string;
@@ -76,7 +77,7 @@ export function generateBrief(t: TFn, locale: Locale, country: CountryCode = "vn
             name: placeName(seasonal[0].destinationId),
             state: stateOf(seasonal[0]),
           })
-        : t("brief.aiRec.single", { month, name: isKr ? t("country.kr") : t("common.vietnam"), state: "" });
+        : t("brief.aiRec.single", { month, name: countryLabel(country, locale), state: "" });
 
   return {
     period,
