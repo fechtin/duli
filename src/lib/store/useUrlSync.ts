@@ -2,14 +2,20 @@ import { useCallback, useEffect, useRef } from "react";
 import { useMapStore } from "./useMapStore";
 import { useFoodStore } from "./useFoodStore";
 import { useContentStore, findDestinationBySlug } from "./useContentStore";
+import { useCountryStore } from "./useCountryStore";
 import { getProvinceMeta } from "@/lib/api/content";
+import { isCountryCode } from "@/lib/country";
+import type { CountryCode } from "@/lib/types";
 
 /**
  * Two-way sync between selection state and the URL (Bible 005 §3.3 — navigate by camera,
- * then sync the URL). Format: /{province} or /{province}/{destination}, with an open dish
- * carried as ?dish=<id> on top of either. Each deeper layer PUSHES a history entry so the
- * browser Back button steps back one layer (dish → destination → province → map); shallower
- * moves REPLACE, so closing never leaves dangling forward entries.
+ * then sync the URL). Format: /{country}/{province}/{destination}, with an open dish carried
+ * as ?dish=<id> on top of any of them. Each deeper layer PUSHES a history entry so the browser
+ * Back button steps back one layer (dish → destination → province → map); shallower moves
+ * REPLACE, so closing never leaves dangling forward entries.
+ *
+ * The country prefix is the source of truth for which atlas is on screen; the persisted
+ * useCountryStore value only decides where a bare "/" lands.
  */
 
 /** Layer depth of the current selection, used to decide push vs replace. */
@@ -20,35 +26,61 @@ function depthOf(hasDish: boolean, hasDest: boolean, hasProvince: boolean) {
   return 0;
 }
 
+/**
+ * Split the path into country + selection. Legacy links minted before the country prefix
+ * (/{province}/{destination}, still live in the sitemap and in shared links) resolve against
+ * Vietnam and get rewritten in place.
+ */
+function parsePath(pathname: string): { country: CountryCode; segments: string[]; legacy: boolean } {
+  const segments = pathname.split("/").filter(Boolean);
+  if (isCountryCode(segments[0])) {
+    return { country: segments[0], segments: segments.slice(1), legacy: false };
+  }
+  if (segments[0] && getProvinceMeta(segments[0], "vn")) {
+    return { country: "vn", segments, legacy: true };
+  }
+  return { country: useCountryStore.getState().country, segments: [], legacy: false };
+}
+
 function currentUrlDepth() {
-  const [province, dest] = window.location.pathname.split("/").filter(Boolean);
+  const { segments } = parsePath(window.location.pathname);
   const dish = new URLSearchParams(window.location.search).has("dish");
-  return depthOf(dish, Boolean(dest), Boolean(province));
+  return depthOf(dish, Boolean(segments[1]), Boolean(segments[0]));
 }
 
 export function useUrlSync() {
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const openDishId = useFoodStore((s) => s.openDishId);
+  const country = useCountryStore((s) => s.country);
   const ready = useContentStore((s) => s.ready);
   const applied = useRef(false);
   const prevDepth = useRef(currentUrlDepth());
+  /** Destination slug from a deep link that content hasn't loaded yet (see the write-back effect). */
+  const pendingDest = useRef<string | null>(null);
 
   const applyFromUrl = useCallback(() => {
-    const [provinceSlug, destSlug] = window.location.pathname.split("/").filter(Boolean);
+    const { country: cc, segments, legacy } = parsePath(window.location.pathname);
+    const [provinceSlug, destSlug] = segments;
     const dishId = new URLSearchParams(window.location.search).get("dish");
     const map = useMapStore.getState();
     const food = useFoodStore.getState();
     applied.current = true;
 
-    if (provinceSlug && getProvinceMeta(provinceSlug)) {
+    // Country first — province lookups below are resolved against the active atlas.
+    useCountryStore.getState().setCountry(cc);
+
+    pendingDest.current = null;
+    if (provinceSlug && getProvinceMeta(provinceSlug, cc)) {
       if (destSlug) {
         const d = findDestinationBySlug(provinceSlug, destSlug);
         if (d) {
           map.selectDestination(d.id, provinceSlug);
           map.requestFocus({ kind: "point", lng: d.lng, lat: d.lat, zoom: 7 });
         } else {
-          // destination not loaded yet — fall back to the province until content is ready
+          // Content isn't loaded yet — show the province, but remember the destination so the
+          // write-back effect doesn't strip it from the URL before we can resolve it.
+          pendingDest.current = destSlug;
           map.selectProvince(provinceSlug);
         }
       } else {
@@ -63,6 +95,11 @@ export function useUrlSync() {
       if (food.openDishId !== dishId) food.openDish(dishId);
     } else if (food.openDishId) {
       food.closeDish();
+    }
+
+    // Upgrade a legacy (country-less) link in place, keeping the same history entry.
+    if (legacy) {
+      window.history.replaceState(null, "", `/vn${window.location.pathname}${window.location.search}`);
     }
 
     prevDepth.current = currentUrlDepth();
@@ -85,16 +122,21 @@ export function useUrlSync() {
   useEffect(() => {
     if (!applied.current) return;
     const live = useMapStore.getState();
+    // A deep link like /vn/quang-nam/hoi-an-ancient-town lands before the destination list has
+    // loaded; writing back now would drop the destination segment and the retry (once content
+    // is ready) would find nothing left to resolve.
+    if (pendingDest.current && !live.selectedDestination) return;
+    const cc = useCountryStore.getState().country;
     const dishId = useFoodStore.getState().openDishId;
 
-    let path = "/";
+    let path = `/${cc}`;
     if (live.selectedDestination) {
       const d = useContentStore.getState().destinations.find((x) => x.id === live.selectedDestination);
-      if (d) path = `/${d.provinceSlug}/${d.slug}`;
+      if (d) path = `/${cc}/${d.provinceSlug}/${d.slug}`;
     } else if (live.selectedProvince) {
-      path = `/${live.selectedProvince}`;
+      path = `/${cc}/${live.selectedProvince}`;
     }
-    if (dishId && path !== "/") path += `?dish=${dishId}`;
+    if (dishId) path += `?dish=${dishId}`;
 
     const nextDepth = depthOf(Boolean(dishId), Boolean(live.selectedDestination), Boolean(live.selectedProvince));
     const current = window.location.pathname + window.location.search;
@@ -104,5 +146,5 @@ export function useUrlSync() {
       else window.history.replaceState(null, "", path);
     }
     prevDepth.current = nextDepth;
-  }, [selectedProvince, selectedDestination, openDishId]);
+  }, [selectedProvince, selectedDestination, openDishId, country]);
 }

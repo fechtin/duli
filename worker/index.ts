@@ -91,28 +91,33 @@ api.get("/health", (c) => ok(c, { status: "ok" }, 0));
 
 // ── Content from D1 ───────────────────────────────────────────
 const loc = (c: { req: { query: (k: string) => string | undefined } }) => c.req.query("locale");
+/** Which atlas the request is about; Vietnam stays the default so old clients keep working. */
+const cty = (c: { req: { query: (k: string) => string | undefined } }) => {
+  const q = c.req.query("country");
+  return q === "kr" ? "kr" : "vn";
+};
 
-api.get("/regions", async (c) => ok(c, await db.getRegions(c.env.DB), 3600));
-api.get("/provinces", async (c) => ok(c, await db.getProvinces(c.env.DB, loc(c)), 3600));
-api.get("/destinations", async (c) => ok(c, await db.getDestinationsLight(c.env.DB, loc(c)), 600));
+api.get("/regions", async (c) => ok(c, await db.getRegions(c.env.DB, cty(c)), 3600));
+api.get("/provinces", async (c) => ok(c, await db.getProvinces(c.env.DB, loc(c), cty(c)), 3600));
+api.get("/destinations", async (c) => ok(c, await db.getDestinationsLight(c.env.DB, loc(c), cty(c)), 600));
 
 api.get("/province/:slug", async (c) => {
-  const bundle = await db.getProvinceBundle(c.env.DB, c.req.param("slug"), loc(c));
+  const bundle = await db.getProvinceBundle(c.env.DB, c.req.param("slug"), loc(c), cty(c));
   return bundle ? ok(c, bundle, 600) : fail(c, "not_found", "Province not found", 404);
 });
 
 api.get("/destination/:id", async (c) => {
-  const d = await db.getDestination(c.env.DB, c.req.param("id"), loc(c));
+  const d = await db.getDestination(c.env.DB, c.req.param("id"), loc(c), cty(c));
   return d ? ok(c, d, 600) : fail(c, "not_found", "Destination not found", 404);
 });
 
 // ── Food Explorer (Bible 026) ─────────────────────────────────
 api.get("/food/dishes", async (c) =>
-  ok(c, await db.getDishes(c.env.DB, c.req.query("province") || undefined, loc(c)), 86400),
+  ok(c, await db.getDishes(c.env.DB, c.req.query("province") || undefined, loc(c), cty(c)), 86400),
 );
 
 api.get("/food/dish/:id", async (c) => {
-  const d = await db.getDish(c.env.DB, c.req.param("id"), loc(c));
+  const d = await db.getDish(c.env.DB, c.req.param("id"), loc(c), cty(c));
   return d ? ok(c, d, 43200) : fail(c, "not_found", "Dish not found", 404);
 });
 
@@ -121,20 +126,21 @@ api.get("/search", async (c) => {
   const q = (c.req.query("q") ?? "").toLowerCase().trim();
   if (!q) return ok(c, [], 60);
   const like = `%${q}%`;
+  const country = cty(c);
   const provinces = await c.env.DB.prepare(
-    "SELECT slug, name, region_name FROM provinces WHERE lower(name) LIKE ? OR lower(name_en) LIKE ? LIMIT 6",
+    "SELECT slug, name, region_name FROM provinces WHERE country = ? AND (lower(name) LIKE ? OR lower(name_en) LIKE ?) LIMIT 6",
   )
-    .bind(like, like)
+    .bind(country, like, like)
     .all<{ slug: string; name: string; region_name: string }>();
   const dests = await c.env.DB.prepare(
-    "SELECT id, name, province_slug FROM destinations WHERE lower(name) LIKE ? OR lower(name_en) LIKE ? LIMIT 8",
+    "SELECT id, name, province_slug FROM destinations WHERE country = ? AND (lower(name) LIKE ? OR lower(name_en) LIKE ?) LIMIT 8",
   )
-    .bind(like, like)
+    .bind(country, like, like)
     .all<{ id: string; name: string; province_slug: string }>();
   const dishRows = await c.env.DB.prepare(
-    "SELECT id, name, emoji, origin_province FROM dishes WHERE lower(name) LIKE ? OR lower(name_en) LIKE ? LIMIT 5",
+    "SELECT id, name, emoji, origin_province FROM dishes WHERE country = ? AND (lower(name) LIKE ? OR lower(name_en) LIKE ?) LIMIT 5",
   )
-    .bind(like, like)
+    .bind(country, like, like)
     .all<{ id: string; name: string; emoji: string | null; origin_province: string | null }>();
   return ok(c, [
     ...provinces.results.map((p) => ({ kind: "province", id: p.slug, title: p.name, subtitle: p.region_name, provinceSlug: p.slug })),
@@ -145,10 +151,15 @@ api.get("/search", async (c) => {
 
 // ── AI ────────────────────────────────────────────────────────
 async function aiContext(env: Env, body: Record<string, unknown>): Promise<AIContext> {
+  const country = body.country === "kr" ? "kr" : "vn";
   const destinationId = body.destinationId as string | undefined;
-  const destination = destinationId ? (await db.getDestination(env.DB, destinationId)) ?? undefined : undefined;
+  const destination = destinationId
+    ? (await db.getDestination(env.DB, destinationId, undefined, country)) ?? undefined
+    : undefined;
   const provinceSlug = (body.provinceSlug as string | undefined) ?? destination?.provinceSlug;
-  const provinceBundle = provinceSlug ? (await db.getProvinceBundle(env.DB, provinceSlug)) ?? undefined : undefined;
+  const provinceBundle = provinceSlug
+    ? (await db.getProvinceBundle(env.DB, provinceSlug, undefined, country)) ?? undefined
+    : undefined;
   return { locale: (body.locale as Locale) ?? "vi", destinationId, provinceSlug, destination, provinceBundle };
 }
 
@@ -203,6 +214,7 @@ interface CheckinRow {
   photo_seed: string;
   photo_url: string | null;
   created_at: number;
+  country: string;
 }
 
 api.get("/me/checkins", async (c) => {
@@ -210,13 +222,14 @@ api.get("/me/checkins", async (c) => {
   if (!uid) return fail(c, "unauthorized", "Login required", 401);
 
   const rows = await c.env.DB.prepare(
-    "SELECT id, destination_id, destination_name, province_slug, caption, photo_seed, photo_url, created_at FROM checkins WHERE uid = ? ORDER BY created_at DESC",
+    "SELECT id, destination_id, destination_name, province_slug, caption, photo_seed, photo_url, created_at, country FROM checkins WHERE uid = ? ORDER BY created_at DESC",
   )
     .bind(uid)
     .all<CheckinRow>();
 
   const checkins = rows.results.map((r) => ({
     id: r.id,
+    country: r.country ?? "vn",
     destinationId: r.destination_id,
     destinationName: r.destination_name,
     provinceSlug: r.province_slug,
@@ -235,18 +248,18 @@ api.post("/me/checkins", async (c) => {
   const body = await c.req.json<{
     id: string; destinationId: string; destinationName: string;
     provinceSlug: string; caption: string; photoSeed: string;
-    photoUrl?: string; createdAt: number;
+    photoUrl?: string; createdAt: number; country?: string;
   }>();
 
   await c.env.DB.prepare(
     `INSERT OR REPLACE INTO checkins
-       (id, uid, destination_id, destination_name, province_slug, caption, photo_seed, photo_url, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+       (id, uid, destination_id, destination_name, province_slug, caption, photo_seed, photo_url, created_at, country)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   )
     .bind(
       body.id, uid, body.destinationId, body.destinationName,
       body.provinceSlug, body.caption, body.photoSeed,
-      body.photoUrl ?? null, body.createdAt,
+      body.photoUrl ?? null, body.createdAt, body.country === "kr" ? "kr" : "vn",
     )
     .all();
 
@@ -265,6 +278,17 @@ api.delete("/me/checkins/:id", async (c) => {
 api.notFound((c) => fail(c, "not_found", "Unknown endpoint", 404));
 
 app.all("*", async (c) => {
+  const url = new URL(c.req.url);
+  const first = url.pathname.split("/").filter(Boolean)[0];
+  // Links minted before the country prefix (/{province}/…) are indexed and shared — send
+  // crawlers to the canonical /vn/… form instead of letting them 404 into the SPA.
+  if (first && first !== "vn" && first !== "kr" && !first.includes(".")) {
+    const row = await c.env.DB.prepare("SELECT slug FROM provinces WHERE slug = ? AND country = 'vn'")
+      .bind(first)
+      .first<{ slug: string }>();
+    if (row) return c.redirect(`/vn${url.pathname}${url.search}`, 301);
+  }
+
   const res = await c.env.ASSETS.fetch(c.req.raw);
   // Only touch the SPA shell (index.html); static assets pass through untouched.
   if (!(res.headers.get("content-type") ?? "").includes("text/html")) return res;

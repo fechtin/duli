@@ -1,23 +1,34 @@
 // Generate sitemap.xml + robots.txt from the content (Bible 004 §10).
 // Run: npm run seo:build   (uses Node's TS type-stripping to import the seed module)
+//
+// URLs carry the country prefix (/vn, /kr). Country-less links minted before the Korea
+// atlas still work — the Worker 301s them to /vn/… — but only the canonical form is listed.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { destinations } from "../src/data/destinations.ts";
+import { destinationsKr } from "../src/data/kr/index.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const r = (p) => resolve(root, p);
 
 const SITE = (process.env.SITE_URL || "https://vietnam-atlas.pages.dev").replace(/\/$/, "");
-const geo = JSON.parse(readFileSync(r("src/data/generated/geo-meta.json"), "utf8"));
+const geoMeta = (cc) => JSON.parse(readFileSync(r(`src/data/generated/geo-meta.${cc}.json`), "utf8"));
 
-const activeProvinces = new Set(destinations.map((d) => d.provinceSlug));
+const ATLASES = [
+  { cc: "vn", geo: geoMeta("vn"), destinations },
+  { cc: "kr", geo: geoMeta("kr"), destinations: destinationsKr },
+];
 
 const urls = ["/"];
-for (const p of geo.provinces) if (activeProvinces.has(p.slug)) urls.push(`/${p.slug}`);
-for (const d of destinations) urls.push(`/${d.provinceSlug}/${d.slug}`);
+for (const { cc, geo, destinations: dests } of ATLASES) {
+  const activeProvinces = new Set(dests.map((d) => d.provinceSlug));
+  urls.push(`/${cc}`);
+  for (const p of geo.provinces) if (activeProvinces.has(p.slug)) urls.push(`/${cc}/${p.slug}`);
+  for (const d of dests) urls.push(`/${cc}/${d.provinceSlug}/${d.slug}`);
+}
 
 const body = urls
   .map((u) => `  <url><loc>${SITE}${u}</loc><changefreq>weekly</changefreq></url>`)

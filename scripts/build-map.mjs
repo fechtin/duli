@@ -1,21 +1,28 @@
-// Build the web-ready Vietnam map data.
-// Input : data/geo/vn-provinces.simplified.geojson (mapshaper output)
-// Output: public/geo/vn-provinces.json   (geometry + props, lazy-loaded by the map)
-//         src/data/generated/geo-meta.json (provinces + regions, no geometry)
+// Build the web-ready map data for one country.
+// Input : the simplified GeoJSON named by data/registry/<cc>.mjs (mapshaper output)
+// Output: public/geo/<cc>-provinces.json      (geometry + props, lazy-loaded by the map)
+//         src/data/generated/geo-meta.<cc>.json (provinces + regions, no geometry)
 //
-// Run: npm run data:build
+// Run: npm run data:build          (vn, the default)
+//      npm run data:build -- kr    (or: node scripts/build-map.mjs kr)
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { geoArea, geoCentroid } from "d3-geo";
-import { regions, provinces, mainlandBounds } from "../data/registry/vn.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const r = (p) => resolve(root, p);
 
-const src = JSON.parse(readFileSync(r("data/geo/vn-provinces.simplified.geojson"), "utf8"));
+const cc = (process.argv[2] ?? "vn").toLowerCase();
+const registry = await import(`../data/registry/${cc}.mjs`);
+const { regions, provinces, mainlandBounds, source } = registry;
+// Older registries (vn) predate the `source` export — fall back to their historical layout.
+const srcFile = source?.file ?? `data/geo/${cc}-provinces.simplified.geojson`;
+const nameProp = source?.nameProp ?? "Name";
+
+const src = JSON.parse(readFileSync(r(srcFile), "utf8"));
 const regionById = Object.fromEntries(regions.map((x) => [x.id, x]));
 
 // Merge features that share a slug (e.g. mainland + offshore islands) into one MultiPolygon.
@@ -24,9 +31,9 @@ const bySlug = new Map();
 const unmatched = new Set();
 
 for (const f of src.features) {
-  const reg = provinces[f.properties?.Name];
+  const reg = provinces[f.properties?.[nameProp]];
   if (!reg) {
-    unmatched.add(f.properties?.Name ?? "(no name)");
+    unmatched.add(f.properties?.[nameProp] ?? "(no name)");
     continue;
   }
   const rawPolys =
@@ -75,6 +82,8 @@ for (const { meta, polygons } of [...bySlug.values()].sort((a, b) => a.meta.slug
     regionName: region?.name ?? "",
     color: region?.color ?? "#888",
     centroid,
+    // Native script name, when the romanized `name` isn't what locals read (e.g. 서울특별시).
+    ...(meta.nameKo ? { nameKo: meta.nameKo } : {}),
   };
   features.push({
     type: "Feature",
@@ -93,11 +102,13 @@ const geo = {
 mkdirSync(r("public/geo"), { recursive: true });
 mkdirSync(r("src/data/generated"), { recursive: true });
 
-writeFileSync(r("public/geo/vn-provinces.json"), JSON.stringify(geo));
+const geoPath = `public/geo/${cc}-provinces.json`;
+writeFileSync(r(geoPath), JSON.stringify(geo));
 writeFileSync(
-  r("src/data/generated/geo-meta.json"),
+  r(`src/data/generated/geo-meta.${cc}.json`),
   JSON.stringify(
     {
+      country: cc,
       bounds: mainlandBounds,
       regions,
       provinces: provinceMeta,
@@ -107,7 +118,7 @@ writeFileSync(
   ),
 );
 
-const size = readFileSync(r("public/geo/vn-provinces.json")).length;
+const size = readFileSync(r(geoPath)).length;
 console.log(
-  `[build-map] ${features.length} provinces, ${regions.length} regions -> public/geo/vn-provinces.json (${(size / 1024).toFixed(0)} KB)`,
+  `[build-map] ${cc}: ${features.length} provinces, ${regions.length} regions -> ${geoPath} (${(size / 1024).toFixed(0)} KB)`,
 );

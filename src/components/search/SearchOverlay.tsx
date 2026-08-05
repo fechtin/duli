@@ -4,6 +4,7 @@ import { Search as SearchIcon, MapPin, X, Compass, UtensilsCrossed } from "lucid
 import { searchContent, type SearchResult } from "@/lib/api/search";
 import { getProvinces } from "@/lib/api/content";
 import { fetchDishes } from "@/lib/api/food";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useAsync } from "@/lib/utils/useAsync";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useContentStore } from "@/lib/store/useContentStore";
@@ -40,7 +41,8 @@ export function SearchOverlay() {
     const m = provBySlug.get(r.id);
     return m ? t(`region.${m.regionId}`) : r.subtitle;
   };
-  const { data: dishes } = useAsync(() => fetchDishes(locale), [locale]);
+  const country = useCountryStore((s) => s.country);
+  const { data: dishes } = useAsync(() => fetchDishes(locale, country), [locale, country]);
   const results = useMemo(
     () => (query.trim() ? searchContent(query, provinces, destinations, 8, dishes ?? []) : []),
     [query, provinces, destinations, dishes],

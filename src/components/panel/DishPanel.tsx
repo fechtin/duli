@@ -37,7 +37,7 @@ export function DishPanel() {
   const loading = useFoodStore((s) => s.loading);
   const openDishId = useFoodStore((s) => s.openDishId);
   const openDish = useFoodStore((s) => s.openDish);
-  const tasted = usePassportStore((s) => s.tastedDishes);
+  const tasted = usePassportStore((s) => s.tasted);
   const toggleTasted = usePassportStore((s) => s.toggleTasted);
 
   // Refetch the open dish in the new language when the user switches locale.
@@ -56,7 +56,7 @@ export function DishPanel() {
     );
 
   const origin = getProvinceMeta(dish.originProvince);
-  const isTasted = tasted.includes(dish.id);
+  const isTasted = tasted.some((d) => d.id === dish.id);
 
   return (
     <div>

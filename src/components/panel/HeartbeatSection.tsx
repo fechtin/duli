@@ -82,7 +82,7 @@ export function HeartbeatSection({ destinationId }: Props) {
                   className="flex items-center gap-1 rounded-full bg-surface px-2.5 py-1 text-[11px] font-medium text-foreground shadow-[var(--shadow-e1)]"
                 >
                   <span className="text-[13px]">{meta.icon}</span>
-                  {meta.label}
+                  {t(`signal.${sig}`)}
                 </span>
               );
             })}
@@ -113,7 +113,7 @@ export function HeartbeatSection({ destinationId }: Props) {
             </p>
           )}
           {hb.weatherLabel && (
-            <p className="type-caption text-foreground/80">☀ {hb.weatherLabel}</p>
+            <p className="type-caption text-foreground/80">☀ {t("signal.perfect-weather")}</p>
           )}
         </div>
       )}

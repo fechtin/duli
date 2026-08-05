@@ -1,11 +1,13 @@
 /**
- * Theme-aware region palette (025 §1.1–1.2). geo-meta.json keeps one canonical color per
+ * Theme-aware region palette (025 §1.1–1.2). geo-meta.<cc>.json keeps one canonical color per
  * region for data purposes; rendering uses these instead so light and dark ("Night Atlas")
- * each get a tuned, harmonized set. Keys match region ids in data/registry/vn.mjs.
+ * each get a tuned, harmonized set. Keys match region ids in data/registry/<cc>.mjs — those
+ * ids are unique ACROSS countries, so one flat table serves every atlas.
  */
 export type RegionPaletteEntry = { light: string; dark: string };
 
 export const REGION_PALETTE: Record<string, RegionPaletteEntry> = {
+  // Vietnam
   "northeast":           { light: "#3f9070", dark: "#245043" }, // emerald forest
   "northwest":           { light: "#6ba24f", dark: "#31523a" }, // moss highlands
   "red-river-delta":     { light: "#dcae44", dark: "#57492a" }, // rice gold
@@ -14,6 +16,14 @@ export const REGION_PALETTE: Record<string, RegionPaletteEntry> = {
   "central-highlands":   { light: "#b98d4c", dark: "#4f402a" }, // sunlit ochre
   "southeast":           { light: "#cd9350", dark: "#55432c" }, // warm sand
   "mekong-delta":        { light: "#54b48c", dark: "#285d4e" }, // river green
+  // South Korea
+  "sudogwon":            { light: "#dcae44", dark: "#57492a" }, // palace gold (capital)
+  "gangwon":             { light: "#3f9070", dark: "#245043" }, // pine ranges
+  "chungcheong":         { light: "#6ba24f", dark: "#31523a" }, // orchard green
+  "honam":               { light: "#54b48c", dark: "#285d4e" }, // rice plains
+  "gyeongbuk":           { light: "#b98d4c", dark: "#4f402a" }, // Silla ochre
+  "gyeongnam":           { light: "#5497b3", dark: "#26495c" }, // south sea blue
+  "jeju":                { light: "#3aa9bd", dark: "#265761" }, // volcanic turquoise
 };
 
 /** Coastline glow (two layered strokes — no SVG blur, GPU-cheap). */

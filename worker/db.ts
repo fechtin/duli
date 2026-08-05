@@ -36,6 +36,8 @@ interface DestRow {
   gallery: string;
   nearby: string;
   featured: number;
+  source_url: string | null;
+  verified_at: string | null;
   i18n: string | null;
 }
 
@@ -106,6 +108,8 @@ function toDestination(r: DestRow, locale?: string): Destination {
         : gallery,
     nearby: parse(r.nearby, []),
     featured: !!r.featured,
+    ...(r.source_url ? { sourceUrl: r.source_url } : {}),
+    ...(r.verified_at ? { verifiedAt: r.verified_at } : {}),
   };
 }
 
@@ -122,26 +126,29 @@ function toProvinceMeta(r: ProvRow, locale?: string): ProvinceMeta {
   };
 }
 
-export async function getRegions(db: D1Like): Promise<Region[]> {
+export async function getRegions(db: D1Like, country = "vn"): Promise<Region[]> {
   const { results } = await db
-    .prepare("SELECT id, name, name_en, color FROM regions ORDER BY display_order")
+    .prepare("SELECT id, name, name_en, color FROM regions WHERE country = ? ORDER BY display_order")
+    .bind(country)
     .all<{ id: string; name: string; name_en: string; color: string }>();
   return results.map((r) => ({ id: r.id as Region["id"], name: r.name, nameEn: r.name_en, color: r.color }));
 }
 
-export async function getProvinces(db: D1Like, locale?: string): Promise<ProvinceMeta[]> {
+export async function getProvinces(db: D1Like, locale?: string, country = "vn"): Promise<ProvinceMeta[]> {
   const { results } = await db
-    .prepare("SELECT * FROM provinces ORDER BY name")
+    .prepare("SELECT * FROM provinces WHERE country = ? ORDER BY name")
+    .bind(country)
     .all<ProvRow>();
   return results.map((r) => toProvinceMeta(r, locale));
 }
 
 /** Lightweight list for map markers + client search index. */
-export async function getDestinationsLight(db: D1Like, locale?: string) {
+export async function getDestinationsLight(db: D1Like, locale?: string, country = "vn") {
   const { results } = await db
     .prepare(
-      "SELECT id, slug, province_slug, name, name_en, type, lng, lat, summary, tags, badges, gallery, featured, i18n FROM destinations",
+      "SELECT id, slug, province_slug, name, name_en, type, lng, lat, summary, tags, badges, gallery, featured, i18n FROM destinations WHERE country = ?",
     )
+    .bind(country)
     .all<DestRow>();
   return results.map((r) => {
     const tr = pickTranslation<DestinationTranslation>(r.i18n, locale);
@@ -163,17 +170,23 @@ export async function getDestinationsLight(db: D1Like, locale?: string) {
   });
 }
 
-export async function getDestination(db: D1Like, id: string, locale?: string): Promise<Destination | null> {
-  const row = await db.prepare("SELECT * FROM destinations WHERE id = ?").bind(id).first<DestRow>();
+export async function getDestination(db: D1Like, id: string, locale?: string, country = "vn"): Promise<Destination | null> {
+  const row = await db
+    .prepare("SELECT * FROM destinations WHERE id = ? AND country = ?")
+    .bind(id, country)
+    .first<DestRow>();
   return row ? toDestination(row, locale) : null;
 }
 
-export async function getProvinceBundle(db: D1Like, slug: string, locale?: string) {
-  const row = await db.prepare("SELECT * FROM provinces WHERE slug = ?").bind(slug).first<ProvRow>();
+export async function getProvinceBundle(db: D1Like, slug: string, locale?: string, country = "vn") {
+  const row = await db
+    .prepare("SELECT * FROM provinces WHERE slug = ? AND country = ?")
+    .bind(slug, country)
+    .first<ProvRow>();
   if (!row) return null;
   const { results } = await db
-    .prepare("SELECT * FROM destinations WHERE province_slug = ? ORDER BY featured DESC, name")
-    .bind(slug)
+    .prepare("SELECT * FROM destinations WHERE province_slug = ? AND country = ? ORDER BY featured DESC, name")
+    .bind(slug, country)
     .all<DestRow>();
   const dests = results.map((r) => toDestination(r, locale));
   const ptr = pickTranslation<ProvinceTranslation>(row.i18n, locale);
@@ -244,14 +257,17 @@ function mapRestaurant(r: RestaurantRow, locale?: string): Restaurant {
 }
 
 /** All dishes, optionally only those that are a specialty of one province. */
-export async function getDishes(db: D1Like, provinceSlug?: string, locale?: string): Promise<Dish[]> {
-  const rows = await db.prepare("SELECT * FROM dishes ORDER BY featured DESC, name").bind().all<DishRow>();
+export async function getDishes(db: D1Like, provinceSlug?: string, locale?: string, country = "vn"): Promise<Dish[]> {
+  const rows = await db
+    .prepare("SELECT * FROM dishes WHERE country = ? ORDER BY featured DESC, name")
+    .bind(country)
+    .all<DishRow>();
   const list = rows.results.map((r) => mapDish(r, locale));
   return provinceSlug ? list.filter((d) => d.provinceSlugs.includes(provinceSlug)) : list;
 }
 
-export async function getDish(db: D1Like, id: string, locale?: string): Promise<DishWithRestaurants | null> {
-  const row = await db.prepare("SELECT * FROM dishes WHERE id = ?").bind(id).first<DishRow>();
+export async function getDish(db: D1Like, id: string, locale?: string, country = "vn"): Promise<DishWithRestaurants | null> {
+  const row = await db.prepare("SELECT * FROM dishes WHERE id = ? AND country = ?").bind(id, country).first<DishRow>();
   if (!row) return null;
   const rests = await db
     .prepare("SELECT * FROM restaurants WHERE dish_id = ? ORDER BY atlas_score DESC")

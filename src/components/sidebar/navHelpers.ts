@@ -1,9 +1,31 @@
 import { destinations } from "@/data/destinations";
+import { destinationsKr } from "@/data/kr";
+import { krHeroIds, krHiddenGemIds, krSeasonalCalendar } from "@/data/kr/living";
+import { krSeasonalState } from "@/data/kr/living-i18n";
 import seasonalCalendar from "@/data/living/seasonal-calendar.json";
 import { localizeSeasonalState } from "@/lib/living/livingI18n";
 import type { Locale } from "@/lib/i18n";
+import type { CountryCode, Destination } from "@/lib/types";
+import { useContentStore } from "@/lib/store/useContentStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
+
+/**
+ * The Korea atlas points its living calendars straight at real destination ids, so names,
+ * coordinates and photo seeds come from the authoring data instead of a parallel namespace
+ * (which is what the Vietnam calendars, written first, still use).
+ */
+const krById = new Map<string, Destination>(destinationsKr.map((d) => [d.id, d]));
+const seedOf = (d: Destination) => d.gallery?.[0]?.seed ?? d.id;
+
+/**
+ * Display name for a Korean destination. The authoring data is Vietnamese, so prefer the
+ * localized copy the API already loaded into the content store and fall back to the source.
+ */
+const krName = (d: Destination) =>
+  useContentStore.getState().destinations.find((x) => x.id === d.id)?.name ?? d.name;
+const krSummary = (d: Destination) =>
+  useContentStore.getState().destinations.find((x) => x.id === d.id)?.summary ?? d.summary;
 
 /** Translate fn shape (matches i18n `t`) so these non-hook helpers stay hook-free. */
 type TFn = (key: string, params?: Record<string, string | number>) => string;
@@ -18,6 +40,9 @@ export interface HeroPlace {
   seed: string;
   lng: number;
   lat: number;
+  /** Set when the copy comes from the authoring data instead of the dictionary (Korea). */
+  name?: string;
+  subtitle?: string;
 }
 
 // Rotated daily. Every seed here is verified to resolve to a real photo in the manifest,
@@ -32,9 +57,17 @@ export const HERO_PLACES: HeroPlace[] = [
   { id: "ban-gioc", seed: "ban-gioc-waterfall-1", lng: 106.72, lat: 22.855 },
 ];
 
+const dayOfYear = () =>
+  Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+
 /** Day-of-year rotation so the hero changes every day (027 §Hero Image). */
-export function heroOfTheDay(): HeroPlace {
-  const doy = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+export function heroOfTheDay(country: CountryCode = "vn"): HeroPlace {
+  const doy = dayOfYear();
+  if (country === "kr") {
+    const ids = krHeroIds.filter((id) => krById.has(id));
+    const d = krById.get(ids[doy % ids.length])!;
+    return { id: d.id, seed: seedOf(d), lng: d.lng, lat: d.lat, name: krName(d), subtitle: krSummary(d) };
+  }
   return HERO_PLACES[doy % HERO_PLACES.length];
 }
 
@@ -95,8 +128,27 @@ export interface SeasonalHighlight {
 type SeasonEntry = { destinationId: string; state: string; icon: string; mood: string };
 
 /** Current-month "Today's Highlights" cards from the seasonal calendar (027 §Today's Highlights). */
-export function seasonalHighlights(limit: number, t: TFn, locale: Locale): SeasonalHighlight[] {
+export function seasonalHighlights(
+  limit: number,
+  t: TFn,
+  locale: Locale,
+  country: CountryCode = "vn",
+): SeasonalHighlight[] {
   const month = new Date().getMonth() + 1;
+  if (country === "kr") {
+    return (krSeasonalCalendar[String(month)] ?? [])
+      .slice(0, limit)
+      .map((e) => {
+        const d = krById.get(e.destinationId);
+        return {
+          id: e.destinationId,
+          name: d ? krName(d) : e.destinationId,
+          state: krSeasonalState(month, e.destinationId, e.state, locale),
+          icon: e.icon,
+          seed: d ? seedOf(d) : e.destinationId,
+        };
+      });
+  }
   const entries = (seasonalCalendar as Record<string, SeasonEntry[]>)[String(month)] ?? [];
   return entries.slice(0, limit).map((e) => ({
     id: e.destinationId,
@@ -126,8 +178,13 @@ export interface GemOfDay {
 }
 
 /** Hidden Gem of the day — rotates daily, resolved from the authoring destinations. */
-export function gemOfTheDay(): GemOfDay | null {
-  const doy = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+export function gemOfTheDay(country: CountryCode = "vn"): GemOfDay | null {
+  const doy = dayOfYear();
+  if (country === "kr") {
+    const ids = krHiddenGemIds.filter((id) => krById.has(id));
+    const d = krById.get(ids[doy % ids.length]);
+    return d ? { id: d.id, name: krName(d), summary: krSummary(d), seed: seedOf(d) } : null;
+  }
   const id = HIDDEN_GEMS[doy % HIDDEN_GEMS.length];
   const dest = destinations.find((d) => d.id === id || d.slug === id);
   if (!dest) return null;
@@ -150,7 +207,16 @@ export function focusPoint(lng: number, lat: number, zoom = 7): void {
  * Resolves coordinates from the calendar map first, then the authoring destinations, else
  * resets the map. Opens the panel when the id is a real content destination.
  */
-export function focusDestinationById(id: string): void {
+export function focusDestinationById(id: string, country: CountryCode = "vn"): void {
+  if (country === "kr") {
+    const d = krById.get(id);
+    if (d) {
+      useMapStore.getState().selectDestination(d.id, d.provinceSlug);
+      return focusPoint(d.lng, d.lat);
+    }
+    useMapStore.getState().reset();
+    return useUIStore.getState().setSidebarMobileOpen(false);
+  }
   const cal = CALENDAR_COORDS[id];
   if (cal) return focusPoint(cal.lng, cal.lat);
 

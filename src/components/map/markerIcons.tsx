@@ -19,6 +19,7 @@ const icons: Record<DestinationType, LucideIcon> = {
   beach: Waves,
   mountain: Mountain,
   temple: Landmark,
+  palace: Castle,
   museum: Landmark,
   unesco: Sparkles,
   waterfall: Droplets,

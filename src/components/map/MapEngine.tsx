@@ -2,12 +2,14 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion, useTransform } from "motion/react";
 import { Minus, Plus, Locate, UtensilsCrossed } from "lucide-react";
 import { useFoodStore } from "@/lib/store/useFoodStore";
-import { buildMapModel, type MapModel } from "@/lib/map/projection";
+import { type MapModel } from "@/lib/map/projection";
+import { getMapModel } from "@/lib/map/mapModelCache";
 import { useCamera } from "@/lib/map/useCamera";
 import { COAST_GLOW, regionColor } from "@/lib/map/regionPalette";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { getRegions } from "@/lib/api/content";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils/cn";
@@ -31,6 +33,7 @@ const MARKER_TINT: Record<DestinationType, { bg: string; fg: string }> = {
   island:    { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
   lake:      { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
   temple:    { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
+  palace:    { bg: "rgba(200, 83, 64, 0.16)",  fg: "#b8493a" },
   unesco:    { bg: "rgba(210, 96, 79, 0.18)",  fg: "#c85340" },
   museum:    { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
   city:      { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
@@ -218,6 +221,7 @@ function Flag({ label }: { label: string }) {
   );
 }
 
+/** Vietnam-only sovereignty markers (map data, not editorial content). */
 const ISLAND_FLAGS = [
   { id: "hoang-sa", name: "Quần đảo Hoàng Sa", lng: 111.8, lat: 16.5 }, // i18n-ignore — geographic proper noun (map data)
   { id: "truong-sa", name: "Quần đảo Trường Sa", lng: 114.3, lat: 9.2 }, // i18n-ignore — geographic proper noun (map data)
@@ -225,6 +229,7 @@ const ISLAND_FLAGS = [
 
 export function MapEngine() {
   const t = useT();
+  const country = useCountryStore((s) => s.country);
   const [model, setModel] = useState<MapModel | null>(null);
   const [error, setError] = useState(false);
   const [vp, setVp] = useState<Box | null>(null);
@@ -261,16 +266,20 @@ export function MapEngine() {
   }, [model, intro, reducedMotion]);
   const showIntro = intro && !reducedMotion;
 
+  // Geometry follows the active atlas; switching country swaps the whole model (and replays
+  // the cinematic intro, since `model` goes null first).
   useEffect(() => {
     let alive = true;
-    fetch(`${import.meta.env.BASE_URL}geo/vn-provinces.json`)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("geo"))))
-      .then((geo) => alive && setModel(buildMapModel(geo)))
+    setModel(null);
+    setError(false);
+    setIntro(true);
+    getMapModel(country)
+      .then((m) => alive && setModel(m))
       .catch(() => alive && setError(true));
     return () => {
       alive = false;
     };
-  }, []);
+  }, [country]);
 
   useEffect(() => {
     if (!model) return;
@@ -321,7 +330,7 @@ export function MapEngine() {
   }, [cam.x, cam.y, cam.scale, cam.size, model]);
 
   const destinations = useContentStore((s) => s.destinations);
-  const regions = getRegions();
+  const regions = getRegions(country);
 
   // Food layer (026 §Food Explorer Map) — an open dish projects its restaurants.
   const openDishData = useFoodStore((s) => s.dish);
@@ -363,12 +372,12 @@ export function MapEngine() {
   }, [model, destinations]);
 
   const projectedFlags = useMemo(() => {
-    if (!model) return [];
+    if (!model || country !== "vn") return [];
     return ISLAND_FLAGS.map((f) => {
       const [x, y] = model.project([f.lng, f.lat]);
       return { ...f, x, y };
     });
-  }, [model]);
+  }, [model, country]);
 
   const inView = useCallback((x: number, y: number) => !vp || (x >= vp.x0 && x <= vp.x1 && y >= vp.y0 && y <= vp.y1), [vp]);
 

@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from "motion/react";
 import { Check, Moon, Sun, X } from "lucide-react";
 import { useUIStore } from "@/lib/store/useUIStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
+import { COUNTRIES, COUNTRY_CODES } from "@/lib/country";
+import { switchCountry } from "@/lib/country/switch";
 import { useI18n, useT } from "@/lib/i18n";
 import { duration, easeOut } from "@/design/motion";
 import { cn } from "@/lib/utils/cn";
@@ -14,6 +17,7 @@ export function SettingsSheet() {
   const setOpen = useUIStore((s) => s.setSettingsOpen);
   const theme = useUIStore((s) => s.theme);
   const toggleTheme = useUIStore((s) => s.toggleTheme);
+  const country = useCountryStore((s) => s.country);
 
   return (
     <AnimatePresence>
@@ -69,6 +73,38 @@ export function SettingsSheet() {
                     >
                       <Icon size={18} strokeWidth={2} />
                       {t(mode === "light" ? "settings.light" : "settings.dark")}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Country — same switch as the sidebar logo, reachable on mobile */}
+            <div className="px-5 pt-5">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[color:var(--sb-text-faint)]">
+                {t("country.switch")}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {COUNTRY_CODES.map((code) => {
+                  const active = country === code;
+                  return (
+                    <button
+                      key={code}
+                      onClick={() => {
+                        if (!active) {
+                          switchCountry(code);
+                          setOpen(false);
+                        }
+                      }}
+                      className={cn(
+                        "flex items-center gap-2.5 rounded-2xl border px-4 py-3 text-sm font-medium transition-colors",
+                        active
+                          ? "border-[var(--sb-gold)] bg-[var(--sb-gold-soft)] text-[color:var(--sb-gold)]"
+                          : "border-[var(--sb-border)] text-[color:var(--sb-text-dim)] hover:bg-[var(--sb-hover)]",
+                      )}
+                    >
+                      <span className="text-base leading-none">{COUNTRIES[code].flag}</span>
+                      <span className="flex-1 text-left">{COUNTRIES[code].label[locale]}</span>
                     </button>
                   );
                 })}

@@ -74,7 +74,10 @@ export type ProvinceI18n = Partial<Record<ContentLocale, ProvinceTranslation>>;
 export type DishI18n = Partial<Record<ContentLocale, DishTranslation>>;
 export type RestaurantI18n = Partial<Record<ContentLocale, RestaurantTranslation>>;
 
-export type RegionId =
+/** Atlases the app can show. Each has its own geometry, registry and content (see src/lib/country). */
+export type CountryCode = "vn" | "kr";
+
+export type VnRegionId =
   | "northeast"
   | "northwest"
   | "red-river-delta"
@@ -84,10 +87,23 @@ export type RegionId =
   | "southeast"
   | "mekong-delta";
 
+export type KrRegionId =
+  | "sudogwon"
+  | "gangwon"
+  | "chungcheong"
+  | "honam"
+  | "gyeongbuk"
+  | "gyeongnam"
+  | "jeju";
+
+export type RegionId = VnRegionId | KrRegionId;
+
 export interface Region {
   id: RegionId;
   name: string;
   nameEn: string;
+  /** Native-script name, when romanization isn't what locals read (Korean regions). */
+  nameKo?: string;
   color: string;
 }
 
@@ -95,6 +111,8 @@ export interface ProvinceMeta {
   slug: string;
   name: string;
   nameEn: string;
+  /** Native-script name, when romanization isn't what locals read (e.g. 서울특별시). */
+  nameKo?: string;
   regionId: RegionId;
   regionName: string;
   color: string;
@@ -115,7 +133,9 @@ export type DestinationType =
   | "lake"
   | "bridge"
   | "city"
-  | "market";
+  | "market"
+  /** Royal palaces, fortresses and gates (added with the Korea atlas). */
+  | "palace";
 
 export interface GalleryImage {
   /** Deterministic seed used by the illustrated placeholder. */
@@ -149,6 +169,13 @@ export interface Destination {
   /** Slugs of nearby destinations. */
   nearby: string[];
   featured?: boolean;
+  /**
+   * Authority the volatile fields (`ticket`, `openingHours`, numeric `facts`) were checked
+   * against — an official site or a Wikipedia/Wikidata entry. Absent = never verified.
+   */
+  sourceUrl?: string;
+  /** ISO date (YYYY-MM-DD) of that check. `scripts/verify-kr.mjs` flags stale entries. */
+  verifiedAt?: string;
   /** Per-locale translations of the textual fields. VI fields above are the fallback. */
   i18n?: DestinationI18n;
 }
@@ -199,8 +226,16 @@ export type BadgeKind =
   | "hidden-gem"
   | "ai-recommended";
 
+/** A dish the user has tasted, tagged with the atlas it belongs to. */
+export interface TastedDish {
+  id: string;
+  country: CountryCode;
+}
+
 export interface Checkin {
   id: string;
+  /** Which atlas this check-in belongs to (older rows default to "vn"). */
+  country: CountryCode;
   destinationId: string;
   destinationName: string;
   provinceSlug: string;

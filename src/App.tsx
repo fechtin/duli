@@ -9,6 +9,7 @@ import { OfflineIndicator } from "@/components/OfflineIndicator";
 import { useDocumentMeta } from "@/lib/seo/useDocumentMeta";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useUrlSync } from "@/lib/store/useUrlSync";
 import { useI18n } from "@/lib/i18n";
 import { LeftSidebar } from "@/components/sidebar/LeftSidebar";
@@ -20,6 +21,7 @@ export default function App() {
   const applyTheme = useUIStore((s) => s.applyTheme);
   const setSearchOpen = useUIStore((s) => s.setSearchOpen);
   const loadContent = useContentStore((s) => s.load);
+  const country = useCountryStore((s) => s.country);
   const { locale } = useI18n();
 
   useUrlSync();
@@ -35,10 +37,10 @@ export default function App() {
     return unsub;
   }, []);
 
-  // (Re)load lightweight content whenever the language changes.
+  // (Re)load lightweight content whenever the language or the active atlas changes.
   useEffect(() => {
-    loadContent(locale);
-  }, [loadContent, locale]);
+    loadContent(locale, country);
+  }, [loadContent, locale, country]);
 
   // Global search shortcut (Cmd/Ctrl+K or "/").
   useEffect(() => {

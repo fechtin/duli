@@ -130,7 +130,22 @@ function Beach({ className }: LandmarkProps) {
   );
 }
 
+/** Dancheong-painted palace gate — the Korean atlas's counterpart to the pagoda. */
+function PalaceGate({ className }: LandmarkProps) {
+  return (
+    <svg viewBox={box} className={className} aria-hidden>
+      <path d="M2 8h20l-2.5-3H4.5z" fill="#c8503c" />
+      <path d="M3.5 8h17l-1 1.6h-15z" fill="#2f6f78" />
+      <rect x="5" y="9.6" width="14" height="9.4" fill="#e2d6bd" />
+      <path d="M9 19v-5a3 3 0 016 0v5z" fill="#8f3a2c" />
+      <g fill="#2f6f78"><rect x="5" y="9.6" width="1.6" height="9.4" /><rect x="17.4" y="9.6" width="1.6" height="9.4" /></g>
+      <rect x="3" y="19" width="18" height="2" rx="0.6" fill="#7a5b2e" />
+    </svg>
+  );
+}
+
 const map: Record<DestinationType, (p: LandmarkProps) => ReactElement> = {
+  palace: PalaceGate,
   temple: Pagoda,
   museum: Pagoda,
   mountain: Mountain,

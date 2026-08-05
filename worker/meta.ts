@@ -31,12 +31,16 @@ function clamp(text: string | null | undefined, max = 200): string {
 /** Build the per-URL metadata, or null for routes we leave to the static index.html (e.g. "/"). */
 export async function buildMeta(env: Env, url: URL): Promise<PageMeta | null> {
   const origin = url.origin;
-  const segments = url.pathname.split("/").filter(Boolean);
+  const raw = url.pathname.split("/").filter(Boolean);
+  // URLs are /{country}/{province}/{destination}; links minted before the country prefix
+  // (/{province}/…) still resolve against Vietnam.
+  const country = raw[0] === "kr" || raw[0] === "vn" ? raw[0] : "vn";
+  const segments = raw[0] === "kr" || raw[0] === "vn" ? raw.slice(1) : raw;
   const dishId = url.searchParams.get("dish");
 
   // A dish overlay (?dish=…) rides on top of any map context — it wins the card.
   if (dishId) {
-    const dish = await db.getDish(env.DB, dishId);
+    const dish = await db.getDish(env.DB, dishId, undefined, country);
     if (dish) {
       const name = dish.emoji ? `${dish.emoji} ${dish.name}` : dish.name;
       return {
@@ -58,7 +62,7 @@ export async function buildMeta(env: Env, url: URL): Promise<PageMeta | null> {
   if (segments.length === 0) return null; // homepage → static index.html is already correct
 
   const [provinceSlug, destSlug] = segments;
-  const bundle = await db.getProvinceBundle(env.DB, provinceSlug);
+  const bundle = await db.getProvinceBundle(env.DB, provinceSlug, undefined, country);
   if (!bundle) return null; // unknown path → let the SPA handle / 404 gracefully
 
   if (destSlug) {
@@ -79,7 +83,7 @@ export async function buildMeta(env: Env, url: URL): Promise<PageMeta | null> {
           address: {
             "@type": "PostalAddress",
             addressRegion: bundle.meta.name,
-            addressCountry: "VN",
+            addressCountry: country.toUpperCase(),
           },
         },
       };

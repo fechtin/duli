@@ -1,12 +1,16 @@
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { useI18n } from "@/lib/i18n";
+import { useCountryStore } from "@/lib/store/useCountryStore";
+import { useContentStore } from "@/lib/store/useContentStore";
 import { SectionTitle } from "./primitives";
 import { seasonalHighlights, focusDestinationById } from "./navHelpers";
 
 /** Today's Highlights — seasonal cards, image-forward (027 §Today's Highlights). */
 export function HighlightsSection() {
   const { t, locale } = useI18n();
-  const items = seasonalHighlights(4, t, locale);
+  const country = useCountryStore((s) => s.country);
+  useContentStore((s) => s.destinations);
+  const items = seasonalHighlights(4, t, locale, country);
   if (items.length === 0) return null;
 
   return (
@@ -16,7 +20,7 @@ export function HighlightsSection() {
         {items.map((it) => (
           <button
             key={it.id}
-            onClick={() => focusDestinationById(it.id)}
+            onClick={() => focusDestinationById(it.id, country)}
             className="group flex items-center gap-3 rounded-[18px] border border-[var(--sb-border)] bg-[var(--sb-surface)] p-2 text-left transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--sb-hover)] hover:shadow-[var(--sb-shadow-hover)]"
           >
             <div className="h-[72px] w-[72px] shrink-0 overflow-hidden rounded-[14px]">

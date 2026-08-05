@@ -17,31 +17,40 @@ import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { shareOrDownload } from "@/lib/share/exportPng";
 import { getMapModel } from "@/lib/map/mapModelCache";
 import type { ProvinceShape } from "@/lib/map/projection";
-import geoMeta from "@/data/generated/geo-meta.json";
-
-const provinceToRegion: Record<string, string> = Object.fromEntries(
-  (geoMeta as { provinces: { slug: string; regionId: string }[] }).provinces.map((p) => [p.slug, p.regionId]),
-);
+import { getProvinces } from "@/lib/api/content";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 
 export function PassportPanel() {
+  const country = useCountryStore((s) => s.country);
+  const provinces = useMemo(() => getProvinces(country), [country]);
+  const provinceToRegion = useMemo(
+    () => Object.fromEntries(provinces.map((p) => [p.slug, p.regionId])) as Record<string, string>,
+    [provinces],
+  );
   const t = useT();
   const { locale } = useI18n();
   const isDesktop = useIsDesktop();
   const open = useUIStore((s) => s.passportOpen);
   const setOpen = useUIStore((s) => s.setPassportOpen);
-  const checkins = usePassportStore((s) => s.checkins);
-  const tastedDishes = usePassportStore((s) => s.tastedDishes);
-  const { data: allDishes } = useAsync(() => fetchDishes(locale), [locale]);
+  // The passport shows the atlas the user is currently exploring — one page per country.
+  const allCheckins = usePassportStore((s) => s.checkins);
+  const allTasted = usePassportStore((s) => s.tasted);
+  const checkins = useMemo(() => allCheckins.filter((c) => c.country === country), [allCheckins, country]);
+  const tastedDishes = useMemo(
+    () => allTasted.filter((d) => d.country === country).map((d) => d.id),
+    [allTasted, country],
+  );
+  const { data: allDishes } = useAsync(() => fetchDishes(locale, country), [locale, country]);
   const user = useAuthStore((s) => s.user);
   const customAvatarUrl = useAuthStore((s) => s.customAvatarUrl);
 
   const visitedProvinces = useMemo(() => [...new Set(checkins.map((c) => c.provinceSlug))], [checkins]);
   const visitedRegions = useMemo(
     () => [...new Set(checkins.map((c) => provinceToRegion[c.provinceSlug]).filter(Boolean))],
-    [checkins],
+    [checkins, provinceToRegion],
   );
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const badges = useMemo(() => usePassportStore.getState().badges(), [checkins, tastedDishes]);
+  const badges = useMemo(() => usePassportStore.getState().badges(country), [checkins, tastedDishes, country]);
 
   const selectDestination = useMapStore((s) => s.selectDestination);
   const requestFocus = useMapStore((s) => s.requestFocus);
@@ -53,11 +62,11 @@ export function PassportPanel() {
   const visitedSet = useMemo(() => new Set(visitedProvinces), [visitedProvinces]);
 
   useEffect(() => {
-    getMapModel().then((m) => {
+    getMapModel(country).then((m) => {
       setMapProvinces(m.provinces);
       setMapMeta({ width: m.width, height: m.height });
     });
-  }, []);
+  }, [country]);
 
   const onShare = async () => {
     if (!cardRef.current) return;
@@ -80,7 +89,7 @@ export function PassportPanel() {
     ? { initial: { x: "100%" }, animate: { x: 0 }, exit: { x: "100%" } }
     : { initial: { y: "100%" }, animate: { y: 0 }, exit: { y: "100%" } };
 
-  const progressPct = Math.min(1, visitedProvinces.length / 63);
+  const progressPct = Math.min(1, visitedProvinces.length / Math.max(1, provinces.length));
 
   return (
     <AnimatePresence>
@@ -153,7 +162,7 @@ export function PassportPanel() {
                       <p className="text-[8px] tracking-[0.22em] uppercase mb-1" style={{ color: "var(--pp-text-faint)" }}>{t("passport.youExplored")}</p>
                       <div className="flex items-baseline gap-1 mb-0.5">
                         <span className="font-bold leading-none" style={{ fontSize: 52, color: "#ffffff" }}>{visitedProvinces.length}</span>
-                        <span className="text-2xl" style={{ color: "rgba(255,255,255,0.3)" }}>/ 63</span>
+                        <span className="text-2xl" style={{ color: "rgba(255,255,255,0.3)" }}>/ {provinces.length}</span>
                       </div>
                       <p className="text-[9px] uppercase tracking-[0.2em] mb-3" style={{ color: "var(--pp-text-faint)" }}>{t("passport.provincesLabel")}</p>
                       <div className="h-1.5 rounded-full overflow-hidden mb-4" style={{ background: "rgba(255,255,255,0.08)" }}>

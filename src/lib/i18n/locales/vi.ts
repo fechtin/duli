@@ -9,6 +9,18 @@ export const vi = {
   "nav.passport": "Hộ chiếu",
   "nav.theme": "Giao diện sáng/tối",
   "nav.language": "Ngôn ngữ",
+  "country.switch": "Đổi quốc gia",
+  "country.kr": "Hàn Quốc",
+  // Heartbeat signals (025 §Heartbeat) — rendered by HeartbeatSection
+  "signal.calm": "Bình yên",
+  "signal.popular": "Đang hot",
+  "signal.trending": "Trending",
+  "signal.seasonal": "Đúng mùa",
+  "signal.festival": "Lễ hội",
+  "signal.golden-hour": "Golden Hour",
+  "signal.perfect-weather": "Thời tiết đẹp",
+  "signal.editor-pick": "Editor's Pick",
+  "signal.ai-pick": "AI đề xuất",
   "nav.home": "Về toàn cảnh Việt Nam",
 
   "map.reset": "Toàn cảnh",
@@ -65,7 +77,7 @@ export const vi = {
   "passport.title": "Hộ chiếu Việt Nam",
   "passport.subtitle": "Hành trình của bạn",
   "passport.explored": "Đã khám phá",
-  "passport.provinces": "{count} / 63 tỉnh",
+  "passport.provinces": "{count} / {total} tỉnh",
   "passport.checkins": "Điểm đến",
   "passport.badges": "Huy hiệu",
   "passport.regions": "Vùng miền",
@@ -295,6 +307,24 @@ export const vi = {
   "province.vinh-long": "Vĩnh Long",
   "province.vinh-phuc": "Vĩnh Phúc",
   "province.yen-bai": "Yên Bái",
+  // Korea atlas provinces (data/registry/kr.mjs)
+  "province.seoul": "Seoul",
+  "province.incheon": "Incheon",
+  "province.gyeonggi": "Gyeonggi",
+  "province.gangwon": "Gangwon",
+  "province.daejeon": "Daejeon",
+  "province.sejong": "Sejong",
+  "province.chungbuk": "Chungbuk",
+  "province.chungnam": "Chungnam",
+  "province.gwangju": "Gwangju",
+  "province.jeonbuk": "Jeonbuk",
+  "province.jeonnam": "Jeonnam",
+  "province.daegu": "Daegu",
+  "province.gyeongbuk": "Gyeongbuk",
+  "province.busan": "Busan",
+  "province.ulsan": "Ulsan",
+  "province.gyeongnam": "Gyeongnam",
+  "province.jeju": "Jeju",
 
   // Region names (8)
   "region.northeast": "Đông Bắc",
@@ -305,6 +335,14 @@ export const vi = {
   "region.central-highlands": "Tây Nguyên",
   "region.southeast": "Đông Nam Bộ",
   "region.mekong-delta": "Đồng bằng sông Cửu Long",
+  // Korea atlas regions (data/registry/kr.mjs)
+  "region.sudogwon": "Vùng Thủ đô Seoul",
+  "region.gangwon": "Gangwon",
+  "region.chungcheong": "Chungcheong",
+  "region.honam": "Honam (Jeolla)",
+  "region.gyeongbuk": "Daegu · Bắc Gyeongsang",
+  "region.gyeongnam": "Busan · Nam Gyeongsang",
+  "region.jeju": "Đảo Jeju",
 };
 
 export type TranslationKey = keyof typeof vi;

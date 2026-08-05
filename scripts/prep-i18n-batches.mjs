@@ -9,7 +9,7 @@ import { provinceContent } from "../src/data/provinceContent.ts";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const geo = JSON.parse(
-  await import("node:fs").then((fs) => fs.readFileSync(resolve(root, "src/data/generated/geo-meta.json"), "utf8")),
+  await import("node:fs").then((fs) => fs.readFileSync(resolve(root, "src/data/generated/geo-meta.vn.json"), "utf8")),
 );
 
 const OUT = process.argv[2] || resolve(root, "scratch-i18n");

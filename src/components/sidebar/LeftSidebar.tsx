@@ -3,6 +3,7 @@ import { PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
 import { generateBrief } from "@/lib/living/briefGenerator";
 import { useI18n } from "@/lib/i18n";
 import { useUIStore } from "@/lib/store/useUIStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useIsDesktop } from "@/lib/utils/useMediaQuery";
 import { cn } from "@/lib/utils/cn";
 import { SidebarHeader } from "./SidebarHeader";
@@ -29,10 +30,11 @@ export function LeftSidebar() {
   const mobileOpen = useUIStore((s) => s.sidebarMobileOpen);
   const toggleSidebar = useUIStore((s) => s.toggleSidebar);
   const setMobileOpen = useUIStore((s) => s.setSidebarMobileOpen);
+  const country = useCountryStore((s) => s.country);
 
   // On mobile the drawer always shows the full feed; collapse is a desktop-only affordance.
   const collapsed = isDesktop && collapsedPref;
-  const brief = useMemo(() => generateBrief(t, locale), [t, locale]);
+  const brief = useMemo(() => generateBrief(t, locale, country), [t, locale, country]);
   const width = isDesktop ? (collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED) : SIDEBAR_EXPANDED;
 
   return (

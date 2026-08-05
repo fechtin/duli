@@ -4,6 +4,7 @@ import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { fetchDishes } from "@/lib/api/food";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useUIStore } from "@/lib/store/useUIStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useI18n, useT } from "@/lib/i18n";
 import type { Dish } from "@/lib/types";
 import { SectionTitle } from "./primitives";
@@ -16,10 +17,11 @@ export function FoodExplorerSection() {
   const openDish = useFoodStore((s) => s.openDish);
   const setSearchOpen = useUIStore((s) => s.setSearchOpen);
   const closeMobile = useUIStore((s) => s.setSidebarMobileOpen);
+  const country = useCountryStore((s) => s.country);
 
   useEffect(() => {
     let alive = true;
-    fetchDishes(locale).then((all) => {
+    fetchDishes(locale, country).then((all) => {
       const featured = all.filter((d) => d.featured);
       const pick = (featured.length >= 4 ? featured : [...featured, ...all]).slice(0, 4);
       if (alive) setDishes(pick);
@@ -27,7 +29,7 @@ export function FoodExplorerSection() {
     return () => {
       alive = false;
     };
-  }, [locale]);
+  }, [locale, country]);
 
   if (dishes.length === 0) return null;
 

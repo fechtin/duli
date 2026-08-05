@@ -6,14 +6,19 @@ import type { Feature } from "geojson";
 
 // Regression guard for the ring-winding bug: d3-geo (spherical) needs clockwise exterior
 // rings. With the wrong winding, geoArea(feature) ≈ 4π (the whole globe) instead of a tiny
-// fraction. This catches a recurrence of "every province fills the map".
-describe("vn-provinces winding", () => {
-  const geo = JSON.parse(readFileSync(resolve("public/geo/vn-provinces.json"), "utf8")) as {
+// fraction. This catches a recurrence of "every province fills the map" — for every atlas.
+const ATLASES = [
+  { cc: "vn", provinces: 63 },
+  { cc: "kr", provinces: 17 },
+];
+
+describe.each(ATLASES)("$cc-provinces winding", ({ cc, provinces }) => {
+  const geo = JSON.parse(readFileSync(resolve(`public/geo/${cc}-provinces.json`), "utf8")) as {
     features: Feature[];
   };
 
-  it("has 63 provinces", () => {
-    expect(geo.features.length).toBe(63);
+  it(`has ${provinces} provinces`, () => {
+    expect(geo.features.length).toBe(provinces);
   });
 
   it("every province covers a tiny fraction of the sphere (not the whole globe)", () => {
@@ -22,5 +27,10 @@ describe("vn-provinces winding", () => {
       expect(area).toBeGreaterThan(0);
       expect(area).toBeLessThan(0.5);
     }
+  });
+
+  it("every province has a unique slug", () => {
+    const slugs = geo.features.map((f) => (f.properties as { slug: string }).slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
   });
 });

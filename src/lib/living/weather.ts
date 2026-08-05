@@ -18,6 +18,14 @@ export const CITY_COORDS: Record<string, { lat: number; lng: number; name: strin
   "phong-nha":  { lat: 17.600,  lng: 106.149, name: "Phong Nha" },
   "mui-ne":     { lat: 10.932,  lng: 108.298, name: "Mũi Né" },
   "can-tho":    { lat: 10.046,  lng: 105.746, name: "Cần Thơ" },
+  // Korea atlas
+  "seoul":      { lat: 37.567,  lng: 126.978, name: "Seoul" },
+  "busan":      { lat: 35.180,  lng: 129.075, name: "Busan" },
+  "jeju":       { lat: 33.500,  lng: 126.531, name: "Jeju" },
+  "gangneung":  { lat: 37.752,  lng: 128.876, name: "Gangneung" },
+  "gyeongju":   { lat: 35.856,  lng: 129.225, name: "Gyeongju" },
+  "jeonju":     { lat: 35.824,  lng: 127.148, name: "Jeonju" },
+  "daegu":      { lat: 35.872,  lng: 128.601, name: "Daegu" },
 };
 
 // Destination → city key mapping

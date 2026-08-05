@@ -1,6 +1,7 @@
 import { MapPin, ChevronRight, Utensils } from "lucide-react";
 import { fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
 import { fetchDishesForProvince } from "@/lib/api/food";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useAsync } from "@/lib/utils/useAsync";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useMapStore } from "@/lib/store/useMapStore";
@@ -17,7 +18,11 @@ export function ProvincePanel({ slug }: { slug: string }) {
   const { locale } = useI18n();
   const meta = getProvinceMeta(slug);
   const { data: bundle, loading } = useAsync(() => fetchProvinceBundle(slug, locale), [slug, locale]);
-  const { data: dishes } = useAsync(() => fetchDishesForProvince(slug, locale), [slug, locale]);
+  const country = useCountryStore((s) => s.country);
+  const { data: dishes } = useAsync(
+    () => fetchDishesForProvince(slug, locale, country),
+    [slug, locale, country],
+  );
   const selectDestination = useMapStore((s) => s.selectDestination);
   const openDish = useFoodStore((s) => s.openDish);
 
