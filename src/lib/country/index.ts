@@ -2,6 +2,7 @@ import geoMetaVn from "@/data/generated/geo-meta.vn.json";
 import geoMetaKr from "@/data/generated/geo-meta.kr.json";
 import type { CountryCode, ProvinceMeta, Region } from "@/lib/types";
 import type { Locale } from "@/lib/i18n/dictionaries";
+import { COUNTRY_LABELS } from "./names";
 
 /**
  * The country dimension. Each atlas ships its own geometry (`public/geo/<cc>-provinces.json`,
@@ -33,14 +34,14 @@ export interface CountryConfig {
 export const COUNTRIES: Record<CountryCode, CountryConfig> = {
   vn: {
     code: "vn",
-    label: { vi: "Việt Nam", en: "Vietnam", ko: "베트남", ja: "ベトナム", zh: "越南" },
+    label: COUNTRY_LABELS.vn,
     flag: "🇻🇳",
     geoFile: "geo/vn-provinces.json",
     geoMeta: geoMetaVn as unknown as GeoMeta,
   },
   kr: {
     code: "kr",
-    label: { vi: "Hàn Quốc", en: "South Korea", ko: "대한민국", ja: "韓国", zh: "韓國" },
+    label: COUNTRY_LABELS.kr,
     flag: "🇰🇷",
     geoFile: "geo/kr-provinces.json",
     geoMeta: geoMetaKr as unknown as GeoMeta,

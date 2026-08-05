@@ -142,6 +142,24 @@ export async function getProvinces(db: D1Like, locale?: string, country = "vn"):
   return results.map((r) => toProvinceMeta(r, locale));
 }
 
+/**
+ * Provinces that actually have editorial content, name + slug only. Backs the crawler-visible
+ * index on /{country} — the only page that links out to every province, so it is what gives a
+ * bot a path from the homepage down to a destination.
+ */
+export async function getProvinceIndex(db: D1Like, country = "vn"): Promise<{ slug: string; name: string }[]> {
+  const { results } = await db
+    .prepare(
+      `SELECT p.slug, p.name FROM provinces p
+        WHERE p.country = ?
+          AND EXISTS (SELECT 1 FROM destinations d WHERE d.province_slug = p.slug AND d.country = p.country)
+        ORDER BY p.name`,
+    )
+    .bind(country)
+    .all<{ slug: string; name: string }>();
+  return results;
+}
+
 /** Lightweight list for map markers + client search index. */
 export async function getDestinationsLight(db: D1Like, locale?: string, country = "vn") {
   const { results } = await db

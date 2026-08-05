@@ -1,3 +1,42 @@
+# FechTin Go — crawling policy.
+# AI crawlers are welcome: this atlas exists to be found, quoted and cited.
+#
+# NOTE: Cloudflare's "Managed robots.txt" (AI Crawl Control) prepends its own block to this
+# file at the edge. The Allow groups below re-open the crawlers it blocks, but the dashboard
+# toggle is the authoritative switch — check the served /robots.txt, not this file.
+
 User-agent: *
+Content-Signal: search=yes,ai-train=yes,ai-input=yes
 Allow: /
-Sitemap: https://vietnam-atlas.pages.dev/sitemap.xml
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://go.fechtin.com/sitemap.xml

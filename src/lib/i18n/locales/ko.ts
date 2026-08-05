@@ -3,6 +3,7 @@ import type { TranslationKey } from "./vi";
 export const ko: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
   "app.tagline": "살아 숨 쉬는 한 장의 지도로 {country}을 만나다",
+  "seo.description": "살아 숨 쉬는 인터랙티브 지도로 {country}을 만나다 — 이야기와 사진, 그리고 나만의 여정.",
 
   "nav.explore": "둘러보기",
   "nav.search": "검색",

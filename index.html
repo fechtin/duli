@@ -12,11 +12,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta property="og:site_name" content="FechTin Go" />
-    <title>FechTin Go — Khám phá Việt Nam</title>
+    <!-- The percent-delimited tokens below are filled at build time from the country registry
+         (src/lib/country/names.ts) by the `homepage-seo` plugin in vite.config.ts. Adding a
+         country must not mean editing this file — the last time one was added, copy still
+         saying "Việt Nam" over a map of Korea is what had to be hunted down.
+         (Don't name a token in a comment: the plugin substitutes it here too.) -->
+    <title>FechTin Go — Khám phá %ATLASES%</title>
     <meta
       name="description"
-      content="Khám phá Việt Nam qua một tấm bản đồ sống động — câu chuyện, hình ảnh và hành trình của riêng bạn."
+      content="Khám phá %ATLASES% qua một tấm bản đồ sống động — câu chuyện, hình ảnh và hành trình của riêng bạn."
     />
+    <!-- "/" is answered by Cloudflare's asset layer, so worker/meta.ts never sees it (see
+         wrangler.toml [assets]). The homepage's canonical is therefore static and absolute —
+         on any host other than production it points at production, which is the only host a
+         crawler ever visits. Every other route is canonicalised by the Worker. -->
+    <link rel="canonical" href="%SITE_URL%/" />
+    <meta property="og:url" content="%SITE_URL%/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +36,25 @@
     />
   </head>
   <body class="h-full">
-    <div id="root" class="h-full"></div>
+    <!-- Pre-hydration content. createRoot() clears #root before its first paint, so this is only
+         ever read by a crawler that doesn't run JS (most of the ones behind LLM answers) and by a
+         reader whose bundle hasn't arrived yet. On every route except "/" the Worker replaces it
+         with that page's own content — see worker/seo-body.ts. Inline-styled because the
+         stylesheet is loaded by the bundle that is about to replace this markup. -->
+    <div id="root" class="h-full">
+      <div
+        style="max-width:44rem;margin:0 auto;padding:3rem 1.5rem 4rem;font-family:Inter,system-ui,sans-serif;background:#111315;color:#e7e5e4;min-height:100%;line-height:1.65"
+      >
+        <h1 style="font-size:2rem;line-height:1.2;margin:0 0 0.75rem;font-weight:700;color:#fafaf9">FechTin Go</h1>
+        <p style="margin:0 0 1rem">
+          Khám phá %ATLASES% qua một tấm bản đồ sống động — câu chuyện, hình ảnh và hành trình của riêng bạn.
+        </p>
+        <h2 style="font-size:1.1rem;margin:2.5rem 0 0.75rem;font-weight:600;color:#fafaf9">Bản đồ</h2>
+        <ul style="margin:0;padding-left:1.25rem">
+          %COUNTRY_LINKS%
+        </ul>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

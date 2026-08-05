@@ -2,6 +2,7 @@
 export const vi = {
   "app.name": "FechTin Go",
   "app.tagline": "Khám phá {country} qua một tấm bản đồ sống",
+  "seo.description": "Khám phá {country} qua một tấm bản đồ sống động — câu chuyện, hình ảnh và hành trình của riêng bạn.",
 
   "nav.explore": "Khám phá",
   "nav.search": "Tìm kiếm",

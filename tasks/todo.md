@@ -431,3 +431,32 @@ The manifest *is* committed so the client knows what exists. See docs/030 §8.2.
 
 **Deliberately not done:** living map medallions (docs/030 §10 — passes perf, but the motion is
 imperceptible at 28 px; a design call, not a technical one), Story Reels, soundscape.
+
+---
+
+# 032 — SEO + AI discoverability (2026-08-05)
+
+Chẩn đoán trên site live `go.fechtin.com`: meta SSR ở edge đã đúng, nhưng (a) sitemap +
+robots trỏ về `vietnam-atlas.pages.dev` — domain đã chết, nên Google bỏ qua toàn bộ 388 URL;
+(b) không trang nào có canonical; (c) `<body>` chỉ có `<div id="root">` rỗng nên crawler
+không chạy JS (gần như mọi bot của LLM) thấy trang trắng; (d) Cloudflare Managed robots.txt
+đang chặn GPTBot / ClaudeBot / Google-Extended / CCBot ở tầng edge.
+
+- [x] `scripts/build-sitemap.mjs` — `SITE_URL` default → `https://go.fechtin.com`
+- [x] robots.txt sinh ra mở cho AI bots (Content-Signal + Allow từng bot Cloudflare chặn)
+- [x] Sinh lại `public/sitemap.xml` (390 URL) + `public/robots.txt`
+- [x] `worker/db.ts` — `getProvinceIndex()` cho trang landing `/vn`, `/kr`
+- [x] `worker/seo-body.ts` (mới) — nội dung crawler đọc được, inject vào `#root`
+- [x] `worker/meta.ts` — canonical, og:locale, meta cho `/` và `/{cc}`, inject body
+- [x] Typecheck + test + verify bằng wrangler dev
+
+## Ngoài repo — cần user làm trên Cloudflare dashboard
+
+- [ ] AI Crawl Control → tắt block cho GPTBot / ClaudeBot / Google-Extended / CCBot
+- [ ] Google Search Console: thêm property `go.fechtin.com`, submit sitemap
+
+## Không làm (có lý do)
+
+- **hreflang**: locale không nằm trong URL (`useUrlSync` chỉ mã hoá country/province/
+  destination; ngôn ngữ ở store + localStorage). hreflang cần URL riêng cho từng locale —
+  đó là thay đổi kiến trúc routing, task riêng.

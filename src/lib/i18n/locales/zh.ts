@@ -3,6 +3,7 @@ import type { TranslationKey } from "./vi";
 export const zh: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
   "app.tagline": "在一張鮮活的地圖上漫遊{country}",
+  "seo.description": "在一張鮮活的互動地圖上探索{country} — 故事、影像，以及屬於你的旅程。",
 
   "nav.explore": "探索",
   "nav.search": "搜索",

@@ -45,3 +45,20 @@
   subdomain; register it via `PUT /accounts/{id}/workers/subdomain {"subdomain":"name"}` then
   re-deploy. (3) Local D1 dev: `wrangler d1 migrations apply <db> --local` + `d1 execute --local
   --file=db/seed.sql`; client now fetches from the API so `wrangler dev` must run with Vite.
+- **A frozen video passes every perf test.** `zoompan` with `d=1` does not accumulate zoom — the
+  first ambient master was a still image wrapped in a video codec. Decode really happened, so LCP,
+  FPS and byte counts were all valid and all meaningless. Correct idiom: one input frame,
+  `d=<total frames>`, ramp on `on` (`z='1+0.34*on/89':d=90`). Verify by seeking the element to
+  fixed `currentTime` marks and diffing frames (`scripts/verify-video.mjs`) — wall-clock
+  screenshots are useless because a palindrome loop revisits similar zoom levels by chance.
+- **Query-param feature flags must be read at module load.** `useUrlSync` rebuilds the path from
+  selection state and drops unknown params, so a flag read at render time is already gone. This
+  bit twice: the first `?novideo=1` A/B silently measured video-on in both arms.
+- **Ambient video: duration costs bandwidth, not speed.** 8s vs 32s changed nothing in LCP,
+  time-to-first-frame or FPS — but the whole file is fetched within the first loop either way
+  (a loop has no "abandon halfway"), so duration is a 1:1 multiplier on every viewer's data.
+  Keep ambient clips at 4–6s; longer belongs to a click-to-play surface.
+- **Codec ranking flips with content.** Static-ish frames: H.264 beat AV1 (242 vs 327 KB). Real
+  motion: VP9 beat H.264 (639 vs 696 KB). Encode both and ship the smaller; never assume.
+- **Never quote a perf number without a same-scenario baseline.** A drag at overview zoom measured
+  29 FPS with video and looked damning — the no-video arm measured 28.7.

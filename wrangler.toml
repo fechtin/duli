@@ -17,6 +17,12 @@ account_id = "f88f5e7c7136bf1e6242c019433252fc"
 directory = "./dist"
 binding = "ASSETS"
 not_found_handling = "single-page-application"
+#
+# Note: "/" matches dist/index.html and is therefore answered by the asset layer without ever
+# reaching the Worker, so the homepage cannot be rewritten by worker/meta.ts. Its canonical and
+# its crawler-visible links live in index.html instead. `run_worker_first` is deliberately NOT
+# used to force "/" through: listing routes there inverts the default for everything else, and
+# with SPA not_found_handling every unlisted path (/api/*, /vn/*) gets swallowed by the shell.
 
 # D1 — content source of truth (Bible 013). Local dev uses miniflare's SQLite (no account).
 # For remote deploy, replace database_id with the real id from `wrangler d1 create atlas_db`.
