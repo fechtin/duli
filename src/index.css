@@ -302,6 +302,25 @@
   }
 }
 
+/* Ambient motion for hero photos (Bible 030 §3) — a slow Ken Burns settle applied to the photo
+   ITSELF. This replaces what used to be a generated video clip per destination: same movement,
+   zero bytes, and it scales the full-resolution webp instead of an 800px re-encode, so it is
+   sharper than the video ever was. Runs once and stops at the natural framing.
+   Disabled under prefers-reduced-motion by the base layer, which collapses the duration and
+   leaves `forwards` holding the resting transform. */
+@keyframes ken-burns-settle {
+  from {
+    transform: scale(1.18);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.ken-burns-settle {
+  animation: ken-burns-settle 6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
 @layer utilities {
   /* Type scale (025 §GĐ2) — semantic text utilities; new/touched surfaces use these
      instead of ad-hoc pixel sizes. */

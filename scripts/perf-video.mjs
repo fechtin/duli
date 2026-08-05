@@ -1,4 +1,4 @@
-// SPIKE (030) — A/B perf harness for the ambient video layer.
+// A/B perf harness for the ambient video layer (Bible 030 §9).
 // Runs the SAME build twice: once normally, once with the `?novideo=1` kill switch.
 // Usage: node scripts/perf-video.mjs <baseUrl>
 import { chromium } from "playwright-core";
@@ -44,7 +44,7 @@ async function measure(label, suffix) {
   const heroVideos = await page.evaluate(() => document.querySelectorAll("video").length);
 
   // Now the map scenario: close the panel (frees the hero decode slot, as it would in real
-  // use), zoom past level 4 so living medallions arm, and let them settle.
+  // use), zoom in, and let the camera settle before measuring frame pacing.
   await page.keyboard.press("Escape");
   await page.waitForTimeout(600);
   const mapEl = page.locator('[role="application"]');

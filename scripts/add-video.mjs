@@ -1,9 +1,9 @@
-// Promote a seed from tier 2 (generated Ken Burns) to tier 1 (real footage) — Bible 030 §3.
+// Register curated real footage for a seed — tier 1 in Bible 030 §3.
 //
 // Takes a source clip, conforms it to the ambient budget, and registers it in the manifest with
-// provenance. Tier-1 entries win over tier-2 in videoManifest.ts, so the generated clip is
-// superseded the moment this runs — nothing to delete, no code to touch. Re-running `video:build`
-// will not overwrite it: that script only ever writes the tier-2 list.
+// provenance. Everything else gets its motion from a CSS Ken Burns on the photo itself (030 §3.1);
+// this is for the handful of places where something moves INSIDE the scene. Registering a seed
+// here makes IllustratedImage play the footage instead of running the CSS move — no code change.
 //
 //   node scripts/add-video.mjs --seed halong-1 --file ~/clips/halong.mp4 \
 //     --credit "Nguyen Van A" --license "CC BY 4.0" --url https://example.com/clip [--start 12]
@@ -129,7 +129,7 @@ if (smallest > MAX_BYTES) {
   process.exit(1);
 }
 
-const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : { tier1: {}, tier2: [] };
+const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : { tier1: {} };
 manifest.tier1 = manifest.tier1 ?? {};
 manifest.tier1[seed] = {
   webm: `/video/curated/${seed}.webm`,
@@ -138,8 +138,8 @@ manifest.tier1[seed] = {
 };
 writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
 
-console.log(`✓ ${seed} promoted to tier 1 — webm ${kb(bytes.webm)} KB · mp4 ${kb(bytes.mp4)} KB`);
+console.log(`✓ ${seed} registered as tier-1 footage — webm ${kb(bytes.webm)} KB · mp4 ${kb(bytes.mp4)} KB`);
 console.log(`  files: public/video/curated/${seed}.{webm,mp4}  (committed — real footage is not regenerable)`);
 console.log(`  credit: ${credit} · ${license} · ${url}`);
-console.log(`\n  Next: npm run check:video, then verify it moves:`);
-console.log(`    node scripts/verify-video.mjs "http://localhost:5173/<path to the destination>" /tmp/v-${seed}`);
+console.log(`\n  Next, verify it moves and settles cleanly:`);
+console.log(`    node scripts/verify-motion.mjs "http://localhost:5173/<path to the destination>" /tmp/v-${seed}`);

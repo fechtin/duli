@@ -28,14 +28,6 @@ npx wrangler d1 migrations apply atlas_db --remote
 echo "▸ Seeding content (remote)…"
 npx wrangler d1 execute atlas_db --remote --file=db/seed.sql
 
-echo "▸ Rendering ambient video clips (docs/030 §8.2 — not committed, generated here)…"
-if command -v ffmpeg >/dev/null 2>&1; then
-  npm run video:build
-  npm run check:video
-else
-  echo "  ! ffmpeg not found — shipping without ambient video (still photos everywhere)"
-fi
-
 echo "▸ Building SPA…"
 npm run build
 

@@ -396,41 +396,70 @@ right next to it is worth it.
 
 ---
 
-# 030 — Ambient video (Living Atlas)
+# 030 — Ambient motion for hero photos (Living Atlas)
 
 Spec: `docs/030.md`. Spike & measurements: `tasks/030-spike-ambient-video.md`.
 
-Photos now carry motion where one exists, under a hard rule: **video is never on the critical path
-and never an LCP candidate**. Strip the layer away and the product is exactly what it was.
+Hero photos now move, under a hard rule: **motion is never on the critical path and never an LCP
+candidate**. Strip the layer away and the product is exactly what it was.
+
+Two tiers, split by **where the motion lives**:
+
+## Tier 2 — frame movement, CSS, every photo
+
+- `.ken-burns-settle` in `src/index.css` — `scale(1.18) → scale(1)` over 6s, `forwards`, once.
+- `IllustratedImage` gains `ambient` (opt-in; only the destination hero uses it today). The class
+  is applied after `onLoad`, so the move never runs behind a blank frame.
+- Reduced-motion needs no special case: the base layer collapses animation duration to 0.01ms and
+  `forwards` holds the resting transform.
+- **Zero bytes, zero build step, zero manifest.**
+
+## Tier 1 — motion inside the scene, real footage, ~10–15 places
 
 - `src/lib/media/videoBudget.ts` — decode-slot registry (2 desktop / 1 mobile), granted by
-  distance from screen centre; plus the global gates (reduced-motion, save-data, link quality)
-  and the `?novideo=1` A/B kill switch.
-- `src/components/ui/AmbientVideo.tsx` — the gated layer. The `<video>` element is not created
-  until the poster has painted, the browser is idle, and the surface is 50% on screen. Fades in on
-  `playing` (not `canplay`, which shows a black frame first). `?videodebug=1` paints a state badge.
-- `src/lib/media/videoManifest.ts` + `src/data/generated/video-manifest.json` — tier 2 is a bare
-  seed list (paths by convention); tier 1 is hand-curated footage with provenance.
-- `IllustratedImage` gains `ambient` — **opt-in**, because decode slots are scarce and gallery
-  tiles must not compete with the hero. Only the destination hero opts in today.
-- `scripts/build-video.mjs` (`npm run video:build`) — renders tier 2: a 3s Ken Burns move
-  palindromed into a 6s seamless loop, 800x600 @ 24fps, VP9 + H.264, keeps both and enforces the
-  budget on the smaller. Resumable, `ONLY=` / `LIMIT=` / `FORCE=`.
-- `scripts/check-video.mjs` (`npm run check:video`) — budget + manifest/disk parity guardrail.
-- `scripts/perf-video.mjs`, `perf-duration.mjs`, `verify-video.mjs` — the measurement harnesses.
+  distance from screen centre; the global gates (reduced-motion, save-data, link quality); and the
+  `?novideo=1` A/B kill switch.
+- `src/components/ui/AmbientVideo.tsx` — the gated layer. The `<video>` is not created until the
+  poster has painted, the browser is idle, and the surface is 50% on screen. Fades in on `playing`
+  (not `canplay`, which shows a black frame first). **Plays once, fades out over 500ms, unmounts**
+  — the last frame is the poster, so nothing changes on screen while the decode slot and the
+  decoded frames go back. `?videodebug=1` paints a state badge.
+- `scripts/add-video.mjs` (`npm run video:add`) — conforms a source clip to the budget and
+  registers it with **mandatory** provenance. A registered seed plays footage instead of running
+  the CSS move; no code change, no deletion. Clips live in `public/video/curated/` and **are
+  committed** — unlike anything generated, they cannot be rebuilt.
+- Currently **0 tier-1 clips**: none have been sourced yet.
 
-**Built:** 90 of 102 eligible seeds, 45 MB. 12 seeds are too detailed to fit 900 KB and are
-memoised in `scripts/.video-oversize.json` so they are not re-encoded every run; they fall back to
-the still photo, which is the designed tier-3 behaviour, not a failure.
+## Verification
 
-**Clips are not committed** (`.gitignore`) — `scripts/deploy.sh` renders them before the SPA build.
-The manifest *is* committed so the client knows what exists. See docs/030 §8.2.
+- `scripts/verify-motion.mjs` — detects which mechanism is live and proves it actually moves by
+  diffing pixels. Necessary because no perf metric can tell a moving clip from a frozen one: an
+  early build shipped a still image wrapped in a video codec and every measurement looked healthy.
+- `scripts/perf-video.mjs` — A/B on one build via the kill switch.
 
-**Measured (A/B on one build via `?novideo=1`):** LCP −56 ms, FPS 60.0 vs 60.0, 0/101 long frames,
-+~1.7 KB gzip. All Definition of Done thresholds met.
+**Measured:** LCP 524 vs 548 ms (no video bytes fetched at all now), FPS 60.0 vs 60.0, 0/103 long
+frames. `verify-motion.mjs` on Ha Long and Sa Pa: moves (pixel diff 8.0 / 13.1), settles to
+`matrix(1, 0, 0, 1, 0, 0)`.
 
-**Deliberately not done:** living map medallions (docs/030 §10 — passes perf, but the motion is
-imperceptible at 28 px; a design call, not a technical one), Story Reels, soundscape.
+## What was built, measured, and then deleted
+
+The first implementation generated a Ken Burns **video** per destination with ffmpeg: 92 clips,
+42 MB, a build script, a budget guardrail, a manifest, a CI step with an ffmpeg install and a
+content-hashed cache. It worked and it passed every threshold.
+
+It was all replaced by one CSS keyframe, which is better on every axis: 0 bytes instead of 42 MB,
+the full-resolution webp instead of an 800px re-encode, 100% of seeds instead of 92/102 (10 photos
+were too detailed to fit the byte budget), and no infrastructure at all. Every trap the video
+version needed solving — the `zoompan` aspect squash, the sharpness pop on handover, the decode-
+slot budget — simply does not exist when the thing being moved *is* the image.
+
+Deleted: `scripts/build-video.mjs`, `scripts/check-video.mjs`, `scripts/perf-duration.mjs`, the
+`video:build` / `check:video` npm scripts, the ffmpeg + cache steps in `.github/workflows/deploy.yml`
+and `scripts/deploy.sh`, and 42 MB of clips. Kept: everything in tier 1, which is still the only
+way to make something move inside a photo.
+
+**Deliberately not done:** living map medallions (docs/030 §10 — passes perf, but motion is
+imperceptible at 28 px; a design call), Story Reels, soundscape.
 
 ---
 

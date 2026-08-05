@@ -39,9 +39,12 @@ interface Props {
   caption?: string;
   className?: string;
   rounded?: boolean;
-  /** Layer the seed's ambient clip over the photo once it has painted (Bible 030). */
+  /**
+   * Give the photo motion (Bible 030). A CSS Ken Burns settle by default; if the seed has
+   * curated real footage, that plays instead — see `ambientClip`.
+   */
   ambient?: boolean;
-  /** Lower wins when decode slots are scarce. */
+  /** Tier-1 footage only: lower wins when decode slots are scarce. */
   ambientPriority?: number;
 }
 
@@ -104,12 +107,16 @@ export function IllustratedImage({
           className={cn(
             "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
             loaded ? "opacity-100" : "opacity-0",
+            // Ken Burns on the photo itself (030 §3). Only starts once the photo has painted, so
+            // the move is never half-run behind a blank frame.
+            ambient && loaded && !clip && "ken-burns-settle",
           )}
         />
       )}
 
-      {/* Ambient loop — layer 4, gated; see AmbientVideo. Requires the photo to have painted, so
-          a seed with no photo never gets video: the illustrated fallback stays honest (030 §3). */}
+      {/* Tier-1 real footage only — motion that exists INSIDE the scene and cannot be faked by
+          moving the frame. Requires the photo to have painted, so a seed with no photo never gets
+          video: the illustrated fallback stays honest (030 §3). */}
       {clip && photo && <AmbientVideo id={seed} sources={clip} posterReady={loaded} priority={ambientPriority} />}
 
       {caption && (

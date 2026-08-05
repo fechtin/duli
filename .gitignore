@@ -15,8 +15,3 @@ scripts/.image-state.json
 # transient batch payload for scripts/apply-verified.mjs
 scripts/.verified-kr.json
 
-# Tier-2 ambient clips are generated (scripts/build-video.mjs), not committed — see docs/030 §8.2.
-# Tier-1 curated footage IS committed: it cannot be regenerated from anything in the repo.
-public/video/
-!public/video/curated/
-scripts/.video-oversize.json
