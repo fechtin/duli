@@ -455,8 +455,40 @@ không chạy JS (gần như mọi bot của LLM) thấy trang trắng; (d) Clou
 - [ ] AI Crawl Control → tắt block cho GPTBot / ClaudeBot / Google-Extended / CCBot
 - [ ] Google Search Console: thêm property `go.fechtin.com`, submit sitemap
 
+## Đa quốc gia — meta không còn hardcode "Việt Nam"
+
+`src/lib/country/names.ts` là nguồn duy nhất cho tên quốc gia, tách khỏi `country/index.ts`
+để Worker và vite.config đọc được mà không kéo theo 2 blob geo-meta. Thêm quốc gia mới =
+một dòng ở đây + một entry trong registry; homepage title/description/link, SEO body và
+JSON-LD tự theo.
+
+- [x] `names.ts` + `COUNTRIES.label` trỏ vào nó
+- [x] Plugin `homepage-seo` trong vite.config bake title/description/link cho `/`
+- [x] `useDocumentMeta` dùng `t("seo.description", {country})` + `addressCountry` theo atlas
+- [x] `scripts/site.ts` — canonical origin dùng chung cho sitemap và vite
+
 ## Không làm (có lý do)
 
 - **hreflang**: locale không nằm trong URL (`useUrlSync` chỉ mã hoá country/province/
   destination; ngôn ngữ ở store + localStorage). hreflang cần URL riêng cho từng locale —
   đó là thay đổi kiến trúc routing, task riêng.
+- **`run_worker_first`**: đã thử để ép `/` qua Worker, phải bỏ. Liệt kê route ở đó ĐẢO
+  mặc định cho mọi route còn lại, và với `not_found_handling = single-page-application`
+  thì `/api/*` lẫn `/vn/*` đều bị SPA shell nuốt — API trả về HTML. Homepage vì vậy được
+  bake tĩnh trong index.html.
+
+## Review (2026-08-05)
+
+Verify trên `wrangler dev` với bản build thật: `/`, `/vn`, `/kr`, `/kr/seoul`,
+`/vn/quang-nam/hoi-an-ancient-town`, `/vn?dish=pho-bo` — mỗi trang đúng **một** canonical
+khớp URL, một og:url, JSON-LD đúng type, body 164–2969 ký tự với 2–64 link nội bộ. Đường đi
+của crawler giờ liền mạch: `/` → `/{cc}` → tỉnh → địa điểm. `/vn/khong-ton-tai` không bị
+canonical hoá. `/api/v1/*` vẫn trả JSON, asset tĩnh vẫn bypass Worker.
+
+Screenshot VN + KR + homepage: app boot bình thường, fallback bị React xoá sạch, không lỗi
+console. tsc, check:i18n, check:content, vitest (26) đều xanh.
+
+**Hai lỗi tự gây ra rồi tự bắt được, đáng ghi lại:**
+1. `run_worker_first = ["/"]` làm mọi route API trả về SPA shell (xem mục trên).
+2. Worker `append` canonical trong khi index.html đã có sẵn một cái → 2 canonical/trang,
+   Google bỏ cả hai. Giờ Worker `setAttribute` để ghi đè, không append. Cùng cách với og:url.
