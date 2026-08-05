@@ -371,6 +371,31 @@ English page for), 17 are sub-5km coordinate drift on area features (a river, a 
 
 ---
 
+# 031 — Photo medallions on map markers ✅
+
+Markers now carry the destination's own photo instead of a generic type icon.
+
+- `scripts/build-thumbs.mjs` (`npm run images:thumbs`) — 96px square `attention` crops of every
+  seed in image-manifest → `public/img/thumb/<seed>.webp`. 498 thumbs, **921 KB total, avg 1.8 KB**.
+  Committed like the source photos (unlike ambient clips), so the map never depends on a build step.
+  A thumb exists iff a photo does, so the path is derived by convention — no second manifest; the
+  script exits non-zero if that parity ever breaks.
+- `src/lib/media/thumbs.ts` — `thumbSrc(seed)`.
+- `src/components/map/PhotoMedallion.tsx` — icon paints first, photo crossfades over it on load.
+  Falls back to the icon on 404/decode error and for seeds with no photo (11 of 304 destinations).
+  `MARKER_TINT` moved here from MapEngine (its only consumer); MapEngine 748 → 720 LOC.
+
+**Why a derivative and not the hero file:** sources are 1280px / ~180 KB and the medallion paints
+them at 20–28px, with dozens on screen. Reusing them would cost several MB of decode for thumbnails.
+
+Verified: typecheck clean, screenshot at Ha Long Bay shows photos in every marker, no console errors.
+
+**Not done (deliberate):** the "selected marker expands into a living video card" idea (proposal 2)
+is still blocked on the design call in docs/030 §224 — whether a card duplicating the panel hero
+right next to it is worth it.
+
+---
+
 # 030 — Ambient video (Living Atlas)
 
 Spec: `docs/030.md`. Spike & measurements: `tasks/030-spike-ambient-video.md`.

@@ -14,33 +14,12 @@ import { getRegions } from "@/lib/api/content";
 import { useT } from "@/lib/i18n";
 import { useCountryName } from "@/lib/country/useCountryName";
 import { cn } from "@/lib/utils/cn";
-import { Landmark } from "./landmarks";
+import { PhotoMedallion } from "./PhotoMedallion";
 import { MapHint } from "./MapHint";
 import { useLivingStore } from "@/lib/store/useLivingStore";
 import type { HeartbeatResult } from "@/lib/living/types";
-import type { DestinationType } from "@/lib/types";
 
 type Box = { x0: number; y0: number; x1: number; y1: number };
-
-/** Marker chip tint by destination type (029) — a legible color family for the icon medallion:
- *  nature = forest green, water = ocean blue, culture = rice gold. */
-const MARKER_TINT: Record<DestinationType, { bg: string; fg: string }> = {
-  mountain:  { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
-  park:      { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
-  waterfall: { bg: "rgba(58, 169, 189, 0.16)", fg: "#2f95a8" },
-  cave:      { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
-  village:   { bg: "rgba(63, 145, 112, 0.16)", fg: "#3f9170" },
-  beach:     { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
-  island:    { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
-  lake:      { bg: "rgba(58, 169, 189, 0.18)", fg: "#2f95a8" },
-  temple:    { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
-  palace:    { bg: "rgba(200, 83, 64, 0.16)",  fg: "#b8493a" },
-  unesco:    { bg: "rgba(210, 96, 79, 0.18)",  fg: "#c85340" },
-  museum:    { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
-  city:      { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
-  market:    { bg: "rgba(214, 138, 163, 0.18)", fg: "#c46b86" },
-  bridge:    { bg: "rgba(139, 116, 214, 0.18)", fg: "#7c6ad0" },
-};
 
 /** Dominant heartbeat signal → ambient glow color (festival > trending > seasonal > ai-pick >
  *  perfect-weather). Drives both the always-on glow halo and the marker pulse/dot (023). */
@@ -368,7 +347,7 @@ export function MapEngine() {
     if (!model) return [];
     return destinations.map((d) => {
       const [x, y] = model.project([d.lng, d.lat]);
-      const tier = d.featured ? 1 : d.badges.some((b) => b === "popular" || b === "trending") ? 2 : 3;
+      const tier: 1 | 2 | 3 = d.featured ? 1 : d.badges.some((b) => b === "popular" || b === "trending") ? 2 : 3;
       return { ...d, x, y, tier };
     });
   }, [model, destinations]);
@@ -583,14 +562,7 @@ export function MapEngine() {
                         isSelected ? "border-primary ring-2 ring-primary/30" : "border-border",
                       )}
                     >
-                      <span
-                        className={cn(
-                          "relative grid place-items-center rounded-full",
-                          d.tier === 1 ? "h-7 w-7" : d.tier === 2 ? "h-6 w-6" : "h-5 w-5",
-                        )}
-                        style={{ backgroundColor: MARKER_TINT[d.type].bg, color: MARKER_TINT[d.type].fg }}
-                      >
-                        <Landmark type={d.type} className={d.tier === 1 ? "h-5 w-5" : "h-4 w-4"} />
+                      <PhotoMedallion seed={d.gallery[0]?.seed ?? d.id} type={d.type} tier={d.tier}>
                         {/* Seasonal glow dot */}
                         {showDot && (
                           <span
@@ -605,7 +577,7 @@ export function MapEngine() {
                             {hb.seasonalIcon}
                           </span>
                         )}
-                      </span>
+                      </PhotoMedallion>
                       <span
                         className={cn(
                           "truncate text-foreground",

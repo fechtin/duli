@@ -21,6 +21,7 @@
     "db:seed:build": "node --experimental-strip-types scripts/build-d1-seed.mjs",
     "images:fetch": "node --experimental-strip-types scripts/fetch-images.mjs",
     "images:dishes": "node --experimental-strip-types scripts/fetch-dish-images.mjs",
+    "images:thumbs": "node scripts/build-thumbs.mjs",
     "verify:kr": "node --experimental-strip-types scripts/verify-content.mjs kr",
     "verify:vn": "node --experimental-strip-types scripts/verify-content.mjs vn",
     "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql"
