@@ -1,0 +1,10 @@
+import { chromium } from "playwright-core";
+const [url, out, locale] = process.argv.slice(2);
+const browser = await chromium.launch({ executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await page.addInitScript((loc) => localStorage.setItem("via.locale", loc), locale);
+await page.goto(url, { waitUntil: "networkidle" });
+await page.waitForTimeout(8000);
+await page.screenshot({ path: out });
+console.log("shot", locale, page.url());
+await browser.close();

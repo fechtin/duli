@@ -253,3 +253,118 @@ Nâng cấp mobile home khớp mockup, tông glass teal-charcoal + gold thống 
   useUIStore.settingsOpen; mount trong Overlays; sidebar Settings mở sheet (thay toggleTheme placeholder).
 - i18n: settings.* + weather.cond.* × 5 locale. tsc + check:i18n + build xanh.
 Còn theo mockup nhưng CHƯA làm (user bỏ qua có chủ ý): 2 card "Gợi ý hôm nay" + "Gợi ý nhanh", nút "Lớp bản đồ".
+
+---
+
+## Sprint 031 — Korea atlas expansion + data verification (confirmed with user 2026-08-04)
+
+**Decisions:** target ~180 destinations (77 → ~185, +108) · full 5 locales per batch (vi source + en/ko/ja/zh) · add `sourceUrl` + `verifiedAt` to `Destination` and ship a cross-check script covering old AND new entries.
+
+**Why a refactor comes first:** `regions/gyeongnam.ts` (525) and `regions/sudogwon.ts` (505) already breach the 500-LOC rule; Seoul alone growing to 18 would push `sudogwon.ts` past 1,100. Content and i18n both move to per-province files.
+
+### Phase 0 — Restructure (no content change)
+- [x] Split `src/data/kr/regions/<region>.ts` → `<province>.ts` (17 files)
+- [x] Split `src/data/kr/i18n/<region>.<locale>.ts` → `<province>.<locale>.ts` (68 files)
+- [x] Rewire `src/data/kr/index.ts` + `src/data/kr/i18n/index.ts`
+- [x] Prove parity: typecheck + `build-d1-seed` emits the same 77 destinations / 17 provinces
+
+### Phase 1 — Verification infrastructure
+- [x] `Destination.sourceUrl?` + `Destination.verifiedAt?` in `src/lib/types.ts` (+ D1 column, seed builder)
+- [x] `scripts/verify-content.mjs`: Wikidata/Wikipedia cross-check of coords + official name, staleness flag on `ticket`/`openingHours`
+- [x] Baseline report over the existing 77 → `tasks/verify-kr-report.md`
+
+**Phase 0/1 outcome (2026-08-04):** 17 province modules + 68 i18n modules; largest file now 242 LOC (was 525). Seed output row-identical to the pre-split build. `npm run verify:kr` cross-checks against Wikipedia — the baseline pass found 5 coordinate errors: `guinsa` (7.2 km) and `hyangiram` (5.4 km) were genuinely wrong and are fixed; `daejeon-expo-park`, `may18-memorial-park`, `naejangsan` were mis-resolved articles, now pinned in `scripts/.verify-map.json`. 0 errors remain; 72 entries carry unverified `ticket`/`openingHours`.
+
+### Phase 2 — Content batches (vi + en/ko/ja/zh + gallery seeds per batch)
+Targets — Seoul 6→18 · Busan 6→14 · Gyeonggi 4→14 · Gangwon 6→14 · Jeju 6→14 · Gyeongbuk 7→15 · Gyeongnam 5→12 · Jeonnam 5→12 · Incheon 4→10 · Jeonbuk 4→10 · Chungnam 4→10 · Chungbuk 4→10 · Daegu 4→9 · Ulsan 4→8 · Daejeon 3→7 · Gwangju 3→7 · Sejong 2→5
+- [x] 2a Sudogwon (Seoul, Incheon, Gyeonggi) — +28
+- [x] 2b Gyeongnam region (Busan, Gyeongnam, Ulsan) — +19
+- [x] 2c Gangwon + Jeju — +16
+- [x] 2d Gyeongbuk (Gyeongbuk, Daegu) — +13
+- [x] 2e Honam (Jeonnam, Jeonbuk, Gwangju) — +17
+- [x] 2f Chungcheong (Chungnam, Chungbuk, Daejeon, Sejong) — +18
+
+### Phase 3 — Photos & ship
+- [x] `npm run images:fetch -- kr` for the new seeds; visual audit; curate corrections
+- [x] `npm run data:build` + `build-d1-seed` + sitemap; verify:kr over the full set
+- [x] Build + smoke-test a few `/kr/...` deep links
+
+### Review — completed 2026-08-04
+
+**Delivered.** KR atlas 77 → **189 destinations**, every one in all five locales (vi source +
+en/ko/ja/zh), 0 gaps. 183/190 gallery seeds carry a real photo; 46/46 dishes carry a real photo.
+`tsc`, `check:i18n`, `check:content`, `vitest` (18), `db:seed:build`, `seo:build` (387 URLs) and
+`npm run build` all pass; `/kr/...` deep links verified against a local worker in all five locales.
+
+**Structure.** 17 per-province content modules, four of which needed a second module to stay
+under 500 LOC (`seoul-modern`, `gyeonggi-north`, `gyeongju`). 68 per-province i18n modules.
+Seed output was proved row-identical to the pre-split build before any content was added.
+
+**What the guards actually caught.**
+- `scripts/check-content-locales.mjs` (new): 8 real defects of mine — Cyrillic and stray English
+  words inside Chinese/Japanese copy. All 8 would have shipped into D1 without it.
+- `scripts/verify-content.mjs` (new): 5 coordinate errors in the original 77 (2 real: `guinsa`
+  7.2km, `hyangiram` 5.4km) and 6 more in the new content (3 real: `petite-france`,
+  `seosan-maae-buddha`, `namhae-german-village`). All fixed; report now shows 0 errors.
+- Image audit: 16 destinations had the wrong photo, mostly because Commons geosearch returns
+  whatever is geotagged nearby — a cat for Yongmunsa, a shipyard for the whale museum, a
+  shopping street for the Independence Hall.
+
+**Pipeline bugs found and fixed.** Neither `curate-images.mjs` nor `fetch-dish-images.mjs` backed
+off on HTTP 429, so a long run failed 30/43 downloads and silently left the wrong images in
+place. Both now retry with exponential backoff. `fetch-dish-images.mjs` also gained KR atlas
+support and a name-variant fallback ("Suwon Galbi" → "Galbi"), guarded by a stoplist so it never
+degrades to a bare English noun ("Busan Fish Cake" → "Cake" would have fetched a birthday cake).
+
+**Known gaps, deliberately left.**
+- 7 destinations show the illustrated placeholder because no correct Commons photo was found:
+  `ganghwa-peace-observatory`, `mancheonha-skywalk`, `jangtaesan-metasequoia`, `daejeon-skyroad`,
+  `bimatgil-geumgang`, `gurye-sansuyu`, `jangsaengpo-whale-village`. A plausible-looking wrong
+  photo is worse than none.
+- The name-token guard in `fetch-images.mjs` still does not gate the geosearch path. That is the
+  root cause of the wrong photos and is worth closing before the next bulk run.
+
+### Phase 4 — `ticket` / `openingHours` verified against sources (finished 2026-08-05)
+
+All 189 destinations now carry `sourceUrl` + `verifiedAt`; `verify:kr` reports **0 never-verified**
+and **0 coordinate errors**. Two tiers of evidence, and the difference matters:
+
+- **148 checked individually** against an operator or government page (VisitKorea, city/county
+  tourism sites, park and museum operators). These are the entries that state a price or a clock
+  time.
+- **41 checked as a class** — unfenced open-air public space, no gate and no ticket (beaches,
+  riverside parks, capes, mural villages, coastal walks). Their `sourceUrl` is the KTO portal, not
+  a per-site page. Treat their stamp as weaker evidence than the first tier.
+
+**Roughly 60% of the individually checked entries were wrong.** Three causes, in order of how
+badly they'd have misled a reader:
+
+1. *Policy changed after my knowledge cutoff.* From 2023-05-04 Korea's revised Cultural Heritage
+   Protection Act abolished admission at 65 Jogye Order temples holding **nationally** designated
+   heritage. 16 entries charged money for something free for three years. The rule has a real edge:
+   Maisan's Tapsa holds only *provincial* heritage, so it still charges 3,000 KRW — the abolition
+   is not "temples are free now".
+2. *Prices drifted.* Nami Island 16,000 → **19,000** (up 3,000 in one year), Ulleungdo ferry
+   ~130,000 → **160,000–180,000** return, Muju gondola 18,000 → **25,000**, Gwangmyeong/Gosu/
+   Mancheonha each off by 1,000–2,000.
+3. *False precision.* I had written single clock ranges for places that run on seasons, tides or
+   sunlight. Hahoe opens sunrise-to-sunset, not 09:00–18:00. Where sources genuinely disagree
+   (Boseong, Everland, Chungju ferry) the field now carries a range plus the reason it varies,
+   rather than a confident wrong number.
+
+**Facts a reader would have been burned by, now in the data:** Bukchon-ro 11-gil is closed to
+tourists outside 10:00–17:00 with a 100,000 KRW fine, enforced from 2026-01-01. Manjanggul only
+reopened 2026-05-30 after repairs. Jangtaesan's Skytower is shut for safety inspection. Daegu's
+missionary houses are closed for conversion. The Sejong rooftop garden runs only two seasonal
+windows a year, not year-round. Gwangjang's food alley is the part open every day — I had it
+backwards. Hallasan's summit trails need advance booking.
+
+**Tooling.** `scripts/apply-verified.mjs` applies a batch from `scripts/.verified-kr.json` across
+the Vietnamese source and all four locale files plus provenance in one pass, mapping overflow
+modules back to their province's i18n file. Re-run it for future corrections rather than editing
+five files by hand.
+
+**Still open.** 93 advisory warnings in `tasks/verify-kr-report.md`, all from the Wikipedia
+cross-check rather than from the data: 76 are "no article resolved" (Korean sites Wikipedia has no
+English page for), 17 are sub-5km coordinate drift on area features (a river, a market district),
+12 are numbers in `facts` the matched article does not mention. None is a known defect.

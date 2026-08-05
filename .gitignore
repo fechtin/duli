@@ -11,3 +11,6 @@ dist
 .DS_Store
 .vite
 scripts/.image-state.json
+
+# transient batch payload for scripts/apply-verified.mjs
+scripts/.verified-kr.json

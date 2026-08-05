@@ -1,0 +1,254 @@
+# Verification report — KR atlas
+
+Generated 2026-08-05 by `scripts/verify-content.mjs`. Authority: Wikipedia (en, ko).
+This file is advisory — nothing here edits content.
+
+| | |
+|---|---|
+| Destinations checked | 189 |
+| Coordinate errors (>5 km) | 0 |
+| Warnings | 93 |
+| Never verified (`ticket`/`openingHours` present, no `verifiedAt`) | 0 |
+| Integrity issues | 7 |
+
+## Errors — coordinates more than 5 km out
+
+_none_
+
+## Warnings
+
+- **changdeokgung** (seoul)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **cheonggyecheon** (seoul)
+  - coordinates off by 2.5 km vs [Cheonggyecheon](https://en.wikipedia.org/wiki/Cheonggyecheon)
+- **myeongdong** (seoul)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jeondeungsa** (incheon)
+  - coordinates off by 1.6 km vs [Jeondeungsa](https://en.wikipedia.org/wiki/Jeondeungsa)
+- **ganghwa-peace-observatory** (incheon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **muuido** (incheon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **incheon-open-port-street** (incheon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **sorae-wetland-park** (incheon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hwaseong-fortress** (gyeonggi)
+  - coordinates off by 2.5 km vs [Suwon](https://en.wikipedia.org/wiki/Suwon)
+  - numbers not found in the article (check by hand): 1794
+- **gwangmyeong-cave** (gyeonggi)
+  - coordinates off by 1.6 km vs [Gwangmyeong Cave](https://en.wikipedia.org/wiki/Gwangmyeong_Cave)
+  - numbers not found in the article (check by hand): 1912, 12, 40năm
+- **oido** (gyeonggi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dumulmeori** (gyeonggi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **yongmunsa** (gyeonggi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **garden-of-morning-calm** (gyeonggi)
+  - coordinates off by 1.8 km vs [Garden of Morning Calm](https://en.wikipedia.org/wiki/Garden_of_Morning_Calm)
+  - numbers not found in the article (check by hand): 12
+- **pocheon-art-valley** (gyeonggi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **daegwallyeong-sky-ranch** (gangwon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **chuncheon-soyang** (gangwon)
+  - coordinates off by 1.7 km vs [Chuncheon](https://en.wikipedia.org/wiki/Chuncheon)
+- **hwanseongul-cave** (gangwon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gangneung-anmok-coffee** (gangwon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **cheongoksan-mureung** (gangwon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **danyang-dodamsambong** (chungbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **cheongju-jikji** (chungbuk)
+  - coordinates off by 2.8 km vs [Cheongju Early Printing Museum](https://en.wikipedia.org/wiki/Cheongju_Early_Printing_Museum)
+  - numbers not found in the article (check by hand): 1377, 2001, 78năm, 1985
+- **mancheonha-skywalk** (chungbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **chungju-lake-ferry** (chungbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **chungju-jungangtap** (chungbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **cheongnamdae** (chungbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **sobaeksan** (chungbuk)
+  - coordinates off by 2.1 km vs [Sobaeksan National Park](https://en.wikipedia.org/wiki/Sobaeksan_National_Park)
+- **gongju-tomb** (chungnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **buyeo-busosanseong** (chungnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **haemieupseong** (chungnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **sinduri-dunes** (chungnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **oeam-folk-village** (chungnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **independence-hall** (chungnam)
+  - coordinates off by 4.6 km vs [Independence Hall of Korea](https://en.wikipedia.org/wiki/Independence_Hall_of_Korea)
+  - numbers not found in the article (check by hand): 400
+- **gyeryongsan** (daejeon)
+  - coordinates off by 2.1 km vs [Gyeryongsan National Park](https://en.wikipedia.org/wiki/Gyeryongsan_National_Park)
+  - numbers not found in the article (check by hand): 420
+- **jangtaesan-metasequoia** (daejeon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **daecheongho-observatory** (daejeon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **daejeon-skyroad** (daejeon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ppuri-park** (daejeon)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **sejong-lake-park** (sejong)
+  - coordinates off by 3.0 km vs [Sejong City](https://en.wikipedia.org/wiki/Sejong_City)
+- **sejong-arboretum** (sejong)
+  - coordinates off by 3.4 km vs [Sejong City](https://en.wikipedia.org/wiki/Sejong_City)
+  - numbers not found in the article (check by hand): 2.000
+- **government-complex-rooftop** (sejong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bimatgil-geumgang** (sejong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **birds-nest-library** (sejong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **maisan** (jeonbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **seonunsa** (jeonbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **byeonsan-bando** (jeonbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gunsan-modern-quarter** (jeonbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jeonju-nambu-market** (jeonbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **suncheonman-bay** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **boseong-tea-fields** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **yeosu-night-sea** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **damyang-bamboo** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **naganeupseong** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jindo-sea-parting** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **mokpo-modern-history** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gurye-sansuyu** (jeonnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **suncheon-national-garden** (jeonnam)
+  - coordinates off by 1.7 km vs [Suncheon Bay National Garden](https://en.wikipedia.org/wiki/Suncheon_Bay_National_Garden)
+  - numbers not found in the article (check by hand): 110
+- **mudeungsan** (gwangju)
+  - coordinates off by 1.7 km vs [Mudeungsan National Park](https://en.wikipedia.org/wiki/Mudeungsan_National_Park)
+  - numbers not found in the article (check by hand): 2013, 2018, 85
+- **yangnim-dong** (gwangju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gwangju-daein-market** (gwangju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gwangju-penguin-village** (gwangju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **andong-woryeonggyo** (gyeongbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **pohang-homigot** (gyeongbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ulleungdo** (gyeongbuk)
+  - coordinates off by 4.3 km vs [Ulleungdo](https://en.wikipedia.org/wiki/Ulleungdo)
+  - numbers not found in the article (check by hand): 290km
+- **daereungwon** (gyeongbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gyeongju-national-museum** (gyeongbuk)
+  - coordinates off by 2.4 km vs [Gyeongju](https://en.wikipedia.org/wiki/Gyeongju)
+  - numbers not found in the article (check by hand): 771, 1913
+- **bunhwangsa-hwangnyongsa** (gyeongbuk)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **palgongsan-gatbawi** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **kim-gwang-seok-street** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **daegu-yangnyeongsi** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **daegu-modern-alley** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bullo-tumuli** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **biseulsan-azalea** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **daegu-arboretum** (daegu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **haeinsa** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tongyeong-dongpirang** (gyeongnam)
+  - coordinates off by 2.0 km vs [Tongyeong](https://en.wikipedia.org/wiki/Tongyeong)
+  - numbers not found in the article (check by hand): 1.975m
+- **geoje-oedo** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **namhae-daraengi** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **gimhae-gaya-tombs** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jinhae-cherry-blossom** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tongyeong-mireuksan** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **geoje-windy-hill** (gyeongnam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **igidae-coastal-walk** (busan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **songdo-cable-car** (busan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **taehwagang-bamboo** (ulsan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jangsaengpo-whale-village** (ulsan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ganwoljae-silver-grass** (ulsan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ulsan-bridge-observatory** (ulsan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jujeon-pebble-beach** (ulsan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **manjanggul** (jeju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **jusangjeolli-cliff** (jeju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **sanbangsan** (jeju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bijarim-forest** (jeju)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+
+## Integrity
+
+- `ganghwa-peace-observatory` gallery seed `ganghwa-peace-observatory` has no image in the manifest
+- `mancheonha-skywalk` gallery seed `mancheonha-skywalk` has no image in the manifest
+- `jangtaesan-metasequoia` gallery seed `jangtaesan-metasequoia` has no image in the manifest
+- `daejeon-skyroad` gallery seed `daejeon-skyroad` has no image in the manifest
+- `bimatgil-geumgang` gallery seed `bimatgil-geumgang` has no image in the manifest
+- `gurye-sansuyu` gallery seed `gurye-sansuyu` has no image in the manifest
+- `jangsaengpo-whale-village` gallery seed `jangsaengpo-whale-village` has no image in the manifest
+
+## Clean
+
+- insadong (0.12 km)
+- gwangjang-market (0.06 km)
+- hongdae (0.12 km)
+- national-museum-korea (0.03 km)
+- wolmido (0.43 km)
+- songwol-fairy-tale-village (0.59 km)
+- namhansanseong (0.02 km)
+- everland (0.07 km)
+- petite-france (0.00 km)
+- naksansa (0.18 km)
+- odaesan-woljeongsa (0.01 km)
+- guinsa (0.00 km)
+- sudeoksa (0.58 km)
+- seosan-maae-buddha (0.00 km)
+- hyangiram (0.11 km)
+- hahoe-folk-village (0.12 km)
+- juwangsan (1.40 km)
+- yangdong-folk-village (0.72 km)
+- gamcheon-culture-village (0.16 km)
+- beomeosa (0.20 km)
+- bangudae-petroglyphs (1.12 km)
+- jeongbang-waterfall (0.03 km)
+- cheonjiyeon-waterfall (0.04 km)
+- seongeup-folk-village (1.28 km)

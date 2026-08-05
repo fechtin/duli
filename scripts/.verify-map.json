@@ -1,0 +1,10 @@
+{
+  "_comment": "destination id -> Wikipedia title, for places scripts/verify-content.mjs cannot resolve on its own. Titles are tried against the atlas' wiki languages in order (kr: en, then ko).",
+  "daejeon-expo-park": "Expo Science Park",
+  "may18-memorial-park": "국립아시아문화전당",
+  "naejangsan": "Naejangsan",
+  "odaesan-woljeongsa": "Woljeongsa",
+  "jirisan-national-park": "Jirisan",
+  "seosan-maae-buddha": "서산 용현리 마애여래삼존상",
+  "pocheon-art-valley": "Pocheon Art Valley"
+}

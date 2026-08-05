@@ -7,7 +7,7 @@ import { destinations } from "../src/data/destinations.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const r = (p) => resolve(__dirname, "..", p);
-const geo = JSON.parse(readFileSync(r("src/data/generated/geo-meta.json"), "utf8"));
+const geo = JSON.parse(readFileSync(r("src/data/generated/geo-meta.vn.json"), "utf8"));
 const provinceEn = new Map(geo.provinces.map((p) => [p.slug, p.nameEn]));
 const manifest = JSON.parse(readFileSync(r("src/data/generated/image-manifest.json"), "utf8"));
 

@@ -47,27 +47,48 @@ async function infoFor(title) {
   };
 }
 
-async function downloadWebp(url, destFile) {
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`img ${res.status}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  await sharp(buf).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 74 }).toFile(destFile);
+// upload.wikimedia.org throttles a run of downloads hard; without a backoff an entire
+// curation pass fails on 429 and silently leaves the wrong images in place.
+async function downloadWebp(url, destFile, tries = 5) {
+  for (let i = 1; i <= tries; i++) {
+    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    if (res.ok) {
+      const buf = Buffer.from(await res.arrayBuffer());
+      await sharp(buf).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 74 }).toFile(destFile);
+      return;
+    }
+    if ((res.status === 429 || res.status >= 500) && i < tries) {
+      await sleep(Number(res.headers.get("retry-after")) * 1000 || i * 10000);
+      continue;
+    }
+    throw new Error(`img ${res.status}`);
+  }
 }
 
 mkdirSync(OUT_DIR, { recursive: true });
+mkdirSync(`${OUT_DIR}/dishes`, { recursive: true });
+
+// Food Explorer seeds are keyed `dish-<id>` and their files live under public/img/dishes/.
+// Keep that convention here, or a later fetch-dish-images run would rewrite the manifest to
+// /img/dishes/... and leave this file orphaned at the top level.
+const pathsFor = (seed) =>
+  seed.startsWith("dish-")
+    ? { file: `${OUT_DIR}/dishes/${seed.slice(5)}.webp`, src: `/img/dishes/${seed.slice(5)}.webp` }
+    : { file: `${OUT_DIR}/${seed}.webp`, src: `/img/${seed}.webp` };
 const manifestPath = r("src/data/generated/image-manifest.json");
 const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
 const map = JSON.parse(readFileSync(r("scripts/.curate-map.json"), "utf8"));
 
 let ok = 0, fail = 0;
 for (const [seed, title] of Object.entries(map)) {
-  if (!title) continue;
+  if (!title || seed.startsWith("_")) continue;
   const info = await infoFor(title);
   if (!info?.thumb) { console.log(`  ✗ ${seed}: no imageinfo for ${title}`); fail++; continue; }
   try {
-    await downloadWebp(info.thumb, `${OUT_DIR}/${seed}.webp`);
+    const out = pathsFor(seed);
+    await downloadWebp(info.thumb, out.file);
     manifest[seed] = {
-      src: `/img/${seed}.webp`, credit: info.credit, license: info.license,
+      src: out.src, credit: info.credit, license: info.license,
       sourceTitle: info.title, sourceUrl: info.descUrl, via: "curated", width: info.width,
     };
     console.log(`  ✓ ${seed} ← ${info.title} (${info.width}px)`);
@@ -75,7 +96,7 @@ for (const [seed, title] of Object.entries(map)) {
   } catch (e) {
     console.log(`  ✗ ${seed}: download failed ${title}`); fail++;
   }
-  await sleep(150);
+  await sleep(1200);
 }
 writeFileSync(manifestPath, JSON.stringify(manifest, null, 0));
 console.log(`\n[curate] ${ok} curated, ${fail} failed`);

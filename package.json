@@ -10,12 +10,16 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "check:i18n": "node scripts/check-i18n.mjs",
+    "check:content": "node scripts/check-content-locales.mjs",
     "test": "vitest run",
     "worker:dev": "wrangler dev",
-    "data:build": "node scripts/build-map.mjs",
+    "data:build": "node scripts/build-map.mjs vn && node scripts/build-map.mjs kr",
     "seo:build": "node --experimental-strip-types scripts/build-sitemap.mjs",
     "db:seed:build": "node --experimental-strip-types scripts/build-d1-seed.mjs",
     "images:fetch": "node --experimental-strip-types scripts/fetch-images.mjs",
+    "images:dishes": "node --experimental-strip-types scripts/fetch-dish-images.mjs",
+    "verify:kr": "node --experimental-strip-types scripts/verify-content.mjs kr",
+    "verify:vn": "node --experimental-strip-types scripts/verify-content.mjs vn",
     "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql"
   },
   "dependencies": {
