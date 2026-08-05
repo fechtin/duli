@@ -1,10 +1,16 @@
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils/cn";
 import manifest from "@/data/generated/image-manifest.json";
+import { AmbientVideo } from "./AmbientVideo";
+import { ambientClip } from "@/lib/media/videoManifest";
 
 // Real photos (Wikimedia Commons, fetched by scripts/fetch-images.mjs) when available, with
 // a deterministic illustrated gradient as the blur-up placeholder + fallback (Bible 002 §10,
 // 006 §11). Attribution shown per Commons license (Bible 009 §6).
+//
+// Opt in with `ambient` to layer a looping clip over the photo where one exists (Bible 030).
+// It is opt-in rather than automatic because decode slots are scarce: thumbnails and gallery
+// tiles must not compete with the hero for them.
 
 const images = manifest as Record<string, { src: string; credit: string; license: string }>;
 
@@ -33,10 +39,23 @@ interface Props {
   caption?: string;
   className?: string;
   rounded?: boolean;
+  /** Layer the seed's ambient clip over the photo once it has painted (Bible 030). */
+  ambient?: boolean;
+  /** Lower wins when decode slots are scarce. */
+  ambientPriority?: number;
 }
 
-export function IllustratedImage({ seed, ratio = "16/9", caption, className, rounded = true }: Props) {
+export function IllustratedImage({
+  seed,
+  ratio = "16/9",
+  caption,
+  className,
+  rounded = true,
+  ambient = false,
+  ambientPriority,
+}: Props) {
   const photo = images[seed];
+  const clip = ambient ? ambientClip(seed) : undefined;
   const [loaded, setLoaded] = useState(false);
 
   const { dark, mid, light, sunX, hillSeed } = useMemo(() => {
@@ -88,6 +107,10 @@ export function IllustratedImage({ seed, ratio = "16/9", caption, className, rou
           )}
         />
       )}
+
+      {/* Ambient loop — layer 4, gated; see AmbientVideo. Requires the photo to have painted, so
+          a seed with no photo never gets video: the illustrated fallback stays honest (030 §3). */}
+      {clip && photo && <AmbientVideo id={seed} sources={clip} posterReady={loaded} priority={ambientPriority} />}
 
       {caption && (
         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 text-xs font-medium text-white/95">

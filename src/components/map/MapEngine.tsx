@@ -423,6 +423,7 @@ export function MapEngine() {
       className="relative h-full w-full touch-none overflow-hidden bg-map-sea outline-none [contain:strict]"
       role="application"
       aria-label={t("app.tagline", { country: countryName })}
+      data-zoom-level={zoomLevel}
       tabIndex={0}
       {...cam.handlers}
       onKeyDown={(e) => {

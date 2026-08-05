@@ -45,7 +45,14 @@ export function DestinationPanel({ id }: { id: string }) {
     <div>
       {/* 1. Hero + 2. Name */}
       <div className="relative">
-        <IllustratedImage seed={dest.gallery[0]?.seed ?? dest.id} ratio="4/3" rounded={false} className="md:rounded-none" />
+        <IllustratedImage
+          seed={dest.gallery[0]?.seed ?? dest.id}
+          ratio="4/3"
+          rounded={false}
+          className="md:rounded-none"
+          ambient
+          ambientPriority={0}
+        />
         {/* Editorial two-layer scrim: a long soft ramp + a denser base so the display title
             always sits on solid ground without flattening the photo (025 §GĐ3). */}
         <div

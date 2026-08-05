@@ -368,3 +368,41 @@ five files by hand.
 cross-check rather than from the data: 76 are "no article resolved" (Korean sites Wikipedia has no
 English page for), 17 are sub-5km coordinate drift on area features (a river, a market district),
 12 are numbers in `facts` the matched article does not mention. None is a known defect.
+
+---
+
+# 030 — Ambient video (Living Atlas)
+
+Spec: `docs/030.md`. Spike & measurements: `tasks/030-spike-ambient-video.md`.
+
+Photos now carry motion where one exists, under a hard rule: **video is never on the critical path
+and never an LCP candidate**. Strip the layer away and the product is exactly what it was.
+
+- `src/lib/media/videoBudget.ts` — decode-slot registry (2 desktop / 1 mobile), granted by
+  distance from screen centre; plus the global gates (reduced-motion, save-data, link quality)
+  and the `?novideo=1` A/B kill switch.
+- `src/components/ui/AmbientVideo.tsx` — the gated layer. The `<video>` element is not created
+  until the poster has painted, the browser is idle, and the surface is 50% on screen. Fades in on
+  `playing` (not `canplay`, which shows a black frame first). `?videodebug=1` paints a state badge.
+- `src/lib/media/videoManifest.ts` + `src/data/generated/video-manifest.json` — tier 2 is a bare
+  seed list (paths by convention); tier 1 is hand-curated footage with provenance.
+- `IllustratedImage` gains `ambient` — **opt-in**, because decode slots are scarce and gallery
+  tiles must not compete with the hero. Only the destination hero opts in today.
+- `scripts/build-video.mjs` (`npm run video:build`) — renders tier 2: a 3s Ken Burns move
+  palindromed into a 6s seamless loop, 800x600 @ 24fps, VP9 + H.264, keeps both and enforces the
+  budget on the smaller. Resumable, `ONLY=` / `LIMIT=` / `FORCE=`.
+- `scripts/check-video.mjs` (`npm run check:video`) — budget + manifest/disk parity guardrail.
+- `scripts/perf-video.mjs`, `perf-duration.mjs`, `verify-video.mjs` — the measurement harnesses.
+
+**Built:** 90 of 102 eligible seeds, 45 MB. 12 seeds are too detailed to fit 900 KB and are
+memoised in `scripts/.video-oversize.json` so they are not re-encoded every run; they fall back to
+the still photo, which is the designed tier-3 behaviour, not a failure.
+
+**Clips are not committed** (`.gitignore`) — `scripts/deploy.sh` renders them before the SPA build.
+The manifest *is* committed so the client knows what exists. See docs/030 §8.2.
+
+**Measured (A/B on one build via `?novideo=1`):** LCP −56 ms, FPS 60.0 vs 60.0, 0/101 long frames,
++~1.7 KB gzip. All Definition of Done thresholds met.
+
+**Deliberately not done:** living map medallions (docs/030 §10 — passes perf, but the motion is
+imperceptible at 28 px; a design call, not a technical one), Story Reels, soundscape.

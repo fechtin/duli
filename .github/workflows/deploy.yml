@@ -27,6 +27,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Ambient video clips (docs/030 §8.2) are generated, not committed — 45 MB of derived files
+      # do not belong in git history. Encoding all of them takes ~30 min, so the rendered output is
+      # cached against the inputs that determine it: the photo manifest and the generator itself.
+      # A cache hit makes the render step a no-op; a miss re-renders only what is missing.
+      - name: Restore ambient video cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            public/video
+            scripts/.video-oversize.json
+          key: ambient-video-${{ hashFiles('src/data/generated/image-manifest.json', 'scripts/build-video.mjs') }}
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Render ambient video clips
+        run: npm run video:build
+
+      - name: Check video budget
+        run: npm run check:video
+
       - name: Build SPA
         run: npm run build
         env:
