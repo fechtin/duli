@@ -1,10 +1,25 @@
 {
-  "_comment": "destination id -> Wikipedia title, for places scripts/verify-content.mjs cannot resolve on its own. Titles are tried against the atlas' wiki languages in order (kr: en, then ko).",
+  "_comment": "destination id -> Wikipedia title, for places scripts/verify-content.mjs cannot resolve on its own. Titles are tried against the atlas' wiki languages in order (kr: en, then ko; vn: en, then vi).",
   "daejeon-expo-park": "Expo Science Park",
   "may18-memorial-park": "국립아시아문화전당",
   "naejangsan": "Naejangsan",
   "odaesan-woljeongsa": "Woljeongsa",
   "jirisan-national-park": "Jirisan",
   "seosan-maae-buddha": "서산 용현리 마애여래삼존상",
-  "pocheon-art-valley": "Pocheon Art Valley"
+  "pocheon-art-valley": "Pocheon Art Valley",
+
+  "suoi-mo": "Suối Mỡ",
+  "puong-cave": "Động Puông",
+  "dau-dang-waterfall": "Thác Đầu Đẳng",
+  "pac-bo": "Khu di tích Pác Bó",
+  "huu-nghi-border-gate": "Cửa khẩu Hữu Nghị",
+  "fansipan": "Fansipan",
+  "bac-ha-market": "Bắc Hà",
+  "xuan-son-national-park": "Xuân Sơn National Park",
+  "den-mau-au-co": "Đền Mẫu Âu Cơ",
+  "yen-tu": "Yên Tử",
+  "co-to-island": "Cô Tô Island",
+  "phuong-hoang-cave": "Hang Phượng Hoàng - suối Mỏ Gà",
+  "ban-ba-waterfall": "Thác Bản Ba",
+  "khau-pha-pass": "Đèo Khau Phạ"
 }

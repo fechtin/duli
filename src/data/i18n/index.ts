@@ -30,6 +30,39 @@ import * as mkEn from "./content/mekong.en.ts";
 import * as mkKo from "./content/mekong.ko.ts";
 import * as mkJa from "./content/mekong.ja.ts";
 import * as mkZh from "./content/mekong.zh.ts";
+// Depth pass (tasks/033) — one bucket per VnRegionId, added region by region.
+import * as neEn from "./content/depth/northeast.en.ts";
+import * as neKo from "./content/depth/northeast.ko.ts";
+import * as neJa from "./content/depth/northeast.ja.ts";
+import * as neZh from "./content/depth/northeast.zh.ts";
+import * as rrdDEn from "./content/depth/redRiverDelta.en.ts";
+import * as rrdDKo from "./content/depth/redRiverDelta.ko.ts";
+import * as rrdDJa from "./content/depth/redRiverDelta.ja.ts";
+import * as rrdDZh from "./content/depth/redRiverDelta.zh.ts";
+import * as mkDEn from "./content/depth/mekongDelta.en.ts";
+import * as mkDKo from "./content/depth/mekongDelta.ko.ts";
+import * as mkDJa from "./content/depth/mekongDelta.ja.ts";
+import * as mkDZh from "./content/depth/mekongDelta.zh.ts";
+import * as sccEn from "./content/depth/southCentralCoast.en.ts";
+import * as sccKo from "./content/depth/southCentralCoast.ko.ts";
+import * as sccJa from "./content/depth/southCentralCoast.ja.ts";
+import * as sccZh from "./content/depth/southCentralCoast.zh.ts";
+import * as seDEn from "./content/depth/southeast.en.ts";
+import * as seDKo from "./content/depth/southeast.ko.ts";
+import * as seDJa from "./content/depth/southeast.ja.ts";
+import * as seDZh from "./content/depth/southeast.zh.ts";
+import * as chEn from "./content/depth/centralHighlands.en.ts";
+import * as chKo from "./content/depth/centralHighlands.ko.ts";
+import * as chJa from "./content/depth/centralHighlands.ja.ts";
+import * as chZh from "./content/depth/centralHighlands.zh.ts";
+import * as nwEn from "./content/depth/northwest.en.ts";
+import * as nwKo from "./content/depth/northwest.ko.ts";
+import * as nwJa from "./content/depth/northwest.ja.ts";
+import * as nwZh from "./content/depth/northwest.zh.ts";
+import * as nccEn from "./content/depth/northCentralCoast.en.ts";
+import * as nccKo from "./content/depth/northCentralCoast.ko.ts";
+import * as nccJa from "./content/depth/northCentralCoast.ja.ts";
+import * as nccZh from "./content/depth/northCentralCoast.zh.ts";
 
 interface BucketModule {
   destinations: Record<string, DestinationTranslation>;
@@ -37,10 +70,10 @@ interface BucketModule {
 }
 
 const byLocale: Record<ContentLocale, BucketModule[]> = {
-  en: [nmEn, rrdEn, ncEn, schEn, seEn, mkEn],
-  ko: [nmKo, rrdKo, ncKo, schKo, seKo, mkKo],
-  ja: [nmJa, rrdJa, ncJa, schJa, seJa, mkJa],
-  zh: [nmZh, rrdZh, ncZh, schZh, seZh, mkZh],
+  en: [nmEn, rrdEn, ncEn, schEn, seEn, mkEn, neEn, rrdDEn, mkDEn, sccEn, seDEn, chEn, nwEn, nccEn],
+  ko: [nmKo, rrdKo, ncKo, schKo, seKo, mkKo, neKo, rrdDKo, mkDKo, sccKo, seDKo, chKo, nwKo, nccKo],
+  ja: [nmJa, rrdJa, ncJa, schJa, seJa, mkJa, neJa, rrdDJa, mkDJa, sccJa, seDJa, chJa, nwJa, nccJa],
+  zh: [nmZh, rrdZh, ncZh, schZh, seZh, mkZh, neZh, rrdDZh, mkDZh, sccZh, seDZh, chZh, nwZh, nccZh],
 };
 
 export const destinationI18n: Record<string, DestinationI18n> = {};

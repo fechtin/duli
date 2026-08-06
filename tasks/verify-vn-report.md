@@ -1,0 +1,524 @@
+# Verification report — VN atlas
+
+Generated 2026-08-06 by `scripts/verify-content.mjs`. Authority: Wikipedia (en, vi).
+This file is advisory — nothing here edits content.
+
+| | |
+|---|---|
+| Destinations checked | 129 |
+| Coordinate errors (>5 km) | 14 |
+| Warnings | 113 |
+| Never verified (`ticket`/`openingHours` present, no `verifiedAt`) | 115 |
+| Integrity issues | 122 |
+
+## Errors — coordinates more than 5 km out
+
+- **ha-long-bay** (quang-ninh)
+  - coordinates off by **20.8 km** vs [Hạ Long Bay](https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay) (20.9, 107.2)
+  - ticket "290.000đ", openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **trang-an** (ninh-binh)
+  - coordinates off by **956.2 km** vs [Nha Trang](https://en.wikipedia.org/wiki/Nha_Trang) (12.245, 109.19166667)
+  - ticket "250.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 2014
+- **phu-quoc-island** (kien-giang)
+  - coordinates off by **5.7 km** vs [Phu Quoc International Airport](https://en.wikipedia.org/wiki/Phu_Quoc_International_Airport) (10.17166667, 103.99111111)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 574km, 7,8km
+- **hoa-binh-lake** (hoa-binh)
+  - coordinates off by **1105.1 km** vs [Tet Offensive attacks on Bien Hoa and Long Binh](https://en.wikipedia.org/wiki/Tet_Offensive_attacks_on_Bien_Hoa_and_Long_Binh) (10.977, 106.832)
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **bn-den-do** (bac-ninh)
+  - coordinates off by **17.4 km** vs [Temple of Literature, Hanoi](https://en.wikipedia.org/wiki/Temple_of_Literature%2C_Hanoi) (21.02861111, 105.83555556)
+  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+- **tb-chua-keo** (thai-binh)
+  - coordinates off by **32.4 km** vs [Keo Temple](https://en.wikipedia.org/wiki/Keo_Temple) (20.36055556, 106.29722222)
+  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 1632, 400năm
+- **bien-thien-cam** (ha-tinh)
+  - coordinates off by **168.7 km** vs [Con Thien](https://en.wikipedia.org/wiki/Con_Thien) (16.90972222, 106.98)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **dao-con-co** (quang-tri)
+  - coordinates off by **940.1 km** vs [Con Dao Airport](https://en.wikipedia.org/wiki/Con_Dao_Airport) (8.7325, 106.62888889)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 30km, 2,3km
+- **pye-ganh-da-dia** (phu-yen)
+  - coordinates off by **16.5 km** vs [Ganh Da Dia](https://en.wikipedia.org/wiki/Ganh_Da_Dia) (13.335, 109.29805556)
+  - ticket "20.000đ", openingHours "06:30 - 18:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 200m
+- **gli-chua-minh-thanh** (gia-lai)
+  - coordinates off by **380.6 km** vs [Vĩnh Nghiêm Pagoda, Ho Chi Minh City](https://en.wikipedia.org/wiki/V%C4%A9nh_Nghi%C3%AAm_Pagoda%2C_Ho_Chi_Minh_City) (10.7904, 106.6823)
+  - openingHours "06:00 - 20:00" — never verified (no `verifiedAt`)
+- **con-dao** (ba-ria-vung-tau)
+  - coordinates off by **6.0 km** vs [Con Dao Airport](https://en.wikipedia.org/wiki/Con_Dao_Airport) (8.7325, 106.62888889)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **bu-gia-map-national-park** (binh-phuoc)
+  - coordinates off by **5.2 km** vs [Bù Gia Mập National Park](https://en.wikipedia.org/wiki/B%C3%B9_Gia_M%E1%BA%ADp_National_Park) (12.21666667, 107.15)
+  - openingHours "07:00–16:30" — never verified (no `verifiedAt`)
+- **ca-mau-rung-u-minh-ha** (ca-mau)
+  - coordinates off by **7.6 km** vs [U Minh Hạ National Park](https://en.wikipedia.org/wiki/U_Minh_H%E1%BA%A1_National_Park) (9.25138889, 104.94527778)
+  - ticket "30.000đ", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **co-to-island** (quang-ninh)
+  - coordinates off by **7.7 km** vs [Cô Tô Island](https://en.wikipedia.org/wiki/C%C3%B4_T%C3%B4_Island) (20.991, 107.756)
+  - numbers not found in the article (check by hand): 50, 80km, 1961
+
+## Warnings
+
+- **lung-cu-flag-tower** (ha-giang)
+  - ticket "25.000đ", openingHours "07:00 – 18:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 33,15m, 1.470m, 54m, 54
+- **ma-pi-leng-pass** (ha-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **dong-van-old-town** (ha-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **sa-pa-town** (lao-cai)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 1.650m, 3.143m
+- **hoan-kiem-lake** (ha-noi)
+  - article [Hoan Kiem turtle](https://en.wikipedia.org/wiki/Hoan_Kiem_turtle) has no coordinates — position unchecked
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **old-quarter-hanoi** (ha-noi)
+  - article [Old Quarter, Hanoi](https://en.wikipedia.org/wiki/Old_Quarter%2C_Hanoi) has no coordinates — position unchecked
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 15
+- **hue-imperial-city** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "200.000đ", openingHours "07:00 – 17:30" — never verified (no `verifiedAt`)
+- **golden-bridge** (da-nang)
+  - ticket "900.000đ (vé Bà Nà)", openingHours "08:00 – 22:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 1.400m
+- **hoi-an-ancient-town** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "120.000đ", openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **da-lat-city** (lam-dong)
+  - coordinates off by 2.2 km vs [Da Lat](https://en.wikipedia.org/wiki/Da_Lat)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **ben-thanh-market** (ho-chi-minh)
+  - openingHours "06:00 – 24:00 (chợ đêm)" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 1914
+- **phong-nha-cave** (quang-binh)
+  - article [Phong Nha Cave](https://en.wikipedia.org/wiki/Phong_Nha_Cave) has no coordinates — position unchecked
+  - ticket "150.000đ", openingHours "07:30 – 16:30" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 2003, 400
+- **son-doong-cave** (quang-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "Tour từ 70 triệu đồng", openingHours "Theo lịch tour" — never verified (no `verifiedAt`)
+- **nha-trang-beach** (khanh-hoa)
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **hon-mun-island** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "22.000đ (phí tham quan)", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
+- **bai-sao-beach** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **tra-su-forest** (an-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "100.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
+- **mieu-ba-chua-xu** (an-giang)
+  - article [Chua](https://en.wikipedia.org/wiki/Chua) has no coordinates — position unchecked
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **buon-don** (dak-lak)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "20.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
+- **dray-nur-waterfall** (dak-lak)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "30.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
+- **moc-chau-plateau** (son-la)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **mui-ne-sand-dunes** (binh-thuan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **cai-rang-floating-market** (can-tho)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "05:00 – 09:00" — never verified (no `verifiedAt`)
+- **dien-bien-phu-battlefield** (dien-bien)
+  - article [Dien Bien Phu (film)](https://en.wikipedia.org/wiki/Dien_Bien_Phu_(film)) has no coordinates — position unchecked
+  - ticket "100.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
+- **ban-gioc-waterfall** (cao-bang)
+  - ticket "45.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **nguom-ngao-cave** (cao-bang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "45.000đ", openingHours "07:30 - 17:00" — never verified (no `verifiedAt`)
+- **ba-be-lake** (bac-kan)
+  - coordinates off by 1.6 km vs [Ba Bể Lake](https://en.wikipedia.org/wiki/Ba_B%E1%BB%83_Lake)
+  - ticket "25.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 650ha, 25m
+- **tam-thanh-cave** (lang-son)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "20.000đ", openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+- **mau-son-mountain** (lang-son)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **tan-trao-relic** (tuyen-quang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **mo-na-hang-waterfall** (tuyen-quang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+- **nui-coc-lake** (thai-nguyen)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "50.000đ", openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+- **tan-cuong-tea-hills** (thai-nguyen)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **den-hung-temple** (phu-tho)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **tay-yen-tu** (bac-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **vinh-nghiem-pagoda** (bac-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **mu-cang-chai-terraces** (yen-bai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **thac-ba-lake** (yen-bai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **o-quy-ho-pass** (lai-chau)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **sin-suoi-ho-village** (lai-chau)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **mai-chau-valley** (hoa-binh)
+  - article [Mai Châu](https://en.wikipedia.org/wiki/Mai_Ch%C3%A2u) has no coordinates — position unchecked
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **hp-cat-ba-island** (hai-phong)
+  - article [Cat Ba langur](https://en.wikipedia.org/wiki/Cat_Ba_langur) has no coordinates — position unchecked
+  - ticket "80.000đ", openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 367, 2023, 130
+- **hp-do-son-beach** (hai-phong)
+  - article [Son of the Beach](https://en.wikipedia.org/wiki/Son_of_the_Beach) has no coordinates — position unchecked
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 1955
+- **bn-dong-ho** (bac-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "08:00 - 17:00" — never verified (no `verifiedAt`)
+- **hd-con-son-kiep-bac** (hai-duong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:30 - 18:00" — never verified (no `verifiedAt`)
+- **hd-dao-co** (hai-duong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "30.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **hy-pho-hien** (hung-yen)
+  - article [Pho](https://en.wikipedia.org/wiki/Pho) has no coordinates — position unchecked
+  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 100
+- **hy-chua-chuong** (hung-yen)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **hn-tam-chuc** (ha-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 21:00" — never verified (no `verifiedAt`)
+- **nd-den-tran** (nam-dinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+- **nd-nha-tho-do** (nam-dinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **tb-con-vanh** (thai-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **vp-tam-dao** (vinh-phuc)
+  - article [Tam Đảo district](https://en.wikipedia.org/wiki/Tam_%C4%90%E1%BA%A3o_district) has no coordinates — position unchecked
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 900m, 1904
+- **vp-tay-thien** (vinh-phuc)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **thanh-nha-ho** (thanh-hoa)
+  - ticket "40.000đ", openingHours "07:00 - 17:30" — never verified (no `verifiedAt`)
+- **bien-sam-son** (thanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **suoi-ca-than-cam-luong** (thanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "20.000đ", openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
+- **khu-di-tich-kim-lien** (nghe-an)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **bien-cua-lo** (nghe-an)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **vuon-quoc-gia-pu-mat** (nghe-an)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "50.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **chua-huong-tich** (ha-tinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "30.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **nga-ba-dong-loc** (ha-tinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 17:30" — never verified (no `verifiedAt`)
+- **thanh-co-quang-tri** (quang-tri)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **dia-dao-vinh-moc** (quang-tri)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "40.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **qng-ly-son** (quang-ngai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **qng-sa-huynh** (quang-ngai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **bdi-ky-co-eo-gio** (binh-dinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "25.000đ (Eo Gió)", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **bdi-thap-banh-it** (binh-dinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "15.000đ", openingHours "07:00 - 17:30" — never verified (no `verifiedAt`)
+- **pye-bai-xep** (phu-yen)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "20.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
+- **ntn-vinh-vinh-hy** (ninh-thuan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "Tùy dịch vụ thuyền", openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **ntn-po-klong-garai** (ninh-thuan)
+  - ticket "20.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **ktm-nha-tho-go** (kon-tum)
+  - openingHours "Cả ngày (lễ theo lịch nhà thờ)" — never verified (no `verifiedAt`)
+  - numbers not found in the article (check by hand): 1913
+- **ktm-mang-den** (kon-tum)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **gli-bien-ho-tnung** (gia-lai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **dno-cong-vien-dia-chat** (dak-nong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "Tùy điểm tham quan", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **dno-thac-dray-sap** (dak-nong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "30.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
+- **vung-tau-bai-bien-tuong-chua** (ba-ria-vung-tau)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Tượng Chúa: 07:00–17:00" — never verified (no `verifiedAt`)
+- **cat-tien-national-park** (dong-nai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "60.000đ", openingHours "07:00–17:00" — never verified (no `verifiedAt`)
+- **thac-giang-dien** (dong-nai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "70.000đ", openingHours "07:00–17:30" — never verified (no `verifiedAt`)
+- **chua-ba-thien-hau-binh-duong** (binh-duong)
+  - openingHours "05:00–18:00" — never verified (no `verifiedAt`)
+- **dai-nam-binh-duong** (binh-duong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "150.000đ", openingHours "08:00–17:00" — never verified (no `verifiedAt`)
+- **trang-co-bu-lach** (binh-phuoc)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **nui-ba-den-tay-ninh** (tay-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "350.000đ (cáp treo)", openingHours "06:00–22:00" — never verified (no `verifiedAt`)
+- **toa-thanh-cao-dai-tay-ninh** (tay-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00–18:00" — never verified (no `verifiedAt`)
+- **long-an-lang-noi-tan-lap** (long-an)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "60.000đ", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **long-an-lang-sen** (long-an)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **tien-giang-cu-lao-thoi-son** (tien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "150.000đ trọn gói tour", openingHours "08:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **tien-giang-cho-noi-cai-be** (tien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Họp chợ từ 04:00 - 08:00 hằng ngày" — never verified (no `verifiedAt`)
+- **ben-tre-con-phung** (ben-tre)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "20.000đ tham quan di tích", openingHours "07:30 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **tra-vinh-ao-ba-om** (tra-vinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **tra-vinh-chua-vam-ray** (tra-vinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "06:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
+- **vinh-long-cu-lao-an-binh** (vinh-long)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **vinh-long-lo-gach-mang-thit** (vinh-long)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **dong-thap-tram-chim** (dong-thap)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "10.000đ vé vào, thuê tắc ráng riêng", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **dong-thap-lang-hoa-sa-dec** (dong-thap)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
+- **hau-giang-cho-noi-nga-bay** (hau-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "Họp chợ từ 05:00 - 08:00 hằng ngày" — never verified (no `verifiedAt`)
+- **hau-giang-lung-ngoc-hoang** (hau-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **soc-trang-chua-doi** (soc-trang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "5.000đ", openingHours "07:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
+- **soc-trang-chua-dat-set** (soc-trang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - openingHours "07:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
+- **bac-lieu-canh-dong-dien-gio** (bac-lieu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "60.000đ tham quan", openingHours "07:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
+- **bac-lieu-nha-cong-tu** (bac-lieu)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+  - ticket "30.000đ", openingHours "07:00 - 17:30 hằng ngày" — never verified (no `verifiedAt`)
+- **ca-mau-mui-ca-mau** (ca-mau)
+  - coordinates off by 3.0 km vs [Cape Cà Mau](https://en.wikipedia.org/wiki/Cape_C%C3%A0_Mau)
+  - ticket "50.000đ vào khu du lịch", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
+- **suoi-mo** (bac-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **puong-cave** (bac-kan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dau-dang-waterfall** (bac-kan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **pac-bo** (cao-bang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **huu-nghi-border-gate** (lang-son)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bac-ha-market** (lao-cai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **xuan-son-national-park** (phu-tho)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **den-mau-au-co** (phu-tho)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **yen-tu** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **phuong-hoang-cave** (thai-nguyen)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ban-ba-waterfall** (tuyen-quang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+
+## Integrity
+
+- `dong-van-old-town` gallery seed `dongvan-2` has no image in the manifest
+- `hon-mun-island` gallery seed `honmun-2` has no image in the manifest
+- `hon-mun-island` gallery seed `honmun-3` has no image in the manifest
+- `buon-don` gallery seed `buondon-2` has no image in the manifest
+- `moc-chau-plateau` gallery seed `mocchau-2` has no image in the manifest
+- `moc-chau-plateau` gallery seed `mocchau-3` has no image in the manifest
+- `dien-bien-phu-battlefield` gallery seed `dienbienphu-2` has no image in the manifest
+- `dien-bien-phu-battlefield` gallery seed `dienbienphu-3` has no image in the manifest
+- `nguom-ngao-cave` gallery seed `nguom-ngao-cave-2` has no image in the manifest
+- `tam-thanh-cave` gallery seed `tam-thanh-cave-3` has no image in the manifest
+- `mau-son-mountain` gallery seed `mau-son-mountain-2` has no image in the manifest
+- `mau-son-mountain` gallery seed `mau-son-mountain-3` has no image in the manifest
+- `mo-na-hang-waterfall` gallery seed `mo-na-hang-waterfall-3` has no image in the manifest
+- `tan-cuong-tea-hills` gallery seed `tan-cuong-tea-hills-2` has no image in the manifest
+- `tan-cuong-tea-hills` gallery seed `tan-cuong-tea-hills-3` has no image in the manifest
+- `o-quy-ho-pass` gallery seed `o-quy-ho-pass-2` has no image in the manifest
+- `o-quy-ho-pass` gallery seed `o-quy-ho-pass-3` has no image in the manifest
+- `sin-suoi-ho-village` gallery seed `sin-suoi-ho-village-1` has no image in the manifest
+- `sin-suoi-ho-village` gallery seed `sin-suoi-ho-village-2` has no image in the manifest
+- `sin-suoi-ho-village` gallery seed `sin-suoi-ho-village-3` has no image in the manifest
+- `mai-chau-valley` gallery seed `mai-chau-valley-3` has no image in the manifest
+- `hoa-binh-lake` gallery seed `hoa-binh-lake-2` has no image in the manifest
+- `hoa-binh-lake` gallery seed `hoa-binh-lake-3` has no image in the manifest
+- `hp-do-son-beach` gallery seed `hp-do-son-beach-2` has no image in the manifest
+- `hp-do-son-beach` gallery seed `hp-do-son-beach-3` has no image in the manifest
+- `hd-con-son-kiep-bac` gallery seed `hd-con-son-kiep-bac-2` has no image in the manifest
+- `hd-con-son-kiep-bac` gallery seed `hd-con-son-kiep-bac-3` has no image in the manifest
+- `hd-dao-co` gallery seed `hd-dao-co-2` has no image in the manifest
+- `hd-dao-co` gallery seed `hd-dao-co-3` has no image in the manifest
+- `hy-pho-hien` gallery seed `hy-pho-hien-2` has no image in the manifest
+- `hy-pho-hien` gallery seed `hy-pho-hien-3` has no image in the manifest
+- `hy-chua-chuong` gallery seed `hy-chua-chuong-1` has no image in the manifest
+- `hn-tam-chuc` gallery seed `hn-tam-chuc-2` has no image in the manifest
+- `nd-nha-tho-do` gallery seed `nd-nha-tho-do-3` has no image in the manifest
+- `tb-chua-keo` gallery seed `tb-chua-keo-2` has no image in the manifest
+- `tb-chua-keo` gallery seed `tb-chua-keo-3` has no image in the manifest
+- `tb-con-vanh` gallery seed `tb-con-vanh-1` has no image in the manifest
+- `tb-con-vanh` gallery seed `tb-con-vanh-2` has no image in the manifest
+- `tb-con-vanh` gallery seed `tb-con-vanh-3` has no image in the manifest
+- `vp-tam-dao` gallery seed `vp-tam-dao-2` has no image in the manifest
+- `suoi-ca-than-cam-luong` gallery seed `cam-luong-nha-san` has no image in the manifest
+- `khu-di-tich-kim-lien` gallery seed `kim-lien-gieng-coc` has no image in the manifest
+- `khu-di-tich-kim-lien` gallery seed `kim-lien-cay-da` has no image in the manifest
+- `bien-cua-lo` gallery seed `cua-lo-dao-lan-chau` has no image in the manifest
+- `bien-thien-cam` gallery seed `thien-cam-nui` has no image in the manifest
+- `bien-thien-cam` gallery seed `thien-cam-muc-mot-nang` has no image in the manifest
+- `nga-ba-dong-loc` gallery seed `dong-loc-ho-bom` has no image in the manifest
+- `thanh-co-quang-tri` gallery seed `thanh-co-cong-thanh` has no image in the manifest
+- `dia-dao-vinh-moc` gallery seed `vinh-moc-nha-ho-sinh` has no image in the manifest
+- `dao-con-co` gallery seed `con-co-hai-dang` has no image in the manifest
+- `dao-con-co` gallery seed `con-co-san-ho` has no image in the manifest
+- `qng-ly-son` gallery seed `lyson-tovo` has no image in the manifest
+- `bdi-ky-co-eo-gio` gallery seed `eogio-cong` has no image in the manifest
+- `bdi-ky-co-eo-gio` gallery seed `eogio-hoa` has no image in the manifest
+- `pye-ganh-da-dia` gallery seed `gddia-song` has no image in the manifest
+- `pye-ganh-da-dia` gallery seed `gddia-toancanh` has no image in the manifest
+- `ntn-vinh-vinh-hy` gallery seed `vinhhy-duongven` has no image in the manifest
+- `ktm-mang-den` gallery seed `mangden-pasy` has no image in the manifest
+- `ktm-mang-den` gallery seed `mangden-ho` has no image in the manifest
+- `gli-bien-ho-tnung` gallery seed `bienho-thong` has no image in the manifest
+- `gli-chua-minh-thanh` gallery seed `minhthanh-chanhdien` has no image in the manifest
+- `gli-chua-minh-thanh` gallery seed `minhthanh-tuong` has no image in the manifest
+- `dno-cong-vien-dia-chat` gallery seed `daknong-miengnui` has no image in the manifest
+- `dno-cong-vien-dia-chat` gallery seed `daknong-congchieng` has no image in the manifest
+- `vung-tau-bai-bien-tuong-chua` gallery seed `vungtau-christ` has no image in the manifest
+- `vung-tau-bai-bien-tuong-chua` gallery seed `vungtau-banhkhot` has no image in the manifest
+- `con-dao` gallery seed `condao-hangduong` has no image in the manifest
+- `chua-ba-thien-hau-binh-duong` gallery seed `thienhau-bd-nhang` has no image in the manifest
+- `bu-gia-map-national-park` gallery seed `bugiamap-suoi` has no image in the manifest
+- `bu-gia-map-national-park` gallery seed `bugiamap-stieng` has no image in the manifest
+- `long-an-lang-noi-tan-lap` gallery seed `tanlap-watchtower` has no image in the manifest
+- `long-an-lang-noi-tan-lap` gallery seed `tanlap-boat` has no image in the manifest
+- `ben-tre-con-phung` gallery seed `conphung-handicraft` has no image in the manifest
+- `tra-vinh-ao-ba-om` gallery seed `baom-pond` has no image in the manifest
+- `tra-vinh-ao-ba-om` gallery seed `baom-khmer` has no image in the manifest
+- `tra-vinh-chua-vam-ray` gallery seed `vamray-buddha` has no image in the manifest
+- `tra-vinh-chua-vam-ray` gallery seed `vamray-naga` has no image in the manifest
+- `vinh-long-cu-lao-an-binh` gallery seed `anbinh-homestay` has no image in the manifest
+- `vinh-long-cu-lao-an-binh` gallery seed `anbinh-bike` has no image in the manifest
+- `dong-thap-lang-hoa-sa-dec` gallery seed `sadec-racks` has no image in the manifest
+- `dong-thap-lang-hoa-sa-dec` gallery seed `sadec-boat` has no image in the manifest
+- `hau-giang-cho-noi-nga-bay` gallery seed `ngabay-noodle` has no image in the manifest
+- `soc-trang-chua-doi` gallery seed `chuadoi-temple` has no image in the manifest
+- `soc-trang-chua-doi` gallery seed `chuadoi-flight` has no image in the manifest
+- `soc-trang-chua-dat-set` gallery seed `datset-statues` has no image in the manifest
+- `soc-trang-chua-dat-set` gallery seed `datset-candles` has no image in the manifest
+- `soc-trang-chua-dat-set` gallery seed `datset-tower` has no image in the manifest
+- `bac-lieu-nha-cong-tu` gallery seed `congtu-interior` has no image in the manifest
+- `bac-lieu-nha-cong-tu` gallery seed `congtu-antiques` has no image in the manifest
+- `ca-mau-rung-u-minh-ha` gallery seed `uminh-honey` has no image in the manifest
+- `ca-mau-rung-u-minh-ha` gallery seed `uminh-fishing` has no image in the manifest
+- `suoi-mo` gallery seed `suoi-mo-1` has no image in the manifest
+- `suoi-mo` gallery seed `suoi-mo-2` has no image in the manifest
+- `puong-cave` gallery seed `puong-cave-1` has no image in the manifest
+- `puong-cave` gallery seed `puong-cave-2` has no image in the manifest
+- `dau-dang-waterfall` gallery seed `dau-dang-waterfall-1` has no image in the manifest
+- `dau-dang-waterfall` gallery seed `dau-dang-waterfall-2` has no image in the manifest
+- `pac-bo` gallery seed `pac-bo-1` has no image in the manifest
+- `pac-bo` gallery seed `pac-bo-2` has no image in the manifest
+- `huu-nghi-border-gate` gallery seed `huu-nghi-border-gate-1` has no image in the manifest
+- `huu-nghi-border-gate` gallery seed `huu-nghi-border-gate-2` has no image in the manifest
+- `fansipan` gallery seed `fansipan-1` has no image in the manifest
+- `fansipan` gallery seed `fansipan-2` has no image in the manifest
+- `fansipan` gallery seed `fansipan-3` has no image in the manifest
+- `bac-ha-market` gallery seed `bac-ha-market-1` has no image in the manifest
+- `bac-ha-market` gallery seed `bac-ha-market-2` has no image in the manifest
+- `xuan-son-national-park` gallery seed `xuan-son-national-park-1` has no image in the manifest
+- `xuan-son-national-park` gallery seed `xuan-son-national-park-2` has no image in the manifest
+- `den-mau-au-co` gallery seed `den-mau-au-co-1` has no image in the manifest
+- `den-mau-au-co` gallery seed `den-mau-au-co-2` has no image in the manifest
+- `yen-tu` gallery seed `yen-tu-1` has no image in the manifest
+- `yen-tu` gallery seed `yen-tu-2` has no image in the manifest
+- `yen-tu` gallery seed `yen-tu-3` has no image in the manifest
+- `co-to-island` gallery seed `co-to-island-1` has no image in the manifest
+- `co-to-island` gallery seed `co-to-island-2` has no image in the manifest
+- `co-to-island` gallery seed `co-to-island-3` has no image in the manifest
+- `phuong-hoang-cave` gallery seed `phuong-hoang-cave-1` has no image in the manifest
+- `phuong-hoang-cave` gallery seed `phuong-hoang-cave-2` has no image in the manifest
+- `ban-ba-waterfall` gallery seed `ban-ba-waterfall-1` has no image in the manifest
+- `ban-ba-waterfall` gallery seed `ban-ba-waterfall-2` has no image in the manifest
+- `khau-pha-pass` gallery seed `khau-pha-pass-1` has no image in the manifest
+- `khau-pha-pass` gallery seed `khau-pha-pass-2` has no image in the manifest
+
+## Clean
+
+- fansipan (0.24 km)

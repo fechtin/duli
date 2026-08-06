@@ -5,6 +5,14 @@ import { northCentralDestinations } from "./regions/northCentral.ts";
 import { southCentralHighlandsDestinations } from "./regions/southCentralHighlands.ts";
 import { southeastDestinations } from "./regions/southeast.ts";
 import { mekongDestinations } from "./regions/mekong.ts";
+import { northeastDepthDestinations } from "./regions/depth/northeast.ts";
+import { redRiverDeltaDepthDestinations } from "./regions/depth/redRiverDelta.ts";
+import { mekongDeltaDepthDestinations } from "./regions/depth/mekongDelta.ts";
+import { southCentralCoastDepthDestinations } from "./regions/depth/southCentralCoast.ts";
+import { southeastDepthDestinations } from "./regions/depth/southeast.ts";
+import { centralHighlandsDepthDestinations } from "./regions/depth/centralHighlands.ts";
+import { northwestDepthDestinations } from "./regions/depth/northwest.ts";
+import { northCentralCoastDepthDestinations } from "./regions/depth/northCentralCoast.ts";
 
 // Seed destinations — official content, Vietnamese source (Bible 009 §5).
 // This is the AUTHORING source for D1 (scripts/build-d1-seed.mjs). The client reads from
@@ -975,6 +983,15 @@ export const destinations: Destination[] = [
   ...southCentralHighlandsDestinations,
   ...southeastDestinations,
   ...mekongDestinations,
+  // Depth pass (tasks/033): brings every province to ≥3 destinations.
+  ...northeastDepthDestinations,
+  ...redRiverDeltaDepthDestinations,
+  ...mekongDeltaDepthDestinations,
+  ...southCentralCoastDepthDestinations,
+  ...southeastDepthDestinations,
+  ...centralHighlandsDepthDestinations,
+  ...northwestDepthDestinations,
+  ...northCentralCoastDepthDestinations,
 ];
 
 export const destinationById = new Map(destinations.map((d) => [d.id, d]));
