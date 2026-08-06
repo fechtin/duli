@@ -67,7 +67,13 @@ function describeDistances(d: Destination, country: CountryCode): string[] {
   const hubs = HUBS[country];
   if (!hubs) return [];
   const parts = hubs.map((h) => `~${Math.round(haversineKm(h.lng, h.lat, d.lng, d.lat))} km from ${h.name}`);
-  return [`Straight-line distance (NOT road distance, which is longer): ${parts.join(" | ")}`];
+  return [
+    `Straight-line distance: ${parts.join(" | ")}`,
+    // The rule sits next to the data it governs. Stated only in the distant rules section, a
+    // small lane read "~200 km from Hà Nội" and volunteered "4-5 hours by motorbike" — a number
+    // nobody verified, attached to a mountain road it knows nothing about.
+    "  ^ These are great-circle distances. The road is longer and you do not know by how much. NEVER turn them into a travel time, a route, or a road distance.",
+  ];
 }
 
 function describeDestination(d: Destination, country: CountryCode): string {
@@ -147,7 +153,7 @@ export function buildSystemPrompt(ctx: AIContext, mode: PromptMode = "atlas"): s
     "# Grounding rules",
     "- Everything factual you state must come from the CONTEXT below. It is editorial content that was verified against a source.",
     "- Never invent prices, opening hours, phone numbers, or travel times. If the context does not have it, say plainly that you do not have that detail.",
-    "- The context gives straight-line distances. Use them, and say they are straight-line — the road is longer, and you do not know by how much.",
+    "- The context gives straight-line distances. Quote them as such. Do not convert one into a driving time or a road distance — that depends on the route and you were not given it.",
     "- You may reason and connect what the context gives you (e.g. suggest an order to visit places listed there), and you may use general travel common sense about weather and packing — but do not present anything as a fact about this specific place unless the context says so.",
     "- When you cannot answer something, do not stop there: say what you do have that is close, so the traveller gets somewhere useful.",
     "- If the context is empty or unrelated to the question, say so and invite the traveller to pick a place on the map.",

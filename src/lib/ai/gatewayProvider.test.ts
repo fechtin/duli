@@ -247,7 +247,12 @@ describe("buildSystemPrompt", () => {
     const prompt = buildSystemPrompt(CTX);
     // Son Doong → Hanoi is ~420 km great-circle; assert the shape, not a brittle exact number.
     expect(prompt).toMatch(/~\d+ km from Hà Nội/);
-    expect(prompt).toContain("NOT road distance");
+    // The no-travel-time rule must sit beside the numbers: stated only in the rules section, a
+    // lane answered "~200 km" and then volunteered "4-5 hours by motorbike".
+    const lines = prompt.split("\n");
+    const distanceLine = lines.findIndex((l) => l.startsWith("Straight-line distance:"));
+    expect(distanceLine).toBeGreaterThan(-1);
+    expect(lines[distanceLine + 1]).toContain("NEVER turn them into a travel time");
   });
 
   it("uses Korean hubs for the Korean atlas", () => {
