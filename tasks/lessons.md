@@ -104,3 +104,14 @@
 - **Grounding chống bịa mạnh hơn chọn model.** Llama-3.1-8b với luật "chỉ dùng CONTEXT, không có
   thì nói không có" đã từ chối bịa giá vé máy bay. Đây là chuyện prompt + dữ liệu, không phải
   chuyện tier.
+- **Đặt luật cạnh dữ liệu mà nó điều chỉnh, đừng để ở mục "luật" phía trên.** Prompt đã cấm nói
+  thời gian di chuyển, nhưng luật nằm cách khối dữ liệu vài dòng; model đọc "~200 km từ Hà Nội"
+  rồi tự thêm "4-5 giờ xe máy". Chuyển đúng câu cấm xuống ngay dưới dòng khoảng cách là hết.
+  Với lane nhỏ, khoảng cách giữa luật và dữ liệu là có thật.
+- **Cấm một loại thông tin trước khi hỏi mình có tính được nó không.** Tôi xếp `distances` cạnh
+  giá vé và số điện thoại, trong khi mọi destination trong D1 đều có `lng`/`lat` — guide đã từ
+  chối trả lời thứ nó tính ra được chính xác. Phân biệt: **thứ hay đổi** (giá, giờ mở cửa) thì
+  cấm; **thứ suy ra được từ dữ liệu của mình** thì đi mà tính rồi đưa vào context.
+- **Locale của UI không phải ngôn ngữ của người dùng.** Người dùng gõ tiếng Việt trong UI tiếng
+  Anh bị trả lời bằng tiếng Anh. Luật đúng: trả lời theo ngôn ngữ của tin nhắn, locale chỉ là
+  fallback khi không đoán được.
