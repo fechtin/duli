@@ -39,13 +39,18 @@ phải suy luận khó. `fast` có 101 lane vs 76 — dai hơn nhiều.
 `verifiedAt`). Web search kéo vào nguồn không kiểm soát, và link redirect của
 Google hết hạn sau ~30 ngày.
 
-## Còn phải làm thủ công
+## Đã lên production (2026-08-06)
 
-```
-wrangler secret put FECHTIN_GATEWAY_KEY     # key của client trong FECHTIN_CLIENTS
-```
-Chưa có secret → Worker tự dùng `mockProvider`, không lỗi. Deploy vẫn là
-`git push` như thường.
+Client `vivel` đã thêm vào `FECHTIN_CLIENTS` trên VM gateway, secret
+`FECHTIN_GATEWAY_KEY` đã set trên Worker `go`, commit `c592ee5` đã deploy.
+Kiểm chứng trên `go.fechtin.com`: hỏi giá vé máy bay + thời điểm đi → **từ chối
+bịa giá vé**, trả lời đúng phần có trong D1. Hỏi lịch trình Jeju bằng tiếng Anh
+→ tên địa danh lấy từ D1 (Seongsan Ilchulbong, Manjanggul…) kèm suy luận hợp lệ
+("tránh mất cả ngày di chuyển").
+
+**Không bao giờ đổi sang SDK OpenAI cho đường này.** Cloudflare trước
+`gw.fechtin.com` trả 403 cho User-Agent của SDK. Đo 2026-08-06: không UA → 200,
+`Cloudflare-Workers` → 200, `OpenAI/JS 7.2.0` → **403**.
 
 ## Review
 
