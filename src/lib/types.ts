@@ -170,11 +170,16 @@ export interface Destination {
   nearby: string[];
   featured?: boolean;
   /**
-   * Authority the volatile fields (`ticket`, `openingHours`, numeric `facts`) were checked
-   * against — an official site or a Wikipedia/Wikidata entry. Absent = never verified.
+   * Authority this entry was checked against — an official site or a Wikipedia/Wikidata
+   * entry. Absent = never verified.
+   *
+   * What it does and does not vouch for: the place exists under this name, and `lng`/`lat`
+   * put it where the authority does. It does NOT vouch for `ticket` or `openingHours` —
+   * Wikipedia almost never carries prices, so those stay unverified on the entries the
+   * 034 sweep touched. Treat a price in this dataset as indicative, never as current.
    */
   sourceUrl?: string;
-  /** ISO date (YYYY-MM-DD) of that check. `scripts/verify-kr.mjs` flags stale entries. */
+  /** ISO date (YYYY-MM-DD) of that check. `scripts/verify-content.mjs` flags stale entries. */
   verifiedAt?: string;
   /** Per-locale translations of the textual fields. VI fields above are the fallback. */
   i18n?: DestinationI18n;

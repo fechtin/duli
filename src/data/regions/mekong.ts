@@ -42,6 +42,8 @@ export const mekongDestinations: Destination[] = [
   },
   {
     id: "long-an-lang-sen",
+    sourceUrl: "https://en.wikipedia.org/wiki/L%C3%A1ng_Sen_Wetland_Reserve",
+    verifiedAt: "2026-08-06",
     slug: "lang-sen",
     provinceSlug: "long-an",
     name: "Khu bảo tồn đất ngập nước Láng Sen",
@@ -79,6 +81,8 @@ export const mekongDestinations: Destination[] = [
 
   {
     id: "tien-giang-cu-lao-thoi-son",
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%C3%B9_lao_Th%E1%BB%9Bi_S%C6%A1n",
+    verifiedAt: "2026-08-06",
     slug: "cu-lao-thoi-son",
     provinceSlug: "tien-giang",
     name: "Cù lao Thới Sơn",
@@ -228,13 +232,15 @@ export const mekongDestinations: Destination[] = [
   },
   {
     id: "tra-vinh-chua-vam-ray",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%C3%B9a_V%C3%A0m_Ray",
+    verifiedAt: "2026-08-06",
     slug: "chua-vam-ray",
     provinceSlug: "tra-vinh",
     name: "Chùa Vàm Ray",
     nameEn: "Vam Ray Pagoda",
     type: "temple",
-    lng: 106.2461,
-    lat: 9.7547,
+    lng: 106.2747,
+    lat: 9.6553,
     summary:
       "Ngôi chùa Khmer dát vàng lộng lẫy, được xem là một trong những chùa Khmer lớn và đẹp bậc nhất Việt Nam.",
     story:
@@ -265,6 +271,8 @@ export const mekongDestinations: Destination[] = [
 
   {
     id: "vinh-long-cu-lao-an-binh",
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%C3%B9_lao_An_B%C3%ACnh",
+    verifiedAt: "2026-08-06",
     slug: "cu-lao-an-binh",
     provinceSlug: "vinh-long",
     name: "Cù lao An Bình",
@@ -339,6 +347,8 @@ export const mekongDestinations: Destination[] = [
 
   {
     id: "dong-thap-tram-chim",
+    sourceUrl: "https://en.wikipedia.org/wiki/Tr%C3%A0m_Chim_National_Park",
+    verifiedAt: "2026-08-06",
     slug: "vuon-quoc-gia-tram-chim",
     provinceSlug: "dong-thap",
     name: "Vườn quốc gia Tràm Chim",
@@ -487,6 +497,8 @@ export const mekongDestinations: Destination[] = [
 
   {
     id: "soc-trang-chua-doi",
+    sourceUrl: "https://www.wikidata.org/wiki/Q10748406",
+    verifiedAt: "2026-08-06",
     slug: "chua-doi",
     provinceSlug: "soc-trang",
     name: "Chùa Dơi",
@@ -635,6 +647,8 @@ export const mekongDestinations: Destination[] = [
 
   {
     id: "ca-mau-mui-ca-mau",
+    sourceUrl: "https://www.wikidata.org/wiki/Q1394226",
+    verifiedAt: "2026-08-06",
     slug: "mui-ca-mau",
     provinceSlug: "ca-mau",
     name: "Mũi Cà Mau",

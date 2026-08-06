@@ -5,6 +5,8 @@ type ProvinceEditorial = Omit<ProvinceContent, "destinationIds">;
 export const northMountainsDestinations: Destination[] = [
   {
     id: "ban-gioc-waterfall",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Th%C3%A1c_B%E1%BA%A3n_Gi%E1%BB%91c",
+    verifiedAt: "2026-08-06",
     slug: "thac-ban-gioc",
     provinceSlug: "cao-bang",
     name: "Thác Bản Giốc",
@@ -42,6 +44,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "nguom-ngao-cave",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_Ngao",
+    verifiedAt: "2026-08-06",
     slug: "dong-nguom-ngao",
     provinceSlug: "cao-bang",
     name: "Động Ngườm Ngao",
@@ -115,6 +119,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "tam-thanh-cave",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%C3%B9a_Tam_Thanh",
+    verifiedAt: "2026-08-06",
     slug: "dong-tam-thanh",
     provinceSlug: "lang-son",
     name: "Động Tam Thanh",
@@ -152,6 +158,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "mau-son-mountain",
+    sourceUrl: "https://vi.wikipedia.org/wiki/M%E1%BA%ABu_S%C6%A1n",
+    verifiedAt: "2026-08-06",
     slug: "nui-mau-son",
     provinceSlug: "lang-son",
     name: "Núi Mẫu Sơn",
@@ -188,13 +196,15 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "tan-trao-relic",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Chi%E1%BA%BFn_khu_T%C3%A2n_Tr%C3%A0o",
+    verifiedAt: "2026-08-06",
     slug: "khu-di-tich-tan-trao",
     provinceSlug: "tuyen-quang",
     name: "Khu di tích Tân Trào",
     nameEn: "Tan Trao Historical Site",
     type: "village",
-    lng: 105.4017,
-    lat: 21.8472,
+    lng: 105.2738,
+    lat: 21.5704,
     summary:
       "Thủ đô kháng chiến giữa rừng Tuyên Quang, nơi gắn liền cây đa Tân Trào, lán Nà Nưa và Quốc dân Đại hội năm 1945.",
     story:
@@ -261,6 +271,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "nui-coc-lake",
+    sourceUrl: "https://en.wikipedia.org/wiki/N%C3%BAi_C%E1%BB%91c_Reservoir",
+    verifiedAt: "2026-08-06",
     slug: "ho-nui-coc",
     provinceSlug: "thai-nguyen",
     name: "Hồ Núi Cốc",
@@ -334,6 +346,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "den-hung-temple",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_H%C3%B9ng",
+    verifiedAt: "2026-08-06",
     slug: "den-hung",
     provinceSlug: "phu-tho",
     name: "Đền Hùng",
@@ -371,6 +385,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "tay-yen-tu",
+    sourceUrl: "https://vi.wikipedia.org/wiki/T%C3%A2y_Y%C3%AAn_T%E1%BB%AD",
+    verifiedAt: "2026-08-06",
     slug: "tay-yen-tu",
     provinceSlug: "bac-giang",
     name: "Tây Yên Tử",
@@ -481,6 +497,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "thac-ba-lake",
+    sourceUrl: "https://vi.wikipedia.org/wiki/H%E1%BB%93_Th%C3%A1c_B%C3%A0",
+    verifiedAt: "2026-08-06",
     slug: "ho-thac-ba",
     provinceSlug: "yen-bai",
     name: "Hồ Thác Bà",
@@ -517,6 +535,8 @@ export const northMountainsDestinations: Destination[] = [
   },
   {
     id: "o-quy-ho-pass",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%C3%A8o_%C3%94_Qu%C3%BD_H%E1%BB%93",
+    verifiedAt: "2026-08-06",
     slug: "deo-o-quy-ho",
     provinceSlug: "lai-chau",
     name: "Đèo Ô Quy Hồ",

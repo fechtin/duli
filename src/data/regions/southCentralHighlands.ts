@@ -5,6 +5,8 @@ type ProvinceEditorial = Omit<ProvinceContent, "destinationIds">;
 export const southCentralHighlandsDestinations: Destination[] = [
   {
     id: "qng-ly-son",
+    sourceUrl: "https://vi.wikipedia.org/wiki/L%C3%BD_S%C6%A1n",
+    verifiedAt: "2026-08-06",
     slug: "dao-ly-son",
     provinceSlug: "quang-ngai",
     name: "Đảo Lý Sơn",
@@ -117,6 +119,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
   },
   {
     id: "bdi-thap-banh-it",
+    sourceUrl: "https://www.wikidata.org/wiki/Q10825825",
+    verifiedAt: "2026-08-06",
     slug: "thap-banh-it",
     provinceSlug: "binh-dinh",
     name: "Tháp Bánh Ít",
@@ -154,13 +158,15 @@ export const southCentralHighlandsDestinations: Destination[] = [
   },
   {
     id: "pye-ganh-da-dia",
+    sourceUrl: "https://vi.wikipedia.org/wiki/G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a",
+    verifiedAt: "2026-08-06",
     slug: "ganh-da-dia",
     provinceSlug: "phu-yen",
     name: "Gành Đá Đĩa",
     nameEn: "Da Dia Reef",
     type: "park",
-    lng: 109.2939,
-    lat: 13.4833,
+    lng: 109.2938,
+    lat: 13.3541,
     summary:
       "Kỳ quan địa chất với hàng vạn cột đá bazan đen xếp tầng tựa chồng đĩa khổng lồ vươn ra biển.",
     story:
@@ -228,6 +234,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
   },
   {
     id: "ntn-vinh-vinh-hy",
+    sourceUrl: "https://vi.wikipedia.org/wiki/V%E1%BB%8Bnh_V%C4%A9nh_Hy",
+    verifiedAt: "2026-08-06",
     slug: "vinh-vinh-hy",
     provinceSlug: "ninh-thuan",
     name: "Vịnh Vĩnh Hy",
@@ -266,6 +274,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
   },
   {
     id: "ntn-po-klong-garai",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Th%C3%A1p_Po_Klong_Garai",
+    verifiedAt: "2026-08-06",
     slug: "thap-po-klong-garai",
     provinceSlug: "ninh-thuan",
     name: "Tháp Po Klong Garai",
@@ -341,6 +351,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
   },
   {
     id: "ktm-mang-den",
+    sourceUrl: "https://vi.wikipedia.org/wiki/M%C4%83ng_%C4%90en",
+    verifiedAt: "2026-08-06",
     slug: "khu-du-lich-mang-den",
     provinceSlug: "kon-tum",
     name: "Khu du lịch Măng Đen",

@@ -24,6 +24,8 @@ export const destinations: Destination[] = [
   // ── Hà Giang ──────────────────────────────────────────────
   {
     id: "lung-cu-flag-tower",
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%E1%BB%99t_c%E1%BB%9D_L%C5%A9ng_C%C3%BA",
+    verifiedAt: "2026-08-06",
     slug: "lung-cu-flag-tower",
     provinceSlug: "ha-giang",
     name: "Cột cờ Lũng Cú",
@@ -60,6 +62,8 @@ export const destinations: Destination[] = [
   },
   {
     id: "ma-pi-leng-pass",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%C3%A8o_M%C3%A3_P%C3%AD_L%C3%A8ng",
+    verifiedAt: "2026-08-06",
     slug: "ma-pi-leng-pass",
     provinceSlug: "ha-giang",
     name: "Đèo Mã Pì Lèng",
@@ -94,6 +98,8 @@ export const destinations: Destination[] = [
   },
   {
     id: "dong-van-old-town",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ph%E1%BB%91_c%E1%BB%95_%C4%90%E1%BB%93ng_V%C4%83n",
+    verifiedAt: "2026-08-06",
     slug: "dong-van-old-town",
     provinceSlug: "ha-giang",
     name: "Phố cổ Đồng Văn",
@@ -126,6 +132,8 @@ export const destinations: Destination[] = [
   // ── Lào Cai (Sa Pa) ───────────────────────────────────────
   {
     id: "sa-pa-town",
+    sourceUrl: "https://en.wikipedia.org/wiki/Sa_Pa",
+    verifiedAt: "2026-08-06",
     slug: "sa-pa-town",
     provinceSlug: "lao-cai",
     name: "Sa Pa",
@@ -163,6 +171,8 @@ export const destinations: Destination[] = [
   // ── Quảng Ninh (Hạ Long) ──────────────────────────────────
   {
     id: "ha-long-bay",
+    sourceUrl: "https://vi.wikipedia.org/wiki/V%E1%BB%8Bnh_H%E1%BA%A1_Long",
+    verifiedAt: "2026-08-06",
     slug: "ha-long-bay",
     provinceSlug: "quang-ninh",
     name: "Vịnh Hạ Long",
@@ -201,6 +211,8 @@ export const destinations: Destination[] = [
   // ── Ninh Bình ─────────────────────────────────────────────
   {
     id: "trang-an",
+    sourceUrl: "https://en.wikipedia.org/wiki/Tr%C3%A0ng_An_Scenic_Landscape_Complex",
+    verifiedAt: "2026-08-06",
     slug: "trang-an",
     provinceSlug: "ninh-binh",
     name: "Tràng An",
@@ -238,6 +250,8 @@ export const destinations: Destination[] = [
   // ── Hà Nội ────────────────────────────────────────────────
   {
     id: "hoan-kiem-lake",
+    sourceUrl: "https://en.wikipedia.org/wiki/Ho%C3%A0n_Ki%E1%BA%BFm_Lake",
+    verifiedAt: "2026-08-06",
     slug: "hoan-kiem-lake",
     provinceSlug: "ha-noi",
     name: "Hồ Hoàn Kiếm",
@@ -342,6 +356,8 @@ export const destinations: Destination[] = [
   // ── Đà Nẵng ───────────────────────────────────────────────
   {
     id: "golden-bridge",
+    sourceUrl: "https://www.wikidata.org/wiki/Q55954790",
+    verifiedAt: "2026-08-06",
     slug: "golden-bridge",
     provinceSlug: "da-nang",
     name: "Cầu Vàng",
@@ -375,6 +391,8 @@ export const destinations: Destination[] = [
   // ── Quảng Nam (Hội An) ────────────────────────────────────
   {
     id: "hoi-an-ancient-town",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ph%E1%BB%91_c%E1%BB%95_H%E1%BB%99i_An",
+    verifiedAt: "2026-08-06",
     slug: "hoi-an-ancient-town",
     provinceSlug: "quang-nam",
     name: "Phố cổ Hội An",
@@ -413,6 +431,8 @@ export const destinations: Destination[] = [
   // ── Lâm Đồng (Đà Lạt) ─────────────────────────────────────
   {
     id: "da-lat-city",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%C3%A0_L%E1%BA%A1t",
+    verifiedAt: "2026-08-06",
     slug: "da-lat-city",
     provinceSlug: "lam-dong",
     name: "Đà Lạt",
@@ -450,6 +470,8 @@ export const destinations: Destination[] = [
   // ── TP. Hồ Chí Minh ───────────────────────────────────────
   {
     id: "ben-thanh-market",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_B%E1%BA%BFn_Th%C3%A0nh",
+    verifiedAt: "2026-08-06",
     slug: "ben-thanh-market",
     provinceSlug: "ho-chi-minh",
     name: "Chợ Bến Thành",
@@ -482,6 +504,8 @@ export const destinations: Destination[] = [
   // ── Quảng Bình ────────────────────────────────────────────
   {
     id: "phong-nha-cave",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_Phong_Nha",
+    verifiedAt: "2026-08-06",
     slug: "phong-nha-cave",
     provinceSlug: "quang-binh",
     name: "Động Phong Nha",
@@ -517,6 +541,8 @@ export const destinations: Destination[] = [
   },
   {
     id: "son-doong-cave",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Hang_S%C6%A1n_%C4%90o%C3%B2ng",
+    verifiedAt: "2026-08-06",
     slug: "son-doong-cave",
     provinceSlug: "quang-binh",
     name: "Hang Sơn Đoòng",
@@ -624,6 +650,8 @@ export const destinations: Destination[] = [
   // ── Kiên Giang (Phú Quốc) ─────────────────────────────────
   {
     id: "phu-quoc-island",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ph%C3%BA_Qu%E1%BB%91c",
+    verifiedAt: "2026-08-06",
     slug: "phu-quoc-island",
     provinceSlug: "kien-giang",
     name: "Đảo Phú Quốc",
@@ -659,6 +687,8 @@ export const destinations: Destination[] = [
   },
   {
     id: "bai-sao-beach",
+    sourceUrl: "https://vi.wikipedia.org/wiki/B%C3%A3i_Sao",
+    verifiedAt: "2026-08-06",
     slug: "bai-sao-beach",
     provinceSlug: "kien-giang",
     name: "Bãi Sao",
@@ -694,6 +724,8 @@ export const destinations: Destination[] = [
   // ── An Giang ──────────────────────────────────────────────
   {
     id: "tra-su-forest",
+    sourceUrl: "https://www.wikidata.org/wiki/Q16480259",
+    verifiedAt: "2026-08-06",
     slug: "tra-su-forest",
     provinceSlug: "an-giang",
     name: "Rừng tràm Trà Sư",
@@ -729,6 +761,8 @@ export const destinations: Destination[] = [
   },
   {
     id: "mieu-ba-chua-xu",
+    sourceUrl: "https://www.wikidata.org/wiki/Q32208850",
+    verifiedAt: "2026-08-06",
     slug: "mieu-ba-chua-xu",
     provinceSlug: "an-giang",
     name: "Miếu Bà Chúa Xứ Núi Sam",
@@ -833,6 +867,8 @@ export const destinations: Destination[] = [
   // ── Sơn La (Mộc Châu) ─────────────────────────────────────
   {
     id: "moc-chau-plateau",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Cao_nguy%C3%AAn_M%E1%BB%99c_Ch%C3%A2u",
+    verifiedAt: "2026-08-06",
     slug: "moc-chau-plateau",
     provinceSlug: "son-la",
     name: "Cao nguyên Mộc Châu",
@@ -907,6 +943,8 @@ export const destinations: Destination[] = [
   // ── Cần Thơ ───────────────────────────────────────────────
   {
     id: "cai-rang-floating-market",
+    sourceUrl: "https://en.wikipedia.org/wiki/C%C3%A1i_R%C4%83ng_Floating_Market",
+    verifiedAt: "2026-08-06",
     slug: "cai-rang-floating-market",
     provinceSlug: "can-tho",
     name: "Chợ nổi Cái Răng",

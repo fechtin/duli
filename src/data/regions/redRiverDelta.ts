@@ -5,6 +5,8 @@ type ProvinceEditorial = Omit<ProvinceContent, "destinationIds">;
 export const redRiverDeltaDestinations: Destination[] = [
   {
     id: "hp-cat-ba-island",
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%C3%A1t_B%C3%A0_(%C4%91%E1%BA%A3o)",
+    verifiedAt: "2026-08-06",
     slug: "dao-cat-ba",
     provinceSlug: "hai-phong",
     name: "Đảo Cát Bà",
@@ -78,6 +80,8 @@ export const redRiverDeltaDestinations: Destination[] = [
   },
   {
     id: "bn-den-do",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_%C4%90%C3%B4",
+    verifiedAt: "2026-08-06",
     slug: "den-do",
     provinceSlug: "bac-ninh",
     name: "Đền Đô",
@@ -188,13 +192,15 @@ export const redRiverDeltaDestinations: Destination[] = [
   },
   {
     id: "hd-dao-co",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3o_C%C3%B2_Chi_L%C4%83ng_Nam",
+    verifiedAt: "2026-08-06",
     slug: "dao-co-chi-lang-nam",
     provinceSlug: "hai-duong",
     name: "Đảo Cò Chi Lăng Nam",
     nameEn: "Chi Lang Nam Stork Island",
     type: "park",
-    lng: 106.2289,
-    lat: 20.8067,
+    lng: 106.2272,
+    lat: 20.7144,
     summary:
       "Hòn đảo giữa hồ An Dương là thiên đường của hàng vạn cánh cò vạc, điểm sinh thái độc đáo của đồng bằng.",
     story:
@@ -224,6 +230,8 @@ export const redRiverDeltaDestinations: Destination[] = [
   },
   {
     id: "hy-pho-hien",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ph%E1%BB%91_Hi%E1%BA%BFn",
+    verifiedAt: "2026-08-06",
     slug: "pho-hien",
     provinceSlug: "hung-yen",
     name: "Phố Hiến",
@@ -261,6 +269,8 @@ export const redRiverDeltaDestinations: Destination[] = [
   },
   {
     id: "hy-chua-chuong",
+    sourceUrl: "https://www.wikidata.org/wiki/Q3360470",
+    verifiedAt: "2026-08-06",
     slug: "chua-chuong",
     provinceSlug: "hung-yen",
     name: "Chùa Chuông",
@@ -407,13 +417,15 @@ export const redRiverDeltaDestinations: Destination[] = [
   },
   {
     id: "tb-chua-keo",
+    sourceUrl: "https://en.wikipedia.org/wiki/Keo_Temple",
+    verifiedAt: "2026-08-06",
     slug: "chua-keo",
     provinceSlug: "thai-binh",
     name: "Chùa Keo",
     nameEn: "Keo Pagoda",
     type: "temple",
-    lng: 106.5497,
-    lat: 20.5306,
+    lng: 106.2972,
+    lat: 20.3606,
     summary:
       "Ngôi chùa cổ gần 400 năm với gác chuông gỗ ba tầng tuyệt mỹ, kiệt tác kiến trúc Phật giáo Việt Nam.",
     story:
@@ -480,6 +492,8 @@ export const redRiverDeltaDestinations: Destination[] = [
   },
   {
     id: "vp-tam-dao",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Tam_%C4%90%E1%BA%A3o",
+    verifiedAt: "2026-08-06",
     slug: "tam-dao",
     provinceSlug: "vinh-phuc",
     name: "Tam Đảo",

@@ -5,6 +5,8 @@ type ProvinceEditorial = Omit<ProvinceContent, "destinationIds">;
 export const northCentralDestinations: Destination[] = [
   {
     id: "thanh-nha-ho",
+    sourceUrl: "https://www.wikidata.org/wiki/Q190060",
+    verifiedAt: "2026-08-06",
     slug: "thanh-nha-ho",
     provinceSlug: "thanh-hoa",
     name: "Thành nhà Hồ",
@@ -187,6 +189,8 @@ export const northCentralDestinations: Destination[] = [
   },
   {
     id: "vuon-quoc-gia-pu-mat",
+    sourceUrl: "https://en.wikipedia.org/wiki/P%C3%B9_M%C3%A1t_National_Park",
+    verifiedAt: "2026-08-06",
     slug: "vuon-quoc-gia-pu-mat",
     provinceSlug: "nghe-an",
     name: "Vườn quốc gia Pù Mát",
@@ -223,13 +227,15 @@ export const northCentralDestinations: Destination[] = [
   },
   {
     id: "chua-huong-tich",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%C3%B9a_H%C6%B0%C6%A1ng_T%C3%ADch",
+    verifiedAt: "2026-08-06",
     slug: "chua-huong-tich",
     provinceSlug: "ha-tinh",
     name: "Chùa Hương Tích",
     nameEn: "Huong Tich Pagoda",
     type: "temple",
-    lng: 105.7197,
-    lat: 18.3539,
+    lng: 105.785,
+    lat: 18.5283,
     summary:
       "Ngôi chùa cổ linh thiêng trên đỉnh Hồng Lĩnh, được mệnh danh Hoan Châu đệ nhất danh lam của xứ Nghệ Tĩnh.",
     story:
@@ -331,6 +337,8 @@ export const northCentralDestinations: Destination[] = [
   },
   {
     id: "thanh-co-quang-tri",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Th%C3%A0nh_c%E1%BB%95_Qu%E1%BA%A3ng_Tr%E1%BB%8B",
+    verifiedAt: "2026-08-06",
     slug: "thanh-co-quang-tri",
     provinceSlug: "quang-tri",
     name: "Thành cổ Quảng Trị",
@@ -368,13 +376,15 @@ export const northCentralDestinations: Destination[] = [
   },
   {
     id: "dia-dao-vinh-moc",
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_V%E1%BB%8Bnh_M%E1%BB%91c",
+    verifiedAt: "2026-08-06",
     slug: "dia-dao-vinh-moc",
     provinceSlug: "quang-tri",
     name: "Địa đạo Vịnh Mốc",
     nameEn: "Vinh Moc Tunnels",
     type: "museum",
-    lng: 107.0250,
-    lat: 17.0244,
+    lng: 107.111,
+    lat: 17.073,
     summary:
       "Làng hầm kỳ vĩ trong lòng đất, nơi cả cộng đồng kiên cường sống và chiến đấu suốt những năm mưa bom bão đạn.",
     story:
@@ -404,6 +414,8 @@ export const northCentralDestinations: Destination[] = [
   },
   {
     id: "dao-con-co",
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%E1%BB%93n_C%E1%BB%8F",
+    verifiedAt: "2026-08-06",
     slug: "dao-con-co",
     provinceSlug: "quang-tri",
     name: "Đảo Cồn Cỏ",

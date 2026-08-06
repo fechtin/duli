@@ -42,6 +42,8 @@ export const southeastDestinations: Destination[] = [
   },
   {
     id: "con-dao",
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%C3%B4n_%C4%90%E1%BA%A3o",
+    verifiedAt: "2026-08-06",
     slug: "con-dao",
     provinceSlug: "ba-ria-vung-tau",
     name: "Côn Đảo",
@@ -78,6 +80,8 @@ export const southeastDestinations: Destination[] = [
   },
   {
     id: "cat-tien-national-park",
+    sourceUrl: "https://en.wikipedia.org/wiki/C%C3%A1t_Ti%C3%AAn_National_Park",
+    verifiedAt: "2026-08-06",
     slug: "vuon-quoc-gia-cat-tien",
     provinceSlug: "dong-nai",
     name: "Vườn quốc gia Cát Tiên",
@@ -115,6 +119,8 @@ export const southeastDestinations: Destination[] = [
   },
   {
     id: "thac-giang-dien",
+    sourceUrl: "https://vi.wikipedia.org/wiki/Th%C3%A1c_Giang_%C4%90i%E1%BB%81n",
+    verifiedAt: "2026-08-06",
     slug: "thac-giang-dien",
     provinceSlug: "dong-nai",
     name: "Thác Giang Điền",
@@ -223,6 +229,8 @@ export const southeastDestinations: Destination[] = [
   },
   {
     id: "bu-gia-map-national-park",
+    sourceUrl: "https://en.wikipedia.org/wiki/B%C3%B9_Gia_M%E1%BA%ADp_National_Park",
+    verifiedAt: "2026-08-06",
     slug: "vuon-quoc-gia-bu-gia-map",
     provinceSlug: "binh-phuoc",
     name: "Vườn quốc gia Bù Gia Mập",
@@ -296,6 +304,8 @@ export const southeastDestinations: Destination[] = [
   },
   {
     id: "nui-ba-den-tay-ninh",
+    sourceUrl: "https://vi.wikipedia.org/wiki/N%C3%BAi_B%C3%A0_%C4%90en",
+    verifiedAt: "2026-08-06",
     slug: "nui-ba-den",
     provinceSlug: "tay-ninh",
     name: "Núi Bà Đen",
