@@ -74,7 +74,7 @@ export function CheckinFlow() {
 
   const writeWithAI = async () => {
     setAiBusy(true);
-    const c = await ai.caption({ locale, destinationId: dest.id, destinationName: dest.name, provinceSlug: dest.provinceSlug });
+    const c = await ai.caption({ locale, country, destinationId: dest.id, destinationName: dest.name, provinceSlug: dest.provinceSlug });
     setCaption(c);
     setAiBusy(false);
   };

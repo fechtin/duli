@@ -2,8 +2,9 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import * as db from "./db";
 import type { D1Like } from "./db";
-import { ai } from "../src/lib/ai";
-import type { AIContext, AIMessage } from "../src/lib/ai";
+import { mockProvider } from "../src/lib/ai";
+import { createGatewayProvider } from "../src/lib/ai/gatewayProvider";
+import type { AIContext, AIMessage, AIProvider } from "../src/lib/ai";
 import type { Locale } from "../src/lib/i18n/dictionaries";
 import { ok, fail, streamText } from "./respond";
 import { buildMeta, injectMeta } from "./meta";
@@ -13,6 +14,9 @@ interface Env {
   DB: D1Like;
   UPLOADS: R2Bucket;
   FIREBASE_PROJECT_ID: string;
+  /** Fechtin AI Gateway — OpenAI-compatible pool. Set via `wrangler secret put`. */
+  FECHTIN_GATEWAY_URL?: string;
+  FECHTIN_GATEWAY_KEY?: string;
 }
 
 // ── Firebase JWT verification via Google JWKS ──────────────────
@@ -150,30 +154,62 @@ api.get("/search", async (c) => {
 });
 
 // ── AI ────────────────────────────────────────────────────────
+/**
+ * Real answers come from the Fechtin Gateway; without credentials the templated mock still
+ * serves, so local dev needs no key and a missing secret degrades instead of 500ing.
+ * Built per request — Workers isolates are reused, but `env` is only available here.
+ */
+function aiProvider(env: Env): AIProvider {
+  if (!env.FECHTIN_GATEWAY_KEY) return mockProvider;
+  return createGatewayProvider({
+    baseUrl: env.FECHTIN_GATEWAY_URL ?? "https://gw.fechtin.com/v1",
+    apiKey: env.FECHTIN_GATEWAY_KEY,
+  });
+}
+
+/** Content is looked up here, from D1 — the client sends ids only, never the facts themselves. */
 async function aiContext(env: Env, body: Record<string, unknown>): Promise<AIContext> {
   const country = body.country === "kr" ? "kr" : "vn";
+  const locale = (body.locale as Locale) ?? "vi";
   const destinationId = body.destinationId as string | undefined;
   const destination = destinationId
-    ? (await db.getDestination(env.DB, destinationId, undefined, country)) ?? undefined
+    ? (await db.getDestination(env.DB, destinationId, locale, country)) ?? undefined
     : undefined;
   const provinceSlug = (body.provinceSlug as string | undefined) ?? destination?.provinceSlug;
   const provinceBundle = provinceSlug
-    ? (await db.getProvinceBundle(env.DB, provinceSlug, undefined, country)) ?? undefined
+    ? (await db.getProvinceBundle(env.DB, provinceSlug, locale, country)) ?? undefined
     : undefined;
-  return { locale: (body.locale as Locale) ?? "vi", destinationId, provinceSlug, destination, provinceBundle };
+  return { locale, country, destinationId, provinceSlug, destination, provinceBundle };
+}
+
+/** A chat panel needs a few turns of memory, not an unbounded transcript to pay for. */
+const MAX_TURNS = 12;
+const MAX_CHARS = 2000;
+
+function sanitizeMessages(input: unknown): AIMessage[] {
+  if (!Array.isArray(input)) return [];
+  return input
+    .filter((m): m is AIMessage => {
+      const r = (m as AIMessage)?.role;
+      return (r === "user" || r === "assistant") && typeof (m as AIMessage).content === "string";
+    })
+    .slice(-MAX_TURNS)
+    .map((m) => ({ role: m.role, content: m.content.slice(0, MAX_CHARS) }));
 }
 
 api.post("/ai/chat", async (c) => {
-  const body = await c.req.json<{ messages: AIMessage[] } & Record<string, unknown>>();
-  return streamText(ai.streamChat(body.messages ?? [], await aiContext(c.env, body)));
+  const body = await c.req.json<Record<string, unknown>>();
+  const messages = sanitizeMessages(body.messages);
+  if (!messages.length) return fail(c, "bad_request", "No messages", 400);
+  return streamText(aiProvider(c.env).streamChat(messages, await aiContext(c.env, body)));
 });
 api.post("/ai/summary", async (c) => {
   const body = await c.req.json<Record<string, unknown>>();
-  return streamText(ai.summary(await aiContext(c.env, body)));
+  return streamText(aiProvider(c.env).summary(await aiContext(c.env, body)));
 });
 api.post("/ai/caption", async (c) => {
   const body = await c.req.json<Record<string, unknown>>();
-  return ok(c, { caption: await ai.caption(await aiContext(c.env, body)) }, 0);
+  return ok(c, { caption: await aiProvider(c.env).caption(await aiContext(c.env, body)) }, 0);
 });
 
 // ── File uploads → R2 ────────────────────────────────────────

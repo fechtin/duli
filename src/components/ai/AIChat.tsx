@@ -4,6 +4,7 @@ import { Sparkles, Send, X } from "lucide-react";
 import { ai, type AIContext, type AIMessage } from "@/lib/ai";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { fetchDestination, fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
 import { useAsync } from "@/lib/utils/useAsync";
@@ -21,6 +22,7 @@ export function AIChat() {
   const setOpen = useUIStore((s) => s.setAiOpen);
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
+  const country = useCountryStore((s) => s.country);
 
   const lightDest = useContentStore((s) => s.destinations).find((d) => d.id === selectedDestination);
   const provinceSlug = selectedProvince ?? lightDest?.provinceSlug;
@@ -39,12 +41,13 @@ export function AIChat() {
   const context = useMemo<AIContext>(
     () => ({
       locale,
+      country,
       destinationId: selectedDestination ?? undefined,
       provinceSlug,
       destination: dest ?? undefined,
       provinceBundle: bundle ?? undefined,
     }),
-    [locale, selectedDestination, provinceSlug, dest, bundle],
+    [locale, country, selectedDestination, provinceSlug, dest, bundle],
   );
 
   const contextLabel = lightDest?.name ?? provinceName ?? countryName;

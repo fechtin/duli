@@ -1,8 +1,10 @@
 import type { Locale } from "@/lib/i18n/dictionaries";
-import type { Destination, ProvinceBundle } from "@/lib/types";
+import type { CountryCode, Destination, ProvinceBundle } from "@/lib/types";
 
 export interface AIContext {
   locale: Locale;
+  /** Which atlas the question is about; the Worker looks content up per country. */
+  country?: CountryCode;
   provinceSlug?: string;
   destinationId?: string;
   provinceName?: string;

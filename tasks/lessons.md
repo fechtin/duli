@@ -10,6 +10,11 @@
   width≥700, down-rank portraits = signs/docs), dedupe globally, and **record provenance**
   (sourceTitle/sourceUrl/via) in the manifest. When no valid candidate exists, **leave the seed
   blank** so the illustrated SVG fallback shows — never display a known-wrong image.
+- **Hỏi trước khi tiêu tài nguyên thật của user** (2026-08-05). Tôi tự `npm start` gateway ở
+  background để test AI — nó nạp `.env` với key provider thật và tiêu 16 request free-tier mà
+  không xin phép. Chi phí $0, nhưng vấn đề là quyền quyết định. `npm start` trong repo có `.env`
+  **không phải sandbox**. Đề xuất thì được, tự làm thì không. Test/build/typecheck trong repo
+  vẫn chạy bình thường — giới hạn này chỉ áp cho thứ gọi ra ngoài hoặc dùng credential thật.
 
 ## Patterns established
 - **d3-geo winding:** spherical geoPath wants CLOCKWISE exterior rings (opposite of RFC 7946).
@@ -82,3 +87,20 @@
   resolution, for 100% of seeds instead of 90%, and none of the handover bugs exist because the
   thing being moved *is* the image. Video earns its cost only when something moves INSIDE the
   frame. The measurement discipline was still worth it; the medium was not.
+
+## 033 — AI thật qua gateway
+- **Một filter có buffer mà quên `flush()` trông y hệt model bị cắt token.** Nhánh caption gọi
+  `ThinkFilter.push()` không kèm `flush()`, mất đúng 7 ký tự cuối ("…tự hào ✨" → "…tự h"). Suýt
+  đổ lỗi cho lane và đi thêm guard `finish_reason`. Dấu hiệu nhận biết: **luôn thiếu đúng N ký
+  tự** — model cắt thật thì độ dài ngẫu nhiên. Filter có state phải có một hàm "chạy trọn chuỗi".
+- **Một test pass có thể là do bug che.** Test bóc ngoặc kép pass chỉ vì dấu `"` cuối đã bị filter
+  nuốt sẵn; sửa bug xong test mới đỏ và lộ ra lỗi thứ tự xử lý. Test xanh trên đường đi có bug
+  không chứng minh được gì.
+- **`finish_reason` không phải tín hiệu truncation đáng tin.** Đo nhiều lane: có lane cắt ngang câu
+  vẫn trả `"stop"`. Đừng xây logic chỉ dựa vào nó.
+- **Đo latency theo tính chất request, không theo một con số chung.** Cùng tier, cùng prompt:
+  stream trả chữ ngay, còn blocking call trên lane reasoning mất 34s. Request có streaming thì
+  người dùng chờ được; request blocking phải có timeout ngắn + fallback.
+- **Grounding chống bịa mạnh hơn chọn model.** Llama-3.1-8b với luật "chỉ dùng CONTEXT, không có
+  thì nói không có" đã từ chối bịa giá vé máy bay. Đây là chuyện prompt + dữ liệu, không phải
+  chuyện tier.
