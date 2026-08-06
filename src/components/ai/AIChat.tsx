@@ -11,6 +11,7 @@ import { useAsync } from "@/lib/utils/useAsync";
 import { useCountryName } from "@/lib/country/useCountryName";
 import { useI18n, useT } from "@/lib/i18n";
 import { Chip } from "@/components/ui/Chip";
+import { RichText } from "./RichText";
 import { panelTransition } from "@/design/motion";
 import { cn } from "@/lib/utils/cn";
 
@@ -59,7 +60,9 @@ export function AIChat() {
   const suggestions = useMemo(() => ai.suggestions(context), [context]);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    // Instant, not smooth: a smooth scroll is still animating when the next token re-renders,
+    // so it never reaches the bottom and the newest line stays half-hidden.
+    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
   }, [messages, streaming]);
 
   const send = async (text: string) => {
@@ -117,34 +120,66 @@ export function AIChat() {
               {messages.length === 0 && (
                 <div className="rounded-[var(--radius-md)] bg-surface-2 p-3 text-sm text-foreground/85">{t("ai.greeting")}</div>
               )}
-              {messages.map((m, i) => (
-                <div
-                  key={i}
-                  className={cn(
-                    "max-w-[85%] rounded-[var(--radius-md)] px-3 py-2 text-sm leading-relaxed",
-                    m.role === "user"
-                      ? "ml-auto bg-primary text-primary-foreground"
-                      : "bg-surface-2 text-foreground/90",
-                  )}
-                >
-                  {m.content}
-                  {m.role === "assistant" && streaming && i === messages.length - 1 && (
-                    <span className="ml-0.5 inline-block h-3.5 w-0.5 animate-pulse bg-primary align-middle" />
-                  )}
-                </div>
-              ))}
+              {messages.map((m, i) => {
+                const isLast = i === messages.length - 1;
+                // Nothing has arrived yet. A real answer can take several seconds — longer when
+                // the guide has to fall back to a web search — so an empty bubble sits there
+                // reading like a failure. Say what is happening instead.
+                if (m.role === "assistant" && !m.content && streaming && isLast) {
+                  return (
+                    <div
+                      key={i}
+                      className="flex w-fit items-center gap-2 rounded-[var(--radius-md)] bg-surface-2 px-3 py-2.5"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      <span className="flex gap-1" aria-hidden>
+                        {[0, 1, 2].map((d) => (
+                          <span
+                            key={d}
+                            className="h-1.5 w-1.5 animate-bounce rounded-full bg-primary/70"
+                            style={{ animationDelay: `${d * 150}ms`, animationDuration: "900ms" }}
+                          />
+                        ))}
+                      </span>
+                      <span className="text-xs text-muted">{t("ai.thinking")}</span>
+                    </div>
+                  );
+                }
+                return (
+                  <div
+                    key={i}
+                    className={cn(
+                      "max-w-[85%] rounded-[var(--radius-md)] px-3 py-2 text-sm leading-relaxed",
+                      m.role === "user"
+                        ? "ml-auto bg-primary text-primary-foreground"
+                        : "bg-surface-2 text-foreground/90",
+                    )}
+                  >
+                    {m.role === "assistant" ? <RichText text={m.content} /> : m.content}
+                    {m.role === "assistant" && streaming && isLast && (
+                      <span className="ml-0.5 inline-block h-3.5 w-0.5 animate-pulse bg-primary align-middle" />
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
-            {/* Suggestions */}
-            {!streaming && (
-              <div className="no-scrollbar flex gap-1.5 overflow-x-auto px-4 pb-2">
-                {suggestions.map((s) => (
-                  <Chip key={s.label} onClick={() => send(s.prompt)}>
-                    {s.label}
-                  </Chip>
-                ))}
-              </div>
-            )}
+            {/* Suggestions — kept mounted while streaming. Unmounting them mid-answer grew the
+                scroll area by a row at the exact moment the last tokens landed, so the reply
+                ended up scrolled behind them (visible in the first production screenshots). */}
+            <div
+              className={cn(
+                "no-scrollbar flex gap-1.5 overflow-x-auto px-4 pb-2 transition-opacity",
+                streaming && "pointer-events-none opacity-40",
+              )}
+            >
+              {suggestions.map((s) => (
+                <Chip key={s.label} disabled={streaming} onClick={() => send(s.prompt)}>
+                  {s.label}
+                </Chip>
+              ))}
+            </div>
 
             {/* Input */}
             <form
