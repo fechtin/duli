@@ -1,5 +1,5 @@
 import { mockProvider } from "./mockProvider";
-import { buildCaptionPrompt, buildSystemPrompt } from "./prompt";
+import { NEED_SEARCH, buildCaptionPrompt, buildSystemPrompt } from "./prompt";
 import type { AIContext, AIMessage, AIProvider } from "./types";
 
 /**
@@ -100,6 +100,28 @@ const STREAM_TIMEOUT_MS = 90_000;
 export function createGatewayProvider(config: GatewayConfig): AIProvider {
   const tier = config.tier ?? "fast";
 
+  /**
+   * Read just far enough to tell whether the model asked for a search, WITHOUT consuming the
+   * stream — a `for await` that breaks would close the generator and throw the answer away.
+   * The cost is holding back the first few characters; the alternative is the sentinel flashing
+   * on screen before we can retract it.
+   */
+  async function peekForSearchSignal(
+    gen: AsyncGenerator<string>,
+  ): Promise<{ needsSearch: boolean; head: string; rest: AsyncGenerator<string> }> {
+    let head = "";
+    while (head.trimStart().length < NEED_SEARCH.length) {
+      const next = await gen.next();
+      if (next.done) break;
+      head += next.value;
+    }
+    if (head.trimStart().startsWith(NEED_SEARCH)) {
+      await gen.return(undefined as never); // close the upstream response
+      return { needsSearch: true, head: "", rest: gen };
+    }
+    return { needsSearch: false, head, rest: gen };
+  }
+
   async function call(body: Record<string, unknown>, timeoutMs: number): Promise<Response> {
     const res = await fetch(`${config.baseUrl.replace(/\/$/, "")}/chat/completions`, {
       method: "POST",
@@ -135,8 +157,12 @@ export function createGatewayProvider(config: GatewayConfig): AIProvider {
   async function* streamCompletion(
     messages: { role: string; content: string }[],
     label: string,
+    search = false,
   ): AsyncGenerator<string> {
-    const res = await call({ messages, stream: true }, STREAM_TIMEOUT_MS);
+    // `fechtin_search` narrows the pool to lanes that declare `search`; the gateway never
+    // silently falls back to one that cannot search, so a thin pool surfaces as 429 rather than
+    // as a fabricated answer the traveller would believe was sourced.
+    const res = await call({ messages, stream: true, ...(search && { fechtin_search: true }) }, STREAM_TIMEOUT_MS);
     logLane(res, label);
 
     const reader = res.body?.getReader();
@@ -191,12 +217,35 @@ export function createGatewayProvider(config: GatewayConfig): AIProvider {
 
   return {
     async *streamChat(messages: AIMessage[], ctx: AIContext) {
-      const payload = [
-        { role: "system", content: buildSystemPrompt(ctx) },
-        ...messages.map((m) => ({ role: m.role, content: m.content })),
+      const turns = messages.map((m) => ({ role: m.role, content: m.content }));
+      const withSystem = (mode: "atlas" | "web") => [
+        { role: "system", content: buildSystemPrompt(ctx, mode) },
+        ...turns,
       ];
+
       try {
-        yield* streamCompletion(payload, "chat");
+        // Pass 1 on the full pool. Most questions are answerable from D1 and stop here.
+        const { needsSearch, head, rest } = await peekForSearchSignal(
+          streamCompletion(withSystem("atlas"), "chat"),
+        );
+        if (!needsSearch) {
+          if (head) yield head;
+          yield* rest;
+          return;
+        }
+
+        // Pass 2: the atlas genuinely lacks it, so pay the thin search pool.
+        try {
+          yield* streamCompletion(withSystem("web"), "chat:search", true);
+        } catch (err) {
+          // No search lane free (429) — answer from the atlas and be honest about the gap
+          // rather than dropping the traveller into a templated non-answer.
+          console.error("[ai:chat] search unavailable, answering from atlas only:", err);
+          yield* streamCompletion(withSystem("atlas").concat({
+            role: "system",
+            content: `Search is unavailable. Do not reply with ${NEED_SEARCH}. Answer from the CONTEXT, and say plainly which part you do not have.`,
+          }), "chat:no-search");
+        }
       } catch (err) {
         console.error("[ai:chat] falling back to mock:", err);
         yield* mockProvider.streamChat(messages, ctx);
