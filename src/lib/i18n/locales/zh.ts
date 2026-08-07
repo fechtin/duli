@@ -127,6 +127,8 @@ export const zh: Record<TranslationKey, string> = {
   "dish.noRestaurants": "暂无该菜品的餐厅推荐。",
   "dish.whyForYou": "为什么适合你",
   "dish.viewOnMap": "在地图上查看",
+
+  "maps.directionsTo": "用{provider}导航到{name}",
   "restaurant.label.aiPick": "AI精选",
   "restaurant.label.localFavorite": "当地人最爱",
   "restaurant.label.atlasPick": "Atlas精选",

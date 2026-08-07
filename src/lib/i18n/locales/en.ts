@@ -127,6 +127,8 @@ export const en: Record<TranslationKey, string> = {
   "dish.noRestaurants": "No restaurant picks yet for this dish.",
   "dish.whyForYou": "Why it suits you",
   "dish.viewOnMap": "View on map",
+
+  "maps.directionsTo": "Directions to {name} in {provider}",
   "restaurant.label.aiPick": "AI Pick",
   "restaurant.label.localFavorite": "Local favorite",
   "restaurant.label.atlasPick": "Atlas pick",

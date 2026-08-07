@@ -127,6 +127,8 @@ export const ko: Record<TranslationKey, string> = {
   "dish.noRestaurants": "아직 이 요리의 추천 맛집이 없습니다.",
   "dish.whyForYou": "당신에게 어울리는 이유",
   "dish.viewOnMap": "지도에서 보기",
+
+  "maps.directionsTo": "{provider}에서 {name} 길찾기",
   "restaurant.label.aiPick": "AI 추천",
   "restaurant.label.localFavorite": "현지인 인기",
   "restaurant.label.atlasPick": "아틀라스 추천",

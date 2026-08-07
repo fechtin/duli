@@ -4,7 +4,8 @@
 //   1. Key parity — every locale (en/ko/ja/zh) must define exactly the keys vi.ts defines.
 //   2. No hardcoded Vietnamese in rendered JSX — scans src/**/*.tsx for Vietnamese-diacritic
 //      text that isn't going through t(). Proper-noun DATA maps live in .ts files and are
-//      intentionally not scanned; use `// i18n-ignore` to whitelist a genuine exception line.
+//      intentionally not scanned, and neither are *.test.tsx (fixture text, not UI); use
+//      `// i18n-ignore` to whitelist a genuine exception line.
 //
 // Exits non-zero on any violation so it can gate a build.
 
@@ -65,6 +66,9 @@ function stripAllowed(line) {
 function checkHardcoded() {
   const problems = [];
   for (const file of walk(SCAN_DIR)) {
+    // Tests are not UI. Their Vietnamese is fixture text — the very input a renderer must
+    // handle — so scanning them only produces noise that trains people to ignore this check.
+    if (file.endsWith(".test.tsx")) continue;
     const text = readFileSync(file, "utf8");
     if (text.includes("i18n-ignore-file")) continue; // whole-file opt-out (e.g. dead/standalone export cards)
     const lines = text.split("\n");

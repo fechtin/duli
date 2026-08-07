@@ -8,6 +8,7 @@ import { useT, useI18n } from "@/lib/i18n";
 import { useCountryName } from "@/lib/country/useCountryName";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { MapLinks } from "@/components/ui/MapLinks";
 import { cn } from "@/lib/utils/cn";
 import { Section, Divider, InfoRow } from "./primitives";
 import type { Restaurant, RestaurantLabel } from "@/lib/types";
@@ -203,6 +204,9 @@ function RestaurantCard({ restaurant: r, t }: { restaurant: Restaurant; t: (k: s
         <MapPin size={13} />
         {t("dish.viewOnMap")}
       </button>
+
+      {/* Directions out to the user's own map app */}
+      <MapLinks place={{ name: r.name, lng: r.lng, lat: r.lat }} size="sm" className="mt-2" />
     </div>
   );
 }

@@ -127,6 +127,8 @@ export const ja: Record<TranslationKey, string> = {
   "dish.noRestaurants": "この料理のおすすめ店はまだありません。",
   "dish.whyForYou": "あなたに合う理由",
   "dish.viewOnMap": "地図で見る",
+
+  "maps.directionsTo": "{provider}で{name}へのルートを見る",
   "restaurant.label.aiPick": "AIおすすめ",
   "restaurant.label.localFavorite": "地元で人気",
   "restaurant.label.atlasPick": "アトラス厳選",

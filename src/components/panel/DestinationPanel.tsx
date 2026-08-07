@@ -12,6 +12,7 @@ import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { MapLinks } from "@/components/ui/MapLinks";
 import { AISummary } from "./AISummary";
 import { Gallery } from "./Gallery";
 import { Section, InfoRow, Divider } from "./primitives";
@@ -102,6 +103,11 @@ export function DestinationPanel({ id }: { id: string }) {
         <Button variant="secondary" onClick={() => setAiOpen(true)} aria-label={t("nav.guide")}>
           <MessageCircle size={18} />
         </Button>
+      </div>
+
+      {/* Directions — hand off to the map app the user actually navigates with */}
+      <div className="px-5 pb-1 pt-2">
+        <MapLinks place={{ name: dest.nameEn || dest.name, lng: dest.lng, lat: dest.lat }} />
       </div>
 
       {/* 5. Gallery */}
