@@ -10,6 +10,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Height of the app window. Overwritten with a measured px value by
+     lockViewportHeight() (src/lib/ui/viewportLock.ts) — this is only the value used
+     before that first measurement lands. Anything that must span the whole window
+     sizes itself from this, never from dvh/100%/inset:0: see the file for why iOS
+     standalone can't be trusted to size a full-window box on its own. */
+  --app-h: 100dvh;
+
   /* Surfaces — Cloud White, warm and calm (Bible 002 §8) */
   --background: #f5f4ef;
   --surface: #ffffff;
@@ -173,11 +180,14 @@
   }
 
   body {
-    /* Lock the root to the real standalone-window viewport. iOS PWA reports
-       stale 100dvh during status-bar / safe-area transitions, which left a
-       blank strip below the map; fixed + inset:0 sidesteps dvh entirely. */
+    /* Lock the shell to the measured window height. inset:0 was tried here first and
+       is no better than the 100dvh it replaced — a fixed box resolves against the
+       initial containing block, i.e. the same layout viewport iOS leaves stale. */
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--app-h);
     margin: 0;
     background-color: var(--color-background);
     color: var(--color-foreground);

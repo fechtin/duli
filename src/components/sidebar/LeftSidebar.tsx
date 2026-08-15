@@ -46,7 +46,7 @@ export function LeftSidebar() {
       {/* Mobile scrim */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/55 backdrop-blur-sm md:hidden"
+          className="fixed left-0 top-0 z-40 h-[var(--app-h)] w-full bg-black/55 backdrop-blur-sm md:hidden"
           onClick={() => setMobileOpen(false)}
           aria-hidden
         />
@@ -54,7 +54,7 @@ export function LeftSidebar() {
 
       <aside
         className={cn(
-          "sidebar-theme fixed left-0 top-0 z-40 flex h-full flex-col border-r border-[var(--sb-border)] bg-[var(--sb-bg)]/95 backdrop-blur-[24px]",
+          "sidebar-theme fixed left-0 top-0 z-40 flex h-[var(--app-h)] flex-col border-r border-[var(--sb-border)] bg-[var(--sb-bg)]/95 backdrop-blur-[24px]",
           "transition-[width,transform] duration-[280ms] ease-out",
           mobileOpen ? "translate-x-0" : "-translate-x-full",
           "md:translate-x-0",

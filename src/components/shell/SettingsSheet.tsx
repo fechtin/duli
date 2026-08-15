@@ -27,7 +27,7 @@ export function SettingsSheet() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: duration.normal, ease: easeOut }}
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-[var(--overlay)] backdrop-blur-sm md:items-center"
+          className="fixed left-0 top-0 z-[60] flex h-[var(--app-h)] w-full items-end justify-center bg-[var(--overlay)] backdrop-blur-sm md:items-center"
           onClick={() => setOpen(false)}
         >
           <motion.div
