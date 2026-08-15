@@ -5,6 +5,8 @@ import { useI18n } from "@/lib/i18n";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { countryLabel } from "@/lib/country";
 import { getProvinceMeta } from "@/lib/api/content";
+import { useFoodStore } from "@/lib/store/useFoodStore";
+import { alternatesOf, DEFAULT_LOCALE, HREFLANG, splitLocale, withLocale } from "./urls";
 
 // Dynamic document head + JSON-LD per selection (Bible 004 §10 SEO).
 //
@@ -33,6 +35,25 @@ function upsertMeta(attr: "name" | "property", key: string, content: string) {
   el.setAttribute("content", content);
 }
 
+/**
+ * Rewrite the hreflang cluster for the current path. The Worker ships a correct set with the
+ * HTML, but a reader (or a rendering crawler) who navigates the map never reloads — leaving
+ * Hội An advertising the homepage's alternates.
+ */
+function setAlternates(origin: string, path: string, query: string) {
+  for (const el of document.head.querySelectorAll('link[rel="alternate"][hreflang]')) el.remove();
+  for (const { locale, path: localised } of alternatesOf(path)) {
+    const href = `${origin}${localised}${query}`;
+    for (const lang of locale === DEFAULT_LOCALE ? [HREFLANG[locale], "x-default"] : [HREFLANG[locale]]) {
+      const el = document.createElement("link");
+      el.rel = "alternate";
+      el.hreflang = lang;
+      el.href = href;
+      document.head.appendChild(el);
+    }
+  }
+}
+
 function setJsonLd(data: object | null) {
   let el = document.getElementById("ld-json");
   if (!data) {
@@ -54,6 +75,7 @@ export function useDocumentMeta() {
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const destinations = useContentStore((s) => s.destinations);
+  const openDishId = useFoodStore((s) => s.openDishId);
 
   useEffect(() => {
     const brand = "FechTin Go";
@@ -101,8 +123,18 @@ export function useDocumentMeta() {
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:type", "website");
     upsertMeta("name", "twitter:card", "summary_large_image");
-    upsertMeta("property", "og:url", window.location.href);
-    setCanonical(window.location.href);
+    // Canonical is built from the path, never from location.href: tracking params must not mint
+    // a second URL, and an open dish is one page (/{cc}?dish=…) no matter which map view it
+    // opened over — three self-canonicals for the same card is three duplicates to Google.
+    const { origin } = window.location;
+    const { path } = splitLocale(window.location.pathname);
+    const cleanPath = openDishId ? `/${country}` : path;
+    const query = openDishId ? `?dish=${openDishId}` : "";
+    const canonical = `${origin}${withLocale(locale, cleanPath)}${query}`;
+
+    upsertMeta("property", "og:url", canonical);
+    setCanonical(canonical);
+    setAlternates(origin, cleanPath, query);
     setJsonLd(ld);
-  }, [locale, t, country, selectedProvince, selectedDestination, destinations]);
+  }, [locale, t, country, selectedProvince, selectedDestination, destinations, openDishId]);
 }

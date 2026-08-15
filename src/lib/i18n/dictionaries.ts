@@ -19,3 +19,18 @@ export const locales: { code: Locale; label: string; flag: string }[] = [
 export type Dict = Record<string, string>;
 
 export const dictionaries: Record<Locale, Dict> = { vi, en, ko, ja, zh };
+
+export type TParams = Record<string, string | number>;
+
+export function interpolate(template: string, params?: TParams): string {
+  if (!params) return template;
+  return template.replace(/\{(\w+)\}/g, (_, k: string) => String(params[k] ?? `{${k}}`));
+}
+
+/**
+ * Translate outside React. The provider's `t` adds dev-time warnings on top of this; the Worker
+ * (which renders the crawler-visible body in the reader's language) has no provider at all.
+ */
+export function translate(locale: Locale, key: string, params?: TParams): string {
+  return interpolate(dictionaries[locale]?.[key] ?? vi[key as keyof typeof vi] ?? key, params);
+}

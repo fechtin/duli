@@ -5,6 +5,7 @@ import { useContentStore, findDestinationBySlug } from "./useContentStore";
 import { useCountryStore } from "./useCountryStore";
 import { getProvinceMeta } from "@/lib/api/content";
 import { isCountryCode } from "@/lib/country";
+import { splitLocale, withLocale } from "@/lib/seo/urls";
 import type { CountryCode } from "@/lib/types";
 
 /**
@@ -32,7 +33,9 @@ function depthOf(hasDish: boolean, hasDest: boolean, hasProvince: boolean) {
  * Vietnam and get rewritten in place.
  */
 function parsePath(pathname: string): { country: CountryCode; segments: string[]; legacy: boolean } {
-  const segments = pathname.split("/").filter(Boolean);
+  // The locale prefix belongs to I18nProvider, not to selection state — strip it and forget it.
+  const { path } = splitLocale(pathname);
+  const segments = path.split("/").filter(Boolean);
   if (isCountryCode(segments[0])) {
     return { country: segments[0], segments: segments.slice(1), legacy: false };
   }
@@ -40,6 +43,11 @@ function parsePath(pathname: string): { country: CountryCode; segments: string[]
     return { country: "vn", segments, legacy: true };
   }
   return { country: useCountryStore.getState().country, segments: [], legacy: false };
+}
+
+/** Re-attach whatever locale prefix the URL currently carries. */
+function localised(path: string): string {
+  return withLocale(splitLocale(window.location.pathname).locale, path);
 }
 
 function currentUrlDepth() {
@@ -99,7 +107,8 @@ export function useUrlSync() {
 
     // Upgrade a legacy (country-less) link in place, keeping the same history entry.
     if (legacy) {
-      window.history.replaceState(null, "", `/vn${window.location.pathname}${window.location.search}`);
+      const { path } = splitLocale(window.location.pathname);
+      window.history.replaceState(null, "", `${localised(`/vn${path}`)}${window.location.search}`);
     }
 
     prevDepth.current = currentUrlDepth();
@@ -136,6 +145,7 @@ export function useUrlSync() {
     } else if (live.selectedProvince) {
       path = `/${cc}/${live.selectedProvince}`;
     }
+    path = localised(path);
     if (dishId) path += `?dish=${dishId}`;
 
     const nextDepth = depthOf(Boolean(dishId), Boolean(live.selectedDestination), Boolean(live.selectedProvince));

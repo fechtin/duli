@@ -28,6 +28,9 @@
          crawler ever visits. Every other route is canonicalised by the Worker. -->
     <link rel="canonical" href="%SITE_URL%/" />
     <meta property="og:url" content="%SITE_URL%/" />
+    <!-- The homepage's own hreflang cluster. Every other route gets one from worker/meta.ts;
+         this one has to be static for the same reason the canonical above is. -->
+    %HREFLANG%
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

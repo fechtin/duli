@@ -18,6 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: build-sitemap dates each page from the last commit that touched its
+          # data file. On the default shallow clone every file reports the checkout commit, so
+          # every <lastmod> would read "today" on every deploy — worse than having none.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -26,6 +31,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Regenerate sitemap.xml + robots.txt from the content before the SPA copies public/ into
+      # dist/. Committed copies drift the moment anyone adds a destination without remembering
+      # to run this by hand.
+      - name: Build sitemap + robots
+        run: npm run seo:build
 
       - name: Build SPA
         run: npm run build

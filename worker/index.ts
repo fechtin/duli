@@ -8,6 +8,7 @@ import type { AIContext, AIMessage, AIProvider } from "../src/lib/ai";
 import type { Locale } from "../src/lib/i18n/dictionaries";
 import { ok, fail, streamText } from "./respond";
 import { buildMeta, injectMeta } from "./meta";
+import { splitLocale, withLocale } from "../src/lib/seo/urls";
 
 interface Env {
   ASSETS: { fetch: (req: Request) => Promise<Response> };
@@ -313,23 +314,30 @@ api.delete("/me/checkins/:id", async (c) => {
 
 api.notFound((c) => fail(c, "not_found", "Unknown endpoint", 404));
 
+/** Paths served straight off disk — never a page, so they skip the routing lookups below. */
+const STATIC_PREFIXES = ["assets", "img", "icons", "geo", "video"];
+
 app.all("*", async (c) => {
   const url = new URL(c.req.url);
-  const first = url.pathname.split("/").filter(Boolean)[0];
+  const { locale, path, redundant } = splitLocale(url.pathname);
+
+  // "/vi/…" renders exactly what "/…" renders. Collapse it before both get indexed.
+  if (redundant) return c.redirect(`${path}${url.search}`, 301);
+
+  const first = path.split("/").filter(Boolean)[0];
   // Links minted before the country prefix (/{province}/…) are indexed and shared — send
   // crawlers to the canonical /vn/… form instead of letting them 404 into the SPA.
-  if (first && first !== "vn" && first !== "kr" && !first.includes(".")) {
+  if (first && first !== "vn" && first !== "kr" && !first.includes(".") && !STATIC_PREFIXES.includes(first)) {
     const row = await c.env.DB.prepare("SELECT slug FROM provinces WHERE slug = ? AND country = 'vn'")
       .bind(first)
       .first<{ slug: string }>();
-    if (row) return c.redirect(`/vn${url.pathname}${url.search}`, 301);
+    if (row) return c.redirect(`${withLocale(locale, `/vn${path}`)}${url.search}`, 301);
   }
 
   const res = await c.env.ASSETS.fetch(c.req.raw);
   // Only touch the SPA shell (index.html); static assets pass through untouched.
   if (!(res.headers.get("content-type") ?? "").includes("text/html")) return res;
-  const meta = await buildMeta(c.env, new URL(c.req.url));
-  return meta ? injectMeta(res, meta) : res;
+  return injectMeta(res, await buildMeta(c.env, url));
 });
 
 export default app;

@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 import { COUNTRY_ORDER, labelList, labelOf } from "./src/lib/country/names";
+import { DEFAULT_LOCALE, HREFLANG, SEO_LOCALES, withLocale } from "./src/lib/seo/urls";
 import { SITE_URL } from "./scripts/site";
 
 /**
@@ -21,12 +22,24 @@ function homepageSeo() {
       `Khám phá ${labelOf(cc)}</a></li>`,
   ).join("\n          ");
 
+  // hreflang must be reciprocal and self-referencing or Google discards the whole cluster —
+  // the locale-prefixed homepages the Worker renders all point back here, so "/" must point out.
+  const hreflang = SEO_LOCALES.flatMap((locale) => {
+    const href = `${SITE_URL}${withLocale(locale, "/")}`;
+    const tags = [`<link rel="alternate" hreflang="${HREFLANG[locale]}" href="${href}" />`];
+    if (locale === DEFAULT_LOCALE) {
+      tags.push(`<link rel="alternate" hreflang="x-default" href="${href}" />`);
+    }
+    return tags;
+  }).join("\n    ");
+
   return {
     name: "homepage-seo",
     transformIndexHtml: (html: string) =>
       html
         .replaceAll("%ATLASES%", labelList("vi", "và"))
         .replaceAll("%COUNTRY_LINKS%", links)
+        .replaceAll("%HREFLANG%", hreflang)
         .replaceAll("%SITE_URL%", SITE_URL),
   };
 }

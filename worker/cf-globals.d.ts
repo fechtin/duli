@@ -6,6 +6,8 @@ interface HTMLRewriterElement {
   setInnerContent(content: string, opts?: { html?: boolean }): HTMLRewriterElement;
   setAttribute(name: string, value: string): HTMLRewriterElement;
   append(content: string, opts?: { html?: boolean }): HTMLRewriterElement;
+  /** Drop the element and its children — used to clear index.html's static hreflang set. */
+  remove(): HTMLRewriterElement;
 }
 
 interface HTMLRewriterHandlers {
