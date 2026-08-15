@@ -70,12 +70,26 @@ Việc còn lại là những thứ thật sự quyết định thứ hạng. B�
 - **Backlink** — không có đường tắt kỹ thuật.
 - **Core Web Vitals** — Google Fonts vẫn render-blocking từ CDN ngoài. Đo bằng PageSpeed trước.
 
-## Phát hiện phụ (nội dung, chưa sửa)
+## Nội dung
 
-- **`zh` lẫn phồn thể/giản thể**: `locales/zh.ts` là phồn thể ("護照", "向導") nhưng nội dung
-  biên tập trong `src/data/i18n/**.zh.ts` là giản thể ("富国岛"). `check:content` không bắt
-  được vì nó chỉ soi Cyrillic/Latin. Vì vậy hreflang khai `zh` trần, không dám nhận `zh-Hant`
-  hay `zh-Hans`. Muốn sạch thì phải chọn một biến thể và rà lại toàn bộ.
+- [x] **`zh` đã thống nhất giản thể.** Trước đó atlas Hàn viết phồn thể 100%, atlas Việt giản
+  thể, file UI lẫn cả hai — người đọc đổi bản đồ là bị đổi luôn hệ chữ. `scripts/zh-simplify.mjs`
+  chuẩn hoá 27 file và `npm run check:zh` giữ cho nó không trôi lại. Hai luật cứu nội dung khỏi
+  bị phá: dùng preset `t`→`cn` chứ không phải `tw`→`cn` (preset Đài Loan còn viết lại *từ vựng*,
+  nó đụng 12 file Việt vốn đã đúng), và **không bao giờ** đụng tiếng Nhật — kanji Nhật trùng
+  glyph với phồn thể và nhiều câu tiếng Nhật ở đây không có kana để nhận diện, nên phạm vi
+  chuyển đổi được xác định theo *khối khai báo*, không theo ký tự. hreflang nay khai `zh-Hans`.
+
 - **Tên tỉnh không được dịch**: `provinces.i18n` có `summary`/`story` nhưng không có `name`,
   nên trang tiếng Hàn vẫn hiện "Quảng Nam" trong khi tên địa điểm đã là "호이안 구시가지".
   Không phải lỗi code — là khoảng trống dữ liệu, 63 + 17 tỉnh × 4 locale.
+
+## Re-seed production (2026-08-15)
+
+`src/data` có 187 địa điểm VN nhưng `db/seed.sql` và D1 production chỉ có 115 — 72 địa điểm đã
+viết xong nhưng chưa ai chạy bước seed thủ công. Với 404 thật của W1, sitemap dựng từ file TS sẽ
+quảng cáo 360 URL chết. Đã: regenerate seed → đối chiếu id cũ/mới (mất 0, thêm 72) → thử local
+→ `wrangler d1 execute --remote`. Production nay trả 187. Sitemap 582 → 654 trang (3 270 URL).
+
+`scripts/build-sitemap.mjs` lọc theo `db/seed.sql` chứ không theo file TS, và in WARNING kèm số
+lượng khi hai bên lệch — để lần sau quên seed thì thấy ngay, thay vì âm thầm hứa URL không có.

@@ -28,7 +28,7 @@ describe("country-aware copy", () => {
   });
 
   it("names no country literally in those keys", () => {
-    const LITERAL = /Vietnam|Việt Nam|베트남|ベトナム|越南|Korea|Hàn Quốc|한국|韓国|韓國/;
+    const LITERAL = /Vietnam|Việt Nam|베트남|ベトナム|越南|Korea|Hàn Quốc|한국|韓国|韩国/;
     for (const [locale, dict] of Object.entries(DICTS)) {
       for (const key of COUNTRY_KEYS) {
         expect(dict[key], `${locale}/${key}`).not.toMatch(LITERAL);

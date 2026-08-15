@@ -13,7 +13,7 @@ import type { Locale } from "../i18n/dictionaries";
 
 export const COUNTRY_LABELS: Record<CountryCode, Record<Locale, string>> = {
   vn: { vi: "Việt Nam", en: "Vietnam", ko: "베트남", ja: "ベトナム", zh: "越南" },
-  kr: { vi: "Hàn Quốc", en: "South Korea", ko: "대한민국", ja: "韓国", zh: "韓國" },
+  kr: { vi: "Hàn Quốc", en: "South Korea", ko: "대한민국", ja: "韓国", zh: "韩国" },
 };
 
 /** Country codes in the order they should be listed to a reader (and to a crawler). */

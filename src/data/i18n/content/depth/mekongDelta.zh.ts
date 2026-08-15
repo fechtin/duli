@@ -205,7 +205,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ],
     travelTips: [
       "屋中仍有人居住，进入与拍摄前请先打招呼。",
-      "可与芹𤅶渡口或湾姑江一日线路串起来。",
+      "可与芹𣷷渡口或湾姑江一日线路串起来。",
     ],
     bestTime: "11月至次年4月",
     visitDuration: "1小时",

@@ -2,10 +2,9 @@ import type { TranslationKey } from "./vi";
 
 export const zh: Record<TranslationKey, string> = {
   "app.name": "FechTin Go",
-  "app.tagline": "在一張鮮活的地圖上漫遊{country}",
-  "seo.description": "在一張鮮活的互動地圖上探索{country} — 故事、影像，以及屬於你的旅程。",
-  // Simplified, deliberately: these sit inline with the editorial content in seo-body, which is
-  // Simplified throughout. The UI strings above are Traditional — the file is already mixed.
+  "app.tagline": "在一张鲜活的地图上漫游{country}",
+  "seo.description": "在一张鲜活的互动地图上探索{country} — 故事、影像，以及属于你的旅程。",
+  // Crawler-body copy (worker/seo-body.ts), mirroring vi.ts.
   "seo.countryDesc": "在一张鲜活的地图上探索{country} — {count} 个地区的景点、故事与影像。",
   "seo.provinceDesc": "探索{name} — 鲜活地图上的景点、故事与影像。",
   "seo.provincesLine": "地图上已有 {count} 个地区的内容。",
@@ -37,17 +36,17 @@ export const zh: Record<TranslationKey, string> = {
   "nav.theme": "浅色/深色主题",
   "nav.language": "语言",
   "country.switch": "切换国家",
-  "country.kr": "韓國",
+  "country.kr": "韩国",
   // Heartbeat signals (025 §Heartbeat) — rendered by HeartbeatSection
-  "signal.calm": "寧靜",
-  "signal.popular": "熱門",
-  "signal.trending": "竄升",
-  "signal.seasonal": "當季",
-  "signal.festival": "慶典",
-  "signal.golden-hour": "黃金時刻",
-  "signal.perfect-weather": "天氣極佳",
-  "signal.editor-pick": "編輯推薦",
-  "signal.ai-pick": "AI推薦",
+  "signal.calm": "宁静",
+  "signal.popular": "热门",
+  "signal.trending": "窜升",
+  "signal.seasonal": "当季",
+  "signal.festival": "庆典",
+  "signal.golden-hour": "黄金时刻",
+  "signal.perfect-weather": "天气极佳",
+  "signal.editor-pick": "编辑推荐",
+  "signal.ai-pick": "AI推荐",
   "nav.home": "返回{country}全景",
 
   "map.reset": "全景",
@@ -56,7 +55,7 @@ export const zh: Record<TranslationKey, string> = {
   "map.regions": "区域",
   "map.provinces": "省份",
   "map.hint": "拖动移动 · 滚动缩放 · 点击探索",
-  "map.loading": "正在繪製{country}地圖…",
+  "map.loading": "正在绘制{country}地图…",
 
   "search.placeholder": "查找省份、景点、美食…",
   "search.empty": "未找到结果。换个名字试试，例如“西贡”。",
@@ -100,7 +99,7 @@ export const zh: Record<TranslationKey, string> = {
   "checkin.done": "完成打卡",
   "checkin.success": "已添加到你的护照！",
 
-  "passport.title": "{country}護照",
+  "passport.title": "{country}护照",
   "passport.subtitle": "你的旅程",
   "passport.explored": "已探索",
   "passport.provinces": "{count} / {total} 个省份",

@@ -21,16 +21,17 @@ export const SEO_LOCALES: Locale[] = ["vi", "en", "ko", "ja", "zh"];
 const PREFIXED = new Set<string>(["en", "ko", "ja", "zh"]);
 
 /**
- * hreflang value per locale. `zh` is deliberately script-less: the Chinese copy is currently a
- * mix of Traditional (UI strings) and Simplified (editorial content), so claiming zh-Hant or
- * zh-Hans would be a promise the content doesn't keep. Plain "zh" is valid and honest.
+ * hreflang value per locale. `zh` names its script: every Chinese string in the repo is
+ * Simplified, enforced by `npm run check:zh` (scripts/zh-simplify.mjs). It was plain "zh" while
+ * the Korea copy was still Traditional — a script tag the content didn't keep would have been
+ * worse than none.
  */
 export const HREFLANG: Record<Locale, string> = {
   vi: "vi",
   en: "en",
   ko: "ko",
   ja: "ja",
-  zh: "zh",
+  zh: "zh-Hans",
 };
 
 /** og:locale is a different vocabulary from hreflang — underscored, region required. */
