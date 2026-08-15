@@ -216,7 +216,8 @@ export const zh: Record<TranslationKey, string> = {
   "heartbeat.flowerBlooming": "{name}正在盛开",
 
   // AI summary (fallback generator)
-  "ai.summary.dest": "{summary} 最佳游览时间为{time}，建议安排约{duration}。{tip}",
+  "ai.summary.dest": "最佳游览时间为{time}，建议安排约{duration}。{tip}",
+  "ai.summary.province": "最佳游览时间为{time}，这里共有{count}处景点。",
   "ai.summary.generic": "一处等待探索的地方。",
 
   // Passport (live panel extras)

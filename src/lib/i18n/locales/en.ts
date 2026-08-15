@@ -215,7 +215,8 @@ export const en: Record<TranslationKey, string> = {
   "heartbeat.flowerBlooming": "{name} is in bloom",
 
   // AI summary (fallback generator)
-  "ai.summary.dest": "{summary} Best visited {time}, plan about {duration}.{tip}",
+  "ai.summary.dest": "Best visited {time}, plan about {duration}.{tip}",
+  "ai.summary.province": "Best visited {time} — {count} destinations to explore here.",
   "ai.summary.generic": "A place waiting to be explored.",
 
   // Passport (live panel extras)

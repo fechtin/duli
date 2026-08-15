@@ -79,9 +79,15 @@ const manifestPath = r("src/data/generated/image-manifest.json");
 const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
 const map = JSON.parse(readFileSync(r("scripts/.curate-map.json"), "utf8"));
 
+// Optional seed filter — `node scripts/curate-images.mjs seoul-forest` re-curates just that
+// seed. Without it, fixing one wrong hero re-downloads every curated file and rewrites ~40
+// manifest entries, so a one-image fix silently carries whatever Commons changed since.
+const only = new Set(process.argv.slice(2).filter((a) => !a.startsWith("-")));
+
 let ok = 0, fail = 0;
 for (const [seed, title] of Object.entries(map)) {
   if (!title || seed.startsWith("_")) continue;
+  if (only.size && !only.has(seed)) continue;
   const info = await infoFor(title);
   if (!info?.thumb) { console.log(`  ✗ ${seed}: no imageinfo for ${title}`); fail++; continue; }
   try {

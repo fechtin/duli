@@ -63,7 +63,7 @@ export function ResponsivePanel({ open, onClose, children, contentKey }: Props) 
           />
           <motion.div
             key="sheet"
-            className="absolute inset-x-0 bottom-0 z-30 flex max-h-[88%] flex-col rounded-t-[var(--radius-sheet)] border-t border-border bg-surface shadow-[var(--shadow-e3)]"
+            className="absolute inset-x-0 bottom-0 z-30 flex max-h-[88%] flex-col overflow-hidden rounded-t-[var(--radius-sheet)] border-t border-border bg-surface shadow-[var(--shadow-e3)]"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
@@ -75,8 +75,12 @@ export function ResponsivePanel({ open, onClose, children, contentKey }: Props) 
               if (info.offset.y > 120 || info.velocity.y > 600) onClose();
             }}
           >
-            <div className="flex justify-center pt-2.5">
-              <span className="h-1.5 w-10 rounded-full bg-border-strong" />
+            {/* The grab handle floats over the hero photo. Giving it its own surface-coloured
+                strip put a white bar with rounded corners above a square-cornered image, which
+                read as a seam between two loose layers — every panel opens on a full-bleed
+                photo, so the image should reach the sheet's own rounded top edge. */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex justify-center pt-2.5">
+              <span className="h-1.5 w-10 rounded-full bg-white/70 shadow-[0_1px_3px_rgba(0,0,0,0.45)]" />
             </div>
             <div key={contentKey} className="no-scrollbar overflow-y-auto overscroll-contain pb-safe">
               {children}

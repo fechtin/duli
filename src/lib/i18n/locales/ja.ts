@@ -215,7 +215,8 @@ export const ja: Record<TranslationKey, string> = {
   "heartbeat.flowerBlooming": "{name}が開花中",
 
   // AI summary (fallback generator)
-  "ai.summary.dest": "{summary} {time}に訪れるのがおすすめ、所要時間は約{duration}です。{tip}",
+  "ai.summary.dest": "{time}に訪れるのがおすすめ、所要時間は約{duration}です。{tip}",
+  "ai.summary.province": "{time}に訪れるのがおすすめ。ここには{count}か所の見どころがあります。",
   "ai.summary.generic": "探索を待っている場所です。",
 
   // Passport (live panel extras)

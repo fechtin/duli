@@ -215,7 +215,8 @@ export const ko: Record<TranslationKey, string> = {
   "heartbeat.flowerBlooming": "{name} 개화 중",
 
   // AI summary (fallback generator)
-  "ai.summary.dest": "{summary} {time}에 방문하기 좋고, 약 {duration} 소요됩니다.{tip}",
+  "ai.summary.dest": "{time}에 방문하기 좋고, 약 {duration} 소요됩니다.{tip}",
+  "ai.summary.province": "{time}에 방문하기 좋고, 이곳에는 {count}곳의 명소가 있습니다.",
   "ai.summary.generic": "탐험을 기다리는 곳입니다.",
 
   // Passport (live panel extras)

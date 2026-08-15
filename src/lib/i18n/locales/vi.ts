@@ -218,7 +218,8 @@ export const vi = {
   "heartbeat.flowerBlooming": "{name} đang nở",
 
   // AI summary (fallback generator)
-  "ai.summary.dest": "{summary} Nên đến vào {time}, dành khoảng {duration}.{tip}",
+  "ai.summary.dest": "Nên đến vào {time}, dành khoảng {duration}.{tip}",
+  "ai.summary.province": "Nên đến vào {time} — có {count} điểm đến ở đây.",
   "ai.summary.generic": "Một nơi đang chờ được khám phá.",
 
   // Passport (live panel extras)
