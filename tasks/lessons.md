@@ -115,3 +115,17 @@
 - **Locale của UI không phải ngôn ngữ của người dùng.** Người dùng gõ tiếng Việt trong UI tiếng
   Anh bị trả lời bằng tiếng Anh. Luật đúng: trả lời theo ngôn ngữ của tin nhắn, locale chỉ là
   fallback khi không đoán được.
+
+## 036 — Đọc memory/từ điển trước khi dựng nguồn dữ liệu mới
+
+Tôi đi tra Wikidata để dựng bảng tên tỉnh ko/ja/zh, rồi mới phát hiện `src/lib/i18n/locales/*.ts`
+đã có `province.<slug>` cho đủ 80 tỉnh × 5 ngôn ngữ — và memory `vivel-i18n` đã ghi rõ điều đó.
+Vấn đề thật không phải "thiếu bản dịch" mà là "bản dịch chưa tới D1/geo-meta".
+
+**Bài học:** khi thấy dữ liệu "thiếu", tìm xem nó đã tồn tại ở đâu chưa TRƯỚC khi đi lấy nguồn
+ngoài. Triệu chứng ("trang Hàn hiện tên tiếng Việt") không chỉ ra nguyên nhân (đường dẫn dữ liệu),
+và đoán sai nguyên nhân thì tạo ra nguồn thứ hai — thứ chắc chắn sẽ lệch nhau về sau.
+
+**Giữ lại được gì:** phần tra cứu không bỏ đi mà đổi vai thành đối chiếu (`check:provinces`), và
+nó tìm ra 2 chữ sai thật trong 400 tên viết tay. Kiểm tra chéo một nguồn có sẵn thì có ích;
+thay thế nó thì không.
