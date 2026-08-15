@@ -113,6 +113,12 @@ export interface ProvinceMeta {
   nameEn: string;
   /** Native-script name, when romanization isn't what locals read (e.g. 서울특별시). */
   nameKo?: string;
+  /**
+   * The province's name per content locale, baked into geo-meta by scripts/build-map.mjs.
+   * Province META is read statically (no fetch), so without this the map stays labelled in
+   * Vietnamese no matter what language the rest of the page is in.
+   */
+  names?: Partial<Record<ContentLocale, string>>;
   regionId: RegionId;
   regionName: string;
   color: string;

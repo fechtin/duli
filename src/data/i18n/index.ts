@@ -5,6 +5,7 @@
 // Build-time only — the client never imports this; localized content comes from the API.
 // To add a language: add its bucket files under ./content and extend `byLocale` below.
 import type { ContentLocale, DestinationI18n, DestinationTranslation, ProvinceI18n, ProvinceTranslation } from "@/lib/types";
+import { provinceNames, provinceSlugs } from "./province-names.ts";
 
 import * as nmEn from "./content/northMountains.en.ts";
 import * as nmKo from "./content/northMountains.ko.ts";
@@ -87,5 +88,14 @@ for (const locale of Object.keys(byLocale) as ContentLocale[]) {
     for (const [slug, tr] of Object.entries(mod.provinces)) {
       (provinceI18n[slug] ??= {})[locale] = tr;
     }
+  }
+}
+
+// The region files above carry a province's summary and story but never its NAME — that lives in
+// the UI dictionary, which is what the app itself renders. Fold it in here so the D1 seed reads
+// one aggregate and the API can't disagree with the panel sitting on top of it.
+for (const slug of provinceSlugs) {
+  for (const [locale, name] of Object.entries(provinceNames(slug)) as [ContentLocale, string][]) {
+    ((provinceI18n[slug] ??= {})[locale] ??= {}).name = name;
   }
 }

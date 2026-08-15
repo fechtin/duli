@@ -1,6 +1,7 @@
 import { getCountry } from "@/lib/country";
 import { activeCountry } from "@/lib/store/useCountryStore";
 import { apiGet } from "./client";
+import { getStoredLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n/dictionaries";
 import type {
   CountryCode,
@@ -16,18 +17,30 @@ import type {
 // stay static per country (Bible 019 §14 static-before-dynamic). Editorial CONTENT (province
 // stories, destinations) is fetched from the Worker API, which reads D1 (Bible 013).
 
-/** Per-country lookup tables, built once on first use. */
-const tables = new Map<CountryCode, { bySlug: Map<string, ProvinceMeta>; byRegion: Map<string, Region> }>();
+/**
+ * Swap in the province's name for `locale`. The Vietnamese name is the base and stays for `vi`;
+ * a locale with no name of its own keeps it too — a missing translation falls back, it never
+ * blanks the label.
+ */
+function localised(p: ProvinceMeta, locale: Locale): ProvinceMeta {
+  if (locale === "vi") return p;
+  const name = p.names?.[locale];
+  return name ? { ...p, name } : p;
+}
 
-function tablesFor(cc: CountryCode) {
-  let t = tables.get(cc);
+/** Per-country-and-locale lookup tables, built once on first use. */
+const tables = new Map<string, { bySlug: Map<string, ProvinceMeta>; byRegion: Map<string, Region> }>();
+
+function tablesFor(cc: CountryCode, locale: Locale = getStoredLocale()) {
+  const key = `${cc}:${locale}`;
+  let t = tables.get(key);
   if (!t) {
     const meta = getCountry(cc).geoMeta;
     t = {
-      bySlug: new Map(meta.provinces.map((p) => [p.slug, p])),
+      bySlug: new Map(meta.provinces.map((p) => [p.slug, localised(p, locale)])),
       byRegion: new Map(meta.regions.map((r) => [r.id, r])),
     };
-    tables.set(cc, t);
+    tables.set(key, t);
   }
   return t;
 }
@@ -41,7 +54,7 @@ export function getRegions(cc: CountryCode = activeCountry()): Region[] {
   return getCountry(cc).geoMeta.regions;
 }
 export function getProvinces(cc: CountryCode = activeCountry()): ProvinceMeta[] {
-  return getCountry(cc).geoMeta.provinces;
+  return [...tablesFor(cc).bySlug.values()];
 }
 export function getProvinceMeta(slug: string, cc: CountryCode = activeCountry()): ProvinceMeta | undefined {
   return tablesFor(cc).bySlug.get(slug);

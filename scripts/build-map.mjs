@@ -18,6 +18,28 @@ const r = (p) => resolve(root, p);
 const cc = (process.argv[2] ?? "vn").toLowerCase();
 const registry = await import(`../data/registry/${cc}.mjs`);
 const { regions, provinces, mainlandBounds, source } = registry;
+
+// Province META is static reference data the client reads without a fetch (src/lib/api/content),
+// so the localized NAMES have to ride along with it — otherwise a Korean page renders Korean
+// prose over a map still labelled in Vietnamese. Same aggregate the D1 seed reads, so the map
+// and the API can't disagree.
+const i18nIndex =
+  cc === "kr" ? await import("../src/data/kr/i18n/index.ts") : await import("../src/data/i18n/index.ts");
+const provinceTranslations = cc === "kr" ? i18nIndex.provinceI18nKr : i18nIndex.provinceI18n;
+const CONTENT_LOCALES = ["en", "ko", "ja", "zh"];
+
+/** { ko: "꽝남성", … } for one province — omitted entirely when nothing is known. */
+function localeNames(slug, nameEn) {
+  const tr = provinceTranslations[slug] ?? {};
+  const names = {};
+  for (const locale of CONTENT_LOCALES) {
+    const name = tr[locale]?.name;
+    if (name) names[locale] = name;
+  }
+  // Every province carries an English name already; no translation set needs to repeat it.
+  if (!names.en && nameEn) names.en = nameEn;
+  return Object.keys(names).length ? names : null;
+}
 // Older registries (vn) predate the `source` export — fall back to their historical layout.
 const srcFile = source?.file ?? `data/geo/${cc}-provinces.simplified.geojson`;
 const nameProp = source?.nameProp ?? "Name";
@@ -84,6 +106,7 @@ for (const { meta, polygons } of [...bySlug.values()].sort((a, b) => a.meta.slug
     centroid,
     // Native script name, when the romanized `name` isn't what locals read (e.g. 서울특별시).
     ...(meta.nameKo ? { nameKo: meta.nameKo } : {}),
+    ...((names) => (names ? { names } : {}))(localeNames(meta.slug, meta.nameEn)),
   };
   features.push({
     type: "Feature",

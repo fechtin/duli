@@ -10,6 +10,7 @@ import type {
   ProvinceI18n,
   ProvinceTranslation,
 } from "@/lib/types";
+import { provinceNames, provinceSlugs } from "../../i18n/province-names.ts";
 
 import * as seoulEn from "./seoul.en.ts";
 import * as incheonEn from "./incheon.en.ts";
@@ -106,6 +107,15 @@ for (const locale of Object.keys(byLocale) as ContentLocale[]) {
     for (const [slug, tr] of Object.entries(mod.provinces)) {
       (provinceI18nKr[slug] ??= {})[locale] = tr;
     }
+  }
+}
+
+// Province names come from the UI dictionary for both atlases — see src/data/i18n/province-names.
+// Overwriting rather than filling a gap is deliberate: the dictionary is what the panel renders,
+// so it is what the title above the panel has to say too.
+for (const slug of provinceSlugs) {
+  for (const [locale, name] of Object.entries(provinceNames(slug)) as [ContentLocale, string][]) {
+    ((provinceI18nKr[slug] ??= {})[locale] ??= {}).name = name;
   }
 }
 

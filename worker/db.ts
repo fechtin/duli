@@ -80,6 +80,18 @@ function pickTranslation<T>(json: string | null, locale?: string): T | null {
 const nonEmpty = (s?: string): s is string => typeof s === "string" && s.length > 0;
 const hasItems = (a?: string[]): a is string[] => Array.isArray(a) && a.length > 0;
 
+/**
+ * A row's name in the requested locale. A translated name wins; otherwise English falls back to
+ * the romanised `name_en` column that every row already carries, rather than all the way to the
+ * Vietnamese name — an English page reading "Quảng Nam" when "Quang Nam" is sitting in the next
+ * column is a translation nobody had to write.
+ */
+function localName(translated: string | undefined, locale: string | undefined, nameEn: string, base: string): string {
+  if (nonEmpty(translated)) return translated;
+  if (locale === "en" && nonEmpty(nameEn)) return nameEn;
+  return base;
+}
+
 function toDestination(r: DestRow, locale?: string): Destination {
   const gallery = parse<Destination["gallery"]>(r.gallery, []);
   const tr = pickTranslation<DestinationTranslation>(r.i18n, locale);
@@ -87,7 +99,7 @@ function toDestination(r: DestRow, locale?: string): Destination {
     id: r.id,
     slug: r.slug,
     provinceSlug: r.province_slug,
-    name: tr && nonEmpty(tr.name) ? tr.name : r.name,
+    name: localName(tr?.name, locale, r.name_en, r.name),
     nameEn: r.name_en,
     type: r.type as Destination["type"],
     lng: r.lng,
@@ -117,7 +129,7 @@ function toProvinceMeta(r: ProvRow, locale?: string): ProvinceMeta {
   const tr = pickTranslation<ProvinceTranslation>(r.i18n, locale);
   return {
     slug: r.slug,
-    name: tr && nonEmpty(tr.name) ? tr.name : r.name,
+    name: localName(tr?.name, locale, r.name_en, r.name),
     nameEn: r.name_en,
     regionId: r.region_id as ProvinceMeta["regionId"],
     regionName: r.region_name,
@@ -174,7 +186,7 @@ export async function getDestinationsLight(db: D1Like, locale?: string, country 
       id: r.id,
       slug: r.slug,
       provinceSlug: r.province_slug,
-      name: tr && nonEmpty(tr.name) ? tr.name : r.name,
+      name: localName(tr?.name, locale, r.name_en, r.name),
       nameEn: r.name_en,
       type: r.type,
       lng: r.lng,

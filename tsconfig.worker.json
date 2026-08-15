@@ -3,6 +3,9 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
+    // Matches tsconfig.app/node. The Worker's import graph reaches src/, where data modules
+    // spell out ".ts" so Node's type-stripping loader (used by the build scripts) can resolve them.
+    "allowImportingTsExtensions": true,
     "lib": ["ES2023", "WebWorker"],
     "types": [],
     "strict": true,

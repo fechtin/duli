@@ -1,10 +1,10 @@
 // Translation dictionaries. VI is the source language (Bible 009 §5).
 // MVP ships all 5 languages (Bible 001 §12). Each locale file mirrors vi.ts's keys.
-import { vi } from "./locales/vi";
-import { en } from "./locales/en";
-import { ko } from "./locales/ko";
-import { ja } from "./locales/ja";
-import { zh } from "./locales/zh";
+import { vi } from "./locales/vi.ts";
+import { en } from "./locales/en.ts";
+import { ko } from "./locales/ko.ts";
+import { ja } from "./locales/ja.ts";
+import { zh } from "./locales/zh.ts";
 
 export type Locale = "vi" | "en" | "ko" | "ja" | "zh";
 
