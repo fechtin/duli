@@ -93,3 +93,28 @@ quảng cáo 360 URL chết. Đã: regenerate seed → đối chiếu id cũ/m�
 
 `scripts/build-sitemap.mjs` lọc theo `db/seed.sql` chứ không theo file TS, và in WARNING kèm số
 lượng khi hai bên lệch — để lần sau quên seed thì thấy ngay, thay vì âm thầm hứa URL không có.
+
+## Tên tỉnh (2026-08-15)
+
+Trang tiếng Hàn có tiêu đề "Phố cổ Hội An — Quảng Nam" trong khi panel bên dưới ghi 꽝남.
+Hoá ra **không thiếu bản dịch nào**: từ điển UI đã có `province.<slug>` cho đủ 80 tỉnh × 5 ngôn
+ngữ từ lâu, và đó là thứ panel/nhãn bản đồ vẫn render. Nó chỉ chưa tới được D1 và geo-meta —
+hai nguồn mà Worker và bản đồ đọc.
+
+Cách sửa: **suy ra, không nhân bản.** `src/data/i18n/province-names.ts` lấy tên từ từ điển; hai
+aggregate i18n gộp vào, nên seed D1 và geo-meta đọc cùng một chỗ với panel. `en` rơi về cột
+`name_en` sẵn có thay vì rơi về tên tiếng Việt.
+
+**Sai lầm đã mắc:** lần đầu tôi dựng hẳn một bảng tên THỨ HAI lấy từ Wikidata rồi mới phát hiện
+từ điển đã có. Phần việc đó được giữ lại dưới dạng *đối chiếu* (`npm run check:provinces`) chứ
+không thay thế từ điển — và nó lập tức có ích: tìm ra 2 chữ sai là Bạc Liêu ghi `薄辽` (辽 là
+Liêu trong Liêu Ninh) và Sơn La ghi `山萝` (萝 là củ cải). Đã sửa cả hai.
+
+Hai cái bẫy ghi trong script vì cả hai đều từng cho ra kết quả sai một cách tự tin:
+1. Phải tra theo **entity Wikidata có P17 = Việt Nam**, không tra theo tiêu đề bài. Nhiều tên
+   tỉnh trùng địa danh Trung Quốc, bài vi.wikipedia ở tiêu đề đó thường là trang định hướng và
+   langlink dẫn sang đồng tự — "Hà Nam" ra 河南省 (Hà Nam Trung Quốc).
+2. Khi **nhãn** entity khác **tiêu đề bài**, lấy theo bài: nhãn zh của Hà Giang ghi `河楊省`
+   ("Dương") trong khi bài là `河江省`.
+
+Còn 7 chỗ khác biệt phiên âm (바리아 vs 바리어) — script báo, người quyết, không tự sửa.
