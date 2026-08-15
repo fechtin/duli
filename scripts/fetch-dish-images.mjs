@@ -1,33 +1,42 @@
 // Fetch real photos for Food Explorer dishes (026) into public/img/dishes/ and register them
 // in the shared image-manifest under seed `dish-<id>` (IllustratedImage picks them up).
-// Strategy per dish: Wikipedia lead image (source language → en, dish articles are usually
-// excellent) → fallback Wikimedia Commons search with junk filtering.
+//
+// Every candidate is name-validated by scripts/lib/image-sources.mjs before it can win. The
+// first version of this script took the top Wikipedia search hit blind, which is how "Nem lụi
+// Huế" became a photo of the city of Huế and "Vịt quay Lạng Sơn" a mắc mật shrub — 10 of 16
+// photos wrong. A plausible-looking wrong photo is worse than no photo.
+//
 // Modes:
-//   node scripts/fetch-dish-images.mjs        → Vietnam dishes
-//   node scripts/fetch-dish-images.mjs kr     → Korea dishes
-// FORCE=1 refetches all. After running, VISUALLY AUDIT — blank wrong seeds from the manifest.
+//   node scripts/fetch-dish-images.mjs         → Vietnam dishes
+//   node scripts/fetch-dish-images.mjs kr      → Korea dishes
+//   FORCE=1 refetches all;  ONLY=id1,id2 restricts to those dish ids
+//   DRY=1 resolves without downloading (prints what each dish would get)
+// After running, VISUALLY AUDIT — blank wrong seeds from the manifest.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
-import sharp from "sharp";
 import { dishes } from "../src/data/food.ts";
 import { dishesKr } from "../src/data/kr/index.ts";
+import {
+  sleep, downloadWebp, firstHit, wikiTitle, wikiLead, commonsCategory, commonsSearch, openverse,
+  stock, stockAvailable, FOOD_CUE,
+} from "./lib/image-sources.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const r = (p) => resolve(root, p);
 const OUT_DIR = r("public/img/dishes");
 const MANIFEST = r("src/data/generated/image-manifest.json");
-const UA = "VietnamAtlas/1.0 (food explorer; contact via github.com/fechtin/duli)";
 const FORCE = process.env.FORCE === "1";
+const DRY = process.env.DRY === "1";
+const ONLY = process.env.ONLY ? new Set(process.env.ONLY.split(",").map((s) => s.trim())) : null;
 
 // ── Atlas selection ──
-// Each atlas brings its dishes, the wiki language its names are written in, and the phrase
-// appended to a Commons text search when the Wikipedia lookups come up empty.
+// Each atlas brings its dishes and the wiki language its names are written in.
 const ATLASES = {
-  vn: { dishes, nameLang: "vi", commonsSuffix: "Vietnam food" },
-  kr: { dishes: dishesKr, nameLang: "ko", commonsSuffix: "Korean food" },
+  vn: { dishes, nameLang: "vi" },
+  kr: { dishes: dishesKr, nameLang: "ko" },
 };
 const cc = (process.argv[2] ?? process.env.COUNTRY ?? "vn").toLowerCase();
 const atlas = ATLASES[cc];
@@ -36,169 +45,107 @@ if (!atlas) {
   process.exit(1);
 }
 
-const JUNK = /\b(map|bản đồ|logo|flag|coat of arms|diagram|chart|montage|collage|seal|emblem|locator|icon|screenshot|menu|sign)\b/i;
-
-const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
-
-// Regional dishes are named "<place> <dish>" — Wikipedia only carries the bare dish, so
-// "Suwon Galbi" has to become "Galbi". Strip a trailing generic and then one leading word.
-// Never strip down to a bare English food noun: "Busan Fish Cake" → "Cake" would fetch a
-// birthday cake, and a plausible-looking wrong photo is worse than no photo.
-const GENERIC_TAIL = /\s+(dishes|bbq|barbecue|set|platter)$/i;
+// Regional dishes are named "<dish> <place>" — Wikipedia and Commons carry the bare dish, so
+// "Bún cá Kiên Giang" also has to be tried as "Bún cá". Stripping is only safe when what
+// remains is still nameable: strip at most the trailing place, never down to a bare noun.
+const PLACE_TAIL_VI =
+  /\s+(Hà Nội|Hải Phòng|Hải Dương|Hà Tĩnh|Hà Nam|Hà Giang|Cao Bằng|Bắc Kạn|Bắc Giang|Bắc Ninh|Lạng Sơn|Thái Nguyên|Tuyên Quang|Phú Thọ|Vĩnh Phúc|Hưng Yên|Thái Bình|Nam Định|Ninh Bình|Thanh Hóa|Nghệ An|Quảng Bình|Quảng Trị|Quảng Nam|Quảng Ngãi|Quảng Ninh|Thừa Thiên Huế|Huế|Đà Nẵng|Hội An|Bình Định|Quy Nhơn|Phú Yên|Khánh Hòa|Nha Trang|Ninh Thuận|Phan Rang|Bình Thuận|Phan Thiết|Kon Tum|Gia Lai|Đắk Lắk|Buôn Ma Thuột|Đắk Nông|Lâm Đồng|Đà Lạt|Bình Phước|Tây Ninh|Bình Dương|Đồng Nai|Biên Hòa|Bà Rịa|Vũng Tàu|Long An|Tiền Giang|Bến Tre|Trà Vinh|Vĩnh Long|Đồng Tháp|Sa Đéc|An Giang|Châu Đốc|Kiên Giang|Phú Quốc|Cần Thơ|Hậu Giang|Sóc Trăng|Bạc Liêu|Cà Mau|Lào Cai|Yên Bái|Điện Biên|Lai Châu|Sơn La|Hòa Bình|Mộc Châu|Ba Bể|Sài Gòn|miền Tây)$/u;
+const GENERIC_TAIL_EN = /\s+(dishes|bbq|barbecue|set|platter)$/i;
 const TOO_GENERIC = new Set([
   "rice", "cake", "pork", "beef", "chicken", "octopus", "oyster", "oysters", "garlic",
   "soup", "stew", "noodles", "noodle", "fish", "crab", "squid", "porridge", "dumpling",
-  "dumplings", "pancake", "tea", "wine", "bread",
+  "dumplings", "pancake", "tea", "wine", "bread", "salad", "candy",
 ]);
-function nameVariants(name) {
+
+/** Query variants for a dish, most specific first. */
+function variants(d) {
   const out = [];
-  const n = name.replace(GENERIC_TAIL, "").trim();
-  if (n !== name) out.push(n);
-  const words = n.split(/\s+/);
-  if (words.length > 1) out.push(words.slice(1).join(" "));
-  return [...new Set(out)].filter(
-    (v) => v && v !== name && !TOO_GENERIC.has(v.toLowerCase()),
-  );
-}
+  const vi = d.name.replace(/\s*\(.*\)$/, "").trim();
+  const en = d.nameEn.replace(/\s*\(.*\)$/, "").trim();
+  out.push({ q: vi, lang: atlas.nameLang }, { q: en, lang: "en" });
 
-async function j(url, tries = 4) {
-  for (let i = 0; i < tries; i++) {
-    const res = await fetch(url, { headers: { "User-Agent": UA } });
-    if (res.ok) return res.json();
-    if (res.status === 429 || res.status >= 500) {
-      const wait = Number(res.headers.get("retry-after")) * 1000 || (i + 1) * 8000;
-      await sleep(wait);
-      continue;
-    }
-    throw new Error(`${res.status} ${url}`);
+  const viBare = vi.replace(PLACE_TAIL_VI, "").trim();
+  if (viBare !== vi && viBare.split(/\s+/).length >= 2) out.push({ q: viBare, lang: atlas.nameLang });
+
+  // Korean regional dishes are "<place> <dish>" in English — drop the leading place word.
+  const enTrimmed = en.replace(GENERIC_TAIL_EN, "").trim();
+  const enWords = enTrimmed.split(/\s+/);
+  if (enWords.length > 1) {
+    const tail = enWords.slice(1).join(" ");
+    if (!TOO_GENERIC.has(tail.toLowerCase())) out.push({ q: tail, lang: "en" });
   }
-  throw new Error(`429 (retries exhausted) ${url}`);
+  // A one-word query is not a search key: "Don (river clam soup)" reduces to "Don", which
+  // matched a Commons category for the cartoonist Don Rosa. Anything this short can only be
+  // resolved by the exact-title path, never by a search.
+  const usable = (q) => q.split(/\s+/).length >= 2 || q.replace(/\s/g, "").length >= 5;
+  const seen = new Set();
+  return out.filter((v) => v.q && usable(v.q) && !seen.has(v.q) && seen.add(v.q));
 }
 
-/** Wikipedia lead image for the best-matching article on a wiki. */
-async function wikiLead(lang, term) {
-  const search = await j(
-    `https://${lang}.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(term)}&srlimit=1&format=json&origin=*`,
-  );
-  const hit = search.query?.search?.[0];
-  if (!hit) return null;
-  const sum = await j(
-    `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(hit.title.replace(/ /g, "_"))}`,
-  );
-  const img = sum.originalimage ?? sum.thumbnail;
-  if (!img?.source || (img.width ?? 0) < 450) return null;
-  if (JUNK.test(img.source)) return null;
-  // File name for attribution lookup on Commons.
-  const pi = await j(
-    `https://${lang}.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(hit.title)}&prop=pageimages&piprop=name&format=json&origin=*`,
-  );
-  const page = Object.values(pi.query?.pages ?? {})[0];
-  return {
-    url: img.source,
-    file: page?.pageimage ? `File:${page.pageimage}` : null,
-    sourceTitle: sum.title,
-    sourceUrl: sum.content_urls?.desktop?.page ?? "",
-    via: `wikipedia-${lang}`,
-  };
-}
-
-/** Commons full-text search fallback. */
-async function commonsSearch(term) {
-  const data = await j(
-    `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(term)}%20filetype:bitmap&gsrlimit=8&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=1280&format=json&origin=*`,
-  );
-  const pages = Object.values(data.query?.pages ?? {});
-  for (const p of pages.sort((a, b) => (a.index ?? 9) - (b.index ?? 9))) {
-    const ii = p.imageinfo?.[0];
-    if (!ii) continue;
-    if (!/image\/(jpeg|png)/.test(ii.mime)) continue;
-    if ((ii.width ?? 0) < 700) continue;
-    if (JUNK.test(p.title)) continue;
-    if (ii.height > ii.width * 1.6) continue; // hard portrait penalty
-    return { url: ii.thumburl ?? ii.url, file: p.title, sourceTitle: p.title, sourceUrl: ii.descriptionurl ?? "", via: "commons-search" };
-  }
-  return null;
-}
-
-/** Commons attribution (Artist + license) for a File: title. */
-async function attribution(file) {
-  if (!file) return { credit: "", license: "Wikimedia Commons" };
-  try {
-    const data = await j(
-      `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(file)}&prop=imageinfo&iiprop=extmetadata&format=json&origin=*`,
-    );
-    const meta = Object.values(data.query?.pages ?? {})[0]?.imageinfo?.[0]?.extmetadata ?? {};
-    const strip = (html) => (html ?? "").replace(/<[^>]+>/g, "").trim();
-    return {
-      credit: strip(meta.Artist?.value).slice(0, 80),
-      license: strip(meta.LicenseShortName?.value) || "Wikimedia Commons",
-    };
-  } catch {
-    return { credit: "", license: "Wikimedia Commons" };
-  }
-}
-
-// upload.wikimedia.org throttles hard when several of these scripts run at once, so back off
-// and retry rather than losing the dish to a transient 429.
-async function download(url, dest, tries = 4) {
-  for (let i = 1; i <= tries; i++) {
-    const res = await fetch(url, { headers: { "User-Agent": UA } });
-    if (res.ok) {
-      const buf = Buffer.from(await res.arrayBuffer());
-      await sharp(buf).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 74 }).toFile(dest);
-      return;
-    }
-    if ((res.status === 429 || res.status >= 500) && i < tries) {
-      await sleep(Number(res.headers.get("retry-after")) * 1000 || i * 10000);
-      continue;
-    }
-    throw new Error(`download ${res.status}`);
-  }
+/**
+ * Ordered source chain: best-quality first, stock only when nothing free exists.
+ * Deliberately short — a dish with no photo anywhere walks the whole chain, and every extra
+ * step multiplies across the ~130 unphotographed dishes.
+ */
+function chain(d) {
+  const vs = variants(d).slice(0, 3);
+  const food = { food: true, cue: FOOD_CUE };
+  const steps = [];
+  // Cheapest and most reliable first: an exact article title needs one REST call, and REST
+  // keeps answering when `w/api.php` is rate-limited. Most dishes are titled as they're named.
+  for (const v of vs) steps.push(() => wikiTitle(v.lang, v.q, food));
+  // Openverse next — it indexes Commons *and* Flickr, and spends no Wikimedia quota.
+  for (const v of vs) steps.push(() => openverse(v.q, food));
+  // Then the search-based Wikimedia paths, which are the ones that get throttled.
+  for (const v of vs) steps.push(() => wikiLead(v.lang, v.q, food));
+  for (const v of vs) steps.push(() => commonsCategory(v.q, food));
+  steps.push(() => commonsSearch(vs[0].q, food));
+  steps.push(() => stock(vs.at(-1).q, food));
+  return steps;
 }
 
 mkdirSync(OUT_DIR, { recursive: true });
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
+const save = () => writeFileSync(MANIFEST, JSON.stringify(manifest));
 
-let done = 0, skipped = 0, failed = [];
-for (const d of atlas.dishes) {
+const todo = atlas.dishes.filter(
+  (d) => (!ONLY || ONLY.has(d.id)) && (FORCE || !manifest[`dish-${d.id}`]),
+);
+console.log(
+  `[dish-images] ${cc}: ${todo.length} to resolve${DRY ? " (DRY)" : ""}` +
+    `${stockAvailable() ? "" : "  · no stock key set — free sources only"}`,
+);
+
+let done = 0, n = 0;
+const failed = [];
+for (const d of todo) {
+  n++;
   const seed = `dish-${d.id}`;
-  if (!FORCE && manifest[seed]) { skipped++; continue; }
   try {
-    // The Korea atlas is authored in Vietnamese, so `name` is a Vietnamese rendering and is
-    // useless against ko.wikipedia — for kr the English name is the only reliable key.
-    // Regional dishes are named "<place> <dish>" ("Suwon Galbi"), and Wikipedia only has the
-    // bare dish. Try the full name first, then progressively drop the leading place word.
-    const base = d.nameEn.replace(/\s*\(.*\)$/, "");
-    const variants = [base, ...(cc === "kr" ? nameVariants(base) : [])];
-    let pick = cc === "vn" ? await wikiLead("vi", d.name) : null;
-    for (const v of variants) {
-      if (pick) break;
-      pick = await wikiLead("en", v);
+    const pick = await firstHit(chain(d));
+    if (!pick) { failed.push(d.id); console.log(`${String(n).padStart(3)}/${todo.length} ·  ${d.id} — no photo in any source`); continue; }
+    if (!DRY) {
+      await downloadWebp(pick.url, `${OUT_DIR}/${d.id}.webp`);
+      manifest[seed] = {
+        src: `/img/dishes/${d.id}.webp`,
+        credit: pick.credit ?? "",
+        license: pick.license ?? "Wikimedia Commons",
+        sourceTitle: pick.sourceTitle,
+        sourceUrl: pick.sourceUrl,
+        via: pick.via,
+      };
+      // Written as we go: the previous version saved only at the end, so an interrupted run
+      // left 16 downloaded files that no manifest entry pointed at — invisible to the app.
+      if (n % 5 === 0) save();
     }
-    for (const v of variants) {
-      if (pick || cc !== "kr") break;
-      pick = await wikiLead("ko", v);
-    }
-    pick ??= await commonsSearch(`${base} ${atlas.commonsSuffix}`);
-    if (!pick) { failed.push(d.id); continue; }
-    await download(pick.url, `${OUT_DIR}/${d.id}.webp`);
-    const attr = await attribution(pick.file);
-    manifest[seed] = {
-      src: `/img/dishes/${d.id}.webp`,
-      credit: attr.credit,
-      license: attr.license,
-      sourceTitle: pick.sourceTitle,
-      sourceUrl: pick.sourceUrl,
-      via: pick.via,
-    };
     done++;
-    console.log(`✓ ${d.id}  (${pick.via})`);
+    console.log(`${String(n).padStart(3)}/${todo.length} ✓  ${d.id}  (${pick.via}) ${pick.sourceTitle}`);
   } catch (e) {
     failed.push(d.id);
-    console.log(`✗ ${d.id}: ${e.message}`);
+    console.log(`${String(n).padStart(3)}/${todo.length} ✗  ${d.id}: ${e.message}`);
   }
-  await sleep(1500);
+  await sleep(400);
 }
 
-writeFileSync(MANIFEST, JSON.stringify(manifest));
-console.log(`\n[dish-images] fetched ${done}, skipped ${skipped}, failed ${failed.length}${failed.length ? ": " + failed.join(", ") : ""}`);
+if (!DRY) save();
+console.log(`\n[dish-images] resolved ${done}/${todo.length}, unresolved ${failed.length}${failed.length ? ": " + failed.join(", ") : ""}`);

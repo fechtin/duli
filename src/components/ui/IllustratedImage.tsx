@@ -14,6 +14,16 @@ import { ambientClip } from "@/lib/media/videoManifest";
 
 const images = manifest as Record<string, { src: string; credit: string; license: string }>;
 
+/** Does this seed have a real photo behind it? Lets callers pick a seed that will actually render. */
+export function hasPhoto(seed: string | undefined | null): boolean {
+  return !!seed && !!images[seed];
+}
+
+/** First seed in `seeds` that has a real photo, else the first entry (illustrated fallback). */
+export function firstPhotoSeed(...seeds: (string | undefined | null)[]): string {
+  return seeds.find(hasPhoto) ?? seeds.find(Boolean) ?? "";
+}
+
 const palettes: [string, string, string][] = [
   ["#1f5e50", "#2f8f74", "#cfe6d8"],
   ["#1d4e63", "#3a86a6", "#cfe4ee"],

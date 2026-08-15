@@ -6,7 +6,7 @@ import { useAsync } from "@/lib/utils/useAsync";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
-import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { IllustratedImage, firstPhotoSeed } from "@/components/ui/IllustratedImage";
 import { Chip } from "@/components/ui/Chip";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { markerIcon } from "@/components/map/markerIcons";
@@ -30,10 +30,18 @@ export function ProvincePanel({ slug }: { slug: string }) {
   const content = bundle?.content ?? null;
   const destinations = bundle?.destinations ?? [];
 
+  // No province ever had its own `province-<slug>` photo, so every one of these banners was an
+  // illustrated gradient. Borrow the hero of the province's first photographed destination —
+  // it is the same place, already credited, and costs nothing to fetch.
+  const bannerSeed = firstPhotoSeed(
+    `province-${slug}`,
+    ...destinations.map((d) => d.gallery?.[0]?.seed),
+  );
+
   return (
     <div>
       <div className="relative">
-        <IllustratedImage seed={`province-${slug}`} ratio="16/9" rounded={false} />
+        <IllustratedImage seed={bannerSeed} ratio="16/9" rounded={false} />
         <div
           className="absolute inset-x-0 bottom-0 p-5 pt-16"
           style={{
