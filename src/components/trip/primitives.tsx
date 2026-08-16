@@ -3,8 +3,11 @@ import { tripDayColor } from "@/lib/map/tripPalette";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * Small pieces used only by the trip panel. Deliberately not promoted to `components/ui/` —
- * that folder stays minimal until a second feature needs one of these.
+ * Small pieces of the trip panel. Deliberately not promoted to `components/ui/` — that folder
+ * stays minimal until a second feature needs one of these.
+ *
+ * `StopLabel` is the one exception that leaves this folder: the map badge imports it, because the
+ * panel and the map must spell a stop's number the same way or it is not a name.
  */
 
 /** One number in the result header. */
@@ -58,17 +61,40 @@ export function DayTab({
 }
 
 /**
+ * `day.order` — the identifier of one stop, e.g. `2.3`.
+ *
+ * Shared with the map badge on purpose, and exported for it: this string is the stop's NAME. Day
+ * colour alone cannot answer "which day is this?" without a trip back to the day tabs, and answers
+ * nothing at all to a red-green colour-blind reader. If the two surfaces ever formatted it
+ * differently, pointing at "2.3" would stop meaning one place.
+ *
+ * The day segment is dimmed so the stop number still reads first — at 11px and equal weight, `1.1`
+ * is easy to take for `11`.
+ */
+export function StopLabel({ day, order }: { day: number; order: number }) {
+  return (
+    <span className="tabular-nums">
+      <span className="opacity-70">{day}</span>.{order}
+    </span>
+  );
+}
+
+/**
  * The numbered medallion on the timeline rail. Visually identical to the map badge, which is what
  * makes panel and map read as one object rather than two lists of the same places.
+ *
+ * `min-w-7` rather than `w-7`: it is a circle at one digit and a pill at `10.3`. It overflows its
+ * `w-7` rail column by a couple of pixels, symmetrically — both wrappers centre it, so it stays on
+ * the same axis as the dashed drive line above it.
  */
 export function RailNode({ order, dark, dayIndex }: { order: number; dark: boolean; dayIndex: number }) {
   const c = tripDayColor(dayIndex, dark);
   return (
     <span
-      className="relative z-10 grid h-7 w-7 shrink-0 place-items-center rounded-full text-[11px] font-bold text-white"
-      style={{ background: c.line, boxShadow: "0 0 0 3px var(--color-surface)" }}
+      className="relative z-10 grid h-7 min-w-7 shrink-0 place-items-center rounded-full px-1.5 text-[11px] font-bold"
+      style={{ background: c.line, color: c.ink, boxShadow: "0 0 0 3px var(--color-surface)" }}
     >
-      {order}
+      <StopLabel day={dayIndex + 1} order={order} />
     </span>
   );
 }

@@ -102,6 +102,18 @@ Plan: `~/.claude/plans/swift-petting-pretzel.md`. Spec: `docs/031.md` (re-scoped
 - [ ] Known limits the sweep still reports, both needing the evening slot: 68 single-2h-stop days
       in sparse areas, 17 days that are just a night market opening at 17:00
 
+### A6. Stop numbering `day.order` (added after user review of the whole-route view)
+- [x] Badges read `1.1 … 3.2`, not a bare `1`. Day colour is a lookup, not an answer, and it is no
+      answer at all to a red-green colour-blind reader. Costs ~8px of badge width in the densest
+      part of the map; taken deliberately
+- [x] One `StopLabel`, imported by both the map badge and `RailNode` — the number is the stop's
+      NAME, so the two surfaces must not be free to spell it differently
+- [x] Label is stable across views. Rejected the cheaper "prefix only in whole-route view": a name
+      that changes when you switch tabs cannot be pointed at, shared, or screenshotted
+- [x] `tripDayColor().ink` — dark mode was `text-white` on the BRIGHT dark column (`#ffffff` on
+      `#4ee0ac` = 1.4:1). Pre-existing, invisible in light-mode screenshots, and load-bearing the
+      moment the badge carried two digits. Now 8–12:1 on all seven hues
+
 ## Review
 
 Slice 1 is functionally complete and verified end to end: 192 tests, both typechecks, `check:i18n`,

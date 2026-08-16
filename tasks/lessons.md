@@ -299,3 +299,19 @@ lên một lỗi 423km không có thật. Sau khi ghim: 11 lỗi, ít hơn HEAD,
 
 **Bài học:** một công cụ advisory có nhiễu thì con số tổng vô nghĩa; chỉ có phần *sai khác* mới nói
 được điều gì.
+
+## 038b — Palette đảo chiều theo theme thì `text-white` là bug đang ngủ
+
+Đổi badge chặng dừng từ `1` sang `1.1`. Ảnh chụp light mode: đẹp. Ảnh chụp dark mode: gần như
+không đọc nổi — `TRIP_DAY_PALETTE` cố ý tune **ngược chiều** giữa hai cột (light lấy tương phản
+bằng ĐỘ TỐI `#0f6b52`, dark lấy bằng ĐỘ SÁNG `#4ee0ac`), mà cả hai đều dùng chung một
+`text-white` hard-code. Trắng trên `#4ee0ac` là 1.4:1.
+
+Bug này có từ trước, không phải do tôi sinh ra — nhưng một chữ số đơn thì đoán được từ vị trí,
+còn `1.1` thì bắt buộc phải đọc. Nên nó chỉ *thành* bug đúng lúc nhãn mang thêm thông tin. Sửa gốc:
+`tripDayColor()` trả thêm `ink`, lật theo theme (8–12:1 trên cả 7 hue), thay vì vá `text-white`
+tại chỗ.
+
+**Bài học:** hễ một palette có hai cột tune ngược chiều nhau thì **mọi màu chữ đặt lên nó cũng
+phải đến từ palette đó**. Và chụp một mode rồi kết luận là chưa chụp gì — screenshot light mode
+không nhìn thấy được lỗi tương phản của dark mode.

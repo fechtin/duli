@@ -40,6 +40,20 @@ export const TRIP_CASING = {
   dark: "rgba(3,12,16,0.72)",
 } as const;
 
+/**
+ * Numerals on a day-coloured medallion — and it flips with the theme, which is the whole point.
+ *
+ * The two columns above are tuned in opposite directions, so a single ink cannot serve both. White
+ * on the light column is 5–8:1; white on the BRIGHT dark column is ~1.5:1 (`#ffffff` on `#4ee0ac`
+ * is 1.4:1), which is how a hard-coded `text-white` left every dark-mode badge unreadable while
+ * still looking fine in review screenshots taken in light mode. Ink against the dark column runs
+ * 8–12:1 across all seven hues.
+ */
+export const TRIP_INK = {
+  light: "#ffffff",
+  dark: "#07171f",
+} as const;
+
 function rgba(hex: string, alpha: number): string {
   const v = hex.replace("#", "");
   const n = parseInt(v, 16);
@@ -50,11 +64,11 @@ function rgba(hex: string, alpha: number): string {
  * Colour for a day, wrapping past seven.
  *
  * `soft` is for fills and chip backgrounds only. Day colours must never be small text on
- * `--surface`: `#a8862a` on white is ~3.6:1, which fails at 12px. White numerals on a coloured
- * medallion is the pattern that works.
+ * `--surface`: `#a8862a` on white is ~3.6:1, which fails at 12px. Numerals on a coloured medallion
+ * is the pattern that works — in `ink`, never a hard-coded white. See `TRIP_INK`.
  */
-export function tripDayColor(dayIndex: number, dark: boolean): { line: string; soft: string } {
+export function tripDayColor(dayIndex: number, dark: boolean): { line: string; soft: string; ink: string } {
   const entry = TRIP_DAY_PALETTE[((dayIndex % TRIP_DAY_PALETTE.length) + TRIP_DAY_PALETTE.length) % TRIP_DAY_PALETTE.length];
   const line = dark ? entry.dark : entry.light;
-  return { line, soft: rgba(line, dark ? 0.18 : 0.12) };
+  return { line, soft: rgba(line, dark ? 0.18 : 0.12), ink: dark ? TRIP_INK.dark : TRIP_INK.light };
 }

@@ -22,6 +22,7 @@ import { isLayerVisible } from "@/lib/map/layers";
 import { TripRouteLayer } from "./TripRouteLayer";
 import type { DayLegs } from "./TripRouteLayer";
 import { tripDayColor } from "@/lib/map/tripPalette";
+import { StopLabel } from "@/components/trip/primitives";
 import { MapHint } from "./MapHint";
 import { useLivingStore } from "@/lib/store/useLivingStore";
 import type { HeartbeatResult } from "@/lib/living/types";
@@ -711,7 +712,11 @@ export function MapEngine() {
             Deliberately NOT gated on `showMarkers` — a five-day route is read at overview zoom,
             where ordinary markers are hidden. To stop twelve badges colliding down there, only the
             active day's badges render below zoom level 2. Same precedent as restaurant markers,
-            which are also ungated while a dish is open. */}
+            which are also ungated while a dish is open.
+
+            The badge reads `day.order`, not `order` — see `StopLabel`. It costs ~8px of width in
+            an area that is already the densest thing on the map, and that is the right trade: a
+            bare `2` next to another bare `2` in a different hue is a puzzle, not a label. */}
         {tripBadges
           .filter((b) => inView(b.x, b.y) && (zoomLevel >= 2 || tripActiveDay === 0 || tripActiveDay === b.day))
           .map((b) => {
@@ -739,10 +744,10 @@ export function MapEngine() {
                   )}
                 >
                   <span
-                    className="grid h-6 w-6 place-items-center rounded-full text-[11px] font-bold text-white"
-                    style={{ background: c.line, boxShadow: "0 0 0 2px var(--color-surface)" }}
+                    className="grid h-6 min-w-6 place-items-center rounded-full px-1.5 text-[11px] font-bold"
+                    style={{ background: c.line, color: c.ink, boxShadow: "0 0 0 2px var(--color-surface)" }}
                   >
-                    {b.order}
+                    <StopLabel day={b.day} order={b.order} />
                   </span>
                   {showName && (
                     <span className="max-w-[7rem] truncate text-[11px] font-semibold text-foreground">{b.name}</span>
