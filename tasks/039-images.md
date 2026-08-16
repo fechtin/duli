@@ -49,18 +49,68 @@ nguồn free-text phải nhắc tên tỉnh hoặc tên nước. Tên di sản/t
 trưng nên không cần; tên quán tiếng Anh thì cần. Sau khi neo, `the-note-coffee` ra **0 ảnh** —
 đúng, vì không có ảnh tự do nào của đúng quán đó, và placeholder gradient là câu trả lời trung thực.
 
-## Trạng thái
+## Trạng thái (chốt lúc dừng — commit `5ef5864`)
 
-- **159/327 destination VN chưa có ảnh** (140 mới của 038 + 19 tồn đọng).
-- Mẫu DRY đã đạt: Long Sơn, Bình Ba, Dốc Lết, Y Tý, Hạ Long, Phát Diệm, Hang Múa, Vân Đồn,
-  Hà Tiên, Train Street đều ra ảnh đúng chủ thể.
-- **Chưa chạy thật** — job dài gọi API ngoài, phải xin phép user.
+Chạy 3h55 rồi **dừng chủ động** bằng SIGINT, không phải lỗi.
 
-## Việc còn lại
+| | |
+|---|---|
+| Đã lấp | **78/159** điểm · **172 ảnh mới** |
+| Chất lượng 172 ảnh mới | named 145 · anchored 4 · **SUSPECT 23** |
+| Atlas có ảnh | 246/343 |
 
-- **Audit 189 ảnh cũ `via: "geosearch"`.** Đó là nhánh không validate. Không phải tất cả đều sai —
-  geosearch đúng khi nơi đó thật sự có ảnh gắn toạ độ — nhưng chưa cái nào được kiểm. Cách làm:
-  chạy lại chuỗi mới cho từng seed đó và so `sourceTitle`; cái nào chuỗi mới từ chối thì đưa vào
-  danh sách người xem. Đây là đợt riêng.
-- `tasks/039-tour-stops.md` (phiên khác) sẽ liệt 20-35 destination mới; chúng **không** nằm trong
-  159 của đợt này và cần một lượt ảnh sau.
+**Vì sao dừng:** phần còn lại là đuôi khó. Một điểm *không* tìm được ảnh tốn nhiều thời gian hơn
+một điểm tìm được, vì nó phải đi hết cả 10 nguồn rồi mới chịu thua — nên 3,5 tiếng còn lại chỉ
+đổi được vài chục ảnh. Dừng không mất gì: manifest lưu mỗi 5 ảnh, lần chạy sau tự bỏ qua seed đã có.
+
+**Đã xoá 2 file tải xong nhưng chưa kịp ghi bản ghi** (`crazy-house-dalat-1/2.webp`) — không có
+credit và license thì không ship được. Hai seed đó sẽ được lấy lại ở lượt sau.
+
+## CHẠY TIẾP — phiên mới bắt đầu từ đây
+
+```bash
+# 1. Kiểm tra không có fetcher nào đang chạy (bắt buộc — đã va chạm thật)
+pgrep -f "fetch-.*images" ; ls scripts/.images.lock
+
+# 2. Chạy nốt phần chưa có ảnh. Tự bỏ qua seed đã xong, an toàn khi lặp lại.
+node --experimental-strip-types scripts/fetch-images.mjs vn
+
+# 3. Chấm điểm những gì vừa lấy
+node --experimental-strip-types scripts/audit-images.mjs vn
+```
+
+Ước tính: ~2,5 phút/điểm, còn ~81 điểm → **3-4 tiếng**. Chạy nền, đừng ngồi đợi.
+
+**Ba việc nên làm trong cùng phiên đó:**
+
+1. **Chạy lại 22 venue bị neo oan.** Job vừa rồi neo địa lý cho cả 25 venue type; luật đã sửa để
+   chỉ neo 3 cái không còn token đặc trưng (`ba-na-hills`, `the-note-coffee`, `landmark-81`).
+   22 cái còn lại chạy dưới luật quá chặt nên có thể đã bỏ sót ảnh đúng:
+   ```bash
+   ONLY=son-tra-night-market,ban-co-peak,hai-van-pass,hoi-an-night-market,faifo-coffee,\
+   reaching-out-teahouse,ta-hien-street,hanoi-train-street,lotte-observation-deck,\
+   nguyen-hue-walking-street,bitexco-tower,bui-vien-street,cau-dat-tea-hill,me-linh-coffee-garden,\
+   hon-chong-promontory,nha-trang-night-market,phu-quoc-night-market,hon-thom-cable-car,\
+   ganh-dau-cape,vinwonders-phu-quoc,muong-hoa-valley,mua-cave \
+   FORCE=1 node --experimental-strip-types scripts/fetch-images.mjs vn
+   ```
+2. **Soi 136 seed trong `tasks/039-suspect-seeds.json`.** Trong đó **80 là `geosearch` cũ** —
+   nhánh chưa từng bị ràng buộc tên nào. Đây là nhóm rủi ro cao nhất còn lại trên production.
+   ```bash
+   REFETCH=tasks/039-suspect-seeds.json node --experimental-strip-types scripts/fetch-images.mjs vn
+   ```
+   **Nhưng xem bằng mắt trước khi thay.** Nhóm SUSPECT lẫn lộn thật: `AnDinhResidence1.jpg` cho
+   An Định, `LakLake.jpg` cho hồ Lắk, `Cau Trang tien ve dem.jpg` cho cầu Trường Tiền đều ĐÚNG mà
+   vẫn bị gắn cờ vì tiêu đề không lặp lại tên. Thay mù có thể làm xấu đi.
+3. **Ảnh cho destination mới của phiên `vivel-c1`** — xem `tasks/039-tour-stops.md`. Chúng không
+   nằm trong 159 của lượt này.
+
+## Cảnh báo cho phiên mới
+
+- **Ảnh KHÔNG cần reseed D1.** Chúng là asset tĩnh trong `public/img/` + manifest bundle lúc build,
+  nên `git push` là đủ. Chỉ khi **thêm/sửa destination** mới phải reseed `--remote` — và đó là nút
+  của user.
+- **Nhiều phiên cùng repo này.** Kiểm `git status` trước khi commit: cây thường có việc dở của phiên
+  khác (đợt này có tính năng map links trong `components/panel/`, `lib/maps/`, `locales/*` —
+  KHÔNG phải của 039). Stage theo tên file, đừng `git add -A`.
+- **Lockfile `scripts/.images.lock`** chặn fetcher thứ hai. Nếu tiến trình chết bẩn thì xoá tay.
