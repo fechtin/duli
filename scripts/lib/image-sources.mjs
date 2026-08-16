@@ -302,17 +302,28 @@ export async function commonsCategory(term, opts = {}) {
     const members = await getJson(
       `https://commons.wikimedia.org/w/api.php?action=query&generator=categorymembers&gcmtitle=${encodeURIComponent(hit.title)}&gcmtype=file&gcmlimit=15&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=1280&format=json&origin=*`,
     );
-    for (const p of Object.values(members?.query?.pages ?? {})) {
+    // Matching the CATEGORY name is not the same as matching the photo. A category collects
+    // everything loosely about a subject, so taking its first usable file gave Phố Hiến a "Beer
+    // Hoi Corner Hanoi" panorama, Bitexco Tower the State Bank building, and Tao Đàn park a shot
+    // of Bến Thành. Prefer a file that names the subject itself; fall back to the category's own
+    // contents only when nothing inside does.
+    const files = Object.values(members?.query?.pages ?? {}).filter((p) => {
       const ii = p.imageinfo?.[0];
-      if (!ii || !usableImage(ii) || JUNK.test(p.title)) continue;
-      if (opts.cue && !opts.cue.test(`${hit.title} ${p.title}`)) continue;
-      if (ARCHIVAL.test(p.title)) continue;
+      if (!ii || !usableImage(ii) || JUNK.test(p.title) || ARCHIVAL.test(p.title)) return false;
+      return !opts.cue || opts.cue.test(`${hit.title} ${p.title}`);
+    });
+    const bare = (p) => p.title.replace(/^File:/, "").replace(/\.\w+$/, "");
+    const best = files.find((p) => titleMatches(term, bare(p), opts.ratio, opts)) ?? files[0];
+    if (best) {
+      const ii = best.imageinfo[0];
       return {
         url: ii.thumburl ?? ii.url,
-        file: p.title,
-        sourceTitle: p.title,
+        file: best.title,
+        sourceTitle: best.title,
         sourceUrl: ii.descriptionurl ?? "",
-        via: "commons-category",
+        // Flagged distinctly when only the category vouched for it, so the audit can tell the
+        // two apart instead of trusting them equally.
+        via: titleMatches(term, bare(best), opts.ratio, opts) ? "commons-category" : "commons-category-loose",
       };
     }
   }

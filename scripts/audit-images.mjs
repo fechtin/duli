@@ -11,10 +11,13 @@
 //   node --experimental-strip-types scripts/audit-images.mjs [vn|kr] [--json out.json]
 //
 // Verdicts:
-//   named    — the source title carries the place's distinctive tokens. Trustworthy.
-//   anchored — title misses the name but carries the province/country, and the pick came from a
-//              source that validated the name upstream (Commons category). Weak but plausible.
-//   SUSPECT  — nothing ties the file to the place. These are the ones to look at.
+//   named      — the source title carries the place's distinctive tokens. Trustworthy.
+//   unrecorded — kept from before provenance was stored: no sourceTitle at all. NOT evidence of
+//                a wrong photo, and not evidence of a right one either — it simply predates the
+//                field this audit reads.
+//   anchored   — title misses the name but carries the province/country, and the pick came from
+//                a source that validated the name upstream. Weak but plausible.
+//   SUSPECT    — has provenance, and nothing in it ties the file to the place. Look at these.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -64,7 +67,16 @@ for (const d of places) {
       titleMatches(d.nameEn, title, undefined, opts) || titleMatches(d.name, title, undefined, opts);
     const anchored = prov && fold(title).includes(fold(prov));
     const trustedVia = VALIDATED_VIA.test(m.via ?? "");
-    const verdict = named ? "named" : anchored && trustedVia ? "anchored" : "SUSPECT";
+    // An entry from before provenance was recorded has no title to judge. Calling that
+    // "suspect" would be dishonest in both directions: it is not evidence of a wrong photo, and
+    // burying it in the same bucket hides how many entries simply cannot be checked this way.
+    const verdict = !title
+      ? "unrecorded"
+      : named
+        ? "named"
+        : anchored && trustedVia
+          ? "anchored"
+          : "SUSPECT";
     rows.push({ seed: g.seed, id: d.id, name: d.nameEn, via: m.via ?? "?", title, verdict });
   }
 }
@@ -73,9 +85,10 @@ const by = (v) => rows.filter((x) => x.verdict === v);
 const suspect = by("SUSPECT");
 
 console.log(`[audit-images] ${cc.toUpperCase()} · ${rows.length} photos in manifest`);
-console.log(`  named    ${by("named").length}`);
-console.log(`  anchored ${by("anchored").length}`);
-console.log(`  SUSPECT  ${suspect.length}`);
+console.log(`  named      ${by("named").length}   (title carries the place's own tokens)`);
+console.log(`  anchored   ${by("anchored").length}   (province in title, from a validated source)`);
+console.log(`  unrecorded ${by("unrecorded").length}   (pre-provenance entry — nothing to judge)`);
+console.log(`  SUSPECT    ${suspect.length}`);
 
 const viaCount = {};
 for (const s of suspect) viaCount[s.via] = (viaCount[s.via] ?? 0) + 1;
