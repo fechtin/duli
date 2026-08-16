@@ -35,6 +35,10 @@
     "id": "ChIJo4IsmsoayzYRATcEtYapkrc",
     "name": "Hồ Ba Bể"
   },
+  "ba-dong-beach": {
+    "id": "ChIJfY2cawCHnzERIksmR2ior3g",
+    "name": "Biển Ba Động"
+  },
   "ba-na-hills": {
     "id": "ChIJyWFmArX3QTERon6tUT6re4Q",
     "name": "Ba Na Hills"
@@ -42,6 +46,10 @@
   "bac-ha-market": {
     "id": "ChIJW2vtcADjzDYR4r-xkWKYq-k",
     "name": "Chợ phiên Bắc Hà"
+  },
+  "bac-lieu-canh-dong-dien-gio": {
+    "id": "ChIJqboayiGhoTERfsRS0e_j_bY",
+    "name": "Cánh Đồng Điện Gió Bạc Liêu"
   },
   "bac-lieu-nha-cong-tu": {
     "id": "ChIJs8K_M5EJoTERpMpZTcdUR78",
@@ -59,6 +67,10 @@
     "id": "ChIJiYPhWQBvdTER1K7cVVymRng",
     "name": "Bạch Dinh"
   },
+  "bach-ma-national-park": {
+    "id": "ChIJAffBLFaMQTERd9T1pJxKOuw",
+    "name": "Vườn Quốc Gia Bạch Mã"
+  },
   "bai-chay-bridge": {
     "id": "ChIJYXmIJgBZSjERIyT7W6DnJSQ",
     "name": "Cầu Bãi Cháy"
@@ -74,6 +86,10 @@
   "bai-sao-beach": {
     "id": "ChIJL4toWTGRpzERqGuxiUPhdLQ",
     "name": "Bãi tắm Sao"
+  },
+  "bai-tu-long-bay": {
+    "id": "ChIJjf1nWU1USjERx-qARYK1n-M",
+    "name": "Vịnh Bái Tử Long"
   },
   "ban-ba-waterfall": {
     "id": "ChIJte9DcbZhyzYRZ3pATgOHlUo",
@@ -127,6 +143,10 @@
     "id": "ChIJsQ63-9KWaDURQmHr0J6VF_4",
     "name": "범어사"
   },
+  "bien-cua-lo": {
+    "id": "ChIJUToEhX7TOTERNlivaUgNHGo",
+    "name": "Bãi biển Cửa Lò"
+  },
   "bien-sam-son": {
     "id": "ChIJbSp8BxtRNjERNbfIVuXYOaM",
     "name": "Bãi biển Sầm Sơn"
@@ -143,6 +163,10 @@
     "id": "ChIJB2OaV32UcDEReWDqyyiyS6o",
     "name": "đảo Bình Ba"
   },
+  "binh-lieu": {
+    "id": "ChIJm4VogkwvSzERE3MyGiePZMw",
+    "name": "Bình Liêu"
+  },
   "binh-tay-market": {
     "id": "ChIJTQW7uYoudTEREQoQkLAqBzY",
     "name": "Chợ Bình Tây"
@@ -155,6 +179,10 @@
     "id": "ChIJuZtpDRHLejURsxubeXYUf7g",
     "name": "국립세종도서관"
   },
+  "biseulsan-azalea": {
+    "id": "ChIJy8GYJmv5ZTUR8bhqhyGS7DM",
+    "name": "비슬산 참꽃군락지"
+  },
   "bitexco-tower": {
     "id": "ChIJa-5vR0EvdTERT8WcEuXiXQE",
     "name": "Tòa nhà tài chính Bitexco"
@@ -163,13 +191,25 @@
     "id": "ChIJ87UwduYHNTER3EyybXO5BdQ",
     "name": "Đền Đô"
   },
+  "bn-dong-ho": {
+    "id": "ChIJ96c8ia-gNTERiMe3ANhNRYM",
+    "name": "Làng Tranh dân gian Đông Hồ"
+  },
   "bongeunsa": {
     "id": "ChIJgZn6QWmkfDURaU3kwlecaEU",
     "name": "대한불교조계종 봉은사"
   },
+  "boseong-tea-fields": {
+    "id": "ChIJRfu33yITcjURbVO8MAoiG94",
+    "name": "대한다원"
+  },
   "bosu-dong-book-street": {
     "id": "ChIJZVDztJ_paDURgAwXDlRwUZo",
     "name": "보수동책방골목"
+  },
+  "bu-gia-map-national-park": {
+    "id": "ChIJB5G6M1cEczER-lCRnJP3uUc",
+    "name": "Vườn Quốc gia Bù Gia Mập"
   },
   "bukchon-hanok-village": {
     "id": "ChIJT8H4r9qifDURmuXJ_6m6vM0",
@@ -178,6 +218,10 @@
   "bukhansan": {
     "id": "ChIJ7159ScuXfDURCawjtWzWKHw",
     "name": "북한산국립공원"
+  },
+  "bulguksa": {
+    "id": "ChIJ2XRsz9eyZzURzgthBkl-Lv4",
+    "name": "불국사"
   },
   "bullo-tumuli": {
     "id": "ChIJn2xfoiPgZTUR1M160DJRDe4",
@@ -219,6 +263,14 @@
     "id": "ChIJfbBw_fpYYTUR5SnbtU7A4j8",
     "name": "영주 부석사 삼층석탑"
   },
+  "buyeo-busosanseong": {
+    "id": "ChIJKTH1FMufejURhhfMcub3YDw",
+    "name": "부소산성 (사비성)"
+  },
+  "byeonsan-bando": {
+    "id": "ChIJmyN26ewIcTUR9Eb9EZ2Y3xo",
+    "name": "변산반도국립공원"
+  },
   "ca-mau-mui-ca-mau": {
     "id": "ChIJ55TocgAVpDERJdg46zrmLLw",
     "name": "Khu Du lịch Mũi Cà Mau"
@@ -234,6 +286,10 @@
   "cai-rang-floating-market": {
     "id": "ChIJjS00tq-JoDERmDjx9Wm1ss0",
     "name": "Chợ nổi Cái Răng"
+  },
+  "can-gio-mangrove": {
+    "id": "ChIJsZVzHYpadTER2-AODEAnmqA",
+    "name": "Khu dự trữ sinh quyển rừng ngập mặn Cần Giờ"
   },
   "cao-lau-ba-be": {
     "id": "ChIJGQEFzdgPQjERq6HEAbhIv_A",
@@ -258,6 +314,10 @@
   "cham-museum": {
     "id": "ChIJLWoAs80ZQjERLKHDYD-ZymI",
     "name": "Bảo tàng Điêu khắc Chăm Đà Nẵng"
+  },
+  "changdeokgung": {
+    "id": "ChIJ4wh0zluifDURaFBW2pdrKf8",
+    "name": "창덕궁"
   },
   "cheomseongdae": {
     "id": "ChIJa4qtrmdOZjURguRnUl7UqSg",
@@ -343,6 +403,10 @@
     "id": "ChIJPWhb3k5ycTERkHYm-NE8qoA",
     "name": "Làng Cù Lần"
   },
+  "cu-lao-cham": {
+    "id": "ChIJOYnFwKhtQjERYFD28M_Dops",
+    "name": "Cù lao Chàm"
+  },
   "cua-dai-beach": {
     "id": "ChIJ5U9A-5kNQjER9iw7p_E3uFk",
     "name": "Bãi biển Cửa Đại"
@@ -387,6 +451,10 @@
     "id": "ChIJB3YMdOrjZTURJO_6sw4LHFo",
     "name": "전통대구약령시"
   },
+  "daegwallyeong-sky-ranch": {
+    "id": "ChIJ4eo104v0YTURiVZaVMmLxAI",
+    "name": "대관령 하늘목장"
+  },
   "daejeon-expo-park": {
     "id": "ChIJhyHHqYZJZTUR5lKXtLmRmqo",
     "name": "엑스포다리"
@@ -394,6 +462,10 @@
   "daejeon-jungang-market": {
     "id": "ChIJwSPdFdxIZTUR2mKqLneQ8cg",
     "name": "대전중앙시장"
+  },
+  "daejeon-skyroad": {
+    "id": "ChIJtSfCqdlIZTURm6bWh6op6fU",
+    "name": "대전스카이로드"
   },
   "daereungwon": {
     "id": "ChIJ13ANOUNOZjURBcoz1tMkAMw",
@@ -443,6 +515,10 @@
     "id": "ChIJsQgi1SinNTERvnH6eFiHbNs",
     "name": "Chùa Dâu"
   },
+  "dau-tieng-reservoir": {
+    "id": "ChIJWxKCoJVaCzERDtPfM1ULROk",
+    "name": "Hồ Dầu Tiếng"
+  },
   "den-hung-temple": {
     "id": "ChIJNe0KMSOSNDERRJXX5ghTOcI",
     "name": "Đền Hùng"
@@ -466,6 +542,10 @@
   "dong-ba-market": {
     "id": "ChIJ72zuj9WhQTER79-ldHt0UeQ",
     "name": "Chợ Đông Ba"
+  },
+  "dong-thap-tram-chim": {
+    "id": "ChIJyRawFwBFCjERSa2hHpeIYGU",
+    "name": "Vườn quốc gia tràm chim"
   },
   "dong-van-old-town": {
     "id": "ChIJI-YJaSrnyzYRBxWtjKkWDPM",
@@ -510,6 +590,10 @@
   "faifo-coffee": {
     "id": "ChIJ5XDlitUNQjERD7HyQvSHB94",
     "name": "Faifo Coffee"
+  },
+  "fansipan": {
+    "id": "ChIJQ0XIhodEzTYRWrySSF1Z6Zg",
+    "name": "Phan Xi Păng"
   },
   "fine-arts-museum-hcm": {
     "id": "ChIJPccxGQAvdTERYMYelqaxe8M",
@@ -611,6 +695,10 @@
     "id": "ChIJwzYv7QHwYzURTDVpXIqZTpc",
     "name": "대한불교천태종 총본산 구인사"
   },
+  "gunsan-modern-quarter": {
+    "id": "ChIJj_7iILhdcDUR47xJGAECHQ4",
+    "name": "군산근대화거리"
+  },
   "gurye-sansuyu": {
     "id": "ChIJWb7dXBMwbjURkBjrnkSJ92U",
     "name": "산수유마을"
@@ -655,6 +743,10 @@
     "id": "ChIJU_u7hoyxejURpsi0rriFAxo",
     "name": "계룡산"
   },
+  "ha-long-bay": {
+    "id": "ChIJh-6MUZZXSjER23hUyLywxlU",
+    "name": "Vịnh Hạ Long"
+  },
   "ha-tien-town": {
     "id": "ChIJ5SWHDULaCTERebifVgFTo5Q",
     "name": "Hà Tiên"
@@ -662,6 +754,10 @@
   "haedong-yonggungsa": {
     "id": "ChIJwabeuxuMaDURXC4Rb21AQaE",
     "name": "해동용궁사"
+  },
+  "haeinsa": {
+    "id": "ChIJ3QIAM1F8bzUR3IOwNYjdaUM",
+    "name": "대한불교조계종 제12교구 본사 해인사"
   },
   "haemieupseong": {
     "id": "ChIJ70GajSNeejURadgRNSPSbhM",
@@ -691,6 +787,10 @@
     "id": "ChIJS4Ky0oiPpzERbE8mbGFjZ4k",
     "name": "Làng chài Hàm Ninh"
   },
+  "ham-rong-mountain": {
+    "id": "ChIJLaZB2hhBzTYRpCH9rkIZRaU",
+    "name": "núi Hàm Rồng"
+  },
   "han-market": {
     "id": "ChIJDcx-OTIYQjERP4eyjItPspA",
     "name": "Chợ Hàn"
@@ -715,6 +815,10 @@
     "id": "ChIJsS_zcvxeoDERGKdtQ1KUzOc",
     "name": "Chợ Nổi Ngã Bảy"
   },
+  "hau-giang-lung-ngoc-hoang": {
+    "id": "ChIJDewxTlb3oDERD4Q84zR1zL0",
+    "name": "Khu Bảo Tồn Thiên Nhiên Lung Ngọc Hoàng"
+  },
   "hd-dao-co": {
     "id": "ChIJmWiNb8CUNTERYh3CU5x5EOs",
     "name": "Đảo Cò Chi Lăng"
@@ -738,6 +842,10 @@
   "ho-quoc-pagoda": {
     "id": "ChIJC7DO9JuRpzERJHQeJdmTQjg",
     "name": "Thiền viện Trúc Lâm Hộ Quốc"
+  },
+  "hoa-binh-lake": {
+    "id": "ChIJ8dXMirhsNDERvKe2Xwap_dA",
+    "name": "Hồ Hòa Bình"
   },
   "hoa-lo-prison": {
     "id": "ChIJld5RqparNTERVK8x7gvhAZc",
@@ -787,9 +895,17 @@
     "id": "ChIJlfht4RhhcDERVPCZseDMs0k",
     "name": "Hòn Tằm"
   },
+  "hon-thom-cable-car": {
+    "id": "ChIJ2ZmK8-aXpzER871TJk_88xw",
+    "name": "Sunworld Hòn Thơm Phú Quốc | Hon Thom Cable Car"
+  },
   "hongdae": {
     "id": "ChIJNechUZSYfDUR97VH08fNqms",
     "name": "보승회관 홍대직영점"
+  },
+  "hp-cat-ba-island": {
+    "id": "ChIJoUx6blNDSjERHYq_EXZxPu4",
+    "name": "Quần đảo Cát Bà"
   },
   "hp-do-son-beach": {
     "id": "ChIJveqPi2BsSjERwnl2fvLL8Fs",
@@ -798,6 +914,10 @@
   "hu-tieu-hong-phat": {
     "id": "ChIJa84CUSIvdTERyXeHC2uw9K4",
     "name": "Hủ Tiếu Hồng Phát (Hồng Phát D3 - Bàn Cờ)"
+  },
+  "hue-imperial-city": {
+    "id": "ChIJ-zZHO4GhQTER8_Eb9kDoaEE",
+    "name": "Hoàng Thành Huế"
   },
   "huinnyeoul-culture-village": {
     "id": "ChIJseGsfh7paDURigYilgTVojA",
@@ -834,6 +954,14 @@
   "igidae-coastal-walk": {
     "id": "ChIJr8BQxRrtaDURxZ_nt-crZ6Y",
     "name": "이기대 해안산책로"
+  },
+  "ikseon-dong": {
+    "id": "ChIJe4Jbot2ifDUR2zWhruwyaow",
+    "name": "익선동 한옥마을"
+  },
+  "imjingak-dmz": {
+    "id": "ChIJs91FY8TzfDURLj2Hb2h2VNQ",
+    "name": "임진각"
   },
   "imperial-citadel-thang-long": {
     "id": "ChIJSXwdOKOrNTERNylYj9mnIbU",
@@ -891,6 +1019,10 @@
     "id": "ChIJySNbE50kcDURML1Q8flIzio",
     "name": "전주향교"
   },
+  "jeonju-nambu-market": {
+    "id": "ChIJu6q8_aEkcDURRoFh3-Iz7OI",
+    "name": "남부시장"
+  },
   "jindo-sea-parting": {
     "id": "ChIJec-J-VgRczUR7z84yePQOUs",
     "name": "신비의바닷길"
@@ -898,6 +1030,10 @@
   "jinhae-cherry-blossom": {
     "id": "ChIJBxqhBHYtbzURwlNdq2E7BcA",
     "name": "진해 벚꽃"
+  },
+  "jirisan-national-park": {
+    "id": "ChIJXw508rQ3bjURk6aL3D1mbsg",
+    "name": "지리산국립공원"
   },
   "jongmyo-shrine": {
     "id": "ChIJz7ocWtiifDURU-HmRwLa3yQ",
@@ -971,9 +1107,17 @@
     "id": "ChIJXTU999hIZTURyl7JAtkw6Wk",
     "name": "성심당 본점"
   },
+  "kr-tongyeong-jungang-market": {
+    "id": "ChIJY4J2KxTHbjUR1rfX0rdV4s0",
+    "name": "통영중앙전통시장"
+  },
   "kr-tosokchon": {
     "id": "ChIJb5OOGL6ifDURU29ID3t8aOA",
     "name": "토속촌 삼계탕"
+  },
+  "ktm-mang-den": {
+    "id": "ChIJzdWP6nZDaTERRRjdw6TWE3A",
+    "name": "Du lịch Măng Đen"
   },
   "ktm-nha-tho-go": {
     "id": "ChIJI7MkZpf_azER1c2hYqGaULo",
@@ -1039,6 +1183,18 @@
     "id": "ChIJxzMMivbhyzYRH5HpywpNLDA",
     "name": "Cột Cờ Lũng Cú"
   },
+  "ma-pi-leng-pass": {
+    "id": "ChIJ_asNkXvnyzYR2jED3acl688",
+    "name": "Đèo Mã Pí Lèng"
+  },
+  "magoksa": {
+    "id": "ChIJkwlBQpPAejURh3QKm3C-8ZA",
+    "name": "대한불교조계종 제6교구 본사 마곡사"
+  },
+  "maisan": {
+    "id": "ChIJk2_rvLPdbzURJmrY8_u54F8",
+    "name": "마이산 도립공원"
+  },
   "mancheonha-skywalk": {
     "id": "ChIJ7eFngX_1YzURpGhwuuPveBo",
     "name": "만천하 스카이워크"
@@ -1054,6 +1210,10 @@
   "marble-mountains": {
     "id": "ChIJ2y5L4dQNQjERxeSLc68fbrw",
     "name": "Ngũ Hành Sơn"
+  },
+  "mau-son-mountain": {
+    "id": "ChIJp0rN4fM2tTYRyO-PZiZKoE0",
+    "name": "Mẫu Sơn"
   },
   "me-linh-coffee-garden": {
     "id": "ChIJKXhINe5rcTERGZUo9qBLUpc",
@@ -1075,6 +1235,18 @@
     "id": "ChIJ-fS8cYGkQTERiPoFuVSt_K4",
     "name": "Hiếu Lăng - lăng mộ Hoàng đế Minh Mạng"
   },
+  "moc-chau-plateau": {
+    "id": "ChIJ21oh__-TMzERaO-PbZXZ98w",
+    "name": "Cao nguyên Mộc Châu"
+  },
+  "mokpo-modern-history": {
+    "id": "ChIJc02ettGkczURf0rSDJspWrU",
+    "name": "목포 근대역사관 1관"
+  },
+  "mu-cang-chai-terraces": {
+    "id": "ChIJC0iJRWbRMjERnMqzQKKu9DM",
+    "name": "Ruộng Bậc Thang Mù Cang Chải"
+  },
   "mua-cave": {
     "id": "ChIJMX5C2E56NjER6H1rqsmxX2M",
     "name": "Hang Múa"
@@ -1087,9 +1259,17 @@
     "id": "ChIJ8zwlGu77bzERE-1_2UCIZQE",
     "name": "Mũi Điện"
   },
+  "mui-ne-sand-dunes": {
+    "id": "ChIJG0sCU6yPdjERGKRMrcgkOxU",
+    "name": "Đồi Cát Đỏ"
+  },
   "muju-deogyusan": {
     "id": "ChIJkRZANF6ObzURaHNu-7ozyCA",
     "name": "덕유산"
+  },
+  "muong-hoa-valley": {
+    "id": "ChIJBdJUrs5AzTYRo2z1PukQGto",
+    "name": "Thung lũng Mường Hoa"
   },
   "my-khe-beach": {
     "id": "ChIJ4w7694IXQjERrFXucqKL--o",
@@ -1227,6 +1407,10 @@
     "id": "ChIJh9SeIE72CTER5vbp_hCc-64",
     "name": "Núi Cấm"
   },
+  "nui-chua-national-park": {
+    "id": "ChIJ0fqvkubAcDERTdP1fJZkCgo",
+    "name": "Vườn quốc gia Núi Chúa"
+  },
   "nui-coc-lake": {
     "id": "ChIJqQQyhajeNDERwac9EUyaRCM",
     "name": "Hồ Núi Cốc"
@@ -1259,13 +1443,37 @@
     "id": "ChIJVRLdCsjtaDURcdummQTLnRk",
     "name": "오륙도 스카이워크"
   },
+  "pac-bo": {
+    "id": "ChIJZVQHk9c4yjYR25V9w9eKahY",
+    "name": "bản Pác Bó"
+  },
+  "paju-book-city": {
+    "id": "ChIJlayd0K-IfDURTLO4Q5HG6kI",
+    "name": "파주 북시티 출판도시"
+  },
+  "palgongsan-gatbawi": {
+    "id": "ChIJaaR3xLJ2ZjURHSPqeqyOvV4",
+    "name": "팔공산 갓바위"
+  },
+  "perfume-river": {
+    "id": "ChIJQdM-bTKhQTER_YP0sYu1CS0",
+    "name": "Sông Hương"
+  },
   "petite-france": {
     "id": "ChIJAW5lFT8lYzURmoKt0qcbkis",
     "name": "쁘띠프랑스"
   },
+  "pha-din-pass": {
+    "id": "ChIJu88UnhNiLTERzRhmjq0BSuM",
+    "name": "Deo Pha Din"
+  },
   "phong-nha-cave": {
     "id": "ChIJ36vIegC7ODER1BDZUo_ppzg",
     "name": "Động Phong Nha"
+  },
+  "phu-quoc-island": {
+    "id": "ChIJF9qetGKMpzER2yzXvft5qgg",
+    "name": "Phú Quốc"
   },
   "phu-quoc-night-market": {
     "id": "ChIJeaUPhUuNpzERsYgZr-tG9Hw",
@@ -1290,6 +1498,10 @@
   "pocheon-art-valley": {
     "id": "ChIJxYs4w5XVfDURFSIRXYDmpBE",
     "name": "포천아트밸리"
+  },
+  "pohang-homigot": {
+    "id": "ChIJayQBP4YRZzURZFngGYZ4V6Y",
+    "name": "호미곶"
   },
   "ponagar-towers": {
     "id": "ChIJUfK4YYxncDERfB2v8ZdvXxE",
@@ -1387,6 +1599,10 @@
     "id": "ChIJn3jj9rkUDTURS7YjOgUyUVU",
     "name": "성산 일출봉"
   },
+  "seoraksan": {
+    "id": "ChIJ01rMH2ij2F8RftWPpRMs3kc",
+    "name": "설악산국립공원"
+  },
   "seosan-maae-buddha": {
     "id": "ChIJT7ryb6ZYejURLTxzoSFHkQo",
     "name": "서산 용현리 마애여래삼존상"
@@ -1479,6 +1695,10 @@
     "id": "ChIJyUtXhYCPpzERS0pgKYm7hu4",
     "name": "Khu du lịch Suối Tranh"
   },
+  "ta-dung-national-park": {
+    "id": "ChIJMehhMxTeczERaKXPTDtfvww",
+    "name": "Vườn Quốc gia Tà Đùng"
+  },
   "ta-hien-street": {
     "id": "ChIJyZy_eL-rNTERMEXvsFkxHdc",
     "name": "Phố Tạ Hiện"
@@ -1490,6 +1710,10 @@
   "ta-van-village": {
     "id": "ChIJqytaOQBHzTYRPTrqoNo8kgU",
     "name": "TT bản Tả Van, Sapa, Lào Cai"
+  },
+  "taebaeksan-snow": {
+    "id": "ChIJvfv6GzJsYTURHRcD0nWtERk",
+    "name": "태백산국립공원"
   },
   "taehwagang-bamboo": {
     "id": "ChIJA_3Wm5kyZjURCWh4YMsrlyg",
@@ -1523,6 +1747,10 @@
     "id": "ChIJsXOVajkvdTERcBdP0Xow8j4",
     "name": "Công viên Tao Đàn"
   },
+  "tay-yen-tu": {
+    "id": "ChIJv6dRcyqQSjERxWFpY7Da2Jg",
+    "name": "Tây Yên Tử"
+  },
   "tb-chua-keo": {
     "id": "ChIJP96qEVXiNTERG5jKzCrGvcg",
     "name": "Chùa Keo Thái Bình"
@@ -1530,6 +1758,10 @@
   "temple-of-literature": {
     "id": "ChIJZ73nJpmrNTERHt_VdIgHDlg",
     "name": "Văn Miếu – Quốc Tử Giám"
+  },
+  "thac-ba-lake": {
+    "id": "ChIJhbUG0ARYMzERTkwVO5QAryo",
+    "name": "Hồ Thác Bà"
   },
   "thac-giang-dien": {
     "id": "ChIJp0N7H2zhdDER1dHFGyVzRpo",
@@ -1559,6 +1791,10 @@
     "id": "ChIJ0wVgLJemQTERunn1THqLJvc",
     "name": "Chùa Thiên Mụ"
   },
+  "thuan-an-beach": {
+    "id": "ChIJ62_qZNAKQTER1Dn1sFbpwAU",
+    "name": "Bãi biển Thuận An"
+  },
   "thung-nham-bird-park": {
     "id": "ChIJ42ykFAB7NjERezm3HBWSVbU",
     "name": "Thung Nham Flower Paradise"
@@ -1566,6 +1802,10 @@
   "thuy-xuan-incense-village": {
     "id": "ChIJK6BBaUalQTERfrbkt7r-ERw",
     "name": "Làng hương Thủy Xuân - Cô Hoa"
+  },
+  "tien-giang-cho-noi-cai-be": {
+    "id": "ChIJrf99g7mbCjERS9JQbHEwGYs",
+    "name": "Chợ nổi Cái Bè"
   },
   "tien-giang-cu-lao-thoi-son": {
     "id": "ChIJF-i2aXalCjERI2uZb6b-8kQ",
@@ -1578,6 +1818,14 @@
   "tong-duy-tan-food-street": {
     "id": "ChIJc5RPs5erNTEREHv0YUObuKA",
     "name": "Phố Tống Duy Tân"
+  },
+  "tongyeong-dongpirang": {
+    "id": "ChIJqdlILhXHbjURNX9wrCyu260",
+    "name": "동피랑 벽화마을"
+  },
+  "tra-que-vegetable-village": {
+    "id": "ChIJBY6C7uMNQjERgLXKnT-mO3Q",
+    "name": "Tra Que Culinary Village"
   },
   "tra-su-forest": {
     "id": "ChIJuUO8wswfCjERYKkHyOivPfA",
@@ -1655,6 +1903,14 @@
     "id": "ChIJtVLBAm7-nzERSFtx0CRAjDY",
     "name": "Nông trại Hải Vân - Sân Chim Vàm Hồ"
   },
+  "van-don-island": {
+    "id": "ChIJ03eIVGsJSzER9P_21Y1MdXI",
+    "name": "Vân Đồn"
+  },
+  "van-long-lagoon": {
+    "id": "ChIJlw1rMATWNTERuya5CFiiugQ",
+    "name": "Khu Bảo tồn Thiên nhiên Vân Long"
+  },
   "van-thanh-mieu-vinh-long": {
     "id": "ChIJncjWqTmdCjERp6sDbZb2EpA",
     "name": "Văn Thánh Miếu vĩnh long"
@@ -1679,6 +1935,14 @@
     "id": "ChIJM-x9ZnHoNDERaIW5jIl5TzM",
     "name": "Thiền viện Trúc lâm Tây Thiên"
   },
+  "vung-chua-dao-yen": {
+    "id": "ChIJJWjA69CCODERTHkrZ-T8NVY",
+    "name": "Vũng Chùa - Đảo Yến"
+  },
+  "vuon-quoc-gia-pu-mat": {
+    "id": "ChIJvTd1CkYIOjERQBxE5-YBgkA",
+    "name": "Vườn Quốc gia Pù Mát"
+  },
   "wando-cheongsando": {
     "id": "ChIJlbHwITnqcjURKB88ITkxNhw",
     "name": "청산도"
@@ -1698,6 +1962,10 @@
   "xuan-huong-lake": {
     "id": "ChIJF_bAdQAXcTERhaBkJz1aIkY",
     "name": "Hồ Xuân Hương"
+  },
+  "xuan-son-national-park": {
+    "id": "ChIJ32fddruBMzERe7EqSZ9HO6w",
+    "name": "Vườn Quốc gia Xuân Sơn"
   },
   "y-ty-village": {
     "id": "ChIJrRenK_h8zTYRhwe2eajKxTc",
@@ -1726,5 +1994,9 @@
   "yongdusan-busan-tower": {
     "id": "ChIJq0OD23TpaDURTv9SBp0VWtI",
     "name": "부산타워"
+  },
+  "yongmunsa": {
+    "id": "ChIJzS3X26E_YzURwQLmAEEkR5M",
+    "name": "대한불교조계종 용문사(양평)"
   }
 }
