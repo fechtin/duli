@@ -13,7 +13,7 @@
 // unpaced run once got this machine 429'd on every Wikimedia endpoint for hours.
 //
 // Source order per destination, first hit wins:
-//   exact Wikipedia title (EN then local) → Wikipedia search → Commons category
+//   exact Wikipedia title (EN then local) → Wikipedia search → Wikidata P18 → Commons category
 //   → Commons geosearch (name-validated) → Commons full-text → Openverse
 //
 // Writes src/data/generated/image-manifest.json: { src, credit, license, sourceTitle, sourceUrl,
@@ -35,7 +35,7 @@ import sharp from "sharp";
 import { destinations } from "../src/data/destinations.ts";
 import { destinationsKr } from "../src/data/kr/index.ts";
 import {
-  wikiTitle, wikiLead, commonsCategory, commonsGeo, commonsSearch, openverse,
+  wikiTitle, wikiLead, wikidataImage, commonsCategory, commonsGeo, commonsSearch, openverse,
   commonsAttribution, downloadWebp, sleep, tokens,
 } from "./lib/image-sources.mjs";
 
@@ -44,9 +44,11 @@ const root = resolve(__dirname, "..");
 const r = (p) => resolve(root, p);
 
 const cc = (process.argv[2] ?? process.env.COUNTRY ?? "vn").toLowerCase();
+// `qid` is the Wikidata country entity, used by wikidataImage to reject a same-named place
+// abroad on a FACT about the subject rather than on how its title reads.
 const ATLASES = {
-  vn: { destinations, countryEn: "Vietnam", wikiLangs: ["en", "vi"] },
-  kr: { destinations: destinationsKr, countryEn: "South Korea", wikiLangs: ["en", "ko"] },
+  vn: { destinations, countryEn: "Vietnam", wikiLangs: ["en", "vi"], qid: "Q881" },
+  kr: { destinations: destinationsKr, countryEn: "South Korea", wikiLangs: ["en", "ko"], qid: "Q884" },
 };
 const atlas = ATLASES[cc];
 if (!atlas) {
@@ -129,6 +131,8 @@ function stepsFor(d) {
   for (const lang of atlas.wikiLangs) steps.push(() => wikiTitle(lang, d.nameEn, opts));
   steps.push(() => wikiTitle(atlas.wikiLangs[1], d.name, opts));
   for (const lang of atlas.wikiLangs) steps.push(() => wikiLead(lang, `${d.nameEn} ${prov}`, opts));
+  // Curated pick, and the only step that validates on a fact (P17) rather than on the title.
+  steps.push(() => wikidataImage(d.nameEn, { ...opts, country: atlas.qid, langs: atlas.wikiLangs }));
   steps.push(() => commonsCategory(d.nameEn, free));
   steps.push(() => commonsGeo(d.lat, d.lng, d.nameEn, free));
   steps.push(() => commonsSearch(`${d.nameEn} ${prov}`, free));

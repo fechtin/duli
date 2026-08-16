@@ -292,6 +292,56 @@ export async function wikiLead(lang, term, opts = {}) {
   return null;
 }
 
+/**
+ * Wikidata P18 — the image an editor chose to represent the entity.
+ *
+ * Worth its own step for two reasons. It is *curated*: someone picked one photo as the
+ * representative one, which is exactly the judgement a search cannot make. And the entity carries
+ * **P17 (country)**, which is a far stronger validator than counting name tokens — it is a fact
+ * about the subject rather than a guess about its title. That is the same guard that settled the
+ * province-name work: resolve by entity with P17, never by article title, because several
+ * Vietnamese place names are also Chinese ones. A Welsh farmhouse cannot pass P17 = Vietnam
+ * however well its name happens to overlap.
+ *
+ * `opts.country` is a Wikidata QID (Vietnam Q881, South Korea Q884). Omit it to skip the check.
+ */
+export async function wikidataImage(term, opts = {}) {
+  for (const lang of opts.langs ?? ["en"]) {
+    const s = await getJson(
+      `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(term)}` +
+        `&language=${lang}&uselang=${lang}&format=json&limit=5&origin=*`,
+    );
+    for (const hit of s?.search ?? []) {
+      if (!titleMatches(term, hit.label ?? "", opts.ratio, opts)) continue;
+      const claims = await getJson(
+        `https://www.wikidata.org/w/api.php?action=wbgetclaims&entity=${hit.id}&property=P18%7CP17&format=json&origin=*`,
+      );
+      if (opts.country) {
+        const country = claims?.claims?.P17?.[0]?.mainsnak?.datavalue?.value?.id;
+        if (country !== opts.country) continue; // right name, wrong country — the whole point
+      }
+      const fileName = claims?.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+      if (!fileName) continue;
+      const file = `File:${fileName}`;
+      const info = await getJson(
+        `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(file)}` +
+          `&prop=imageinfo&iiprop=url%7Csize%7Cmime&iiurlwidth=1280&format=json&origin=*`,
+      );
+      const page = Object.values(info?.query?.pages ?? {})[0];
+      const ii = page?.imageinfo?.[0];
+      if (!ii || !usableImage(ii) || JUNK.test(file)) continue;
+      return {
+        url: ii.thumburl ?? ii.url,
+        file,
+        sourceTitle: file,
+        sourceUrl: ii.descriptionurl ?? `https://www.wikidata.org/wiki/${hit.id}`,
+        via: "wikidata-p18",
+      };
+    }
+  }
+  return null;
+}
+
 /** Commons category for the subject, then the first usable file inside it. */
 export async function commonsCategory(term, opts = {}) {
   const s = await getJson(
