@@ -10,8 +10,8 @@ export const mekongDestinations: Destination[] = [
     name: "Làng nổi Tân Lập",
     nameEn: "Tan Lap Floating Village",
     type: "park",
-    lng: 105.8214,
-    lat: 10.7689,
+    lng: 105.98721,
+    lat: 10.71484,
     summary:
       "Rừng tràm xanh ngút ngàn của Đồng Tháp Mười, với con đường xuyên rừng và tháp ngắm cảnh trên vùng đất ngập nước.",
     story:
@@ -88,8 +88,8 @@ export const mekongDestinations: Destination[] = [
     name: "Cù lao Thới Sơn",
     nameEn: "Thoi Son Islet",
     type: "village",
-    lng: 106.3636,
-    lat: 10.3389,
+    lng: 106.32578,
+    lat: 10.33348,
     summary:
       "Cù lao xanh mát giữa sông Tiền nổi tiếng với vườn cây trái, mật ong và những điệu đờn ca tài tử ngọt ngào.",
     story:

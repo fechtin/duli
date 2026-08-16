@@ -49,8 +49,8 @@ export const haLongDestinations: Destination[] = [
     name: "Động Thiên Cung",
     nameEn: "Thien Cung Cave",
     type: "cave",
-    lng: 107.075,
-    lat: 20.8733,
+    lng: 107.01721,
+    lat: 20.91264,
     summary: "Hang thạch nhũ trên đảo Đầu Gỗ, được chiếu sáng màu và gắn với truyền thuyết Rồng.",
     story:
       "Thiên Cung nằm trên đảo Đầu Gỗ, gần bờ hơn hang Sửng Sốt nên thường là điểm dừng đầu tiên của các tuyến tàu ngắn. Tên nghĩa là cung điện trên trời, và truyền thuyết địa phương gắn hang với đám cưới của Rồng Con và nàng Mây — người ta chỉ vào các khối thạch nhũ và kể đâu là đoàn rước, đâu là mâm cỗ. Hang không lớn bằng Sửng Sốt nhưng dày đặc thạch nhũ và măng đá hơn, và toàn bộ được chiếu đèn màu — điều khiến ảnh chụp trông rực rỡ nhưng cũng làm mất đi màu thật của đá. Đường tham quan là một vòng khép kín, đi hết chừng bốn mươi lăm phút.",

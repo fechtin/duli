@@ -199,6 +199,10 @@
     "id": "ChIJbYPzIEBPZjUREyf38EHaabI",
     "name": "분황사 모전석탑"
   },
+  "buon-don": {
+    "id": "ChIJMffeW1f1bTERjod0Tp-4KOE",
+    "name": "Buôn Đôn"
+  },
   "busan-cinema-center": {
     "id": "ChIJD2H59MOSaDURcTxRbHWyNqI",
     "name": "영화의전당"
@@ -363,6 +367,10 @@
     "id": "ChIJydkqNdOFcDURK08TyJMwC4Q",
     "name": "대천해수욕장"
   },
+  "daegu-arboretum": {
+    "id": "ChIJw-7xJfn6ZTURIaOZE5QTTVU",
+    "name": "대구수목원"
+  },
   "daegu-modern-alley": {
     "id": "ChIJfePxcsHjZTURkQpKFDbY9lU",
     "name": "대구근대골목단팥빵 본점"
@@ -470,6 +478,10 @@
   "dragon-bridge": {
     "id": "ChIJL1GKWJYZQjERLrEGqlK2kwQ",
     "name": "Cầu Rồng"
+  },
+  "dray-nur-waterfall": {
+    "id": "ChIJbetVDAAjcjER0qCO1Os86Bo",
+    "name": "Thác Dray Nur"
   },
   "dumulmeori": {
     "id": "ChIJezgmtqJMYzURG1ztREssVwI",
@@ -703,6 +715,10 @@
     "id": "ChIJcTadCoqLfDURjHexFkzDstI",
     "name": "헤이리 예술마을"
   },
+  "hn-tam-chuc": {
+    "id": "ChIJdf0WSWnNNTERD6ZMVeIaTc8",
+    "name": "Tam Chúc"
+  },
   "ho-chi-minh-mausoleum": {
     "id": "ChIJF13BXqGrNTERTE3hz8KFDmI",
     "name": "Lăng Chủ tịch Hồ Chí Minh"
@@ -767,6 +783,10 @@
     "id": "ChIJNechUZSYfDUR97VH08fNqms",
     "name": "보승회관 홍대직영점"
   },
+  "hp-do-son-beach": {
+    "id": "ChIJveqPi2BsSjERwnl2fvLL8Fs",
+    "name": "Bãi biển Đồ Sơn"
+  },
   "hu-tieu-hong-phat": {
     "id": "ChIJa84CUSIvdTERyXeHC2uw9K4",
     "name": "Hủ Tiếu Hồng Phát (Hồng Phát D3 - Bàn Cờ)"
@@ -790,6 +810,10 @@
   "hy-chua-chuong": {
     "id": "ChIJz3QRV9rGNTERf5eewhmgbrI",
     "name": "Chùa Chuông"
+  },
+  "hy-pho-hien": {
+    "id": "ChIJ7Tlyk9XANTER6fEHPbHtyUc",
+    "name": "Phố Hiến"
   },
   "hyangiram": {
     "id": "ChIJwYgJdlTFbTURq0HUWrYtfXM",
@@ -979,6 +1003,10 @@
     "id": "ChIJ24TIxRsTcTERG9_-OgIyiSA",
     "name": "Chùa Linh Phước"
   },
+  "long-an-lang-noi-tan-lap": {
+    "id": "ChIJeZhDhXDvCjERdRhxFm8mjds",
+    "name": "Làng Nổi Tân Lập"
+  },
   "long-an-lang-sen": {
     "id": "ChIJx3zgOgBXCjERiGOyRZEm5UA",
     "name": "KHU BẢO TỒN ĐẤT NGẬP NƯỚC LÁNG SEN"
@@ -1111,6 +1139,14 @@
     "id": "ChIJ21i9FWXnNTERbC1IAZFpaBg",
     "name": "Đền Trần"
   },
+  "nd-nha-tho-do": {
+    "id": "ChIJRftCGnYPNjERaOwL4jW1cEs",
+    "name": "Nhà thờ đổ Hải Lý"
+  },
+  "nga-ba-dong-loc": {
+    "id": "ChIJydqKFguzOTER_yLAK5VkSr0",
+    "name": "ngã ba Đồng Lộc"
+  },
   "ngoc-son-temple": {
     "id": "ChIJp56AAMCrNTERHTeCAuwWJ7s",
     "name": "Đền Ngọc Sơn"
@@ -1174,6 +1210,10 @@
   "nui-cam": {
     "id": "ChIJh9SeIE72CTER5vbp_hCc-64",
     "name": "Núi Cấm"
+  },
+  "nui-coc-lake": {
+    "id": "ChIJqQQyhajeNDERwac9EUyaRCM",
+    "name": "Hồ Núi Cốc"
   },
   "o-quy-ho-pass": {
     "id": "ChIJ4RJpKeNCzTYRWuDh2lH1uaI",
@@ -1463,6 +1503,10 @@
     "id": "ChIJP96qEVXiNTERG5jKzCrGvcg",
     "name": "Chùa Keo Thái Bình"
   },
+  "thac-giang-dien": {
+    "id": "ChIJp0N7H2zhdDER1dHFGyVzRpo",
+    "name": "Thác Giang Điền"
+  },
   "thanh-co-quang-tri": {
     "id": "ChIJTQP2Ua_kQDERne_pdHCAI_c",
     "name": "Thành Cổ Quảng Trị"
@@ -1479,6 +1523,14 @@
     "id": "ChIJl7OUwr-rNTERr7RCHxAFMNU",
     "name": "The Note Coffee"
   },
+  "thien-cung-cave": {
+    "id": "ChIJs-SKikhZSjERrzPuPVz9F24",
+    "name": "Động Thiên Cung"
+  },
+  "thien-mu-pagoda": {
+    "id": "ChIJ0wVgLJemQTERunn1THqLJvc",
+    "name": "Chùa Thiên Mụ"
+  },
   "thung-nham-bird-park": {
     "id": "ChIJ42ykFAB7NjERezm3HBWSVbU",
     "name": "Thung Nham Flower Paradise"
@@ -1486,6 +1538,10 @@
   "thuy-xuan-incense-village": {
     "id": "ChIJK6BBaUalQTERfrbkt7r-ERw",
     "name": "Làng hương Thủy Xuân - Cô Hoa"
+  },
+  "tien-giang-cu-lao-thoi-son": {
+    "id": "ChIJF-i2aXalCjERI2uZb6b-8kQ",
+    "name": "Cù lao Thới Sơn"
   },
   "toa-thanh-cao-dai-tay-ninh": {
     "id": "ChIJt8T6KPVqCzEReUxL0rwQCac",
@@ -1582,6 +1638,10 @@
   "vp-tam-dao": {
     "id": "ChIJg5UqmAfnNDER_lIy07JdqYw",
     "name": "Tam Đảo"
+  },
+  "vp-tay-thien": {
+    "id": "ChIJM-x9ZnHoNDERaIW5jIl5TzM",
+    "name": "Thiền viện Trúc lâm Tây Thiên"
   },
   "wando-cheongsando": {
     "id": "ChIJlbHwITnqcjURKB88ITkxNhw",

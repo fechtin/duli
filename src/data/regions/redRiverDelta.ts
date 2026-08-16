@@ -49,8 +49,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     name: "Bãi biển Đồ Sơn",
     nameEn: "Do Son Beach",
     type: "beach",
-    lng: 106.7872,
-    lat: 20.7142,
+    lng: 106.79548,
+    lat: 20.68728,
     summary:
       "Bãi biển truyền thống của miền Bắc với hàng phi lao rì rào, sóng êm và lễ hội chọi trâu nức tiếng.",
     story:
@@ -237,8 +237,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     name: "Phố Hiến",
     nameEn: "Pho Hien",
     type: "city",
-    lng: 106.0511,
-    lat: 20.6394,
+    lng: 106.0699,
+    lat: 20.66806,
     summary:
       "Thương cảng sầm uất một thời với câu Thứ nhất Kinh Kỳ, thứ nhì Phố Hiến, nay là quần thể di tích cổ kính.",
     story:
@@ -312,8 +312,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     name: "Chùa Tam Chúc",
     nameEn: "Tam Chuc Pagoda",
     type: "temple",
-    lng: 105.8847,
-    lat: 20.4642,
+    lng: 105.81068,
+    lat: 20.56434,
     summary:
       "Ngôi chùa lớn bậc nhất thế giới, tọa lạc giữa hồ nước mênh mông và núi đá vôi trùng điệp ở Hà Nam.",
     story:
@@ -386,8 +386,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     name: "Nhà thờ đổ Hải Lý",
     nameEn: "Hai Ly Ruined Church",
     type: "city",
-    lng: 106.2783,
-    lat: 19.9744,
+    lng: 106.31425,
+    lat: 20.12983,
     summary:
       "Tàn tích nhà thờ ven biển bị sóng biển bào mòn, mang vẻ đẹp hoang hoải đầy mê hoặc với giới nhiếp ảnh.",
     story:
@@ -536,8 +536,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     name: "Thiền viện Trúc Lâm Tây Thiên",
     nameEn: "Truc Lam Tay Thien Zen Monastery",
     type: "temple",
-    lng: 105.5961,
-    lat: 21.4392,
+    lng: 105.58586,
+    lat: 21.46701,
     summary:
       "Thiền viện lớn dưới chân Tam Đảo, chốn tu hành thanh tịnh gắn với khu danh thắng Tây Thiên linh thiêng.",
     story:

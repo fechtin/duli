@@ -278,8 +278,8 @@ export const northMountainsDestinations: Destination[] = [
     name: "Hồ Núi Cốc",
     nameEn: "Nui Coc Lake",
     type: "lake",
-    lng: 105.7236,
-    lat: 21.5439,
+    lng: 105.69698,
+    lat: 21.58158,
     summary:
       "Hồ nước thơ mộng với hàng chục hòn đảo nhỏ, gắn liền huyền thoại nàng Công - chàng Cốc và những đồi chè bát ngát.",
     story:

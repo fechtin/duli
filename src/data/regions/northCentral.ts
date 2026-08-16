@@ -306,8 +306,8 @@ export const northCentralDestinations: Destination[] = [
     name: "Ngã ba Đồng Lộc",
     nameEn: "Dong Loc Junction",
     type: "museum",
-    lng: 105.6042,
-    lat: 18.4878,
+    lng: 105.73878,
+    lat: 18.39956,
     summary:
       "Tọa độ lửa thời chống Mỹ, nơi mười nữ thanh niên xung phong anh dũng hy sinh, trở thành biểu tượng bất tử.",
     story:

@@ -48,8 +48,8 @@ export const northCentralCoastDepthDestinations: Destination[] = [
     name: "Chùa Thiên Mụ",
     nameEn: "Thien Mu Pagoda",
     type: "temple",
-    lng: 107.58,
-    lat: 16.453,
+    lng: 107.54483,
+    lat: 16.45318,
     summary:
       "Ngôi chùa biểu tượng của Huế trên đồi Hà Khê, với tháp Phước Duyên bảy tầng soi bóng sông Hương.",
     story:

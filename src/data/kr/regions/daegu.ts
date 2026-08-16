@@ -284,8 +284,8 @@ export const daeguDestinations: Destination[] = [
     name: "Vườn thực vật Daegu",
     nameEn: "Daegu Arboretum",
     type: "park",
-    lng: 128.556,
-    lat: 35.802,
+    lng: 128.52163,
+    lat: 35.79956,
     summary: "Bãi rác của cả thành phố suốt bảy năm, nay là vườn thực vật với hơn một nghìn tám trăm loài cây.",
     story:
       "Từ 1986 đến 1990, khu đất này là nơi Daegu đổ rác — hơn bốn trăm nghìn tấn. Khi bãi rác đóng, thành phố phủ lên một lớp đất dày rồi bắt đầu trồng cây, và đến năm 2002 mở cửa thành vườn thực vật. Giờ trên nền rác cũ có hơn một nghìn tám trăm loài thực vật, vườn xương rồng trong nhà kính, vườn thảo dược, và một khu hoa cúc mùa thu mà cả thành phố kéo tới xem. Vào cửa miễn phí. Người Daegu kể chuyện này với vẻ khá tự hào, và có lý do — rất ít thành phố biến được bãi rác của mình thành thứ mà dân đi dạo mỗi cuối tuần.",

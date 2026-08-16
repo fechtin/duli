@@ -830,8 +830,8 @@ export const destinations: Destination[] = [
     name: "Buôn Đôn",
     nameEn: "Buon Don",
     type: "village",
-    lng: 107.7833,
-    lat: 12.9000,
+    lng: 107.71625,
+    lat: 12.87916,
     summary: "Quê hương của nghề săn và thuần dưỡng voi, đậm đà bản sắc văn hóa Tây Nguyên.",
     story:
       "Buôn Đôn là vùng đất huyền thoại bên dòng Sêrêpốk cuộn chảy, nơi gắn liền với nghề săn bắt và thuần dưỡng voi rừng lâu đời. Những cây cầu treo bằng tre nứa đung đưa nối các cồn đảo giữa sông, nhà sàn dài của người Ê Đê, M'Nông ẩn dưới tán cây cổ thụ. Bên ánh lửa bập bùng, tiếng cồng chiêng vang vọng, chén rượu cần truyền tay nhau, người Tây Nguyên kể cho bạn nghe những câu chuyện về rừng, về voi và về một nền văn hóa hào sảng giữa đại ngàn.",
@@ -864,8 +864,8 @@ export const destinations: Destination[] = [
     name: "Thác Dray Nur",
     nameEn: "Dray Nur Waterfall",
     type: "waterfall",
-    lng: 107.9847,
-    lat: 12.5375,
+    lng: 107.89052,
+    lat: 12.54081,
     summary: "Thác nước hùng vĩ rộng nhất Tây Nguyên, tung bọt trắng xóa giữa đại ngàn xanh.",
     story:
       "Thác Dray Nur đổ xuống như một bức tường nước khổng lồ, tiếng gầm vang dội cả một vùng. Dòng Sêrêpốk hung dữ lao mình qua vách đá, tung bọt trắng xóa, hơi nước mát lạnh phủ kín không gian. Phía sau màn nước là một hang động bí ẩn gắn với truyền thuyết tình yêu của người Ê Đê. Bao quanh thác là rừng cây xanh mướt, dây leo chằng chịt. Đứng trước Dray Nur, bạn cảm nhận trọn vẹn sức mạnh hoang dã và vẻ đẹp dữ dội của thiên nhiên Tây Nguyên.",

@@ -126,8 +126,8 @@ export const southeastDestinations: Destination[] = [
     name: "Thác Giang Điền",
     nameEn: "Giang Dien Waterfall",
     type: "waterfall",
-    lng: 107.0167,
-    lat: 10.9333,
+    lng: 106.98923,
+    lat: 10.91852,
     summary:
       "Khu du lịch sinh thái với thác nước trải rộng, vườn hoa và không gian xanh mát gần Biên Hòa.",
     story:

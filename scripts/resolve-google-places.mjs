@@ -3,6 +3,7 @@
 //   npm run maps:google          — reads GOOGLE_MAPS_API_KEY from .env (gitignored)
 //     --limit=5        smoke test
 //     --missing        ask only for entries the manifest lacks
+//     --only=a,b       ask for these entries only (after correcting their coordinates)
 //     --country=vn     sweep one atlas
 //     --max-calls=500  lower the billing guard (default 1000)
 //
@@ -63,6 +64,9 @@ const LIMIT = limitArg ? Number(limitArg.split("=")[1]) : Infinity;
 const MISSING_ONLY = process.argv.includes("--missing");
 const countryArg = process.argv.find((a) => a.startsWith("--country="));
 const ONLY_COUNTRY = countryArg ? countryArg.split("=")[1] : null;
+/** Re-ask named entries and nothing else — what a corrected coordinate needs, at one call each. */
+const onlyArg = process.argv.find((a) => a.startsWith("--only="));
+const ONLY_IDS = onlyArg ? new Set(onlyArg.split("=")[1].split(",").map((s) => s.trim())) : null;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -139,7 +143,13 @@ const ATLASES = [
 // `--limit=5` smoke test cannot silently throw the rest of the manifest away.
 const known = JSON.parse(readFileSync(OUT, "utf8"));
 const corpus = ATLASES.flatMap((atlas) => atlas.entries.map((entry) => ({ entry, atlas })));
-const todo = (MISSING_ONLY ? corpus.filter(({ entry }) => !known[entry.id]) : corpus).slice(0, LIMIT);
+const todo = (
+  ONLY_IDS
+    ? corpus.filter(({ entry }) => ONLY_IDS.has(entry.id))
+    : MISSING_ONLY
+      ? corpus.filter(({ entry }) => !known[entry.id])
+      : corpus
+).slice(0, LIMIT);
 
 const resolved = { ...known };
 const unresolved = [];
