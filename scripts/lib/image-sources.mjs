@@ -553,6 +553,15 @@ export const stockAvailable = () => Boolean(process.env.PEXELS_API_KEY || proces
 export const forbidsDerivatives = (license) => /(^|[\s-])nd([\s-]|$)|noderiv/i.test(license ?? "");
 
 /**
+ * GFDL without a Creative Commons alternative. The licence was written for documentation and
+ * demands that a full copy of its text travel with every distributed copy — a photo caption
+ * cannot carry that, which is why Commons stopped accepting GFDL-only uploads for media. A file
+ * dual-licensed GFDL + CC is fine: we use the CC terms, and the string names them.
+ */
+export const gfdlOnly = (license) =>
+  /gfdl|free documentation/i.test(license ?? "") && !/\bcc\b|creative commons|public domain|cc0/i.test(license ?? "");
+
+/**
  * Walk a list of `() => Promise<pick|null>` thunks and return the first hit, tagging it with
  * Commons attribution when the source did not carry its own.
  */
@@ -570,6 +579,10 @@ export async function firstHit(steps) {
     // funnel every pick passes through refuses ND rather than trusting the query string.
     if (forbidsDerivatives(pick.license)) {
       console.warn(`  ✗ bỏ qua ${pick.sourceTitle || pick.url} — giấy phép ${pick.license} cấm phái sinh`);
+      continue;
+    }
+    if (gfdlOnly(pick.license)) {
+      console.warn(`  ✗ bỏ qua ${pick.sourceTitle || pick.url} — ${pick.license} đòi đính kèm toàn văn giấy phép`);
       continue;
     }
     return pick;
