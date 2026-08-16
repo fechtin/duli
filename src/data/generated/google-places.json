@@ -95,6 +95,10 @@
     "id": "ChIJgzlWiFsTcTER_QOgSR5Bh5I",
     "name": "Bánh căn Lệ"
   },
+  "banh-mi-phuong": {
+    "id": "ChIJdbnbh9UNQjER12kILnndFNI",
+    "name": "Bánh Mì Phượng"
+  },
   "banh-xeo-46a": {
     "id": "ChIJOwpR9U0vdTER7VWboFERAEk",
     "name": "Bánh Xèo 46A"
@@ -1151,6 +1155,14 @@
     "id": "ChIJp56AAMCrNTERHTeCAuwWJ7s",
     "name": "Đền Ngọc Sơn"
   },
+  "nguom-ngao-cave": {
+    "id": "ChIJx9_J0S2NtTYRTqsI2aap13Y",
+    "name": "Động Ngườm Ngao"
+  },
+  "nguyen-hue-walking-street": {
+    "id": "ChIJnRF9v0YvdTERcuW8mp0X9us",
+    "name": "Nguyễn Huệ"
+  },
   "nguyen-van-binh-book-street": {
     "id": "ChIJs_4gUQAvdTERNCOaRFKjVMU",
     "name": "Đường sách Nguyễn Văn Bình"
@@ -1263,6 +1275,10 @@
     "id": "ChIJPfhSqqyxdzERw14Vg7bzLGw",
     "name": "Phú Quý"
   },
+  "phu-tay-ho": {
+    "id": "ChIJuerTwf2qNTERnvjmhZRDyik",
+    "name": "Phủ Tây Hồ"
+  },
   "phuong-hoang-cave": {
     "id": "ChIJRZF_vQQ1NTERLxIXIga1rXs",
     "name": "Hang Phượng Hoàng"
@@ -1298,6 +1314,10 @@
   "quan-hanh-nem-lui": {
     "id": "ChIJU9pqrT2hQTERVjWXDOOcO8w",
     "name": "Quán Hạnh"
+  },
+  "quan-thanh-temple": {
+    "id": "ChIJwyFZi6WrNTER76sqY7OcMjE",
+    "name": "Đền Quán Thánh"
   },
   "quang-ninh-museum": {
     "id": "ChIJmzLqOiFYSjERgtUoW-ny6_0",
@@ -1503,6 +1523,10 @@
     "id": "ChIJP96qEVXiNTERG5jKzCrGvcg",
     "name": "Chùa Keo Thái Bình"
   },
+  "temple-of-literature": {
+    "id": "ChIJZ73nJpmrNTERHt_VdIgHDlg",
+    "name": "Văn Miếu – Quốc Tử Giám"
+  },
   "thac-giang-dien": {
     "id": "ChIJp0N7H2zhdDER1dHFGyVzRpo",
     "name": "Thác Giang Điền"
@@ -1591,6 +1615,10 @@
     "id": "ChIJx9bGiwOkQTERDjpyrH8ydlk",
     "name": "Lăng Tự Đức"
   },
+  "tuan-chau-island": {
+    "id": "ChIJCbHyv8JeSjERMBYZK9vhElY",
+    "name": "Đảo Tuần Châu"
+  },
   "turtle-lake-hcm": {
     "id": "ChIJLZQ5kzYvdTERU-9wjUBhXC4",
     "name": "Hồ Con Rùa"
@@ -1622,6 +1650,10 @@
   "vam-ho-bird-sanctuary": {
     "id": "ChIJtVLBAm7-nzERSFtx0CRAjDY",
     "name": "Nông trại Hải Vân - Sân Chim Vàm Hồ"
+  },
+  "van-thanh-mieu-vinh-long": {
+    "id": "ChIJncjWqTmdCjERp6sDbZb2EpA",
+    "name": "Văn Thánh Miếu vĩnh long"
   },
   "vietnam-museum-ethnology": {
     "id": "ChIJIbhTQzmrNTERHBoID7tQyUc",
@@ -1666,6 +1698,10 @@
   "y-ty-village": {
     "id": "ChIJrRenK_h8zTYRhwe2eajKxTc",
     "name": "Y Tý"
+  },
+  "yang-bay-waterfall": {
+    "id": "ChIJXUs8mppWcDERTKeT8t0HbhM",
+    "name": "Thác Yang Bay"
   },
   "yangdong-folk-village": {
     "id": "ChIJu1Z9H1__ZjUR4vQnVFsD82k",

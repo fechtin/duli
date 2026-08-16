@@ -66,7 +66,8 @@ export default defineConfig({
   test: {
     environment: "node",
     globals: true,
-    include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    // scripts/ too: the build-time libraries there decide what lands in shipped data.
+    include: ["src/**/*.test.ts", "src/**/*.test.tsx", "scripts/**/*.test.mjs"],
   },
   build: {
     target: "es2022",

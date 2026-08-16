@@ -24,6 +24,8 @@ import { destinations } from "../src/data/destinations.ts";
 import { restaurants } from "../src/data/food/restaurants.ts";
 import { destinationsKr, restaurantsKr } from "../src/data/kr/index.ts";
 import { destinationI18nKr, restaurantI18nKr } from "../src/data/kr/i18n/index.ts";
+import { vi } from "../src/lib/i18n/locales/vi.ts";
+import { ko } from "../src/lib/i18n/locales/ko.ts";
 import { distanceKm, pickPlace, relates } from "./lib/place-match.mjs";
 
 const OUT = new URL("../src/data/generated/google-places.json", import.meta.url);
@@ -67,6 +69,8 @@ const ONLY_COUNTRY = countryArg ? countryArg.split("=")[1] : null;
 /** Re-ask named entries and nothing else — what a corrected coordinate needs, at one call each. */
 const onlyArg = process.argv.find((a) => a.startsWith("--only="));
 const ONLY_IDS = onlyArg ? new Set(onlyArg.split("=")[1].split(",").map((s) => s.trim())) : null;
+/** Ask again under a province-qualified name and the English one before giving up. */
+const VARIANTS = process.argv.includes("--variants");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -78,6 +82,21 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 function localName(entry, atlas) {
   if (atlas.cc === "kr") return atlas.overlaysFor(entry)[entry.id]?.ko?.name || entry.nameEn || entry.name;
   return entry.name || entry.nameEn;
+}
+
+/**
+ * What to ask, in order, stopping at the first accepted answer. The plain name is enough for most
+ * places; the rest are usually ambiguous nationally ("Chợ Trung tâm") or registered under their
+ * English name. The province comes from the UI dictionary — the one place province names live.
+ */
+function queryVariants(entry, atlas) {
+  const primary = localName(entry, atlas);
+  if (!VARIANTS) return [primary];
+  const province = (atlas.cc === "kr" ? ko : vi)[`province.${entry.provinceSlug}`];
+  const out = [primary];
+  if (province && !primary.includes(province)) out.push(`${primary}, ${province}`);
+  if (entry.nameEn && entry.nameEn !== primary) out.push(entry.nameEn);
+  return out;
 }
 
 async function candidates(query, entry, atlas) {
@@ -170,22 +189,32 @@ for (const { entry, atlas } of todo) {
     console.log(`\nStopped at the ${MAX_CALLS}-call budget. Re-run with --missing to continue.`);
     break;
   }
-  const query = localName(entry, atlas);
+  const asks = queryVariants(entry, atlas);
+  const ourNames = [localName(entry, atlas), entry.nameEn].filter(Boolean);
   try {
-    const found = pick(query, await candidates(query, entry, atlas));
-    const { how, miss, far } = found;
-    // Whatever was asked, the answer has to be the entry's own place.
-    const hit = found.hit && relates(query, found.hit.title) ? found.hit : null;
+    let found = null;
+    let asked = asks[0];
+    for (const q of asks) {
+      if (calls >= MAX_CALLS) break;
+      asked = q;
+      found = pick(q, await candidates(q, entry, atlas));
+      // Whatever was asked, the answer has to be one of the names WE gave this place.
+      if (found.hit && !ourNames.some((n) => relates(n, found.hit.title))) found = { hit: null };
+      if (found.hit || found.far) break;
+      if (asks.length > 1) await sleep(DELAY_MS);
+    }
+    const { hit, how, miss, far } = found ?? {};
     if (hit) {
       resolved[entry.id] = { id: hit.id, name: hit.title };
-      console.log(`  ✓ ${entry.id.padEnd(32)} ${hit.title} (${how}, ${hit.dist.toFixed(2)} km)`);
+      const via = asked === asks[0] ? "" : ` via "${asked}"`;
+      console.log(`  ✓ ${entry.id.padEnd(32)} ${hit.title} (${how}, ${hit.dist.toFixed(2)} km)${via}`);
     } else if (far) {
       suspect.push({ id: entry.id, google: miss });
       console.log(`  ! ${entry.id.padEnd(32)} "${miss.title}" is ${miss.dist.toFixed(1)} km away`);
     } else {
-      unresolved.push({ id: entry.id, query });
+      unresolved.push({ id: entry.id, asked });
       const why = miss ? `nearest "${miss.title}" ${miss.dist.toFixed(2)} km` : "no candidates";
-      console.log(`  · ${entry.id.padEnd(32)} unmatched — ${query} → ${why}`);
+      console.log(`  · ${entry.id.padEnd(32)} unmatched — ${asked} → ${why}`);
     }
     inARow = 0;
   } catch (err) {

@@ -16,8 +16,14 @@ export function distanceKm(a, b) {
   return 2 * R_KM * Math.asin(Math.sqrt(h));
 }
 
-/** Spacing and punctuation carry no meaning in either language's place names. */
-export const norm = (s) => s.replace(/[\s·・.,()（）'"’-]/g, "").toLowerCase();
+/**
+ * Spacing and punctuation carry no meaning in either language's place names.
+ *
+ * NFC first, and it is not decoration: Google answers in decomposed Vietnamese, so its
+ * "Động Ngườm Ngao" is 17 code points against our 15 for a string that renders identically.
+ * Without this the two never compare equal and a correct match is thrown away in silence.
+ */
+export const norm = (s) => s.normalize("NFC").replace(/[\s·・.,()（）'"’-]/g, "").toLowerCase();
 
 /** Same name, or one name inside the other — the only relations that count as "this is it". */
 export function relates(ours, theirs) {
