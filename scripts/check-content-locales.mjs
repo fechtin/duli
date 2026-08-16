@@ -7,8 +7,12 @@
 //
 // Whitelist real ones in ALLOWED below. Run: npm run check:content
 // Sibling of check-i18n.mjs, which covers UI-string parity instead.
+//
+// Also asserts marker-thumbnail parity — see the section at the bottom. It rides along here
+// because it is the same kind of defect: content that is present in the data but does not reach
+// the screen, invisible until someone looks at the right pixel.
 
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve, relative } from "node:path";
 
@@ -84,12 +88,60 @@ for (const file of filesToCheck(CYRILLIC_DIRS)) {
   });
 }
 
+let failed = false;
+
 if (problems.length) {
   console.error(
     "✗ Content translation issues (fix the text, or add the token to ALLOWED in this script):\n" +
       problems.join("\n"),
   );
   console.error(`\n${problems.length} issue(s) found.`);
-  process.exit(1);
+  failed = true;
+} else {
+  console.log("✓ content locales OK — no stray Cyrillic or untranslated Latin in ko/ja/zh copy.");
 }
-console.log("✓ content locales OK — no stray Cyrillic or untranslated Latin in ko/ja/zh copy.");
+
+// ── Marker thumbnails ───────────────────────────────────────────────────────────────────────
+// The map medallion derives its crop path by convention — `/img/thumb/<seed>.webp`, gated only
+// on the seed being in the image manifest (src/lib/media/thumbs.ts). It never checks the file is
+// there. So a photo batch landed without `npm run images:thumbs` gives every one of those markers
+// a 404, and each silently falls back to its type icon while the panel still shows the photo.
+//
+// build-thumbs.mjs does assert parity, but only while it is itself running — which is exactly the
+// run that did not happen. 383 photos drifted this way across batches 037 and 039 before anyone
+// noticed. Hence the same assertion from the outside, where forgetting is the failure being caught.
+const THUMB_DIR = "public/img/thumb";
+const manifestSeeds = Object.keys(
+  JSON.parse(readFileSync(resolve(ROOT, "src/data/generated/image-manifest.json"), "utf8")),
+);
+const missingThumbs = manifestSeeds.filter(
+  (seed) => !existsSync(resolve(ROOT, THUMB_DIR, `${seed}.webp`)),
+);
+
+if (missingThumbs.length) {
+  const shown = missingThumbs.slice(0, 10).map((s) => `  ${s}`).join("\n");
+  console.error(
+    `✗ ${missingThumbs.length} photo(s) have no marker thumbnail — those markers render as a ` +
+      `generic type icon on the map. Fix: npm run images:thumbs\n${shown}` +
+      (missingThumbs.length > 10 ? `\n  … and ${missingThumbs.length - 10} more` : ""),
+  );
+  failed = true;
+} else {
+  console.log(`✓ marker thumbnails OK — ${manifestSeeds.length} photos, ${manifestSeeds.length} thumbs.`);
+}
+
+// Orphans are the harmless direction: a crop whose photo left the manifest still costs ~2 KB in
+// the repo but nothing at runtime, so it warns rather than fails.
+const seedSet = new Set(manifestSeeds);
+const orphanThumbs = (readdirSync(resolve(ROOT, THUMB_DIR)) ?? [])
+  .filter((f) => f.endsWith(".webp"))
+  .map((f) => f.slice(0, -".webp".length))
+  .filter((seed) => !seedSet.has(seed));
+if (orphanThumbs.length) {
+  console.warn(
+    `! ${orphanThumbs.length} thumbnail(s) with no photo left in the manifest — dead weight, ` +
+      `safe to delete: ${orphanThumbs.join(", ")}`,
+  );
+}
+
+process.exit(failed ? 1 : 0);
