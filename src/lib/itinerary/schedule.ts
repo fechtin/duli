@@ -10,7 +10,8 @@
  *   - a place appears at most once in the whole trip;
  *   - a stop is never scheduled outside a *known* opening window — if it cannot fit, it is dropped;
  *   - nothing runs past the end of the day;
- *   - a full-day place does not share its day with unrelated stops.
+ *   - a full-day place does not share its day with unrelated stops;
+ *   - lunch costs an hour of the clock, so a day that eats has room for one less stop.
  *
  * Relative imports only (Worker bundle) — see `types.ts`.
  */
@@ -25,6 +26,9 @@ import {
   DAY_END_MIN,
   DAY_START_MIN,
   LATEST_HOME_MIN,
+  LUNCH_EARLIEST_MIN,
+  LUNCH_LATEST_MIN,
+  MEAL_DURATION_MIN,
   PACE,
   PATTERN_SEED_MIN_CONFIDENCE,
   SCORE,
@@ -265,8 +269,17 @@ export function layOutDay(
   provider: TravelTimeProvider,
   arriveAtMinutes: number,
   pace: PaceProfile = PACE.balanced,
-): { stops: TripStop[]; travelMinutes: number; visitMinutes: number; hoursUnknown: boolean } {
-  if (!chosen.length) return { stops: [], travelMinutes: 0, visitMinutes: 0, hoursUnknown: false };
+): {
+  stops: TripStop[];
+  travelMinutes: number;
+  visitMinutes: number;
+  hoursUnknown: boolean;
+  /** When the lunch hour was actually charged, or null if the day ate inside a long visit. */
+  lunchAtMinutes: number | null;
+} {
+  if (!chosen.length) {
+    return { stops: [], travelMinutes: 0, visitMinutes: 0, hoursUnknown: false, lunchAtMinutes: null };
+  }
 
   const ordered = sequence(
     chosen.map((c) => ({ lng: c.place.lng, lat: c.place.lat, id: c.place.id, candidate: c })),
@@ -282,9 +295,19 @@ export function layOutDay(
   let travelMinutes = 0;
   let visitMinutes = 0;
   let hoursUnknown = false;
+  let lunchAtMinutes: number | null = null;
 
   for (const node of ordered) {
     const c = node.candidate;
+    // Lunch is charged to the clock at the first gap inside the lunch window, and everything
+    // downstream is pushed by it — which is the entire point: an hour spent eating is an hour that
+    // is no longer available for a third stop, and the plan should say so rather than quietly
+    // assuming the traveller eats in zero time. `cursor` only ever advances on a *scheduled* stop,
+    // so this reads "the traveller is free at this moment".
+    if (lunchAtMinutes === null && cursor >= LUNCH_EARLIEST_MIN && cursor <= LUNCH_LATEST_MIN) {
+      lunchAtMinutes = cursor;
+      cursor += MEAL_DURATION_MIN;
+    }
     // Re-check reach against the ORDER THE DAY IS ACTUALLY DRIVEN, not the order it was picked in.
     if (legMinutes(previous, c.place) > legLimitFor({ visitMinutes: c.visit.minutes }, stops.length === 0, pace)) continue;
     const leg = provider.minutesBetween({ ...previous }, { lng: c.place.lng, lat: c.place.lat, type: c.place.type });
@@ -294,6 +317,15 @@ export function layOutDay(
     // unschedulable in every trip the atlas can generate.
     const fit = fitVisit(c.hours, arriveBy, c.visit.minutes);
     if (fit === null) continue; // too little of the window left to be worth the journey
+    // The rule is "don't drive longer than you'll STAY", so it must be measured against the visit
+    // actually scheduled rather than the one hoped for. `fitVisit` trims a stay against the closing
+    // time, and a leg justified by a nominal three hours is not justified by the eighty minutes
+    // left before the gate shuts. The pre-check above uses the nominal figure and so is only ever
+    // a cheap prune; this is where the promise is kept. Charging the lunch hour is what exposed the
+    // gap — arriving an hour later trims more visits — but the defect predates it.
+    if (stops.length > 0 && legMinutes(previous, c.place) > legLimitFor({ visitMinutes: fit.minutes }, false, pace)) {
+      continue;
+    }
     const start = fit.start;
     const end = start + fit.minutes;
     if (end > DAY_END_MIN) continue; // would run past the end of the day
@@ -328,7 +360,7 @@ export function layOutDay(
   // timeline draws it. Leaving it out is what makes a Huế day trip look like a three-hour outing.
   if (stops.length) travelMinutes += provider.minutesBetween(previous, { lng: base.lng, lat: base.lat });
 
-  return { stops, travelMinutes, visitMinutes, hoursUnknown };
+  return { stops, travelMinutes, visitMinutes, hoursUnknown, lunchAtMinutes };
 }
 
 /**

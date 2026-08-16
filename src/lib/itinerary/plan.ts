@@ -128,7 +128,7 @@ export function generateTrip(
         break;
       }
 
-      const meals = planMeals(laid.stops, base, data.meals, takenMeals);
+      const meals = planMeals(laid.stops, base, data.meals, takenMeals, laid.lunchAtMinutes);
       if (meals.some((m) => !m.restaurantId)) notices.add("mealsUnknown");
       if (laid.hoursUnknown) notices.add("hoursUnknown");
 

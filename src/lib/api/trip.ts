@@ -8,6 +8,7 @@
 
 import { activeCountry } from "@/lib/store/useCountryStore";
 import type { CountryCode } from "@/lib/types";
+import { ENGINE_VERSION } from "@/lib/itinerary/config";
 import type { TripPace, TripPlan, TripStyle } from "@/lib/itinerary/types";
 import { apiGet } from "./client";
 
@@ -53,6 +54,12 @@ function query(p: TripParams, cc: CountryCode): string {
   // Sorted so permutations share one cache entry, client-side and at the edge alike.
   if (p.pinned?.length) q.set("pinned", [...new Set(p.pinned)].sort().join(","));
   if (cc !== "vn") q.set("country", cc);
+  // The engine version is what makes a deploy visible: responses are cached at the edge for an
+  // hour, so without it a change to the planner keeps serving yesterday's schedule until the TTL
+  // expires. `ENGINE_VERSION` documented this and nothing implemented it — the Worker reads only
+  // the params it knows and Cloudflare keys on the whole query string, so carrying it here is all
+  // it ever needed.
+  q.set("v", ENGINE_VERSION);
   return `?${q.toString()}`;
 }
 

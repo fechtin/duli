@@ -118,7 +118,9 @@ export function DayTimeline({ day, dark }: { day: TripDay; dark: boolean }) {
         );
       })}
 
-      {/* Meals sit outside the rail: they are time, not places. */}
+      {/* Meals sit outside the rail: they are time, not places. The lunch hour is nonetheless real
+          time the engine has already spent — the stop after it starts an hour later — so the chip
+          carries its clock, otherwise the rail looks like it lost an hour to nothing. */}
       {day.meals.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5 pl-10">
           {day.meals.map((meal) => (
@@ -127,6 +129,7 @@ export function DayTimeline({ day, dark }: { day: TripDay; dark: boolean }) {
               className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-[11px] text-muted"
             >
               <UtensilsCrossed size={11} />
+              <span className="tabular-nums text-faint">{clock(meal.atMinutes)}</span>
               {t(`trip.meal.${meal.slot}`)} · {meal.restaurantName ?? t("trip.meal.free")}
             </span>
           ))}

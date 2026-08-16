@@ -2,7 +2,14 @@ import { describe, expect, it } from "vitest";
 import { destinations } from "@/data/destinations";
 import { restaurants } from "@/data/food/restaurants";
 import geoVn from "@/data/generated/geo-meta.vn.json";
-import { DAY_END_MIN, DAY_START_MIN, MAX_TRAVEL_TO_VISIT_RATIO } from "./config.ts";
+import {
+  DAY_END_MIN,
+  DAY_START_MIN,
+  LUNCH_EARLIEST_MIN,
+  LUNCH_LATEST_MIN,
+  MAX_TRAVEL_TO_VISIT_RATIO,
+  MEAL_DURATION_MIN,
+} from "./config.ts";
 import { fitVisit, parseOpeningHours } from "./hours.ts";
 import { generateTrip } from "./plan.ts";
 import type { MealRow, PlaceRow, ProvinceNode, TripData, TripInput, TripPlan } from "./types.ts";
@@ -272,6 +279,53 @@ describe("things the whole-atlas sweep caught", () => {
       for (const day of plan.days.slice(1)) {
         if (day.stops.length > 1) continue;
         expect(day.estimatedVisitMinutes, `${input.originProvince} d${day.day}`).toBeGreaterThanOrEqual(120);
+      }
+    }
+  });
+});
+
+describe("lunch is an hour of the clock", () => {
+  // The engine used to pick a restaurant for 12:00 and then schedule straight through it: the hour
+  // was a label on the timeline, never time spent. A plan that assumes the traveller eats in zero
+  // minutes overstates how much fits in a day, which is the one thing a day planner must not do.
+
+  it("never runs a stop through the lunch hour it charged", () => {
+    for (const input of CASES) {
+      const plan = generateTrip(input, data);
+      for (const day of plan.days) {
+        const lunch = day.meals.find((m) => m.slot === "lunch");
+        if (!lunch) continue;
+
+        // The traveller is mid-visit at lunchtime — a long site whose authored duration already
+        // includes eating, and which nobody leaves at noon to drive to a restaurant. Nothing is
+        // charged, deliberately; see `LUNCH_LATEST_MIN`.
+        const onSite = day.stops.some(
+          (s) => s.arrivalMinutes <= lunch.atMinutes && s.departureMinutes > lunch.atMinutes,
+        );
+        if (onSite) continue;
+
+        for (const stop of day.stops) {
+          const overlaps =
+            stop.arrivalMinutes < lunch.atMinutes + MEAL_DURATION_MIN && stop.departureMinutes > lunch.atMinutes;
+          expect(overlaps, `${input.originProvince} d${day.day}: ${stop.destinationId} eats the lunch hour`).toBe(
+            false,
+          );
+        }
+      }
+    }
+  });
+
+  it("keeps the lunch slot at a time a human would call lunch", () => {
+    // Charged at the first gap inside the lunch window, so it drifts with the day rather than
+    // asserting a fictional 12:00 — 12:55 after Hội An, 11:55 walking out of Trà Quế. It may never
+    // drift out of the window.
+    for (const input of CASES) {
+      const plan = generateTrip(input, data);
+      for (const day of plan.days) {
+        const lunch = day.meals.find((m) => m.slot === "lunch");
+        if (!lunch) continue;
+        expect(lunch.atMinutes, `${input.originProvince} d${day.day}`).toBeGreaterThanOrEqual(LUNCH_EARLIEST_MIN);
+        expect(lunch.atMinutes, `${input.originProvince} d${day.day}`).toBeLessThanOrEqual(LUNCH_LATEST_MIN);
       }
     }
   });

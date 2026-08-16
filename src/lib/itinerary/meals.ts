@@ -62,8 +62,20 @@ function pickMeal(
  * Slot lunch and dinner around the day's stops. The slot exists whether or not it can be filled;
  * a timeline with a visible gap at 12:00 reads as a plan, one that silently skips lunch reads as
  * a bug.
+ *
+ * `lunchAtMinutes` comes from `layOutDay`, which has already charged the hour to the clock and so
+ * is the only thing that knows when the traveller is actually free to eat — often not 12:00 sharp,
+ * because a morning visit runs over. Asking for a restaurant open at the nominal hour when the day
+ * arrives at 13:10 is how a plan sends someone to a closed kitchen. Null means the hour was never
+ * charged (the day was inside one long visit at noon), and the nominal time is the honest guess.
  */
-export function planMeals(stops: TripStop[], base: Base, meals: MealRow[], taken: Set<string>): TripMeal[] {
+export function planMeals(
+  stops: TripStop[],
+  base: Base,
+  meals: MealRow[],
+  taken: Set<string>,
+  lunchAtMinutes: number | null,
+): TripMeal[] {
   if (!stops.length) return [];
 
   const positionAt = (minutes: number): { lng: number; lat: number; provinceSlug: string } => {
@@ -76,7 +88,8 @@ export function planMeals(stops: TripStop[], base: Base, meals: MealRow[], taken
   };
 
   const out: TripMeal[] = [];
-  for (const [slot, atMinutes] of [["lunch", LUNCH_MIN], ["dinner", DINNER_MIN]] as const) {
+  const slots = [["lunch", lunchAtMinutes ?? LUNCH_MIN], ["dinner", DINNER_MIN]] as const;
+  for (const [slot, atMinutes] of slots) {
     const where = positionAt(atMinutes);
     const pick = pickMeal(meals, where, atMinutes, taken);
     if (pick) taken.add(pick.id);

@@ -14,7 +14,7 @@ import type { TripInterest, TripPace, TripStyle } from "./types.ts";
  * Bump on ANY change that alters engine output. It rides in the request URL, so a deploy cannot
  * leave stale plans cached at Cloudflare's edge for the full TTL.
  */
-export const ENGINE_VERSION = "1";
+export const ENGINE_VERSION = "2";
 
 // ── The day ──────────────────────────────────────────────────────────────────
 
@@ -22,8 +22,35 @@ export const ENGINE_VERSION = "1";
 export const DAY_START_MIN = 8 * 60;
 export const DAY_END_MIN = 19 * 60;
 
+/**
+ * Lunch is an hour off the clock, not a label on it.
+ *
+ * `LUNCH_MIN` is the nominal hour, used when nothing was charged. The block itself is charged at
+ * the first moment the traveller is free inside [`LUNCH_EARLIEST_MIN`, `LUNCH_LATEST_MIN`], and
+ * both ends of that window are load-bearing:
+ *
+ * The early end because "at or after 12:00" is too literal to describe a person. Someone free at
+ * 11:55 eats; they do not start a two-hour village visit and eat at 14:25 — which is exactly what
+ * a Đà Nẵng day 5 did, walking out of Trà Quế at 11:40 and straight into Kim Bồng. 11:30 is also
+ * simply when lunch is eaten in Vietnam.
+ *
+ * The late end because past it the block would be a fiction: a four-hour mountain visit under way
+ * since 11:00 already has food inside its `visitDuration`, and driving off it at noon to reach a
+ * restaurant is the very thing `MEAL_REACH_KM` exists to prevent. Parking an hour at 15:00 and
+ * calling it lunch is worse than not modelling it, so nothing is charged at all.
+ */
 export const LUNCH_MIN = 12 * 60;
+export const LUNCH_EARLIEST_MIN = 11 * 60 + 30;
+export const LUNCH_LATEST_MIN = 14 * 60;
 export const DINNER_MIN = 18 * 60 + 30;
+/**
+ * Charged to the clock for lunch only.
+ *
+ * Dinner is left uncharged on purpose: nothing is scheduled after it, so an hour spent there pushes
+ * no stop and shortens no plan. It can still overlap a last visit running to `DAY_END_MIN` — a real
+ * imprecision, but one with no consequence downstream, and cheaper to leave visible than to buy by
+ * trimming the day.
+ */
 export const MEAL_DURATION_MIN = 60;
 
 /** Slack after each stop so a plan survives contact with reality. */
