@@ -1,0 +1,45 @@
+[
+  { "id": "ho-chi-minh-museum", "name": "Bảo tàng Hồ Chí Minh", "nameEn": "Ho Chi Minh Museum", "provinceSlug": "ha-noi", "query": "Bảo tàng Hồ Chí Minh Hà Nội" },
+  { "id": "thang-long-water-puppet", "name": "Nhà hát Múa rối nước Thăng Long", "nameEn": "Thang Long Water Puppet Theatre", "provinceSlug": "ha-noi" },
+  { "id": "phu-tay-ho", "name": "Phủ Tây Hồ", "nameEn": "Tay Ho Temple", "provinceSlug": "ha-noi" },
+  { "id": "national-history-museum-vn", "name": "Bảo tàng Lịch sử Quốc gia", "nameEn": "National Museum of Vietnamese History", "provinceSlug": "ha-noi" },
+  { "id": "tong-duy-tan-food-street", "name": "Phố Tống Duy Tân", "nameEn": "Tong Duy Tan Street", "provinceSlug": "ha-noi" },
+
+  { "id": "thien-hau-temple-hcm", "name": "Chùa Bà Thiên Hậu", "nameEn": "Thien Hau Temple", "provinceSlug": "ho-chi-minh", "query": "Chùa Bà Thiên Hậu Thành phố Hồ Chí Minh" },
+  { "id": "nguyen-van-binh-book-street", "name": "Đường sách Nguyễn Văn Bình", "nameEn": "Nguyen Van Binh Book Street", "provinceSlug": "ho-chi-minh" },
+  { "id": "turtle-lake-hcm", "name": "Hồ Con Rùa", "nameEn": "Turtle Lake", "provinceSlug": "ho-chi-minh" },
+  { "id": "ho-thi-ky-flower-market", "name": "Chợ hoa Hồ Thị Kỷ", "nameEn": "Ho Thi Ky Flower Market", "provinceSlug": "ho-chi-minh" },
+  { "id": "hai-thuong-lan-ong-street", "name": "Phố Hải Thượng Lãn Ông", "nameEn": "Hai Thuong Lan Ong Street", "provinceSlug": "ho-chi-minh" },
+
+  { "id": "lam-vien-square", "name": "Quảng trường Lâm Viên", "nameEn": "Lam Vien Square", "provinceSlug": "lam-dong" },
+  { "id": "da-lat-flower-garden", "name": "Vườn hoa thành phố Đà Lạt", "nameEn": "Da Lat Flower Garden", "provinceSlug": "lam-dong" },
+  { "id": "van-hanh-pagoda-dalat", "name": "Chùa Vạn Hạnh", "nameEn": "Van Hanh Pagoda", "provinceSlug": "lam-dong", "query": "Chùa Vạn Hạnh Đà Lạt" },
+  { "id": "cu-lan-village", "name": "Làng Cù Lần", "nameEn": "Cu Lan Village", "provinceSlug": "lam-dong" },
+  { "id": "hydrangea-garden-dalat", "name": "Vườn hoa cẩm tú cầu Đà Lạt", "nameEn": "Da Lat Hydrangea Garden", "provinceSlug": "lam-dong" },
+
+  { "id": "thuy-xuan-incense-village", "name": "Làng hương Thủy Xuân", "nameEn": "Thuy Xuan Incense Village", "provinceSlug": "thua-thien-hue" },
+  { "id": "nguyen-dinh-chieu-walking-street", "name": "Phố đi bộ Nguyễn Đình Chiểu", "nameEn": "Nguyen Dinh Chieu Walking Street", "provinceSlug": "thua-thien-hue", "query": "Phố đi bộ Nguyễn Đình Chiểu Huế" },
+
+  { "id": "luon-cave", "name": "Hang Luồn", "nameEn": "Luon Cave", "provinceSlug": "quang-ninh", "query": "Hang Luồn vịnh Hạ Long" },
+  { "id": "sun-world-ha-long", "name": "Sun World Hạ Long", "nameEn": "Sun World Ha Long", "provinceSlug": "quang-ninh" },
+  { "id": "ha-long-market", "name": "Chợ Hạ Long", "nameEn": "Ha Long Market", "provinceSlug": "quang-ninh" },
+
+  { "id": "vinwonders-nha-trang", "name": "VinWonders Nha Trang", "nameEn": "VinWonders Nha Trang", "provinceSlug": "khanh-hoa", "query": "Vinpearl Land Nha Trang Hòn Tre" },
+  { "id": "hon-tam-island", "name": "Đảo Hòn Tằm", "nameEn": "Hon Tam Island", "provinceSlug": "khanh-hoa" },
+  { "id": "bai-tranh-beach", "name": "Bãi Tranh", "nameEn": "Bai Tranh Beach", "provinceSlug": "khanh-hoa", "query": "Bãi Tranh Nha Trang" },
+  { "id": "nha-trang-fishing-village", "name": "Làng chài Nha Trang", "nameEn": "Nha Trang Fishing Village", "provinceSlug": "khanh-hoa" },
+  { "id": "i-resort-hot-spring", "name": "Suối khoáng nóng I-Resort", "nameEn": "I-Resort Hot Spring", "provinceSlug": "khanh-hoa" },
+
+  { "id": "ho-quoc-pagoda", "name": "Thiền viện Trúc Lâm Hộ Quốc", "nameEn": "Ho Quoc Pagoda", "provinceSlug": "kien-giang", "query": "Chùa Hộ Quốc Phú Quốc" },
+  { "id": "hon-mong-tay", "name": "Hòn Móng Tay", "nameEn": "Hon Mong Tay Island", "provinceSlug": "kien-giang" },
+  { "id": "bai-dai-phu-quoc", "name": "Bãi Dài Phú Quốc", "nameEn": "Long Beach Phu Quoc", "provinceSlug": "kien-giang" },
+  { "id": "sunset-town-phu-quoc", "name": "Thị trấn Hoàng Hôn", "nameEn": "Sunset Town", "provinceSlug": "kien-giang", "query": "Sunset Town An Thới Phú Quốc" },
+  { "id": "fish-sauce-factory-phu-quoc", "name": "Nhà thùng nước mắm Phú Quốc", "nameEn": "Phu Quoc Fish Sauce Factory", "provinceSlug": "kien-giang" },
+  { "id": "grand-world-phu-quoc", "name": "Grand World Phú Quốc", "nameEn": "Grand World Phu Quoc", "provinceSlug": "kien-giang" },
+
+  { "id": "sapa-stone-church", "name": "Nhà thờ đá Sa Pa", "nameEn": "Sa Pa Stone Church", "provinceSlug": "lao-cai" },
+  { "id": "sapa-night-market", "name": "Chợ đêm Sa Pa", "nameEn": "Sa Pa Night Market", "provinceSlug": "lao-cai" },
+  { "id": "tien-sa-waterfall", "name": "Thác Tiên Sa", "nameEn": "Tien Sa Waterfall", "provinceSlug": "lao-cai", "query": "Thác Tiên Sa Cát Cát Sa Pa" },
+
+  { "id": "van-long-lagoon", "name": "Đầm Vân Long", "nameEn": "Van Long Lagoon", "provinceSlug": "ninh-binh" }
+]

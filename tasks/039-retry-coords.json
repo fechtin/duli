@@ -1,0 +1,143 @@
+[
+  {
+    "id": "thien-hau-temple-hcm",
+    "name": "Chùa Bà Thiên Hậu",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ho-thi-ky-flower-market",
+    "name": "Chợ hoa Hồ Thị Kỷ",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "hai-thuong-lan-ong-street",
+    "name": "Phố Hải Thượng Lãn Ông",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "van-hanh-pagoda-dalat",
+    "name": "Chùa Vạn Hạnh",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "nguyen-dinh-chieu-walking-street",
+    "name": "Phố đi bộ Nguyễn Đình Chiểu",
+    "province": "thua-thien-hue",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "luon-cave",
+    "name": "Hang Luồn",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sun-world-ha-long",
+    "name": "Sun World Hạ Long",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ha-long-market",
+    "name": "Chợ Hạ Long",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "vinwonders-nha-trang",
+    "name": "VinWonders Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "bai-tranh-beach",
+    "name": "Bãi Tranh",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ho-quoc-pagoda",
+    "name": "Thiền viện Trúc Lâm Hộ Quốc",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.0275,
+      "lat": 10.1092,
+      "via": "osm",
+      "title": "THIỀN VIỆN TRÚC LÂM-HỘ QUỐC",
+      "url": "https://www.openstreetmap.org/way/1489845999"
+    },
+    "kmFromProvinceCentroid": 112.1,
+    "needsReview": "112km from centroid — confirm this is the right place",
+    "rejected": null
+  },
+  {
+    "id": "hon-mong-tay",
+    "name": "Hòn Móng Tay",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sunset-town-phu-quoc",
+    "name": "Thị trấn Hoàng Hôn",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sapa-stone-church",
+    "name": "Nhà thờ đá Sa Pa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sapa-night-market",
+    "name": "Chợ Sa Pa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "van-long-lagoon",
+    "name": "Đầm Vân Long",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.8606,
+      "lat": 20.3859,
+      "via": "osm",
+      "title": "Khu bảo tồn thiên nhiên đất ngập nước Vân Long",
+      "url": "https://www.openstreetmap.org/relation/13552106"
+    },
+    "kmFromProvinceCentroid": 18.5,
+    "rejected": null
+  }
+]

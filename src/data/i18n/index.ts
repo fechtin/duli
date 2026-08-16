@@ -111,6 +111,19 @@ import * as hlZh from "./content/hubs/haLong.zh.ts";
 import * as nbKo from "./content/hubs/ninhBinh.ko.ts";
 import * as nbJa from "./content/hubs/ninhBinh.ja.ts";
 import * as nbZh from "./content/hubs/ninhBinh.zh.ts";
+// Tour stops (tasks/039) — places published itineraries visit that the 038 hub pass missed.
+import * as hnTEn from "./content/tours/hanoi.en.ts";
+import * as hnTKo from "./content/tours/hanoi.ko.ts";
+import * as hnTJa from "./content/tours/hanoi.ja.ts";
+import * as hnTZh from "./content/tours/hanoi.zh.ts";
+import * as sTEn from "./content/tours/south.en.ts";
+import * as sTKo from "./content/tours/south.ko.ts";
+import * as sTJa from "./content/tours/south.ja.ts";
+import * as sTZh from "./content/tours/south.zh.ts";
+import * as cTEn from "./content/tours/central.en.ts";
+import * as cTKo from "./content/tours/central.ko.ts";
+import * as cTJa from "./content/tours/central.ja.ts";
+import * as cTZh from "./content/tours/central.zh.ts";
 
 interface BucketModule {
   destinations: Record<string, DestinationTranslation>;
@@ -118,10 +131,10 @@ interface BucketModule {
 }
 
 const byLocale: Record<ContentLocale, BucketModule[]> = {
-  en: [nmEn, rrdEn, ncEn, schEn, seEn, mkEn, neEn, rrdDEn, mkDEn, sccEn, seDEn, chEn, nwEn, nccEn, dnEn, haEn, hnEn, hcEn, hueEn, dlEn, ntEn, pqEn, spEn, hlEn, nbEn],
-  ko: [nmKo, rrdKo, ncKo, schKo, seKo, mkKo, neKo, rrdDKo, mkDKo, sccKo, seDKo, chKo, nwKo, nccKo, dnKo, haKo, hnKo, hcKo, hueKo, dlKo, ntKo, pqKo, spKo, hlKo, nbKo],
-  ja: [nmJa, rrdJa, ncJa, schJa, seJa, mkJa, neJa, rrdDJa, mkDJa, sccJa, seDJa, chJa, nwJa, nccJa, dnJa, haJa, hnJa, hcJa, hueJa, dlJa, ntJa, pqJa, spJa, hlJa, nbJa],
-  zh: [nmZh, rrdZh, ncZh, schZh, seZh, mkZh, neZh, rrdDZh, mkDZh, sccZh, seDZh, chZh, nwZh, nccZh, dnZh, haZh, hnZh, hcZh, hueZh, dlZh, ntZh, pqZh, spZh, hlZh, nbZh],
+  en: [nmEn, rrdEn, ncEn, schEn, seEn, mkEn, neEn, rrdDEn, mkDEn, sccEn, seDEn, chEn, nwEn, nccEn, dnEn, haEn, hnEn, hcEn, hueEn, dlEn, ntEn, pqEn, spEn, hlEn, nbEn, hnTEn, sTEn, cTEn],
+  ko: [nmKo, rrdKo, ncKo, schKo, seKo, mkKo, neKo, rrdDKo, mkDKo, sccKo, seDKo, chKo, nwKo, nccKo, dnKo, haKo, hnKo, hcKo, hueKo, dlKo, ntKo, pqKo, spKo, hlKo, nbKo, hnTKo, sTKo, cTKo],
+  ja: [nmJa, rrdJa, ncJa, schJa, seJa, mkJa, neJa, rrdDJa, mkDJa, sccJa, seDJa, chJa, nwJa, nccJa, dnJa, haJa, hnJa, hcJa, hueJa, dlJa, ntJa, pqJa, spJa, hlJa, nbJa, hnTJa, sTJa, cTJa],
+  zh: [nmZh, rrdZh, ncZh, schZh, seZh, mkZh, neZh, rrdDZh, mkDZh, sccZh, seDZh, chZh, nwZh, nccZh, dnZh, haZh, hnZh, hcZh, hueZh, dlZh, ntZh, pqZh, spZh, hlZh, nbZh, hnTZh, sTZh, cTZh],
 };
 
 export const destinationI18n: Record<string, DestinationI18n> = {};

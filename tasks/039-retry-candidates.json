@@ -1,0 +1,25 @@
+[
+  { "id": "thien-hau-temple-hcm", "name": "Chùa Bà Thiên Hậu", "nameEn": "Thien Hau Temple", "provinceSlug": "ho-chi-minh", "query": "Hội quán Tuệ Thành Nguyễn Trãi Quận 5" },
+  { "id": "ho-thi-ky-flower-market", "name": "Chợ hoa Hồ Thị Kỷ", "nameEn": "Ho Thi Ky Flower Market", "provinceSlug": "ho-chi-minh", "query": "Chợ Hồ Thị Kỷ Quận 10 Thành phố Hồ Chí Minh" },
+  { "id": "hai-thuong-lan-ong-street", "name": "Phố Hải Thượng Lãn Ông", "nameEn": "Hai Thuong Lan Ong Street", "provinceSlug": "ho-chi-minh", "query": "Đường Hải Thượng Lãn Ông Quận 5 Thành phố Hồ Chí Minh" },
+
+  { "id": "van-hanh-pagoda-dalat", "name": "Chùa Vạn Hạnh", "nameEn": "Van Hanh Pagoda", "provinceSlug": "lam-dong", "query": "Chùa Vạn Hạnh phường 8 Đà Lạt Lâm Đồng" },
+
+  { "id": "nguyen-dinh-chieu-walking-street", "name": "Phố đi bộ Nguyễn Đình Chiểu", "nameEn": "Nguyen Dinh Chieu Walking Street", "provinceSlug": "thua-thien-hue", "query": "Đường Nguyễn Đình Chiểu bờ nam sông Hương Huế" },
+
+  { "id": "luon-cave", "name": "Hang Luồn", "nameEn": "Luon Cave", "provinceSlug": "quang-ninh", "query": "Hang Luồn đảo Bồ Hòn vịnh Hạ Long" },
+  { "id": "sun-world-ha-long", "name": "Sun World Hạ Long", "nameEn": "Sun World Ha Long", "provinceSlug": "quang-ninh", "query": "Sun World Hạ Long Bãi Cháy Quảng Ninh" },
+  { "id": "ha-long-market", "name": "Chợ Hạ Long", "nameEn": "Ha Long Market", "provinceSlug": "quang-ninh", "query": "Chợ Hạ Long 1 Hòn Gai thành phố Hạ Long" },
+
+  { "id": "vinwonders-nha-trang", "name": "VinWonders Nha Trang", "nameEn": "VinWonders Nha Trang", "provinceSlug": "khanh-hoa", "query": "VinWonders Nha Trang đảo Hòn Tre Khánh Hoà" },
+  { "id": "bai-tranh-beach", "name": "Bãi Tranh", "nameEn": "Bai Tranh Beach", "provinceSlug": "khanh-hoa", "query": "Bãi Tranh Hòn Miễu vịnh Nha Trang" },
+
+  { "id": "ho-quoc-pagoda", "name": "Thiền viện Trúc Lâm Hộ Quốc", "nameEn": "Ho Quoc Pagoda", "provinceSlug": "kien-giang", "query": "Thiền viện Trúc Lâm Hộ Quốc Dương Tơ Phú Quốc" },
+  { "id": "hon-mong-tay", "name": "Hòn Móng Tay", "nameEn": "Hon Mong Tay Island", "provinceSlug": "kien-giang", "query": "Hòn Móng Tay quần đảo An Thới Phú Quốc" },
+  { "id": "sunset-town-phu-quoc", "name": "Thị trấn Hoàng Hôn", "nameEn": "Sunset Town", "provinceSlug": "kien-giang", "query": "Thị trấn Hoàng Hôn An Thới Phú Quốc cầu Hôn" },
+
+  { "id": "sapa-stone-church", "name": "Nhà thờ đá Sa Pa", "nameEn": "Sa Pa Stone Church", "provinceSlug": "lao-cai", "query": "Nhà thờ Đức Mẹ Mân Côi Sa Pa" },
+  { "id": "sapa-night-market", "name": "Chợ Sa Pa", "nameEn": "Sa Pa Market", "provinceSlug": "lao-cai", "query": "Chợ Sa Pa thị xã Sa Pa Lào Cai" },
+
+  { "id": "van-long-lagoon", "name": "Đầm Vân Long", "nameEn": "Van Long Lagoon", "provinceSlug": "ninh-binh", "query": "Khu bảo tồn thiên nhiên đất ngập nước Vân Long Gia Viễn Ninh Bình" }
+]

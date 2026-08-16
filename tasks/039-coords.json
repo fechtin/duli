@@ -1,0 +1,399 @@
+[
+  {
+    "id": "ho-chi-minh-museum",
+    "name": "Bảo tàng Hồ Chí Minh",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8326,
+      "lat": 21.0357,
+      "via": "en",
+      "title": "Ho Chi Minh Museum",
+      "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Museum"
+    },
+    "kmFromProvinceCentroid": 14.4,
+    "rejected": null
+  },
+  {
+    "id": "thang-long-water-puppet",
+    "name": "Nhà hát Múa rối nước Thăng Long",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8535,
+      "lat": 21.0317,
+      "via": "osm",
+      "title": "Nhà hát Múa rối nước Thăng Long",
+      "url": "https://www.openstreetmap.org/way/1190941789"
+    },
+    "kmFromProvinceCentroid": 16.4,
+    "rejected": null
+  },
+  {
+    "id": "phu-tay-ho",
+    "name": "Phủ Tây Hồ",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8196,
+      "lat": 21.0557,
+      "via": "osm",
+      "title": "Phủ Tây Hồ",
+      "url": "https://www.openstreetmap.org/way/941901613"
+    },
+    "kmFromProvinceCentroid": 14,
+    "rejected": null
+  },
+  {
+    "id": "national-history-museum-vn",
+    "name": "Bảo tàng Lịch sử Quốc gia",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8597,
+      "lat": 21.0247,
+      "via": "en",
+      "title": "Vietnam National Museum of History",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_National_Museum_of_History"
+    },
+    "kmFromProvinceCentroid": 16.9,
+    "rejected": null
+  },
+  {
+    "id": "tong-duy-tan-food-street",
+    "name": "Phố Tống Duy Tân",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8437,
+      "lat": 21.0294,
+      "via": "osm",
+      "title": "Phố Tống Duy Tân",
+      "url": "https://www.openstreetmap.org/way/28924633"
+    },
+    "kmFromProvinceCentroid": 15.4,
+    "rejected": null
+  },
+  {
+    "id": "thien-hau-temple-hcm",
+    "name": "Chùa Bà Thiên Hậu",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6548,
+      "lat": 10.9807,
+      "via": "osm",
+      "title": "Chùa Bà Thiên Hậu",
+      "url": "https://www.openstreetmap.org/way/264294894"
+    },
+    "kmFromProvinceCentroid": 27.1,
+    "rejected": null
+  },
+  {
+    "id": "nguyen-van-binh-book-street",
+    "name": "Đường sách Nguyễn Văn Bình",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6997,
+      "lat": 10.7806,
+      "via": "osm",
+      "title": "Đường Sách",
+      "url": "https://www.openstreetmap.org/node/11708010270"
+    },
+    "kmFromProvinceCentroid": 4.5,
+    "rejected": null
+  },
+  {
+    "id": "turtle-lake-hcm",
+    "name": "Hồ Con Rùa",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6958,
+      "lat": 10.7828,
+      "via": "vi",
+      "title": "Hồ Con Rùa",
+      "url": "https://vi.wikipedia.org/wiki/H%E1%BB%93_Con_R%C3%B9a"
+    },
+    "kmFromProvinceCentroid": 4.7,
+    "rejected": null
+  },
+  {
+    "id": "ho-thi-ky-flower-market",
+    "name": "Chợ hoa Hồ Thị Kỷ",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "hai-thuong-lan-ong-street",
+    "name": "Phố Hải Thượng Lãn Ông",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": 1135.1,
+    "rejected": "Phố Hải Thượng Lãn Ông (osm, 1135km, too far)"
+  },
+  {
+    "id": "lam-vien-square",
+    "name": "Quảng trường Lâm Viên",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4445,
+      "lat": 11.9388,
+      "via": "en",
+      "title": "Lam Vien Square",
+      "url": "https://en.wikipedia.org/wiki/Lam_Vien_Square"
+    },
+    "kmFromProvinceCentroid": 43.4,
+    "rejected": null
+  },
+  {
+    "id": "da-lat-flower-garden",
+    "name": "Vườn hoa thành phố Đà Lạt",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4497,
+      "lat": 11.9504,
+      "via": "wikidata",
+      "title": "Vườn hoa thành phố Đà Lạt",
+      "url": "https://www.wikidata.org/wiki/Q10752061"
+    },
+    "kmFromProvinceCentroid": 44.5,
+    "rejected": null
+  },
+  {
+    "id": "van-hanh-pagoda-dalat",
+    "name": "Chùa Vạn Hạnh",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "cu-lan-village",
+    "name": "Làng Cù Lần",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.3627,
+      "lat": 12.0265,
+      "via": "osm",
+      "title": "Làng Cu Lần",
+      "url": "https://www.openstreetmap.org/way/1509937793"
+    },
+    "kmFromProvinceCentroid": 42.2,
+    "rejected": null
+  },
+  {
+    "id": "hydrangea-garden-dalat",
+    "name": "Vườn hoa cẩm tú cầu Đà Lạt",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": 40.6,
+    "rejected": "Vuon Thuong (osm, 41km, name mismatch)"
+  },
+  {
+    "id": "thuy-xuan-incense-village",
+    "name": "Làng hương Thủy Xuân",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5627,
+      "lat": 16.434,
+      "via": "osm",
+      "title": "Làng hương Thủy Xuân",
+      "url": "https://www.openstreetmap.org/way/1473275556"
+    },
+    "kmFromProvinceCentroid": 12.7,
+    "rejected": null
+  },
+  {
+    "id": "nguyen-dinh-chieu-walking-street",
+    "name": "Phố đi bộ Nguyễn Đình Chiểu",
+    "province": "thua-thien-hue",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "luon-cave",
+    "name": "Hang Luồn",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sun-world-ha-long",
+    "name": "Sun World Hạ Long",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ha-long-market",
+    "name": "Chợ Hạ Long",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.4379,
+      "lat": 21.0813,
+      "via": "osm",
+      "title": "Chợ Hạ Long",
+      "url": "https://www.openstreetmap.org/way/686444566"
+    },
+    "kmFromProvinceCentroid": 30.8,
+    "rejected": null
+  },
+  {
+    "id": "vinwonders-nha-trang",
+    "name": "VinWonders Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "hon-tam-island",
+    "name": "Đảo Hòn Tằm",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.2447,
+      "lat": 12.1747,
+      "via": "osm",
+      "title": "Hòn Tằm",
+      "url": "https://www.openstreetmap.org/way/147536067"
+    },
+    "kmFromProvinceCentroid": 29.7,
+    "rejected": null
+  },
+  {
+    "id": "bai-tranh-beach",
+    "name": "Bãi Tranh",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "nha-trang-fishing-village",
+    "name": "Làng chài Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.2019,
+      "lat": 12.3353,
+      "via": "osm",
+      "title": "Làng Chài Hải Sản",
+      "url": "https://www.openstreetmap.org/node/4717547590"
+    },
+    "kmFromProvinceCentroid": 19.3,
+    "rejected": null
+  },
+  {
+    "id": "i-resort-hot-spring",
+    "name": "Suối khoáng nóng I-Resort",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ho-quoc-pagoda",
+    "name": "Thiền viện Trúc Lâm Hộ Quốc",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": 230.5,
+    "rejected": "Chùa Hương Tích (osm, 230km, name mismatch)"
+  },
+  {
+    "id": "hon-mong-tay",
+    "name": "Hòn Móng Tay",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.5232,
+      "lat": 10.2443,
+      "via": "osm",
+      "title": "Hòn Móng Tay",
+      "url": "https://www.openstreetmap.org/way/1136397618"
+    },
+    "kmFromProvinceCentroid": 64.3,
+    "rejected": null
+  },
+  {
+    "id": "bai-dai-phu-quoc",
+    "name": "Bãi Dài Phú Quốc",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 103.8491,
+      "lat": 10.3359,
+      "via": "osm",
+      "title": "Bãi Dài",
+      "url": "https://www.openstreetmap.org/way/451452488"
+    },
+    "kmFromProvinceCentroid": 136.6,
+    "needsReview": "137km from centroid — confirm this is the right place",
+    "rejected": null
+  },
+  {
+    "id": "sunset-town-phu-quoc",
+    "name": "Thị trấn Hoàng Hôn",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": 113.4,
+    "rejected": "Sun Premier Village Primavera (osm, 113km, name mismatch)"
+  },
+  {
+    "id": "fish-sauce-factory-phu-quoc",
+    "name": "Nhà thùng nước mắm Phú Quốc",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "grand-world-phu-quoc",
+    "name": "Grand World Phú Quốc",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 103.8581,
+      "lat": 10.3256,
+      "via": "en",
+      "title": "Grand World Phú Quốc",
+      "url": "https://en.wikipedia.org/wiki/Grand_World_Ph%C3%BA_Qu%E1%BB%91c"
+    },
+    "kmFromProvinceCentroid": 135.4,
+    "needsReview": "135km from centroid — confirm this is the right place",
+    "rejected": null
+  },
+  {
+    "id": "sapa-stone-church",
+    "name": "Nhà thờ đá Sa Pa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sapa-night-market",
+    "name": "Chợ đêm Sa Pa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "tien-sa-waterfall",
+    "name": "Thác Tiên Sa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "van-long-lagoon",
+    "name": "Đầm Vân Long",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.7842,
+      "lat": 21.1522,
+      "via": "osm",
+      "title": "Đầm Vân Trì",
+      "url": "https://www.openstreetmap.org/relation/17621321"
+    },
+    "kmFromProvinceCentroid": 104,
+    "needsReview": "104km from centroid — confirm this is the right place",
+    "rejected": null
+  }
+]

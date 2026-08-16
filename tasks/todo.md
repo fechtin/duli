@@ -114,6 +114,52 @@ Plan: `~/.claude/plans/swift-petting-pretzel.md`. Spec: `docs/031.md` (re-scoped
       `#4ee0ac` = 1.4:1). Pre-existing, invisible in light-mode screenshots, and load-bearing the
       moment the badge carried two digits. Now 8–12:1 on all seven hues
 
+---
+
+# 039 — Tour-stop mining, 9 hubs
+
+Spec + mined evidence: `tasks/039-tour-stops.md`. Extends §Phase 8 signal from 2 provinces to 11.
+
+- [x] **A. Mine** — 19 published itineraries across 9 hubs, same-day groups only. klook/vinwonders
+      403 to WebFetch and are cited nowhere; a search summary is not a source.
+- [x] **B. Patterns** — 7 → 32 groups. `itinerary-patterns.ts` split into an aggregator (41 lines)
+      over `patterns/{types,central,north,south}.ts`; import path unchanged for `worker/index.ts`
+      and the tests. Fixed two comments 038 had made false (SCOPE block; "61 of 63" → 52 of 63).
+- [x] **B. verified** — 197 tests, typecheck, check:i18n/content/provinces, `sweep:trips` 720 runs
+      with every hard invariant holding. Measured effect over 3/5/7-day trips in all 9 hubs:
+      mined pairs landing on one day **22.2% → 38.9%**; mined places reaching the trip 85.2% → 87.8%.
+- [x] **C. Coordinates** — 35 candidates over two runs → **16 kept, 19 dropped**. Province centroid
+      is the wrong referee for islands (every Phú Quốc row is ~110-135 km from it), so everything was
+      re-measured against a same-cluster atlas row: cleared 2 false alarms, caught 5 confidently
+      wrong matches (Đầm Vân **Trì** for Vân Long, a Hóc Môn pagoda for the Chợ Lớn one, a seafood
+      restaurant for a fishing village). Quảng Ninh and Lào Cai gained no rows — all their candidates
+      failed to resolve.
+- [x] **D. Author** — 16 rows in `regions/tours/{hanoi,hcm,daLat,phuQuoc,central}.ts` + 12 locale
+      files in `i18n/content/tours/`. Atlas 327 → **343**. `check:i18n` caught an invented `wildlife`
+      tag before it shipped — tags come from the dictionary, never from the author's head.
+- [x] **E.** 32 → **35 patterns** (3 new groups, 6 existing ones widened): the puppet theatre joined
+      the Hoàn Kiếm evening (2 sources), the
+      HCM museum the Ba Đình morning (2), the incense village the Huế tombs day (2), plus Vân Long +
+      Thung Nham and the Phú Quốc north/south loops.
+- [x] **F.** 197 tests, typecheck, all four guards, production build, `sweep:trips` 720 runs with
+      every hard invariant holding. Live `wrangler dev` curl for all 9 hubs returns valid plans, and
+      the Huế plan puts `hue-imperial-city` + `thien-mu-pagoda` on one day — the mined signal working
+      end to end. Measured: mined pairs sharing a day **18.2% → 38.7%**.
+- [ ] **F2.** Screenshots — blocked on a local D1 reseed while a peer session holds `wrangler dev`.
+      `late-start-no-transfer` rose 23 → 37 in the sweep, expected: the new rows include a night
+      market, a late food street and an evening square, and `DAY_END_MIN` still forbids the evening
+      slot (already tracked under A2).
+- [ ] **G.** **User runs the D1 reseed** — `npm run db:seed:build` then
+      `npx wrangler d1 execute atlas_db --remote --file=db/seed.sql`. Not automated on purpose.
+
+Caught in A, worth remembering: `o-quy-ho-pass` already existed under **lai-chau**, not lao-cai —
+the pass straddles the border. Only an id collision revealed it; a name-based check would have
+created a second row for one pass.
+
+Concurrency: vivel-33 owns `scripts/**` + `image-manifest.json` this session. New 039 destinations
+are NOT in its 159-image run and ship with illustrated placeholders. It also numbered its own doc
+`tasks/039-images.md` — same batch number, different work.
+
 ## Review
 
 Slice 1 is functionally complete and verified end to end: 192 tests, both typechecks, `check:i18n`,

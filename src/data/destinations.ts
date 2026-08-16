@@ -33,6 +33,13 @@ import { phuQuocDestinations } from "./regions/hubs/phuQuoc.ts";
 import { sapaDestinations } from "./regions/hubs/sapa.ts";
 import { haLongDestinations } from "./regions/hubs/haLong.ts";
 import { ninhBinhDestinations } from "./regions/hubs/ninhBinh.ts";
+// Tour stops (tasks/039) — places published itineraries visit that the 038 pass missed. Candidates
+// whose coordinate could not be resolved were dropped rather than guessed.
+import { hanoiTourDestinations } from "./regions/tours/hanoi.ts";
+import { hcmTourDestinations } from "./regions/tours/hcm.ts";
+import { daLatTourDestinations } from "./regions/tours/daLat.ts";
+import { phuQuocTourDestinations } from "./regions/tours/phuQuoc.ts";
+import { centralTourDestinations } from "./regions/tours/central.ts";
 
 // Seed destinations — official content, Vietnamese source (Bible 009 §5).
 // This is the AUTHORING source for D1 (scripts/build-d1-seed.mjs). The client reads from
@@ -1071,6 +1078,11 @@ export const destinations: Destination[] = [
   ...sapaDestinations,
   ...haLongDestinations,
   ...ninhBinhDestinations,
+  ...hanoiTourDestinations,
+  ...hcmTourDestinations,
+  ...daLatTourDestinations,
+  ...phuQuocTourDestinations,
+  ...centralTourDestinations,
 ];
 
 export const destinationById = new Map(destinations.map((d) => [d.id, d]));

@@ -153,7 +153,7 @@ describe("patterns change what the engine builds", () => {
   });
 
   it("still produces a valid trip with patterns switched off", () => {
-    // The signal is an improvement, never a dependency — 61 of 63 provinces have no patterns.
+    // The signal is an improvement, never a dependency — 52 of 63 provinces have no patterns.
     const without = generateTrip(input, base);
     expect(without.totalDays).toBe(5);
     expect(without.days.every((d) => d.stops.length > 0)).toBe(true);
