@@ -446,10 +446,15 @@ export async function commonsSearch(term, opts = {}) {
 /**
  * Openverse — mostly Flickr, filtered to licences that allow commercial use so the atlas can
  * carry the photo without a per-image negotiation. No credential needed.
+ *
+ * `modification` is part of the filter, not decoration: build-thumbs.mjs makes a 96px square
+ * CROP of every photo for the map medallions, and a crop is a derivative work. Filtering on
+ * `commercial` alone let four BY-ND files through and each got a cropped thumbnail — see the
+ * second guard in `firstHit`, which catches the same class if a source ever slips again.
  */
 export async function openverse(term, opts = {}) {
   const d = await getJson(
-    `https://api.openverse.org/v1/images/?q=${encodeURIComponent(term)}&license_type=commercial&page_size=15&mature=false`,
+    `https://api.openverse.org/v1/images/?q=${encodeURIComponent(term)}&license_type=commercial,modification&page_size=15&mature=false`,
     { tries: 2 },
   );
   for (const rec of d?.results ?? []) {
@@ -539,6 +544,15 @@ export async function stock(term, opts = {}) {
 export const stockAvailable = () => Boolean(process.env.PEXELS_API_KEY || process.env.UNSPLASH_ACCESS_KEY);
 
 /**
+ * A licence that forbids derivative works. The atlas cannot use one: every photo gets a 96px
+ * square crop for its map medallion, and a crop is a derivative. Matches "BY-ND", "CC BY-NC-ND
+ * 4.0" and the spelled-out "NoDerivatives". Verified against all 28 licence strings the manifest
+ * actually holds — no false positive. Apply it to a LICENCE only: a credit line reading
+ * "Nd Rahman" would match too.
+ */
+export const forbidsDerivatives = (license) => /(^|[\s-])nd([\s-]|$)|noderiv/i.test(license ?? "");
+
+/**
  * Walk a list of `() => Promise<pick|null>` thunks and return the first hit, tagging it with
  * Commons attribution when the source did not carry its own.
  */
@@ -550,6 +564,13 @@ export async function firstHit(steps) {
       const attr = await commonsAttribution(pick.file);
       pick.credit ??= attr.credit;
       pick.license ??= attr.license;
+    }
+    // Second guard, deliberately after attribution is resolved: the licence is not always known
+    // until then. A source filter can be incomplete — Openverse's `commercial` was — so the
+    // funnel every pick passes through refuses ND rather than trusting the query string.
+    if (forbidsDerivatives(pick.license)) {
+      console.warn(`  ✗ bỏ qua ${pick.sourceTitle || pick.url} — giấy phép ${pick.license} cấm phái sinh`);
+      continue;
     }
     return pick;
   }

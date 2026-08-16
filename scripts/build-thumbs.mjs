@@ -11,10 +11,11 @@
 //   npm run images:thumbs          → fill only missing thumbs
 //   FORCE=1 npm run images:thumbs  → rebuild every thumb
 
-import { readFileSync, existsSync, mkdirSync, statSync } from "node:fs";
+import { readFileSync, existsSync, mkdirSync, statSync, rmSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import sharp from "sharp";
+import { forbidsDerivatives } from "./lib/image-sources.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -32,12 +33,23 @@ mkdirSync(OUT_DIR, { recursive: true });
 let built = 0;
 let skipped = 0;
 let missing = 0;
+let noDeriv = 0;
 let bytes = 0;
 
 for (const [seed, entry] of Object.entries(manifest)) {
   // manifest src is site-absolute ("/img/foo.webp"); dishes live in a subfolder and keep it.
   const srcFile = r(`public${entry.src}`);
   const outFile = `${OUT_DIR}/${seed}.webp`;
+
+  // A ND licence permits showing the photo unchanged but not distributing an adaptation, and
+  // this crop re-composes the frame. So the photo stays and only its medallion is given up —
+  // the marker falls back to its type icon, which is a path that already exists for every seed
+  // with no photo at all. New ND picks are refused upstream in image-sources.firstHit.
+  if (forbidsDerivatives(entry.license)) {
+    if (existsSync(outFile)) rmSync(outFile);
+    noDeriv++;
+    continue;
+  }
 
   if (!existsSync(srcFile)) {
     console.warn(`  ! ${seed}: source photo missing (${entry.src})`);
@@ -61,7 +73,7 @@ for (const [seed, entry] of Object.entries(manifest)) {
 
 // A manifest of its own would duplicate image-manifest exactly: a thumb exists iff a photo does.
 // Runtime derives the path by convention, so the only thing to assert here is that parity holds.
-const expected = Object.keys(manifest).length - missing;
+const expected = Object.keys(manifest).length - missing - noDeriv;
 const actual = Object.keys(manifest).filter((s) => existsSync(`${OUT_DIR}/${s}.webp`)).length;
 if (actual !== expected) {
   console.error(`[thumbs] parity broken: ${actual} thumbs for ${expected} photos`);
@@ -69,6 +81,6 @@ if (actual !== expected) {
 }
 
 console.log(
-  `[thumbs] ${built} built, ${skipped} kept, ${missing} source(s) missing — ` +
+  `[thumbs] ${built} built, ${skipped} kept, ${missing} source(s) missing, ${noDeriv} no-derivatives — ` +
     `${actual} thumbs, ${(bytes / 1024).toFixed(0)} KB total, avg ${(bytes / actual / 1024).toFixed(1)} KB`,
 );

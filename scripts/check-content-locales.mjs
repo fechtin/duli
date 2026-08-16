@@ -110,10 +110,15 @@ if (problems.length) {
 // build-thumbs.mjs does assert parity, but only while it is itself running — which is exactly the
 // run that did not happen. 383 photos drifted this way across batches 037 and 039 before anyone
 // noticed. Hence the same assertion from the outside, where forgetting is the failure being caught.
+//
+// One exemption, and only one: a no-derivatives licence forbids distributing a crop, so those
+// photos are shipped whole with no medallion. build-thumbs.mjs deletes any thumb they have.
 const THUMB_DIR = "public/img/thumb";
-const manifestSeeds = Object.keys(
-  JSON.parse(readFileSync(resolve(ROOT, "src/data/generated/image-manifest.json"), "utf8")),
+const manifest = JSON.parse(
+  readFileSync(resolve(ROOT, "src/data/generated/image-manifest.json"), "utf8"),
 );
+const noDeriv = (l) => /(^|[\s-])nd([\s-]|$)|noderiv/i.test(l ?? "");
+const manifestSeeds = Object.keys(manifest).filter((s) => !noDeriv(manifest[s].license));
 const missingThumbs = manifestSeeds.filter(
   (seed) => !existsSync(resolve(ROOT, THUMB_DIR, `${seed}.webp`)),
 );
