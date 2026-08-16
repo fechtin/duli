@@ -33,6 +33,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { destinationsKr, restaurantsKr } from "../src/data/kr/index.ts";
 import { destinationI18nKr, restaurantI18nKr } from "../src/data/kr/i18n/index.ts";
+import { distanceKm, pickPlace, relates } from "./lib/place-match.mjs";
 
 const OUT = new URL("../src/data/generated/naver-places.json", import.meta.url);
 const ENDPOINT = "https://pcmap.place.naver.com/place/list";
@@ -55,35 +56,14 @@ const GIVE_UP_AFTER = 3;
 
 const limitArg = process.argv.find((a) => a.startsWith("--limit="));
 const LIMIT = limitArg ? Number(limitArg.split("=")[1]) : Infinity;
-/** Re-ask only for entries the manifest is still missing, and merge — a sweep costs 200 requests. */
+/** Skip what the manifest already has — a full sweep costs 200 requests and hours of goodwill. */
 const MISSING_ONLY = process.argv.includes("--missing");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Korean writes place names with or without spaces interchangeably; punctuation likewise. */
-const norm = (s) => s.replace(/[\s·・.,()（）'"’-]/g, "").toLowerCase();
-
-/** Same name, or one name inside the other — the only relations we accept as "this is it". */
-function relates(ours, theirs) {
-  const [a, b] = [norm(ours), norm(theirs)];
-  if (a === b || a.includes(b) || b.includes(a)) return true;
-  // Every word we wrote appears in their title, which merely adds one of its own: our
-  // "서산 마애여래삼존상" against Naver's "서산 용현리 마애여래삼존상", 10 m apart.
-  return ours.split(/\s+/).every((w) => b.includes(norm(w)));
-}
-
 /** The Korean name is what Naver indexes; en/vi names are a last resort that rarely matches. */
 function koreanName(entry, overlays) {
   return overlays[entry.id]?.ko?.name || entry.nameEn || entry.name;
-}
-
-const R_KM = 6371;
-const rad = (deg) => (deg * Math.PI) / 180;
-function distanceKm(a, b) {
-  const [dLat, dLng] = [rad(b.lat - a.lat), rad(b.lng - a.lng)];
-  const h =
-    Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLng / 2) ** 2;
-  return 2 * R_KM * Math.asin(Math.sqrt(h));
 }
 
 /** The page ships its data as an Apollo cache; scan the braces so the JSON can be parsed whole. */
@@ -137,33 +117,13 @@ async function candidates(query, entry) {
   }
 }
 
-function pick(query, places) {
-  const wanted = norm(query);
-  // Our editorial names lead with the county the reader needs ("담양 죽녹원"); Naver indexes the
-  // bare landmark ("죽녹원"). Drop that first word and the two names are the same name, so this
-  // earns the same distance allowance as a literal match rather than the tighter partial one.
-  const bare = norm(query.split(/\s+/).slice(1).join(" "));
-  const sameName = places.find((p) => norm(p.title) === wanted || (bare && norm(p.title) === bare));
-  if (sameName) {
-    // Right name, distant pin. For a national park or an island that is just Naver's centroid
-    // against our viewpoint; for an arboretum or a restaurant it means one of the two is wrong.
-    // Either way a human decides, because the coordinate is what our own map draws.
-    if (sameName.dist > MAX_KM) return { hit: null, miss: sameName, far: true };
-    return { hit: sameName, how: "exact" };
-  }
-
-  const near = places.find(
-    (p) =>
-      p.dist <= NEAR_KM &&
-      !INFRA.test(p.title) &&
-      !INFRA.test(p.ctg ?? "") &&
-      !(BRANCH.test(p.title) && !BRANCH.test(query)) &&
-      relates(query, p.title),
-  );
-  if (near) return { hit: near, how: "near" };
-
-  return { hit: null, miss: places[0] };
-}
+const pick = (query, places) =>
+  pickPlace(query, places, {
+    maxKm: MAX_KM,
+    nearKm: NEAR_KM,
+    reject: (p, q) =>
+      INFRA.test(p.title) || INFRA.test(p.ctg ?? "") || (BRANCH.test(p.title) && !BRANCH.test(q)),
+  });
 
 /**
  * "창덕궁과 후원" → "창덕궁" (the 과/와 connective), "익선동 한옥골목" → "익선동" (trailing
@@ -176,13 +136,18 @@ function headNoun(query) {
   return words.length > 1 ? words.slice(0, -1).join(" ") : null;
 }
 
-const known = MISSING_ONLY ? JSON.parse(readFileSync(OUT, "utf8")) : {};
+// Always start from what is already resolved: this script only ever adds and updates. Writing a
+// fresh manifest would mean one `--limit=3` smoke test silently throwing away 177 rows.
+const known = JSON.parse(readFileSync(OUT, "utf8"));
 
 const corpus = [
   ...destinationsKr.map((d) => ({ entry: d, overlays: destinationI18nKr })),
   ...restaurantsKr.map((r) => ({ entry: r, overlays: restaurantI18nKr })),
 ];
-const entries = corpus.filter(({ entry }) => !known[entry.id]).slice(0, LIMIT);
+const entries = (MISSING_ONLY ? corpus.filter(({ entry }) => !known[entry.id]) : corpus).slice(
+  0,
+  LIMIT,
+);
 
 const resolved = { ...known };
 const unresolved = [];

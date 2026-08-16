@@ -3,6 +3,7 @@ import { useT } from "@/lib/i18n";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { mapLinks, type MapPlace } from "@/lib/maps/links";
 import { naverPlaceId } from "@/lib/maps/naver-places";
+import { googlePlaceId } from "@/lib/maps/google-places";
 import { cn } from "@/lib/utils/cn";
 
 /**
@@ -21,7 +22,10 @@ export function MapLinks({
 }) {
   const t = useT();
   const country = useCountryStore((s) => s.country);
-  const links = mapLinks(place, country, naverPlaceId(place.id));
+  const links = mapLinks(place, country, {
+    google: googlePlaceId(place.id),
+    naver: naverPlaceId(place.id),
+  });
 
   return (
     <div className={cn("flex gap-2", className)}>

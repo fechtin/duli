@@ -23,11 +23,18 @@ export interface MapPlace {
 const coord = (n: number): string => String(Number(n.toFixed(6)));
 
 /**
- * Google Maps at the exact point (works on web, Android and iOS). The Maps URLs API drops a pin
- * there and opens the place card when a real place sits on those coordinates.
+ * Google Maps (web, Android and iOS alike). `query_place_id` names the place outright, so the
+ * card with its photos, hours and reviews opens; `query` is then only Google's fallback text.
+ *
+ * Without an id we send coordinates rather than the name: a pin at the exact point can be dull —
+ * Google shows the card only when the coordinates sit on its own centroid — but it cannot land
+ * in the wrong province the way a name search can. scripts/resolve-google-places.mjs fills the
+ * ids in so the dull case gets rarer.
  */
-export function googleMapsUrl(place: MapPlace): string {
-  return `https://www.google.com/maps/search/?api=1&query=${coord(place.lat)},${coord(place.lng)}`;
+export function googleMapsUrl(place: MapPlace, placeId?: string): string {
+  const base = "https://www.google.com/maps/search/?api=1&query=";
+  if (placeId) return `${base}${encodeURIComponent(place.name)}&query_place_id=${placeId}`;
+  return `${base}${coord(place.lat)},${coord(place.lng)}`;
 }
 
 /**
@@ -55,10 +62,18 @@ export interface MapLink {
   url: string;
 }
 
+/** Place ids resolved at build time, one per provider; see src/lib/maps/*-places.ts. */
+export interface PlaceIds {
+  google?: string;
+  naver?: string;
+}
+
 /** Every map app worth opening a place in, in the order they should be shown. */
-export function mapLinks(place: MapPlace, country: CountryCode, naverPlaceId?: string): MapLink[] {
-  const links: MapLink[] = [{ provider: "google", name: "Google Maps", url: googleMapsUrl(place) }];
+export function mapLinks(place: MapPlace, country: CountryCode, ids: PlaceIds = {}): MapLink[] {
+  const links: MapLink[] = [
+    { provider: "google", name: "Google Maps", url: googleMapsUrl(place, ids.google) },
+  ];
   if (country === "kr")
-    links.push({ provider: "naver", name: "Naver Map", url: naverMapUrl(place, naverPlaceId) });
+    links.push({ provider: "naver", name: "Naver Map", url: naverMapUrl(place, ids.naver) });
   return links;
 }
