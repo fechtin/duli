@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { fetchDishes } from "@/lib/api/food";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useI18n } from "@/lib/i18n";
@@ -76,6 +77,19 @@ export function useDocumentMeta() {
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const destinations = useContentStore((s) => s.destinations);
   const openDishId = useFoodStore((s) => s.openDishId);
+  const foodListOpen = useFoodStore((s) => s.listOpen);
+
+  // The cuisine index names its own size, and only the dish list knows it. `fetchDishes` is
+  // cached per country+locale, so this resolves off the request the panel already made.
+  const [dishCount, setDishCount] = useState(0);
+  useEffect(() => {
+    if (!foodListOpen) return;
+    let alive = true;
+    fetchDishes(locale, country).then((all) => alive && setDishCount(all.length));
+    return () => {
+      alive = false;
+    };
+  }, [foodListOpen, locale, country]);
 
   useEffect(() => {
     const brand = "FechTin Go";
@@ -115,6 +129,19 @@ export function useDocumentMeta() {
           address: { "@type": "PostalAddress", addressCountry: country.toUpperCase() },
         };
       }
+    } else if (foodListOpen) {
+      const countryName = countryLabel(country, locale);
+      const cuisine = t("seo.cuisine");
+      title = `${cuisine} — ${countryName} | ${brand}`;
+      description = t("seo.cuisineDesc", { count: dishCount, country: countryName });
+      ld = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: `${cuisine} — ${countryName}`,
+        description,
+        inLanguage: locale,
+        numberOfItems: dishCount,
+      };
     }
 
     document.title = title;
@@ -136,5 +163,15 @@ export function useDocumentMeta() {
     setCanonical(canonical);
     setAlternates(origin, cleanPath, query);
     setJsonLd(ld);
-  }, [locale, t, country, selectedProvince, selectedDestination, destinations, openDishId]);
+  }, [
+    locale,
+    t,
+    country,
+    selectedProvince,
+    selectedDestination,
+    destinations,
+    openDishId,
+    foodListOpen,
+    dishCount,
+  ]);
 }

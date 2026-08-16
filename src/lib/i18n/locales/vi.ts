@@ -24,6 +24,9 @@ export const vi = {
   "seo.ingredients": "Nguyên liệu",
   "seo.flavor": "Hương vị",
   "seo.cuisine": "Ẩm thực",
+  // One string for both the /{cc}/food meta description and the lead paragraph on the page —
+  // a description that disagrees with the visible copy is the kind of drift nothing catches.
+  "seo.cuisineDesc": "{count} món ăn đặc trưng khắp {country} — câu chuyện, hương vị và nơi ăn ngon nhất.",
   // Question-shaped headings: the long-tail queries this content actually answers.
   "seo.qBestTime": "{name} đi vào tháng nào đẹp nhất?",
   "seo.qTicket": "Vé vào {name} giá bao nhiêu?",
@@ -152,6 +155,8 @@ export const vi = {
   "dish.noRestaurants": "Chưa có gợi ý quán cho món này.",
   "dish.whyForYou": "Phù hợp với bạn vì",
   "dish.viewOnMap": "Xem trên bản đồ",
+  // Trailing group on /{cc}/food for a dish whose origin province doesn't resolve to a region.
+  "food.indexOther": "Khác",
 
   "maps.viewOn": "Xem {name} trên {provider}",
   "restaurant.label.aiPick": "AI Pick",

@@ -12,10 +12,27 @@
 
 import * as db from "./db";
 import type { D1Like } from "./db";
-import { countryBody, countryName, destinationBody, dishBody, homeBody, provinceBody } from "./seo-body";
-import { absoluteFor, countryLd, destinationLd, dishLd, galleryUrls, provinceLd } from "./seo-jsonld";
+import { countryBody, countryName, destinationBody, dishBody, foodBody, homeBody, provinceBody } from "./seo-body";
+import {
+  absoluteFor,
+  countryLd,
+  destinationLd,
+  dishImageUrl,
+  dishLd,
+  foodIndexLd,
+  galleryUrls,
+  provinceLd,
+} from "./seo-jsonld";
 import { translate, type Locale } from "../src/lib/i18n/dictionaries";
-import { alternatesOf, DEFAULT_LOCALE, HREFLANG, OG_LOCALE, splitLocale, withLocale } from "../src/lib/seo/urls";
+import {
+  alternatesOf,
+  DEFAULT_LOCALE,
+  FOOD_SEGMENT,
+  HREFLANG,
+  OG_LOCALE,
+  splitLocale,
+  withLocale,
+} from "../src/lib/seo/urls";
 import { COUNTRY_ORDER } from "../src/lib/country/names";
 
 interface Env {
@@ -85,7 +102,7 @@ export async function buildMeta(env: Env, url: URL): Promise<PageMeta> {
         canonical: `${abs(dishPath)}?dish=${dish.id}`,
         image: `${origin}/img/dishes/${dish.id}.webp`,
         type: "article",
-        jsonLd: dishLd(abs, origin, country, label, dish, description, locale),
+        jsonLd: dishLd(abs, origin, country, label, t("seo.cuisine"), dish, description, locale),
         body: dishBody(country, locale, dish),
         path: dishPath,
         query: `?dish=${dish.id}`,
@@ -135,6 +152,32 @@ export async function buildMeta(env: Env, url: URL): Promise<PageMeta> {
   }
 
   const [provinceSlug, destSlug] = segments;
+
+  // "/vn/food" — the cuisine index. It shares the province rung, so it has to be answered before
+  // the bundle lookup below turns it into a 404.
+  if (provinceSlug === FOOD_SEGMENT && !destSlug) {
+    const dishes = await db.getDishes(env.DB, undefined, locale, country);
+    if (!dishes.length) return notFound(origin, locale, path, t);
+    const cuisine = t("seo.cuisine");
+    const description = clamp(t("seo.cuisineDesc", { count: dishes.length, country: label }));
+    const indexPath = `/${country}/${FOOD_SEGMENT}`;
+    // Rows arrive featured-first, so this is the most prominent dish that actually has a photo —
+    // an og:image that 404s costs more than no card image at all.
+    const hero = dishes.map((d) => dishImageUrl(origin, d.id)).find(Boolean);
+    return {
+      ...base,
+      title: `${cuisine} — ${label} | ${BRAND}`,
+      description,
+      url: abs(indexPath),
+      canonical: abs(indexPath),
+      image: hero,
+      type: "website",
+      jsonLd: foodIndexLd(abs, country, label, cuisine, description, dishes, locale),
+      body: foodBody(country, locale, dishes),
+      path: indexPath,
+    };
+  }
+
   const bundle = await db.getProvinceBundle(env.DB, provinceSlug, locale, country);
   if (!bundle) return notFound(origin, locale, path, t);
 

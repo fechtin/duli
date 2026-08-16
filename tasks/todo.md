@@ -198,3 +198,90 @@ Not in this slice, in rough priority order:
   it obvious.
 - **check-i18n theme coverage** — parity is checked across locales but not against the `ThemeKey`
   union, so a new theme would render as its own key in all five languages.
+
+# 042 — Food index page (`/{cc}/food`)
+
+Nút "Tất cả" của `FoodExplorerSection` gọi `setSearchOpen(true)`: ẩm thực không có trang danh
+sách nào để trỏ tới, nên ô search bị mượn tạm — và empty-state của search chỉ liệt kê
+*destination* featured, nên bấm "Tất cả" ở mục ẩm thực ra một hộp không có món nào.
+
+**Route: `/{cc}/food`** — anh em ngang hàng với trang tỉnh, không phải overlay.
+- Segment tiếng Anh chứ không phải `am-thuc`: locale nằm ở prefix (`/en/vn/food`), và cùng một
+  segment phải phục vụ `/kr/food`. Đã kiểm tra không đụng slug tỉnh nào (vn 63 + kr).
+- Canonical của dish giữ nguyên `/{cc}?dish=`. Mở món từ trang index cho URL `/{cc}/food?dish=x`,
+  canonical hoá về `/{cc}?dish=x` — đúng luật `useDocumentMeta`/`worker/meta` đã áp cho món mở
+  trên trang tỉnh.
+
+## A. URL + state
+- [x] `urls.ts` — `FOOD_SEGMENT` + `foodPath(cc)`, một nguồn sự thật cho client/worker/sitemap
+- [x] `useFoodStore` — `listOpen` / `openList()` / `closeList()`
+- [x] `useUrlSync` — parse `/{cc}/food`, write-back, `depthOf` coi index = bậc 1 (như tỉnh)
+- [x] `usePanelOpen` — tính cả `listOpen`
+
+## B. UI
+- [x] `FoodListPanel.tsx` — `<h1>` + toàn bộ món, mỗi thẻ là `AppLink` tới `dishPath`
+- [x] `PanelContainer` — thứ tự dish > dest > province > food index > trip; đóng dish rơi về index
+- [x] `FoodExplorerSection` — `<button onClick>` → `AppLink` tới `foodPath`
+
+## C. SEO
+- [x] `worker/meta.ts` — nhánh `/{cc}/food` (chặn trước lookup province bundle)
+- [x] `worker/seo-body.ts` — `foodBody()`; `countryBody` link tới index
+- [x] `worker/seo-jsonld.ts` — ItemList
+- [x] `useDocumentMeta` — title/description/JSON-LD client-side
+- [x] `build-sitemap.mjs` — thêm entry `/{cc}/food`
+
+## D. i18n + verify
+- [x] Key mới cho cả 5 locale
+- [x] `npm run check:i18n`, `check:zh`, `typecheck`, `test`, build, curl qua `wrangler dev`
+
+## Review — 042
+
+Nguyên nhân đúng như báo cáo và đã sửa tận gốc: `FoodExplorerSection` giờ là `AppLink`
+tới `/{cc}/food`, một trang thật.
+
+Hai thứ chỉ lộ ra khi chạy app thật, không guardrail nào bắt được — lý do `tasks/lessons.md`
+bắt phải nhìn:
+- **Hai `<h1>` trên một trang.** `CrawlNav` phát `<h1 class="sr-only">Việt Nam</h1>` mỗi khi
+  không panel nào "sở hữu" tiêu đề, và nó không biết về panel mới → `/vn/food` render
+  "Việt Nam" rồi "Ẩm thực". Sửa: thêm `listOpen` vào `panelOwnsHeading`.
+- **`openList()` phải `map.reset()`.** Bấm "Tất cả" khi đang chọn một tỉnh thì panel tỉnh vẫn
+  thắng trong `PanelContainer` và người đọc không bao giờ thấy danh sách.
+
+Đo được sau khi sửa (curl qua `wrangler dev` + Playwright):
+- `/vn/food` 200, 149 món / 8 vùng; `/kr/food` 200, 46 món / 7 vùng. Số khớp nhau ở panel,
+  crawler body, JSON-LD `numberOfItems` và meta description.
+- `/vn/food?dish=x` canonical hoá về `/vn?dish=x` — không sinh URL trùng.
+- `/vn/foods` → 404 thật, không phải soft-404.
+- hreflang đủ 6 thẻ, có self-reference; `verify:seo` 6/6.
+- Đóng món mở từ index thì rơi về index (không văng ra bản đồ trắng).
+
+Chưa làm, cố ý:
+- **Nav rail "Ẩm thực"** vẫn scroll tới `#sb-food` như "Điểm ẩn"/"Lễ hội". Đổi nó thành điều
+  hướng sẽ phá thể thức của các mục anh em; nếu muốn đổi thì đổi cả nhóm.
+- **`SearchOverlay` empty-state** vẫn chỉ gợi ý destination. Không còn là lỗi của mục ẩm thực
+  nữa, nhưng thêm vài món vào gợi ý vẫn là cải thiện đúng.
+- **`public/sitemap.xml`** khi build lại còn bắt kịp 16 điểm đến đã seed từ 039/041 mà sitemap
+  cũ chưa liệt kê — ngoài phạm vi task này nhưng là thay đổi đúng.
+
+### 042 — sửa sau khi user báo `/vn/food?dish=banh-mi` không hiện
+
+Hai chuyện chồng lên nhau ở `localhost:5199`:
+
+1. **Môi trường:** vite proxy `/api` sang `127.0.0.1:8787` (vite.config.ts:61). Không có
+   `wrangler dev` nào ở 8787 → mọi API trả 500. Sidebar vẫn có dữ liệu là nhờ service-worker
+   cache, nên trông như chỉ mỗi panel hỏng. **Lưu ý cổng: 8787, không phải 8788.**
+
+2. **Lỗi thật, của 042:** deep link `/{cc}/food?dish=x` bị rụng món, URL tự viết lại về
+   `/{cc}/food`. `openList()` xoá `openDishId`, trong khi `applyFromUrl` so sánh với `food` —
+   một *snapshot* chụp TRƯỚC khi các lệnh đó chạy. `applyFromUrl` chạy lại khi `ready` bật
+   (và chạy hai lần dưới StrictMode), lần sau snapshot còn `'banh-mi'` nên
+   `food.openDishId !== dishId` là false → `openDish` không bao giờ được gọi.
+
+   Sửa tận gốc — mỗi tầng một trọng tài:
+   - `openList()` không đụng tầng dish nữa, chỉ `listOpen` + `map.reset()`.
+   - `applyFromUrl` đọc `useFoodStore.getState().openDishId` LIVE, không đọc snapshot.
+   - Chỗ nào có ý "mở index, không kèm món" thì tự gọi `closeDish()` — hiện là link "Tất cả".
+
+   Chỉ chạy app thật mới thấy: bundle production ban đầu chỉ được test bằng *click*, mà click
+   không đi qua `applyFromUrl`. Đã thêm ca deep-link và ca "bấm Tất cả khi đang mở món" vào
+   kịch bản kiểm tra.

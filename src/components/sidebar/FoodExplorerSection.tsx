@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { UtensilsCrossed, ArrowRight } from "lucide-react";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { AppLink } from "@/components/ui/AppLink";
-import { dishPath } from "@/lib/seo/urls";
+import { dishPath, foodPath } from "@/lib/seo/urls";
 import { fetchDishes } from "@/lib/api/food";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useUIStore } from "@/lib/store/useUIStore";
@@ -17,7 +17,8 @@ export function FoodExplorerSection() {
   const t = useT();
   const [dishes, setDishes] = useState<Dish[]>([]);
   const openDish = useFoodStore((s) => s.openDish);
-  const setSearchOpen = useUIStore((s) => s.setSearchOpen);
+  const openFoodList = useFoodStore((s) => s.openList);
+  const closeDish = useFoodStore((s) => s.closeDish);
   const closeMobile = useUIStore((s) => s.setSidebarMobileOpen);
   const country = useCountryStore((s) => s.country);
 
@@ -44,12 +45,21 @@ export function FoodExplorerSection() {
     <section id="sb-food">
       <div className="mb-2 flex items-center justify-between">
         <SectionTitle icon={<UtensilsCrossed size={12} />}>{t("nav.food")}</SectionTitle>
-        <button
-          onClick={() => setSearchOpen(true)}
+        {/* Was `setSearchOpen(true)` — a food control that opened a search box whose empty state
+            lists destinations. An anchor to the real index also puts the page in the link graph. */}
+        <AppLink
+          to={foodPath(country)}
+          onNavigate={() => {
+            // "The index, and nothing on top of it" — said here rather than inside `openList`,
+            // which must leave the dish layer to the URL. See useFoodStore.openList.
+            closeDish();
+            openFoodList();
+            closeMobile(false);
+          }}
           className="flex items-center gap-1 text-[11px] font-semibold text-[color:var(--sb-text-dim)] transition-colors hover:text-[color:var(--sb-gold)]"
         >
           {t("sidebar.viewAll")} <ArrowRight size={12} />
-        </button>
+        </AppLink>
       </div>
       <div className="flex flex-col gap-2">
         {dishes.map((d) => (

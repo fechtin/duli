@@ -109,10 +109,26 @@ export function destinationPath(country: string, provinceSlug: string, slug: str
 }
 
 /**
+ * The one path segment that is a section rather than a province.
+ *
+ * English, not `am-thuc`, for the same reason destination slugs are: the locale lives in the
+ * prefix (`/en/vn/food`), so the segment itself must be language-independent — and the same one
+ * has to serve `/kr/food`. It shares a namespace with province slugs, so it may never collide
+ * with one; neither atlas has a province called "food" and `check:provinces` would catch it.
+ */
+export const FOOD_SEGMENT = "food";
+
+/** The cuisine index: `/vn/food`. A real page, sibling to a province — not an overlay. */
+export function foodPath(country: string): string {
+  return `${countryPath(country)}/${FOOD_SEGMENT}`;
+}
+
+/**
  * A dish: `/vn?dish=pho-bo`. Dishes are an overlay on the country page rather than a page of
  * their own, which is also why `useDocumentMeta` canonicalises them onto `/{cc}` no matter which
- * map view they were opened over. The query rides along in the returned string because
- * `withLocale` prefixes the whole thing — splitting it would put `/en` after the `?`.
+ * map view they were opened over — including `/vn/food`, so browsing the index and opening a card
+ * still yields exactly one indexable URL per dish. The query rides along in the returned string
+ * because `withLocale` prefixes the whole thing — splitting it would put `/en` after the `?`.
  */
 export function dishPath(country: string, dishId: string): string {
   return `${countryPath(country)}?dish=${encodeURIComponent(dishId)}`;

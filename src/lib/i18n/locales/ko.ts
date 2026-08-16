@@ -23,6 +23,7 @@ export const ko: Record<TranslationKey, string> = {
   "seo.ingredients": "재료",
   "seo.flavor": "맛",
   "seo.cuisine": "음식",
+  "seo.cuisineDesc": "{country} 각지의 대표 음식 {count}가지 — 이야기와 맛, 그리고 맛집까지.",
   "seo.qBestTime": "{name} 방문하기 가장 좋은 시기는 언제인가요?",
   "seo.qTicket": "{name} 입장료는 얼마인가요?",
   "seo.qDuration": "{name} 관람에 얼마나 걸리나요?",
@@ -150,6 +151,7 @@ export const ko: Record<TranslationKey, string> = {
   "dish.noRestaurants": "아직 이 요리의 추천 맛집이 없습니다.",
   "dish.whyForYou": "당신에게 어울리는 이유",
   "dish.viewOnMap": "지도에서 보기",
+  "food.indexOther": "그 밖의 지역",
 
   "maps.viewOn": "{provider}에서 {name} 보기",
   "restaurant.label.aiPick": "AI 추천",

@@ -20,7 +20,7 @@ import { destinations } from "../src/data/destinations.ts";
 import { destinationsKr } from "../src/data/kr/index.ts";
 import { dishes } from "../src/data/food.ts";
 import { dishesKr } from "../src/data/kr/index.ts";
-import { DEFAULT_LOCALE, HREFLANG, SEO_LOCALES, withLocale } from "../src/lib/seo/urls.ts";
+import { DEFAULT_LOCALE, FOOD_SEGMENT, HREFLANG, SEO_LOCALES, withLocale } from "../src/lib/seo/urls.ts";
 import { SITE_URL } from "./site.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -159,7 +159,19 @@ for (const { cc, geo, destinations: allDests, dishes: allDishes, sources } of AT
     images: IMAGES[`dish-${d.id}`] ? [`${SITE}${IMAGES[`dish-${d.id}`].src}`] : [],
   }));
 
-  entries.push({ path: `/${cc}`, lastmod: countryDate }, ...provinceEntries, ...destEntries, ...dishEntries);
+  // The cuisine index — the page every one of those overlays now hangs off. Omitted when the
+  // atlas has no seeded dishes, since the Worker answers that path with a 404.
+  const foodEntries = dishList.length
+    ? [{ path: `/${cc}/${FOOD_SEGMENT}`, lastmod: countryDate }]
+    : [];
+
+  entries.push(
+    { path: `/${cc}`, lastmod: countryDate },
+    ...foodEntries,
+    ...provinceEntries,
+    ...destEntries,
+    ...dishEntries,
+  );
   homeDate = newer(homeDate, countryDate);
 }
 

@@ -31,11 +31,15 @@ export function CrawlNav() {
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const openDishId = useFoodStore((s) => s.openDishId);
+  const foodListOpen = useFoodStore((s) => s.listOpen);
 
   // A panel is showing the page's subject and owns the <h1>. Deliberately not `usePanelOpen`,
   // which also counts an open trip — a trip canonicalises onto /{cc}, so the country heading is
-  // the right one there.
-  const panelOwnsHeading = Boolean(selectedDestination || selectedProvince || openDishId);
+  // the right one there. The cuisine index DOES own its heading: /{cc}/food is its own URL, and
+  // leaving this on emitted two <h1>s, "Việt Nam" above "Ẩm thực".
+  const panelOwnsHeading = Boolean(
+    selectedDestination || selectedProvince || openDishId || foodListOpen,
+  );
 
   return (
     <>

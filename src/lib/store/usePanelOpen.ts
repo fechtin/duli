@@ -13,6 +13,7 @@ export function usePanelOpen(): boolean {
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const openDishId = useFoodStore((s) => s.openDishId);
+  const foodListOpen = useFoodStore((s) => s.listOpen);
   const tripIdle = useTripStore((s) => s.status) === "idle";
-  return Boolean(openDishId || selectedDestination || selectedProvince || !tripIdle);
+  return Boolean(openDishId || selectedDestination || selectedProvince || foodListOpen || !tripIdle);
 }

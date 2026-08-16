@@ -6,7 +6,15 @@ import { useContentStore, findDestinationBySlug } from "./useContentStore";
 import { useCountryStore } from "./useCountryStore";
 import { getProvinceMeta } from "@/lib/api/content";
 import { isCountryCode } from "@/lib/country";
-import { countryPath, destinationPath, provincePath, splitLocale, withLocale } from "@/lib/seo/urls";
+import {
+  countryPath,
+  destinationPath,
+  foodPath,
+  FOOD_SEGMENT,
+  provincePath,
+  splitLocale,
+  withLocale,
+} from "@/lib/seo/urls";
 import type { CountryCode } from "@/lib/types";
 
 /**
@@ -15,6 +23,9 @@ import type { CountryCode } from "@/lib/types";
  * as ?dish=<id> on top of any of them. Each deeper layer PUSHES a history entry so the browser
  * Back button steps back one layer (dish → destination → province → map); shallower moves
  * REPLACE, so closing never leaves dangling forward entries.
+ *
+ * `/{country}/food` is the one path that is a section rather than a province — it occupies the
+ * province rung, and a dish opened from it rides on top exactly as it would over a map view.
  *
  * The country prefix is the source of truth for which atlas is on screen; the persisted
  * useCountryStore value only decides where a bare "/" lands.
@@ -27,8 +38,8 @@ import type { CountryCode } from "@/lib/types";
  * open while drilling into places. Half a rung expresses that without renumbering anything —
  * opening a trip still pushes (so Back closes it) and closing still replaces.
  */
-function depthOf(hasDish: boolean, hasDest: boolean, hasProvince: boolean, hasTrip = false) {
-  const base = hasDish ? 3 : hasDest ? 2 : hasProvince ? 1 : 0;
+function depthOf(hasDish: boolean, hasDest: boolean, hasProvinceOrFood: boolean, hasTrip = false) {
+  const base = hasDish ? 3 : hasDest ? 2 : hasProvinceOrFood ? 1 : 0;
   return hasTrip ? base + 0.5 : base;
 }
 
@@ -58,6 +69,7 @@ function localised(path: string): string {
 function currentUrlDepth() {
   const { segments } = parsePath(window.location.pathname);
   const q = new URLSearchParams(window.location.search);
+  // `/vn/food` has no second segment, so it reads as the province rung — which is the rung it is.
   return depthOf(q.has("dish"), Boolean(segments[1]), Boolean(segments[0]), q.has("trip"));
 }
 
@@ -65,6 +77,7 @@ export function useUrlSync() {
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const openDishId = useFoodStore((s) => s.openDishId);
+  const foodListOpen = useFoodStore((s) => s.listOpen);
   // Subscribed for the dependency array only — the effect reads .getState(), see its comment.
   const tripId = useTripStore((s) => s.tripId);
   const country = useCountryStore((s) => s.country);
@@ -86,7 +99,15 @@ export function useUrlSync() {
     useCountryStore.getState().setCountry(cc);
 
     pendingDest.current = null;
-    if (provinceSlug && getProvinceMeta(provinceSlug, cc)) {
+    // The cuisine index shares the province rung but resolves against no geometry — decide it
+    // before the province lookup, which would otherwise send `/vn/food` down the reset path.
+    const foodIndex = provinceSlug === FOOD_SEGMENT;
+    if (foodIndex) food.openList();
+    else food.closeList();
+
+    if (foodIndex) {
+      map.reset();
+    } else if (provinceSlug && getProvinceMeta(provinceSlug, cc)) {
       if (destSlug) {
         const d = findDestinationBySlug(provinceSlug, destSlug);
         if (d) {
@@ -105,10 +126,12 @@ export function useUrlSync() {
       map.reset();
     }
 
-    // Reconcile the dish layer that rides on top of the map context.
+    // Reconcile the dish layer that rides on top of the map context. Read the id LIVE rather
+    // than off the `food` snapshot taken above: the calls in between mutate the store, and a
+    // stale id here silently skipped `openDish` on the second pass of a `/{cc}/food?dish=` link.
     if (dishId) {
-      if (food.openDishId !== dishId) food.openDish(dishId);
-    } else if (food.openDishId) {
+      if (useFoodStore.getState().openDishId !== dishId) food.openDish(dishId);
+    } else if (useFoodStore.getState().openDishId) {
       food.closeDish();
     }
 
@@ -152,15 +175,19 @@ export function useUrlSync() {
     // is ready) would find nothing left to resolve.
     if (pendingDest.current && !live.selectedDestination) return;
     const cc = useCountryStore.getState().country;
-    const dishId = useFoodStore.getState().openDishId;
+    const { openDishId: dishId, listOpen } = useFoodStore.getState();
     const tripId = useTripStore.getState().tripId;
 
+    // A map selection outranks the index for the URL even while the index stays open in state:
+    // the reader is looking at the place, and closing it falls back to the list underneath.
     let path = countryPath(cc);
     if (live.selectedDestination) {
       const d = useContentStore.getState().destinations.find((x) => x.id === live.selectedDestination);
       if (d) path = destinationPath(cc, d.provinceSlug, d.slug);
     } else if (live.selectedProvince) {
       path = provincePath(cc, live.selectedProvince);
+    } else if (listOpen) {
+      path = foodPath(cc);
     }
     path = localised(path);
     // Build the query rather than appending one parameter. The old single-append form silently
@@ -175,7 +202,7 @@ export function useUrlSync() {
     const nextDepth = depthOf(
       Boolean(dishId),
       Boolean(live.selectedDestination),
-      Boolean(live.selectedProvince),
+      Boolean(live.selectedProvince) || listOpen,
       Boolean(tripId),
     );
     const current = window.location.pathname + window.location.search;
@@ -185,5 +212,5 @@ export function useUrlSync() {
       else window.history.replaceState(null, "", path);
     }
     prevDepth.current = nextDepth;
-  }, [selectedProvince, selectedDestination, openDishId, country, tripId]);
+  }, [selectedProvince, selectedDestination, openDishId, foodListOpen, country, tripId]);
 }

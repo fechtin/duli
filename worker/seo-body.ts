@@ -17,7 +17,7 @@
 import type { Destination } from "../src/lib/types";
 import { labelOf } from "../src/lib/country/names";
 import { translate, type Locale } from "../src/lib/i18n/dictionaries";
-import { withLocale } from "../src/lib/seo/urls";
+import { FOOD_SEGMENT, withLocale } from "../src/lib/seo/urls";
 import manifest from "../src/data/generated/image-manifest.json";
 
 /** seed → real file. 98 of 531 gallery seeds have no photo, so every <img> is gated on this. */
@@ -118,8 +118,9 @@ export function countryBody(
         `<li style="margin:0 0 .4rem">${link(withLocale(locale, `/${cc}/${p.slug}`), p.name)}</li>`,
     )
     .join("");
-  // Dishes are an overlay (?dish=…) with no page of their own, so this list is the only internal
-  // link they ever get — without it they are unreachable by crawl, sitemap entry or not.
+  // Dishes are an overlay (?dish=…) with no page of their own, so this list plus the cuisine
+  // index are the only internal links they get — without them they are unreachable by crawl,
+  // sitemap entry or not.
   const dishItems = dishes
     .map(
       (d) =>
@@ -134,8 +135,47 @@ export function countryBody(
       `<p style="${S.p}">${esc(t("seo.provincesLine", { count: provinces.length }))}</p>` +
       `<ul style="${S.ul}">${items}</ul>` +
       (dishItems
-        ? `<h2 style="${S.h2}">${esc(t("seo.cuisine"))}</h2><ul style="${S.ul}">${dishItems}</ul>`
+        ? `<h2 style="${S.h2}">` +
+          `${link(withLocale(locale, `/${cc}/${FOOD_SEGMENT}`), t("seo.cuisine"))}</h2>` +
+          `<ul style="${S.ul}">${dishItems}</ul>`
         : ""),
+  );
+}
+
+/**
+ * The cuisine index (`/{cc}/food`) — every dish, with its photo and one line of copy.
+ *
+ * The country page already links each dish, but as a bare name in a flat run of ninety list
+ * items. This page is the one that reads like something: a heading a query can match, and a
+ * summary under every link.
+ */
+export function foodBody(
+  cc: string,
+  locale: Locale,
+  dishes: { id: string; name: string; emoji?: string; summary?: string }[],
+): string {
+  const t = (k: string, p?: Record<string, string | number>) => translate(locale, k, p);
+  const label = countryName(cc, locale);
+  const items = dishes
+    .map((d) => {
+      const href = withLocale(locale, `/${cc}?dish=${d.id}`);
+      const name = `${d.emoji ?? "🍽️"} ${d.name}`;
+      return (
+        `<li style="${S.item}"><h3 style="${S.h3}">${link(href, name)}</h3>` +
+        (d.summary ? `<p style="${S.dim}">${esc(d.summary)}</p>` : "") +
+        `</li>`
+      );
+    })
+    .join("");
+
+  return shell(
+    crumbs(locale, [
+      { href: "/", label: "FechTin Go" },
+      { href: `/${cc}`, label },
+    ]) +
+      `<h1 style="${S.h1}">${esc(t("seo.cuisine"))} — ${esc(label)}</h1>` +
+      `<p style="${S.p}">${esc(t("seo.cuisineDesc", { count: dishes.length, country: label }))}</p>` +
+      `<ul style="${S.list}">${items}</ul>`,
   );
 }
 

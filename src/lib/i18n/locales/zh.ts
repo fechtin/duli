@@ -24,6 +24,7 @@ export const zh: Record<TranslationKey, string> = {
   "seo.ingredients": "食材",
   "seo.flavor": "风味",
   "seo.cuisine": "美食",
+  "seo.cuisineDesc": "{country}各地 {count} 道特色美食 — 故事、风味，以及去哪里吃。",
   "seo.qBestTime": "{name}什么时候去最好？",
   "seo.qTicket": "{name}门票多少钱？",
   "seo.qDuration": "{name}要玩多久？",
@@ -151,6 +152,7 @@ export const zh: Record<TranslationKey, string> = {
   "dish.noRestaurants": "暂无该菜品的餐厅推荐。",
   "dish.whyForYou": "为什么适合你",
   "dish.viewOnMap": "在地图上查看",
+  "food.indexOther": "其他地区",
 
   "maps.viewOn": "在{provider}上查看{name}",
   "restaurant.label.aiPick": "AI精选",

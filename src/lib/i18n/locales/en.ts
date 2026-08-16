@@ -23,6 +23,7 @@ export const en: Record<TranslationKey, string> = {
   "seo.ingredients": "Ingredients",
   "seo.flavor": "Flavour",
   "seo.cuisine": "Food",
+  "seo.cuisineDesc": "{count} signature dishes from across {country} — the stories, the flavours and where to eat them.",
   "seo.qBestTime": "When is the best time to visit {name}?",
   "seo.qTicket": "How much does it cost to visit {name}?",
   "seo.qDuration": "How long do you need at {name}?",
@@ -150,6 +151,7 @@ export const en: Record<TranslationKey, string> = {
   "dish.noRestaurants": "No restaurant picks yet for this dish.",
   "dish.whyForYou": "Why it suits you",
   "dish.viewOnMap": "View on map",
+  "food.indexOther": "Elsewhere",
 
   "maps.viewOn": "View {name} on {provider}",
   "restaurant.label.aiPick": "AI Pick",

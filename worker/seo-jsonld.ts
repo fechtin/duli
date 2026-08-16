@@ -6,7 +6,7 @@
 
 import type { Destination } from "../src/lib/types";
 import type { Locale } from "../src/lib/i18n/dictionaries";
-import { withLocale } from "../src/lib/seo/urls";
+import { FOOD_SEGMENT, withLocale } from "../src/lib/seo/urls";
 import { faqPairs } from "./seo-body";
 import manifest from "../src/data/generated/image-manifest.json";
 
@@ -17,6 +17,15 @@ type Abs = (path: string) => string;
 
 export function absoluteFor(origin: string, locale: Locale): Abs {
   return (path: string) => `${origin}${withLocale(locale, path)}`;
+}
+
+/**
+ * A dish photo that actually exists, as an absolute URL. Roughly half the dishes have none
+ * (see 037), so a card image has to be looked up rather than assumed from the id.
+ */
+export function dishImageUrl(origin: string, dishId: string): string | undefined {
+  const src = IMAGES[`dish-${dishId}`]?.src;
+  return src ? `${origin}${src}` : undefined;
 }
 
 /** Gallery photos that actually exist on disk, as absolute URLs. */
@@ -77,6 +86,48 @@ export function countryLd(
     breadcrumb(abs, [
       { name: "FechTin Go", path: "/" },
       { name, path: `/${cc}` },
+    ]),
+  ]);
+}
+
+/**
+ * The cuisine index (`/{cc}/food`) — a CollectionPage whose ItemList names every dish and links
+ * to its canonical `?dish=` URL. This is the only structured place the dishes are enumerated:
+ * before it existed they were reachable only through the country page's flat link list.
+ */
+export function foodIndexLd(
+  abs: Abs,
+  cc: string,
+  countryLabel: string,
+  cuisineLabel: string,
+  description: string,
+  dishes: { id: string; name: string }[],
+  locale: Locale,
+): object {
+  const url = abs(`/${cc}/${FOOD_SEGMENT}`);
+  return graph([
+    {
+      "@type": "CollectionPage",
+      name: `${cuisineLabel} — ${countryLabel}`,
+      description,
+      url,
+      inLanguage: locale,
+      numberOfItems: dishes.length,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: dishes.length,
+        itemListElement: dishes.map((d, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: d.name,
+          url: `${abs(`/${cc}`)}?dish=${d.id}`,
+        })),
+      },
+    },
+    breadcrumb(abs, [
+      { name: "FechTin Go", path: "/" },
+      { name: countryLabel, path: `/${cc}` },
+      { name: cuisineLabel, path: `/${cc}/${FOOD_SEGMENT}` },
     ]),
   ]);
 }
@@ -173,6 +224,7 @@ export function dishLd(
   origin: string,
   cc: string,
   countryLabel: string,
+  cuisineLabel: string,
   dish: { id: string; name: string; summary: string; story: string; ingredients: string[] },
   description: string,
   locale: Locale,
@@ -191,9 +243,12 @@ export function dishLd(
       url: `${abs(`/${cc}`)}?dish=${dish.id}`,
       ...(img ? { image: `${origin}${img}` } : {}),
     },
+    // The dish canonical stays `/{cc}?dish=`, but the trail now names the index it belongs to —
+    // the page that finally gives every dish a parent to hang off.
     breadcrumb(abs, [
       { name: "FechTin Go", path: "/" },
       { name: countryLabel, path: `/${cc}` },
+      { name: cuisineLabel, path: `/${cc}/${FOOD_SEGMENT}` },
     ]),
   ]);
 }

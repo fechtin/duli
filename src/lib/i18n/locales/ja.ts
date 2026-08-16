@@ -23,6 +23,7 @@ export const ja: Record<TranslationKey, string> = {
   "seo.ingredients": "材料",
   "seo.flavor": "味わい",
   "seo.cuisine": "グルメ",
+  "seo.cuisineDesc": "{country}各地の名物料理{count}品 — 物語と味、そして食べられる店。",
   "seo.qBestTime": "{name}のベストシーズンはいつ？",
   "seo.qTicket": "{name}の入場料はいくら？",
   "seo.qDuration": "{name}の所要時間はどのくらい？",
@@ -150,6 +151,7 @@ export const ja: Record<TranslationKey, string> = {
   "dish.noRestaurants": "この料理のおすすめ店はまだありません。",
   "dish.whyForYou": "あなたに合う理由",
   "dish.viewOnMap": "地図で見る",
+  "food.indexOther": "その他の地域",
 
   "maps.viewOn": "{provider}で{name}を見る",
   "restaurant.label.aiPick": "AIおすすめ",

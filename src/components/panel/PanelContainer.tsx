@@ -8,6 +8,7 @@ import { ResponsivePanel } from "./ResponsivePanel";
 const DestinationPanel = lazy(() => import("./DestinationPanel").then((m) => ({ default: m.DestinationPanel })));
 const ProvincePanel = lazy(() => import("./ProvincePanel").then((m) => ({ default: m.ProvincePanel })));
 const DishPanel = lazy(() => import("./DishPanel").then((m) => ({ default: m.DishPanel })));
+const FoodListPanel = lazy(() => import("./FoodListPanel").then((m) => ({ default: m.FoodListPanel })));
 const TripPanel = lazy(() => import("../trip/TripPanel").then((m) => ({ default: m.TripPanel })));
 
 export function PanelContainer() {
@@ -16,6 +17,8 @@ export function PanelContainer() {
   const reset = useMapStore((s) => s.reset);
   const openDishId = useFoodStore((s) => s.openDishId);
   const closeDish = useFoodStore((s) => s.closeDish);
+  const foodListOpen = useFoodStore((s) => s.listOpen);
+  const closeFoodList = useFoodStore((s) => s.closeList);
   const tripStatus = useTripStore((s) => s.status);
   const closeTrip = useTripStore((s) => s.close);
 
@@ -36,6 +39,12 @@ export function PanelContainer() {
       reset();
       return;
     }
+    // The cuisine index is a base layer too: closing a dish opened from it lands back on the
+    // list, and only the next close leaves the page.
+    if (foodListOpen) {
+      closeFoodList();
+      return;
+    }
     closeTrip();
   };
 
@@ -49,7 +58,9 @@ export function PanelContainer() {
       ? `dest:${selectedDestination}`
       : selectedProvince
         ? `prov:${selectedProvince}`
-        : `trip:${tripStatus === "form" ? "form" : "result"}`;
+        : foodListOpen
+          ? "food"
+          : `trip:${tripStatus === "form" ? "form" : "result"}`;
 
   return (
     <ResponsivePanel open={open} onClose={onClose} contentKey={contentKey}>
@@ -60,6 +71,8 @@ export function PanelContainer() {
           <DestinationPanel id={selectedDestination} />
         ) : selectedProvince ? (
           <ProvincePanel slug={selectedProvince} />
+        ) : foodListOpen ? (
+          <FoodListPanel />
         ) : tripOpen ? (
           <TripPanel />
         ) : null}
