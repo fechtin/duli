@@ -63,8 +63,18 @@ for (const d of places) {
     const m = manifest[g.seed];
     if (!m) continue;
     const title = m.sourceTitle ?? "";
+    // Commons filenames routinely run the words together — "TempleHonChen.jpeg",
+    // "Phatdiemk-77.jpg", "BinhLieu by phone.jpg". Splitting on whitespace finds no tokens in
+    // those and calls a perfectly good photo suspect, which is worse than useless: it buries the
+    // one genuinely wrong pick in a list of five false alarms. So also compare with all spaces
+    // removed, both ways.
+    const squash = (s) => fold(s).replace(/\s+/g, "");
+    const glued = (name) => name && squash(title).includes(squash(name));
     const named =
-      titleMatches(d.nameEn, title, undefined, opts) || titleMatches(d.name, title, undefined, opts);
+      titleMatches(d.nameEn, title, undefined, opts) ||
+      titleMatches(d.name, title, undefined, opts) ||
+      glued(d.nameEn) ||
+      glued(d.name);
     const anchored = prov && fold(title).includes(fold(prov));
     const trustedVia = VALIDATED_VIA.test(m.via ?? "");
     // An entry from before provenance was recorded has no title to judge. Calling that
