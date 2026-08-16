@@ -1,0 +1,271 @@
+// Hà Nội hub depth, cluster 1 of 3: the Old Quarter and Hoàn Kiếm (spec tasks/038-vn-hubs.md).
+// Wave 2. The citadel/Ba Đình side is ./hanoiCitadel.ts, the outer ring ./hanoiOuter.ts —
+// split along the clusters an itinerary would actually walk, not arbitrarily.
+//
+// Coordinates from scripts/resolve-sources.mjs --candidates, cited in `sourceUrl`.
+import type { Destination } from "@/lib/types";
+
+export const hanoiOldQuarterDestinations: Destination[] = [
+  {
+    id: "ngoc-son-temple",
+    slug: "den-ngoc-son",
+    provinceSlug: "ha-noi",
+    name: "Đền Ngọc Sơn",
+    nameEn: "Ngoc Son Temple",
+    type: "temple",
+    lng: 105.8523,
+    lat: 21.0307,
+    summary:
+      "Ngôi đền trên đảo Ngọc giữa hồ Gươm, nối vào bờ bằng cây cầu Thê Húc sơn đỏ.",
+    story:
+      "Đền nằm trên một hòn đảo nhỏ ở phía bắc hồ Hoàn Kiếm, và muốn vào phải đi qua cầu Thê Húc — cây cầu gỗ cong sơn đỏ mà gần như mọi tấm bưu thiếp Hà Nội đều có. Tên cầu nghĩa là nơi đón ánh nắng ban mai, và đúng là sáng sớm mặt cầu đỏ rực lên khi mặt trời lên khỏi hàng cây. Trong đền thờ Trần Hưng Đạo, vị tướng ba lần đánh bại quân Nguyên, cùng Văn Xương Đế Quân — vị thần của khoa cử, nên bàn thờ quanh năm có học trò tới cầu thi cử. Ở gian bên còn tiêu bản một cụ rùa hồ Gươm, con vật gắn với truyền thuyết vua Lê trả gươm mà cả hồ mang tên.",
+    facts: [
+      "Đền nằm trên đảo Ngọc, phía bắc hồ Hoàn Kiếm, nối bờ bằng cầu Thê Húc.",
+      "Tên 'Thê Húc' mang nghĩa nơi đón ánh sáng ban mai.",
+      "Đền thờ Trần Hưng Đạo và Văn Xương Đế Quân, vị thần của việc học hành thi cử.",
+      "Trong đền trưng bày tiêu bản rùa hồ Gươm, loài gắn với truyền thuyết vua Lê trả gươm.",
+    ],
+    travelTips: [
+      "Đi sáng sớm: cầu Thê Húc vắng người và bắt nắng đẹp nhất trong ngày.",
+      "Cuối tuần khu quanh hồ thành phố đi bộ, xe không vào được — tính trước đường đi.",
+    ],
+    bestTime: "Sáng sớm, hoặc cuối tuần khi có phố đi bộ quanh hồ",
+    visitDuration: "45 phút",
+    ticket: "50.000đ (giá tham khảo, kiểm tra lại tại quầy)",
+    openingHours: "07:00 - 18:00",
+    badges: ["popular", "verified"],
+    tags: ["temple", "culture", "history", "photography"],
+    gallery: [
+      { seed: "ngoc-son-temple-1", caption: "Cầu Thê Húc đỏ dẫn vào đảo Ngọc", ratio: "16/9" },
+      { seed: "ngoc-son-temple-2", caption: "Sân đền nhìn ra hồ Gươm", ratio: "4/3" },
+    ],
+    nearby: ["hoan-kiem-lake", "old-quarter-hanoi", "dong-xuan-market"],
+    sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_Ng%E1%BB%8Dc_S%C6%A1n",
+    verifiedAt: "2026-08-16",
+    featured: true,
+  },
+  {
+    id: "dong-xuan-market",
+    slug: "cho-dong-xuan",
+    provinceSlug: "ha-noi",
+    name: "Chợ Đồng Xuân",
+    nameEn: "Dong Xuan Market",
+    type: "market",
+    lng: 105.85,
+    lat: 21.0382,
+    summary:
+      "Chợ đầu mối lớn nhất phố cổ, mặt tiền năm vòm cuốn từ thời Pháp vẫn đứng nguyên.",
+    story:
+      "Người Pháp dựng chợ Đồng Xuân cuối thế kỷ 19 để gom các chợ họp lộn xộn quanh cửa ô về một mối, và cái mặt tiền năm vòm cuốn ấy đã thành một trong những hình ảnh quen nhất của Hà Nội. Bên trong là ba tầng bán buôn: vải vóc, quần áo, phụ kiện, đồ khô — hàng ở đây đi về các tỉnh chứ không chỉ bán lẻ, nên nhịp chợ nhanh và không mấy chiều khách du lịch. Chợ từng cháy lớn năm 1994 và được dựng lại. Thứ đáng ghé nhất với khách lại nằm ngoài chợ: khu ăn đêm ở ngõ bên hông, và cuối tuần cả tuyến phố từ đây xuống hồ Gươm thành chợ đêm đi bộ.",
+    facts: [
+      "Chợ được người Pháp xây dựng từ cuối thế kỷ 19, mặt tiền năm vòm cuốn là nét nhận diện.",
+      "Đây là chợ bán buôn lớn nhất khu phố cổ, hàng toả đi nhiều tỉnh.",
+      "Chợ bị cháy lớn năm 1994 và sau đó được xây dựng lại.",
+      "Cuối tuần, tuyến phố từ chợ xuống hồ Gươm trở thành chợ đêm đi bộ.",
+    ],
+    travelTips: [
+      "Đây là chợ bán buôn — mua lẻ một hai món thường không được giá tốt.",
+      "Khu ăn đêm ở ngõ bên hông chợ đáng ghé hơn bản thân các quầy hàng.",
+    ],
+    bestTime: "Tối thứ Sáu đến Chủ nhật, khi có chợ đêm",
+    visitDuration: "1 giờ",
+    ticket: "",
+    openingHours: "06:00 - 18:00; chợ đêm cuối tuần đến khoảng 23:00",
+    badges: ["verified"],
+    tags: ["market", "shopping", "city", "food"],
+    gallery: [
+      { seed: "dong-xuan-market-1", caption: "Mặt tiền năm vòm cuốn của chợ Đồng Xuân", ratio: "16/9" },
+      { seed: "dong-xuan-market-2", caption: "Chợ đêm cuối tuần trước cửa chợ", ratio: "4/3" },
+    ],
+    nearby: ["old-quarter-hanoi", "ta-hien-street", "ngoc-son-temple"],
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_%C4%90%E1%BB%93ng_Xu%C3%A2n",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "ta-hien-street",
+    slug: "pho-ta-hien",
+    provinceSlug: "ha-noi",
+    name: "Phố Tạ Hiện",
+    nameEn: "Ta Hien Street",
+    type: "nightlife",
+    lng: 105.852,
+    lat: 21.0353,
+    summary:
+      "Con phố bia hơi vỉa hè được gọi là 'ngã tư quốc tế' — chỗ ồn nhất phố cổ sau khi trời tối.",
+    story:
+      "Ban ngày Tạ Hiện chỉ là một con phố hẹp bình thường trong khu ba mươi sáu phố phường. Từ khoảng bảy giờ tối nó biến thành một thứ khác: ghế nhựa đỏ tràn kín hai bên vỉa hè, chật tới mức người đi bộ phải lách, và trên những chiếc ghế ấy là dân Hà Nội ngồi lẫn với khách Tây, khách Hàn, khách Nhật — nên mới có cái tên 'ngã tư quốc tế'. Đồ uống chính là bia hơi, loại bia tươi nấu trong ngày, rót từ vòi ra cốc thuỷ tinh dày, rẻ đến mức khó tin. Ăn kèm là nem chua rán, chân gà nướng, lạc rang. Đừng tới đây tìm sự yên tĩnh; tới để thấy phố cổ lúc nó ồn nhất.",
+    facts: [
+      "Phố nằm trong khu phố cổ, được gọi vui là 'ngã tư quốc tế' vì lượng khách nước ngoài.",
+      "Đồ uống đặc trưng là bia hơi — loại bia tươi nấu và bán trong ngày.",
+      "Hàng quán bày ghế nhựa thấp tràn ra vỉa hè, đông nhất từ khoảng 19:00.",
+      "Món ăn kèm phổ biến gồm nem chua rán, chân gà nướng và lạc rang.",
+    ],
+    travelTips: [
+      "Giữ ví và điện thoại trong túi trước — phố rất chật và đông.",
+      "Bia hơi hết nhanh và các quán thường dọn trước nửa đêm; đi trước 22:00.",
+    ],
+    bestTime: "Tối, từ khoảng 19:00; đông nhất cuối tuần",
+    visitDuration: "1 - 2 giờ",
+    ticket: "",
+    openingHours: "Khoảng 17:00 - 24:00",
+    badges: ["popular", "verified"],
+    tags: ["nightlife", "food", "city"],
+    gallery: [
+      { seed: "ta-hien-street-1", caption: "Ghế nhựa đỏ tràn kín vỉa hè Tạ Hiện", ratio: "16/9" },
+      { seed: "ta-hien-street-2", caption: "Cốc bia hơi trên phố cổ về đêm", ratio: "4/3" },
+    ],
+    nearby: ["old-quarter-hanoi", "dong-xuan-market", "the-note-coffee"],
+    sourceUrl: "https://www.openstreetmap.org/way/765597030",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "hanoi-train-street",
+    slug: "pho-duong-tau",
+    provinceSlug: "ha-noi",
+    name: "Phố đường tàu Hà Nội",
+    nameEn: "Hanoi Train Street",
+    type: "street",
+    lng: 105.8441,
+    lat: 21.0302,
+    summary:
+      "Đoạn đường sắt chạy xuyên giữa hai dãy nhà, cách hiên nhà chưa đầy một mét.",
+    story:
+      "Tuyến đường sắt Bắc – Nam đi thẳng qua khu dân cư cũ ở đây, và nhà cửa đã mọc sát tới mức đoàn tàu lướt qua chỉ cách bậc cửa vài gang tay. Người sống hai bên coi đó là chuyện thường: họ phơi quần áo trên đường ray, kê bàn uống nước giữa hai thanh tà vẹt, rồi nghe còi báo thì thu dọn trong vài chục giây và đứng nép vào tường. Cảnh ấy lan khắp mạng xã hội, kéo theo hàng loạt quán cà phê mở dọc đường ray — và kéo theo cả những đợt chính quyền dẹp vì mất an toàn. Đây là điểm đến mà tình trạng thay đổi liên tục: có lúc mở, có lúc rào chắn hoàn toàn.",
+    facts: [
+      "Đoạn đường sắt thuộc tuyến Bắc – Nam, chạy xuyên qua khu dân cư trong nội thành.",
+      "Khoảng cách từ đoàn tàu tới hiên nhà hai bên chỉ tính bằng gang tay.",
+      "Các quán cà phê mở dọc đường ray đã nhiều lần bị đình chỉ vì lý do an toàn.",
+      "Người dân hai bên vẫn sinh hoạt bình thường trên đường ray giữa các chuyến tàu.",
+    ],
+    travelTips: [
+      "Kiểm tra tình trạng mở cửa ngay trước khi đi — khu này đã bị rào chắn nhiều lần.",
+      "Nếu vào được, đứng hẳn trong nhà hoặc sát tường khi tàu đến; đừng đứng trên ray để chụp ảnh.",
+    ],
+    bestTime: "Quanh giờ tàu chạy — hỏi giờ tại chỗ, lịch có thay đổi",
+    visitDuration: "45 phút",
+    ticket: "",
+    openingHours: "Tuỳ thời điểm; khu vực có thể bị rào chắn hoàn toàn",
+    badges: ["verified", "trending"],
+    tags: ["city", "photography", "adventure"],
+    gallery: [
+      { seed: "hanoi-train-street-1", caption: "Đường ray chạy giữa hai dãy nhà", ratio: "16/9" },
+      { seed: "hanoi-train-street-2", caption: "Sinh hoạt thường ngày bên đường tàu", ratio: "4/3" },
+    ],
+    nearby: ["old-quarter-hanoi", "hoa-lo-prison", "st-joseph-cathedral-hanoi"],
+    sourceUrl: "https://www.openstreetmap.org/node/14096883184",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "the-note-coffee",
+    slug: "the-note-coffee",
+    provinceSlug: "ha-noi",
+    name: "The Note Coffee",
+    nameEn: "The Note Coffee",
+    type: "cafe",
+    lng: 105.8508,
+    lat: 21.0316,
+    summary:
+      "Quán cà phê dán kín tường bằng giấy note của khách, viết bằng đủ thứ tiếng trên đời.",
+    story:
+      "Mọi bề mặt trong quán — tường, trần, mặt bậc cầu thang, thành lan can — đều phủ kín những mẩu giấy note đủ màu do khách dán lên. Có lời chúc, có lời tỏ tình, có địa chỉ email của một người bạn vừa quen trên đường, viết bằng tiếng Việt, Anh, Hàn, Nhật, Do Thái, Ả Rập. Nhân viên đưa cho bạn một tờ giấy và cây bút cùng lúc với ly cà phê, và giấy cũ được bóc đi định kỳ để chỗ cho lớp mới, nên cái bạn nhìn thấy luôn là vài tháng gần nhất chứ không phải cả lịch sử quán. Quán ngay cạnh hồ Gươm nên rất tiện ghé giữa buổi đi bộ phố cổ.",
+    facts: [
+      "Toàn bộ tường, trần và cầu thang quán được dán kín giấy note do khách viết.",
+      "Giấy note ở đây được viết bằng rất nhiều ngôn ngữ khác nhau.",
+      "Lớp giấy cũ được bóc định kỳ, nên nội dung nhìn thấy luôn là gần đây.",
+      "Quán nằm sát hồ Hoàn Kiếm, trong khu phố cổ.",
+    ],
+    travelTips: [
+      "Quán chật và nhiều tầng — nhóm đông nên tránh giờ cao điểm buổi chiều.",
+      "Thử cà phê trứng ở đây nếu chưa kịp ghé các quán gốc trên phố Nguyễn Hữu Huân.",
+    ],
+    bestTime: "Quanh năm; giữa buổi sáng là lúc vắng nhất",
+    visitDuration: "1 giờ",
+    ticket: "",
+    openingHours: "Theo giờ mở cửa của quán, thường từ sáng tới tối",
+    badges: ["verified"],
+    tags: ["cafe", "city", "photography"],
+    gallery: [
+      { seed: "the-note-coffee-1", caption: "Tường quán phủ kín giấy note nhiều màu", ratio: "4/3" },
+      { seed: "the-note-coffee-2", caption: "Cầu thang dán note dẫn lên tầng trên", ratio: "16/9" },
+    ],
+    nearby: ["hoan-kiem-lake", "ngoc-son-temple", "ta-hien-street"],
+    sourceUrl: "https://www.openstreetmap.org/node/4486254298",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "st-joseph-cathedral-hanoi",
+    slug: "nha-tho-lon-ha-noi",
+    provinceSlug: "ha-noi",
+    name: "Nhà thờ Lớn Hà Nội",
+    nameEn: "St Joseph's Cathedral",
+    type: "temple",
+    lng: 105.8489,
+    lat: 21.0286,
+    summary:
+      "Nhà thờ tân Gothic tường xám loang, mô phỏng Notre-Dame Paris, dựng từ thập niên 1880.",
+    story:
+      "Nhà thờ Lớn được khánh thành vào cuối thập niên 1880, và người Pháp đã lấy Notre-Dame de Paris làm hình mẫu: hai tháp chuông vuông, cửa sổ hoa hồng, vòm nhọn. Nhưng khí hậu Hà Nội đã làm phần việc của nó — lớp vữa ngoài loang lổ, xám đen từng mảng, và chính vẻ cũ kỹ đó khiến công trình trông thật hơn bản gốc rất nhiều. Khoảng sân trước nhà thờ là nơi tụ tập quen thuộc của thanh niên Hà Nội, còn các con phố quanh đó — Nhà Thờ, Ấu Triệu, Nhà Chung — dày đặc quán trà chanh và cà phê. Đêm Giáng sinh, cả khu này đông không lối đi.",
+    facts: [
+      "Nhà thờ được khánh thành vào cuối thập niên 1880 dưới thời Pháp thuộc.",
+      "Thiết kế theo phong cách tân Gothic, lấy Notre-Dame de Paris làm hình mẫu.",
+      "Lớp vữa ngoài loang màu theo thời gian là nét nhận diện của công trình.",
+      "Các phố quanh nhà thờ nổi tiếng với quán trà chanh và cà phê vỉa hè.",
+    ],
+    travelTips: [
+      "Đây là nhà thờ đang hoạt động — tránh vào tham quan trong giờ lễ.",
+      "Ngồi trà chanh ở phố Nhà Thờ lúc chiều muộn là trải nghiệm gắn liền với nơi này.",
+    ],
+    bestTime: "Chiều muộn; đông đặc vào đêm Giáng sinh",
+    visitDuration: "30 - 45 phút",
+    ticket: "",
+    openingHours: "Ngoài giờ lễ; giờ lễ niêm yết tại cổng",
+    badges: ["verified", "popular"],
+    tags: ["temple", "architecture", "city", "photography"],
+    gallery: [
+      { seed: "st-joseph-cathedral-hanoi-1", caption: "Hai tháp chuông tường xám loang", ratio: "4/3" },
+      { seed: "st-joseph-cathedral-hanoi-2", caption: "Quán trà chanh trên phố Nhà Thờ", ratio: "16/9" },
+    ],
+    nearby: ["hoan-kiem-lake", "old-quarter-hanoi", "hoa-lo-prison"],
+    sourceUrl: "https://www.openstreetmap.org/way/28912942",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "hanoi-opera-house",
+    slug: "nha-hat-lon-ha-noi",
+    provinceSlug: "ha-noi",
+    name: "Nhà hát Lớn Hà Nội",
+    nameEn: "Hanoi Opera House",
+    type: "city",
+    lng: 105.8578,
+    lat: 21.0242,
+    summary:
+      "Nhà hát vàng nhạt kiểu Beaux-Arts, mô phỏng Opéra Garnier, hoàn thành năm 1911.",
+    story:
+      "Người Pháp mất hơn mười năm để dựng xong công trình này và lấy Opéra Garnier ở Paris làm khuôn mẫu: hàng cột đôi, mái vòm, ban công đá, tường quét vàng nhạt viền trắng. Nhà hát khánh thành năm 1911, và nó không chỉ là nơi diễn kịch — chính từ ban công toà nhà này, tháng Tám 1945, người ta đã đọc lời kêu gọi trước quảng trường đông nghịt. Bên trong, khán phòng chữ U với đèn chùm pha lê và ghế nhung đỏ vẫn giữ nguyên dáng cũ. Ban ngày công trình chỉ mở theo lịch tham quan hạn chế, nên cách chắc chắn nhất để vào bên trong là mua vé xem một buổi diễn.",
+    facts: [
+      "Nhà hát hoàn thành năm 1911, lấy Opéra Garnier ở Paris làm hình mẫu.",
+      "Công trình theo phong cách Beaux-Arts, tường vàng nhạt viền trắng.",
+      "Tháng Tám năm 1945, quảng trường trước nhà hát là nơi diễn ra sự kiện lịch sử của Cách mạng Tháng Tám.",
+      "Khán phòng bên trong giữ nguyên dáng chữ U với đèn chùm pha lê và ghế nhung đỏ.",
+    ],
+    travelTips: [
+      "Muốn vào bên trong thì mua vé một buổi biểu diễn — lịch tham quan ban ngày rất hạn chế.",
+      "Mặt tiền đẹp nhất lúc lên đèn, chụp từ phía quảng trường Cách mạng Tháng Tám.",
+    ],
+    bestTime: "Buổi tối, khi mặt tiền lên đèn",
+    // Ngắm mặt tiền là việc hầu hết khách làm; xem một buổi diễn là lựa chọn, ghi ở travelTips.
+    // Để cả hai vào đây thì bộ đọc thời lượng của 038b lấy cận trên (120 phút) cho MỌI khách.
+    visitDuration: "30 - 45 phút",
+    ticket: "Giá vé tuỳ chương trình biểu diễn",
+    openingHours: "Theo lịch biểu diễn và lịch tham quan công bố",
+    badges: ["verified"],
+    tags: ["city", "architecture", "history", "culture"],
+    gallery: [
+      { seed: "hanoi-opera-house-1", caption: "Mặt tiền Nhà hát Lớn lên đèn", ratio: "16/9" },
+      { seed: "hanoi-opera-house-2", caption: "Hàng cột đôi và ban công đá", ratio: "4/3" },
+    ],
+    nearby: ["hoan-kiem-lake", "old-quarter-hanoi", "ngoc-son-temple"],
+    sourceUrl: "https://en.wikipedia.org/wiki/Hanoi_Opera_House",
+    verifiedAt: "2026-08-16",
+  },
+];

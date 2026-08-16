@@ -4,6 +4,22 @@
 // `scripts/check-i18n.mjs` enforces that every locale defines exactly these keys.
 
 export const tagsVi = {
+  // ── Venue vocabulary (038) ────────────────────────────────────────────────
+  // Grouped rather than filed alphabetically: they are one coherent addition, and the
+  // surrounding list already interleaves two alphabets. NOTE there is no "street" tag here
+  // — that key is taken by the street-FOOD dish tag; the walking-street sense is a
+  // DestinationType, not a tag.
+  "cave": "hang động",
+  "palace": "cung điện",
+  "adventure": "phiêu lưu",
+  "architecture": "kiến trúc",
+  "cafe": "quán cà phê",
+  "family": "gia đình",
+  "nightlife": "về đêm",
+  "shopping": "mua sắm",
+  "sunset": "hoàng hôn",
+  "viewpoint": "ngắm cảnh",
+  // ──────────────────────────────────────────────────────────────────────────
   "Baekje": "Bách Tế",
   "beach": "bãi biển",
   "bibimbap": "bibimbap",

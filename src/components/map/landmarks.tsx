@@ -144,6 +144,38 @@ function PalaceGate({ className }: LandmarkProps) {
   );
 }
 
+/** Landmark cafe — the venue vocabulary's daytime anchor (038). */
+function CoffeeCup({ className }: LandmarkProps) {
+  return (
+    <svg viewBox={box} className={className} aria-hidden>
+      <g stroke="#cfe4ee" strokeWidth="1.3" strokeLinecap="round" fill="none">
+        <path d="M8.5 5.5q1-1.3 0-2.6" />
+        <path d="M11.5 5.5q1-1.3 0-2.6" />
+      </g>
+      <path d="M16.5 9.5h1.2a2.4 2.4 0 0 1 0 4.8h-1.2" fill="none" stroke="#d9ad55" strokeWidth="1.7" />
+      <path d="M4.5 8h12v4.5a6 6 0 0 1-12 0z" fill="#eef0e8" />
+      <ellipse cx="10.5" cy="8" rx="6" ry="1.4" fill="#7a5b2e" />
+      <rect x="3" y="18.5" width="15" height="2.2" rx="1.1" fill="#d9ad55" />
+    </svg>
+  );
+}
+
+/** Ticketed attraction park — Bà Nà, VinWonders, Sun World (038). */
+function FerrisWheel({ className }: LandmarkProps) {
+  return (
+    <svg viewBox={box} className={className} aria-hidden>
+      <path d="M12 10 8.5 20.5h7z" fill="#7a5b2e" />
+      <circle cx="12" cy="10" r="7" fill="none" stroke="#d8604f" strokeWidth="1.6" />
+      <g stroke="#e08a5b" strokeWidth="1"><path d="M12 3v14M5 10h14M7.1 5.1l9.8 9.8M16.9 5.1l-9.8 9.8" /></g>
+      <g fill="#d9ad55">
+        <circle cx="12" cy="3" r="1.7" /><circle cx="5" cy="10" r="1.7" /><circle cx="19" cy="10" r="1.7" />
+      </g>
+      <circle cx="12" cy="10" r="1.6" fill="#5b431f" />
+      <rect x="6" y="20.3" width="12" height="1.8" rx="0.9" fill="#5b431f" />
+    </svg>
+  );
+}
+
 const map: Record<DestinationType, (p: LandmarkProps) => ReactElement> = {
   palace: PalaceGate,
   temple: Pagoda,
@@ -160,6 +192,12 @@ const map: Record<DestinationType, (p: LandmarkProps) => ReactElement> = {
   village: Lantern,
   market: Market,
   bridge: Lantern,
+  // Venue types (038) — two new drawings, three reuse art that already says the right thing.
+  cafe: CoffeeCup,
+  themepark: FerrisWheel,
+  viewpoint: Mountain,
+  nightlife: Skyscraper,
+  street: Lantern,
 };
 
 export function Landmark({ type, className }: { type: DestinationType; className?: string }) {

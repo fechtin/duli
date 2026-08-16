@@ -13,6 +13,26 @@ import { southeastDepthDestinations } from "./regions/depth/southeast.ts";
 import { centralHighlandsDepthDestinations } from "./regions/depth/centralHighlands.ts";
 import { northwestDepthDestinations } from "./regions/depth/northwest.ts";
 import { northCentralCoastDepthDestinations } from "./regions/depth/northCentralCoast.ts";
+// Hub depth (tasks/038) — tourist hubs get 14-22 entries instead of the flat 3 the 033
+// coverage pass left them with, so an itinerary has something to build a day out of.
+import { daNangCoreDestinations } from "./regions/hubs/daNangCore.ts";
+import { daNangOuterDestinations } from "./regions/hubs/daNangOuter.ts";
+import { hoiAnOldTownDestinations } from "./regions/hubs/hoiAnOldTown.ts";
+import { hoiAnAroundDestinations } from "./regions/hubs/hoiAnAround.ts";
+import { hanoiOldQuarterDestinations } from "./regions/hubs/hanoiOldQuarter.ts";
+import { hanoiCitadelDestinations } from "./regions/hubs/hanoiCitadel.ts";
+import { hanoiOuterDestinations } from "./regions/hubs/hanoiOuter.ts";
+import { hcmCenterDestinations } from "./regions/hubs/hcmCenter.ts";
+import { hcmOuterDestinations } from "./regions/hubs/hcmOuter.ts";
+import { hueRoyalDestinations } from "./regions/hubs/hueRoyal.ts";
+import { hueAroundDestinations } from "./regions/hubs/hueAround.ts";
+import { daLatCityDestinations } from "./regions/hubs/daLatCity.ts";
+import { daLatAroundDestinations } from "./regions/hubs/daLatAround.ts";
+import { nhaTrangDestinations } from "./regions/hubs/nhaTrang.ts";
+import { phuQuocDestinations } from "./regions/hubs/phuQuoc.ts";
+import { sapaDestinations } from "./regions/hubs/sapa.ts";
+import { haLongDestinations } from "./regions/hubs/haLong.ts";
+import { ninhBinhDestinations } from "./regions/hubs/ninhBinh.ts";
 
 // Seed destinations — official content, Vietnamese source (Bible 009 §5).
 // This is the AUTHORING source for D1 (scripts/build-d1-seed.mjs). The client reads from
@@ -1030,6 +1050,27 @@ export const destinations: Destination[] = [
   ...centralHighlandsDepthDestinations,
   ...northwestDepthDestinations,
   ...northCentralCoastDepthDestinations,
+  // Hub depth (tasks/038), wave 1: the Đà Nẵng – Hội An corridor.
+  ...daNangCoreDestinations,
+  ...daNangOuterDestinations,
+  ...hoiAnOldTownDestinations,
+  ...hoiAnAroundDestinations,
+  // Hub depth (tasks/038), wave 2.
+  ...hanoiOldQuarterDestinations,
+  ...hanoiCitadelDestinations,
+  ...hanoiOuterDestinations,
+  ...hcmCenterDestinations,
+  ...hcmOuterDestinations,
+  ...hueRoyalDestinations,
+  ...hueAroundDestinations,
+  ...daLatCityDestinations,
+  ...daLatAroundDestinations,
+  // Hub depth (tasks/038), wave 3.
+  ...nhaTrangDestinations,
+  ...phuQuocDestinations,
+  ...sapaDestinations,
+  ...haLongDestinations,
+  ...ninhBinhDestinations,
 ];
 
 export const destinationById = new Map(destinations.map((d) => [d.id, d]));

@@ -21,5 +21,34 @@
   "co-to-island": "Cô Tô Island",
   "phuong-hoang-cave": "Hang Phượng Hoàng - suối Mỏ Gà",
   "ban-ba-waterfall": "Thác Bản Ba",
-  "khau-pha-pass": "Đèo Khau Phạ"
+  "khau-pha-pass": "Đèo Khau Phạ",
+
+  "_comment_038": "Hub depth batch. The two marked FALSE ERROR are why this block exists: resolving on nameEn sent 'Con Market' to Con Thien (a battle site 161km away in Quang Tri) and 'My Khe Beach' to the Battle of Khe Sanh (175km). Both atlas coordinates were correct; the resolver was not.",
+  "con-market": "Chợ Cồn",
+  "my-khe-beach": "Bãi biển Mỹ Khê",
+  "dragon-bridge": "Cầu Rồng",
+  "han-river-bridge": "Cầu Sông Hàn",
+  "han-market": "Chợ Hàn",
+  "da-nang-cathedral": "Nhà thờ chính tòa Đà Nẵng",
+  "linh-ung-pagoda-bai-but": "Chùa Linh Ứng",
+  "japanese-covered-bridge": "Chùa Cầu",
+  "tan-ky-house": "Nhà cổ Tấn Ký",
+  "phuc-kien-assembly-hall": "Hội quán Phúc Kiến",
+  "tra-que-vegetable-village": "Làng rau Trà Quế",
+  "cua-dai-beach": "Cửa Đại",
+  "non-nuoc-beach": "Non Nước",
+  "ba-na-hills": "Bà Nà Hills",
+  "hai-van-pass": "Hải Vân Pass",
+  "cham-museum": "Museum of Cham Sculpture",
+
+  "_comment_038_wave3": "Five more false matches, found on the full 327-entry run once waves 2-3 were in. The first three now measure 0.0 km against the pinned article — proof the atlas coordinates were right all along and only the nameEn lookup was wrong: 'Binh Ba Island' had resolved to the Battle of Binh Gia (251km), 'Van Don' to Van Don International Airport (5.2km, just over the threshold), and 'Tam Giang lagoon' to the combined Tam Giang-Cau Hai article whose centroid sits 18.8km up a 70km lagoon. The last two pin articles that exist but carry NO coordinates, so verify reports 'position unchecked' instead of a fake error: better an honest gap than 'Lang Co Beach' matching the Battle of Lang Vei (153km) or 'Thanh Toan tile bridge' matching Thanh Hoa Bridge (423km).",
+  "binh-ba-island": "Đảo Bình Ba",
+  "van-don-island": "Vân Đồn",
+  "tam-giang-lagoon": "Phá Tam Giang",
+  "lang-co-beach": "Vịnh Lăng Cô",
+  "thanh-toan-tile-bridge": "Cầu ngói Thanh Toàn",
+
+  "_comment_038_legacy": "Not from the 038 batch — two legacy entries that surfaced as errors during it, with the same false match: 'Vinh Trang Pagoda' resolved to the CITY of Vinh (926km) and 'Thien An Mountain' to Con Thien (277km). The error set churns between runs because the resolver drifts, so these were intermittent rather than new.",
+  "vinh-trang-pagoda": "Chùa Vĩnh Tràng",
+  "thien-an-mountain": "Núi Thiên Ấn"
 }

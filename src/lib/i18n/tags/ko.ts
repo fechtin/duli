@@ -3,6 +3,17 @@
 import type { TagKey } from "./vi";
 
 export const tagsKo: Record<TagKey, string> = {
+  // Venue vocabulary (038) — see tags/vi.ts for why they sit in a block.
+  "cave": "동굴",
+  "palace": "궁궐",
+  "adventure": "액티비티",
+  "architecture": "건축",
+  "cafe": "카페",
+  "family": "가족",
+  "nightlife": "나이트라이프",
+  "shopping": "쇼핑",
+  "sunset": "노을",
+  "viewpoint": "전망",
   "Baekje": "백제",
   "beach": "해변",
   "bibimbap": "비빔밥",

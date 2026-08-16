@@ -64,6 +64,53 @@ import * as nccEn from "./content/depth/northCentralCoast.en.ts";
 import * as nccKo from "./content/depth/northCentralCoast.ko.ts";
 import * as nccJa from "./content/depth/northCentralCoast.ja.ts";
 import * as nccZh from "./content/depth/northCentralCoast.zh.ts";
+// Hub depth (tasks/038) — one bucket per hub, not per region: a hub's entries are authored
+// together and reviewed together, so they translate together.
+import * as dnEn from "./content/hubs/daNang.en.ts";
+import * as dnKo from "./content/hubs/daNang.ko.ts";
+import * as dnJa from "./content/hubs/daNang.ja.ts";
+import * as dnZh from "./content/hubs/daNang.zh.ts";
+import * as haEn from "./content/hubs/hoiAn.en.ts";
+import * as haKo from "./content/hubs/hoiAn.ko.ts";
+import * as haJa from "./content/hubs/hoiAn.ja.ts";
+import * as haZh from "./content/hubs/hoiAn.zh.ts";
+import * as hnEn from "./content/hubs/hanoi.en.ts";
+import * as hnKo from "./content/hubs/hanoi.ko.ts";
+import * as hnJa from "./content/hubs/hanoi.ja.ts";
+import * as hnZh from "./content/hubs/hanoi.zh.ts";
+import * as hcEn from "./content/hubs/hcm.en.ts";
+import * as hcKo from "./content/hubs/hcm.ko.ts";
+import * as hcJa from "./content/hubs/hcm.ja.ts";
+import * as hcZh from "./content/hubs/hcm.zh.ts";
+import * as hueEn from "./content/hubs/hue.en.ts";
+import * as hueKo from "./content/hubs/hue.ko.ts";
+import * as hueJa from "./content/hubs/hue.ja.ts";
+import * as hueZh from "./content/hubs/hue.zh.ts";
+// Đà Lạt and the wave-3 hubs (tasks/038-vn-hubs.md).
+import * as dlEn from "./content/hubs/daLat.en.ts";
+import * as ntEn from "./content/hubs/nhaTrang.en.ts";
+import * as pqEn from "./content/hubs/phuQuoc.en.ts";
+import * as spEn from "./content/hubs/sapa.en.ts";
+import * as hlEn from "./content/hubs/haLong.en.ts";
+import * as nbEn from "./content/hubs/ninhBinh.en.ts";
+import * as dlKo from "./content/hubs/daLat.ko.ts";
+import * as dlJa from "./content/hubs/daLat.ja.ts";
+import * as dlZh from "./content/hubs/daLat.zh.ts";
+import * as ntKo from "./content/hubs/nhaTrang.ko.ts";
+import * as ntJa from "./content/hubs/nhaTrang.ja.ts";
+import * as ntZh from "./content/hubs/nhaTrang.zh.ts";
+import * as pqKo from "./content/hubs/phuQuoc.ko.ts";
+import * as pqJa from "./content/hubs/phuQuoc.ja.ts";
+import * as pqZh from "./content/hubs/phuQuoc.zh.ts";
+import * as spKo from "./content/hubs/sapa.ko.ts";
+import * as spJa from "./content/hubs/sapa.ja.ts";
+import * as spZh from "./content/hubs/sapa.zh.ts";
+import * as hlKo from "./content/hubs/haLong.ko.ts";
+import * as hlJa from "./content/hubs/haLong.ja.ts";
+import * as hlZh from "./content/hubs/haLong.zh.ts";
+import * as nbKo from "./content/hubs/ninhBinh.ko.ts";
+import * as nbJa from "./content/hubs/ninhBinh.ja.ts";
+import * as nbZh from "./content/hubs/ninhBinh.zh.ts";
 
 interface BucketModule {
   destinations: Record<string, DestinationTranslation>;
@@ -71,10 +118,10 @@ interface BucketModule {
 }
 
 const byLocale: Record<ContentLocale, BucketModule[]> = {
-  en: [nmEn, rrdEn, ncEn, schEn, seEn, mkEn, neEn, rrdDEn, mkDEn, sccEn, seDEn, chEn, nwEn, nccEn],
-  ko: [nmKo, rrdKo, ncKo, schKo, seKo, mkKo, neKo, rrdDKo, mkDKo, sccKo, seDKo, chKo, nwKo, nccKo],
-  ja: [nmJa, rrdJa, ncJa, schJa, seJa, mkJa, neJa, rrdDJa, mkDJa, sccJa, seDJa, chJa, nwJa, nccJa],
-  zh: [nmZh, rrdZh, ncZh, schZh, seZh, mkZh, neZh, rrdDZh, mkDZh, sccZh, seDZh, chZh, nwZh, nccZh],
+  en: [nmEn, rrdEn, ncEn, schEn, seEn, mkEn, neEn, rrdDEn, mkDEn, sccEn, seDEn, chEn, nwEn, nccEn, dnEn, haEn, hnEn, hcEn, hueEn, dlEn, ntEn, pqEn, spEn, hlEn, nbEn],
+  ko: [nmKo, rrdKo, ncKo, schKo, seKo, mkKo, neKo, rrdDKo, mkDKo, sccKo, seDKo, chKo, nwKo, nccKo, dnKo, haKo, hnKo, hcKo, hueKo, dlKo, ntKo, pqKo, spKo, hlKo, nbKo],
+  ja: [nmJa, rrdJa, ncJa, schJa, seJa, mkJa, neJa, rrdDJa, mkDJa, sccJa, seDJa, chJa, nwJa, nccJa, dnJa, haJa, hnJa, hcJa, hueJa, dlJa, ntJa, pqJa, spJa, hlJa, nbJa],
+  zh: [nmZh, rrdZh, ncZh, schZh, seZh, mkZh, neZh, rrdDZh, mkDZh, sccZh, seDZh, chZh, nwZh, nccZh, dnZh, haZh, hnZh, hcZh, hueZh, dlZh, ntZh, pqZh, spZh, hlZh, nbZh],
 };
 
 export const destinationI18n: Record<string, DestinationI18n> = {};

@@ -1,0 +1,354 @@
+[
+  {
+    "id": "dragon-bridge",
+    "name": "Cầu Rồng",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2267,
+      "lat": 16.0611,
+      "via": "wikidata",
+      "title": "Cầu Rồng",
+      "url": "https://www.wikidata.org/wiki/Q5305270"
+    },
+    "kmFromProvinceCentroid": 18.1,
+    "rejected": null
+  },
+  {
+    "id": "han-river-bridge",
+    "name": "Cầu Sông Hàn",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2268,
+      "lat": 16.0721,
+      "via": "vi",
+      "title": "Cầu Sông Hàn",
+      "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_S%C3%B4ng_H%C3%A0n"
+    },
+    "kmFromProvinceCentroid": 18.1,
+    "rejected": null
+  },
+  {
+    "id": "cham-museum",
+    "name": "Bảo tàng Điêu khắc Chăm",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2226,
+      "lat": 16.0599,
+      "via": "en",
+      "title": "Museum of Cham Sculpture",
+      "url": "https://en.wikipedia.org/wiki/Museum_of_Cham_Sculpture"
+    },
+    "kmFromProvinceCentroid": 17.6,
+    "rejected": null
+  },
+  {
+    "id": "con-market",
+    "name": "Chợ Cồn",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2142,
+      "lat": 16.0678,
+      "via": "vi",
+      "title": "Chợ Cồn",
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_C%E1%BB%93n"
+    },
+    "kmFromProvinceCentroid": 16.7,
+    "rejected": null
+  },
+  {
+    "id": "han-market",
+    "name": "Chợ Hàn",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2242,
+      "lat": 16.0683,
+      "via": "vi",
+      "title": "Chợ Hàn",
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_H%C3%A0n"
+    },
+    "kmFromProvinceCentroid": 17.8,
+    "rejected": null
+  },
+  {
+    "id": "da-nang-cathedral",
+    "name": "Nhà thờ Chính tòa Đà Nẵng",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2231,
+      "lat": 16.0667,
+      "via": "osm",
+      "title": "Nhà thờ Chính tòa Đà Nẵng",
+      "url": "https://www.openstreetmap.org/way/404714309"
+    },
+    "kmFromProvinceCentroid": 17.7,
+    "rejected": null
+  },
+  {
+    "id": "apec-park",
+    "name": "Công viên APEC",
+    "province": "da-nang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "son-tra-night-market",
+    "name": "Chợ đêm Sơn Trà",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2314,
+      "lat": 16.0607,
+      "via": "osm",
+      "title": "Chợ Đêm Sơn Trà",
+      "url": "https://www.openstreetmap.org/node/13300819649"
+    },
+    "kmFromProvinceCentroid": 18.6,
+    "rejected": null
+  },
+  {
+    "id": "my-khe-beach",
+    "name": "Bãi biển Mỹ Khê",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2461,
+      "lat": 16.0704,
+      "via": "vi",
+      "title": "Bãi biển Mỹ Khê",
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A3i_bi%E1%BB%83n_M%E1%BB%B9_Kh%C3%AA"
+    },
+    "kmFromProvinceCentroid": 20.1,
+    "rejected": null
+  },
+  {
+    "id": "linh-ung-pagoda-bai-but",
+    "name": "Chùa Linh Ứng Bãi Bụt",
+    "province": "da-nang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ban-co-peak",
+    "name": "Đỉnh Bàn Cờ",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.272,
+      "lat": 16.1189,
+      "via": "osm",
+      "title": "Ban Co Peak",
+      "url": "https://www.openstreetmap.org/node/1538334281"
+    },
+    "kmFromProvinceCentroid": 23.6,
+    "rejected": null
+  },
+  {
+    "id": "non-nuoc-beach",
+    "name": "Bãi biển Non Nước",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2688,
+      "lat": 16.0057,
+      "via": "osm",
+      "title": "Bãi tắm Non Nước",
+      "url": "https://www.openstreetmap.org/way/1204900824"
+    },
+    "kmFromProvinceCentroid": 23.6,
+    "rejected": null
+  },
+  {
+    "id": "non-nuoc-stone-village",
+    "name": "Làng đá mỹ nghệ Non Nước",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.2499,
+      "lat": 15.9895,
+      "via": "osm",
+      "title": "Làng đá mỹ nghệ Non Nước",
+      "url": "https://www.openstreetmap.org/way/1492497349"
+    },
+    "kmFromProvinceCentroid": 22.3,
+    "rejected": null
+  },
+  {
+    "id": "ba-na-hills",
+    "name": "Bà Nà Hills",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 107.9942,
+      "lat": 15.9956,
+      "via": "en",
+      "title": "Bà Nà Hills",
+      "url": "https://en.wikipedia.org/wiki/B%C3%A0_N%C3%A0_Hills"
+    },
+    "kmFromProvinceCentroid": 10.6,
+    "rejected": null
+  },
+  {
+    "id": "hai-van-pass",
+    "name": "Đèo Hải Vân",
+    "province": "da-nang",
+    "resolved": {
+      "lng": 108.1333,
+      "lat": 16.2,
+      "via": "en",
+      "title": "Hải Vân Pass",
+      "url": "https://en.wikipedia.org/wiki/H%E1%BA%A3i_V%C3%A2n_Pass"
+    },
+    "kmFromProvinceCentroid": 16.7,
+    "rejected": null
+  },
+  {
+    "id": "asia-park-sun-wheel",
+    "name": "Công viên Châu Á",
+    "province": "da-nang",
+    "resolved": null,
+    "kmFromProvinceCentroid": 3027.8,
+    "rejected": "Asia Park (en, 3028km, too far)"
+  },
+  {
+    "id": "son-tra-marina",
+    "name": "Sơn Trà Marina",
+    "province": "da-nang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "japanese-covered-bridge",
+    "name": "Chùa Cầu",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3242,
+      "lat": 15.8694,
+      "via": "vi",
+      "title": "Chùa Cầu",
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_C%E1%BA%A7u"
+    },
+    "kmFromProvinceCentroid": 50.1,
+    "rejected": null
+  },
+  {
+    "id": "tan-ky-house",
+    "name": "Nhà cổ Tấn Ký",
+    "province": "quang-nam",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "phuc-kien-assembly-hall",
+    "name": "Hội quán Phúc Kiến",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.331,
+      "lat": 15.8781,
+      "via": "osm",
+      "title": "Hội quán Phúc Kiến",
+      "url": "https://www.openstreetmap.org/way/320722329"
+    },
+    "kmFromProvinceCentroid": 51.3,
+    "rejected": null
+  },
+  {
+    "id": "hoi-an-night-market",
+    "name": "Chợ đêm Hội An",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3259,
+      "lat": 15.8758,
+      "via": "osm",
+      "title": "Chợ Đêm",
+      "url": "https://www.openstreetmap.org/node/6099308589"
+    },
+    "kmFromProvinceCentroid": 50.7,
+    "rejected": null
+  },
+  {
+    "id": "thanh-ha-pottery-village",
+    "name": "Làng gốm Thanh Hà",
+    "province": "quang-nam",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "tra-que-vegetable-village",
+    "name": "Làng rau Trà Quế",
+    "province": "quang-nam",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "kim-bong-carpentry-village",
+    "name": "Làng mộc Kim Bồng",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3253,
+      "lat": 15.8645,
+      "via": "osm",
+      "title": "Làng mộc Kim Bồng",
+      "url": "https://www.openstreetmap.org/node/10709738006"
+    },
+    "kmFromProvinceCentroid": 49.9,
+    "rejected": null
+  },
+  {
+    "id": "an-bang-beach",
+    "name": "Biển An Bàng",
+    "province": "quang-nam",
+    "resolved": null,
+    "kmFromProvinceCentroid": 1012.2,
+    "rejected": "Hải đăng An Bang (osm, 1012km, too far)"
+  },
+  {
+    "id": "cua-dai-beach",
+    "name": "Biển Cửa Đại",
+    "province": "quang-nam",
+    "resolved": null,
+    "kmFromProvinceCentroid": 111.9,
+    "rejected": "Đồn Biên phòng cửa khẩu cảng Thuận An (osm, 112km, name mismatch)"
+  },
+  {
+    "id": "bay-mau-coconut-forest",
+    "name": "Rừng dừa Bảy Mẫu",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3742,
+      "lat": 15.875,
+      "via": "wikidata",
+      "title": "Rừng dừa Bảy Mẫu",
+      "url": "https://www.wikidata.org/wiki/Q138660353"
+    },
+    "kmFromProvinceCentroid": 54.8,
+    "rejected": null
+  },
+  {
+    "id": "faifo-coffee",
+    "name": "Faifo Coffee",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3281,
+      "lat": 15.8772,
+      "via": "osm",
+      "title": "Faifo Coffee",
+      "url": "https://www.openstreetmap.org/node/4889357333"
+    },
+    "kmFromProvinceCentroid": 51,
+    "rejected": null
+  },
+  {
+    "id": "reaching-out-teahouse",
+    "name": "Reaching Out Teahouse",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3272,
+      "lat": 15.877,
+      "via": "osm",
+      "title": "Reaching out Teahouse",
+      "url": "https://www.openstreetmap.org/way/632030501"
+    },
+    "kmFromProvinceCentroid": 50.9,
+    "rejected": null
+  }
+]

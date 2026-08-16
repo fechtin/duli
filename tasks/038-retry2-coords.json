@@ -1,0 +1,54 @@
+[
+  {
+    "id": "asia-park-sun-wheel",
+    "name": "Công viên Châu Á",
+    "province": "da-nang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "son-tra-marina",
+    "name": "Sơn Trà Marina",
+    "province": "da-nang",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "tan-ky-house",
+    "name": "Nhà cổ Tấn Ký",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.3278,
+      "lat": 15.8765,
+      "via": "osm",
+      "title": "Tan Ky",
+      "url": "https://www.openstreetmap.org/way/595299310"
+    },
+    "kmFromProvinceCentroid": 50.9,
+    "rejected": null
+  },
+  {
+    "id": "thanh-ha-pottery-village",
+    "name": "Làng gốm Thanh Hà",
+    "province": "quang-nam",
+    "resolved": {
+      "lng": 108.2522,
+      "lat": 16.1047,
+      "via": "osm",
+      "title": "thanh hà",
+      "url": "https://www.openstreetmap.org/node/5791245359"
+    },
+    "kmFromProvinceCentroid": 65.4,
+    "rejected": null
+  },
+  {
+    "id": "an-bang-beach",
+    "name": "Biển An Bàng",
+    "province": "quang-nam",
+    "resolved": null,
+    "kmFromProvinceCentroid": 93.4,
+    "rejected": "An Banh City of Ghosts (osm, 93km, name mismatch)"
+  }
+]

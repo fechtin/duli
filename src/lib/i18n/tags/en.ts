@@ -3,6 +3,17 @@
 import type { TagKey } from "./vi";
 
 export const tagsEn: Record<TagKey, string> = {
+  // Venue vocabulary (038) — see tags/vi.ts for why they sit in a block.
+  "cave": "cave",
+  "palace": "palace",
+  "adventure": "adventure",
+  "architecture": "architecture",
+  "cafe": "cafe",
+  "family": "family",
+  "nightlife": "nightlife",
+  "shopping": "shopping",
+  "sunset": "sunset",
+  "viewpoint": "viewpoint",
   "Baekje": "Baekje",
   "beach": "beach",
   "bibimbap": "bibimbap",

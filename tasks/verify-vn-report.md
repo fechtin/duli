@@ -1,83 +1,54 @@
 # Verification report — VN atlas
 
-Generated 2026-08-06 by `scripts/verify-content.mjs`. Authority: Wikipedia (en, vi).
+Generated 2026-08-16 by `scripts/verify-content.mjs`. Authority: Wikipedia (en, vi).
 This file is advisory — nothing here edits content.
 
 | | |
 |---|---|
-| Destinations checked | 129 |
-| Coordinate errors (>5 km) | 14 |
-| Warnings | 113 |
-| Never verified (`ticket`/`openingHours` present, no `verifiedAt`) | 115 |
-| Integrity issues | 122 |
+| Destinations checked | 327 |
+| Coordinate errors (>5 km) | 11 |
+| Warnings | 213 |
+| Never verified (`ticket`/`openingHours` present, no `verifiedAt`) | 55 |
+| Integrity issues | 368 |
 
 ## Errors — coordinates more than 5 km out
 
 - **ha-long-bay** (quang-ninh)
   - coordinates off by **20.8 km** vs [Hạ Long Bay](https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay) (20.9, 107.2)
-  - ticket "290.000đ", openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **trang-an** (ninh-binh)
   - coordinates off by **956.2 km** vs [Nha Trang](https://en.wikipedia.org/wiki/Nha_Trang) (12.245, 109.19166667)
-  - ticket "250.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
   - numbers not found in the article (check by hand): 2014
 - **phu-quoc-island** (kien-giang)
   - coordinates off by **5.7 km** vs [Phu Quoc International Airport](https://en.wikipedia.org/wiki/Phu_Quoc_International_Airport) (10.17166667, 103.99111111)
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
   - numbers not found in the article (check by hand): 574km, 7,8km
 - **hoa-binh-lake** (hoa-binh)
   - coordinates off by **1105.1 km** vs [Tet Offensive attacks on Bien Hoa and Long Binh](https://en.wikipedia.org/wiki/Tet_Offensive_attacks_on_Bien_Hoa_and_Long_Binh) (10.977, 106.832)
   - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **bn-den-do** (bac-ninh)
   - coordinates off by **17.4 km** vs [Temple of Literature, Hanoi](https://en.wikipedia.org/wiki/Temple_of_Literature%2C_Hanoi) (21.02861111, 105.83555556)
-  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
-- **tb-chua-keo** (thai-binh)
-  - coordinates off by **32.4 km** vs [Keo Temple](https://en.wikipedia.org/wiki/Keo_Temple) (20.36055556, 106.29722222)
-  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 1632, 400năm
 - **bien-thien-cam** (ha-tinh)
   - coordinates off by **168.7 km** vs [Con Thien](https://en.wikipedia.org/wiki/Con_Thien) (16.90972222, 106.98)
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **dao-con-co** (quang-tri)
   - coordinates off by **940.1 km** vs [Con Dao Airport](https://en.wikipedia.org/wiki/Con_Dao_Airport) (8.7325, 106.62888889)
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
   - numbers not found in the article (check by hand): 30km, 2,3km
-- **pye-ganh-da-dia** (phu-yen)
-  - coordinates off by **16.5 km** vs [Ganh Da Dia](https://en.wikipedia.org/wiki/Ganh_Da_Dia) (13.335, 109.29805556)
-  - ticket "20.000đ", openingHours "06:30 - 18:00" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 200m
 - **gli-chua-minh-thanh** (gia-lai)
   - coordinates off by **380.6 km** vs [Vĩnh Nghiêm Pagoda, Ho Chi Minh City](https://en.wikipedia.org/wiki/V%C4%A9nh_Nghi%C3%AAm_Pagoda%2C_Ho_Chi_Minh_City) (10.7904, 106.6823)
   - openingHours "06:00 - 20:00" — never verified (no `verifiedAt`)
 - **con-dao** (ba-ria-vung-tau)
   - coordinates off by **6.0 km** vs [Con Dao Airport](https://en.wikipedia.org/wiki/Con_Dao_Airport) (8.7325, 106.62888889)
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **bu-gia-map-national-park** (binh-phuoc)
   - coordinates off by **5.2 km** vs [Bù Gia Mập National Park](https://en.wikipedia.org/wiki/B%C3%B9_Gia_M%E1%BA%ADp_National_Park) (12.21666667, 107.15)
-  - openingHours "07:00–16:30" — never verified (no `verifiedAt`)
 - **ca-mau-rung-u-minh-ha** (ca-mau)
   - coordinates off by **7.6 km** vs [U Minh Hạ National Park](https://en.wikipedia.org/wiki/U_Minh_H%E1%BA%A1_National_Park) (9.25138889, 104.94527778)
   - ticket "30.000đ", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
-- **co-to-island** (quang-ninh)
-  - coordinates off by **7.7 km** vs [Cô Tô Island](https://en.wikipedia.org/wiki/C%C3%B4_T%C3%B4_Island) (20.991, 107.756)
-  - numbers not found in the article (check by hand): 50, 80km, 1961
 
 ## Warnings
 
-- **lung-cu-flag-tower** (ha-giang)
-  - ticket "25.000đ", openingHours "07:00 – 18:00" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 33,15m, 1.470m, 54m, 54
 - **ma-pi-leng-pass** (ha-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **dong-van-old-town** (ha-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
-- **sa-pa-town** (lao-cai)
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 1.650m, 3.143m
-- **hoan-kiem-lake** (ha-noi)
-  - article [Hoan Kiem turtle](https://en.wikipedia.org/wiki/Hoan_Kiem_turtle) has no coordinates — position unchecked
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **old-quarter-hanoi** (ha-noi)
   - article [Old Quarter, Hanoi](https://en.wikipedia.org/wiki/Old_Quarter%2C_Hanoi) has no coordinates — position unchecked
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
@@ -85,25 +56,12 @@ This file is advisory — nothing here edits content.
 - **hue-imperial-city** (thua-thien-hue)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - ticket "200.000đ", openingHours "07:00 – 17:30" — never verified (no `verifiedAt`)
-- **golden-bridge** (da-nang)
-  - ticket "900.000đ (vé Bà Nà)", openingHours "08:00 – 22:00" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 1.400m
 - **hoi-an-ancient-town** (quang-nam)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "120.000đ", openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **da-lat-city** (lam-dong)
   - coordinates off by 2.2 km vs [Da Lat](https://en.wikipedia.org/wiki/Da_Lat)
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
-- **ben-thanh-market** (ho-chi-minh)
-  - openingHours "06:00 – 24:00 (chợ đêm)" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 1914
-- **phong-nha-cave** (quang-binh)
-  - article [Phong Nha Cave](https://en.wikipedia.org/wiki/Phong_Nha_Cave) has no coordinates — position unchecked
-  - ticket "150.000đ", openingHours "07:30 – 16:30" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 2003, 400
 - **son-doong-cave** (quang-binh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "Tour từ 70 triệu đồng", openingHours "Theo lịch tour" — never verified (no `verifiedAt`)
 - **nha-trang-beach** (khanh-hoa)
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **hon-mun-island** (khanh-hoa)
@@ -111,13 +69,8 @@ This file is advisory — nothing here edits content.
   - ticket "22.000đ (phí tham quan)", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
 - **bai-sao-beach** (kien-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **tra-su-forest** (an-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "100.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
-- **mieu-ba-chua-xu** (an-giang)
-  - article [Chua](https://en.wikipedia.org/wiki/Chua) has no coordinates — position unchecked
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **buon-don** (dak-lak)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - ticket "20.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
@@ -126,49 +79,37 @@ This file is advisory — nothing here edits content.
   - ticket "30.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
 - **moc-chau-plateau** (son-la)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **mui-ne-sand-dunes** (binh-thuan)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **cai-rang-floating-market** (can-tho)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "05:00 – 09:00" — never verified (no `verifiedAt`)
 - **dien-bien-phu-battlefield** (dien-bien)
-  - article [Dien Bien Phu (film)](https://en.wikipedia.org/wiki/Dien_Bien_Phu_(film)) has no coordinates — position unchecked
   - ticket "100.000đ", openingHours "07:00 – 17:00" — never verified (no `verifiedAt`)
-- **ban-gioc-waterfall** (cao-bang)
-  - ticket "45.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
 - **nguom-ngao-cave** (cao-bang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "45.000đ", openingHours "07:30 - 17:00" — never verified (no `verifiedAt`)
 - **ba-be-lake** (bac-kan)
   - coordinates off by 1.6 km vs [Ba Bể Lake](https://en.wikipedia.org/wiki/Ba_B%E1%BB%83_Lake)
   - ticket "25.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
   - numbers not found in the article (check by hand): 650ha, 25m
 - **tam-thanh-cave** (lang-son)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "20.000đ", openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
 - **mau-son-mountain** (lang-son)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **tan-trao-relic** (tuyen-quang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
 - **mo-na-hang-waterfall** (tuyen-quang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
 - **nui-coc-lake** (thai-nguyen)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "50.000đ", openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
 - **tan-cuong-tea-hills** (thai-nguyen)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **den-hung-temple** (phu-tho)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **tay-yen-tu** (bac-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **vinh-nghiem-pagoda** (bac-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
@@ -177,20 +118,14 @@ This file is advisory — nothing here edits content.
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **thac-ba-lake** (yen-bai)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **o-quy-ho-pass** (lai-chau)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **sin-suoi-ho-village** (lai-chau)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **mai-chau-valley** (hoa-binh)
   - article [Mai Châu](https://en.wikipedia.org/wiki/Mai_Ch%C3%A2u) has no coordinates — position unchecked
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
-- **hp-cat-ba-island** (hai-phong)
-  - article [Cat Ba langur](https://en.wikipedia.org/wiki/Cat_Ba_langur) has no coordinates — position unchecked
-  - ticket "80.000đ", openingHours "Cả ngày" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 367, 2023, 130
 - **hp-do-son-beach** (hai-phong)
   - article [Son of the Beach](https://en.wikipedia.org/wiki/Son_of_the_Beach) has no coordinates — position unchecked
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
@@ -203,14 +138,8 @@ This file is advisory — nothing here edits content.
   - openingHours "06:30 - 18:00" — never verified (no `verifiedAt`)
 - **hd-dao-co** (hai-duong)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "30.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
-- **hy-pho-hien** (hung-yen)
-  - article [Pho](https://en.wikipedia.org/wiki/Pho) has no coordinates — position unchecked
-  - openingHours "07:00 - 18:00" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 100
 - **hy-chua-chuong** (hung-yen)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **hn-tam-chuc** (ha-nam)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "06:00 - 21:00" — never verified (no `verifiedAt`)
@@ -223,15 +152,9 @@ This file is advisory — nothing here edits content.
 - **tb-con-vanh** (thai-binh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
-- **vp-tam-dao** (vinh-phuc)
-  - article [Tam Đảo district](https://en.wikipedia.org/wiki/Tam_%C4%90%E1%BA%A3o_district) has no coordinates — position unchecked
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
-  - numbers not found in the article (check by hand): 900m, 1904
 - **vp-tay-thien** (vinh-phuc)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
-- **thanh-nha-ho** (thanh-hoa)
-  - ticket "40.000đ", openingHours "07:00 - 17:30" — never verified (no `verifiedAt`)
 - **bien-sam-son** (thanh-hoa)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
@@ -246,22 +169,17 @@ This file is advisory — nothing here edits content.
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **vuon-quoc-gia-pu-mat** (nghe-an)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "50.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
 - **chua-huong-tich** (ha-tinh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "30.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **nga-ba-dong-loc** (ha-tinh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "07:00 - 17:30" — never verified (no `verifiedAt`)
 - **thanh-co-quang-tri** (quang-tri)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
 - **dia-dao-vinh-moc** (quang-tri)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "40.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
 - **qng-ly-son** (quang-ngai)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **qng-sa-huynh** (quang-ngai)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
@@ -270,21 +188,19 @@ This file is advisory — nothing here edits content.
   - ticket "25.000đ (Eo Gió)", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **bdi-thap-banh-it** (binh-dinh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "15.000đ", openingHours "07:00 - 17:30" — never verified (no `verifiedAt`)
+- **pye-ganh-da-dia** (phu-yen)
+  - coordinates off by 2.2 km vs [Ganh Da Dia](https://en.wikipedia.org/wiki/Ganh_Da_Dia)
+  - numbers not found in the article (check by hand): 200m
 - **pye-bai-xep** (phu-yen)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - ticket "20.000đ", openingHours "06:00 - 18:00" — never verified (no `verifiedAt`)
 - **ntn-vinh-vinh-hy** (ninh-thuan)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "Tùy dịch vụ thuyền", openingHours "Cả ngày" — never verified (no `verifiedAt`)
-- **ntn-po-klong-garai** (ninh-thuan)
-  - ticket "20.000đ", openingHours "07:00 - 17:00" — never verified (no `verifiedAt`)
 - **ktm-nha-tho-go** (kon-tum)
   - openingHours "Cả ngày (lễ theo lịch nhà thờ)" — never verified (no `verifiedAt`)
   - numbers not found in the article (check by hand): 1913
 - **ktm-mang-den** (kon-tum)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **gli-bien-ho-tnung** (gia-lai)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
@@ -299,10 +215,8 @@ This file is advisory — nothing here edits content.
   - openingHours "Tượng Chúa: 07:00–17:00" — never verified (no `verifiedAt`)
 - **cat-tien-national-park** (dong-nai)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "60.000đ", openingHours "07:00–17:00" — never verified (no `verifiedAt`)
 - **thac-giang-dien** (dong-nai)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "70.000đ", openingHours "07:00–17:30" — never verified (no `verifiedAt`)
 - **chua-ba-thien-hau-binh-duong** (binh-duong)
   - openingHours "05:00–18:00" — never verified (no `verifiedAt`)
 - **dai-nam-binh-duong** (binh-duong)
@@ -313,7 +227,6 @@ This file is advisory — nothing here edits content.
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **nui-ba-den-tay-ninh** (tay-ninh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "350.000đ (cáp treo)", openingHours "06:00–22:00" — never verified (no `verifiedAt`)
 - **toa-thanh-cao-dai-tay-ninh** (tay-ninh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "06:00–18:00" — never verified (no `verifiedAt`)
@@ -322,10 +235,8 @@ This file is advisory — nothing here edits content.
   - ticket "60.000đ", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
 - **long-an-lang-sen** (long-an)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
 - **tien-giang-cu-lao-thoi-son** (tien-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "150.000đ trọn gói tour", openingHours "08:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
 - **tien-giang-cho-noi-cai-be** (tien-giang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Họp chợ từ 04:00 - 08:00 hằng ngày" — never verified (no `verifiedAt`)
@@ -337,16 +248,13 @@ This file is advisory — nothing here edits content.
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **tra-vinh-chua-vam-ray** (tra-vinh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "06:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
 - **vinh-long-cu-lao-an-binh** (vinh-long)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **vinh-long-lo-gach-mang-thit** (vinh-long)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
 - **dong-thap-tram-chim** (dong-thap)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "10.000đ vé vào, thuê tắc ráng riêng", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
 - **dong-thap-lang-hoa-sa-dec** (dong-thap)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "Cả ngày" — never verified (no `verifiedAt`)
@@ -358,7 +266,6 @@ This file is advisory — nothing here edits content.
   - openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
 - **soc-trang-chua-doi** (soc-trang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-  - ticket "5.000đ", openingHours "07:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
 - **soc-trang-chua-dat-set** (soc-trang)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
   - openingHours "07:00 - 18:00 hằng ngày" — never verified (no `verifiedAt`)
@@ -370,155 +277,666 @@ This file is advisory — nothing here edits content.
   - ticket "30.000đ", openingHours "07:00 - 17:30 hằng ngày" — never verified (no `verifiedAt`)
 - **ca-mau-mui-ca-mau** (ca-mau)
   - coordinates off by 3.0 km vs [Cape Cà Mau](https://en.wikipedia.org/wiki/Cape_C%C3%A0_Mau)
-  - ticket "50.000đ vào khu du lịch", openingHours "07:00 - 17:00 hằng ngày" — never verified (no `verifiedAt`)
-- **suoi-mo** (bac-giang)
+- **dau-pagoda** (bac-ninh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **puong-cave** (bac-kan)
+- **tran-thuong-temple** (ha-nam)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **dau-dang-waterfall** (bac-kan)
+- **nom-village** (hung-yen)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **pac-bo** (cao-bang)
+- **pho-minh-pagoda** (nam-dinh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **huu-nghi-border-gate** (lang-son)
+- **cuc-phuong-national-park** (ninh-binh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **bac-ha-market** (lao-cai)
+- **tb-den-tran** (thai-binh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **xuan-son-national-park** (phu-tho)
+- **dai-lai-lake** (vinh-phuc)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **den-mau-au-co** (phu-tho)
+- **bac-lieu-vuon-chim** (bac-lieu)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **yen-tu** (quang-ninh)
+- **vam-ho-bird-sanctuary** (ben-tre)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **phuong-hoang-cave** (thai-nguyen)
+- **cai-mon-nursery-village** (ben-tre)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
-- **ban-ba-waterfall** (tuyen-quang)
+- **hon-da-bac** (ca-mau)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ninh-kieu-wharf** (can-tho)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **binh-thuy-ancient-house** (can-tho)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **go-thap** (dong-thap)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hon-phu-tu** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **nha-tram-cot** (long-an)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **chua-khleang** (soc-trang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ba-dong-beach** (tra-vinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **van-thanh-mieu-vinh-long** (vinh-long)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ghenh-rang** (binh-dinh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **phu-quy-island** (binh-thuan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **po-sah-inu** (binh-thuan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **son-tra-peninsula** (da-nang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **nui-chua-national-park** (ninh-thuan)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **mui-dien** (phu-yen)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **my-son-sanctuary** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bach-dinh** (ba-ria-vung-tau)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hoi-khanh-pagoda** (binh-duong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tran-bien-temple-of-literature** (dong-nai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dau-tieng-reservoir** (tay-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **chu-dang-ya** (gia-lai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **kon-klor-bridge** (kon-tum)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **langbiang** (lam-dong)
+  - coordinates off by 4.9 km vs [Lang Biang – Đà Lạt](https://en.wikipedia.org/wiki/Lang_Biang_%E2%80%93_%C4%90%C3%A0_L%E1%BA%A1t)
+  - numbers not found in the article (check by hand): 12km, 1.929m
+- **datanla-waterfall** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **pha-din-pass** (dien-bien)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **pa-khoang-lake** (dien-bien)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **pu-ta-leng** (lai-chau)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **son-la-prison** (son-la)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dai-yem-waterfall** (son-la)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **vung-chua-dao-yen** (quang-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **thien-mu-pagoda** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **khai-dinh-tomb** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **son-tra-night-market** (da-nang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ban-co-peak** (da-nang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **non-nuoc-stone-village** (da-nang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tan-ky-house** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **phuc-kien-assembly-hall** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hoi-an-night-market** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **faifo-coffee** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **reaching-out-teahouse** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tra-que-vegetable-village** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **kim-bong-carpentry-village** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bay-mau-coconut-forest** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **an-bang-beach** (quang-nam)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ngoc-son-temple** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ta-hien-street** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **the-note-coffee** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **quan-thanh-temple** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tran-quoc-pagoda** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **lotte-observation-deck** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bat-trang-pottery-village** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **duong-lam-ancient-village** (ha-noi)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **saigon-opera-house** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **nguyen-hue-walking-street** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bach-dang-wharf** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bui-vien-street** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **binh-tay-market** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **giac-lam-pagoda** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **can-gio-mangrove** (ho-chi-minh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **minh-mang-tomb** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dong-ba-market** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **quoc-hoc-hue** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hon-chen-temple** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **thuan-an-beach** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ru-cha-mangrove** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bach-ma-national-park** (thua-thien-hue)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **xuan-huong-lake** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bao-dai-summer-palace** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **linh-phuoc-pagoda** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tuyen-lam-lake** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **truc-lam-monastery** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **valley-of-love** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **pongour-waterfall** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **cau-dat-tea-hill** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **me-linh-coffee-garden** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **clay-tunnel-dalat** (lam-dong)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **long-son-pagoda** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hon-chong-promontory** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dam-market-nha-trang** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **nha-trang-night-market** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **doc-let-beach** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ba-ho-stream** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **yang-bay-waterfall** (khanh-hoa)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **dinh-cau-phu-quoc** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **phu-quoc-night-market** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hon-thom-cable-car** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **phu-quoc-prison** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ham-ninh-fishing-village** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **suoi-tranh-waterfall** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ganh-dau-cape** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **vinwonders-phu-quoc** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ha-tien-town** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **mui-nai-beach** (kien-giang)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ta-van-village** (lao-cai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ta-phin-village** (lao-cai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ham-rong-mountain** (lao-cai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **silver-waterfall-sapa** (lao-cai)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **sung-sot-cave** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **thien-cung-cave** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **ti-top-island** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **cua-van-fishing-village** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tuan-chau-island** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bai-chay-bridge** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **quang-ninh-museum** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **binh-lieu** (quang-ninh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **tam-coc-bich-dong** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **mua-cave** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **bai-dinh-pagoda** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **hoa-lu-ancient-capital-gate** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **am-tien-cave** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **thung-nham-bird-park** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **phat-diem-cathedral** (ninh-binh)
+  - no Wikipedia article resolved — pin one in scripts/.verify-map.json
+- **kenh-ga-hot-spring** (ninh-binh)
   - no Wikipedia article resolved — pin one in scripts/.verify-map.json
 
 ## Integrity
 
-- `dong-van-old-town` gallery seed `dongvan-2` has no image in the manifest
-- `hon-mun-island` gallery seed `honmun-2` has no image in the manifest
-- `hon-mun-island` gallery seed `honmun-3` has no image in the manifest
-- `buon-don` gallery seed `buondon-2` has no image in the manifest
 - `moc-chau-plateau` gallery seed `mocchau-2` has no image in the manifest
-- `moc-chau-plateau` gallery seed `mocchau-3` has no image in the manifest
-- `dien-bien-phu-battlefield` gallery seed `dienbienphu-2` has no image in the manifest
-- `dien-bien-phu-battlefield` gallery seed `dienbienphu-3` has no image in the manifest
-- `nguom-ngao-cave` gallery seed `nguom-ngao-cave-2` has no image in the manifest
-- `tam-thanh-cave` gallery seed `tam-thanh-cave-3` has no image in the manifest
 - `mau-son-mountain` gallery seed `mau-son-mountain-2` has no image in the manifest
 - `mau-son-mountain` gallery seed `mau-son-mountain-3` has no image in the manifest
-- `mo-na-hang-waterfall` gallery seed `mo-na-hang-waterfall-3` has no image in the manifest
-- `tan-cuong-tea-hills` gallery seed `tan-cuong-tea-hills-2` has no image in the manifest
-- `tan-cuong-tea-hills` gallery seed `tan-cuong-tea-hills-3` has no image in the manifest
-- `o-quy-ho-pass` gallery seed `o-quy-ho-pass-2` has no image in the manifest
-- `o-quy-ho-pass` gallery seed `o-quy-ho-pass-3` has no image in the manifest
 - `sin-suoi-ho-village` gallery seed `sin-suoi-ho-village-1` has no image in the manifest
 - `sin-suoi-ho-village` gallery seed `sin-suoi-ho-village-2` has no image in the manifest
 - `sin-suoi-ho-village` gallery seed `sin-suoi-ho-village-3` has no image in the manifest
-- `mai-chau-valley` gallery seed `mai-chau-valley-3` has no image in the manifest
 - `hoa-binh-lake` gallery seed `hoa-binh-lake-2` has no image in the manifest
 - `hoa-binh-lake` gallery seed `hoa-binh-lake-3` has no image in the manifest
-- `hp-do-son-beach` gallery seed `hp-do-son-beach-2` has no image in the manifest
-- `hp-do-son-beach` gallery seed `hp-do-son-beach-3` has no image in the manifest
 - `hd-con-son-kiep-bac` gallery seed `hd-con-son-kiep-bac-2` has no image in the manifest
 - `hd-con-son-kiep-bac` gallery seed `hd-con-son-kiep-bac-3` has no image in the manifest
 - `hd-dao-co` gallery seed `hd-dao-co-2` has no image in the manifest
 - `hd-dao-co` gallery seed `hd-dao-co-3` has no image in the manifest
-- `hy-pho-hien` gallery seed `hy-pho-hien-2` has no image in the manifest
 - `hy-pho-hien` gallery seed `hy-pho-hien-3` has no image in the manifest
 - `hy-chua-chuong` gallery seed `hy-chua-chuong-1` has no image in the manifest
-- `hn-tam-chuc` gallery seed `hn-tam-chuc-2` has no image in the manifest
 - `nd-nha-tho-do` gallery seed `nd-nha-tho-do-3` has no image in the manifest
-- `tb-chua-keo` gallery seed `tb-chua-keo-2` has no image in the manifest
 - `tb-chua-keo` gallery seed `tb-chua-keo-3` has no image in the manifest
-- `tb-con-vanh` gallery seed `tb-con-vanh-1` has no image in the manifest
-- `tb-con-vanh` gallery seed `tb-con-vanh-2` has no image in the manifest
-- `tb-con-vanh` gallery seed `tb-con-vanh-3` has no image in the manifest
-- `vp-tam-dao` gallery seed `vp-tam-dao-2` has no image in the manifest
 - `suoi-ca-than-cam-luong` gallery seed `cam-luong-nha-san` has no image in the manifest
 - `khu-di-tich-kim-lien` gallery seed `kim-lien-gieng-coc` has no image in the manifest
 - `khu-di-tich-kim-lien` gallery seed `kim-lien-cay-da` has no image in the manifest
 - `bien-cua-lo` gallery seed `cua-lo-dao-lan-chau` has no image in the manifest
-- `bien-thien-cam` gallery seed `thien-cam-nui` has no image in the manifest
-- `bien-thien-cam` gallery seed `thien-cam-muc-mot-nang` has no image in the manifest
-- `nga-ba-dong-loc` gallery seed `dong-loc-ho-bom` has no image in the manifest
-- `thanh-co-quang-tri` gallery seed `thanh-co-cong-thanh` has no image in the manifest
-- `dia-dao-vinh-moc` gallery seed `vinh-moc-nha-ho-sinh` has no image in the manifest
 - `dao-con-co` gallery seed `con-co-hai-dang` has no image in the manifest
 - `dao-con-co` gallery seed `con-co-san-ho` has no image in the manifest
-- `qng-ly-son` gallery seed `lyson-tovo` has no image in the manifest
 - `bdi-ky-co-eo-gio` gallery seed `eogio-cong` has no image in the manifest
 - `bdi-ky-co-eo-gio` gallery seed `eogio-hoa` has no image in the manifest
-- `pye-ganh-da-dia` gallery seed `gddia-song` has no image in the manifest
-- `pye-ganh-da-dia` gallery seed `gddia-toancanh` has no image in the manifest
-- `ntn-vinh-vinh-hy` gallery seed `vinhhy-duongven` has no image in the manifest
-- `ktm-mang-den` gallery seed `mangden-pasy` has no image in the manifest
-- `ktm-mang-den` gallery seed `mangden-ho` has no image in the manifest
-- `gli-bien-ho-tnung` gallery seed `bienho-thong` has no image in the manifest
 - `gli-chua-minh-thanh` gallery seed `minhthanh-chanhdien` has no image in the manifest
 - `gli-chua-minh-thanh` gallery seed `minhthanh-tuong` has no image in the manifest
 - `dno-cong-vien-dia-chat` gallery seed `daknong-miengnui` has no image in the manifest
 - `dno-cong-vien-dia-chat` gallery seed `daknong-congchieng` has no image in the manifest
-- `vung-tau-bai-bien-tuong-chua` gallery seed `vungtau-christ` has no image in the manifest
-- `vung-tau-bai-bien-tuong-chua` gallery seed `vungtau-banhkhot` has no image in the manifest
-- `con-dao` gallery seed `condao-hangduong` has no image in the manifest
-- `chua-ba-thien-hau-binh-duong` gallery seed `thienhau-bd-nhang` has no image in the manifest
 - `bu-gia-map-national-park` gallery seed `bugiamap-suoi` has no image in the manifest
 - `bu-gia-map-national-park` gallery seed `bugiamap-stieng` has no image in the manifest
 - `long-an-lang-noi-tan-lap` gallery seed `tanlap-watchtower` has no image in the manifest
 - `long-an-lang-noi-tan-lap` gallery seed `tanlap-boat` has no image in the manifest
-- `ben-tre-con-phung` gallery seed `conphung-handicraft` has no image in the manifest
 - `tra-vinh-ao-ba-om` gallery seed `baom-pond` has no image in the manifest
 - `tra-vinh-ao-ba-om` gallery seed `baom-khmer` has no image in the manifest
 - `tra-vinh-chua-vam-ray` gallery seed `vamray-buddha` has no image in the manifest
 - `tra-vinh-chua-vam-ray` gallery seed `vamray-naga` has no image in the manifest
-- `vinh-long-cu-lao-an-binh` gallery seed `anbinh-homestay` has no image in the manifest
-- `vinh-long-cu-lao-an-binh` gallery seed `anbinh-bike` has no image in the manifest
-- `dong-thap-lang-hoa-sa-dec` gallery seed `sadec-racks` has no image in the manifest
-- `dong-thap-lang-hoa-sa-dec` gallery seed `sadec-boat` has no image in the manifest
 - `hau-giang-cho-noi-nga-bay` gallery seed `ngabay-noodle` has no image in the manifest
-- `soc-trang-chua-doi` gallery seed `chuadoi-temple` has no image in the manifest
-- `soc-trang-chua-doi` gallery seed `chuadoi-flight` has no image in the manifest
 - `soc-trang-chua-dat-set` gallery seed `datset-statues` has no image in the manifest
 - `soc-trang-chua-dat-set` gallery seed `datset-candles` has no image in the manifest
 - `soc-trang-chua-dat-set` gallery seed `datset-tower` has no image in the manifest
-- `bac-lieu-nha-cong-tu` gallery seed `congtu-interior` has no image in the manifest
-- `bac-lieu-nha-cong-tu` gallery seed `congtu-antiques` has no image in the manifest
 - `ca-mau-rung-u-minh-ha` gallery seed `uminh-honey` has no image in the manifest
 - `ca-mau-rung-u-minh-ha` gallery seed `uminh-fishing` has no image in the manifest
 - `suoi-mo` gallery seed `suoi-mo-1` has no image in the manifest
-- `suoi-mo` gallery seed `suoi-mo-2` has no image in the manifest
-- `puong-cave` gallery seed `puong-cave-1` has no image in the manifest
-- `puong-cave` gallery seed `puong-cave-2` has no image in the manifest
-- `dau-dang-waterfall` gallery seed `dau-dang-waterfall-1` has no image in the manifest
 - `dau-dang-waterfall` gallery seed `dau-dang-waterfall-2` has no image in the manifest
-- `pac-bo` gallery seed `pac-bo-1` has no image in the manifest
-- `pac-bo` gallery seed `pac-bo-2` has no image in the manifest
-- `huu-nghi-border-gate` gallery seed `huu-nghi-border-gate-1` has no image in the manifest
-- `huu-nghi-border-gate` gallery seed `huu-nghi-border-gate-2` has no image in the manifest
-- `fansipan` gallery seed `fansipan-1` has no image in the manifest
-- `fansipan` gallery seed `fansipan-2` has no image in the manifest
-- `fansipan` gallery seed `fansipan-3` has no image in the manifest
-- `bac-ha-market` gallery seed `bac-ha-market-1` has no image in the manifest
-- `bac-ha-market` gallery seed `bac-ha-market-2` has no image in the manifest
-- `xuan-son-national-park` gallery seed `xuan-son-national-park-1` has no image in the manifest
-- `xuan-son-national-park` gallery seed `xuan-son-national-park-2` has no image in the manifest
 - `den-mau-au-co` gallery seed `den-mau-au-co-1` has no image in the manifest
 - `den-mau-au-co` gallery seed `den-mau-au-co-2` has no image in the manifest
-- `yen-tu` gallery seed `yen-tu-1` has no image in the manifest
-- `yen-tu` gallery seed `yen-tu-2` has no image in the manifest
-- `yen-tu` gallery seed `yen-tu-3` has no image in the manifest
-- `co-to-island` gallery seed `co-to-island-1` has no image in the manifest
-- `co-to-island` gallery seed `co-to-island-2` has no image in the manifest
-- `co-to-island` gallery seed `co-to-island-3` has no image in the manifest
-- `phuong-hoang-cave` gallery seed `phuong-hoang-cave-1` has no image in the manifest
-- `phuong-hoang-cave` gallery seed `phuong-hoang-cave-2` has no image in the manifest
-- `ban-ba-waterfall` gallery seed `ban-ba-waterfall-1` has no image in the manifest
 - `ban-ba-waterfall` gallery seed `ban-ba-waterfall-2` has no image in the manifest
-- `khau-pha-pass` gallery seed `khau-pha-pass-1` has no image in the manifest
-- `khau-pha-pass` gallery seed `khau-pha-pass-2` has no image in the manifest
+- `nom-village` gallery seed `nom-village-1` has no image in the manifest
+- `nom-village` gallery seed `nom-village-2` has no image in the manifest
+- `pho-minh-pagoda` gallery seed `pho-minh-pagoda-1` has no image in the manifest
+- `pho-minh-pagoda` gallery seed `pho-minh-pagoda-2` has no image in the manifest
+- `tb-den-tran` gallery seed `tb-den-tran-2` has no image in the manifest
+- `dai-lai-lake` gallery seed `dai-lai-lake-1` has no image in the manifest
+- `dai-lai-lake` gallery seed `dai-lai-lake-2` has no image in the manifest
+- `bac-lieu-vuon-chim` gallery seed `bac-lieu-vuon-chim-1` has no image in the manifest
+- `bac-lieu-vuon-chim` gallery seed `bac-lieu-vuon-chim-2` has no image in the manifest
+- `vam-ho-bird-sanctuary` gallery seed `vam-ho-bird-sanctuary-1` has no image in the manifest
+- `vam-ho-bird-sanctuary` gallery seed `vam-ho-bird-sanctuary-2` has no image in the manifest
+- `hon-da-bac` gallery seed `hon-da-bac-1` has no image in the manifest
+- `hon-da-bac` gallery seed `hon-da-bac-2` has no image in the manifest
+- `hon-phu-tu` gallery seed `hon-phu-tu-1` has no image in the manifest
+- `hon-phu-tu` gallery seed `hon-phu-tu-2` has no image in the manifest
+- `nha-tram-cot` gallery seed `nha-tram-cot-1` has no image in the manifest
+- `nha-tram-cot` gallery seed `nha-tram-cot-2` has no image in the manifest
+- `ba-dong-beach` gallery seed `ba-dong-beach-2` has no image in the manifest
+- `phu-quy-island` gallery seed `phu-quy-island-1` has no image in the manifest
+- `phu-quy-island` gallery seed `phu-quy-island-2` has no image in the manifest
+- `phu-quy-island` gallery seed `phu-quy-island-3` has no image in the manifest
+- `son-tra-peninsula` gallery seed `son-tra-peninsula-2` has no image in the manifest
+- `thien-an-mountain` gallery seed `thien-an-mountain-1` has no image in the manifest
+- `lak-lake` gallery seed `lak-lake-2` has no image in the manifest
+- `ta-dung-national-park` gallery seed `ta-dung-national-park-1` has no image in the manifest
+- `ta-dung-national-park` gallery seed `ta-dung-national-park-2` has no image in the manifest
+- `chu-dang-ya` gallery seed `chu-dang-ya-1` has no image in the manifest
+- `chu-dang-ya` gallery seed `chu-dang-ya-2` has no image in the manifest
+- `pa-khoang-lake` gallery seed `pa-khoang-lake-1` has no image in the manifest
+- `pa-khoang-lake` gallery seed `pa-khoang-lake-2` has no image in the manifest
+- `go-lao-waterfall` gallery seed `go-lao-waterfall-1` has no image in the manifest
+- `go-lao-waterfall` gallery seed `go-lao-waterfall-2` has no image in the manifest
+- `son-la-prison` gallery seed `son-la-prison-1` has no image in the manifest
+- `son-la-prison` gallery seed `son-la-prison-2` has no image in the manifest
+- `dai-yem-waterfall` gallery seed `dai-yem-waterfall-1` has no image in the manifest
+- `dai-yem-waterfall` gallery seed `dai-yem-waterfall-2` has no image in the manifest
+- `vung-chua-dao-yen` gallery seed `vung-chua-dao-yen-1` has no image in the manifest
+- `vung-chua-dao-yen` gallery seed `vung-chua-dao-yen-2` has no image in the manifest
+- `dragon-bridge` gallery seed `dragon-bridge-1` has no image in the manifest
+- `dragon-bridge` gallery seed `dragon-bridge-2` has no image in the manifest
+- `han-river-bridge` gallery seed `han-river-bridge-1` has no image in the manifest
+- `han-river-bridge` gallery seed `han-river-bridge-2` has no image in the manifest
+- `cham-museum` gallery seed `cham-museum-1` has no image in the manifest
+- `cham-museum` gallery seed `cham-museum-2` has no image in the manifest
+- `cham-museum` gallery seed `cham-museum-3` has no image in the manifest
+- `da-nang-cathedral` gallery seed `da-nang-cathedral-1` has no image in the manifest
+- `da-nang-cathedral` gallery seed `da-nang-cathedral-2` has no image in the manifest
+- `con-market` gallery seed `con-market-1` has no image in the manifest
+- `con-market` gallery seed `con-market-2` has no image in the manifest
+- `han-market` gallery seed `han-market-1` has no image in the manifest
+- `han-market` gallery seed `han-market-2` has no image in the manifest
+- `apec-park` gallery seed `apec-park-1` has no image in the manifest
+- `apec-park` gallery seed `apec-park-2` has no image in the manifest
+- `son-tra-night-market` gallery seed `son-tra-night-market-1` has no image in the manifest
+- `son-tra-night-market` gallery seed `son-tra-night-market-2` has no image in the manifest
+- `my-khe-beach` gallery seed `my-khe-beach-1` has no image in the manifest
+- `my-khe-beach` gallery seed `my-khe-beach-2` has no image in the manifest
+- `linh-ung-pagoda-bai-but` gallery seed `linh-ung-pagoda-bai-but-1` has no image in the manifest
+- `linh-ung-pagoda-bai-but` gallery seed `linh-ung-pagoda-bai-but-2` has no image in the manifest
+- `ban-co-peak` gallery seed `ban-co-peak-1` has no image in the manifest
+- `ban-co-peak` gallery seed `ban-co-peak-2` has no image in the manifest
+- `non-nuoc-beach` gallery seed `non-nuoc-beach-1` has no image in the manifest
+- `non-nuoc-beach` gallery seed `non-nuoc-beach-2` has no image in the manifest
+- `non-nuoc-stone-village` gallery seed `non-nuoc-stone-village-1` has no image in the manifest
+- `non-nuoc-stone-village` gallery seed `non-nuoc-stone-village-2` has no image in the manifest
+- `ba-na-hills` gallery seed `ba-na-hills-1` has no image in the manifest
+- `ba-na-hills` gallery seed `ba-na-hills-2` has no image in the manifest
+- `ba-na-hills` gallery seed `ba-na-hills-3` has no image in the manifest
+- `hai-van-pass` gallery seed `hai-van-pass-1` has no image in the manifest
+- `hai-van-pass` gallery seed `hai-van-pass-2` has no image in the manifest
+- `japanese-covered-bridge` gallery seed `japanese-covered-bridge-1` has no image in the manifest
+- `japanese-covered-bridge` gallery seed `japanese-covered-bridge-2` has no image in the manifest
+- `tan-ky-house` gallery seed `tan-ky-house-1` has no image in the manifest
+- `tan-ky-house` gallery seed `tan-ky-house-2` has no image in the manifest
+- `phuc-kien-assembly-hall` gallery seed `phuc-kien-assembly-hall-1` has no image in the manifest
+- `phuc-kien-assembly-hall` gallery seed `phuc-kien-assembly-hall-2` has no image in the manifest
+- `hoi-an-night-market` gallery seed `hoi-an-night-market-1` has no image in the manifest
+- `hoi-an-night-market` gallery seed `hoi-an-night-market-2` has no image in the manifest
+- `faifo-coffee` gallery seed `faifo-coffee-1` has no image in the manifest
+- `faifo-coffee` gallery seed `faifo-coffee-2` has no image in the manifest
+- `reaching-out-teahouse` gallery seed `reaching-out-teahouse-1` has no image in the manifest
+- `reaching-out-teahouse` gallery seed `reaching-out-teahouse-2` has no image in the manifest
+- `tra-que-vegetable-village` gallery seed `tra-que-vegetable-village-1` has no image in the manifest
+- `tra-que-vegetable-village` gallery seed `tra-que-vegetable-village-2` has no image in the manifest
+- `kim-bong-carpentry-village` gallery seed `kim-bong-carpentry-village-1` has no image in the manifest
+- `kim-bong-carpentry-village` gallery seed `kim-bong-carpentry-village-2` has no image in the manifest
+- `bay-mau-coconut-forest` gallery seed `bay-mau-coconut-forest-1` has no image in the manifest
+- `bay-mau-coconut-forest` gallery seed `bay-mau-coconut-forest-2` has no image in the manifest
+- `an-bang-beach` gallery seed `an-bang-beach-1` has no image in the manifest
+- `an-bang-beach` gallery seed `an-bang-beach-2` has no image in the manifest
+- `cua-dai-beach` gallery seed `cua-dai-beach-1` has no image in the manifest
+- `cua-dai-beach` gallery seed `cua-dai-beach-2` has no image in the manifest
+- `ngoc-son-temple` gallery seed `ngoc-son-temple-1` has no image in the manifest
+- `ngoc-son-temple` gallery seed `ngoc-son-temple-2` has no image in the manifest
+- `dong-xuan-market` gallery seed `dong-xuan-market-1` has no image in the manifest
+- `dong-xuan-market` gallery seed `dong-xuan-market-2` has no image in the manifest
+- `ta-hien-street` gallery seed `ta-hien-street-1` has no image in the manifest
+- `ta-hien-street` gallery seed `ta-hien-street-2` has no image in the manifest
+- `hanoi-train-street` gallery seed `hanoi-train-street-1` has no image in the manifest
+- `hanoi-train-street` gallery seed `hanoi-train-street-2` has no image in the manifest
+- `the-note-coffee` gallery seed `the-note-coffee-1` has no image in the manifest
+- `the-note-coffee` gallery seed `the-note-coffee-2` has no image in the manifest
+- `st-joseph-cathedral-hanoi` gallery seed `st-joseph-cathedral-hanoi-1` has no image in the manifest
+- `st-joseph-cathedral-hanoi` gallery seed `st-joseph-cathedral-hanoi-2` has no image in the manifest
+- `hanoi-opera-house` gallery seed `hanoi-opera-house-1` has no image in the manifest
+- `hanoi-opera-house` gallery seed `hanoi-opera-house-2` has no image in the manifest
+- `ho-chi-minh-mausoleum` gallery seed `ho-chi-minh-mausoleum-1` has no image in the manifest
+- `ho-chi-minh-mausoleum` gallery seed `ho-chi-minh-mausoleum-2` has no image in the manifest
+- `one-pillar-pagoda` gallery seed `one-pillar-pagoda-1` has no image in the manifest
+- `one-pillar-pagoda` gallery seed `one-pillar-pagoda-2` has no image in the manifest
+- `imperial-citadel-thang-long` gallery seed `imperial-citadel-thang-long-1` has no image in the manifest
+- `imperial-citadel-thang-long` gallery seed `imperial-citadel-thang-long-2` has no image in the manifest
+- `imperial-citadel-thang-long` gallery seed `imperial-citadel-thang-long-3` has no image in the manifest
+- `hanoi-flag-tower` gallery seed `hanoi-flag-tower-1` has no image in the manifest
+- `hanoi-flag-tower` gallery seed `hanoi-flag-tower-2` has no image in the manifest
+- `hoa-lo-prison` gallery seed `hoa-lo-prison-1` has no image in the manifest
+- `hoa-lo-prison` gallery seed `hoa-lo-prison-2` has no image in the manifest
+- `quan-thanh-temple` gallery seed `quan-thanh-temple-1` has no image in the manifest
+- `quan-thanh-temple` gallery seed `quan-thanh-temple-2` has no image in the manifest
+- `tran-quoc-pagoda` gallery seed `tran-quoc-pagoda-1` has no image in the manifest
+- `tran-quoc-pagoda` gallery seed `tran-quoc-pagoda-2` has no image in the manifest
+- `west-lake-hanoi` gallery seed `west-lake-hanoi-1` has no image in the manifest
+- `west-lake-hanoi` gallery seed `west-lake-hanoi-2` has no image in the manifest
+- `long-bien-bridge` gallery seed `long-bien-bridge-1` has no image in the manifest
+- `long-bien-bridge` gallery seed `long-bien-bridge-2` has no image in the manifest
+- `vietnam-museum-ethnology` gallery seed `vietnam-museum-ethnology-1` has no image in the manifest
+- `vietnam-museum-ethnology` gallery seed `vietnam-museum-ethnology-2` has no image in the manifest
+- `lotte-observation-deck` gallery seed `lotte-observation-deck-1` has no image in the manifest
+- `lotte-observation-deck` gallery seed `lotte-observation-deck-2` has no image in the manifest
+- `bat-trang-pottery-village` gallery seed `bat-trang-pottery-village-1` has no image in the manifest
+- `bat-trang-pottery-village` gallery seed `bat-trang-pottery-village-2` has no image in the manifest
+- `duong-lam-ancient-village` gallery seed `duong-lam-ancient-village-1` has no image in the manifest
+- `duong-lam-ancient-village` gallery seed `duong-lam-ancient-village-2` has no image in the manifest
+- `notre-dame-saigon` gallery seed `notre-dame-saigon-1` has no image in the manifest
+- `notre-dame-saigon` gallery seed `notre-dame-saigon-2` has no image in the manifest
+- `saigon-central-post-office` gallery seed `saigon-central-post-office-1` has no image in the manifest
+- `saigon-central-post-office` gallery seed `saigon-central-post-office-2` has no image in the manifest
+- `saigon-opera-house` gallery seed `saigon-opera-house-1` has no image in the manifest
+- `saigon-opera-house` gallery seed `saigon-opera-house-2` has no image in the manifest
+- `nguyen-hue-walking-street` gallery seed `nguyen-hue-walking-street-1` has no image in the manifest
+- `nguyen-hue-walking-street` gallery seed `nguyen-hue-walking-street-2` has no image in the manifest
+- `bach-dang-wharf` gallery seed `bach-dang-wharf-1` has no image in the manifest
+- `bach-dang-wharf` gallery seed `bach-dang-wharf-2` has no image in the manifest
+- `bitexco-tower` gallery seed `bitexco-tower-1` has no image in the manifest
+- `bitexco-tower` gallery seed `bitexco-tower-2` has no image in the manifest
+- `war-remnants-museum` gallery seed `war-remnants-museum-1` has no image in the manifest
+- `war-remnants-museum` gallery seed `war-remnants-museum-2` has no image in the manifest
+- `tao-dan-park` gallery seed `tao-dan-park-1` has no image in the manifest
+- `tao-dan-park` gallery seed `tao-dan-park-2` has no image in the manifest
+- `fine-arts-museum-hcm` gallery seed `fine-arts-museum-hcm-1` has no image in the manifest
+- `fine-arts-museum-hcm` gallery seed `fine-arts-museum-hcm-2` has no image in the manifest
+- `bui-vien-street` gallery seed `bui-vien-street-1` has no image in the manifest
+- `bui-vien-street` gallery seed `bui-vien-street-2` has no image in the manifest
+- `landmark-81` gallery seed `landmark-81-1` has no image in the manifest
+- `landmark-81` gallery seed `landmark-81-2` has no image in the manifest
+- `jade-emperor-pagoda` gallery seed `jade-emperor-pagoda-1` has no image in the manifest
+- `jade-emperor-pagoda` gallery seed `jade-emperor-pagoda-2` has no image in the manifest
+- `saigon-zoo` gallery seed `saigon-zoo-1` has no image in the manifest
+- `saigon-zoo` gallery seed `saigon-zoo-2` has no image in the manifest
+- `binh-tay-market` gallery seed `binh-tay-market-1` has no image in the manifest
+- `binh-tay-market` gallery seed `binh-tay-market-2` has no image in the manifest
+- `cho-lon-district` gallery seed `cho-lon-district-1` has no image in the manifest
+- `cho-lon-district` gallery seed `cho-lon-district-2` has no image in the manifest
+- `giac-lam-pagoda` gallery seed `giac-lam-pagoda-1` has no image in the manifest
+- `giac-lam-pagoda` gallery seed `giac-lam-pagoda-2` has no image in the manifest
+- `can-gio-mangrove` gallery seed `can-gio-mangrove-1` has no image in the manifest
+- `can-gio-mangrove` gallery seed `can-gio-mangrove-2` has no image in the manifest
+- `tu-duc-tomb` gallery seed `tu-duc-tomb-1` has no image in the manifest
+- `tu-duc-tomb` gallery seed `tu-duc-tomb-2` has no image in the manifest
+- `minh-mang-tomb` gallery seed `minh-mang-tomb-1` has no image in the manifest
+- `minh-mang-tomb` gallery seed `minh-mang-tomb-2` has no image in the manifest
+- `gia-long-tomb` gallery seed `gia-long-tomb-1` has no image in the manifest
+- `gia-long-tomb` gallery seed `gia-long-tomb-2` has no image in the manifest
+- `an-dinh-palace` gallery seed `an-dinh-palace-1` has no image in the manifest
+- `an-dinh-palace` gallery seed `an-dinh-palace-2` has no image in the manifest
+- `trang-tien-bridge` gallery seed `trang-tien-bridge-1` has no image in the manifest
+- `trang-tien-bridge` gallery seed `trang-tien-bridge-2` has no image in the manifest
+- `dong-ba-market` gallery seed `dong-ba-market-1` has no image in the manifest
+- `dong-ba-market` gallery seed `dong-ba-market-2` has no image in the manifest
+- `quoc-hoc-hue` gallery seed `quoc-hoc-hue-1` has no image in the manifest
+- `quoc-hoc-hue` gallery seed `quoc-hoc-hue-2` has no image in the manifest
+- `hon-chen-temple` gallery seed `hon-chen-temple-1` has no image in the manifest
+- `hon-chen-temple` gallery seed `hon-chen-temple-2` has no image in the manifest
+- `perfume-river` gallery seed `perfume-river-1` has no image in the manifest
+- `perfume-river` gallery seed `perfume-river-2` has no image in the manifest
+- `thanh-toan-tile-bridge` gallery seed `thanh-toan-tile-bridge-1` has no image in the manifest
+- `thanh-toan-tile-bridge` gallery seed `thanh-toan-tile-bridge-2` has no image in the manifest
+- `thuan-an-beach` gallery seed `thuan-an-beach-1` has no image in the manifest
+- `thuan-an-beach` gallery seed `thuan-an-beach-2` has no image in the manifest
+- `tam-giang-lagoon` gallery seed `tam-giang-lagoon-1` has no image in the manifest
+- `tam-giang-lagoon` gallery seed `tam-giang-lagoon-2` has no image in the manifest
+- `ru-cha-mangrove` gallery seed `ru-cha-mangrove-1` has no image in the manifest
+- `ru-cha-mangrove` gallery seed `ru-cha-mangrove-2` has no image in the manifest
+- `lang-co-beach` gallery seed `lang-co-beach-1` has no image in the manifest
+- `lang-co-beach` gallery seed `lang-co-beach-2` has no image in the manifest
+- `bach-ma-national-park` gallery seed `bach-ma-national-park-1` has no image in the manifest
+- `bach-ma-national-park` gallery seed `bach-ma-national-park-2` has no image in the manifest
+- `xuan-huong-lake` gallery seed `xuan-huong-lake-1` has no image in the manifest
+- `xuan-huong-lake` gallery seed `xuan-huong-lake-2` has no image in the manifest
+- `da-lat-market` gallery seed `da-lat-market-1` has no image in the manifest
+- `da-lat-market` gallery seed `da-lat-market-2` has no image in the manifest
+- `da-lat-railway-station` gallery seed `da-lat-railway-station-1` has no image in the manifest
+- `da-lat-railway-station` gallery seed `da-lat-railway-station-2` has no image in the manifest
+- `crazy-house-dalat` gallery seed `crazy-house-dalat-1` has no image in the manifest
+- `crazy-house-dalat` gallery seed `crazy-house-dalat-2` has no image in the manifest
+- `bao-dai-summer-palace` gallery seed `bao-dai-summer-palace-1` has no image in the manifest
+- `bao-dai-summer-palace` gallery seed `bao-dai-summer-palace-2` has no image in the manifest
+- `da-lat-cathedral` gallery seed `da-lat-cathedral-1` has no image in the manifest
+- `da-lat-cathedral` gallery seed `da-lat-cathedral-2` has no image in the manifest
+- `domaine-de-marie-church` gallery seed `domaine-de-marie-church-1` has no image in the manifest
+- `domaine-de-marie-church` gallery seed `domaine-de-marie-church-2` has no image in the manifest
+- `linh-phuoc-pagoda` gallery seed `linh-phuoc-pagoda-1` has no image in the manifest
+- `linh-phuoc-pagoda` gallery seed `linh-phuoc-pagoda-2` has no image in the manifest
+- `tuyen-lam-lake` gallery seed `tuyen-lam-lake-1` has no image in the manifest
+- `tuyen-lam-lake` gallery seed `tuyen-lam-lake-2` has no image in the manifest
+- `truc-lam-monastery` gallery seed `truc-lam-monastery-1` has no image in the manifest
+- `truc-lam-monastery` gallery seed `truc-lam-monastery-2` has no image in the manifest
+- `valley-of-love` gallery seed `valley-of-love-1` has no image in the manifest
+- `valley-of-love` gallery seed `valley-of-love-2` has no image in the manifest
+- `pongour-waterfall` gallery seed `pongour-waterfall-1` has no image in the manifest
+- `pongour-waterfall` gallery seed `pongour-waterfall-2` has no image in the manifest
+- `elephant-waterfall-dalat` gallery seed `elephant-waterfall-dalat-1` has no image in the manifest
+- `elephant-waterfall-dalat` gallery seed `elephant-waterfall-dalat-2` has no image in the manifest
+- `cau-dat-tea-hill` gallery seed `cau-dat-tea-hill-1` has no image in the manifest
+- `cau-dat-tea-hill` gallery seed `cau-dat-tea-hill-2` has no image in the manifest
+- `me-linh-coffee-garden` gallery seed `me-linh-coffee-garden-1` has no image in the manifest
+- `me-linh-coffee-garden` gallery seed `me-linh-coffee-garden-2` has no image in the manifest
+- `clay-tunnel-dalat` gallery seed `clay-tunnel-dalat-1` has no image in the manifest
+- `clay-tunnel-dalat` gallery seed `clay-tunnel-dalat-2` has no image in the manifest
+- `long-son-pagoda` gallery seed `long-son-pagoda-1` has no image in the manifest
+- `long-son-pagoda` gallery seed `long-son-pagoda-2` has no image in the manifest
+- `nha-trang-cathedral` gallery seed `nha-trang-cathedral-1` has no image in the manifest
+- `nha-trang-cathedral` gallery seed `nha-trang-cathedral-2` has no image in the manifest
+- `oceanographic-museum-vn` gallery seed `oceanographic-museum-vn-1` has no image in the manifest
+- `oceanographic-museum-vn` gallery seed `oceanographic-museum-vn-2` has no image in the manifest
+- `hon-chong-promontory` gallery seed `hon-chong-promontory-1` has no image in the manifest
+- `hon-chong-promontory` gallery seed `hon-chong-promontory-2` has no image in the manifest
+- `dam-market-nha-trang` gallery seed `dam-market-nha-trang-1` has no image in the manifest
+- `dam-market-nha-trang` gallery seed `dam-market-nha-trang-2` has no image in the manifest
+- `nha-trang-night-market` gallery seed `nha-trang-night-market-1` has no image in the manifest
+- `nha-trang-night-market` gallery seed `nha-trang-night-market-2` has no image in the manifest
+- `doc-let-beach` gallery seed `doc-let-beach-1` has no image in the manifest
+- `doc-let-beach` gallery seed `doc-let-beach-2` has no image in the manifest
+- `binh-ba-island` gallery seed `binh-ba-island-1` has no image in the manifest
+- `binh-ba-island` gallery seed `binh-ba-island-2` has no image in the manifest
+- `ba-ho-stream` gallery seed `ba-ho-stream-1` has no image in the manifest
+- `ba-ho-stream` gallery seed `ba-ho-stream-2` has no image in the manifest
+- `yang-bay-waterfall` gallery seed `yang-bay-waterfall-1` has no image in the manifest
+- `yang-bay-waterfall` gallery seed `yang-bay-waterfall-2` has no image in the manifest
+- `dinh-cau-phu-quoc` gallery seed `dinh-cau-phu-quoc-1` has no image in the manifest
+- `dinh-cau-phu-quoc` gallery seed `dinh-cau-phu-quoc-2` has no image in the manifest
+- `phu-quoc-night-market` gallery seed `phu-quoc-night-market-1` has no image in the manifest
+- `phu-quoc-night-market` gallery seed `phu-quoc-night-market-2` has no image in the manifest
+- `hon-thom-cable-car` gallery seed `hon-thom-cable-car-1` has no image in the manifest
+- `hon-thom-cable-car` gallery seed `hon-thom-cable-car-2` has no image in the manifest
+- `phu-quoc-prison` gallery seed `phu-quoc-prison-1` has no image in the manifest
+- `phu-quoc-prison` gallery seed `phu-quoc-prison-2` has no image in the manifest
+- `ham-ninh-fishing-village` gallery seed `ham-ninh-fishing-village-1` has no image in the manifest
+- `ham-ninh-fishing-village` gallery seed `ham-ninh-fishing-village-2` has no image in the manifest
+- `suoi-tranh-waterfall` gallery seed `suoi-tranh-waterfall-1` has no image in the manifest
+- `suoi-tranh-waterfall` gallery seed `suoi-tranh-waterfall-2` has no image in the manifest
+- `ganh-dau-cape` gallery seed `ganh-dau-cape-1` has no image in the manifest
+- `ganh-dau-cape` gallery seed `ganh-dau-cape-2` has no image in the manifest
+- `vinwonders-phu-quoc` gallery seed `vinwonders-phu-quoc-1` has no image in the manifest
+- `vinwonders-phu-quoc` gallery seed `vinwonders-phu-quoc-2` has no image in the manifest
+- `ha-tien-town` gallery seed `ha-tien-town-1` has no image in the manifest
+- `ha-tien-town` gallery seed `ha-tien-town-2` has no image in the manifest
+- `mui-nai-beach` gallery seed `mui-nai-beach-1` has no image in the manifest
+- `mui-nai-beach` gallery seed `mui-nai-beach-2` has no image in the manifest
+- `muong-hoa-valley` gallery seed `muong-hoa-valley-1` has no image in the manifest
+- `muong-hoa-valley` gallery seed `muong-hoa-valley-2` has no image in the manifest
+- `cat-cat-village` gallery seed `cat-cat-village-1` has no image in the manifest
+- `cat-cat-village` gallery seed `cat-cat-village-2` has no image in the manifest
+- `ta-van-village` gallery seed `ta-van-village-1` has no image in the manifest
+- `ta-van-village` gallery seed `ta-van-village-2` has no image in the manifest
+- `ta-phin-village` gallery seed `ta-phin-village-1` has no image in the manifest
+- `ta-phin-village` gallery seed `ta-phin-village-2` has no image in the manifest
+- `ham-rong-mountain` gallery seed `ham-rong-mountain-1` has no image in the manifest
+- `ham-rong-mountain` gallery seed `ham-rong-mountain-2` has no image in the manifest
+- `silver-waterfall-sapa` gallery seed `silver-waterfall-sapa-1` has no image in the manifest
+- `silver-waterfall-sapa` gallery seed `silver-waterfall-sapa-2` has no image in the manifest
+- `y-ty-village` gallery seed `y-ty-village-1` has no image in the manifest
+- `y-ty-village` gallery seed `y-ty-village-2` has no image in the manifest
+- `lao-cai-border-gate` gallery seed `lao-cai-border-gate-1` has no image in the manifest
+- `lao-cai-border-gate` gallery seed `lao-cai-border-gate-2` has no image in the manifest
+- `sung-sot-cave` gallery seed `sung-sot-cave-1` has no image in the manifest
+- `sung-sot-cave` gallery seed `sung-sot-cave-2` has no image in the manifest
+- `thien-cung-cave` gallery seed `thien-cung-cave-1` has no image in the manifest
+- `thien-cung-cave` gallery seed `thien-cung-cave-2` has no image in the manifest
+- `ti-top-island` gallery seed `ti-top-island-1` has no image in the manifest
+- `ti-top-island` gallery seed `ti-top-island-2` has no image in the manifest
+- `cua-van-fishing-village` gallery seed `cua-van-fishing-village-1` has no image in the manifest
+- `cua-van-fishing-village` gallery seed `cua-van-fishing-village-2` has no image in the manifest
+- `bai-tu-long-bay` gallery seed `bai-tu-long-bay-1` has no image in the manifest
+- `bai-tu-long-bay` gallery seed `bai-tu-long-bay-2` has no image in the manifest
+- `van-don-island` gallery seed `van-don-island-1` has no image in the manifest
+- `van-don-island` gallery seed `van-don-island-2` has no image in the manifest
+- `tuan-chau-island` gallery seed `tuan-chau-island-1` has no image in the manifest
+- `tuan-chau-island` gallery seed `tuan-chau-island-2` has no image in the manifest
+- `bai-chay-bridge` gallery seed `bai-chay-bridge-1` has no image in the manifest
+- `bai-chay-bridge` gallery seed `bai-chay-bridge-2` has no image in the manifest
+- `quang-ninh-museum` gallery seed `quang-ninh-museum-1` has no image in the manifest
+- `quang-ninh-museum` gallery seed `quang-ninh-museum-2` has no image in the manifest
+- `binh-lieu` gallery seed `binh-lieu-1` has no image in the manifest
+- `binh-lieu` gallery seed `binh-lieu-2` has no image in the manifest
+- `tam-coc-bich-dong` gallery seed `tam-coc-bich-dong-1` has no image in the manifest
+- `tam-coc-bich-dong` gallery seed `tam-coc-bich-dong-2` has no image in the manifest
+- `mua-cave` gallery seed `mua-cave-1` has no image in the manifest
+- `mua-cave` gallery seed `mua-cave-2` has no image in the manifest
+- `bai-dinh-pagoda` gallery seed `bai-dinh-pagoda-1` has no image in the manifest
+- `bai-dinh-pagoda` gallery seed `bai-dinh-pagoda-2` has no image in the manifest
+- `hoa-lu-ancient-capital-gate` gallery seed `hoa-lu-ancient-capital-gate-1` has no image in the manifest
+- `hoa-lu-ancient-capital-gate` gallery seed `hoa-lu-ancient-capital-gate-2` has no image in the manifest
+- `am-tien-cave` gallery seed `am-tien-cave-1` has no image in the manifest
+- `am-tien-cave` gallery seed `am-tien-cave-2` has no image in the manifest
+- `thung-nham-bird-park` gallery seed `thung-nham-bird-park-1` has no image in the manifest
+- `thung-nham-bird-park` gallery seed `thung-nham-bird-park-2` has no image in the manifest
+- `phat-diem-cathedral` gallery seed `phat-diem-cathedral-1` has no image in the manifest
+- `phat-diem-cathedral` gallery seed `phat-diem-cathedral-2` has no image in the manifest
+- `kenh-ga-hot-spring` gallery seed `kenh-ga-hot-spring-1` has no image in the manifest
+- `kenh-ga-hot-spring` gallery seed `kenh-ga-hot-spring-2` has no image in the manifest
 
 ## Clean
 
+- ban-gioc-waterfall (0.32 km)
+- thanh-nha-ho (0.13 km)
+- ntn-po-klong-garai (1.32 km)
+- suoi-mo (0.00 km)
+- puong-cave (0.00 km)
+- dau-dang-waterfall (0.00 km)
+- huu-nghi-border-gate (0.01 km)
 - fansipan (0.24 km)
+- den-mau-au-co (0.00 km)
+- ban-ba-waterfall (0.00 km)
+- khau-pha-pass (0.00 km)
+- lan-ha-bay (0.00 km)
+- lak-lake (0.00 km)
+- con-market (0.00 km)
+- han-market (0.01 km)
+- my-khe-beach (0.00 km)
+- japanese-covered-bridge (0.00 km)
+- hanoi-opera-house (0.00 km)
+- ho-chi-minh-mausoleum (0.00 km)
+- one-pillar-pagoda (0.00 km)
+- imperial-citadel-thang-long (0.01 km)
+- hanoi-flag-tower (0.01 km)
+- long-bien-bridge (0.00 km)
+- vietnam-museum-ethnology (0.00 km)
+- notre-dame-saigon (0.00 km)
+- saigon-central-post-office (0.02 km)
+- bitexco-tower (0.02 km)
+- war-remnants-museum (0.00 km)
+- tao-dan-park (0.02 km)
+- fine-arts-museum-hcm (0.72 km)
+- jade-emperor-pagoda (0.00 km)
+- saigon-zoo (0.01 km)
+- tu-duc-tomb (0.08 km)
+- gia-long-tomb (1.46 km)
+- perfume-river (0.00 km)
+- tam-giang-lagoon (0.01 km)
+- da-lat-market (0.22 km)
+- da-lat-railway-station (0.07 km)
+- domaine-de-marie-church (0.00 km)
+- binh-ba-island (0.00 km)
+- bai-tu-long-bay (0.00 km)
+- van-don-island (0.34 km)

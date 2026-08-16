@@ -10,6 +10,11 @@ import {
   Sparkles,
   Castle,
   Footprints,
+  Coffee,
+  Binoculars,
+  Martini,
+  FerrisWheel,
+  Signpost,
   type LucideIcon,
 } from "lucide-react";
 import type { DestinationType } from "@/lib/types";
@@ -31,6 +36,11 @@ const icons: Record<DestinationType, LucideIcon> = {
   bridge: Footprints,
   city: Building2,
   market: Store,
+  cafe: Coffee,
+  viewpoint: Binoculars,
+  nightlife: Martini,
+  themepark: FerrisWheel,
+  street: Signpost,
 };
 
 export function markerIcon(type: DestinationType): LucideIcon {

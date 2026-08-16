@@ -1,0 +1,11 @@
+[
+  { "id": "apec-park", "name": "Công viên APEC", "nameEn": "APEC Park", "provinceSlug": "da-nang", "query": "Công viên APEC Đà Nẵng" },
+  { "id": "linh-ung-pagoda-bai-but", "name": "Chùa Linh Ứng", "nameEn": "Linh Ung Pagoda", "provinceSlug": "da-nang", "query": "Chùa Linh Ứng Sơn Trà" },
+  { "id": "asia-park-sun-wheel", "name": "Công viên Châu Á", "nameEn": "Sun World Asia Park", "provinceSlug": "da-nang", "query": "Sun World Asia Park Đà Nẵng" },
+  { "id": "son-tra-marina", "name": "Sơn Trà Marina", "nameEn": "Son Tra Marina", "provinceSlug": "da-nang", "query": "Sơn Trà Marina Đà Nẵng" },
+  { "id": "tan-ky-house", "name": "Nhà cổ Tấn Ký", "nameEn": "Tan Ky House", "provinceSlug": "quang-nam", "query": "Nhà cổ Tấn Ký Hội An" },
+  { "id": "thanh-ha-pottery-village", "name": "Làng gốm Thanh Hà", "nameEn": "Thanh Ha Pottery Village", "provinceSlug": "quang-nam", "query": "Làng gốm Thanh Hà Hội An" },
+  { "id": "tra-que-vegetable-village", "name": "Làng rau Trà Quế", "nameEn": "Tra Que Vegetable Village", "provinceSlug": "quang-nam", "query": "Trà Quế Hội An" },
+  { "id": "an-bang-beach", "name": "Biển An Bàng", "nameEn": "An Bang Beach", "provinceSlug": "quang-nam", "query": "Bãi biển An Bàng Hội An" },
+  { "id": "cua-dai-beach", "name": "Biển Cửa Đại", "nameEn": "Cua Dai Beach", "provinceSlug": "quang-nam", "query": "Bãi biển Cửa Đại Hội An" }
+]

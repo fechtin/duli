@@ -3,6 +3,17 @@
 import type { TagKey } from "./vi";
 
 export const tagsZh: Record<TagKey, string> = {
+  // Venue vocabulary (038) — see tags/vi.ts for why they sit in a block.
+  "cave": "洞穴",
+  "palace": "宫殿",
+  "adventure": "探险",
+  "architecture": "建筑",
+  "cafe": "咖啡馆",
+  "family": "亲子",
+  "nightlife": "夜生活",
+  "shopping": "购物",
+  "sunset": "日落",
+  "viewpoint": "观景",
   "Baekje": "百济",
   "beach": "海滩",
   "bibimbap": "拌饭",

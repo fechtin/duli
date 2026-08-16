@@ -29,6 +29,13 @@ export const MARKER_TINT: Record<DestinationType, { bg: string; fg: string }> = 
   city:      { bg: "rgba(185, 132, 42, 0.18)", fg: "#b9842a" },
   market:    { bg: "rgba(214, 138, 163, 0.18)", fg: "#c46b86" },
   bridge:    { bg: "rgba(139, 116, 214, 0.18)", fg: "#7c6ad0" },
+  // Venue types (038). Warm browns for the daytime pair, violet for after dark — they read
+  // as "made by people" against the greens and blues the landscape types own.
+  cafe:      { bg: "rgba(150, 104, 71, 0.18)",  fg: "#8a5f3f" },
+  street:    { bg: "rgba(150, 104, 71, 0.18)",  fg: "#8a5f3f" },
+  viewpoint: { bg: "rgba(63, 145, 112, 0.16)",  fg: "#3f9170" },
+  nightlife: { bg: "rgba(139, 116, 214, 0.18)", fg: "#7c6ad0" },
+  themepark: { bg: "rgba(214, 138, 163, 0.18)", fg: "#c46b86" },
 };
 
 const BOX = { 1: "h-7 w-7", 2: "h-6 w-6", 3: "h-5 w-5" } as const;

@@ -1,0 +1,312 @@
+// Đà Nẵng hub depth, cluster 1 of 2: the riverside city core (spec tasks/038-vn-hubs.md).
+//
+// Why this batch exists: the atlas carried exactly three Đà Nẵng entries — the same count as
+// Hậu Giang — which is not enough to build a day from, let alone the five-day itinerary
+// docs/031 wants. These eight are the walkable Hàn-river cluster; the Sơn Trà / Ngũ Hành Sơn /
+// Bà Nà / Hải Vân ring lives in ./daNangOuter.ts so neither file passes the 500-LOC ceiling.
+//
+// Every coordinate came out of scripts/resolve-sources.mjs --candidates (vi/en Wikipedia →
+// Wikidata → Nominatim → Overpass) and is cited in `sourceUrl`. Nothing here was guessed:
+// candidates the chain could not place were replaced, per the 033 rule.
+import type { Destination } from "@/lib/types";
+
+export const daNangCoreDestinations: Destination[] = [
+  {
+    id: "dragon-bridge",
+    slug: "cau-rong",
+    provinceSlug: "da-nang",
+    name: "Cầu Rồng",
+    nameEn: "Dragon Bridge",
+    type: "bridge",
+    lng: 108.2267,
+    lat: 16.0611,
+    summary:
+      "Con rồng thép vắt qua sông Hàn, cuối tuần ngẩng đầu phun lửa và phun nước trước hàng nghìn người.",
+    story:
+      "Cầu Rồng khánh thành đúng ngày 29 tháng 3 năm 2013, kỷ niệm ngày giải phóng thành phố, và gần như ngay lập tức trở thành thứ người ta nghĩ tới đầu tiên khi nhắc Đà Nẵng. Thân rồng uốn lượn theo dáng rồng thời Lý, chạy suốt chiều dài cầu và đổi màu đèn suốt đêm. Nhưng thời khắc đáng chờ là cuối tuần: đầu rồng quay ra sông, phun chín lượt lửa rồi ba lượt nước, khói tạt vào đám đông đứng chật hai bên bờ và trẻ con thì hò reo. Ban ngày cầu chỉ là một tuyến giao thông bình thường — nên nếu chỉ đi ngang lúc trưa, bạn sẽ không hiểu vì sao cả thành phố tự hào về nó đến thế.",
+    facts: [
+      "Cầu dài 666m với sáu làn xe, khánh thành ngày 29/3/2013.",
+      "Thiết kế thân rồng mô phỏng rồng thời Lý, uốn lượn trên toàn bộ chiều dài cầu.",
+      "Màn phun lửa và phun nước diễn ra vào tối cuối tuần, thường bắt đầu lúc 21:00.",
+      "Cầu nối trung tâm hành chính phía tây với các bãi biển phía đông thành phố.",
+    ],
+    travelTips: [
+      "Đến trước 20:30 nếu muốn đứng gần đầu rồng — sau giờ đó hai bên bờ đã kín người.",
+      "Đứng phía dưới gió để tránh bị nước tạt; ba lượt phun nước cuối bắn khá xa.",
+    ],
+    bestTime: "Tối thứ Bảy và Chủ nhật, khi có màn phun lửa",
+    visitDuration: "1 giờ",
+    ticket: "",
+    openingHours: "Cả ngày",
+    badges: ["popular", "verified"],
+    tags: ["bridge", "city", "photography", "nightlife"],
+    gallery: [
+      { seed: "dragon-bridge-1", caption: "Đầu rồng phun lửa trên sông Hàn", ratio: "16/9" },
+      { seed: "dragon-bridge-2", caption: "Thân rồng đổi màu trong đêm", ratio: "4/3" },
+    ],
+    nearby: ["han-river-bridge", "cham-museum", "son-tra-night-market"],
+    sourceUrl: "https://www.wikidata.org/wiki/Q5305270",
+    verifiedAt: "2026-08-16",
+    featured: true,
+  },
+  {
+    id: "han-river-bridge",
+    slug: "cau-song-han",
+    provinceSlug: "da-nang",
+    name: "Cầu Sông Hàn",
+    nameEn: "Han River Bridge",
+    type: "bridge",
+    lng: 108.2268,
+    lat: 16.0721,
+    summary:
+      "Cây cầu quay đầu tiên do người Việt tự thiết kế và thi công, mỗi khuya lại xoay ngang giữa dòng.",
+    story:
+      "Trước năm 2000, muốn sang bờ đông sông Hàn người Đà Nẵng phải đi phà. Cầu Sông Hàn xoá bỏ chuyện đó, và nó mang một ý nghĩa mà không cây cầu nào khác trong thành phố có được: tiền xây một phần do chính người dân đóng góp, còn thiết kế và thi công đều do kỹ sư Việt Nam đảm nhiệm. Điều khiến du khách nán lại là cơ chế quay — vào khoảng nửa đêm, nhịp giữa xoay chín mươi độ, nằm dọc theo dòng sông để tàu lớn đi qua, rồi sáng ra lại khép về chỗ cũ. Cả một cây cầu quay lặng lẽ giữa khuya là cảnh không nhiều thành phố có.",
+    facts: [
+      "Khánh thành ngày 29/3/2000, là cầu quay đầu tiên do kỹ sư Việt Nam thiết kế và thi công.",
+      "Nhịp giữa xoay 90 độ để tàu thuyền lớn qua lại, thường vào khoảng nửa đêm.",
+      "Một phần kinh phí xây cầu đến từ đóng góp của người dân thành phố.",
+      "Cầu thay thế tuyến phà từng là cách duy nhất sang bờ đông sông Hàn.",
+    ],
+    travelTips: [
+      "Giờ quay cầu thay đổi theo lịch tàu và theo mùa — hỏi lại lễ tân khách sạn trong ngày.",
+      "Đi bộ dọc đường Bạch Đằng ở bờ tây để ngắm cầu; bờ này thoáng và ít xe hơn.",
+    ],
+    bestTime: "Buổi tối, quanh giờ cầu quay",
+    visitDuration: "45 phút",
+    ticket: "",
+    openingHours: "Cả ngày",
+    badges: ["verified"],
+    tags: ["bridge", "city", "history", "nightlife"],
+    gallery: [
+      { seed: "han-river-bridge-1", caption: "Cầu Sông Hàn lên đèn", ratio: "16/9" },
+      { seed: "han-river-bridge-2", caption: "Nhịp cầu xoay ngang giữa dòng", ratio: "4/3" },
+    ],
+    nearby: ["dragon-bridge", "han-market", "apec-park"],
+    sourceUrl: "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_S%C3%B4ng_H%C3%A0n",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "cham-museum",
+    slug: "bao-tang-dieu-khac-cham",
+    provinceSlug: "da-nang",
+    name: "Bảo tàng Điêu khắc Chăm",
+    nameEn: "Museum of Cham Sculpture",
+    type: "museum",
+    lng: 108.2226,
+    lat: 16.0599,
+    summary:
+      "Bộ sưu tập điêu khắc Chăm lớn nhất thế giới, trong một toà nhà Pháp mở cửa từ năm 1915.",
+    story:
+      "Đây là nơi duy nhất trên thế giới có thể xem trọn vẹn nghệ thuật điêu khắc Chămpa dưới một mái nhà. Người Pháp bắt đầu gom các tác phẩm từ Mỹ Sơn, Trà Kiệu, Đồng Dương về đây từ cuối thế kỷ 19, và toà nhà — thấp, thoáng, cửa mở rộng theo lối kiến trúc thuộc địa pha mô-típ Chăm — được dựng riêng cho chúng vào năm 1915. Bên trong là những vũ nữ Apsara nghiêng người, các đài thờ chạm kín mặt đá, những đầu tượng Shiva và Ganesha mà thời gian đã mài mòn nhưng không xoá được nét mặt. Nếu bạn định đi Mỹ Sơn, hãy ghé đây trước: những gì đẹp nhất từ khu đền tháp ấy đang nằm trong phòng trưng bày này.",
+    facts: [
+      "Toà nhà bảo tàng khánh thành năm 1915, do Trường Viễn Đông Bác cổ Pháp khởi xướng.",
+      "Đây là bộ sưu tập điêu khắc Chămpa lớn nhất thế giới, với khoảng 2.000 hiện vật.",
+      "Nhiều bảo vật quốc gia được trưng bày, trong đó có các đài thờ từ Mỹ Sơn và Trà Kiệu.",
+      "Hiện vật được đưa về chủ yếu từ Mỹ Sơn, Trà Kiệu, Đồng Dương và Tháp Mẫm.",
+    ],
+    travelTips: [
+      "Thuê thuyết minh hoặc mượn audio guide — hiện vật không tự kể được câu chuyện của mình.",
+      "Ghé bảo tàng trước khi đi Mỹ Sơn, hai nơi bổ nghĩa cho nhau rất rõ.",
+    ],
+    bestTime: "Quanh năm; buổi sáng vắng hơn",
+    visitDuration: "1,5 - 2 giờ",
+    ticket: "60.000đ (giá tham khảo, kiểm tra lại tại quầy)",
+    openingHours: "07:30 - 17:00",
+    badges: ["verified", "popular"],
+    tags: ["museum", "culture", "history", "architecture"],
+    gallery: [
+      { seed: "cham-museum-1", caption: "Gian trưng bày Mỹ Sơn", ratio: "16/9" },
+      { seed: "cham-museum-2", caption: "Phù điêu vũ nữ Apsara", ratio: "4/3" },
+      { seed: "cham-museum-3", caption: "Toà nhà bảo tàng kiểu Pháp", ratio: "1/1" },
+    ],
+    nearby: ["dragon-bridge", "han-market", "my-son-sanctuary"],
+    sourceUrl: "https://en.wikipedia.org/wiki/Museum_of_Cham_Sculpture",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "da-nang-cathedral",
+    slug: "nha-tho-con-ga",
+    provinceSlug: "da-nang",
+    name: "Nhà thờ Chính tòa Đà Nẵng",
+    nameEn: "Da Nang Cathedral",
+    type: "temple",
+    lng: 108.2231,
+    lat: 16.0667,
+    summary:
+      "Nhà thờ hồng phong cách Gothic giữa phố, người Đà Nẵng quen gọi là Nhà thờ Con Gà.",
+    story:
+      "Không ai ở Đà Nẵng gọi nơi này bằng tên chính thức. Trên đỉnh tháp chuông có một con gà trống bằng kim loại làm cột thu lôi kiêm chong chóng gió, và thế là thành tên: Nhà thờ Con Gà. Công trình do một linh mục người Pháp khởi dựng đầu thập niên 1920, tường quét màu hồng phấn, cửa sổ kính màu kể lại các tích trong Kinh Thánh, mái vòm nhọn vươn lên giữa những dãy nhà phố thấp. Phía sau nhà thờ có hang đá Đức Mẹ mô phỏng Lộ Đức. Buổi chiều, ánh nắng xiên qua kính màu đổ xuống nền gạch từng vệt đỏ và xanh — đó là lúc nên vào.",
+    facts: [
+      "Nhà thờ được xây dựng đầu thập niên 1920 dưới thời một linh mục người Pháp.",
+      "Tên dân gian 'Nhà thờ Con Gà' đến từ tượng gà trống trên đỉnh tháp chuông.",
+      "Công trình theo phong cách Gothic, tường sơn màu hồng đặc trưng.",
+      "Phía sau khuôn viên có hang đá Đức Mẹ mô phỏng hang Lộ Đức ở Pháp.",
+    ],
+    travelTips: [
+      "Đây là nhà thờ đang hoạt động — tránh vào tham quan trong giờ lễ và ăn mặc kín đáo.",
+      "Góc chụp đẹp nhất nằm ở vỉa hè đối diện trên đường Trần Phú, lúc chiều muộn.",
+    ],
+    bestTime: "Chiều muộn, khi nắng xiên qua cửa kính màu",
+    visitDuration: "30 - 45 phút",
+    ticket: "",
+    openingHours: "Ngoài giờ lễ; giờ lễ xem lịch niêm yết tại cổng",
+    badges: ["verified"],
+    tags: ["temple", "architecture", "city", "photography"],
+    gallery: [
+      { seed: "da-nang-cathedral-1", caption: "Tháp chuông hồng và tượng gà trống", ratio: "4/3" },
+      { seed: "da-nang-cathedral-2", caption: "Cửa kính màu bên trong nhà thờ", ratio: "16/9" },
+    ],
+    nearby: ["han-market", "han-river-bridge", "con-market"],
+    sourceUrl: "https://www.openstreetmap.org/way/404714309",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "con-market",
+    slug: "cho-con",
+    provinceSlug: "da-nang",
+    name: "Chợ Cồn",
+    nameEn: "Con Market",
+    type: "market",
+    lng: 108.2142,
+    lat: 16.0678,
+    summary:
+      "Chợ lớn nhất Đà Nẵng và là nơi người địa phương đi ăn — khu ẩm thực ở đây mới là điểm đến thật.",
+    story:
+      "Tên chợ nghe lạ tai nhưng nghĩa rất thẳng: chợ nằm trên một cồn đất cao, chỗ trũng quanh đó xưa hay ngập. Từ những năm 1940 đến giờ nó vẫn là cái bụng của thành phố — tầng trên bán vải, đồ khô, đặc sản mang về; nhưng thứ khiến khách quay lại là khu ẩm thực tầng trệt. Ốc hút, bánh tráng cuốn thịt heo, bún mắm, chè xoa xoa hạt lựu, mít trộn... mỗi quầy một món, giá niêm yết, ngồi ghế nhựa ăn chung với dân văn phòng buổi trưa. Đây là chợ để ăn chứ không phải chợ để mua quà, và nên đến khi bụng còn đói.",
+    facts: [
+      "Chợ hình thành từ khoảng thập niên 1940, tên gọi bắt nguồn từ cồn đất nơi chợ toạ lạc.",
+      "Đây là chợ có quy mô lớn nhất Đà Nẵng.",
+      "Khu ẩm thực tập trung các món đặc trưng xứ Quảng như ốc hút, mít trộn, bánh tráng cuốn thịt heo.",
+      "Tầng trên chuyên vải vóc, đồ khô và đặc sản đóng gói.",
+    ],
+    travelTips: [
+      "Đi vào khoảng 15:00 - 18:00: khu ăn vặt đông vui nhất mà chưa quá chen chúc.",
+      "Hỏi giá trước khi gọi món ở các quầy không niêm yết — cách này tránh mọi hiểu lầm.",
+    ],
+    bestTime: "Chiều, khi khu ẩm thực mở hết quầy",
+    visitDuration: "1 - 2 giờ",
+    ticket: "",
+    openingHours: "06:00 - 20:00 (khu ẩm thực mở muộn hơn)",
+    badges: ["verified", "popular"],
+    tags: ["market", "food", "city", "shopping"],
+    gallery: [
+      { seed: "con-market-1", caption: "Khu ẩm thực trong chợ Cồn", ratio: "16/9" },
+      { seed: "con-market-2", caption: "Quầy đặc sản khô xứ Quảng", ratio: "4/3" },
+    ],
+    nearby: ["han-market", "da-nang-cathedral", "dragon-bridge"],
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_C%E1%BB%93n",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "han-market",
+    slug: "cho-han",
+    provinceSlug: "da-nang",
+    name: "Chợ Hàn",
+    nameEn: "Han Market",
+    type: "market",
+    lng: 108.2242,
+    lat: 16.0683,
+    summary:
+      "Chợ sát bờ sông Hàn, nơi khách du lịch mua đồ khô mang về và mặc cả là chuyện đương nhiên.",
+    story:
+      "Chợ Hàn nằm ngay đầu cầu Rồng phía tây, sát bờ sông, nên nó là cái chợ mà khách du lịch bước vào đầu tiên. Tầng trệt chất kín mực rim, tôm khô, cá bò, bánh khô mè, chả bò xứ Quảng — thứ hầu như ai rời Đà Nẵng cũng xách theo vài túi. Tầng hai là vải vóc và may đo, có thể đặt áo dài sáng lấy chiều. So với chợ Cồn thì Hàn nhỏ hơn, sạch hơn, và cũng nói thách hơn — nhưng bù lại nó nằm đúng trên tuyến đi bộ dọc sông, ghé được mà không phải đi đâu xa.",
+    facts: [
+      "Chợ nằm sát bờ tây sông Hàn, gần chân cầu Rồng và cầu Sông Hàn.",
+      "Tầng trệt tập trung hải sản khô, chả bò và bánh khô mè — các món quà đặc trưng Đà Nẵng.",
+      "Tầng hai bán vải và nhận may đo, nhiều tiệm may áo dài lấy trong ngày.",
+      "Chợ hình thành từ khoảng thập niên 1940, cùng thời với chợ Cồn.",
+    ],
+    travelTips: [
+      "Mặc cả là bình thường ở đây; tham khảo giá vài quầy trước khi chốt.",
+      "Muốn may áo dài lấy trong ngày thì đặt trước 10:00 sáng.",
+    ],
+    bestTime: "Buổi sáng, hàng tươi và chợ chưa đông",
+    visitDuration: "1 giờ",
+    ticket: "",
+    openingHours: "06:00 - 19:00",
+    badges: ["verified"],
+    tags: ["market", "shopping", "food", "city"],
+    gallery: [
+      { seed: "han-market-1", caption: "Quầy hải sản khô trong chợ Hàn", ratio: "16/9" },
+      { seed: "han-market-2", caption: "Khu vải và may đo tầng hai", ratio: "4/3" },
+    ],
+    nearby: ["con-market", "han-river-bridge", "cham-museum"],
+    sourceUrl: "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_H%C3%A0n",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "apec-park",
+    slug: "cong-vien-apec",
+    provinceSlug: "da-nang",
+    name: "Công viên APEC",
+    nameEn: "APEC Park",
+    type: "park",
+    lng: 108.2235,
+    lat: 16.0588,
+    summary:
+      "Vườn tượng của các nền kinh tế APEC dưới một mái vòm cánh diều, ngay bờ sông Hàn.",
+    story:
+      "Công viên bắt đầu từ một vườn tượng: dịp Đà Nẵng đăng cai APEC năm 2017, mỗi nền kinh tế thành viên gửi tới một tác phẩm điêu khắc, và chúng được đặt rải trên khoảnh đất ven sông phía nam cầu Rồng. Vài năm sau thành phố mở rộng khu này thành một công viên đúng nghĩa, dựng lên mái vòm thép uốn cong như cánh diều căng gió — ban đêm mái vòm đổi màu và trở thành điểm nhấn thứ hai của bờ sông, sau con rồng. Đây là chỗ dân địa phương ra hóng mát, chạy bộ, trẻ con chạy quanh chân các bức tượng mà không mấy ai để ý chúng đến từ đâu.",
+    facts: [
+      "Vườn tượng ban đầu được lập năm 2017, nhân Tuần lễ Cấp cao APEC tổ chức tại Đà Nẵng.",
+      "Mỗi nền kinh tế thành viên APEC đóng góp một tác phẩm điêu khắc đặt trong vườn.",
+      "Công viên được mở rộng và bổ sung mái vòm thép hình cánh diều trong giai đoạn sau.",
+      "Công viên nằm ở bờ tây sông Hàn, phía nam cầu Rồng.",
+    ],
+    travelTips: [
+      "Đến lúc chập tối: mái vòm lên đèn và nhìn thẳng sang phía cầu Rồng.",
+      "Kết hợp đi bộ dọc bờ sông Bạch Đằng lên chợ Hàn, chỉ khoảng mười lăm phút.",
+    ],
+    bestTime: "Chiều tối, khi mái vòm lên đèn",
+    visitDuration: "45 phút",
+    ticket: "",
+    openingHours: "Cả ngày",
+    badges: ["verified", "new"],
+    tags: ["park", "city", "architecture", "photography"],
+    gallery: [
+      { seed: "apec-park-1", caption: "Mái vòm cánh diều lên đèn bên sông Hàn", ratio: "16/9" },
+      { seed: "apec-park-2", caption: "Tượng điêu khắc trong vườn APEC", ratio: "4/3" },
+    ],
+    nearby: ["dragon-bridge", "han-river-bridge", "cham-museum"],
+    sourceUrl: "https://www.openstreetmap.org/way/675604354",
+    verifiedAt: "2026-08-16",
+  },
+  {
+    id: "son-tra-night-market",
+    slug: "cho-dem-son-tra",
+    provinceSlug: "da-nang",
+    name: "Chợ đêm Sơn Trà",
+    nameEn: "Son Tra Night Market",
+    type: "nightlife",
+    lng: 108.2314,
+    lat: 16.0607,
+    summary:
+      "Khu chợ đêm ngay chân cầu Rồng bờ đông — chỗ để đi tiếp sau khi rồng phun lửa xong.",
+    story:
+      "Chợ mở ngay đầu cầu Rồng phía bờ đông, nên nhịp của nó gắn chặt với cây cầu: đám đông xem phun lửa xong là đổ thẳng sang đây. Hai dãy quầy chạy dọc con phố ngắn, một bên đồ ăn — hải sản nướng, bánh tráng nướng, ốc, nước mía — một bên đồ lưu niệm, áo phông, nam châm tủ lạnh. Không có gì tinh tế ở đây cả, và đó là điểm mạnh: nó ồn, sáng đèn, rẻ, và mở tới khuya khi mọi thứ khác trong thành phố đã đóng. Với người đi bộ từ khu khách sạn ven biển Mỹ Khê vào trung tâm, đây là điểm dừng tự nhiên.",
+    facts: [
+      "Chợ nằm ở bờ đông sông Hàn, ngay đầu cầu Rồng.",
+      "Chợ chỉ hoạt động vào buổi tối, mở đến khuya.",
+      "Hai khu chính: quầy ăn uống và quầy đồ lưu niệm, chạy dọc một tuyến phố ngắn.",
+      "Chợ đi vào hoạt động từ năm 2017, phục vụ chủ yếu khách du lịch.",
+    ],
+    travelTips: [
+      "Chốt giá hải sản theo cân trước khi nướng — đây là chỗ hay phát sinh tranh cãi nhất.",
+      "Đi sau 21:00, ngay sau màn phun lửa cầu Rồng, để đi liền một mạch.",
+    ],
+    bestTime: "Tối, đặc biệt cuối tuần",
+    visitDuration: "1 - 2 giờ",
+    ticket: "",
+    openingHours: "Khoảng 18:00 - 24:00",
+    badges: ["verified"],
+    tags: ["nightlife", "food", "market", "shopping"],
+    gallery: [
+      { seed: "son-tra-night-market-1", caption: "Dãy quầy đồ nướng lên đèn", ratio: "16/9" },
+      { seed: "son-tra-night-market-2", caption: "Chợ đêm nhìn về phía cầu Rồng", ratio: "4/3" },
+    ],
+    nearby: ["dragon-bridge", "my-khe-beach", "han-river-bridge"],
+    sourceUrl: "https://www.openstreetmap.org/node/13300819649",
+    verifiedAt: "2026-08-16",
+  },
+];

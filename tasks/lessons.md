@@ -129,3 +129,173 @@ và đoán sai nguyên nhân thì tạo ra nguồn thứ hai — thứ chắc ch
 **Giữ lại được gì:** phần tra cứu không bỏ đi mà đổi vai thành đối chiếu (`check:provinces`), và
 nó tìm ra 2 chữ sai thật trong 400 tên viết tay. Kiểm tra chéo một nguồn có sẵn thì có ích;
 thay thế nó thì không.
+
+## 038b — Hiệu chỉnh engine bằng lịch trình thật, không bằng số học
+
+Tôi dựng engine lịch trình rồi tự đánh giá bằng lý lẽ hình học ("cụm gần nhau thì chung ngày,
+xa thì đổi base"). Người dùng dừng lại và bảo: tham khảo lịch trình thật đã chia sẻ trên mạng
+trước, so với lịch tự tính, rồi mới quyết. Đúng — và nó lật ngược một giả định cốt lõi.
+
+**Ba tín hiệu đo được, mỗi cái sửa một hằng số:**
+
+| Quan sát từ lịch trình thật | Engine đang làm | Sửa |
+|---|---|---|
+| Đà Nẵng 5N: **một khách sạn cả chuyến**, Hội An/Bà Nà/kể cả Huế đi về trong ngày | đổi base 2–3 lần | `DAY_TRIP_KM = 110` |
+| Hà Giang 4N: **đổi chỗ ngủ mỗi đêm** (Phó Bảng→Đồng Văn→Mèo Vạc) | — | cùng một hằng số tái hiện cả hai |
+| 2–3 điểm/ngày | tới 5 | `PACE.maxStops` 3/4/5 → 2/3/4 |
+
+Điểm mấu chốt: **một hằng số duy nhất tái hiện cả hai hành vi**, thay vì hardcode "thành phố thì
+ở yên, vùng núi thì đi tiếp". Bán kính 110km nằm vừa trên Huế (~100km) và vừa dưới Đồng Văn.
+
+**Ba bug chỉ lộ ra khi so với lịch thật:**
+- Một giới hạn chặng duy nhất cho phép ghép Mỹ Sơn (nam) với Thiên Mụ (Huế, bắc) — 2h50 giữa hai
+  điểm, tới nơi 16:10 thăm 1 tiếng. Cấu trúc thật là **chặng đi ra dài, chặng giữa các điểm ngắn**
+  → tách `maxOutboundMinutes` / `maxLegMinutes`.
+- Cầu Vàng và Bà Nà Hills là hai row cách nhau 630m sau cùng một vé cáp treo, cùng "1 ngày" → bị
+  xếp vào hai ngày khác nhau. Không sửa được ở tầng xếp lịch (chồng 8h lên 8h); phải khử trùng lặp
+  ở tầng ứng viên. Chỉ áp cho điểm trọn-ngày — trung tâm Đà Nẵng có 8 điểm trong 1,5km và gộp hết
+  thì mất nguyên khu phố.
+- Ngày mà mọi điểm được chọn đều vướng giờ mở cửa (Cù Lao Chàm cần trọn ngày nhưng đóng 16:00) →
+  engine bỏ luôn cả chuyến thay vì chọn lại. Retry theo ngày, loại trừ tạm thời.
+
+**Bài học:** với thứ mô phỏng hành vi con người, "đúng về hình học" và "đúng về thực tế" là hai
+chuyện khác nhau, và test tự viết chỉ bảo vệ được cái thứ nhất. 93 test xanh trong khi engine vẫn
+bắt người ta đổi khách sạn 3 lần ở Đà Nẵng. Ranh giới bản quyền (docs/031.md §Phase 8): lấy tín
+hiệu có cấu trúc (đi cùng ngày, mấy điểm/ngày, ngủ ở đâu), không chép mô tả hành trình.
+
+## 038b (tiếp) — Hai con số được đặt cho quy mô dữ liệu cũ
+
+**Zoom tối đa.** Người dùng báo bản đồ rối, tôi sửa bằng cách giấu bớt nhãn. Sai hướng. Đo ra mới
+thấy vấn đề là *thang đo*: ở mức zoom tối đa cũ (18× khung toàn quốc), **1 km chỉ chiếm 9,5 px màn
+hình**, nên 8 địa điểm trong trung tâm Đà Nẵng chia nhau **14 px** trong khi mỗi nhãn rộng 120 px.
+Không bao giờ giấu nhãn cho đủ được. 18× hợp lý khi atlas chỉ có danh thắng cấp tỉnh cách nhau
+hàng chục km; nó vô nghĩa khi một tỉnh có 18 điểm nội đô. Nâng lên 400×.
+
+Kèm theo là hệ quả phải xử lý: quá ~40× thì hình học đã simplify không còn đủ chi tiết — dải sáng
+ven biển phình thành mảng trắng nửa màn hình, đường bờ thành vài đoạn thẳng dài hàng km, trông như
+bản đồ hỏng. Thêm nấc `zoomLevel 5` (`CITY_DETAIL_RATIO`) để bản đồ **thôi vẽ chi tiết nó không
+có**, trả về nền phẳng sạch. Thà thành thật là tấm bảng ghim ở cấp đường phố còn hơn giả vờ.
+
+**Thứ tự trong ngày phải tính tới giờ đóng cửa.** `layOutDay` xếp thứ tự thuần theo địa lý, nên Bán
+đảo Sơn Trà (cần 4 tiếng, đóng 18:00 ⇒ phải bắt đầu trước 14:00) bị đẩy xuống thứ ba rồi bị loại vì
+không kịp giờ. Ngày trông gọn gàng về mặt hình học nhưng **âm thầm đánh rơi đúng điểm người dùng đã
+ghim**. Luật mới: chỗ nào đóng sớm thì đi trước, và chỉ áp khi thật sự gấp (giờ khởi hành muộn nhất
+trước 15:00), còn lại vẫn để khoảng cách quyết định.
+
+**Bài học chung:** khi triệu chứng là "rối/thiếu", hãy đo đại lượng vật lý (px trên km, phút còn
+lại trước giờ đóng) trước khi chỉnh phần hiển thị. Cả hai lần, thứ trông như vấn đề thẩm mỹ hoá ra
+là một hằng số được đặt cho quy mô dữ liệu của năm ngoái.
+
+## 038b (tiếp) — Luật đặt sai trục thì chỉ đúng ở nơi mình đã thử
+
+Tôi thêm `CROSS_PROVINCE_LEG_MINUTES = 35` để chặn một ngày ghép Sơn Trà với Chùa Cầu. Nó chặn
+được, và test xanh. Nhưng người dùng thử **Hà Nội 5 ngày → ra 3 ngày, mỗi ngày 1 điểm, và không
+có Hà Nội trong đó**.
+
+Nguyên nhân: tôi lấy **ranh giới hành chính** làm trục, trong khi cái sai thật nằm ở chỗ khác.
+
+| Chặng | Di chuyển | Tham quan | Vượt tỉnh? |
+|---|---|---|---|
+| Sơn Trà → Chùa Cầu (cần chặn) | 45p | **30p** | có |
+| Ngũ Hành Sơn → Hội An (cho qua) | 25p | 4–8h | có |
+| Mỹ Sơn → Hội An (cho qua) | 43p | 4–8h | **không** |
+
+Ranh giới tỉnh không tách được ca nào cả. Thứ tách được cả ba là **"đừng lái lâu hơn thời gian
+mình ở lại"** — `MAX_TRAVEL_TO_VISIT_RATIO`. Và luật cũ phá nát đồng bằng sông Hồng, nơi các tỉnh
+cách nhau 20–30km nên vượt tỉnh là chuyện thường ngày.
+
+Hai bug khác cùng lộ ra nhờ một lần thử ở vùng khác:
+- **Điểm trọn-ngày cướp mọi ngày.** `rotated.find(fullDay)` quét cả pool, nên vùng có nhiều điểm
+  trọn ngày (Tràng An, Tam Chúc, Côn Sơn…) thì ngày nào cũng còn đúng một điểm. Sửa: chỉ khi nó là
+  ứng viên **tốt nhất** của ngày, không phải chỉ cần có mặt.
+- **Base lấy tên theo tỉnh nhiều điểm nhất**, nên chuyến "từ Hà Giang" neo vào Bắc Kạn và Hà Giang
+  biến mất khỏi tuyến lẫn khỏi dòng "nghỉ đêm tại…". Sửa: tỉnh xuất phát luôn neo base của nó.
+
+**Bài học:** một ràng buộc chỉ được kiểm ở một vùng thì mới chỉ là quan sát của vùng đó. Trước khi
+chốt một luật hình học, chạy nó qua ít nhất một vùng có hình thái ngược lại (tỉnh nhỏ sát nhau vs
+tỉnh lớn thưa) — và ưu tiên trục **vật lý** (phút, km, giá trị đổi lại) hơn trục **hành chính**.
+
+**Bỏ tỉnh làm proxy — rà hết, không chỉ chỗ vừa sai.** Sau khi thay luật chặng, người dùng nhắc
+"quan trọng là thời gian và khoảng cách, tỉnh nào không quan trọng". Rà lại thì tỉnh vẫn còn làm
+proxy ở ba chỗ nữa:
+
+- **Chọn ứng viên** lọc theo *cả tỉnh* nằm trong bán kính tính từ **centroid tỉnh**. Đo ra: centroid
+  Nghệ An cách chính các điểm của nó **31–94km**, Quảng Nam 26–73km. Nên nó vừa kéo vào điểm cách
+  250km vừa bỏ sót điểm cách 40km. Sửa: lọc theo **từng điểm**, mốc là trọng tâm các điểm thật của
+  tỉnh xuất phát (không phải centroid đa giác). `provinces` giờ là *kết quả*, không còn là đầu vào.
+- **Gom base** tạo một base cho mỗi tỉnh rồi mới gộp. Nghĩa là hai chỗ cách nhau 5km có thể rơi vào
+  hai base khác nhau, còn hai chỗ cách 200km lại chung một base — chỉ vì đường ranh giới nằm ở đâu.
+  Sửa: gom **các điểm** theo khoảng cách, seed từ chỗ gần nhà nhất.
+- **Chọn quán ăn** lọc theo cùng tỉnh. Sửa: lọc theo km.
+
+Hai bug lộ ra ngay sau đó, và đều là hệ quả của việc thứ tự ưu tiên chưa rõ ràng: điểm **ghim** bị
+nhóm pattern giành mất ngân sách ngày (pin là *mệnh lệnh*, pattern là *thói quen* — pin phải vào
+trước), và một test cũ vẫn ép ngày 1 phải nằm trong tỉnh xuất phát. Cái giữ cho ngày đầu hợp lý là
+**quãng đường đi đầu tiên dài bao nhiêu**, đã có `maxOutboundMinutes` lo bằng phút.
+
+## 038b (tiếp) — Quét toàn không gian đầu vào, đừng đọc code rồi suy luận
+
+Sau bốn lần liên tiếp một hằng số đặt cho vùng này làm hỏng vùng khác, tôi dựng
+`npm run sweep:trips`: chạy engine trên **toàn bộ tỉnh của cả hai atlas × {3,5,7} ngày × 3 cặp
+style/pace = 720 lịch trình**, kiểm invariant cứng + đếm tín hiệu chất lượng.
+
+Nó tìm ra trong vài giây những thứ 194 test không hề thấy:
+
+| Lỗi | Ảnh hưởng | Vì sao test không bắt |
+|---|---|---|
+| `nightProvince` không nằm trong `plan.provinces` | **324/720** | Test chỉ chạy vài origin quen thuộc |
+| Tỉnh xuất phát không đứng đầu tuyến | 75/720 | Như trên |
+| Base cạn một ngày → **mất sạch số ngày còn lại** của base đó | Bình Phước xin 7 ra **1** | Không origin nào trong test rơi vào |
+| `"1 ngày"` hiểu nguyên văn 480 phút | **3 vườn quốc gia không bao giờ xếp được**, ở mọi chuyến | Không test nào kiểm "điểm X có bao giờ xuất hiện không" |
+
+Cái cuối đáng nhớ nhất: `visitDuration: "1 ngày"` là **một ngày du lịch**, không phải 8 tiếng liên
+tục trong cổng. Cát Tiên mở 07:00–17:00, đòi đủ 480 phút nghĩa là phải vào trước 09:00 — tới nơi
+09:40 là vĩnh viễn bị loại. Sửa: `fitVisit()` co thời gian tham quan cho vừa khung giờ thay vì từ
+chối, và chỉ bỏ khi phần còn lại không đáng công đi.
+
+Cũng học được: **siết một đầu thì phải đo đầu kia.** Siết ngưỡng "ngày quá mỏng" theo nhịp đi giúp
+giảm ngày rác 103→57, nhưng làm tái phát 7 ca tỉnh xuất phát bị rớt — vì ngày 1 mỏng bị loại thì
+chuyến bắt đầu ở tỉnh hàng xóm. Phải miễn trừ ngày 1.
+
+**Bài học:** với thuật toán chạy trên dữ liệu không đồng đều, unit test ghim *luật*, còn quét toàn
+bộ ghim *hành vi tổng thể* — và hầu hết lỗi thật nằm ở loại thứ hai. Chi phí: 40 dòng script.
+
+## 038 — Guard xanh không có nghĩa là dữ liệu đủ
+
+Đợt làm giàu 11 hub (+140 địa điểm) chạy sạch `typecheck`, `test`, `check:i18n`, `check:content`,
+`check:zh` ngay từ khi 46 entry chưa có một dòng dịch nào. Không guard nào kêu, vì `check:i18n`
+so **parity giữa các file locale**, không so độ phủ **theo entry** — thiếu cả một bucket thì nó
+không có gì để so, thế là qua. Fallback trả tiếng Việt nên giao diện cũng không vỡ.
+
+**Bài học:** guard chỉ bắt được thứ nó được viết để bắt. Khi thêm một *chiều* dữ liệu mới (ở đây là
+bucket theo hub thay vì theo vùng), phải hỏi "guard nào biết chiều này tồn tại?" trước khi tin vào
+màu xanh. Cách đếm thật nằm trong `tasks/038-vn-hubs.md`; đáng thêm một test dựng `destinationI18n`
+rồi assert mọi id có đủ 4 locale.
+
+## 038 — Tên riêng: tra trong repo trước, đừng dịch lại từ đầu
+
+Trước khi viết bản ko/ja/zh cho 5 hub cuối, tôi `grep` các file locale sẵn có để lấy biến thể atlas
+đang dùng. Hoá ra Nha Trang đã xuất hiện 17–20 lần dưới dạng `나트랑`/`ニャチャン`/`芽庄`. Nếu tự đặt
+theo cảm tính thì rất dễ ra `나짱` — vốn đã có đúng 1 lần trong repo, tức là dấu vết của một lần
+trước cũng tự đặt.
+
+Riêng zh có hai luật rõ: dùng tên **Hán-Việt** khi có (`华闾` `云屯` `河仙` `老街` `三谷碧洞` `发艳`),
+phiên âm chữ Hán khi không có (`蒲盆岛` `坑加` `依底`, cùng lối với `农渃` từ 033).
+
+**Bài học:** với dữ liệu đa ngôn ngữ, `grep` rẻ hơn nhiều so với việc dọn hai cách gọi cho cùng một
+địa danh sau khi cả hai đã nằm trong D1.
+
+## 038 — Đọc `verify:vn` bằng danh sách id, đừng bằng tổng số
+
+`verify:vn` resolve theo `nameEn` trên Wikipedia nên đẻ ra false match rất đều tay, và **tập lỗi
+trôi giữa các lần chạy**: lần này 3 id cũ tự biến mất trong khi 5 id mới hiện ra. So tổng số (14 → 16)
+sẽ kết luận sai là "đợt này làm hỏng thêm 2 chỗ".
+
+Cách đọc đúng: `comm` danh sách id với `git show HEAD:tasks/verify-vn-report.md`. Làm vậy ra 5 id
+mới, tra tay từng cái thì 3 cái khớp **0.0 km** với bài đúng — tức toạ độ atlas vốn chuẩn, chỉ mỗi
+resolver bắt nhầm ("Binh Ba Island" → Battle of Binh Gia cách 251km). Hai cái còn lại có bài nhưng
+bài **không mang toạ độ**; ghim vào vẫn hơn, vì `verify` sẽ ghi "position unchecked" thay vì dựng
+lên một lỗi 423km không có thật. Sau khi ghim: 11 lỗi, ít hơn HEAD, 0 id mới.
+
+**Bài học:** một công cụ advisory có nhiễu thì con số tổng vô nghĩa; chỉ có phần *sai khác* mới nói
+được điều gì.

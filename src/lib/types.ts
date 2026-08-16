@@ -141,7 +141,22 @@ export type DestinationType =
   | "city"
   | "market"
   /** Royal palaces, fortresses and gates (added with the Korea atlas). */
-  | "palace";
+  | "palace"
+  // ── Venue types (038) ──────────────────────────────────────────────────────
+  // A tourist hub is not only heritage and landscape. These five carry the places people
+  // actually plan a day around, and which the heritage vocabulary above cannot name.
+  // A cafe is NOT a `Restaurant`: that model requires a `dishId`, so a landmark cafe with
+  // no signature dish had nowhere to live.
+  /** Landmark cafes and coffee houses — a destination in their own right, not a meal stop. */
+  | "cafe"
+  /** Somewhere you go for the view: a pass, a peak platform, a rooftop deck. */
+  | "viewpoint"
+  /** Places that only exist after dark — rooftop bars, night streets, riverside promenades. */
+  | "nightlife"
+  /** Ticketed attraction parks and cable-car complexes (Bà Nà Hills, VinWonders, Sun World). */
+  | "themepark"
+  /** A street or quarter that IS the attraction — walking streets, old quarters, train street. */
+  | "street";
 
 export interface GalleryImage {
   /** Deterministic seed used by the illustrated placeholder. */
@@ -268,7 +283,12 @@ export interface AwardedBadge {
 export type FocusTarget =
   | { kind: "reset" }
   | { kind: "province"; slug: string }
-  | { kind: "point"; lng: number; lat: number; zoom: number };
+  | { kind: "point"; lng: number; lat: number; zoom: number }
+  /**
+   * Frame an arbitrary set of points — a trip day, or a whole route. Carries lng/lat rather than
+   * map pixels so the store stays ignorant of the projection.
+   */
+  | { kind: "bounds"; points: [number, number][]; minZoom?: number };
 
 // ── Food Explorer (Bible 026) ─────────────────────────────────
 export type DishTag =
