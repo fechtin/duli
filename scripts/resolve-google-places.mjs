@@ -45,6 +45,25 @@ if (!KEY) {
 
 const MAX_KM = 3;
 const NEAR_KM = 1.5;
+/**
+ * How close a candidate must be before a merely-shared word is enough. Operators register places
+ * under names nobody says: Bulguksa is filed as "대한불교조계종 제11교구 본사 불국사". At 250 m the
+ * coordinate carries the identification and the name only has to not contradict it.
+ */
+const CLOSE_KM = 0.25;
+/**
+ * What must never be accepted on a shared word alone: the businesses that name themselves after
+ * the landmark they sit inside, and the facilities that inherit its name. "블루샥 통영중앙시장점"
+ * is a coffee branch in the market; "Mai Chau Village View Homestay" is not the valley. Our own
+ * restaurant entries are businesses too, so each pattern only vetoes what WE are not.
+ */
+const NOISE = [
+  /점$/,
+  /주차장|화장실|정류장|승강장|출입구|매표소|안내소/,
+  /homestay|resort|hotel|khách sạn|nhà nghỉ|villa|bungalow/i,
+  /\btour\b|du lịch|lữ hành/i,
+  /quán|nhà hàng|cà phê|café|coffee|karaoke/i,
+];
 /** Radius of the ranking bias. Wide enough for a park's far entrance, tight enough to mean it. */
 const BIAS_M = 10_000;
 /** Google is happy well above this; the pace is politeness, not a limit. */
@@ -139,7 +158,13 @@ async function candidates(query, entry, atlas) {
   }
 }
 
-const pick = (query, places) => pickPlace(query, places, { maxKm: MAX_KM, nearKm: NEAR_KM });
+const pick = (query, places) =>
+  pickPlace(query, places, {
+    maxKm: MAX_KM,
+    nearKm: NEAR_KM,
+    closeKm: CLOSE_KM,
+    reject: (p, q) => NOISE.some((re) => re.test(p.title) && !re.test(q)),
+  });
 
 const ATLASES = [
   {

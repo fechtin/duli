@@ -44,17 +44,42 @@ export function bareName(query) {
 }
 
 /**
+ * Words we wrote, long enough to identify anything. Korean glues its "and" onto the noun, so
+ * "해인사와 팔만대장경" carries the token 해인사와 — a string no register will ever hold. Both
+ * forms are kept: stripping is a guess, and the raw word is the one that is certainly ours.
+ */
+const tokens = (s) =>
+  s
+    .split(/\s+/)
+    .flatMap((w) => [w, w.replace(/(?:와|과)$/, "")])
+    .map(norm)
+    .filter((w) => w.length >= 2);
+
+/** Do the two names share any word at all — the weakest evidence worth acting on. */
+export function sharesToken(ours, theirs) {
+  const t = norm(theirs);
+  return tokens(ours).some((w) => t.includes(w));
+}
+
+/**
  * Choose among candidates — each `{ title, dist, ctg? }`, nearest first.
  *
- * `exact` (same name, or same once the leading province is dropped) gets `maxKm`, because our
- * coordinate is an entrance where theirs is a centroid. A partial match gets the tighter `nearKm`
- * and must survive `reject`, which is where provider-specific traps go.
+ * Three tiers, each buying a looser name test with a tighter distance:
+ *
+ *   exact — same name, or same once the leading province is dropped, within `maxKm`. Our
+ *           coordinate is an entrance where theirs is a centroid, so this one gets room.
+ *   near  — one name inside the other, within `nearKm`.
+ *   close — merely a shared word, within `closeKm` (opt-in). This is for the places an operator
+ *           registered under a name nobody says out loud: our "경주 불국사" against Google's
+ *           "대한불교조계종 제11교구 본사 불국사", 20 m away. At that range the coordinate is
+ *           the evidence and the name is only a sanity check — which is exactly why `reject`
+ *           matters most here. A cafe named after the landmark it sits in also shares a word.
  *
  * A same-named candidate beyond `maxKm` is returned as `far` rather than accepted or discarded:
  * the name says it is the place, the distance says one of the two coordinates is wrong, and only
  * a human can say which — ours is what the atlas actually draws on the map.
  */
-export function pickPlace(query, places, { maxKm, nearKm, reject = () => false }) {
+export function pickPlace(query, places, { maxKm, nearKm, closeKm = 0, reject = () => false }) {
   const wanted = norm(query);
   const bare = bareName(query);
   const bareNorm = bare ? norm(bare) : null;
@@ -71,6 +96,11 @@ export function pickPlace(query, places, { maxKm, nearKm, reject = () => false }
     (p) => p.dist <= nearKm && !reject(p, query) && relates(query, p.title),
   );
   if (near) return { hit: near, how: "near" };
+
+  const close =
+    closeKm > 0 &&
+    places.find((p) => p.dist <= closeKm && !reject(p, query) && sharesToken(query, p.title));
+  if (close) return { hit: close, how: "close" };
 
   return { hit: null, miss: places[0] };
 }

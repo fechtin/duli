@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { norm, relates, pickPlace, bareName } from "./place-match.mjs";
+import { norm, relates, pickPlace, bareName, sharesToken } from "./place-match.mjs";
 
 /** Same rendering, different code points: ours is precomposed, Google answers decomposed. */
 const NFC = "Động Ngườm Ngao";
@@ -40,5 +40,40 @@ describe("place matching", () => {
   it("refuses a name that merely shares a word", () => {
     expect(relates("춘천과 소양호", "춘천시청")).toBe(false);
     expect(relates("서산 마애여래삼존상", "서산 용현리 마애여래삼존상")).toBe(true);
+  });
+
+  describe("the close tier", () => {
+    const opts = { maxKm: 3, nearKm: 1.5, closeKm: 0.25 };
+    const branch = { reject: (p, q) => /점$/.test(p.title) && !/점$/.test(q) };
+
+    it("takes an operator's registered name when the pin is on top of ours", () => {
+      const hit = pickPlace("경주 불국사", [at("대한불교조계종 제11교구 본사 불국사", 0.02)], opts);
+      expect(hit.how).toBe("close");
+    });
+
+    it("stays off unless the caller opts in, and never past closeKm", () => {
+      const far = [at("대한불교조계종 제11교구 본사 불국사", 0.4)];
+      expect(pickPlace("경주 불국사", far, opts).hit).toBe(null);
+      expect(pickPlace("경주 불국사", [at("대한불교조계종 제11교구 본사 불국사", 0.02)], {
+        maxKm: 3,
+        nearKm: 1.5,
+      }).hit).toBe(null);
+    });
+
+    it("still refuses the coffee branch that shares the market's name", () => {
+      const veto = pickPlace("통영 중앙시장", [at("블루샥 통영중앙시장점", 0.08)], { ...opts, ...branch });
+      expect(veto.hit).toBe(null);
+    });
+
+    it("needs a shared word, not just proximity", () => {
+      expect(pickPlace("Chùa Thiên Mụ", [at("Nhà hàng Sông Hương", 0.05)], opts).hit).toBe(null);
+    });
+
+    it("does not let Korean's glued-on 'and' hide the noun", () => {
+      expect(sharesToken("해인사와 팔만대장경", "해인사 장경판전 (장경각)")).toBe(true);
+      expect(pickPlace("해인사와 팔만대장경", [at("해인사 장경판전 (장경각)", 0.1)], opts).how).toBe("close");
+      // 임진각과 비무장지대 against a different monument inside it — still nothing shared.
+      expect(sharesToken("임진각과 비무장지대", "망배단")).toBe(false);
+    });
   });
 });
