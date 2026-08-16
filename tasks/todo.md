@@ -145,12 +145,26 @@ Spec + mined evidence: `tasks/039-tour-stops.md`. Extends §Phase 8 signal from 
       every hard invariant holding. Live `wrangler dev` curl for all 9 hubs returns valid plans, and
       the Huế plan puts `hue-imperial-city` + `thien-mu-pagoda` on one day — the mined signal working
       end to end. Measured: mined pairs sharing a day **18.2% → 38.7%**.
-- [ ] **F2.** Screenshots — blocked on a local D1 reseed while a peer session holds `wrangler dev`.
+- [x] **F2.** Screenshots — done after the local reseed (peer released `wrangler dev` first; note a
+      different `--port` does NOT isolate local D1, only `--persist-to` does).
       `late-start-no-transfer` rose 23 → 37 in the sweep, expected: the new rows include a night
       market, a late food street and an evening square, and `DAY_END_MIN` still forbids the evening
       slot (already tracked under A2).
-- [ ] **G.** **User runs the D1 reseed** — `npm run db:seed:build` then
-      `npx wrangler d1 execute atlas_db --remote --file=db/seed.sql`. Not automated on purpose.
+- [x] **G. SHIPPED.** Pushed as `02ff139` + `b877f82`; Action green on `6fc4ef3`. Production D1
+      reseeded on user instruction — 4,644 rows / 7 tables. **go.fechtin.com now serves 343 vn /
+      189 kr**, the 16 new destination pages return 200, the trip API answers for all 9 hubs, and
+      the preset panel renders live. Only the seed step was run: `deploy.sh` also contains
+      `wrangler deploy`, which stays the Action's job.
+
+### Found while building the presets — worth a look
+- [ ] **Pinning `ho-chi-minh-mausoleum` together with `temple-of-literature` collapses a 3-day Hà
+      Nội trip to ONE day.** Either pin alone is fine. Two of the city's most-visited sites, so a
+      user hitting it by hand would see the same thing. `presets.test.ts` catches it only because
+      every preset is probed; nothing guards the hand-built case. Reproduce:
+      `generateTrip({originProvince:"ha-noi",days:3,style:"mixed",pace:"balanced",
+      pinned:["ho-chi-minh-mausoleum","temple-of-literature"]})` → `totalDays === 1`.
+- [ ] `sa-pa-town` carries `visitDuration: "2 ngày"`, so any 3-day trip that pins it drops it. Not a
+      bug in itself, but it means the province's own headline row cannot anchor a short preset.
 
 Caught in A, worth remembering: `o-quy-ho-pass` already existed under **lai-chau**, not lao-cai —
 the pass straddles the border. Only an id collision revealed it; a name-based check would have
