@@ -45,8 +45,8 @@ export const sejongDestinations: Destination[] = [
     name: "Vườn thực vật quốc gia Sejong",
     nameEn: "Sejong National Arboretum",
     type: "park",
-    lng: 127.2475,
-    lat: 36.4995,
+    lng: 127.28579,
+    lat: 36.49806,
     summary: "Vườn thực vật đô thị đầu tiên của Hàn Quốc, có nhà kính hình cánh hoa cao 30 mét.",
     story:
       "Mở cửa năm 2020, đây là vườn thực vật quốc gia đầu tiên đặt ngay trong lòng một thành phố. Điểm nhấn là nhà kính hình cánh hoa: bên trong chia thành vùng khí hậu Địa Trung Hải và vùng nhiệt đới, đi từ ô liu sang cọ chỉ trong vài chục bước. Bên ngoài là hơn hai chục khu vườn chủ đề, trong đó có vườn Hàn Quốc dựng theo lối truyền thống với ao vuông đảo tròn. Mùa xuân hoa tulip, mùa thu cỏ lau — mỗi mùa vườn thay một bộ mặt.",

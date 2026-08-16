@@ -352,8 +352,8 @@ export const jeonnamDestinations: Destination[] = [
     name: "Làng hoa thù du Gurye",
     nameEn: "Gurye Sansuyu Village",
     type: "village",
-    lng: 127.4625,
-    lat: 35.2555,
+    lng: 127.48878,
+    lat: 35.33125,
     summary: "Ngôi làng dưới chân Jirisan nơi hoa thù du vàng nở trước mọi loài hoa khác của mùa xuân Hàn Quốc.",
     story:
       "Mỗi tháng 3, khi phần còn lại của Hàn Quốc vẫn còn xám, thung lũng Sandong ở Gurye đã vàng rực. Cây thù du sansuyu ở đây được trồng từ hơn một nghìn năm trước và giờ có hàng chục nghìn cây bao quanh các ngôi làng đá — hoa nở trước khi ra lá nên cả cây chỉ toàn màu vàng. Người dân sống bằng quả thù du phơi khô làm thuốc, và theo lời họ kể, ngày xưa con gái trong làng phải tách hạt bằng răng nên ai lấy vợ Sandong là được cả một nghề. Những bức tường đá xếp khan giữa các vườn cây làm nền cho toàn bộ khung cảnh.",

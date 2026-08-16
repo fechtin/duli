@@ -111,9 +111,9 @@ export function DestinationPanel({ id }: { id: string }) {
         </Button>
       </div>
 
-      {/* Directions — hand off to the map app the user actually navigates with */}
+      {/* Open the place in the map app the user actually navigates with */}
       <div className="px-5 pb-1 pt-2">
-        <MapLinks place={{ name: dest.nameEn || dest.name, lng: dest.lng, lat: dest.lat }} />
+        <MapLinks place={{ id: dest.id, name: dest.nameEn || dest.name, lng: dest.lng, lat: dest.lat }} />
       </div>
 
       {/* 5. Gallery */}

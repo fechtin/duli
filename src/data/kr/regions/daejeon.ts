@@ -215,8 +215,8 @@ export const daejeonDestinations: Destination[] = [
     name: "Công viên Cội nguồn (Ppuri Park)",
     nameEn: "Ppuri Park (Roots Park)",
     type: "park",
-    lng: 127.4185,
-    lat: 36.2985,
+    lng: 127.38833,
+    lat: 36.28477,
     summary: "Công viên duy nhất trên thế giới dành riêng cho họ tộc, với đá khắc gia huy của hai trăm dòng họ Hàn Quốc.",
     story:
       "Người Hàn Quốc chỉ có khoảng ba trăm họ, nhưng mỗi họ lại chia thành nhiều bản quán — 'Kim xứ Gimhae' khác 'Kim xứ Gyeongju' — và hệ thống ấy định hình cách người ta tự giới thiệu suốt hàng trăm năm. Ppuri Park là công viên duy nhất trên thế giới dựng riêng cho chuyện đó: hơn hai trăm bia đá, mỗi bia khắc gia huy và lịch sử của một bản quán, xếp dọc sườn đồi bên suối. Người Hàn đến đây tìm bia của dòng họ mình và chụp ảnh trước nó. Với khách nước ngoài, đây là cách nhanh nhất để hiểu vì sao câu hỏi 'bản quán của bạn ở đâu' từng quan trọng đến thế. Trong công viên còn có bảo tàng phả hệ.",

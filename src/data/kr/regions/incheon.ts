@@ -79,8 +79,8 @@ export const incheonDestinations: Destination[] = [
     name: "Mộ đá Ganghwa",
     nameEn: "Ganghwa Dolmen Site",
     type: "unesco",
-    lng: 126.43,
-    lat: 37.742,
+    lng: 126.43716,
+    lat: 37.77434,
     summary: "Những phiến đá thời tiền sử nằm giữa đồng, có tuổi đời còn hơn cả kim tự tháp Ai Cập cuối cùng.",
     story:
       "Đảo Ganghwa nằm nơi sông Hàn đổ ra biển, và trên các cánh đồng của nó rải rác hàng trăm ngôi mộ đá dựng cách đây khoảng ba nghìn năm. Ngôi nổi tiếng nhất — Bugeun-ri — có nắp đá nặng chừng 50 tấn đặt trên hai trụ đá, tạo thành hình chiếc bàn khổng lồ giữa bãi cỏ trống. Không hàng rào chật chội, không đám đông: chỉ có gió đồng và cảm giác đứng trước thứ đã ở đó trước mọi vương triều Triều Tiên. Bán đảo Triều Tiên là nơi tập trung mộ đá dày đặc nhất thế giới, và Ganghwa là cửa ngõ để hiểu điều đó.",
@@ -182,8 +182,8 @@ export const incheonDestinations: Destination[] = [
     name: "Đài quan sát Hoà bình Ganghwa",
     nameEn: "Ganghwa Peace Observatory",
     type: "museum",
-    lng: 126.529,
-    lat: 37.828,
+    lng: 126.43298,
+    lat: 37.82654,
     summary:
       "Đứng cách bờ Bắc Triều Tiên khoảng hai cây số, nhìn qua ống nhòm thấy người dân đang làm đồng.",
     story:

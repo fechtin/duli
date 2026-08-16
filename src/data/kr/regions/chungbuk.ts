@@ -147,8 +147,8 @@ export const chungbukDestinations: Destination[] = [
     name: "Skywalk Mancheonha (Danyang)",
     nameEn: "Mancheonha Skywalk, Danyang",
     type: "bridge",
-    lng: 128.3745,
-    lat: 36.9855,
+    lng: 128.33719,
+    lat: 36.97764,
     summary: "Sàn kính nhô ra khỏi vách đá cao tám mươi mét, nhìn thẳng xuống khúc uốn sông Namhan.",
     story:
       "Ở Danyang, sông Namhan uốn một vòng gần khép quanh chân vách đá, và người ta xây một tháp xoắn ốc lên đỉnh vách rồi đẩy ba nhánh sàn kính nhô ra ngoài không trung. Đứng ở đầu nhánh, dưới chân bạn là tám mươi mét không khí rồi tới mặt nước xanh lục. Đường lên là một dốc xoắn dài chừng một trăm hai mươi mét, đi bộ vừa lên vừa nhìn cảnh mở dần ra. Bên cạnh có tuyến zipline dài nhất vùng và một máng trượt xuống chân đồi. Danyang là vùng đá vôi nên nước sông ở đây có màu xanh ngọc rất khác các sông khác của Hàn Quốc.",

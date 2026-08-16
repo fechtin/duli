@@ -79,8 +79,8 @@ export const gyeongbukDestinations: Destination[] = [
     name: "Vườn quốc gia Juwangsan",
     nameEn: "Juwangsan National Park",
     type: "mountain",
-    lng: 129.18,
-    lat: 36.395,
+    lng: 129.14223,
+    lat: 36.39317,
     summary: "Hẻm núi đá dựng đứng với ba tầng thác, vườn quốc gia nhỏ nhất mà kịch tính nhất Hàn Quốc.",
     story:
       "Juwangsan không cao, nhưng đá ở đây dựng thành vách thẳng đứng hai bên một khe hẹp, và đường mòn chính luồn ngay giữa khe đó. Đi chừng một giờ là gặp ba thác nước nối tiếp, mỗi thác đổ vào một hồ đá xanh ngắt. Truyền thuyết kể một vị vương gia Trung Hoa tên Juwang từng ẩn náu trong hang đá nơi đây, và tên núi ra đời từ đó. Mùa thu, hẻm núi đỏ rực; đầu hè, nước thác mạnh nhất.",
@@ -147,8 +147,8 @@ export const gyeongbukDestinations: Destination[] = [
     name: "Cầu gỗ Woryeonggyo (Andong)",
     nameEn: "Woryeonggyo Bridge, Andong",
     type: "bridge",
-    lng: 128.7295,
-    lat: 36.5595,
+    lng: 128.76083,
+    lat: 36.57667,
     summary: "Cầu gỗ đi bộ dài nhất Hàn Quốc, dựng theo một lá thư và đôi dép cỏ tìm thấy trong ngôi mộ cổ.",
     story:
       "Năm 1998, người ta khai quật một ngôi mộ thế kỷ 16 ở Andong và tìm thấy trên ngực người đàn ông một lá thư của vợ ông cùng một đôi dép bện từ tóc bà. Trong thư, người vợ đang mang thai viết cho chồng vừa mất: 'Chàng luôn nói chúng ta sẽ sống bên nhau đến bạc đầu, sao lại bỏ thiếp mà đi trước?' Bức thư ấy khiến cả nước xúc động, và thành phố dựng cây cầu gỗ này bắc qua sông Nakdong để tưởng nhớ — hình dáng cầu lấy từ đôi dép bện tóc. Cầu dài ba trăm tám mươi bảy mét, chỉ dành cho người đi bộ, và giữa cầu có một mái đình để dừng lại. Ban đêm cầu được thắp đèn và sương từ mặt sông dâng lên.",
@@ -250,8 +250,8 @@ export const gyeongbukDestinations: Destination[] = [
     name: "Đảo Ulleungdo",
     nameEn: "Ulleungdo Island",
     type: "island",
-    lng: 130.9055,
-    lat: 37.4995,
+    lng: 130.84276,
+    lat: 37.49478,
     summary: "Đảo núi lửa cách bờ gần ba trăm cây số, vách đá dựng đứng quanh đảo và gần như không có đất bằng.",
     story:
       "Ulleungdo nằm giữa biển Đông, cách đất liền gần ba trăm cây số — tàu cao tốc đi mất hai tiếng rưỡi và huỷ chuyến thường xuyên vì sóng. Đảo là một ngọn núi lửa nhô lên khỏi biển sâu, nên gần như không có chỗ nào bằng: đường vòng quanh đảo đục thẳng vào vách đá với hàng loạt hầm ngắn, và nhà cửa bám vào những khe dốc. Duy nhất có một vùng đất phẳng là lòng chảo Nari ở giữa đảo, nơi trồng rau rừng và mọc lên những căn nhà lợp vỏ cây. Đây là đảo hiếm hoi của Hàn Quốc mà du lịch chưa san phẳng — một phần vì đi lại quá khó.",

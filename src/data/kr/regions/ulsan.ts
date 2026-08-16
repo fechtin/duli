@@ -181,8 +181,8 @@ export const ulsanDestinations: Destination[] = [
     name: "Đèo Ganwoljae & cỏ lau Yeongnam Alps",
     nameEn: "Ganwoljae & the Yeongnam Alps",
     type: "mountain",
-    lng: 129.01,
-    lat: 35.573,
+    lng: 129.04429,
+    lat: 35.54806,
     summary: "Cánh đồng cỏ lau trên yên núi ở độ cao chín trăm mét, tháng 10 chuyển bạc và đổ sóng theo gió.",
     story:
       "'Yeongnam Alps' là cách người Hàn gọi cụm chín ngọn núi trên một nghìn mét quanh ranh giới Ulsan, Gyeongbuk và Gyeongnam. Điểm được yêu nhất trong cụm ấy là Ganwoljae, một yên núi ở độ cao khoảng chín trăm mét phủ kín cỏ lau eoksae. Tháng 10, cả sườn yên chuyển màu bạc và khi gió thổi qua, đám cỏ đổ thành từng đợt sóng — đó là lý do hàng nghìn người leo lên đây mỗi cuối tuần mùa thu. Đường lên từ Baenaegol mất chừng hai tiếng, không quá khó, và trên yên có nhà tránh trú cùng một quán bán mì gói nóng.",

@@ -354,8 +354,8 @@ export const gyeongnamDestinations: Destination[] = [
     name: "Đồi Gió & bờ đá Geoje",
     nameEn: "Windy Hill & Geoje Coast",
     type: "beach",
-    lng: 128.705,
-    lat: 34.79,
+    lng: 128.66374,
+    lat: 34.74324,
     summary: "Đồi cỏ trọc nhô ra biển với một cối xay gió gỗ, gió mạnh đến mức khó đứng thẳng.",
     story:
       "Đúng như tên gọi, gió ở đây không ngừng. Đồi cỏ nhô ra biển ở mũi Dojangpo, trên đỉnh có một cối xay gió gỗ dựng làm cảnh, và cỏ thì luôn nằm rạp về một phía. Đứng đó nhìn ra là vùng biển Hallyeohaesang với đảo Oedo và Haegeumgang ngay ngoài khơi — Haegeumgang là hai khối đá tách đôi bởi một khe hẹp mà thuyền nhỏ chui qua được vào lúc nước lặng. Geoje là hòn đảo lớn thứ hai Hàn Quốc, nổi tiếng vì nhà máy đóng tàu, nhưng bờ nam của nó thì toàn vách đá và vịnh nhỏ.",

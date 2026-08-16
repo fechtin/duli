@@ -181,8 +181,8 @@ export const chungnamDestinations: Destination[] = [
     name: "Cồn cát Sinduri (Taean)",
     nameEn: "Sinduri Coastal Dunes, Taean",
     type: "beach",
-    lng: 126.1795,
-    lat: 36.8145,
+    lng: 126.19711,
+    lat: 36.84454,
     summary: "Đồi cát ven biển lớn nhất Hàn Quốc, gió bồi suốt mười lăm nghìn năm thành một mảnh sa mạc nhỏ.",
     story:
       "Sinduri là hệ cồn cát ven biển lớn nhất Hàn Quốc — cát từ bãi biển được gió tây bắc thổi ngược vào bờ suốt mười lăm nghìn năm, đắp thành những đồi cao tới hai chục mét chạy dài gần bốn cây số. Đứng giữa đó, xung quanh chỉ có cát và cỏ lau biển, rất khó tin mình vẫn đang ở Hàn Quốc. Đây là nơi sống của nhiều loài chỉ có ở cồn cát: cỏ đưng, bọ hung cát, thằn lằn cát. Lối đi bằng gỗ dẫn qua vùng lõi để không giẫm lên hệ sinh thái, và có một hồ nước ngọt nhỏ hình thành ngay sau đồi cát — chuyện hiếm gặp trong địa mạo cồn cát.",
@@ -318,8 +318,8 @@ export const chungnamDestinations: Destination[] = [
     name: "Bảo tàng Độc lập (Cheonan)",
     nameEn: "Independence Hall of Korea, Cheonan",
     type: "museum",
-    lng: 127.2745,
-    lat: 36.7855,
+    lng: 127.22377,
+    lat: 36.78284,
     summary: "Bảo tàng lớn nhất Hàn Quốc về thời thuộc địa, xây bằng tiền quyên góp của dân sau một vụ tranh cãi sách giáo khoa.",
     story:
       "Năm 1982, việc Nhật Bản sửa cách mô tả thời thuộc địa trong sách giáo khoa gây phẫn nộ ở Hàn Quốc, và người dân bắt đầu quyên tiền để xây một bảo tàng kể lại chuyện đó theo cách của mình. Số tiền quyên được đủ để dựng một quần thể bảy toà nhà trên một khu đất rộng dưới chân núi Heukseongsan. Sảnh chính có mái ngói cong khổng lồ và bên dưới là tượng đài cao mười lăm mét; các gian trưng bày đi từ thời tiền sử tới phong trào độc lập, và phần về nhà tù, tra tấn được kể rất thẳng. Đây là nơi mà nhiều trường học Hàn Quốc bắt buộc học sinh phải tới ít nhất một lần.",

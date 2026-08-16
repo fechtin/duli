@@ -153,7 +153,7 @@ export const vi = {
   "dish.whyForYou": "Phù hợp với bạn vì",
   "dish.viewOnMap": "Xem trên bản đồ",
 
-  "maps.directionsTo": "Chỉ đường tới {name} bằng {provider}",
+  "maps.viewOn": "Xem {name} trên {provider}",
   "restaurant.label.aiPick": "AI Pick",
   "restaurant.label.localFavorite": "Người địa phương mê",
   "restaurant.label.atlasPick": "Atlas chọn",

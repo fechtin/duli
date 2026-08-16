@@ -207,8 +207,8 @@ function RestaurantCard({ restaurant: r, t }: { restaurant: Restaurant; t: (k: s
         {t("dish.viewOnMap")}
       </button>
 
-      {/* Directions out to the user's own map app */}
-      <MapLinks place={{ name: r.name, lng: r.lng, lat: r.lat }} size="sm" className="mt-2" />
+      {/* Open the restaurant in the user's own map app */}
+      <MapLinks place={{ id: r.id, name: r.name, lng: r.lng, lat: r.lat }} size="sm" className="mt-2" />
     </div>
   );
 }

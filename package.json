@@ -23,6 +23,7 @@
     "images:fetch": "node --experimental-strip-types scripts/fetch-images.mjs",
     "images:dishes": "node --experimental-strip-types scripts/fetch-dish-images.mjs",
     "images:thumbs": "node scripts/build-thumbs.mjs",
+    "maps:naver": "node --experimental-strip-types scripts/resolve-naver-places.mjs",
     "verify:seo": "node scripts/verify-locale-urls.mjs",
     "verify:kr": "node --experimental-strip-types scripts/verify-content.mjs kr",
     "verify:vn": "node --experimental-strip-types scripts/verify-content.mjs vn",

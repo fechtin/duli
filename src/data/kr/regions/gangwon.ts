@@ -10,8 +10,8 @@ export const gangwonDestinations: Destination[] = [
     name: "Vườn quốc gia Seoraksan",
     nameEn: "Seoraksan National Park",
     type: "mountain",
-    lng: 128.465,
-    lat: 38.119,
+    lng: 128.51731,
+    lat: 38.16702,
     summary: "Dãy núi đá granite dựng đứng gần biển, nơi mùa thu Hàn Quốc bắt đầu mỗi năm.",
     story:
       "Seoraksan là ngọn núi mà người Hàn nghĩ tới đầu tiên khi nói 'đi núi'. Những vách granite trắng dựng thẳng, thông mọc trên khe đá, và đường mòn dẫn tới Ulsanbawi — sáu khối đá khổng lồ mà truyền thuyết bảo đang trên đường tới núi Geumgang thì lỡ hẹn nên ở lại đây. Cáp treo đưa khách lên Gwongeumseong nếu ngại leo. Mỗi cuối tháng 9, lá đỏ bắt đầu từ đỉnh Seoraksan rồi lan dần xuống phía nam suốt một tháng — bản đồ mùa thu của cả nước tính từ đây.",
@@ -285,8 +285,8 @@ export const gangwonDestinations: Destination[] = [
     name: "Hang Hwanseongul (Samcheok)",
     nameEn: "Hwanseongul Cave, Samcheok",
     type: "cave",
-    lng: 129.0355,
-    lat: 37.2955,
+    lng: 129.00817,
+    lat: 37.3243,
     summary: "Hang đá vôi lớn nhất Đông Á, có những khoang trần cao tới ba mươi mét và thác nước chảy trong lòng núi.",
     story:
       "Hwanseongul là hệ hang đá vôi lớn nhất Đông Á: hơn sáu cây số đường hang đã khảo sát, trong đó chừng một phần tư mở cho khách. Đây không phải loại hang có măng đá tinh xảo mà là hang của quy mô — những khoang rộng như nhà thờ với trần cao ba mươi mét, cầu thang sắt bắc qua vực, và một thác nước ngầm đổ xuống trong bóng tối. Để vào hang phải đi monorail dốc gần bốn mươi độ lên sườn núi trước. Nhiệt độ trong hang giữ khoảng mười độ quanh năm nên mùa hè đây là một trong những chỗ mát nhất Gangwon.",
@@ -387,8 +387,8 @@ export const gangwonDestinations: Destination[] = [
     name: "Thung lũng Mureung (Donghae)",
     nameEn: "Mureung Valley, Donghae",
     type: "waterfall",
-    lng: 129.0475,
-    lat: 37.4535,
+    lng: 129.01288,
+    lat: 37.46216,
     summary: "Phiến đá phẳng rộng bằng sân bóng nằm giữa suối, khắc chi chít tên các văn nhân xưa.",
     story:
       "Mureung — 'thung lũng cõi tiên' — mở đầu bằng một phiến đá trắng khổng lồ nằm phẳng giữa dòng suối, rộng đến mức chứa được cả nghìn người. Suốt các thế kỷ trước, văn nhân đi qua đây đều khắc tên mình lên đá, và giờ mặt phiến đá dày đặc chữ Hán chồng lên nhau như một cuốn sổ lưu bút bằng đá. Đi sâu vào thung lũng là chuỗi thác: Ssangpokpo với hai dòng nước đổ vào cùng một hồ đá, rồi Yongchupokpo cuối đường. Nước ở đây xanh lục vì đá vôi, và lạnh buốt kể cả tháng tám.",
@@ -421,8 +421,8 @@ export const gangwonDestinations: Destination[] = [
     name: "Vườn quốc gia Taebaeksan",
     nameEn: "Taebaeksan National Park",
     type: "mountain",
-    lng: 128.9155,
-    lat: 37.0965,
+    lng: 128.98862,
+    lat: 37.14946,
     summary: "Ngọn núi thiêng có đàn tế trời trên đỉnh, mùa đông cây thuỷ tùng đóng băng thành rừng pha lê.",
     story:
       "Taebaeksan là núi thiêng trong tín ngưỡng Hàn Quốc: trên đỉnh có Cheonjedan, đàn đá tế trời tương truyền có từ thời Dangun, và đến giờ mỗi tháng 10 vẫn có lễ tế chính thức. Nhưng lý do đông người leo nhất lại là mùa đông. Núi đón gió biển ẩm nên tuyết bám dày, và những cây thuỷ tùng cổ thụ trên sườn — nhiều cây đã chết đứng hàng trăm năm mà không đổ — bị băng bao kín thành các hình thù trắng xoá. Đường lên từ Danggol mất khoảng hai tiếng và không quá dốc, nên đây được coi là ngọn núi tuyết dễ chinh phục nhất cho người mới.",

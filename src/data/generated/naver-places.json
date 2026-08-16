@@ -1,0 +1,710 @@
+{
+  "anapji-donggung": {
+    "id": "1610027056",
+    "name": "동궁"
+  },
+  "andong-woryeonggyo": {
+    "id": "15823787",
+    "name": "월영교"
+  },
+  "apsan-park": {
+    "id": "11622403",
+    "name": "앞산공원"
+  },
+  "asia-culture-center": {
+    "id": "37039338",
+    "name": "국립아시아문화전당"
+  },
+  "bangudae-petroglyphs": {
+    "id": "19494292",
+    "name": "반구대암각화"
+  },
+  "beomeosa": {
+    "id": "12104500",
+    "name": "범어사"
+  },
+  "bijarim-forest": {
+    "id": "12370507",
+    "name": "비자림"
+  },
+  "bimatgil-geumgang": {
+    "id": "1334784855",
+    "name": "금강보행교(이응다리)"
+  },
+  "birds-nest-library": {
+    "id": "33887687",
+    "name": "국립세종도서관"
+  },
+  "biseulsan-azalea": {
+    "id": "11491422",
+    "name": "비슬산"
+  },
+  "bongeunsa": {
+    "id": "11664007",
+    "name": "봉은사"
+  },
+  "bosu-dong-book-street": {
+    "id": "12848261",
+    "name": "보수동책방골목"
+  },
+  "bukchon-hanok-village": {
+    "id": "13034552",
+    "name": "북촌 한옥마을"
+  },
+  "bukhansan": {
+    "id": "18693487",
+    "name": "북한산국립공원"
+  },
+  "bulguksa": {
+    "id": "11663971",
+    "name": "불국사"
+  },
+  "bullo-tumuli": {
+    "id": "16167935",
+    "name": "불로동고분군"
+  },
+  "bunhwangsa-hwangnyongsa": {
+    "id": "19494100",
+    "name": "분황사모전석탑"
+  },
+  "busan-cinema-center": {
+    "id": "20410180",
+    "name": "영화의전당"
+  },
+  "buseoksa": {
+    "id": "11663984",
+    "name": "부석사"
+  },
+  "buyeo-busosanseong": {
+    "id": "13491708",
+    "name": "부소산성"
+  },
+  "byeonsan-bando": {
+    "id": "13508494",
+    "name": "변산반도국립공원"
+  },
+  "changdeokgung": {
+    "id": "12261493",
+    "name": "창덕궁"
+  },
+  "cheomseongdae": {
+    "id": "13491802",
+    "name": "첨성대"
+  },
+  "cheonggyecheon": {
+    "id": "13491093",
+    "name": "청계천"
+  },
+  "cheongnamdae": {
+    "id": "13118260",
+    "name": "청남대"
+  },
+  "cheongoksan-mureung": {
+    "id": "11491159",
+    "name": "무릉계곡"
+  },
+  "cheonjiyeon-waterfall": {
+    "id": "11491638",
+    "name": "천지연폭포"
+  },
+  "chungju-jungangtap": {
+    "id": "11817590",
+    "name": "메밀마당 충주 중앙탑본점"
+  },
+  "chungju-lake-ferry": {
+    "id": "17802297",
+    "name": "충주호"
+  },
+  "daecheon-beach": {
+    "id": "1795581804",
+    "name": "처갓집양념치킨 보령대천해수욕장점"
+  },
+  "daegu-arboretum": {
+    "id": "13491732",
+    "name": "대구수목원"
+  },
+  "daegu-modern-alley": {
+    "id": "37069804",
+    "name": "대구근대골목단팥빵 본점"
+  },
+  "daegu-yangnyeongsi": {
+    "id": "15966612",
+    "name": "대구약령시한의약박물관"
+  },
+  "daejeon-expo-park": {
+    "id": "11621573",
+    "name": "엑스포 과학공원"
+  },
+  "daejeon-jungang-market": {
+    "id": "21530749",
+    "name": "중앙시장"
+  },
+  "daejeon-skyroad": {
+    "id": "37270963",
+    "name": "스카이로드"
+  },
+  "daereungwon": {
+    "id": "13491270",
+    "name": "경주대릉원"
+  },
+  "daewangam-park": {
+    "id": "12079981",
+    "name": "대왕암공원"
+  },
+  "damyang-bamboo": {
+    "id": "11797921",
+    "name": "죽녹원"
+  },
+  "danyang-dodamsambong": {
+    "id": "13491512",
+    "name": "도담삼봉"
+  },
+  "dongdaemun-ddp": {
+    "id": "18063223",
+    "name": "동대문디자인플라자"
+  },
+  "dosan-seowon": {
+    "id": "11663873",
+    "name": "도산서원"
+  },
+  "dumulmeori": {
+    "id": "13491272",
+    "name": "두물머리"
+  },
+  "everland": {
+    "id": "11574457",
+    "name": "에버랜드"
+  },
+  "gamcheon-culture-village": {
+    "id": "21884707",
+    "name": "감천문화마을"
+  },
+  "ganghwa-dolmen": {
+    "id": "19827856",
+    "name": "강화고인돌유적"
+  },
+  "ganghwa-peace-observatory": {
+    "id": "13096060",
+    "name": "강화평화전망대"
+  },
+  "ganjeolgot": {
+    "id": "13491761",
+    "name": "간절곶"
+  },
+  "ganwoljae-silver-grass": {
+    "id": "38160979",
+    "name": "간월재"
+  },
+  "garden-of-morning-calm": {
+    "id": "11622274",
+    "name": "아침고요수목원"
+  },
+  "geoje-oedo": {
+    "id": "11491919",
+    "name": "외도 보타니아"
+  },
+  "geoje-windy-hill": {
+    "id": "1556517950",
+    "name": "거제바람의언덕"
+  },
+  "gimhae-gaya-tombs": {
+    "id": "20103551",
+    "name": "김해대성동고분군"
+  },
+  "gochang-dolmen": {
+    "id": "38300945",
+    "name": "고창고인돌유적"
+  },
+  "gosu-cave": {
+    "id": "11491273",
+    "name": "고수동굴"
+  },
+  "government-complex-rooftop": {
+    "id": "1903081110",
+    "name": "정부세종청사 옥상정원"
+  },
+  "guinsa": {
+    "id": "12811723",
+    "name": "구인사"
+  },
+  "gurye-sansuyu": {
+    "id": "13491718",
+    "name": "구례산수유마을"
+  },
+  "gwangalli-beach": {
+    "id": "11491655",
+    "name": "광안리해수욕장"
+  },
+  "gwangjang-market": {
+    "id": "21075936",
+    "name": "광장시장"
+  },
+  "gwangju-biennale": {
+    "id": "38219849",
+    "name": "광주비엔날레"
+  },
+  "gwangju-daein-market": {
+    "id": "13347854",
+    "name": "대인시장"
+  },
+  "gwangju-penguin-village": {
+    "id": "37615287",
+    "name": "펭귄마을"
+  },
+  "gwangmyeong-cave": {
+    "id": "21154281",
+    "name": "광명동굴"
+  },
+  "gyeongbokgung": {
+    "id": "11571707",
+    "name": "경복궁"
+  },
+  "gyeongju-national-museum": {
+    "id": "11620556",
+    "name": "국립경주박물관"
+  },
+  "gyeongpo-beach": {
+    "id": "12079976",
+    "name": "경포해변"
+  },
+  "gyeryongsan": {
+    "id": "20614982",
+    "name": "계룡산국립공원"
+  },
+  "haedong-yonggungsa": {
+    "id": "11737443",
+    "name": "해동용궁사"
+  },
+  "haeinsa": {
+    "id": "11663964",
+    "name": "해인사"
+  },
+  "haemieupseong": {
+    "id": "13193481",
+    "name": "서산 해미읍성"
+  },
+  "haenyeo-museum": {
+    "id": "12200322",
+    "name": "제주해녀박물관"
+  },
+  "haeundae-beach": {
+    "id": "11491806",
+    "name": "해운대해수욕장"
+  },
+  "hahoe-folk-village": {
+    "id": "12125162",
+    "name": "안동하회마을"
+  },
+  "hallasan": {
+    "id": "11796130",
+    "name": "한라산"
+  },
+  "hangang-yeouido-park": {
+    "id": "13416869",
+    "name": "여의도 한강공원"
+  },
+  "heyri-art-valley": {
+    "id": "13491296",
+    "name": "헤이리 예술마을"
+  },
+  "hongdae": {
+    "id": "13466099",
+    "name": "홍대입구역 2호선"
+  },
+  "huinnyeoul-culture-village": {
+    "id": "37418047",
+    "name": "흰여울문화마을"
+  },
+  "hwanseongul-cave": {
+    "id": "13477285",
+    "name": "환선굴"
+  },
+  "hwaseong-fortress": {
+    "id": "13491459",
+    "name": "수원화성"
+  },
+  "hyangiram": {
+    "id": "11664041",
+    "name": "대한불교조계종 향일암"
+  },
+  "hyeopjae-beach": {
+    "id": "11491807",
+    "name": "협재해수욕장"
+  },
+  "igidae-coastal-walk": {
+    "id": "16855498",
+    "name": "이기대해안산책로"
+  },
+  "imjingak-dmz": {
+    "id": "1405440752",
+    "name": "임진각"
+  },
+  "incheon-chinatown": {
+    "id": "12245834",
+    "name": "차이나타운"
+  },
+  "incheon-open-port-street": {
+    "id": "4036068591",
+    "name": "개항장거리"
+  },
+  "independence-hall": {
+    "id": "11620331",
+    "name": "독립기념관"
+  },
+  "insadong": {
+    "id": "13542782",
+    "name": "인사동문화의거리"
+  },
+  "jagalchi-market": {
+    "id": "11535750",
+    "name": "부산자갈치시장"
+  },
+  "jangsaengpo-whale-village": {
+    "id": "36241732",
+    "name": "장생포고래문화마을"
+  },
+  "jeongbang-waterfall": {
+    "id": "11491630",
+    "name": "정방폭포"
+  },
+  "jeongdongjin": {
+    "id": "13491286",
+    "name": "정동진"
+  },
+  "jeonju-hanok-village": {
+    "id": "13208779",
+    "name": "전주 한옥마을"
+  },
+  "jeonju-hyanggyo": {
+    "id": "13208787",
+    "name": "전주향교"
+  },
+  "jeonju-nambu-market": {
+    "id": "207149420",
+    "name": "남부시장"
+  },
+  "jindo-sea-parting": {
+    "id": "19796863",
+    "name": "진도신비의바닷길"
+  },
+  "jinhae-cherry-blossom": {
+    "id": "37994545",
+    "name": "진해벚꽃길"
+  },
+  "jinju-fortress": {
+    "id": "13491349",
+    "name": "진주성"
+  },
+  "jirisan-national-park": {
+    "id": "13491267",
+    "name": "지리산"
+  },
+  "jongmyo-shrine": {
+    "id": "11620940",
+    "name": "종묘"
+  },
+  "jujeon-pebble-beach": {
+    "id": "16588503",
+    "name": "주전몽돌해변"
+  },
+  "jusangjeolli-cliff": {
+    "id": "16927391",
+    "name": "대포해안주상절리대"
+  },
+  "juwangsan": {
+    "id": "15903146",
+    "name": "주왕산국립공원"
+  },
+  "kim-gwang-seok-street": {
+    "id": "33800325",
+    "name": "김광석다시그리기길"
+  },
+  "korean-folk-village": {
+    "id": "11620801",
+    "name": "한국민속촌"
+  },
+  "kr-anjirang-gopchang": {
+    "id": "21198304",
+    "name": "안지랑 곱창 골목"
+  },
+  "kr-chuncheon-myeongdong-dakgalbi": {
+    "id": "15044682",
+    "name": "춘천명동닭갈비골목"
+  },
+  "kr-gogung-jeonju": {
+    "id": "1836383883",
+    "name": "고궁"
+  },
+  "kr-gonghwachun": {
+    "id": "13508612",
+    "name": "공화춘"
+  },
+  "kr-jeju-black-pork-street": {
+    "id": "21761823",
+    "name": "흑돼지거리"
+  },
+  "kr-sindang-tteokbokki-town": {
+    "id": "1438806884",
+    "name": "신당동 떡볶이"
+  },
+  "kr-sungsimdang": {
+    "id": "11871325",
+    "name": "성심당 본점"
+  },
+  "kr-tosokchon": {
+    "id": "35597924",
+    "name": "토속촌삼계탕"
+  },
+  "lotte-world-tower": {
+    "id": "35306752",
+    "name": "롯데월드타워"
+  },
+  "magoksa": {
+    "id": "12188230",
+    "name": "마곡사"
+  },
+  "maisan": {
+    "id": "11491367",
+    "name": "마이산"
+  },
+  "mancheonha-skywalk": {
+    "id": "118652746",
+    "name": "만천하스카이워크"
+  },
+  "manjanggul": {
+    "id": "4354449381",
+    "name": "만장굴"
+  },
+  "mudeungsan": {
+    "id": "250957178",
+    "name": "무등산국립공원"
+  },
+  "muju-deogyusan": {
+    "id": "11491353",
+    "name": "덕유산"
+  },
+  "muuido": {
+    "id": "13491725",
+    "name": "무의도"
+  },
+  "myeongdong": {
+    "id": "1277234505",
+    "name": "명동"
+  },
+  "n-seoul-tower": {
+    "id": "11662870",
+    "name": "N서울타워"
+  },
+  "naejangsan": {
+    "id": "21075878",
+    "name": "내장산국립공원"
+  },
+  "naganeupseong": {
+    "id": "12153665",
+    "name": "순천 낙안읍성"
+  },
+  "naksansa": {
+    "id": "12991231",
+    "name": "낙산사"
+  },
+  "namhae-daraengi": {
+    "id": "12351151",
+    "name": "다랭이마을"
+  },
+  "namhae-german-village": {
+    "id": "21710629",
+    "name": "남해독일마을"
+  },
+  "namhansanseong": {
+    "id": "13490975",
+    "name": "남한산성"
+  },
+  "nami-island": {
+    "id": "11491866",
+    "name": "남이섬"
+  },
+  "national-museum-korea": {
+    "id": "11620570",
+    "name": "국립중앙박물관"
+  },
+  "odaesan-woljeongsa": {
+    "id": "11663919",
+    "name": "월정사"
+  },
+  "oeam-folk-village": {
+    "id": "1809454722",
+    "name": "아산"
+  },
+  "oido": {
+    "id": "11491918",
+    "name": "오이도"
+  },
+  "ojukheon": {
+    "id": "13553344",
+    "name": "오죽헌"
+  },
+  "oryukdo-skywalk": {
+    "id": "33461396",
+    "name": "오륙도스카이워크"
+  },
+  "paju-book-city": {
+    "id": "38325555",
+    "name": "파주출판도시"
+  },
+  "palgongsan-gatbawi": {
+    "id": "1008972614",
+    "name": "팔공산"
+  },
+  "petite-france": {
+    "id": "12913212",
+    "name": "쁘띠프랑스"
+  },
+  "pocheon-art-valley": {
+    "id": "13221909",
+    "name": "포천아트밸리"
+  },
+  "pohang-homigot": {
+    "id": "38759096",
+    "name": "CU 포항호미곶점"
+  },
+  "ppuri-park": {
+    "id": "12782088",
+    "name": "뿌리공원"
+  },
+  "sanbangsan": {
+    "id": "13491591",
+    "name": "산방산"
+  },
+  "sejong-arboretum": {
+    "id": "1346293413",
+    "name": "국립세종수목원"
+  },
+  "sejong-lake-park": {
+    "id": "32449504",
+    "name": "세종호수공원"
+  },
+  "seogwipo-olle-market": {
+    "id": "13571992",
+    "name": "서귀포매일올레시장"
+  },
+  "seokguram": {
+    "id": "11663972",
+    "name": "석굴암"
+  },
+  "seomun-market": {
+    "id": "12764360",
+    "name": "서문시장"
+  },
+  "seongeup-folk-village": {
+    "id": "13491577",
+    "name": "성읍민속마을"
+  },
+  "seongsan-ilchulbong": {
+    "id": "11491438",
+    "name": "성산일출봉"
+  },
+  "seonunsa": {
+    "id": "11806796",
+    "name": "선운사"
+  },
+  "seoraksan": {
+    "id": "13491004",
+    "name": "설악산국립공원"
+  },
+  "seosan-maae-buddha": {
+    "id": "13345796",
+    "name": "서산 용현리 마애여래삼존상"
+  },
+  "seoul-forest": {
+    "id": "11636039",
+    "name": "서울숲"
+  },
+  "sinduri-dunes": {
+    "id": "1645325032",
+    "name": "태안신두리해안사구"
+  },
+  "sobaeksan": {
+    "id": "15326297",
+    "name": "소백산국립공원"
+  },
+  "sokcho-abai-village": {
+    "id": "12108687",
+    "name": "아바이마을"
+  },
+  "songdo-central-park": {
+    "id": "20118926",
+    "name": "송도 센트럴파크"
+  },
+  "songgwangsa": {
+    "id": "11664039",
+    "name": "송광사"
+  },
+  "songwol-fairy-tale-village": {
+    "id": "34590409",
+    "name": "송월동동화마을"
+  },
+  "sorae-wetland-park": {
+    "id": "36480728",
+    "name": "소래습지생태공원"
+  },
+  "sudeoksa": {
+    "id": "11664080",
+    "name": "수덕사"
+  },
+  "suncheon-national-garden": {
+    "id": "34842768",
+    "name": "순천만국가정원"
+  },
+  "suncheonman-bay": {
+    "id": "12309000",
+    "name": "순천만습지"
+  },
+  "taebaeksan-snow": {
+    "id": "12089593",
+    "name": "태백산국립공원"
+  },
+  "taehwagang-bamboo": {
+    "id": "1270981782",
+    "name": "십리대숲"
+  },
+  "taejongdae": {
+    "id": "12079965",
+    "name": "태종대"
+  },
+  "tongyeong-mireuksan": {
+    "id": "13490889",
+    "name": "미륵산"
+  },
+  "udo-island": {
+    "id": "13491925",
+    "name": "우도"
+  },
+  "ulleungdo": {
+    "id": "11491925",
+    "name": "울릉도"
+  },
+  "ulsan-bridge-observatory": {
+    "id": "36667607",
+    "name": "울산대교전망대"
+  },
+  "upo-wetland": {
+    "id": "13491907",
+    "name": "우포늪"
+  },
+  "wolmido": {
+    "id": "13491282",
+    "name": "월미도"
+  },
+  "yangdong-folk-village": {
+    "id": "12765760",
+    "name": "경주 양동마을"
+  },
+  "yeosu-night-sea": {
+    "id": "1080459348",
+    "name": "여수밤바다"
+  },
+  "yongmunsa": {
+    "id": "11663934",
+    "name": "용문사"
+  }
+}

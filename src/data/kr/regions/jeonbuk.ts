@@ -113,8 +113,8 @@ export const jeonbukDestinations: Destination[] = [
     name: "Mộ đá Gochang",
     nameEn: "Gochang Dolmen Site",
     type: "unesco",
-    lng: 126.7295,
-    lat: 35.4335,
+    lng: 126.64938,
+    lat: 35.44901,
     summary: "Quần thể mộ đá dày đặc nhất thế giới — hơn 440 ngôi trên một sườn đồi.",
     story:
       "Nếu Ganghwa có những ngôi mộ đá nổi tiếng nhất thì Gochang có số lượng: hơn bốn trăm bốn mươi ngôi nằm rải trên một dải đồi dài chừng hai cây số, đủ mọi kích cỡ và kiểu dáng, từ loại bàn cao đến loại nắp đá đặt sát đất. Đi bộ theo đường mòn giữa chúng, bạn đi ngang ba nghìn năm lịch sử mà gần như không gặp ai. Gần đó còn có thành cổ Gochang Eupseong với tục đi vòng tường thành đội đá trên đầu để cầu sức khoẻ.",
@@ -215,8 +215,8 @@ export const jeonbukDestinations: Destination[] = [
     name: "Vườn quốc gia bán đảo Byeonsan",
     nameEn: "Byeonsanbando National Park",
     type: "beach",
-    lng: 126.5385,
-    lat: 35.6455,
+    lng: 126.61166,
+    lat: 35.64664,
     summary: "Vườn quốc gia duy nhất của Hàn Quốc có cả núi lẫn biển, với bãi đá xếp lớp như chồng sách.",
     story:
       "Byeonsanbando là vườn quốc gia duy nhất ở Hàn Quốc gộp cả vùng núi lẫn vùng biển vào một ranh giới. Phần núi có chùa Naesosa với đường thông đỏ dẫn vào và những cánh cửa gỗ chạm hoa đã bạc màu qua bốn thế kỷ, không sơn lại. Phần biển có Chaeseokgang — một bờ đá trầm tích bị sóng bào thành từng lớp phẳng xếp chồng lên nhau, trông đúng như một chồng sách khổng lồ, và chỉ đi được khi triều xuống. Hoàng hôn ở đây rơi thẳng xuống Hoàng Hải phía sau các lớp đá, và đó là bức ảnh mà ai đến Byeonsan cũng mang về.",

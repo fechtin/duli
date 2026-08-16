@@ -187,8 +187,8 @@ export const gyeonggiNorthDestinations: Destination[] = [
     name: "Thung lũng nghệ thuật Pocheon",
     nameEn: "Pocheon Art Valley",
     type: "lake",
-    lng: 127.32,
-    lat: 37.943,
+    lng: 127.23722,
+    lat: 37.92321,
     summary:
       "Mỏ đá granite bỏ hoang ngập nước thành hồ xanh ngọc, vách đá dựng đứng bao quanh bốn phía.",
     story:
