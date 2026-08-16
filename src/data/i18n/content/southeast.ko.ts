@@ -43,7 +43,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "예수상: 07:00–17:00",
     galleryCaptions: [
       "활기차고 붐비는 금빛 모래 뒤쪽 해변",
+      "붕따우의 해안",
       "작은 산 위의 예수상",
+      "붐비는 붕따우 해변",
       "바삭한 특산품 반콧",
     ],
   },
@@ -139,6 +141,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "05:00–18:00",
     galleryCaptions: [
       "음양 기와지붕의 고찰",
+      "투저우못의 바 티엔하우 사원",
       "흥겨운 여신 가마 행렬",
       "사원 안에 피어오르는 향 연기",
     ],
@@ -211,6 +214,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "숲 한가운데 매끄럽고 푸른 잔디",
+      "부락 초원으로 들어가는 길",
       "구름을 비추는 맑은 호수",
       "초원 위로 내리는 노을",
     ],

@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 23:00",
-    galleryCaptions: ["Live seafood tanks outside the restaurants", "Phu Quoc fish sauce and pepper stalls"],
+    galleryCaptions: ["Rolled ice cream made at the night market", "Live seafood tanks outside the restaurants", "A fish stall at the night market", "Phu Quoc fish sauce and pepper stalls"],
   },
   "hon-thom-cable-car": {
     name: "Hon Thom Cable Car",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Return cable car about 350,000d (indicative)",
     openingHours: "About 08:00 - 17:30, varies by season",
-    galleryCaptions: ["A cabin crossing above the sea", "Floating fishing villages seen from the cable car"],
+    galleryCaptions: ["A Hon Thom cable car pylon standing in the sea", "A cabin crossing above the sea", "Floating fishing villages seen from the cable car"],
   },
   "phu-quoc-prison": {
     name: "Phu Quoc Prison",
@@ -189,7 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Ha Tien town on the Gulf of Thailand", "The Mac family tombs on Binh San hill"],
+    galleryCaptions: ["Ha Tien town on the Gulf of Thailand", "The beach at Ha Tien", "The Mac family tombs on Binh San hill"],
   },
   "mui-nai-beach": {
     name: "Mui Nai Beach",

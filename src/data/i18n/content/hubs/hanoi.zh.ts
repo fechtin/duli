@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 24:00",
-    galleryCaptions: ["铺满多贤街人行道的红色塑料凳", "夜晚老城区的一杯生啤"],
+    galleryCaptions: ["铺满多贤街人行道的红色塑料凳", "清晨的多贤街", "夜晚老城区的一杯生啤"],
   },
   "hanoi-train-street": {
     name: "河内火车街",
@@ -127,7 +127,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "弥撒时间之外；弥撒时刻表在门口张贴",
-    galleryCaptions: ["被风雨浸出灰斑的钟楼", "教堂街上的柠檬茶座"],
+    galleryCaptions: ["被风雨浸出灰斑的钟楼", "自教堂街望河内大教堂", "教堂街上的柠檬茶座"],
   },
   "hanoi-opera-house": {
     name: "河内大剧院",
@@ -169,7 +169,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含排队约1 - 1.5小时",
     ticket: "",
     openingHours: "多数工作日上午开放，周一和周五闭馆；请查公布日程",
-    galleryCaptions: ["从巴亭广场望向陵墓", "陵前的换岗仪式"],
+    galleryCaptions: ["从巴亭广场望向陵墓", "陵前的巴亭广场", "陵前的换岗仪式"],
   },
   "one-pillar-pagoda": {
     name: "一柱寺",
@@ -211,7 +211,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "7万越南盾（参考价，请在售票处确认）",
     openingHours: "08:00 - 17:00，周一闭馆",
-    galleryCaptions: ["从内院看端门", "敬天殿台阶上的石龙", "D67指挥地堡"],
+    galleryCaptions: ["从内院看端门", "敬天殿台阶上的石龙", "升龙皇城正门", "D67指挥地堡"],
   },
   "hanoi-flag-tower": {
     name: "河内旗台",

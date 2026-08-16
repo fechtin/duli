@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "50,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["松林を落ちる多段の滝", "斜面沿いのアルペンコースター"],
+    galleryCaptions: ["松林を落ちる多段の滝", "ダタンラの滝へ下る道の露店", "斜面沿いのアルペンコースター"],
   },
 };
 

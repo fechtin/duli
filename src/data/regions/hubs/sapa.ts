@@ -36,7 +36,8 @@ export const sapaDestinations: Destination[] = [
     tags: ["viewpoint", "nature", "village", "photography"],
     gallery: [
       { seed: "muong-hoa-valley-1", caption: "Ruộng bậc thang Mường Hoa mùa lúa chín", ratio: "16/9" },
-      { seed: "muong-hoa-valley-2", caption: "Đá cổ khắc hình giữa ruộng", ratio: "4/3" },
+      { seed: "muong-hoa-valley-2", caption: "Thung lũng Mường Hoa", ratio: "4/3" },
+      { seed: "muong-hoa-valley-3", caption: "Đá cổ khắc hình giữa ruộng", ratio: "4/3" },
     ],
     nearby: ["ta-van-village", "cat-cat-village", "sa-pa-town"],
     sourceUrl: "https://www.openstreetmap.org/node/5592212588",
@@ -73,7 +74,8 @@ export const sapaDestinations: Destination[] = [
     tags: ["village", "culture", "nature", "waterfall"],
     gallery: [
       { seed: "cat-cat-village-1", caption: "Nhà người Mông giữa ruộng bậc thang", ratio: "16/9" },
-      { seed: "cat-cat-village-2", caption: "Vải chàm phơi dọc hàng rào", ratio: "4/3" },
+      { seed: "cat-cat-village-2", caption: "Thác Cát Cát trong bản", ratio: "4/3" },
+      { seed: "cat-cat-village-3", caption: "Vải chàm phơi dọc hàng rào", ratio: "4/3" },
     ],
     nearby: ["sa-pa-town", "muong-hoa-valley", "ham-rong-mountain"],
     sourceUrl: "https://www.wikidata.org/wiki/Q10743160",
@@ -144,8 +146,10 @@ export const sapaDestinations: Destination[] = [
     badges: ["verified", "hidden-gem"],
     tags: ["village", "culture", "nature", "history"],
     gallery: [
-      { seed: "ta-phin-village-1", caption: "Phụ nữ Dao đỏ thêu thổ cẩm", ratio: "4/3" },
-      { seed: "ta-phin-village-2", caption: "Phế tích tu viện đá thời Pháp", ratio: "16/9" },
+      { seed: "ta-phin-village-1", caption: "Ruộng bậc thang Tả Phìn", ratio: "4/3" },
+      { seed: "ta-phin-village-3", caption: "Phụ nữ Dao đỏ thêu thổ cẩm", ratio: "4/3" },
+      { seed: "ta-phin-village-2", caption: "Sáng sớm ở bản Tả Phìn", ratio: "16/9" },
+      { seed: "ta-phin-village-4", caption: "Phế tích tu viện đá thời Pháp", ratio: "16/9" },
     ],
     nearby: ["sa-pa-town", "cat-cat-village", "ham-rong-mountain"],
     sourceUrl: "https://vi.wikipedia.org/wiki/T%E1%BA%A3_Ph%C3%ACn",
@@ -253,7 +257,8 @@ export const sapaDestinations: Destination[] = [
     tags: ["village", "viewpoint", "nature", "culture"],
     gallery: [
       { seed: "y-ty-village-1", caption: "Biển mây trong thung lũng Y Tý", ratio: "16/9" },
-      { seed: "y-ty-village-2", caption: "Nhà trình tường mái cỏ của người Hà Nhì", ratio: "4/3" },
+      { seed: "y-ty-village-2", caption: "Trẻ em người Mông ở Y Tý", ratio: "4/3" },
+      { seed: "y-ty-village-3", caption: "Nhà trình tường mái cỏ của người Hà Nhì", ratio: "4/3" },
     ],
     nearby: ["sa-pa-town", "lao-cai-border-gate", "bac-ha-market"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Y_T%C3%BD",

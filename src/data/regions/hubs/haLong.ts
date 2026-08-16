@@ -35,7 +35,8 @@ export const haLongDestinations: Destination[] = [
     tags: ["cave", "nature", "island", "photography"],
     gallery: [
       { seed: "sung-sot-cave-1", caption: "Khoang trong rộng như nhà hát", ratio: "16/9" },
-      { seed: "sung-sot-cave-2", caption: "Cột thạch nhũ nối sàn lên trần hang", ratio: "4/3" },
+      { seed: "sung-sot-cave-2", caption: "Vịnh Hạ Long nhìn ra từ cửa hang", ratio: "4/3" },
+      { seed: "sung-sot-cave-3", caption: "Cột thạch nhũ nối sàn lên trần hang", ratio: "4/3" },
     ],
     nearby: ["ha-long-bay", "ti-top-island", "thien-cung-cave"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Hang_S%E1%BB%ADng_S%E1%BB%91t",
@@ -108,7 +109,8 @@ export const haLongDestinations: Destination[] = [
     tags: ["island", "viewpoint", "beach", "photography"],
     gallery: [
       { seed: "ti-top-island-1", caption: "Vịnh Hạ Long nhìn từ đỉnh đảo Ti Tốp", ratio: "16/9" },
-      { seed: "ti-top-island-2", caption: "Bãi cát hình lưỡi liềm dưới chân núi", ratio: "4/3" },
+      { seed: "ti-top-island-2", caption: "Hoàng hôn trên vịnh nhìn từ đảo Ti Tốp", ratio: "4/3" },
+      { seed: "ti-top-island-3", caption: "Bãi cát hình lưỡi liềm dưới chân núi", ratio: "4/3" },
     ],
     nearby: ["ha-long-bay", "sung-sot-cave", "cua-van-fishing-village"],
     sourceUrl: "https://www.wikidata.org/wiki/Q16481033",
@@ -217,8 +219,10 @@ export const haLongDestinations: Destination[] = [
     badges: ["verified"],
     tags: ["island", "history", "beach", "nature"],
     gallery: [
-      { seed: "van-don-island-1", caption: "Bến tàu Vân Đồn nhìn ra vịnh", ratio: "16/9" },
-      { seed: "van-don-island-2", caption: "Bờ biển huyện đảo Vân Đồn", ratio: "4/3" },
+      { seed: "van-don-island-1", caption: "Đảo Quan Lạn thuộc huyện Vân Đồn", ratio: "16/9" },
+      { seed: "van-don-island-3", caption: "Bến tàu Vân Đồn nhìn ra vịnh", ratio: "16/9" },
+      { seed: "van-don-island-2", caption: "Sân bay Vân Đồn về đêm", ratio: "4/3" },
+      { seed: "van-don-island-4", caption: "Bờ biển huyện đảo Vân Đồn", ratio: "4/3" },
     ],
     nearby: ["bai-tu-long-bay", "co-to-island", "ha-long-bay"],
     sourceUrl: "https://vi.wikipedia.org/wiki/V%C3%A2n_%C4%90%E1%BB%93n",
@@ -254,7 +258,8 @@ export const haLongDestinations: Destination[] = [
     tags: ["island", "beach", "family"],
     gallery: [
       { seed: "tuan-chau-island-1", caption: "Cảng tàu khách Tuần Châu", ratio: "16/9" },
-      { seed: "tuan-chau-island-2", caption: "Đường đắp nối đảo với đất liền", ratio: "4/3" },
+      { seed: "tuan-chau-island-2", caption: "Công viên trên đảo Tuần Châu", ratio: "4/3" },
+      { seed: "tuan-chau-island-3", caption: "Đường đắp nối đảo với đất liền", ratio: "4/3" },
     ],
     nearby: ["ha-long-bay", "bai-chay-bridge", "thien-cung-cave"],
     sourceUrl: "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3o_Tu%E1%BA%A7n_Ch%C3%A2u",
@@ -326,7 +331,8 @@ export const haLongDestinations: Destination[] = [
     tags: ["museum", "architecture", "history", "culture"],
     gallery: [
       { seed: "quang-ninh-museum-1", caption: "Khối hộp kính đen bên bờ vịnh", ratio: "16/9" },
-      { seed: "quang-ninh-museum-2", caption: "Đường lò khai thác than phục dựng", ratio: "4/3" },
+      { seed: "quang-ninh-museum-2", caption: "Mặt kính đen của bảo tàng nhìn gần", ratio: "4/3" },
+      { seed: "quang-ninh-museum-3", caption: "Đường lò khai thác than phục dựng", ratio: "4/3" },
     ],
     nearby: ["bai-chay-bridge", "ha-long-bay", "tuan-chau-island"],
     sourceUrl: "https://www.wikidata.org/wiki/Q112182634",

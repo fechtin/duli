@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2시간",
     ticket: "",
     openingHours: "대략 17:00 - 23:00",
-    galleryCaptions: ["식당 앞에 늘어선 활어 수조", "푸꾸옥 느억맘과 후추 좌판"],
+    galleryCaptions: ["야시장의 롤 아이스크림", "식당 앞에 늘어선 활어 수조", "야시장의 생선 좌판", "푸꾸옥 느억맘과 후추 좌판"],
   },
   "hon-thom-cable-car": {
     name: "혼텀 케이블카",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "케이블카 왕복 약 35만 동(참고 가격)",
     openingHours: "대략 08:00 - 17:30, 계절에 따라 다름",
-    galleryCaptions: ["바다 위를 건너는 캐빈", "케이블카에서 내려다본 수상 어촌"],
+    galleryCaptions: ["바다에 선 혼텀 케이블카 지주", "바다 위를 건너는 캐빈", "케이블카에서 내려다본 수상 어촌"],
   },
   "phu-quoc-prison": {
     name: "푸꾸옥 감옥",
@@ -189,7 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["타이만에 면한 하띠엔 읍내", "빈선 언덕의 막씨 가문 무덤"],
+    galleryCaptions: ["타이만에 면한 하띠엔 읍내", "하띠엔의 해변", "빈선 언덕의 막씨 가문 무덤"],
   },
   "mui-nai-beach": {
     name: "무이나이 해변",

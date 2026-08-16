@@ -21,7 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["古い森を段になって落ちる流れ", "水辺に佇む中廟"],
+    galleryCaptions: ["古い森を段になって落ちる流れ", "森を流れるスオイ・モー", "水辺に佇む中廟"],
   },
   "puong-cave": {
     name: "プオン洞",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["フウギゲートの国境標石1116号", "国際ゲートの合同庁舎"],
+    galleryCaptions: ["友誼関の正門", "フウギゲートの国境標石1116号", "国際ゲートの合同庁舎"],
   },
   fansipan: {
     name: "ファンシーパン",
@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日（ロープウェイ）または2日（登山）",
     ticket: "800,000ドン（ロープウェイ往復）",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["標高3,143mの山頂標", "峰の下を流れる雲海", "ムオンホア谷を渡るロープウェイ"],
+    galleryCaptions: ["標高3,143mの山頂標", "峰の下を流れる雲海", "雲海の上に立つ山頂の宗教施設群", "ムオンホア谷を渡るロープウェイ"],
   },
   "bac-ha-market": {
     name: "バックハー日曜市",
@@ -149,7 +149,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "",
     openingHours: "05:30 - 12:00、日曜",
-    galleryCaptions: ["市を埋める花モン族の装い", "日曜朝の馬市"],
+    galleryCaptions: ["市を埋める花モン族の装い", "日曜市で子を背負う母", "日曜朝の馬市"],
   },
   "xuan-son-national-park": {
     name: "スアンソン国立公園",
@@ -213,7 +213,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "終日",
     ticket: "40,000ドン（ロープウェイ別）",
     openingHours: "05:00 - 20:00",
-    galleryCaptions: ["雲に沈む山頂のチュアドン", "苔むしたフエクアン塔林", "ホアイエン寺へ続く古い松の道"],
+    galleryCaptions: ["雲に沈む山頂のチュアドン", "遠望するイエントゥ山", "苔むしたフエクアン塔林", "ホアイエン寺へ続く古い松の道"],
   },
   "co-to-island": {
     name: "コートー島",
@@ -234,7 +234,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["コートーの白砂と澄んだ海", "縞状の堆積層が並ぶカウミー岩浜", "夕暮れのコートー灯台"],
+    galleryCaptions: ["島の原生チョイ林", "コートーの白砂と澄んだ海", "コートー島の浜辺にひとり", "縞状の堆積層が並ぶカウミー岩浜", "夕暮れのコートー灯台"],
   },
   "phuong-hoang-cave": {
     name: "フオンホアン洞",
@@ -298,7 +298,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["雲海の上のカウファ峠", "峠の頂から見た黄金の棚田"],
+    galleryCaptions: ["雲海の上のカウファ峠", "水入れの季節のカウファ", "峠の頂から見た黄金の棚田"],
   },
 };
 

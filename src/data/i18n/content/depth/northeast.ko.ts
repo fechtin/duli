@@ -21,7 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["숲 사이로 층층이 떨어지는 물줄기", "물가에 자리한 중사"],
+    galleryCaptions: ["숲 사이로 층층이 떨어지는 물줄기", "숲을 흐르는 쑤오이 머", "물가에 자리한 중사"],
   },
   "puong-cave": {
     name: "푸옹 동굴",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["흐우응이 관문의 1116호 경계비", "국제 관문 통합 청사"],
+    galleryCaptions: ["우의관 정문", "흐우응이 관문의 1116호 경계비", "국제 관문 통합 청사"],
   },
   fansipan: {
     name: "판시판",
@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절(케이블카) 또는 2일(트레킹)",
     ticket: "800,000동 (케이블카 왕복)",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["해발 3,143m 정상의 금속 표지", "봉우리 아래로 흐르는 운해", "므엉호아 계곡을 건너는 케이블카"],
+    galleryCaptions: ["해발 3,143m 정상의 금속 표지", "봉우리 아래로 흐르는 운해", "운해 위에 선 정상 사찰 단지", "므엉호아 계곡을 건너는 케이블카"],
   },
   "bac-ha-market": {
     name: "박하 일요 장터",
@@ -149,7 +149,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "05:30 - 12:00, 일요일",
-    galleryCaptions: ["장터를 가득 채운 꽃몽족의 옷차림", "일요일 아침의 말 시장"],
+    galleryCaptions: ["장터를 가득 채운 꽃몽족의 옷차림", "일요 장터에서 아이를 업은 어머니", "일요일 아침의 말 시장"],
   },
   "xuan-son-national-park": {
     name: "쑤언선 국립공원",
@@ -213,7 +213,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "40,000동 (케이블카 별도)",
     openingHours: "05:00 - 20:00",
-    galleryCaptions: ["구름에 잠긴 정상의 쭈아동", "이끼 낀 후에꽝 탑림", "호아옌 사원으로 오르는 옛 소나무길"],
+    galleryCaptions: ["구름에 잠긴 정상의 쭈아동", "멀리서 바라본 옌뜨산", "이끼 낀 후에꽝 탑림", "호아옌 사원으로 오르는 옛 소나무길"],
   },
   "co-to-island": {
     name: "꼬또섬",
@@ -234,7 +234,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["꼬또의 흰 모래와 맑은 물", "줄무늬 퇴적층의 꺼우미 바위 해변", "해 질 녘의 꼬또 등대"],
+    galleryCaptions: ["섬의 원시 초이 숲", "꼬또의 흰 모래와 맑은 물", "꼬또섬 해변 앞에 홀로", "줄무늬 퇴적층의 꺼우미 바위 해변", "해 질 녘의 꼬또 등대"],
   },
   "phuong-hoang-cave": {
     name: "프엉호앙 동굴",
@@ -298,7 +298,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["운해 위의 카우파 고개", "고갯마루에서 본 황금빛 계단식 논"],
+    galleryCaptions: ["운해 위의 카우파 고개", "물대기 철의 카우파", "고갯마루에서 본 황금빛 계단식 논"],
   },
 };
 

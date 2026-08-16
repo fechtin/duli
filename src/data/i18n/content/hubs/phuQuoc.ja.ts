@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2時間",
     ticket: "",
     openingHours: "おおむね17:00 - 23:00",
-    galleryCaptions: ["食堂の前に並ぶ生簀", "フーコックのヌクマムと胡椒の店"],
+    galleryCaptions: ["夜市のロールアイス作り", "食堂の前に並ぶ生簀", "夜市の鮮魚の屋台", "フーコックのヌクマムと胡椒の店"],
   },
   "hon-thom-cable-car": {
     name: "ホントム・ケーブルカー",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "往復で約35万ドン（目安）",
     openingHours: "おおむね08:00 - 17:30、季節により変動",
-    galleryCaptions: ["海上を渡るゴンドラ", "ケーブルカーから見下ろす水上の漁村"],
+    galleryCaptions: ["海に立つホントム・ケーブルカーの支柱", "海上を渡るゴンドラ", "ケーブルカーから見下ろす水上の漁村"],
   },
   "phu-quoc-prison": {
     name: "フーコック刑務所",
@@ -189,7 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["タイランド湾に面したハーティエンの町", "ビンサンの丘のマク家の墓"],
+    galleryCaptions: ["タイランド湾に面したハーティエンの町", "ハーティエンの浜辺", "ビンサンの丘のマク家の墓"],
   },
   "mui-nai-beach": {
     name: "ムイナイ海岸",

@@ -22,7 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["껌산 정상의 미륵불상", "산 정상의 투이리엠 호수"],
+    galleryCaptions: ["팟런 사원 본전 뒤편", "껌산 정상의 미륵불상", "껌산 정상의 미륵불상", "산 정상의 투이리엠 호수"],
   },
   "bac-lieu-vuon-chim": {
     name: "박리에우 조류보호구",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["서해안에 쌓인 둥근 바위", "혼다박으로 이어지는 다리"],
+    galleryCaptions: ["서해안에 쌓인 둥근 바위", "혼다박의 돌용 한 쌍", "혼다박으로 이어지는 다리"],
   },
   "ninh-kieu-wharf": {
     name: "닌끼에우 선착장",
@@ -127,7 +127,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["허우 강을 바라보는 닌끼에우 선착장", "불을 밝힌 닌끼에우 보도교"],
+    galleryCaptions: ["허우 강을 바라보는 닌끼에우 선착장", "닌끼에우군 쩐꾸옥또안·하이바쯩 교차로", "불을 밝힌 닌끼에우 보도교"],
   },
   "binh-thuy-ancient-house": {
     name: "빈투이 고택",
@@ -169,7 +169,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["발굴된 옥에오 벽돌 기단", "홍수철 언덕을 둘러싼 연꽃 들판"],
+    galleryCaptions: ["발굴된 옥에오 벽돌 기단", "고탑 고고 유적의 전시관", "홍수철 언덕을 둘러싼 연꽃 들판"],
   },
   "hon-phu-tu": {
     name: "혼푸뜨",
@@ -232,7 +232,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["세 겹 지붕의 본전", "처마를 떠받치는 크루드 상"],
+    galleryCaptions: ["크렁 사원 정문", "세 겹 지붕의 본전", "처마를 떠받치는 크루드 상"],
   },
   "vinh-trang-pagoda": {
     name: "빈짱 사원",
@@ -274,7 +274,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["바동의 길고 완만한 모래사장", "목마황 숲 뒤의 염전"],
+    galleryCaptions: ["바동의 길고 완만한 모래사장", "짜빈의 바동 해변", "목마황 숲 뒤의 염전"],
   },
   "van-thanh-mieu-vinh-long": {
     name: "빈롱 문묘",

@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。予定は門に掲示されている",
-    galleryCaptions: ["山の教会の素の灰色石壁", "聖堂の前庭から見た街"],
+    galleryCaptions: ["山の教会の素の灰色石壁", "ニャチャン大聖堂の入口", "聖堂の前庭から見た街"],
   },
   "oceanographic-museum-vn": {
     name: "海洋研究所",

@@ -43,7 +43,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "包含在会安古镇门票内",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["进记古宅的中厅", "木柱与嵌螺钿的楹联"],
+    galleryCaptions: ["进记古宅的中厅", "屋内留下的洪水水位刻痕", "木柱与嵌螺钿的楹联"],
   },
   "phuc-kien-assembly-hall": {
     name: "福建会馆",
@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "包含在会安古镇门票内",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["福建会馆的三门", "挂满正殿天顶的盘香"],
+    galleryCaptions: ["会馆内的龙形水池", "福建会馆的三门", "挂满正殿天顶的盘香"],
   },
   "hoi-an-night-market": {
     name: "会安夜市",
@@ -85,7 +85,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 23:00",
-    galleryCaptions: ["安会江心洲上的灯笼街", "怀河上漂流的水灯"],
+    galleryCaptions: ["安会江心洲上的灯笼街", "会安市场旁的夜间食摊", "怀河上漂流的水灯"],
   },
   "faifo-coffee": {
     name: "费福咖啡",
@@ -211,7 +211,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["安邦沙滩上的木椅与茅草店", "倒扣在沙滩尽头的簸箕船"],
+    galleryCaptions: ["安邦沙滩上的木椅与茅草店", "安邦的小庙", "倒扣在沙滩尽头的簸箕船"],
   },
   "cua-dai-beach": {
     name: "大占海滩",

@@ -36,8 +36,10 @@ export const redRiverDeltaDestinations: Destination[] = [
     tags: ["island", "nature", "beach", "photography"],
     gallery: [
       { seed: "hp-cat-ba-island-1", caption: "Vịnh Lan Hạ nhìn từ trên cao", ratio: "16/9" },
-      { seed: "hp-cat-ba-island-2", caption: "Bãi tắm Cát Cò trong xanh", ratio: "4/3" },
-      { seed: "hp-cat-ba-island-3", caption: "Rừng quốc gia Cát Bà", ratio: "1/1" },
+      { seed: "hp-cat-ba-island-2", caption: "Biển nhìn từ pháo đài Thần Công", ratio: "4/3" },
+      { seed: "hp-cat-ba-island-4", caption: "Bãi tắm Cát Cò trong xanh", ratio: "4/3" },
+      { seed: "hp-cat-ba-island-3", caption: "Thị trấn Cát Bà bên vịnh", ratio: "1/1" },
+      { seed: "hp-cat-ba-island-5", caption: "Rừng quốc gia Cát Bà", ratio: "1/1" },
     ],
     nearby: ["hp-do-son-beach"],
     featured: true,
@@ -73,7 +75,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     tags: ["beach", "culture", "food"],
     gallery: [
       { seed: "hp-do-son-beach-1", caption: "Bãi tắm Đồ Sơn dưới hàng phi lao", ratio: "16/9" },
-      { seed: "hp-do-son-beach-2", caption: "Lễ hội chọi trâu truyền thống", ratio: "4/3" },
+      { seed: "hp-do-son-beach-2", caption: "Toà casino ở Đồ Sơn", ratio: "4/3" },
+      { seed: "hp-do-son-beach-4", caption: "Lễ hội chọi trâu truyền thống", ratio: "4/3" },
       { seed: "hp-do-son-beach-3", caption: "Hoàng hôn trên bán đảo Đồ Sơn", ratio: "1/1" },
     ],
     nearby: ["hp-cat-ba-island"],
@@ -147,7 +150,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["village", "culture", "history"],
     gallery: [
-      { seed: "bn-dong-ho-1", caption: "Nghệ nhân in tranh trên giấy điệp", ratio: "16/9" },
+      { seed: "bn-dong-ho-1", caption: "Tranh Đám cưới chuột", ratio: "16/9" },
+      { seed: "bn-dong-ho-4", caption: "Nghệ nhân in tranh trên giấy điệp", ratio: "16/9" },
       { seed: "bn-dong-ho-2", caption: "Tranh thờ Táo Quân rực rỡ sắc màu dân gian", ratio: "4/3" },
       { seed: "bn-dong-ho-3", caption: "Tranh đàn cá chép bơi giữa sen", ratio: "1/1" },
     ],
@@ -261,7 +265,8 @@ export const redRiverDeltaDestinations: Destination[] = [
     tags: ["history", "culture", "city", "food"],
     gallery: [
       { seed: "hy-pho-hien-1", caption: "Văn Miếu Xích Đằng cổ kính", ratio: "16/9" },
-      { seed: "hy-pho-hien-2", caption: "Đền Mẫu Phố Hiến", ratio: "4/3" },
+      { seed: "hy-pho-hien-2", caption: "Văn miếu Xích Đằng nhìn từ sân", ratio: "4/3" },
+      { seed: "hy-pho-hien-4", caption: "Đền Mẫu Phố Hiến", ratio: "4/3" },
       { seed: "hy-pho-hien-3", caption: "Nhãn lồng Hưng Yên mùa thu hoạch", ratio: "1/1" },
     ],
     nearby: ["hy-chua-chuong"],

@@ -72,7 +72,8 @@ export const nhaTrangDestinations: Destination[] = [
     tags: ["temple", "architecture", "city", "photography"],
     gallery: [
       { seed: "nha-trang-cathedral-1", caption: "Mặt đá xám để trần của nhà thờ Núi", ratio: "4/3" },
-      { seed: "nha-trang-cathedral-2", caption: "Thành phố nhìn từ sân nhà thờ", ratio: "16/9" },
+      { seed: "nha-trang-cathedral-2", caption: "Lối vào nhà thờ Núi", ratio: "16/9" },
+      { seed: "nha-trang-cathedral-3", caption: "Thành phố nhìn từ sân nhà thờ", ratio: "16/9" },
     ],
     nearby: ["long-son-pagoda", "dam-market-nha-trang", "nha-trang-beach"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_N%C3%BAi_Nha_Trang",

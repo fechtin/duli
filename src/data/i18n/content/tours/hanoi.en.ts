@@ -68,7 +68,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "Free",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["The temple gate facing out over West Lake", "The mother-goddess altar inside"],
+    galleryCaptions: ["The temple gate facing out over West Lake", "The West Lake shore near the temple", "The mother-goddess altar inside"],
   },
   "national-history-museum-vn": {
     name: "Vietnam National Museum of History",
@@ -111,7 +111,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Free (pay per dish)",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["The food street lit up at midnight", "A bowl of herbal chicken soup"],
+    galleryCaptions: ["The food street lit up at midnight", "A café on Tong Duy Tan street", "A bowl of herbal chicken soup"],
   },
 };
 

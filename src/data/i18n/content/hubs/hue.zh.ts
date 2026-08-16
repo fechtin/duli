@@ -85,7 +85,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "5万越南盾（参考价）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["欧式风格的安定宫立面", "会客厅里的壁画"],
+    galleryCaptions: ["欧式风格的安定宫立面", "安定宫正面", "会客厅里的壁画"],
   },
   "trang-tien-bridge": {
     name: "长前桥",
@@ -295,7 +295,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["从海云关看到的浪苏湾", "立安潟湖上的牡蛎养殖架"],
+    galleryCaptions: ["从海云关看到的浪苏湾", "潟湖口与浪苏海滩", "立安潟湖上的牡蛎养殖架"],
   },
   "bach-ma-national-park": {
     name: "白马国家公园",

@@ -421,6 +421,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "毎日07:00 - 17:00",
     galleryCaptions: [
+      "ルンゴックホアンの水面を覆うホテイアオイ",
       "静かな原生メラルーカ林",
       "入り組んだ沼地を縫う舟",
       "青空の下、メラルーカ林を貫く竹の橋",
@@ -519,6 +520,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "西洋様式の古邸宅",
       "精緻に彫られた高級木材の内装",
+      "今日のバクリエウの街並み",
       "貴重な螺鈿細工の骨董品",
     ],
   },
@@ -566,6 +568,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "毎日07:00 - 17:00",
     galleryCaptions: [
       "泥炭土の上の原生メラルーカ林",
+      "上空から見たウーミンハー林",
       "棒を掛けて蜂蜜を採る伝統的な養蜂業",
       "メラルーカ林で田の魚を釣る",
     ],

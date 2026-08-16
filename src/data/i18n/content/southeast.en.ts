@@ -43,7 +43,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "Christ statue: 07:00–17:00",
     galleryCaptions: [
       "Golden-sand Back Beach, lively and crowded",
+      "The Vung Tau shoreline",
       "Christ the King statue on Small Mountain",
+      "A busy stretch of Vung Tau beach",
       "Crispy banh khot, the local specialty",
     ],
   },
@@ -139,6 +141,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "05:00–18:00",
     galleryCaptions: [
       "The ancient temple with yin-yang tiled roofs",
+      "Ba Thien Hau Temple in Thu Dau Mot",
       "The lively palanquin procession of the Lady",
       "Incense smoke curling inside the temple",
     ],
@@ -211,6 +214,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "Smooth green grass amid the forest",
+      "The road into the Bu Lach grasslands",
       "A clear lake mirroring the clouds",
       "Sunset descending over the grasslands",
     ],

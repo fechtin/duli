@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "ホイアン旧市街の入場券に含まれる",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["タンキーの家の中央の広間", "木の柱と螺鈿を嵌めた対聯"],
+    galleryCaptions: ["タンキーの家の中央の広間", "家の中に残る洪水の水位の跡", "木の柱と螺鈿を嵌めた対聯"],
   },
   "phuc-kien-assembly-hall": {
     name: "福建会館",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "ホイアン旧市街の入場券に含まれる",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["福建会館の三門", "本殿の天井を埋める渦巻き線香"],
+    galleryCaptions: ["会館の龍の噴水", "福建会館の三門", "本殿の天井を埋める渦巻き線香"],
   },
   "hoi-an-night-market": {
     name: "ホイアン夜市",
@@ -84,7 +84,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2時間",
     ticket: "",
     openingHours: "おおよそ17:00 - 23:00",
-    galleryCaptions: ["アンホイ中州のランタン通り", "ホアイ川を流れる灯籠"],
+    galleryCaptions: ["アンホイ中州のランタン通り", "ホイアン市場そばの夜の屋台", "ホアイ川を流れる灯籠"],
   },
   "faifo-coffee": {
     name: "ファイフォー・コーヒー",
@@ -210,7 +210,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["アンバンの砂の上の木の椅子と茅葺きの店", "浜の端に伏せられたかご舟"],
+    galleryCaptions: ["アンバンの砂の上の木の椅子と茅葺きの店", "アンバンの小さな祠", "浜の端に伏せられたかご舟"],
   },
   "cua-dai-beach": {
     name: "クアダイ海岸",

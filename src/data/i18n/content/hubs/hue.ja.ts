@@ -84,7 +84,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "5万ドン（参考価格）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["ヨーロッパ風のアンディン宮の正面", "応接室の壁画"],
+    galleryCaptions: ["ヨーロッパ風のアンディン宮の正面", "アンディン宮の正面", "応接室の壁画"],
   },
   "trang-tien-bridge": {
     name: "チャンティエン橋",
@@ -294,7 +294,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハイヴァン峠から見たランコー湾", "ラップアン潟の牡蠣の棚"],
+    galleryCaptions: ["ハイヴァン峠から見たランコー湾", "ラグーンの河口とランコー海岸", "ラップアン潟の牡蠣の棚"],
   },
   "bach-ma-national-park": {
     name: "バクマー国立公園",

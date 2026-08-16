@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 24:00",
-    galleryCaptions: ["Red plastic stools filling the Ta Hien pavement", "A glass of bia hoi in the Old Quarter at night"],
+    galleryCaptions: ["Red plastic stools filling the Ta Hien pavement", "Ta Hien Street in the early morning", "A glass of bia hoi in the Old Quarter at night"],
   },
   "hanoi-train-street": {
     name: "Hanoi Train Street",
@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The weather-stained grey bell towers", "A lemon-tea spot on Nha Tho street"],
+    galleryCaptions: ["The weather-stained grey bell towers", "St Joseph's Cathedral from Nha Tho street", "A lemon-tea spot on Nha Tho street"],
   },
   "hanoi-opera-house": {
     name: "Hanoi Opera House",
@@ -170,7 +170,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours including the queue",
     ticket: "",
     openingHours: "Mornings on most weekdays, closed Monday and Friday; check the published calendar",
-    galleryCaptions: ["The mausoleum seen from Ba Dinh Square", "The changing of the guard outside"],
+    galleryCaptions: ["The mausoleum seen from Ba Dinh Square", "Ba Dinh Square in front of the mausoleum", "The changing of the guard outside"],
   },
   "one-pillar-pagoda": {
     name: "One Pillar Pagoda",
@@ -212,7 +212,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "70,000d (indicative — check at the counter)",
     openingHours: "08:00 - 17:00, closed Monday",
-    galleryCaptions: ["Doan Mon gate from the inner courtyard", "Carved stone dragons of the Kinh Thien stairway", "The D67 command bunker"],
+    galleryCaptions: ["Doan Mon gate from the inner courtyard", "Carved stone dragons of the Kinh Thien stairway", "The main gate of the Thang Long citadel", "The D67 command bunker"],
   },
   "hanoi-flag-tower": {
     name: "Hanoi Flag Tower",

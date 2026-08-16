@@ -72,7 +72,8 @@ export const hcmOuterDestinations: Destination[] = [
     tags: ["viewpoint", "city", "architecture", "sunset"],
     gallery: [
       { seed: "landmark-81-1", caption: "Landmark 81 vượt hẳn nền trời Sài Gòn", ratio: "4/3" },
-      { seed: "landmark-81-2", caption: "Thành phố về đêm nhìn từ đài quan sát", ratio: "16/9" },
+      { seed: "landmark-81-2", caption: "Landmark 81 vươn lên giữa thành phố", ratio: "16/9" },
+      { seed: "landmark-81-3", caption: "Thành phố về đêm nhìn từ đài quan sát", ratio: "16/9" },
     ],
     nearby: ["bach-dang-wharf", "saigon-zoo", "bitexco-tower"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Landmark_81",
@@ -109,7 +110,8 @@ export const hcmOuterDestinations: Destination[] = [
     tags: ["temple", "culture", "history", "architecture"],
     gallery: [
       { seed: "jade-emperor-pagoda-1", caption: "Chính điện mù khói hương", ratio: "4/3" },
-      { seed: "jade-emperor-pagoda-2", caption: "Phù điêu gỗ trong điện Thập Điện", ratio: "16/9" },
+      { seed: "jade-emperor-pagoda-2", caption: "Rùa cạn và rùa nước bán phóng sinh trước chùa", ratio: "16/9" },
+      { seed: "jade-emperor-pagoda-3", caption: "Phù điêu gỗ trong điện Thập Điện", ratio: "16/9" },
     ],
     nearby: ["saigon-zoo", "landmark-81", "notre-dame-saigon"],
     sourceUrl: "https://en.wikipedia.org/wiki/Jade_Emperor_Pagoda",
@@ -145,7 +147,8 @@ export const hcmOuterDestinations: Destination[] = [
     tags: ["park", "family", "nature", "history"],
     gallery: [
       { seed: "saigon-zoo-1", caption: "Hàng cổ thụ trăm tuổi trong Thảo Cầm Viên", ratio: "16/9" },
-      { seed: "saigon-zoo-2", caption: "Lối đi rợp bóng giữa vườn", ratio: "4/3" },
+      { seed: "saigon-zoo-2", caption: "Cổng vào Thảo Cầm Viên", ratio: "4/3" },
+      { seed: "saigon-zoo-3", caption: "Lối đi rợp bóng giữa vườn", ratio: "4/3" },
     ],
     nearby: ["jade-emperor-pagoda", "landmark-81", "saigon-opera-house"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Th%E1%BA%A3o_C%E1%BA%A7m_Vi%C3%AAn_S%C3%A0i_G%C3%B2n",
@@ -217,7 +220,8 @@ export const hcmOuterDestinations: Destination[] = [
     tags: ["city", "culture", "food", "history"],
     gallery: [
       { seed: "cho-lon-district-1", caption: "Biển hiệu chữ Hán trên phố Chợ Lớn", ratio: "16/9" },
-      { seed: "cho-lon-district-2", caption: "Tiệm thuốc bắc mở cửa ra vỉa hè", ratio: "4/3" },
+      { seed: "cho-lon-district-2", caption: "Chợ An Đông trong khu Chợ Lớn", ratio: "4/3" },
+      { seed: "cho-lon-district-3", caption: "Tiệm thuốc bắc mở cửa ra vỉa hè", ratio: "4/3" },
     ],
     nearby: ["binh-tay-market", "giac-lam-pagoda", "ben-thanh-market"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_L%E1%BB%9Bn",
@@ -253,7 +257,8 @@ export const hcmOuterDestinations: Destination[] = [
     tags: ["temple", "history", "culture", "architecture"],
     gallery: [
       { seed: "giac-lam-pagoda-1", caption: "Khu tháp mộ gắn đĩa sứ trong sân chùa", ratio: "4/3" },
-      { seed: "giac-lam-pagoda-2", caption: "Tượng gỗ trong chính điện", ratio: "16/9" },
+      { seed: "giac-lam-pagoda-2", caption: "Cây bồ đề trong khuôn viên chùa", ratio: "16/9" },
+      { seed: "giac-lam-pagoda-3", caption: "Tượng gỗ trong chính điện", ratio: "16/9" },
     ],
     nearby: ["cho-lon-district", "binh-tay-market", "tao-dan-park"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Ch%C3%B9a_Gi%C3%A1c_L%C3%A2m",

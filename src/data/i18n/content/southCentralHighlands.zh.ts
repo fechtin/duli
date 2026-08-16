@@ -112,6 +112,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `07:00 – 17:00`,
     galleryCaptions: [
       `水下绚丽的珊瑚礁`,
+      `芽庄湾海岸线全景`,
       `环岛清澈的海水`,
       `潜水赏珊瑚`,
     ],
@@ -454,6 +455,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `大山深处深蓝的湖面`,
       `探出水面的观景台`,
+      `特能海湖的水面`,
       `通往湖畔的古松林荫道`,
     ],
   },

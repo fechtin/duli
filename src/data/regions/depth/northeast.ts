@@ -36,7 +36,8 @@ export const northeastDepthDestinations: Destination[] = [
     tags: ["nature", "temple", "culture"],
     gallery: [
       { seed: "suoi-mo-1", caption: "Dòng suối đổ bậc giữa rừng già", ratio: "16/9" },
-      { seed: "suoi-mo-2", caption: "Đền Trung nép mình bên dòng nước", ratio: "4/3" },
+      { seed: "suoi-mo-2", caption: "Dòng Suối Mỡ chảy giữa rừng", ratio: "4/3" },
+      { seed: "suoi-mo-3", caption: "Đền Trung nép mình bên dòng nước", ratio: "4/3" },
     ],
     nearby: ["tay-yen-tu", "vinh-nghiem-pagoda"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Suối_Mỡ",
@@ -184,7 +185,8 @@ export const northeastDepthDestinations: Destination[] = [
     badges: ["verified"],
     tags: ["history", "city", "culture"],
     gallery: [
-      { seed: "huu-nghi-border-gate-1", caption: "Cột mốc 1116 tại cửa khẩu Hữu Nghị", ratio: "16/9" },
+      { seed: "huu-nghi-border-gate-1", caption: "Cổng chính Hữu Nghị Quan", ratio: "16/9" },
+      { seed: "huu-nghi-border-gate-3", caption: "Cột mốc 1116 tại cửa khẩu Hữu Nghị", ratio: "16/9" },
       { seed: "huu-nghi-border-gate-2", caption: "Nhà liên hợp cửa khẩu quốc tế", ratio: "4/3" },
     ],
     nearby: ["tam-thanh-cave", "mau-son-mountain"],
@@ -224,7 +226,8 @@ export const northeastDepthDestinations: Destination[] = [
     gallery: [
       { seed: "fansipan-1", caption: "Chóp inox trên đỉnh 3.143m", ratio: "16/9" },
       { seed: "fansipan-2", caption: "Biển mây cuộn dưới chân núi", ratio: "4/3" },
-      { seed: "fansipan-3", caption: "Cáp treo vượt thung lũng Mường Hoa", ratio: "1/1" },
+      { seed: "fansipan-3", caption: "Quần thể tâm linh trên đỉnh giữa biển mây", ratio: "1/1" },
+      { seed: "fansipan-4", caption: "Cáp treo vượt thung lũng Mường Hoa", ratio: "1/1" },
     ],
     nearby: ["sa-pa-town"],
     featured: true,
@@ -262,7 +265,8 @@ export const northeastDepthDestinations: Destination[] = [
     tags: ["culture", "market", "food", "photography"],
     gallery: [
       { seed: "bac-ha-market-1", caption: "Sắc váy áo người Mông Hoa trong phiên chợ", ratio: "16/9" },
-      { seed: "bac-ha-market-2", caption: "Khu chợ ngựa sáng Chủ nhật", ratio: "4/3" },
+      { seed: "bac-ha-market-2", caption: "Địu con đi chợ phiên Chủ nhật", ratio: "4/3" },
+      { seed: "bac-ha-market-3", caption: "Khu chợ ngựa sáng Chủ nhật", ratio: "4/3" },
     ],
     nearby: ["sa-pa-town", "fansipan"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Bắc_Hà",
@@ -374,7 +378,8 @@ export const northeastDepthDestinations: Destination[] = [
     tags: ["temple", "mountain", "history", "culture"],
     gallery: [
       { seed: "yen-tu-1", caption: "Chùa Đồng trên đỉnh Yên Tử trong mây", ratio: "16/9" },
-      { seed: "yen-tu-2", caption: "Vườn tháp Huệ Quang rêu phong", ratio: "4/3" },
+      { seed: "yen-tu-2", caption: "Núi Yên Tử nhìn từ xa", ratio: "4/3" },
+      { seed: "yen-tu-4", caption: "Vườn tháp Huệ Quang rêu phong", ratio: "4/3" },
       { seed: "yen-tu-3", caption: "Đường tùng cổ dẫn lên chùa Hoa Yên", ratio: "1/1" },
     ],
     nearby: ["ha-long-bay", "tay-yen-tu"],
@@ -412,8 +417,10 @@ export const northeastDepthDestinations: Destination[] = [
     badges: ["verified", "trending"],
     tags: ["beach", "island", "nature", "photography"],
     gallery: [
-      { seed: "co-to-island-1", caption: "Bãi cát trắng và nước trong ở Cô Tô", ratio: "16/9" },
-      { seed: "co-to-island-2", caption: "Bãi đá Cầu Mỵ với vân trầm tích", ratio: "4/3" },
+      { seed: "co-to-island-1", caption: "Rừng chõi nguyên sinh trên đảo", ratio: "16/9" },
+      { seed: "co-to-island-4", caption: "Bãi cát trắng và nước trong ở Cô Tô", ratio: "16/9" },
+      { seed: "co-to-island-2", caption: "Một mình trước bãi biển Cô Tô", ratio: "4/3" },
+      { seed: "co-to-island-5", caption: "Bãi đá Cầu Mỵ với vân trầm tích", ratio: "4/3" },
       { seed: "co-to-island-3", caption: "Hải đăng Cô Tô lúc hoàng hôn", ratio: "1/1" },
     ],
     nearby: ["ha-long-bay"],
@@ -526,7 +533,8 @@ export const northeastDepthDestinations: Destination[] = [
     tags: ["mountain", "photography", "nature"],
     gallery: [
       { seed: "khau-pha-pass-1", caption: "Đèo Khau Phạ trên biển mây", ratio: "16/9" },
-      { seed: "khau-pha-pass-2", caption: "Ruộng bậc thang mùa lúa chín nhìn từ đỉnh đèo", ratio: "4/3" },
+      { seed: "khau-pha-pass-2", caption: "Khau Phạ mùa nước đổ", ratio: "4/3" },
+      { seed: "khau-pha-pass-3", caption: "Ruộng bậc thang mùa lúa chín nhìn từ đỉnh đèo", ratio: "4/3" },
     ],
     nearby: ["mu-cang-chai-terraces", "thac-ba-lake"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Đèo_Khau_Phạ",

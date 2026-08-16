@@ -84,7 +84,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "終日。週末は掲示された時間に車両通行止め",
-    galleryCaptions: ["夕暮れのグエンフエ通り", "旧正月の花の道"],
+    galleryCaptions: ["夕暮れのグエンフエ通り", "夜のグエンフエ通り", "旧正月の花の道"],
   },
   "bach-dang-wharf": {
     name: "バクダン埠頭",
@@ -105,7 +105,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["トゥーティエムを望むバクダンの川辺", "水際へ下りる公園の階段"],
+    galleryCaptions: ["トゥーティエムを望むバクダンの川辺", "バクダン埠頭から望むビテクスコ・タワー", "水際へ下りる公園の階段"],
   },
   "bitexco-tower": {
     name: "ビテクスコ・フィナンシャルタワー",
@@ -147,7 +147,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "4万ドン（参考価格。窓口で確認を）",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["屋外に並ぶ航空機と戦車", "上階の記録写真の展示室"],
+    galleryCaptions: ["屋外に並ぶ航空機と戦車", "中庭に展示されたM107自走砲", "上階の記録写真の展示室"],
   },
   "tao-dan-park": {
     name: "タオダン公園",
@@ -231,7 +231,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "展望台は約30万ドン（参考価格）",
     openingHours: "08:30 - 23:00",
-    galleryCaptions: ["サイゴンのスカイラインに抜きん出るランドマーク81", "展望台から見た夜の街"],
+    galleryCaptions: ["サイゴンのスカイラインに抜きん出るランドマーク81", "街にそびえるランドマーク81", "展望台から見た夜の街"],
   },
   "jade-emperor-pagoda": {
     name: "玉皇殿",
@@ -252,7 +252,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["線香の煙が立ちこめる本堂", "十王殿の木のレリーフ"],
+    galleryCaptions: ["線香の煙が立ちこめる本堂", "寺の前で放生用に売られる陸亀と水亀", "十王殿の木のレリーフ"],
   },
   "saigon-zoo": {
     name: "サイゴン動植物園",
@@ -273,7 +273,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "6万ドン（参考価格。窓口で確認を）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["植物園の樹齢百年を超える木々", "敷地内の日陰の小径"],
+    galleryCaptions: ["植物園の樹齢百年を超える木々", "サイゴン動植物園の入口", "敷地内の日陰の小径"],
   },
   "binh-tay-market": {
     name: "ビンタイ市場",
@@ -315,7 +315,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["チョロンの街路に並ぶ漢字の看板", "歩道へ戸を開け放った漢方薬店"],
+    galleryCaptions: ["チョロンの街路に並ぶ漢字の看板", "チョロン地区のアンドン市場", "歩道へ戸を開け放った漢方薬店"],
   },
   "giac-lam-pagoda": {
     name: "ザックラム寺",
@@ -336,7 +336,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分 - 1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["境内の磁器を嵌め込んだ仏塔", "本堂の木彫像"],
+    galleryCaptions: ["境内の磁器を嵌め込んだ仏塔", "寺の境内の菩提樹", "本堂の木彫像"],
   },
   "can-gio-mangrove": {
     name: "カンザーのマングローブ林",

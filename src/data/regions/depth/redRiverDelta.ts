@@ -111,7 +111,8 @@ export const redRiverDeltaDepthDestinations: Destination[] = [
     tags: ["temple", "history", "culture", "city"],
     gallery: [
       { seed: "temple-of-literature-1", caption: "Khuê Văn Các soi bóng giếng Thiên Quang", ratio: "16/9" },
-      { seed: "temple-of-literature-2", caption: "82 bia tiến sĩ trên lưng rùa đá", ratio: "4/3" },
+      { seed: "temple-of-literature-2", caption: "Khuê Văn Các trong Văn Miếu", ratio: "4/3" },
+      { seed: "temple-of-literature-4", caption: "82 bia tiến sĩ trên lưng rùa đá", ratio: "4/3" },
       { seed: "temple-of-literature-3", caption: "Cổng Đại Trung dẫn vào nội tự", ratio: "1/1" },
     ],
     nearby: ["hoan-kiem-lake", "old-quarter-hanoi"],
@@ -187,8 +188,10 @@ export const redRiverDeltaDepthDestinations: Destination[] = [
     tags: ["island", "beach", "nature", "photography"],
     gallery: [
       { seed: "lan-ha-bay-1", caption: "Đảo đá vôi rải kín mặt vịnh Lan Hạ", ratio: "16/9" },
-      { seed: "lan-ha-bay-2", caption: "Làng chài nổi Cái Bèo", ratio: "4/3" },
-      { seed: "lan-ha-bay-3", caption: "Bãi cát nhỏ nép sau vách đá", ratio: "1/1" },
+      { seed: "lan-ha-bay-2", caption: "Hàng hải sản trong thị trấn Cát Bà", ratio: "4/3" },
+      { seed: "lan-ha-bay-4", caption: "Làng chài nổi Cái Bèo", ratio: "4/3" },
+      { seed: "lan-ha-bay-3", caption: "Biển nhìn từ pháo đài Thần Công, đảo Cát Bà", ratio: "1/1" },
+      { seed: "lan-ha-bay-5", caption: "Bãi cát nhỏ nép sau vách đá", ratio: "1/1" },
     ],
     nearby: ["hp-cat-ba-island", "hp-do-son-beach"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Vịnh_Lan_Hạ",
@@ -341,7 +344,8 @@ export const redRiverDeltaDepthDestinations: Destination[] = [
     tags: ["nature", "park", "photography"],
     gallery: [
       { seed: "cuc-phuong-national-park-1", caption: "Cây chò ngàn năm giữa rừng nguyên sinh", ratio: "16/9" },
-      { seed: "cuc-phuong-national-park-2", caption: "Mùa bướm dọc lối mòn tháng Tư", ratio: "4/3" },
+      { seed: "cuc-phuong-national-park-2", caption: "Cổng vào vườn quốc gia Cúc Phương", ratio: "4/3" },
+      { seed: "cuc-phuong-national-park-3", caption: "Mùa bướm dọc lối mòn tháng Tư", ratio: "4/3" },
     ],
     nearby: ["hoa-lu-ancient-capital", "trang-an"],
     sourceUrl: "https://en.wikipedia.org/wiki/Cúc_Phương_National_Park",

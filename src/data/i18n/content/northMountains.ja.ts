@@ -67,6 +67,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "提灯の灯る旧市街",
+      "石灰岩高原の中のドンヴァンの町",
       "高原の市の日",
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "稲の実る季節の棚田",
+      "サパ中心部のロータリー",
       "ムオンホア谷の朝霧",
+      "サパの町の中心部",
       "雲の中のファンシーパン山頂",
     ],
   },
@@ -136,7 +139,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "ハート形の茶畑",
+      "ソンラーからモクチャウへの道の風景",
       "丘陵を白く染める梅林",
+      "ホー・チ・ミンのモクチャウ農場訪問記念地",
       "草原の朝霧",
     ],
   },
@@ -159,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 – 17:00",
     galleryCaptions: [
       "ディエンビエンフー勝利記念碑",
+      "戦場に残るM24チャーフィー戦車",
       "A1高地の塹壕",
       "ド・カストリ壕",
     ],
@@ -256,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "タムタイン洞窟内の古寺",
       "岩壁の阿弥陀仏の浮き彫り",
+      "マク朝の城跡から望むランソン",
       "日差しを取り込む天門",
     ],
   },
@@ -328,6 +335,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "山腹を流れ落ちるモー滝",
       "滝の麓の澄んだ淵",
+      "夕暮れのナーハン水力発電ダム",
       "ナーハン湖のクルーズ",
     ],
   },
@@ -399,6 +407,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "06:00 – 18:00",
     galleryCaptions: [
       "ギアリン山の上廟",
+      "フン王廟の下の廟",
       "古木の木陰が続く石段",
       "命日祭に巡礼する人々の流れ",
     ],
@@ -518,7 +527,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "無料",
     openingHours: "終日",
     galleryCaptions: [
+      "霧の谷を渡るファンシーパンのロープウェイ",
       "オークイホー頂の雲海",
+      "ファンシーパンのロープウェイから見る棚田",
       "絶壁を縫ってうねる峠道",
       "天門から眺める夕陽",
     ],
@@ -568,6 +579,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "峠から眺めるマイチャウ谷",
       "ラック村のターイ族の高床式家屋",
+      "マイチャウのターイ族の食卓",
       "火明かりのそばのソエ踊り",
     ],
   },
@@ -591,6 +603,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "06:00 – 18:00",
     galleryCaptions: [
       "ダー川の山水の間のホアビン湖",
+      "山あいのホアビン湖",
       "湖畔のタックボー廟",
       "湖を巡る船",
     ],

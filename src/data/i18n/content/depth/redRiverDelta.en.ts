@@ -69,6 +69,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "08:00 - 17:00",
     galleryCaptions: [
       "Khue Van Cac reflected in Thien Quang well",
+      "The Khue Van Cac pavilion",
       "The 82 doctoral stelae on stone tortoises",
       "Dai Trung gate leading into the inner courtyards",
     ],
@@ -117,7 +118,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 - 17:00",
     galleryCaptions: [
       "Limestone islands scattered across Lan Ha Bay",
+      "A seafood shop in Cat Ba town",
       "The floating village of Cai Beo",
+      "The sea from Cannon Fort on Cat Ba Island",
       "A small beach tucked behind the cliffs",
     ],
   },
@@ -214,7 +217,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "60,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The thousand-year-old cho tree in primary forest", "Butterfly season along the April trails"],
+    galleryCaptions: ["The thousand-year-old cho tree in primary forest", "The entrance to Cuc Phuong National Park", "Butterfly season along the April trails"],
   },
   "tb-den-tran": {
     name: "Tran Temple, Thai Binh",

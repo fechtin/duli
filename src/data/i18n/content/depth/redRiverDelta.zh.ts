@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "70,000越南盾",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["天光井中倒映的奎文阁", "82座石龟驮进士碑", "通往内区的大中门"],
+    galleryCaptions: ["天光井中倒映的奎文阁", "文庙的奎文阁", "82座石龟驮进士碑", "通往内区的大中门"],
   },
   "mao-dien-temple-of-literature": {
     name: "茅田文庙",
@@ -107,7 +107,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2天",
     ticket: "80,000越南盾（海湾门票）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["布满兰下湾的石灰岩岛", "改𠰚水上村", "藏在崖后的小沙滩"],
+    galleryCaptions: ["布满兰下湾的石灰岩岛", "吉婆镇上的海鲜店", "改𠰚水上村", "从吉婆岛炮台公园望海", "藏在崖后的小沙滩"],
   },
   "nom-village": {
     name: "农村",
@@ -194,7 +194,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2天",
     ticket: "60,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["原始林中的千年楮树", "四月小径上的蝴蝶季"],
+    galleryCaptions: ["原始林中的千年楮树", "菊芳国家公园入口", "四月小径上的蝴蝶季"],
   },
   "tb-den-tran": {
     name: "太平陈庙",

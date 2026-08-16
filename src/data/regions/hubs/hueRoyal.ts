@@ -143,7 +143,8 @@ export const hueRoyalDestinations: Destination[] = [
     tags: ["palace", "architecture", "history", "culture"],
     gallery: [
       { seed: "an-dinh-palace-1", caption: "Mặt tiền cung An Định kiểu châu Âu", ratio: "4/3" },
-      { seed: "an-dinh-palace-2", caption: "Bích hoạ trong phòng khánh tiết", ratio: "16/9" },
+      { seed: "an-dinh-palace-2", caption: "Mặt trước cung An Định", ratio: "16/9" },
+      { seed: "an-dinh-palace-3", caption: "Bích hoạ trong phòng khánh tiết", ratio: "16/9" },
     ],
     nearby: ["hue-imperial-city", "trang-tien-bridge", "quoc-hoc-hue"],
     sourceUrl: "https://www.wikidata.org/wiki/Q10751137",

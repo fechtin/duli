@@ -36,7 +36,8 @@ export const daLatAroundDestinations: Destination[] = [
     badges: ["verified", "popular"],
     tags: ["lake", "nature", "mountain", "photography"],
     gallery: [
-      { seed: "tuyen-lam-lake-1", caption: "Sương sớm trên hồ Tuyền Lâm", ratio: "16/9" },
+      { seed: "tuyen-lam-lake-1", caption: "Nhà điều hành khu du lịch hồ Tuyền Lâm", ratio: "16/9" },
+      { seed: "tuyen-lam-lake-3", caption: "Sương sớm trên hồ Tuyền Lâm", ratio: "16/9" },
       { seed: "tuyen-lam-lake-2", caption: "Các nhánh hồ len giữa đồi thông", ratio: "4/3" },
     ],
     nearby: ["truc-lam-monastery", "datanla-waterfall", "xuan-huong-lake"],
@@ -73,7 +74,8 @@ export const daLatAroundDestinations: Destination[] = [
     tags: ["temple", "mountain", "nature", "viewpoint"],
     gallery: [
       { seed: "truc-lam-monastery-1", caption: "Thiền viện nhìn xuống hồ Tuyền Lâm", ratio: "16/9" },
-      { seed: "truc-lam-monastery-2", caption: "Cáp treo bay trên rừng thông", ratio: "4/3" },
+      { seed: "truc-lam-monastery-2", caption: "Thiền viện Trúc Lâm nhìn từ ngoài", ratio: "4/3" },
+      { seed: "truc-lam-monastery-3", caption: "Cáp treo bay trên rừng thông", ratio: "4/3" },
     ],
     nearby: ["tuyen-lam-lake", "datanla-waterfall", "xuan-huong-lake"],
     sourceUrl: "https://en.wikipedia.org/wiki/Tr%C3%BAc_L%C3%A2m_Monastery_of_Da_Lat",

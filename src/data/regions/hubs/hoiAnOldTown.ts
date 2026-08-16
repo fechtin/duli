@@ -81,7 +81,8 @@ export const hoiAnOldTownDestinations: Destination[] = [
     tags: ["museum", "architecture", "history", "culture"],
     gallery: [
       { seed: "tan-ky-house-1", caption: "Gian giữa nhà cổ Tấn Ký", ratio: "16/9" },
-      { seed: "tan-ky-house-2", caption: "Cột gỗ và câu đối khảm xà cừ", ratio: "4/3" },
+      { seed: "tan-ky-house-2", caption: "Vạch đánh dấu mực nước lụt trong nhà", ratio: "4/3" },
+      { seed: "tan-ky-house-3", caption: "Cột gỗ và câu đối khảm xà cừ", ratio: "4/3" },
     ],
     nearby: ["hoi-an-ancient-town", "japanese-covered-bridge", "phuc-kien-assembly-hall"],
     sourceUrl: "https://www.openstreetmap.org/way/595299310",
@@ -117,7 +118,8 @@ export const hoiAnOldTownDestinations: Destination[] = [
     badges: ["unesco", "verified"],
     tags: ["temple", "culture", "history", "architecture"],
     gallery: [
-      { seed: "phuc-kien-assembly-hall-1", caption: "Cổng tam quan hội quán Phúc Kiến", ratio: "4/3" },
+      { seed: "phuc-kien-assembly-hall-1", caption: "Bể nước đài rồng trong hội quán", ratio: "4/3" },
+      { seed: "phuc-kien-assembly-hall-3", caption: "Cổng tam quan hội quán Phúc Kiến", ratio: "4/3" },
       { seed: "phuc-kien-assembly-hall-2", caption: "Vòng hương treo kín trần chính điện", ratio: "16/9" },
     ],
     nearby: ["hoi-an-ancient-town", "japanese-covered-bridge", "tan-ky-house"],
@@ -155,7 +157,8 @@ export const hoiAnOldTownDestinations: Destination[] = [
     tags: ["nightlife", "market", "shopping", "photography"],
     gallery: [
       { seed: "hoi-an-night-market-1", caption: "Phố đèn lồng bên cù lao An Hội", ratio: "16/9" },
-      { seed: "hoi-an-night-market-2", caption: "Hoa đăng trôi trên sông Hoài", ratio: "4/3" },
+      { seed: "hoi-an-night-market-2", caption: "Hàng ăn đêm bên chợ Hội An", ratio: "4/3" },
+      { seed: "hoi-an-night-market-3", caption: "Hoa đăng trôi trên sông Hoài", ratio: "4/3" },
     ],
     nearby: ["hoi-an-ancient-town", "japanese-covered-bridge", "faifo-coffee"],
     sourceUrl: "https://www.openstreetmap.org/node/6099308589",

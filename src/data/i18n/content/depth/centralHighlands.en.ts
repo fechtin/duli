@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "50,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The falls dropping through pine forest", "The alpine coaster along the slope"],
+    galleryCaptions: ["The falls dropping through pine forest", "A vendor on the path down to Datanla", "The alpine coaster along the slope"],
   },
 };
 

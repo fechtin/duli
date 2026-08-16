@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "약 10만 동(참고 가격)",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["무아 동굴 정상에서 본 땀꼭 골짜기", "돌계단과 능선을 따라 놓인 용"],
+    galleryCaptions: ["무아 동굴 정상에서 본 땀꼭 골짜기", "무아 동굴 옆 석회암 바위에서 본 닌빈", "돌계단과 능선을 따라 놓인 용"],
   },
   "bai-dinh-pagoda": {
     name: "바이딘 사원",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "전동차와 사리탑 요금은 따로 받는다",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["나한 석상 500위가 늘어선 회랑", "언덕 위의 청동 미륵"],
+    galleryCaptions: ["바이딘 사원 단지의 탑들", "나한 석상 500위가 늘어선 회랑", "언덕 위의 청동 미륵"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "딘띠엔호앙 사당",
@@ -147,7 +147,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "예배 시간 외. 일정은 정문에 붙어 있다",
-    galleryCaptions: ["절의 삼문 같은 프엉딘", "안쪽의 철목 기둥과 휜 지붕"],
+    galleryCaptions: ["절의 삼문 같은 프엉딘", "대성당 안의 돌 천사상", "안쪽의 철목 기둥과 휜 지붕"],
   },
   "kenh-ga-hot-spring": {
     name: "껜가",

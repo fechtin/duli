@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "おおよそ17:00 - 24:00",
-    galleryCaptions: ["タヒエンの歩道を埋める赤いプラスチック椅子", "夜の旧市街で飲むビアホイ"],
+    galleryCaptions: ["タヒエンの歩道を埋める赤いプラスチック椅子", "早朝のタヒエン通り", "夜の旧市街で飲むビアホイ"],
   },
   "hanoi-train-street": {
     name: "ハノイ線路の路地",
@@ -126,7 +126,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。ミサの予定は門に掲示",
-    galleryCaptions: ["風雨に染みた灰色の鐘塔", "ニャート通りのチャーチャインの店"],
+    galleryCaptions: ["風雨に染みた灰色の鐘塔", "ニャートー通りから見た聖ヨセフ大聖堂", "ニャート通りのチャーチャインの店"],
   },
   "hanoi-opera-house": {
     name: "ハノイ・オペラハウス",
@@ -168,7 +168,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "行列を含めて1 - 1.5時間",
     ticket: "",
     openingHours: "平日の午前、月曜と金曜は休み。公表日程を確認",
-    galleryCaptions: ["バディン広場から見た廟", "廟前の衛兵交代"],
+    galleryCaptions: ["バディン広場から見た廟", "廟前のバディン広場", "廟前の衛兵交代"],
   },
   "one-pillar-pagoda": {
     name: "一柱寺",
@@ -210,7 +210,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "7万ドン（参考価格。窓口で確認を）",
     openingHours: "08:00 - 17:00、月曜休み",
-    galleryCaptions: ["中庭から見た端門", "敬天殿の階段に残る石龍", "D67の指揮壕"],
+    galleryCaptions: ["中庭から見た端門", "敬天殿の階段に残る石龍", "タンロン皇城の正門", "D67の指揮壕"],
   },
   "hanoi-flag-tower": {
     name: "ハノイ旗台",

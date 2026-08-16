@@ -421,7 +421,8 @@ export const southCentralHighlandsDestinations: Destination[] = [
     gallery: [
       { seed: "bienho-matho", caption: "Mặt hồ xanh thẳm giữa đại ngàn", ratio: "16/9" },
       { seed: "bienho-vongcanh", caption: "Đài vọng cảnh nhô ra mặt nước", ratio: "4/3" },
-      { seed: "bienho-thong", caption: "Hàng thông cổ thụ dẫn ra hồ", ratio: "1/1" },
+      { seed: "bienho-thong", caption: "Mặt nước Biển Hồ T'Nưng", ratio: "1/1" },
+      { seed: "bienho-thong-2", caption: "Hàng thông cổ thụ dẫn ra hồ", ratio: "1/1" },
     ],
     nearby: ["gli-chua-minh-thanh"],
     featured: true,

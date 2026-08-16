@@ -85,7 +85,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "50,000d (indicative)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The European-style facade of An Dinh", "Murals in the reception room"],
+    galleryCaptions: ["The European-style facade of An Dinh", "The front of An Dinh Palace", "Murals in the reception room"],
   },
   "trang-tien-bridge": {
     name: "Truong Tien Bridge",
@@ -295,7 +295,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Lang Co bay seen from Hai Van pass", "Oyster racks on Lap An lagoon"],
+    galleryCaptions: ["Lang Co bay seen from Hai Van pass", "The lagoon mouth and Lang Co beach", "Oyster racks on Lap An lagoon"],
   },
   "bach-ma-national-park": {
     name: "Bach Ma National Park",

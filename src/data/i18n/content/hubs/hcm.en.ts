@@ -85,7 +85,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "All day; closed to traffic at weekends during posted hours",
-    galleryCaptions: ["Nguyen Hue walking street at dusk", "The flower avenue at Lunar New Year"],
+    galleryCaptions: ["Nguyen Hue walking street at dusk", "Nguyen Hue Walking Street at night", "The flower avenue at Lunar New Year"],
   },
   "bach-dang-wharf": {
     name: "Bach Dang Wharf",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Bach Dang riverside looking to Thu Thiem", "Park steps running down to the water"],
+    galleryCaptions: ["The Bach Dang riverside looking to Thu Thiem", "The Bitexco tower seen from Bach Dang wharf", "Park steps running down to the water"],
   },
   "bitexco-tower": {
     name: "Bitexco Financial Tower",
@@ -148,7 +148,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["Aircraft and tanks in the outdoor yard", "A photographic gallery upstairs"],
+    galleryCaptions: ["Aircraft and tanks in the outdoor yard", "An M-107 self-propelled gun in the courtyard", "A photographic gallery upstairs"],
   },
   "tao-dan-park": {
     name: "Tao Dan Park",
@@ -232,7 +232,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "About 300,000d for the observation deck (indicative)",
     openingHours: "08:30 - 23:00",
-    galleryCaptions: ["Landmark 81 far above the Saigon skyline", "The city at night from the observation deck"],
+    galleryCaptions: ["Landmark 81 far above the Saigon skyline", "Landmark 81 rising over the city", "The city at night from the observation deck"],
   },
   "jade-emperor-pagoda": {
     name: "Jade Emperor Pagoda",
@@ -253,7 +253,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The main hall thick with incense smoke", "Wooden reliefs in the Hall of the Ten Kings"],
+    galleryCaptions: ["The main hall thick with incense smoke", "Tortoises and terrapins sold for release at the pagoda", "Wooden reliefs in the Hall of the Ten Kings"],
   },
   "saigon-zoo": {
     name: "Saigon Zoo and Botanical Gardens",
@@ -274,7 +274,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "60,000d (indicative — check at the counter)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["Century-old trees in the botanical gardens", "A shaded path through the grounds"],
+    galleryCaptions: ["Century-old trees in the botanical gardens", "The entrance to the zoo and botanical gardens", "A shaded path through the grounds"],
   },
   "binh-tay-market": {
     name: "Binh Tay Market",
@@ -316,7 +316,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Chinese shop signs along a Cho Lon street", "A herbal medicine shop open to the pavement"],
+    galleryCaptions: ["Chinese shop signs along a Cho Lon street", "An Dong market in the Cho Lon area", "A herbal medicine shop open to the pavement"],
   },
   "giac-lam-pagoda": {
     name: "Giac Lam Pagoda",
@@ -337,7 +337,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes - 1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Porcelain-studded stupas in the courtyard", "Wooden statues in the main hall"],
+    galleryCaptions: ["Porcelain-studded stupas in the courtyard", "The bodhi tree in the pagoda grounds", "Wooden statues in the main hall"],
   },
   "can-gio-mangrove": {
     name: "Can Gio Mangrove Forest",

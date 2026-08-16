@@ -21,7 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "石群と集落の入場料は別途",
     openingHours: "終日。明るいうちに行くこと",
-    galleryCaptions: ["稲刈りのころのムオンホアの棚田", "田のあいだの古代の彫刻岩"],
+    galleryCaptions: ["稲刈りのころのムオンホアの棚田", "ムオンホア渓谷", "田のあいだの古代の彫刻岩"],
   },
   "cat-cat-village": {
     name: "カットカット村",
@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "約15万ドン（目安）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["棚田のあいだのモン族の家", "垣根に干された藍の布"],
+    galleryCaptions: ["棚田のあいだのモン族の家", "カットカット村の滝", "垣根に干された藍の布"],
   },
   "ta-van-village": {
     name: "ターヴァン村",
@@ -84,7 +84,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "集落入場は約4万ドン（目安）",
     openingHours: "終日",
-    galleryCaptions: ["錦に刺繍をする赤ザオ族の女性", "フランスの石造修道院の廃墟"],
+    galleryCaptions: ["ターフィンの棚田", "錦に刺繍をする赤ザオ族の女性", "ターフィン村の早朝", "フランスの石造修道院の廃墟"],
   },
   "ham-rong-mountain": {
     name: "ハムロン山",
@@ -147,7 +147,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["イーティーの谷を満たす雲海", "草葺き屋根のハニ族の土の家"],
+    galleryCaptions: ["イーティーの谷を満たす雲海", "イーティーのモン族の子どもたち", "草葺き屋根のハニ族の土の家"],
   },
   "lao-cai-border-gate": {
     name: "ラオカイ国境ゲート",

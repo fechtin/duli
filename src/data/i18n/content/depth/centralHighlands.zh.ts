@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "50,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["跌落松林间的多级瀑布", "沿坡而下的滑道"],
+    galleryCaptions: ["跌落松林间的多级瀑布", "达坦拉瀑布步道旁的摊贩", "沿坡而下的滑道"],
   },
 };
 

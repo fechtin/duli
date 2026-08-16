@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "150,000₫",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The exterior and its dragon staircases", "Porcelain mosaic in Thien Dinh palace", "The bronze statue of Emperor Khai Dinh"],
+    galleryCaptions: ["The exterior and its dragon staircases", "Stone soldier statues in the tomb's courtyard", "Porcelain mosaic in Thien Dinh palace", "The rows of mandarin statues at the tomb", "The bronze statue of Emperor Khai Dinh"],
   },
 };
 

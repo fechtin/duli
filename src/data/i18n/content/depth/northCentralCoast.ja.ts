@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "150,000ドン",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["龍の階段を備えた陵の外観", "ティエンディン宮の陶磁モザイク", "カイディン帝の青銅坐像"],
+    galleryCaptions: ["龍の階段を備えた陵の外観", "カイディン帝陵の参拝の庭に並ぶ石の兵士像", "ティエンディン宮の陶磁モザイク", "陵墓に並ぶ文官・武官の石像", "カイディン帝の青銅坐像"],
   },
 };
 

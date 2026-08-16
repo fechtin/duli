@@ -232,7 +232,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含上山路程约2小时",
     ticket: "",
     openingHours: "白天；天黑后不要上山",
-    galleryCaptions: ["山茶峰顶的石棋盘", "从棋盘峰看岘港湾全景"],
+    galleryCaptions: ["从棋盘峰俯瞰岘港全景", "山茶峰顶的石棋盘", "峰顶的棋盘石像", "从棋盘峰看岘港湾全景"],
   },
   "non-nuoc-beach": {
     name: "农渃海滩",
@@ -253,7 +253,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["五行山脚下的农渃海滩", "清晨空旷的沙滩"],
+    galleryCaptions: ["五行山脚下的农渃海滩", "农渃海滩上的簸箕船", "清晨空旷的沙滩"],
   },
   "non-nuoc-stone-village": {
     name: "农渃石雕村",

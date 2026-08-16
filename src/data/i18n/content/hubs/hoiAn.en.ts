@@ -44,7 +44,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Included in the Hoi An old-town ticket",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["The central hall of Tan Ky house", "Timber columns and mother-of-pearl couplets"],
+    galleryCaptions: ["The central hall of Tan Ky house", "Flood level markings inside the house", "Timber columns and mother-of-pearl couplets"],
   },
   "phuc-kien-assembly-hall": {
     name: "Fujian Assembly Hall",
@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Included in the Hoi An old-town ticket",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The triple gate of the Fujian hall", "Incense coils filling the main hall ceiling"],
+    galleryCaptions: ["The dragon fountain inside the hall", "The triple gate of the Fujian hall", "Incense coils filling the main hall ceiling"],
   },
   "hoi-an-night-market": {
     name: "Hoi An Night Market",
@@ -86,7 +86,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 23:00",
-    galleryCaptions: ["The lantern street on An Hoi islet", "Paper lanterns drifting on the Hoai river"],
+    galleryCaptions: ["The lantern street on An Hoi islet", "Night food stalls beside the Hoi An market", "Paper lanterns drifting on the Hoai river"],
   },
   "faifo-coffee": {
     name: "Faifo Coffee",
@@ -212,7 +212,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Wooden chairs and thatched bars on An Bang sand", "Basket boats upturned at the end of the beach"],
+    galleryCaptions: ["Wooden chairs and thatched bars on An Bang sand", "A small shrine at An Bang", "Basket boats upturned at the end of the beach"],
   },
   "cua-dai-beach": {
     name: "Cua Dai Beach",

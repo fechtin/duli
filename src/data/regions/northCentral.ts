@@ -73,7 +73,8 @@ export const northCentralDestinations: Destination[] = [
     tags: ["beach", "nature", "food"],
     gallery: [
       { seed: "sam-son-binh-minh", caption: "Bình minh trên bãi tắm Sầm Sơn", ratio: "16/9" },
-      { seed: "sam-son-trong-mai", caption: "Hòn Trống Mái lừng danh", ratio: "4/3" },
+      { seed: "sam-son-trong-mai", caption: "Dọn vệ sinh trên bãi biển Sầm Sơn", ratio: "4/3" },
+      { seed: "sam-son-trong-mai-2", caption: "Hòn Trống Mái lừng danh", ratio: "4/3" },
       { seed: "sam-son-hai-san", caption: "Bãi tắm rợp dù che nhìn từ trên cao", ratio: "1/1" },
     ],
     nearby: ["thanh-nha-ho"],
@@ -183,7 +184,8 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "cua-lo-bai-cat", caption: "Đại lộ ven biển rợp bóng cây buổi sớm", ratio: "16/9" },
       { seed: "cua-lo-muc-nhay", caption: "Phố biển lên đèn lung linh lúc hoàng hôn", ratio: "4/3" },
-      { seed: "cua-lo-dao-lan-chau", caption: "Đảo Lan Châu sát bờ", ratio: "1/1" },
+      { seed: "cua-lo-dao-lan-chau", caption: "Bãi biển Cửa Lò", ratio: "1/1" },
+      { seed: "cua-lo-dao-lan-chau-2", caption: "Đảo Lan Châu sát bờ", ratio: "1/1" },
     ],
     nearby: ["khu-di-tich-kim-lien"],
   },
@@ -295,7 +297,8 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "thien-cam-bai-bien", caption: "Bãi biển hoang sơ Thiên Cầm", ratio: "16/9" },
       { seed: "thien-cam-nui", caption: "Núi Thiên Cầm bên bờ sóng", ratio: "4/3" },
-      { seed: "thien-cam-muc-mot-nang", caption: "Mực một nắng đặc sản", ratio: "1/1" },
+      { seed: "thien-cam-muc-mot-nang", caption: "Bờ biển Thiên Cầm", ratio: "1/1" },
+      { seed: "thien-cam-muc-mot-nang-2", caption: "Mực một nắng đặc sản", ratio: "1/1" },
     ],
     nearby: ["chua-huong-tich", "nga-ba-dong-loc"],
   },
@@ -331,7 +334,8 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "dong-loc-mo-liet-si", caption: "Mười ngôi mộ nữ thanh niên xung phong", ratio: "16/9" },
       { seed: "dong-loc-thap-chuong", caption: "Hàng mộ trắng phủ hoa cúc tưởng niệm", ratio: "4/3" },
-      { seed: "dong-loc-ho-bom", caption: "Dấu tích hố bom năm xưa", ratio: "1/1" },
+      { seed: "dong-loc-ho-bom", caption: "Thắp hương tại khu tưởng niệm Ngã ba Đồng Lộc", ratio: "1/1" },
+      { seed: "dong-loc-ho-bom-2", caption: "Dấu tích hố bom năm xưa", ratio: "1/1" },
     ],
     nearby: ["bien-thien-cam"],
   },
@@ -408,7 +412,8 @@ export const northCentralDestinations: Destination[] = [
     gallery: [
       { seed: "vinh-moc-cua-ham", caption: "Cửa hầm địa đạo Vịnh Mốc", ratio: "16/9" },
       { seed: "vinh-moc-long-dat", caption: "Đường hầm trong lòng đất", ratio: "4/3" },
-      { seed: "vinh-moc-nha-ho-sinh", caption: "Căn nhà hộ sinh dưới hầm", ratio: "1/1" },
+      { seed: "vinh-moc-nha-ho-sinh", caption: "Đèn dầu cải tiến dùng dưới địa đạo", ratio: "1/1" },
+      { seed: "vinh-moc-nha-ho-sinh-2", caption: "Căn nhà hộ sinh dưới hầm", ratio: "1/1" },
     ],
     nearby: ["thanh-co-quang-tri", "dao-con-co"],
   },

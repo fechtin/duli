@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "70,000동",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["티엔꽝 우물에 비친 규문각", "돌거북 위의 진사비 82기", "내부로 이어지는 다이쭝 문"],
+    galleryCaptions: ["티엔꽝 우물에 비친 규문각", "문묘의 규문각", "돌거북 위의 진사비 82기", "내부로 이어지는 다이쭝 문"],
   },
   "mao-dien-temple-of-literature": {
     name: "마오디엔 문묘",
@@ -107,7 +107,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "80,000동 (만 입장료)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["란하만을 가득 채운 석회암 섬", "까이베오 수상 마을", "절벽 뒤에 숨은 작은 백사장"],
+    galleryCaptions: ["란하만을 가득 채운 석회암 섬", "깟바 읍내의 해산물 가게", "까이베오 수상 마을", "깟바섬 포대 공원에서 본 바다", "절벽 뒤에 숨은 작은 백사장"],
   },
   "nom-village": {
     name: "놈 마을",
@@ -194,7 +194,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "60,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["원시림 속 천 년 된 쩌 나무", "4월 오솔길의 나비 떼"],
+    galleryCaptions: ["원시림 속 천 년 된 쩌 나무", "꾹프엉 국립공원 입구", "4월 오솔길의 나비 떼"],
   },
   "tb-den-tran": {
     name: "타이빈 쩐 사당",

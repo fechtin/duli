@@ -43,7 +43,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 23:00",
-    galleryCaptions: ["排档门口的活海鲜水箱", "富国鱼露与胡椒摊"],
+    galleryCaptions: ["夜市里制作炒酸奶卷", "排档门口的活海鲜水箱", "夜市的鲜鱼摊", "富国鱼露与胡椒摊"],
   },
   "hon-thom-cable-car": {
     name: "香岛缆车",
@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "缆车往返约35万越南盾（参考价）",
     openingHours: "约08:00 - 17:30，随季节调整",
-    galleryCaptions: ["跨海滑行的缆车轿厢", "从缆车上俯瞰的水上渔村"],
+    galleryCaptions: ["矗立海中的香岛缆车塔柱", "跨海滑行的缆车轿厢", "从缆车上俯瞰的水上渔村"],
   },
   "phu-quoc-prison": {
     name: "富国监狱",
@@ -190,7 +190,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["泰国湾边的河仙城", "平山丘上的鄚氏家族墓"],
+    galleryCaptions: ["泰国湾边的河仙城", "河仙的海滩", "平山丘上的鄚氏家族墓"],
   },
   "mui-nai-beach": {
     name: "鹿岬海滩",

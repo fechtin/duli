@@ -74,8 +74,10 @@ export const phuQuocDestinations: Destination[] = [
     badges: ["popular", "verified"],
     tags: ["nightlife", "food", "market", "shopping"],
     gallery: [
-      { seed: "phu-quoc-night-market-1", caption: "Bể hải sản sống trước quán", ratio: "16/9" },
-      { seed: "phu-quoc-night-market-2", caption: "Quầy nước mắm và hồ tiêu Phú Quốc", ratio: "4/3" },
+      { seed: "phu-quoc-night-market-1", caption: "Làm kem cuộn trong chợ đêm", ratio: "16/9" },
+      { seed: "phu-quoc-night-market-3", caption: "Bể hải sản sống trước quán", ratio: "16/9" },
+      { seed: "phu-quoc-night-market-2", caption: "Quầy cá tươi trong chợ đêm", ratio: "4/3" },
+      { seed: "phu-quoc-night-market-4", caption: "Quầy nước mắm và hồ tiêu Phú Quốc", ratio: "4/3" },
     ],
     nearby: ["dinh-cau-phu-quoc", "phu-quoc-island", "bai-sao-beach"],
     sourceUrl: "https://www.openstreetmap.org/way/152800945",
@@ -110,7 +112,8 @@ export const phuQuocDestinations: Destination[] = [
     badges: ["popular", "verified"],
     tags: ["adventure", "viewpoint", "family", "island"],
     gallery: [
-      { seed: "hon-thom-cable-car-1", caption: "Cabin cáp treo bay trên mặt biển", ratio: "16/9" },
+      { seed: "hon-thom-cable-car-1", caption: "Trụ cáp treo Hòn Thơm dựng giữa biển", ratio: "16/9" },
+      { seed: "hon-thom-cable-car-3", caption: "Cabin cáp treo bay trên mặt biển", ratio: "16/9" },
       { seed: "hon-thom-cable-car-2", caption: "Làng chài nổi nhìn từ cáp treo", ratio: "4/3" },
     ],
     nearby: ["bai-sao-beach", "phu-quoc-island", "phu-quoc-prison"],
@@ -328,7 +331,8 @@ export const phuQuocDestinations: Destination[] = [
     tags: ["city", "history", "culture", "beach"],
     gallery: [
       { seed: "ha-tien-town-1", caption: "Thị xã Hà Tiên bên vịnh Thái Lan", ratio: "16/9" },
-      { seed: "ha-tien-town-2", caption: "Lăng mộ họ Mạc trên núi Bình San", ratio: "4/3" },
+      { seed: "ha-tien-town-2", caption: "Bãi biển Hà Tiên", ratio: "4/3" },
+      { seed: "ha-tien-town-3", caption: "Lăng mộ họ Mạc trên núi Bình San", ratio: "4/3" },
     ],
     nearby: ["mui-nai-beach", "hon-phu-tu", "phu-quoc-island"],
     sourceUrl: "https://en.wikipedia.org/wiki/H%C3%A0_Ti%C3%AAn",

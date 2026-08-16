@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "150,000越南盾",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["带龙阶的陵墓外观", "天定宫内的瓷片镶嵌", "启定帝的青铜坐像"],
+    galleryCaptions: ["带龙阶的陵墓外观", "启定陵朝拜庭院的石兵像", "天定宫内的瓷片镶嵌", "陵中排列的文武官石像", "启定帝的青铜坐像"],
   },
 };
 

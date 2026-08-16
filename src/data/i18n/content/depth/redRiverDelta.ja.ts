@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "70,000ドン",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["ティエンクアンの井戸に映るクエヴァンカク", "石亀の背に載る82基の進士碑", "内区へ続くダイチュン門"],
+    galleryCaptions: ["ティエンクアンの井戸に映るクエヴァンカク", "文廟の奎文閣", "石亀の背に載る82基の進士碑", "内区へ続くダイチュン門"],
   },
   "mao-dien-temple-of-literature": {
     name: "マオディエン文廟",
@@ -107,7 +107,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2日",
     ticket: "80,000ドン（湾の入場料）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ランハー湾を埋める石灰岩の島", "カイベオの水上村", "崖の陰に隠れた小さな砂浜"],
+    galleryCaptions: ["ランハー湾を埋める石灰岩の島", "カットバの町の海鮮店", "カイベオの水上村", "カットバ島の砲台公園から望む海", "崖の陰に隠れた小さな砂浜"],
   },
   "nom-village": {
     name: "ノム村",
@@ -194,7 +194,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2日",
     ticket: "60,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["原生林に立つ樹齢千年のチョーの木", "四月の小道を舞う蝶の季節"],
+    galleryCaptions: ["原生林に立つ樹齢千年のチョーの木", "クックフオン国立公園の入口", "四月の小道を舞う蝶の季節"],
   },
   "tb-den-tran": {
     name: "タイビン陳廟",

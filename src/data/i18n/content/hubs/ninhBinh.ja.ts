@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "約10万ドン（目安）",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["ムア洞の頂から見たタムコックの谷", "石段と尾根に沿う竜"],
+    galleryCaptions: ["ムア洞の頂から見たタムコックの谷", "ムア洞そばの石灰岩から望むニンビン", "石段と尾根に沿う竜"],
   },
   "bai-dinh-pagoda": {
     name: "バイディン寺",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "カートと舎利塔は別料金",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["五百体の石の羅漢が並ぶ回廊", "丘の上の銅造弥勒"],
+    galleryCaptions: ["バイディン寺の塔群", "五百体の石の羅漢が並ぶ回廊", "丘の上の銅造弥勒"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "丁先皇祠",
@@ -147,7 +147,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "ミサの時間外。予定は門に掲示されている",
-    galleryCaptions: ["寺の三門のような方亭", "内部の鉄木の柱と反った屋根"],
+    galleryCaptions: ["寺の三門のような方亭", "大聖堂内の石の天使像", "内部の鉄木の柱と反った屋根"],
   },
   "kenh-ga-hot-spring": {
     name: "ケンガー",

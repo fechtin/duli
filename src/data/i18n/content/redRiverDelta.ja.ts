@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "石山の間を行く小舟",
       "石山の麓、鏡のような湖面を滑る小舟",
+      "春のタムコック",
       "ハンムアからの全景",
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "上空から眺めるランハ湾",
+      "砲台公園から望む海",
       "透き通ったカットコー海水浴場",
+      "湾に面したカットバの町",
       "カットバ国立公園",
     ],
   },
@@ -113,6 +116,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "モクマオウ並木の下のドーソンビーチ",
+      "ドーソンのカジノの建物",
       "伝統の闘水牛祭り",
       "ドーソン半島の夕暮れ",
     ],
@@ -160,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "08:00 - 17:00",
     galleryCaptions: [
+      "東湖版画「ねずみの嫁入り」",
       "ゼップ紙に版画を刷る職人",
       "鮮やかな民間色の竈神（タオクアン）祭祀画",
       "蓮の間を泳ぐ鯉の群れの版画",
@@ -233,6 +238,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 - 18:00",
     galleryCaptions: [
       "古き趣のシックダン文廟",
+      "境内から見たシックダン文廟",
       "フォーヒエンのマウ祠",
       "収穫期のフンイエン産リュウガン",
     ],

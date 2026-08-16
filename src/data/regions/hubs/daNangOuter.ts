@@ -114,8 +114,10 @@ export const daNangOuterDestinations: Destination[] = [
     badges: ["verified", "hidden-gem"],
     tags: ["viewpoint", "mountain", "nature", "photography"],
     gallery: [
-      { seed: "ban-co-peak-1", caption: "Bàn cờ đá trên đỉnh Sơn Trà", ratio: "4/3" },
-      { seed: "ban-co-peak-2", caption: "Toàn cảnh vịnh Đà Nẵng từ đỉnh Bàn Cờ", ratio: "16/9" },
+      { seed: "ban-co-peak-1", caption: "Toàn cảnh Đà Nẵng từ đỉnh Bàn Cờ", ratio: "4/3" },
+      { seed: "ban-co-peak-3", caption: "Bàn cờ đá trên đỉnh Sơn Trà", ratio: "4/3" },
+      { seed: "ban-co-peak-2", caption: "Tượng đá bên bàn cờ trên đỉnh", ratio: "16/9" },
+      { seed: "ban-co-peak-4", caption: "Toàn cảnh vịnh Đà Nẵng từ đỉnh Bàn Cờ", ratio: "16/9" },
     ],
     nearby: ["son-tra-peninsula", "linh-ung-pagoda-bai-but", "my-khe-beach"],
     sourceUrl: "https://www.openstreetmap.org/node/1538334281",
@@ -152,7 +154,8 @@ export const daNangOuterDestinations: Destination[] = [
     tags: ["beach", "nature", "family"],
     gallery: [
       { seed: "non-nuoc-beach-1", caption: "Bãi Non Nước dưới chân Ngũ Hành Sơn", ratio: "16/9" },
-      { seed: "non-nuoc-beach-2", caption: "Bờ cát vắng buổi sáng", ratio: "4/3" },
+      { seed: "non-nuoc-beach-2", caption: "Thuyền thúng trên bãi Non Nước", ratio: "4/3" },
+      { seed: "non-nuoc-beach-3", caption: "Bờ cát vắng buổi sáng", ratio: "4/3" },
     ],
     nearby: ["marble-mountains", "non-nuoc-stone-village", "hoi-an-ancient-town"],
     sourceUrl: "https://www.openstreetmap.org/way/1204900824",

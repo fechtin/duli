@@ -233,7 +233,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours including the drive up",
     ticket: "",
     openingHours: "Daylight hours; do not go up after dark",
-    galleryCaptions: ["The stone chessboard on the Son Tra summit", "Da Nang bay seen from Ban Co Peak"],
+    galleryCaptions: ["Da Nang seen from Ban Co Peak", "The stone chessboard on the Son Tra summit", "The chessboard statue at the peak", "Da Nang bay seen from Ban Co Peak"],
   },
   "non-nuoc-beach": {
     name: "Non Nuoc Beach",
@@ -254,7 +254,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Non Nuoc beach below the Marble Mountains", "Empty sand in the morning"],
+    galleryCaptions: ["Non Nuoc beach below the Marble Mountains", "Basket boats on Non Nuoc Beach", "Empty sand in the morning"],
   },
   "non-nuoc-stone-village": {
     name: "Non Nuoc Stone Carving Village",

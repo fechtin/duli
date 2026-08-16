@@ -113,7 +113,8 @@ export const hanoiTourDestinations: Destination[] = [
     tags: ["temple", "culture", "history"],
     gallery: [
       { seed: "phu-tay-ho-1", caption: "Cổng phủ nhìn ra mặt hồ Tây", ratio: "16/9" },
-      { seed: "phu-tay-ho-2", caption: "Ban thờ Mẫu trong phủ", ratio: "4/3" },
+      { seed: "phu-tay-ho-2", caption: "Ven hồ Tây gần phủ", ratio: "4/3" },
+      { seed: "phu-tay-ho-3", caption: "Ban thờ Mẫu trong phủ", ratio: "4/3" },
     ],
     nearby: ["west-lake-hanoi", "tran-quoc-pagoda", "quan-thanh-temple"],
     sourceUrl: "https://www.openstreetmap.org/way/941901613",
@@ -186,7 +187,8 @@ export const hanoiTourDestinations: Destination[] = [
     tags: ["food", "nightlife", "city"],
     gallery: [
       { seed: "tong-duy-tan-food-street-1", caption: "Phố ẩm thực sáng đèn lúc nửa đêm", ratio: "16/9" },
-      { seed: "tong-duy-tan-food-street-2", caption: "Bát gà tần thuốc bắc", ratio: "4/3" },
+      { seed: "tong-duy-tan-food-street-2", caption: "Quán cà phê trên phố Tống Duy Tân", ratio: "4/3" },
+      { seed: "tong-duy-tan-food-street-3", caption: "Bát gà tần thuốc bắc", ratio: "4/3" },
     ],
     nearby: ["old-quarter-hanoi", "hoa-lo-prison", "hoan-kiem-lake"],
     sourceUrl: "https://www.openstreetmap.org/way/28924633",

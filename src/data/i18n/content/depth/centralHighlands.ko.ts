@@ -128,7 +128,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "50,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["소나무 숲 사이로 떨어지는 폭포", "비탈을 따라 내려가는 알파인 코스터"],
+    galleryCaptions: ["소나무 숲 사이로 떨어지는 폭포", "다딴라 폭포로 내려가는 길의 노점", "비탈을 따라 내려가는 알파인 코스터"],
   },
 };
 

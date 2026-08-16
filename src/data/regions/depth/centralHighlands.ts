@@ -224,7 +224,8 @@ export const centralHighlandsDepthDestinations: Destination[] = [
     tags: ["waterfall", "nature", "photography"],
     gallery: [
       { seed: "datanla-waterfall-1", caption: "Thác đổ nhiều tầng giữa rừng thông", ratio: "16/9" },
-      { seed: "datanla-waterfall-2", caption: "Máng trượt men theo sườn dốc xuống thác", ratio: "4/3" },
+      { seed: "datanla-waterfall-2", caption: "Hàng quán bên lối xuống thác Datanla", ratio: "4/3" },
+      { seed: "datanla-waterfall-3", caption: "Máng trượt men theo sườn dốc xuống thác", ratio: "4/3" },
     ],
     nearby: ["da-lat-city", "langbiang"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Thác_Datanla",

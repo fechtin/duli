@@ -421,6 +421,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "매일 07:00 - 17:00",
     galleryCaptions: [
+      "룽응옥호앙 수면을 덮은 부레옥잠",
       "고요한 원시 멜라루카 숲",
       "얽히고설킨 늪 못 사이를 누비는 배",
       "푸른 하늘 아래 멜라루카 숲을 가로지르는 대나무 다리",
@@ -519,6 +520,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "서양식 건축의 고택",
       "정교하게 조각된 고급 목재 내장",
+      "오늘날 박리에우의 시가지",
       "값진 자개 골동품",
     ],
   },
@@ -566,6 +568,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "매일 07:00 - 17:00",
     galleryCaptions: [
       "토탄 위의 원시 멜라루카 숲",
+      "위에서 본 우민하 숲",
       "막대를 걸어 꿀을 얻는 전통 양봉업",
       "멜라루카 숲에서 민물고기 낚기",
     ],

@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "免费",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["朝向西湖的祠门", "殿内的圣母神龛"],
+    galleryCaptions: ["朝向西湖的祠门", "近西湖府的湖畔", "殿内的圣母神龛"],
   },
   "national-history-museum-vn": {
     name: "越南国家历史博物馆",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "免费（餐费另计）",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["午夜仍亮着灯的美食街", "一锅药膳炖鸡"],
+    galleryCaptions: ["午夜仍亮着灯的美食街", "宋维新街上的咖啡馆", "一锅药膳炖鸡"],
   },
 };
 

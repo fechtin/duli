@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "無料",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["西湖に向かって開く廟の門", "堂内の聖母の祭壇"],
+    galleryCaptions: ["西湖に向かって開く廟の門", "廟に近いタイ湖のほとり", "堂内の聖母の祭壇"],
   },
   "national-history-museum-vn": {
     name: "ベトナム国立歴史博物館",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "無料（料理は別料金）",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["真夜中に灯る食べ物屋の通り", "薬膳鶏スープの土鍋"],
+    galleryCaptions: ["真夜中に灯る食べ物屋の通り", "トンズイタン通りのカフェ", "薬膳鶏スープの土鍋"],
   },
 };
 

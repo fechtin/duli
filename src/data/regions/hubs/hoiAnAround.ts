@@ -151,7 +151,8 @@ export const hoiAnAroundDestinations: Destination[] = [
     tags: ["beach", "nature", "sunset", "food"],
     gallery: [
       { seed: "an-bang-beach-1", caption: "Ghế gỗ và quán mái lá trên bãi An Bàng", ratio: "16/9" },
-      { seed: "an-bang-beach-2", caption: "Thuyền thúng úp ngược cuối bãi", ratio: "4/3" },
+      { seed: "an-bang-beach-2", caption: "Ngôi miếu nhỏ ở An Bàng", ratio: "4/3" },
+      { seed: "an-bang-beach-3", caption: "Thuyền thúng úp ngược cuối bãi", ratio: "4/3" },
     ],
     nearby: ["tra-que-vegetable-village", "cua-dai-beach", "hoi-an-ancient-town"],
     sourceUrl: "https://www.openstreetmap.org/node/4343966693",

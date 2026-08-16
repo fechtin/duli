@@ -231,7 +231,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "오르는 길 포함 2시간",
     ticket: "",
     openingHours: "낮 시간. 해가 진 뒤에는 오르지 말 것",
-    galleryCaptions: ["썬짜 정상의 돌 장기판", "반꼬봉에서 본 다낭만 전경"],
+    galleryCaptions: ["반꼬봉에서 본 다낭 전경", "썬짜 정상의 돌 장기판", "정상의 바둑판 석상", "반꼬봉에서 본 다낭만 전경"],
   },
   "non-nuoc-beach": {
     name: "논느억 해변",
@@ -252,7 +252,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["응우한선 아래 논느억 해변", "아침의 한적한 모래밭"],
+    galleryCaptions: ["응우한선 아래 논느억 해변", "논느억 해변의 바구니 배", "아침의 한적한 모래밭"],
   },
   "non-nuoc-stone-village": {
     name: "논느억 석공예 마을",

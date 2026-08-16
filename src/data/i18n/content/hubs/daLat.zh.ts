@@ -22,7 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["春香湖上的晨雾", "湖岸盛开的梅樱"],
+    galleryCaptions: ["春香湖上的晨雾", "俯瞰春香湖的大叻", "湖岸盛开的梅樱"],
   },
   "da-lat-market": {
     name: "大叻市场",
@@ -190,7 +190,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "缆车与船费另计",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["宣林湖上的晨雾", "钻进松丘之间的汊湾"],
+    galleryCaptions: ["宣林湖旅游区管理处", "宣林湖上的晨雾", "钻进松丘之间的汊湾"],
   },
   "truc-lam-monastery": {
     name: "竹林禅院",
@@ -211,7 +211,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "",
     openingHours: "05:00 - 21:00；院内区域另有时间",
-    galleryCaptions: ["俯瞰宣林湖的禅院", "飞越松林的缆车"],
+    galleryCaptions: ["俯瞰宣林湖的禅院", "从外望竹林禅院", "飞越松林的缆车"],
   },
   "valley-of-love": {
     name: "爱情谷",

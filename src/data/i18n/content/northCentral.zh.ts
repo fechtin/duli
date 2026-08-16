@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `巍峨的午门`,
       `从石板路入口望见的古朴午门`,
+      `皇城内的大朝广场`,
       `暮色降临的香江`,
     ],
   },
@@ -114,6 +115,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `岑山海滩的日出`,
+      `岑山海滩上的清洁工作`,
       `闻名的雄雌石`,
       `俯瞰遮阳伞遍布的海滩`,
     ],
@@ -187,6 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `清晨绿树成荫的滨海大道`,
       `夕阳下灯火璀璨的海滨小城`,
+      `门炉海滩`,
       `紧邻海岸的兰洲岛`,
     ],
   },
@@ -259,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `原生态的天琴海滩`,
       `浪涛畔的天琴山`,
+      `天琴的海岸`,
       `特产一夜干鱿鱼`,
     ],
   },
@@ -283,6 +287,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `十位女青年突击队员之墓`,
       `覆满缅怀菊花的白色墓列`,
+      `在同禄三岔路纪念地上香`,
       `昔日弹坑的遗迹`,
     ],
   },
@@ -331,6 +336,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `永麻地道的洞口`,
       `地底的地道通道`,
+      `地道中使用的改装油灯`,
       `地道下的产房`,
     ],
   },

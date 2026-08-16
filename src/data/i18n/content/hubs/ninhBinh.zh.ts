@@ -43,7 +43,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "约10万越南盾（参考价）",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["从舞洞山顶看三谷山谷", "石阶与沿山脊而卧的石龙"],
+    galleryCaptions: ["从舞洞山顶看三谷山谷", "自舞洞旁的石灰岩俯瞰宁平", "石阶与沿山脊而卧的石龙"],
   },
   "bai-dinh-pagoda": {
     name: "拜顶寺",
@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "电瓶车与舍利塔另行收费",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["立着五百尊石罗汉的回廊", "山顶的铜弥勒"],
+    galleryCaptions: ["拜顶寺建筑群的宝塔", "立着五百尊石罗汉的回廊", "山顶的铜弥勒"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "丁先皇祠",
@@ -148,7 +148,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "弥撒时间之外；时刻表贴在门口",
-    galleryCaptions: ["形似寺庙三门的方亭", "堂内的铁木立柱与曲顶"],
+    galleryCaptions: ["形似寺庙三门的方亭", "教堂内的石天使像", "堂内的铁木立柱与曲顶"],
   },
   "kenh-ga-hot-spring": {
     name: "坑加",

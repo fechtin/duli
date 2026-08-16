@@ -38,8 +38,10 @@ export const mekongDeltaDepthDestinations: Destination[] = [
     badges: ["verified", "popular"],
     tags: ["mountain", "temple", "nature"],
     gallery: [
-      { seed: "nui-cam-1", caption: "Tượng Phật Di Lặc trên đỉnh Núi Cấm", ratio: "16/9" },
-      { seed: "nui-cam-2", caption: "Hồ Thủy Liêm giữa đỉnh núi", ratio: "4/3" },
+      { seed: "nui-cam-1", caption: "Phía sau chính điện chùa Phật Lớn", ratio: "16/9" },
+      { seed: "nui-cam-3", caption: "Tượng Phật Di Lặc trên đỉnh Núi Cấm", ratio: "16/9" },
+      { seed: "nui-cam-2", caption: "Tượng Phật Di Lặc trên đỉnh Núi Cấm", ratio: "4/3" },
+      { seed: "nui-cam-4", caption: "Hồ Thủy Liêm giữa đỉnh núi", ratio: "4/3" },
     ],
     nearby: ["tra-su-forest", "mieu-ba-chua-xu"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Núi_Cấm",
@@ -187,7 +189,8 @@ export const mekongDeltaDepthDestinations: Destination[] = [
     tags: ["island", "nature", "photography"],
     gallery: [
       { seed: "hon-da-bac-1", caption: "Phiến đá tròn xếp chồng ven biển Tây", ratio: "16/9" },
-      { seed: "hon-da-bac-2", caption: "Cầu nối Hòn Đá Bạc với đất liền", ratio: "4/3" },
+      { seed: "hon-da-bac-2", caption: "Đôi rồng đá ở Hòn Đá Bạc", ratio: "4/3" },
+      { seed: "hon-da-bac-3", caption: "Cầu nối Hòn Đá Bạc với đất liền", ratio: "4/3" },
     ],
     nearby: ["ca-mau-mui-ca-mau", "ca-mau-rung-u-minh-ha"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Hòn_Đá_Bạc",
@@ -224,7 +227,8 @@ export const mekongDeltaDepthDestinations: Destination[] = [
     tags: ["city", "culture", "photography"],
     gallery: [
       { seed: "ninh-kieu-wharf-1", caption: "Bến Ninh Kiều nhìn ra sông Hậu", ratio: "16/9" },
-      { seed: "ninh-kieu-wharf-2", caption: "Cầu đi bộ Ninh Kiều lên đèn", ratio: "4/3" },
+      { seed: "ninh-kieu-wharf-2", caption: "Góc Trần Quốc Toản – Hai Bà Trưng, quận Ninh Kiều", ratio: "4/3" },
+      { seed: "ninh-kieu-wharf-3", caption: "Cầu đi bộ Ninh Kiều lên đèn", ratio: "4/3" },
     ],
     nearby: ["cai-rang-floating-market", "binh-thuy-ancient-house"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Bến_Ninh_Kiều",
@@ -298,7 +302,8 @@ export const mekongDeltaDepthDestinations: Destination[] = [
     tags: ["history", "culture", "nature"],
     gallery: [
       { seed: "go-thap-1", caption: "Nền móng gạch Óc Eo được khai quật", ratio: "16/9" },
-      { seed: "go-thap-2", caption: "Đồng sen quanh gò mùa nước nổi", ratio: "4/3" },
+      { seed: "go-thap-2", caption: "Nhà trưng bày trong khu di tích khảo cổ Gò Tháp", ratio: "4/3" },
+      { seed: "go-thap-3", caption: "Đồng sen quanh gò mùa nước nổi", ratio: "4/3" },
     ],
     nearby: ["dong-thap-tram-chim", "dong-thap-lang-hoa-sa-dec"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Khu_di_tích_Gò_Tháp",
@@ -408,7 +413,8 @@ export const mekongDeltaDepthDestinations: Destination[] = [
     badges: ["verified", "festival"],
     tags: ["temple", "culture", "history"],
     gallery: [
-      { seed: "chua-khleang-1", caption: "Chính điện mái chồng ba lớp", ratio: "16/9" },
+      { seed: "chua-khleang-1", caption: "Cổng chính chùa Kh'leang", ratio: "16/9" },
+      { seed: "chua-khleang-3", caption: "Chính điện mái chồng ba lớp", ratio: "16/9" },
       { seed: "chua-khleang-2", caption: "Tượng Krud đỡ diềm mái", ratio: "4/3" },
     ],
     nearby: ["soc-trang-chua-doi", "soc-trang-chua-dat-set"],
@@ -483,7 +489,8 @@ export const mekongDeltaDepthDestinations: Destination[] = [
     tags: ["beach", "nature", "food"],
     gallery: [
       { seed: "ba-dong-beach-1", caption: "Bãi cát thoải dài ở Ba Động", ratio: "16/9" },
-      { seed: "ba-dong-beach-2", caption: "Ruộng muối sau rặng phi lao", ratio: "4/3" },
+      { seed: "ba-dong-beach-2", caption: "Biển Ba Động, Trà Vinh", ratio: "4/3" },
+      { seed: "ba-dong-beach-3", caption: "Ruộng muối sau rặng phi lao", ratio: "4/3" },
     ],
     nearby: ["tra-vinh-ao-ba-om", "tra-vinh-chua-vam-ray"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Biển_Ba_Động",

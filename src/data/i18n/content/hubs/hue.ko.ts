@@ -84,7 +84,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "5만 동(참고 가격)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["유럽식으로 지은 안딘 궁의 정면", "접견실의 벽화"],
+    galleryCaptions: ["유럽식으로 지은 안딘 궁의 정면", "안딘 궁 정면", "접견실의 벽화"],
   },
   "trang-tien-bridge": {
     name: "쯔엉띠엔 다리",
@@ -294,7 +294,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["하이번 고개에서 본 랑꼬만", "럽안 석호의 굴 양식 시렁"],
+    galleryCaptions: ["하이번 고개에서 본 랑꼬만", "석호 어귀와 랑꼬 해변", "럽안 석호의 굴 양식 시렁"],
   },
   "bach-ma-national-park": {
     name: "박마 국립공원",

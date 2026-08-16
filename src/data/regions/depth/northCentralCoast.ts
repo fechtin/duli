@@ -112,8 +112,10 @@ export const northCentralCoastDepthDestinations: Destination[] = [
     tags: ["history", "culture", "temple"],
     gallery: [
       { seed: "khai-dinh-tomb-1", caption: "Mặt ngoài lăng với cầu thang rồng", ratio: "16/9" },
-      { seed: "khai-dinh-tomb-2", caption: "Tranh ghép sành sứ trong cung Thiên Định", ratio: "4/3" },
-      { seed: "khai-dinh-tomb-3", caption: "Tượng đồng vua Khải Định trên ngai", ratio: "1/1" },
+      { seed: "khai-dinh-tomb-2", caption: "Tượng lính đá ở sân chầu lăng Khải Định", ratio: "4/3" },
+      { seed: "khai-dinh-tomb-4", caption: "Tranh ghép sành sứ trong cung Thiên Định", ratio: "4/3" },
+      { seed: "khai-dinh-tomb-3", caption: "Hàng tượng quan văn quan võ trong lăng", ratio: "1/1" },
+      { seed: "khai-dinh-tomb-5", caption: "Tượng đồng vua Khải Định trên ngai", ratio: "1/1" },
     ],
     nearby: ["hue-imperial-city", "thien-mu-pagoda"],
     featured: true,

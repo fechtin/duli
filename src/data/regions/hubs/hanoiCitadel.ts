@@ -36,7 +36,8 @@ export const hanoiCitadelDestinations: Destination[] = [
     tags: ["history", "culture", "city", "museum"],
     gallery: [
       { seed: "ho-chi-minh-mausoleum-1", caption: "Lăng nhìn từ quảng trường Ba Đình", ratio: "16/9" },
-      { seed: "ho-chi-minh-mausoleum-2", caption: "Lễ đổi gác trước lăng", ratio: "4/3" },
+      { seed: "ho-chi-minh-mausoleum-2", caption: "Quảng trường Ba Đình trước lăng", ratio: "4/3" },
+      { seed: "ho-chi-minh-mausoleum-3", caption: "Lễ đổi gác trước lăng", ratio: "4/3" },
     ],
     nearby: ["one-pillar-pagoda", "imperial-citadel-thang-long", "quan-thanh-temple"],
     sourceUrl: "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Mausoleum",
@@ -112,7 +113,8 @@ export const hanoiCitadelDestinations: Destination[] = [
     gallery: [
       { seed: "imperial-citadel-thang-long-1", caption: "Đoan Môn nhìn từ sân trong", ratio: "16/9" },
       { seed: "imperial-citadel-thang-long-2", caption: "Rồng đá thềm bậc điện Kính Thiên", ratio: "4/3" },
-      { seed: "imperial-citadel-thang-long-3", caption: "Hầm chỉ huy nhà D67", ratio: "1/1" },
+      { seed: "imperial-citadel-thang-long-3", caption: "Cổng chính Hoàng thành Thăng Long", ratio: "1/1" },
+      { seed: "imperial-citadel-thang-long-4", caption: "Hầm chỉ huy nhà D67", ratio: "1/1" },
     ],
     nearby: ["hanoi-flag-tower", "ho-chi-minh-mausoleum", "one-pillar-pagoda"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Th%C4%83ng_Long",

@@ -22,7 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "视航线含在海湾门票内",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["剧场大小的内室", "自地面连到洞顶的钟乳石柱"],
+    galleryCaptions: ["剧场大小的内室", "自洞口远望下龙湾", "自地面连到洞顶的钟乳石柱"],
   },
   "thien-cung-cave": {
     name: "天宫洞",
@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "视航线含在海湾门票内",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["从蒂托夫岛顶看下龙湾", "山下的月牙形沙滩"],
+    galleryCaptions: ["从蒂托夫岛顶看下龙湾", "自蒂托夫岛看湾上暮色", "山下的月牙形沙滩"],
   },
   "cua-van-fishing-village": {
     name: "万门渔村",
@@ -127,7 +127,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["望向海湾的云屯码头", "云屯海岛县的海岸"],
+    galleryCaptions: ["云屯县的关烂岛", "望向海湾的云屯码头", "夜色中的云屯机场", "云屯海岛县的海岸"],
   },
   "tuan-chau-island": {
     name: "巡州岛",
@@ -148,7 +148,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天；港口按运营时间",
-    galleryCaptions: ["巡州客运港", "连接岛屿与大陆的海堤"],
+    galleryCaptions: ["巡州客运港", "巡州岛上的公园", "连接岛屿与大陆的海堤"],
   },
   "bai-chay-bridge": {
     name: "拜寨大桥",
@@ -190,7 +190,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2小时",
     ticket: "4万越南盾（参考价，以窗口为准）",
     openingHours: "08:00 - 17:00，周一闭馆",
-    galleryCaptions: ["海湾岸边的黑玻璃盒子", "复原的煤矿巷道"],
+    galleryCaptions: ["海湾岸边的黑玻璃盒子", "近观博物馆的黑色玻璃外墙", "复原的煤矿巷道"],
   },
   "binh-lieu": {
     name: "平辽",

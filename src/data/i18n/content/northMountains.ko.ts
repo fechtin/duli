@@ -67,6 +67,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "등불을 밝힌 구시가지",
+      "석회암 고원 속 동반 읍내",
       "고원의 장날",
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "벼가 익는 시기의 계단식 논",
+      "사파 중심가의 로터리",
       "므엉호아 골짜기의 아침 안개",
+      "사파 읍내 중심",
       "구름 속 판시판 봉우리",
     ],
   },
@@ -136,7 +139,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "하트 모양 차밭",
+      "선라에서 목쩌우로 가는 길의 풍경",
       "언덕을 하얗게 물들인 매화숲",
+      "호찌민 주석의 목쩌우 농장 방문 기념지",
       "초원의 아침 안개",
     ],
   },
@@ -159,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 – 17:00",
     galleryCaptions: [
       "디엔비엔푸 승리 기념탑",
+      "전장에 남은 M24 채피 전차",
       "A1 고지의 참호",
       "드 카스트리 벙커",
     ],
@@ -256,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "땀타인 동굴 속 고찰",
       "바위 벽의 아미타불 부조",
+      "막 왕조 성터에서 본 랑선",
       "햇빛을 받아들이는 천문",
     ],
   },
@@ -328,6 +335,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "산비탈로 흘러내리는 모 폭포",
       "폭포 발치의 맑은 웅덩이",
+      "저녁의 나항 수력발전 댐",
       "나항 호수 크루즈",
     ],
   },
@@ -399,6 +407,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "06:00 – 18:00",
     galleryCaptions: [
       "응이아린산의 상사당",
+      "훙왕 사당 구역의 하사당",
       "오래된 나무 그늘이 드리운 돌계단",
       "조상 기일에 순례하는 인파",
     ],
@@ -518,7 +527,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "무료",
     openingHours: "종일",
     galleryCaptions: [
+      "안개 낀 골짜기를 건너는 판시판 케이블카",
       "오꾸이호 정상의 구름 바다",
+      "판시판 케이블카에서 본 다랑논",
       "절벽을 따라 굽이치는 고갯길",
       "천문에서 바라본 일몰",
     ],
@@ -568,6 +579,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "고개에서 바라본 마이쩌우 골짜기",
       "락 마을의 타이족 수상가옥",
+      "마이쩌우의 타이족 밥상",
       "불빛 곁의 쏘에 춤",
     ],
   },
@@ -591,6 +603,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "06:00 – 18:00",
     galleryCaptions: [
       "다강의 산수 사이의 호아빈 호수",
+      "산자락의 호아빈 호수",
       "호숫가의 탁버 사당",
       "호수를 도는 배",
     ],

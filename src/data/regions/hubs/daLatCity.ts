@@ -34,7 +34,8 @@ export const daLatCityDestinations: Destination[] = [
     tags: ["lake", "city", "nature", "photography"],
     gallery: [
       { seed: "xuan-huong-lake-1", caption: "Sương sớm trên hồ Xuân Hương", ratio: "16/9" },
-      { seed: "xuan-huong-lake-2", caption: "Mai anh đào nở dọc bờ hồ", ratio: "4/3" },
+      { seed: "xuan-huong-lake-2", caption: "Đà Lạt nhìn ra hồ Xuân Hương", ratio: "4/3" },
+      { seed: "xuan-huong-lake-3", caption: "Mai anh đào nở dọc bờ hồ", ratio: "4/3" },
     ],
     nearby: ["da-lat-city", "da-lat-market", "da-lat-cathedral"],
     sourceUrl: "https://www.openstreetmap.org/relation/2390139",

@@ -64,7 +64,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "무료",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["서호를 향해 난 사당 정문", "안쪽의 성모 제단"],
+    galleryCaptions: ["서호를 향해 난 사당 정문", "사당 부근 서호 기슭", "안쪽의 성모 제단"],
   },
   "national-history-museum-vn": {
     name: "베트남 국립역사박물관",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "무료 (음식값 별도)",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["한밤중 불 켜진 먹자거리", "한방 닭백숙 한 뚝배기"],
+    galleryCaptions: ["한밤중 불 켜진 먹자거리", "똥주이떤 거리의 카페", "한방 닭백숙 한 뚝배기"],
   },
 };
 

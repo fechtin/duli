@@ -67,6 +67,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `点亮灯笼的古镇`,
+      `岩石高原上的同文镇`,
       `高原集市`,
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `稻谷成熟季的梯田`,
+      `沙巴市中心的环岛`,
       `孟华谷的清晨薄雾`,
+      `沙巴镇中心`,
       `云中的番西邦峰`,
     ],
   },
@@ -136,7 +139,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `心形茶山`,
+      `从山萝前往木州途中的风景`,
       `梅花将山坡染成一片洁白`,
+      `胡志明主席视察木州农场纪念地`,
       `草原上的晨雾`,
     ],
   },
@@ -159,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `07:00 – 17:00`,
     galleryCaptions: [
       `奠边府大捷纪念碑`,
+      `遗留在战场上的M24霞飞坦克`,
       `A1高地上的战壕`,
       `德卡斯特里地堡`,
     ],
@@ -256,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `三清洞中的古寺`,
       `岩壁上的阿弥陀佛浮雕`,
+      `自莫朝城台俯瞰谅山`,
       `迎入阳光的天门`,
     ],
   },
@@ -328,6 +335,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `垂落山坡的梦瀑布`,
       `瀑布脚下的清澈水潭`,
+      `傍晚的那杭水电站大坝`,
       `那杭湖游船`,
     ],
   },
@@ -399,6 +407,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `06:00 – 18:00`,
     galleryCaptions: [
       `义岭山上的上庙`,
+      `雄王庙区内的下庙`,
       `古树掩映的石阶`,
       `祭祖大典上朝圣的人流`,
     ],
@@ -518,7 +527,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: `免费`,
     openingHours: `全天`,
     galleryCaptions: [
+      `穿越雾谷的番西邦缆车`,
       `乌贵湖之巅的云海`,
+      `自番西邦缆车俯瞰梯田`,
       `沿峭壁蜿蜒的山口道路`,
       `从天门眺望的落日`,
     ],
@@ -568,6 +579,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `从山口眺望的梅州谷`,
       `摆寨的泰族高脚屋`,
+      `梅州的泰族餐桌`,
       `火光旁的圈舞`,
     ],
   },
@@ -591,6 +603,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `06:00 – 18:00`,
     galleryCaptions: [
       `沱江山水间的和平湖`,
+      `群山之间的和平湖`,
       `湖畔的瀑坡庙`,
       `游湖的船只`,
     ],

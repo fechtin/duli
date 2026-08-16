@@ -21,7 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["쑤언흐엉 호수의 아침 안개", "호숫가를 따라 핀 매화벚꽃"],
+    galleryCaptions: ["쑤언흐엉 호수의 아침 안개", "쑤언흐엉 호수를 바라보는 달랏", "호숫가를 따라 핀 매화벚꽃"],
   },
   "da-lat-market": {
     name: "달랏 시장",
@@ -189,7 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "케이블카와 뱃삯 별도",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["뚜옌럼 호수의 아침 안개", "솔 언덕 사이로 파고든 후미"],
+    galleryCaptions: ["뚜옌럼 호수 관광지구 관리동", "뚜옌럼 호수의 아침 안개", "솔 언덕 사이로 파고든 후미"],
   },
   "truc-lam-monastery": {
     name: "쭉럼 선원",
@@ -210,7 +210,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "",
     openingHours: "05:00 - 21:00. 내원은 별도 시간",
-    galleryCaptions: ["뚜옌럼 호수를 내려다보는 선원", "솔숲 위를 지나는 케이블카"],
+    galleryCaptions: ["뚜옌럼 호수를 내려다보는 선원", "밖에서 본 쭉럼 선원", "솔숲 위를 지나는 케이블카"],
   },
   "valley-of-love": {
     name: "사랑의 계곡",

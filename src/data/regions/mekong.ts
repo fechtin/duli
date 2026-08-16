@@ -488,7 +488,8 @@ export const mekongDestinations: Destination[] = [
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["nature", "park", "photography"],
     gallery: [
-      { seed: "lungngochoang-tram", caption: "Rừng tràm nguyên sinh tĩnh lặng", ratio: "16/9" },
+      { seed: "lungngochoang-tram", caption: "Lục bình phủ kín mặt nước Lung Ngọc Hoàng", ratio: "16/9" },
+      { seed: "lungngochoang-tram-2", caption: "Rừng tràm nguyên sinh tĩnh lặng", ratio: "16/9" },
       { seed: "lungngochoang-canal", caption: "Xuồng len giữa lung bàu chằng chịt", ratio: "4/3" },
       { seed: "lungngochoang-birds", caption: "Cầu tre len giữa rừng tràm dưới trời xanh", ratio: "1/1" },
     ],
@@ -640,7 +641,8 @@ export const mekongDestinations: Destination[] = [
     gallery: [
       { seed: "congtu-mansion", caption: "Dinh thự cổ kiến trúc phương Tây", ratio: "16/9" },
       { seed: "congtu-interior", caption: "Nội thất gỗ quý chạm trổ tinh xảo", ratio: "4/3" },
-      { seed: "congtu-antiques", caption: "Cổ vật cẩn xà cừ giá trị", ratio: "1/1" },
+      { seed: "congtu-antiques", caption: "Phố xá Bạc Liêu ngày nay", ratio: "1/1" },
+      { seed: "congtu-antiques-2", caption: "Cổ vật cẩn xà cừ giá trị", ratio: "1/1" },
     ],
     nearby: ["bac-lieu-canh-dong-dien-gio"],
   },
@@ -715,7 +717,8 @@ export const mekongDestinations: Destination[] = [
     tags: ["park", "nature", "food", "photography"],
     gallery: [
       { seed: "uminh-tram", caption: "Rừng tràm nguyên sinh trên đất than bùn", ratio: "16/9" },
-      { seed: "uminh-honey", caption: "Nghề gác kèo ong lấy mật truyền thống", ratio: "4/3" },
+      { seed: "uminh-honey", caption: "Rừng U Minh Hạ nhìn từ trên cao", ratio: "4/3" },
+      { seed: "uminh-honey-2", caption: "Nghề gác kèo ong lấy mật truyền thống", ratio: "4/3" },
       { seed: "uminh-fishing", caption: "Câu cá đồng giữa rừng tràm", ratio: "1/1" },
     ],
     nearby: ["ca-mau-mui-ca-mau"],

@@ -112,7 +112,8 @@ export const hanoiOldQuarterDestinations: Destination[] = [
     tags: ["nightlife", "food", "city"],
     gallery: [
       { seed: "ta-hien-street-1", caption: "Ghế nhựa đỏ tràn kín vỉa hè Tạ Hiện", ratio: "16/9" },
-      { seed: "ta-hien-street-2", caption: "Cốc bia hơi trên phố cổ về đêm", ratio: "4/3" },
+      { seed: "ta-hien-street-2", caption: "Phố Tạ Hiện lúc sáng sớm", ratio: "4/3" },
+      { seed: "ta-hien-street-3", caption: "Cốc bia hơi trên phố cổ về đêm", ratio: "4/3" },
     ],
     nearby: ["old-quarter-hanoi", "dong-xuan-market", "the-note-coffee"],
     sourceUrl: "https://www.openstreetmap.org/way/765597030",
@@ -223,7 +224,8 @@ export const hanoiOldQuarterDestinations: Destination[] = [
     tags: ["temple", "architecture", "city", "photography"],
     gallery: [
       { seed: "st-joseph-cathedral-hanoi-1", caption: "Hai tháp chuông tường xám loang", ratio: "4/3" },
-      { seed: "st-joseph-cathedral-hanoi-2", caption: "Quán trà chanh trên phố Nhà Thờ", ratio: "16/9" },
+      { seed: "st-joseph-cathedral-hanoi-2", caption: "Nhà thờ Lớn Hà Nội nhìn từ phố Nhà Thờ", ratio: "16/9" },
+      { seed: "st-joseph-cathedral-hanoi-3", caption: "Quán trà chanh trên phố Nhà Thờ", ratio: "16/9" },
     ],
     nearby: ["hoan-kiem-lake", "old-quarter-hanoi", "hoa-lo-prison"],
     sourceUrl: "https://www.openstreetmap.org/way/28912942",

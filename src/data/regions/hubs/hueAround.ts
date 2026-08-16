@@ -218,7 +218,8 @@ export const hueAroundDestinations: Destination[] = [
     tags: ["beach", "nature", "food", "viewpoint"],
     gallery: [
       { seed: "lang-co-beach-1", caption: "Vịnh Lăng Cô nhìn từ đèo Hải Vân", ratio: "16/9" },
-      { seed: "lang-co-beach-2", caption: "Giàn nuôi hàu trên đầm Lập An", ratio: "4/3" },
+      { seed: "lang-co-beach-2", caption: "Cửa đầm và bãi biển Lăng Cô", ratio: "4/3" },
+      { seed: "lang-co-beach-3", caption: "Giàn nuôi hàu trên đầm Lập An", ratio: "4/3" },
     ],
     nearby: ["hai-van-pass", "bach-ma-national-park", "hue-imperial-city"],
     sourceUrl: "https://www.openstreetmap.org/way/256675637",

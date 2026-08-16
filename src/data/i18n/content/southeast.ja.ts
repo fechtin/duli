@@ -43,7 +43,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "キリスト像：07:00–17:00",
     galleryCaptions: [
       "賑わう黄金の砂浜のバックビーチ",
+      "ブンタウの海岸",
       "小山の上のキリスト像",
+      "賑わうブンタウのビーチ",
       "さくさくの名物バインコット",
     ],
   },
@@ -139,6 +141,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "05:00–18:00",
     galleryCaptions: [
       "陰陽瓦の屋根の古い廟",
+      "トゥーザウモットのバー・ティエンハウ廟",
       "賑やかな女神の神輿行列",
       "廟内に立ちのぼる線香の煙",
     ],
@@ -211,6 +214,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "森の只中の滑らかで青い草",
+      "ブーラックの草原へ続く道",
       "雲を映す澄んだ湖",
       "草原に降りる夕日",
     ],

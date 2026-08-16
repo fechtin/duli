@@ -421,6 +421,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: ``,
     openingHours: `每日07:00 - 17:00`,
     galleryCaptions: [
+      `布满玉皇洼水面的凤眼莲`,
       `寂静的原始白千层林`,
       `穿行于纵横交错洼塘间的小舟`,
       `蓝天下穿过白千层林的竹桥`,
@@ -519,6 +520,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `西式建筑风格的古宅邸`,
       `雕饰精美的名贵木器内饰`,
+      `今日薄辽的城市天际线`,
       `价值连城的螺钿古董`,
     ],
   },
@@ -566,6 +568,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `每日07:00 - 17:00`,
     galleryCaptions: [
       `泥炭地上的原始白千层林`,
+      `俯瞰下游民森林`,
       `传统的搭架养蜂取蜜技艺`,
       `在白千层林中钓田鱼`,
     ],

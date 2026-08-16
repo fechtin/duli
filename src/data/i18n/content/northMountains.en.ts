@@ -67,6 +67,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "The old town aglow with lanterns",
+      "Dong Van town on the rocky plateau",
       "A highland market day",
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "Terraced fields in the ripe rice season",
+      "The roundabout in central Sa Pa",
       "Morning mist over the Muong Hoa Valley",
+      "The centre of Sa Pa town",
       "Fansipan peak in the clouds",
     ],
   },
@@ -136,7 +139,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "The heart-shaped tea hill",
+      "The landscape on the road from Son La to Moc Chau",
       "Plum trees blossoming white across the hillside",
+      "The memorial to Ho Chi Minh's visit to the Moc Chau farm",
       "Morning mist over the grassland",
     ],
   },
@@ -159,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 – 17:00",
     galleryCaptions: [
       "The Dien Bien Phu Victory Monument",
+      "An M24 Chaffee tank left on the battlefield",
       "Trenches on Hill A1",
       "De Castries' bunker",
     ],
@@ -256,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The ancient temple within Tam Thanh Cave",
       "The relief of Amitabha Buddha on the rock wall",
+      "Lang Son seen from the Mac dynasty citadel",
       "The gate of heaven catching the sunlight",
     ],
   },
@@ -328,6 +335,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "Mo Waterfall tumbling down the mountainside",
       "A clear pool at the foot of the falls",
+      "Evening over the Na Hang hydropower dam",
       "A cruise on Na Hang Lake",
     ],
   },
@@ -399,6 +407,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "06:00 – 18:00",
     galleryCaptions: [
       "The Upper Temple on Nghia Linh Mountain",
+      "The Lower Temple in the Hung Kings complex",
       "Stone steps shaded by ancient trees",
       "The stream of pilgrims at the Commemoration",
     ],
@@ -518,7 +527,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "Free",
     openingHours: "All day",
     galleryCaptions: [
+      "The Fansipan cable car over a misty valley",
       "A sea of clouds atop O Quy Ho",
+      "Rice terraces seen from the Fansipan cable car",
       "The winding pass along the cliffside",
       "Sunset seen from Heaven's Gate",
     ],
@@ -568,6 +579,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "Mai Chau Valley seen from the pass",
       "Thai stilt houses in Lac village",
+      "A Thai meal in Mai Chau",
       "The xoe dance by the firelight",
     ],
   },
@@ -591,6 +603,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "06:00 – 18:00",
     galleryCaptions: [
       "Hoa Binh Lake amid the mountains of the Da River",
+      "Hoa Binh Lake among the mountains",
       "Thac Bo Temple by the lake",
       "A boat cruising the lake",
     ],

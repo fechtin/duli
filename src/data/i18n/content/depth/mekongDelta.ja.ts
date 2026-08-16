@@ -22,7 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["カム山頂の弥勒仏像", "山頂のトゥイリエム湖"],
+    galleryCaptions: ["ファットロン寺本堂の裏手", "カム山頂の弥勒仏像", "カム山頂の弥勒仏像", "山頂のトゥイリエム湖"],
   },
   "bac-lieu-vuon-chim": {
     name: "バクリエウ鳥類保護区",
@@ -106,7 +106,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["西海岸に積み重なる丸い岩", "ホンダーバックへ渡る橋"],
+    galleryCaptions: ["西海岸に積み重なる丸い岩", "ホンダーバックの一対の石龍", "ホンダーバックへ渡る橋"],
   },
   "ninh-kieu-wharf": {
     name: "ニンキエウ埠頭",
@@ -127,7 +127,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハウ川を望むニンキエウ埠頭", "夜に点灯するニンキエウ歩道橋"],
+    galleryCaptions: ["ハウ川を望むニンキエウ埠頭", "ニンキエウ区チャンクォックトアン通りとハイバーチュン通りの角", "夜に点灯するニンキエウ歩道橋"],
   },
   "binh-thuy-ancient-house": {
     name: "ビントゥイ古民家",
@@ -169,7 +169,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["発掘されたオケオの煉瓦基壇", "増水期に丘を囲む蓮田"],
+    galleryCaptions: ["発掘されたオケオの煉瓦基壇", "ゴータップ遺跡の展示館", "増水期に丘を囲む蓮田"],
   },
   "hon-phu-tu": {
     name: "ホンフートゥ",
@@ -232,7 +232,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["三重屋根の本堂", "軒を支えるクルドの像"],
+    galleryCaptions: ["クレアン寺の正門", "三重屋根の本堂", "軒を支えるクルドの像"],
   },
   "vinh-trang-pagoda": {
     name: "ヴィンチャン寺",
@@ -274,7 +274,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["バードンの長く遠浅の砂浜", "モクマオウの林の背後の塩田"],
+    galleryCaptions: ["バードンの長く遠浅の砂浜", "チャヴィンのバードン海岸", "モクマオウの林の背後の塩田"],
   },
   "van-thanh-mieu-vinh-long": {
     name: "ヴィンロン文廟",

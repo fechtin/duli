@@ -22,7 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Morning mist on Xuan Huong lake", "Cherry-apricot blossom along the shore"],
+    galleryCaptions: ["Morning mist on Xuan Huong lake", "Da Lat looking out over Xuan Huong Lake", "Cherry-apricot blossom along the shore"],
   },
   "da-lat-market": {
     name: "Da Lat Market",
@@ -190,7 +190,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Cable car and boat charged separately",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Morning mist over Tuyen Lam lake", "Inlets working between the pine hills"],
+    galleryCaptions: ["The management building of the Tuyen Lam lake resort area", "Morning mist over Tuyen Lam lake", "Inlets working between the pine hills"],
   },
   "truc-lam-monastery": {
     name: "Truc Lam Zen Monastery",
@@ -211,7 +211,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "",
     openingHours: "05:00 - 21:00; the inner precinct keeps its own hours",
-    galleryCaptions: ["The monastery looking down on Tuyen Lam lake", "The cable car over pine forest"],
+    galleryCaptions: ["The monastery looking down on Tuyen Lam lake", "Truc Lam Zen Monastery from outside", "The cable car over pine forest"],
   },
   "valley-of-love": {
     name: "Valley of Love",

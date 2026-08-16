@@ -421,6 +421,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "07:00 - 17:00 daily",
     galleryCaptions: [
+      "Water hyacinth covering the water at Lung Ngoc Hoang",
       "A silent primeval cajuput forest",
       "A boat threading through tangled marsh ponds",
       "A bamboo bridge through the cajuput forest under a blue sky",
@@ -519,6 +520,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The old mansion in Western architecture",
       "Exquisitely carved fine-wood interiors",
+      "The Bac Lieu skyline today",
       "Valuable mother-of-pearl-inlaid antiques",
     ],
   },
@@ -566,6 +568,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 - 17:00 daily",
     galleryCaptions: [
       "Primeval cajuput forest on peat soil",
+      "U Minh Ha forest from above",
       "The traditional craft of beam-hanging beekeeping",
       "Fishing for field catch amid the cajuput forest",
     ],

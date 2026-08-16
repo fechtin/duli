@@ -151,7 +151,8 @@ export const northMountainsDestinations: Destination[] = [
     gallery: [
       { seed: "tam-thanh-cave-1", caption: "Chùa cổ trong động Tam Thanh", ratio: "16/9" },
       { seed: "tam-thanh-cave-2", caption: "Phù điêu Phật A Di Đà trên vách đá", ratio: "4/3" },
-      { seed: "tam-thanh-cave-3", caption: "Cửa trời đón nắng", ratio: "1/1" },
+      { seed: "tam-thanh-cave-3", caption: "Lạng Sơn nhìn từ Thành nhà Mạc", ratio: "1/1" },
+      { seed: "tam-thanh-cave-4", caption: "Cửa trời đón nắng", ratio: "1/1" },
     ],
     nearby: ["mau-son-mountain"],
     featured: true,
@@ -265,7 +266,8 @@ export const northMountainsDestinations: Destination[] = [
     gallery: [
       { seed: "mo-na-hang-waterfall-1", caption: "Thác Mơ buông xuống sườn núi", ratio: "16/9" },
       { seed: "mo-na-hang-waterfall-2", caption: "Hồ nước trong dưới chân thác", ratio: "4/3" },
-      { seed: "mo-na-hang-waterfall-3", caption: "Du thuyền hồ Nà Hang", ratio: "1/1" },
+      { seed: "mo-na-hang-waterfall-3", caption: "Chiều trên đập thuỷ điện Nà Hang", ratio: "1/1" },
+      { seed: "mo-na-hang-waterfall-4", caption: "Du thuyền hồ Nà Hang", ratio: "1/1" },
     ],
     nearby: ["tan-trao-relic"],
   },
@@ -377,7 +379,8 @@ export const northMountainsDestinations: Destination[] = [
     tags: ["temple", "history", "culture"],
     gallery: [
       { seed: "den-hung-temple-1", caption: "Đền Thượng trên núi Nghĩa Lĩnh", ratio: "16/9" },
-      { seed: "den-hung-temple-2", caption: "Bậc đá rợp bóng cây cổ thụ", ratio: "4/3" },
+      { seed: "den-hung-temple-2", caption: "Đền Hạ trong khu di tích Đền Hùng", ratio: "4/3" },
+      { seed: "den-hung-temple-4", caption: "Bậc đá rợp bóng cây cổ thụ", ratio: "4/3" },
       { seed: "den-hung-temple-3", caption: "Dòng người hành hương Giỗ Tổ", ratio: "1/1" },
     ],
     nearby: [],
@@ -565,8 +568,10 @@ export const northMountainsDestinations: Destination[] = [
     badges: ["popular", "verified", "trending"],
     tags: ["mountain", "nature", "photography"],
     gallery: [
-      { seed: "o-quy-ho-pass-1", caption: "Biển mây trên đỉnh Ô Quy Hồ", ratio: "16/9" },
-      { seed: "o-quy-ho-pass-2", caption: "Cung đèo uốn lượn bên vách núi", ratio: "4/3" },
+      { seed: "o-quy-ho-pass-1", caption: "Cáp treo Fansipan trong thung lũng mù sương", ratio: "16/9" },
+      { seed: "o-quy-ho-pass-4", caption: "Biển mây trên đỉnh Ô Quy Hồ", ratio: "16/9" },
+      { seed: "o-quy-ho-pass-2", caption: "Ruộng bậc thang nhìn từ cáp treo Fansipan", ratio: "4/3" },
+      { seed: "o-quy-ho-pass-5", caption: "Cung đèo uốn lượn bên vách núi", ratio: "4/3" },
       { seed: "o-quy-ho-pass-3", caption: "Hoàng hôn nhìn từ Cổng Trời", ratio: "1/1" },
     ],
     nearby: ["sin-suoi-ho-village"],
@@ -640,7 +645,8 @@ export const northMountainsDestinations: Destination[] = [
     gallery: [
       { seed: "mai-chau-valley-1", caption: "Thung lũng Mai Châu nhìn từ đèo", ratio: "16/9" },
       { seed: "mai-chau-valley-2", caption: "Nhà sàn người Thái bản Lác", ratio: "4/3" },
-      { seed: "mai-chau-valley-3", caption: "Điệu xòe bên ánh lửa", ratio: "1/1" },
+      { seed: "mai-chau-valley-3", caption: "Mâm cơm người Thái ở Mai Châu", ratio: "1/1" },
+      { seed: "mai-chau-valley-4", caption: "Điệu xòe bên ánh lửa", ratio: "1/1" },
     ],
     nearby: ["hoa-binh-lake"],
     featured: true,
@@ -676,7 +682,8 @@ export const northMountainsDestinations: Destination[] = [
     tags: ["nature", "culture", "photography"],
     gallery: [
       { seed: "hoa-binh-lake-1", caption: "Hồ Hòa Bình giữa núi non sông Đà", ratio: "16/9" },
-      { seed: "hoa-binh-lake-2", caption: "Đền Thác Bờ bên hồ", ratio: "4/3" },
+      { seed: "hoa-binh-lake-2", caption: "Mặt hồ Hoà Bình giữa núi", ratio: "4/3" },
+      { seed: "hoa-binh-lake-4", caption: "Đền Thác Bờ bên hồ", ratio: "4/3" },
       { seed: "hoa-binh-lake-3", caption: "Thuyền dạo trên lòng hồ", ratio: "1/1" },
     ],
     nearby: ["mai-chau-valley"],

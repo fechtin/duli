@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The majestic Ngo Mon Gate",
       "The ancient Ngo Mon Gate seen from the stone-paved entrance",
+      "The ceremonial courtyard inside the imperial city",
       "Evening falling over the Perfume River",
     ],
   },
@@ -114,6 +115,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "Dawn over Sam Son beach",
+      "Cleaning up on Sam Son beach",
       "The renowned Trong Mai rocks",
       "The beach dotted with parasols seen from above",
     ],
@@ -187,6 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The tree-lined seaside boulevard in the early morning",
       "The seaside town aglow at sunset",
+      "Cua Lo beach",
       "Lan Chau Island close to shore",
     ],
   },
@@ -259,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The pristine Thien Cam beach",
       "Thien Cam Mountain by the surf",
+      "The Thien Cam shore",
       "Sun-dried squid, a local specialty",
     ],
   },
@@ -283,6 +287,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The ten graves of the young volunteer women",
       "Rows of white graves covered with memorial chrysanthemums",
+      "Lighting incense at the Dong Loc Junction memorial",
       "Traces of the bomb craters of years past",
     ],
   },
@@ -331,6 +336,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The entrance to the Vinh Moc Tunnels",
       "A tunnel passage underground",
+      "Converted oil lamps used in the tunnels",
       "The maternity room beneath the tunnels",
     ],
   },

@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["가인항의 검은 절벽", "먼바다를 향한 무한 호수", "섬 주변의 가두리 양식장"],
+    galleryCaptions: ["가인항의 검은 절벽", "푸꾸이섬의 린선 사원", "먼바다를 향한 무한 호수", "섬 주변의 가두리 양식장"],
   },
   "po-sah-inu": {
     name: "포사이누 탑",
@@ -85,7 +85,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "40,000동",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["투이선 정상에서 본 다낭 해안", "투이선 정상의 땀타이 사원"],
+    galleryCaptions: ["투이선 정상에서 본 다낭 해안", "오행산 기슭의 주차장", "투이선 정상의 땀타이 사원"],
   },
   "son-tra-peninsula": {
     name: "선짜 반도",
@@ -107,7 +107,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["바다를 내려다보는 반도 도로", "선짜 숲의 붉은넓적다리두크랑구르", "린응 사원의 관음상"],
+    galleryCaptions: ["바다를 내려다보는 반도 도로", "위에서 본 다낭과 선짜 반도", "선짜 숲의 붉은넓적다리두크랑구르", "린응 사원의 관음상"],
   },
   "ponagar-towers": {
     name: "포나가르 탑",
@@ -151,7 +151,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["항자이의 화석 산호 단구", "건조림과 드러난 화강암"],
+    galleryCaptions: ["판랑–깜라인 해안도로", "항자이의 화석 산호 단구", "건조림과 드러난 화강암"],
   },
   "mui-dien": {
     name: "무이디엔곶",
@@ -172,7 +172,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "05:00 - 18:00",
-    galleryCaptions: ["일출 무렵의 무이디엔 등대", "곶 아래 초승달 모양 바이몬"],
+    galleryCaptions: ["무이디엔곶 등대에서 본 풍경", "일출 무렵의 무이디엔 등대", "곶 아래 초승달 모양 바이몬"],
   },
   "my-son-sanctuary": {
     name: "미선 유적",
@@ -194,7 +194,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "150,000동",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["미선 골짜기의 참 탑군", "줄눈이 보이지 않는 참 벽돌", "유적에서 공연되는 참족 춤"],
+    galleryCaptions: ["미선 골짜기의 참 탑군", "줄눈이 보이지 않는 참 벽돌", "미선 유적의 E7 사당", "유적에서 공연되는 참족 춤"],
   },
   "cu-lao-cham": {
     name: "꿀라오짬",
@@ -216,7 +216,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "당일 또는 1박",
     ticket: "70,000동 (입장료)",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["혼라오 주변의 맑은 물과 산호", "18세기에 세운 하이땅 사원"],
+    galleryCaptions: ["혼라오 주변의 맑은 물과 산호", "꿀라오짬 해양보호구역", "18세기에 세운 하이땅 사원"],
   },
   "thien-an-mountain": {
     name: "티엔안산",
@@ -237,7 +237,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["평평한 정상의 티엔안 사원", "정상에서 본 짜쿡강"],
+    galleryCaptions: ["평평한 정상의 티엔안 사원", "짜쿡강을 따라가는 미짜–미케 도로", "정상에서 본 짜쿡강"],
   },
 };
 

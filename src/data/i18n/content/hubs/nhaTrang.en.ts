@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The bare grey stone face of the Mountain Church", "The city from the cathedral forecourt"],
+    galleryCaptions: ["The bare grey stone face of the Mountain Church", "The entrance to Nha Trang Cathedral", "The city from the cathedral forecourt"],
   },
   "oceanographic-museum-vn": {
     name: "Institute of Oceanography",

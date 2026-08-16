@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "석회암 산 사이의 대나무 배",
       "석회암 산기슭, 잔잔한 호수 위를 미끄러지는 작은 배",
+      "봄의 땀꼭",
       "항무아에서 바라본 전경",
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "높은 곳에서 내려다본 란하만",
+      "포대 공원에서 본 바다",
       "맑고 푸른 깟꼬 해변",
+      "만에 면한 깟바 읍내",
       "깟바 국립공원",
     ],
   },
@@ -113,6 +116,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "목마황 가로수 아래 도선 해변",
+      "도선의 카지노 건물",
       "전통 물소 싸움 축제",
       "도선 반도의 노을",
     ],
@@ -160,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "08:00 - 17:00",
     galleryCaptions: [
+      "동호 판화 ‘쥐의 혼례’",
       "디엡 종이에 그림을 찍는 장인",
       "민화의 화려한 색감이 살아 있는 부엌신(竈神) 그림",
       "연꽃 사이를 헤엄치는 잉어 떼 그림",
@@ -233,6 +238,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 - 18:00",
     galleryCaptions: [
       "고풍스러운 씩당 문묘",
+      "마당에서 본 씩당 문묘",
       "포히엔 머우 사당",
       "수확철의 흥옌 룽안 용안",
     ],

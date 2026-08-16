@@ -112,6 +112,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 – 17:00",
     galleryCaptions: [
       "물속의 화려한 산호초",
+      "나트랑만 해안선 파노라마",
       "섬 주변의 맑은 바닷물",
       "산호를 감상하는 스쿠버다이빙",
     ],
@@ -454,6 +455,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "대자연 속 깊고 푸른 호수면",
       "물 위로 뻗은 전망대",
+      "비엔호 트능 호수의 수면",
       "호수로 이어지는 고목 소나무 길",
     ],
   },

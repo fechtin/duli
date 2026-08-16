@@ -143,7 +143,8 @@ export const hcmCenterDestinations: Destination[] = [
     tags: ["city", "nightlife", "family", "photography"],
     gallery: [
       { seed: "nguyen-hue-walking-street-1", caption: "Phố đi bộ Nguyễn Huệ lúc lên đèn", ratio: "16/9" },
-      { seed: "nguyen-hue-walking-street-2", caption: "Đường hoa dịp Tết Nguyên đán", ratio: "4/3" },
+      { seed: "nguyen-hue-walking-street-2", caption: "Phố đi bộ Nguyễn Huệ về đêm", ratio: "4/3" },
+      { seed: "nguyen-hue-walking-street-3", caption: "Đường hoa dịp Tết Nguyên đán", ratio: "4/3" },
     ],
     nearby: ["bach-dang-wharf", "saigon-opera-house", "bitexco-tower"],
     sourceUrl: "https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_Hu%E1%BB%87_Boulevard",
@@ -180,7 +181,8 @@ export const hcmCenterDestinations: Destination[] = [
     tags: ["park", "city", "sunset", "nightlife"],
     gallery: [
       { seed: "bach-dang-wharf-1", caption: "Bờ sông Bạch Đằng nhìn sang Thủ Thiêm", ratio: "16/9" },
-      { seed: "bach-dang-wharf-2", caption: "Bậc thềm công viên xuống sát mép nước", ratio: "4/3" },
+      { seed: "bach-dang-wharf-2", caption: "Tháp Bitexco nhìn từ bến Bạch Đằng", ratio: "4/3" },
+      { seed: "bach-dang-wharf-3", caption: "Bậc thềm công viên xuống sát mép nước", ratio: "4/3" },
     ],
     nearby: ["nguyen-hue-walking-street", "bitexco-tower", "saigon-opera-house"],
     sourceUrl: "https://vi.wikipedia.org/wiki/B%E1%BA%BFn_B%E1%BA%A1ch_%C4%90%E1%BA%B1ng",
@@ -252,7 +254,8 @@ export const hcmCenterDestinations: Destination[] = [
     tags: ["museum", "history", "culture"],
     gallery: [
       { seed: "war-remnants-museum-1", caption: "Máy bay và xe tăng trưng bày ngoài sân", ratio: "16/9" },
-      { seed: "war-remnants-museum-2", caption: "Phòng ảnh tư liệu trên lầu", ratio: "4/3" },
+      { seed: "war-remnants-museum-2", caption: "Pháo tự hành M-107 trưng bày ngoài sân", ratio: "4/3" },
+      { seed: "war-remnants-museum-3", caption: "Phòng ảnh tư liệu trên lầu", ratio: "4/3" },
     ],
     nearby: ["independence-palace", "tao-dan-park", "notre-dame-saigon"],
     sourceUrl: "https://en.wikipedia.org/wiki/War_Remnants_Museum",

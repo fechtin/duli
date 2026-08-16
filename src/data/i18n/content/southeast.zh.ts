@@ -43,7 +43,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `基督像：07:00–17:00`,
     galleryCaptions: [
       `热闹的金沙后滩`,
+      `头顿的海岸线`,
       `小山上的基督像`,
+      `热闹的头顿海滩`,
       `酥脆的招牌小煎饼`,
     ],
   },
@@ -139,6 +141,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `05:00–18:00`,
     galleryCaptions: [
       `阴阳瓦顶的古庙`,
+      `土龙木的天后庙`,
       `热闹的天后娘娘抬轿巡游`,
       `庙中缭绕的香烟`,
     ],
@@ -211,6 +214,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `森林之中翠绿平整的草甸`,
+      `通往布勒草甸的道路`,
       `倒映云天的清澈湖水`,
       `落日洒在草甸之上`,
     ],

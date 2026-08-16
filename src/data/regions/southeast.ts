@@ -34,8 +34,10 @@ export const southeastDestinations: Destination[] = [
     tags: ["beach", "city", "nature", "food", "photography"],
     gallery: [
       { seed: "vungtau-baisau", caption: "Bãi Sau cát vàng đông vui", ratio: "16/9" },
-      { seed: "vungtau-christ", caption: "Tượng Chúa Kitô trên Núi Nhỏ", ratio: "4/3" },
-      { seed: "vungtau-banhkhot", caption: "Bánh khọt giòn rụm đặc sản", ratio: "1/1" },
+      { seed: "vungtau-christ", caption: "Bờ biển Vũng Tàu", ratio: "4/3" },
+      { seed: "vungtau-christ-2", caption: "Tượng Chúa Kitô trên Núi Nhỏ", ratio: "4/3" },
+      { seed: "vungtau-banhkhot", caption: "Bãi tắm Vũng Tàu đông người", ratio: "1/1" },
+      { seed: "vungtau-banhkhot-2", caption: "Bánh khọt giòn rụm đặc sản", ratio: "1/1" },
     ],
     nearby: ["con-dao"],
     featured: true,
@@ -186,7 +188,8 @@ export const southeastDestinations: Destination[] = [
     tags: ["temple", "culture", "history", "photography"],
     gallery: [
       { seed: "thienhau-bd-mieu", caption: "Miếu cổ mái ngói âm dương", ratio: "4/3" },
-      { seed: "thienhau-bd-leruoc", caption: "Lễ rước kiệu Bà tưng bừng", ratio: "16/9" },
+      { seed: "thienhau-bd-leruoc", caption: "Chùa Bà Thiên Hậu ở Thủ Dầu Một", ratio: "16/9" },
+      { seed: "thienhau-bd-leruoc-2", caption: "Lễ rước kiệu Bà tưng bừng", ratio: "16/9" },
       { seed: "thienhau-bd-nhang", caption: "Khói nhang nghi ngút trong miếu", ratio: "1/1" },
     ],
     nearby: ["dai-nam-binh-duong"],
@@ -297,7 +300,8 @@ export const southeastDestinations: Destination[] = [
     tags: ["nature", "culture", "photography"],
     gallery: [
       { seed: "bulach-trangco", caption: "Thảm cỏ xanh mượt giữa rừng", ratio: "16/9" },
-      { seed: "bulach-ho", caption: "Hồ nước trong soi bóng mây", ratio: "4/3" },
+      { seed: "bulach-ho", caption: "Đường vào trảng cỏ Bù Lạch", ratio: "4/3" },
+      { seed: "bulach-ho-2", caption: "Hồ nước trong soi bóng mây", ratio: "4/3" },
       { seed: "bulach-hoanghon", caption: "Hoàng hôn buông trên trảng cỏ", ratio: "1/1" },
     ],
     nearby: ["bu-gia-map-national-park"],

@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "대략 17:00 - 24:00",
-    galleryCaptions: ["따히엔 인도를 메운 붉은 플라스틱 의자", "밤의 구시가에서 마시는 비아허이 한 잔"],
+    galleryCaptions: ["따히엔 인도를 메운 붉은 플라스틱 의자", "이른 아침의 따히엔 거리", "밤의 구시가에서 마시는 비아허이 한 잔"],
   },
   "hanoi-train-street": {
     name: "하노이 기찻길 마을",
@@ -126,7 +126,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "미사 시간 외. 미사 일정은 정문에 게시",
-    galleryCaptions: ["비바람에 얼룩진 회색 종탑", "냐터 거리의 짜짜인 자리"],
+    galleryCaptions: ["비바람에 얼룩진 회색 종탑", "냐터 거리에서 본 성 요셉 대성당", "냐터 거리의 짜짜인 자리"],
   },
   "hanoi-opera-house": {
     name: "하노이 오페라 하우스",
@@ -168,7 +168,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "줄 서는 시간 포함 1 - 1.5시간",
     ticket: "",
     openingHours: "평일 오전, 월요일과 금요일 휴무. 공지된 일정 확인",
-    galleryCaptions: ["바딘 광장에서 본 묘소", "묘소 앞 위병 교대"],
+    galleryCaptions: ["바딘 광장에서 본 묘소", "묘소 앞 바딘 광장", "묘소 앞 위병 교대"],
   },
   "one-pillar-pagoda": {
     name: "일주사",
@@ -210,7 +210,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "7만 동(참고 가격, 매표소에서 확인)",
     openingHours: "08:00 - 17:00, 월요일 휴무",
-    galleryCaptions: ["안뜰에서 본 도안몬 문", "낀티엔 전각 계단의 돌용", "D67 지휘 벙커"],
+    galleryCaptions: ["안뜰에서 본 도안몬 문", "낀티엔 전각 계단의 돌용", "탕롱 황성 정문", "D67 지휘 벙커"],
   },
   "hanoi-flag-tower": {
     name: "하노이 기대",

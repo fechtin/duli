@@ -231,7 +231,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "上りを含めて2時間",
     ticket: "",
     openingHours: "日中。日が暮れてから上らないこと",
-    galleryCaptions: ["ソンチャーの頂上にある石の将棋盤", "バンコー峰から見たダナン湾"],
+    galleryCaptions: ["バンコー峰から望むダナン全景", "ソンチャーの頂上にある石の将棋盤", "頂上の碁盤の石像", "バンコー峰から見たダナン湾"],
   },
   "non-nuoc-beach": {
     name: "ノンヌォック海岸",
@@ -252,7 +252,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["五行山の下のノンヌォック海岸", "朝の人けのない砂浜"],
+    galleryCaptions: ["五行山の下のノンヌォック海岸", "ノンヌォック海岸の丸舟", "朝の人けのない砂浜"],
   },
   "non-nuoc-stone-village": {
     name: "ノンヌォック石彫村",

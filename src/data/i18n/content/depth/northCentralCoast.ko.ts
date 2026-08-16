@@ -65,7 +65,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "150,000동",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["용 계단이 있는 능의 외관", "티엔딘 궁의 도자기 모자이크", "카이딘 황제의 청동 좌상"],
+    galleryCaptions: ["용 계단이 있는 능의 외관", "카이딘 황릉 참배 마당의 돌 병사상", "티엔딘 궁의 도자기 모자이크", "능묘에 늘어선 문무관 석상", "카이딘 황제의 청동 좌상"],
   },
 };
 

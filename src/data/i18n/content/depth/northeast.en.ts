@@ -25,6 +25,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 - 18:00",
     galleryCaptions: [
       "The stream falling in steps through old forest",
+      "Suoi Mo running through the forest",
       "The Middle Temple tucked beside the water",
     ],
   },
@@ -125,6 +126,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "07:00 - 19:00",
     galleryCaptions: [
+      "The main gate of Huu Nghi Quan",
       "Boundary marker 1116 at Huu Nghi gate",
       "The international crossing complex",
     ],
@@ -153,6 +155,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The steel summit marker at 3,143m",
       "Cloud rolling below the peak",
+      "The summit spiritual complex above a sea of clouds",
       "The cable car crossing Muong Hoa valley",
     ],
   },
@@ -178,6 +181,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "05:30 - 12:00, Sundays",
     galleryCaptions: [
       "Flower Hmong dress filling the market",
+      "A baby carried on a mother's back at the Sunday market",
       "The Sunday horse yard",
     ],
   },
@@ -254,6 +258,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "05:00 - 20:00",
     galleryCaptions: [
       "The Bronze Pagoda in cloud at the summit",
+      "Yen Tu Mountain seen from afar",
       "The moss-covered Hue Quang stupa garden",
       "The ancient pine path up to Hoa Yen Pagoda",
     ],
@@ -279,7 +284,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "Year-round",
     galleryCaptions: [
+      "The primeval choi forest on the island",
       "White sand and clear water at Co To",
+      "Alone before the Co To shore",
       "The banded sediment of Cau My rock beach",
       "Co To lighthouse at sunset",
     ],
@@ -357,6 +364,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "Year-round",
     galleryCaptions: [
       "Khau Pha Pass above a sea of cloud",
+      "Khau Pha in the water-pouring season",
       "Ripe terraces seen from the summit",
     ],
   },

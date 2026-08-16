@@ -21,7 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "항로에 따라 만 입장권에 포함",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["극장만 한 안쪽 방", "바닥에서 천장까지 이어진 종유석 기둥"],
+    galleryCaptions: ["극장만 한 안쪽 방", "동굴 입구에서 본 하롱베이", "바닥에서 천장까지 이어진 종유석 기둥"],
   },
   "thien-cung-cave": {
     name: "티엔꿍 동굴",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "항로에 따라 만 입장권에 포함",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["띠똡 정상에서 본 하롱만", "언덕 아래 초승달 해변"],
+    galleryCaptions: ["띠똡 정상에서 본 하롱만", "띠똡 섬에서 본 만의 해질녘", "언덕 아래 초승달 해변"],
   },
   "cua-van-fishing-village": {
     name: "끄어반 수상 어촌",
@@ -126,7 +126,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["만을 내다보는 번돈 선착장", "번돈 섬 지구의 바닷가"],
+    galleryCaptions: ["번돈현의 꽌란섬", "만을 내다보는 번돈 선착장", "밤의 번돈 공항", "번돈 섬 지구의 바닷가"],
   },
   "tuan-chau-island": {
     name: "뚜언쩌우 섬",
@@ -147,7 +147,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "하루 종일. 항구는 운영 시간을 따른다",
-    galleryCaptions: ["뚜언쩌우 여객항", "섬과 뭍을 잇는 둑길"],
+    galleryCaptions: ["뚜언쩌우 여객항", "뚜언쩌우 섬의 공원", "섬과 뭍을 잇는 둑길"],
   },
   "bai-chay-bridge": {
     name: "바이짜이 대교",
@@ -189,7 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2시간",
     ticket: "4만 동(참고 가격, 매표소에서 확인)",
     openingHours: "08:00 - 17:00, 월요일 휴관",
-    galleryCaptions: ["만가에 선 검은 유리 상자", "재현해 놓은 탄광 갱도"],
+    galleryCaptions: ["만가에 선 검은 유리 상자", "가까이서 본 박물관의 검은 유리 외벽", "재현해 놓은 탄광 갱도"],
   },
   "binh-lieu": {
     name: "빈리에우",

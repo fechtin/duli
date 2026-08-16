@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "威風堂々たる午門",
       "石畳の入口から望む古色蒼然たる午門",
+      "王城内の大朝の庭",
       "フォン川に訪れる夕暮れ",
     ],
   },
@@ -114,6 +115,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "終日",
     galleryCaptions: [
       "サムソンビーチの朝日",
+      "サムソンビーチの清掃",
       "名高いチョンマイ岩",
       "上空から見たパラソルが立ち並ぶ砂浜",
     ],
@@ -187,6 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "早朝の並木が茂る海辺の大通り",
       "夕暮れに輝く海辺の街",
+      "クアロービーチ",
       "岸に近いランチャウ島",
     ],
   },
@@ -259,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "手つかずのティエンカムビーチ",
       "波打ち際のティエンカム山",
+      "ティエンカムの海辺",
       "名物の一夜干しイカ",
     ],
   },
@@ -283,6 +287,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "10人の女性青年突撃隊員の墓",
       "追悼の菊で覆われた白い墓の列",
+      "ドンロック三叉路の慰霊碑に線香を供える",
       "かつての爆弾の穴の跡",
     ],
   },
@@ -331,6 +336,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "ヴィンモック地下トンネルの入口",
       "地中のトンネルの通路",
+      "地下トンネルで使われた改造式のオイルランプ",
       "トンネルの下の産室",
     ],
   },

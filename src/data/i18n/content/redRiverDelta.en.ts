@@ -22,6 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "A sampan amid the limestone mountains",
       "A small boat skimming across a glassy lake beneath the karst peaks",
+      "Tam Coc in spring",
       "Panorama from Mua Cave",
     ],
   },
@@ -87,7 +88,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "Lan Ha Bay seen from above",
+      "The sea from Cannon Fort",
       "The clear waters of Cat Co Beach",
+      "Cat Ba town on the bay",
       "Cat Ba National Park",
     ],
   },
@@ -112,6 +115,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "All day",
     galleryCaptions: [
       "Do Son Beach beneath the rows of casuarinas",
+      "The casino building at Do Son",
       "The traditional buffalo-fighting festival",
       "Sunset over the Do Son peninsula",
     ],
@@ -161,6 +165,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: "",
     openingHours: "08:00 - 17:00",
     galleryCaptions: [
+      "The Mouse's Wedding, a Dong Ho print",
       "An artisan printing a painting on diep paper",
       "A worship painting of the Kitchen Gods, radiant with folk colors",
       "A painting of carp swimming among lotus flowers",
@@ -237,6 +242,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 - 18:00",
     galleryCaptions: [
       "The ancient Xich Dang Temple of Literature",
+      "Xich Dang Temple of Literature from the yard",
       "Mau Temple of Pho Hien",
       "Hung Yen longan at harvest time",
     ],

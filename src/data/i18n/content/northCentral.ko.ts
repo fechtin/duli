@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "위엄 있는 응오몬",
       "돌로 포장된 입구에서 바라본 고풍스러운 응오몬",
+      "황성 안의 대조 마당",
       "흐엉강에 내려앉는 저녁",
     ],
   },
@@ -114,6 +115,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "종일",
     galleryCaptions: [
       "삼손 해변의 일출",
+      "삼손 해변 청소",
       "이름난 쫑마이 바위",
       "위에서 본 파라솔 가득한 해변",
     ],
@@ -187,6 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "이른 아침 가로수 우거진 해안 대로",
       "노을 질 무렵 반짝이는 바닷가 도시",
+      "끄어로 해변",
       "해안에 가까운 란쩌우섬",
     ],
   },
@@ -259,6 +262,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "청정한 티엔껌 해변",
       "파도 곁의 티엔껌산",
+      "티엔껌의 바닷가",
       "별미 반건조 오징어",
     ],
   },
@@ -283,6 +287,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "여성 청년돌격대원 열 명의 묘",
       "추모 국화로 덮인 하얀 묘 행렬",
+      "동록 삼거리 추모지에 향을 올리다",
       "그 시절 폭탄 구덩이의 흔적",
     ],
   },
@@ -331,6 +336,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "빈목 땅굴 입구",
       "땅속의 땅굴 통로",
+      "땅굴에서 쓰던 개조 기름등",
       "땅굴 아래의 산실",
     ],
   },

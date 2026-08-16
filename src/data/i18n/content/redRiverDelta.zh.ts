@@ -21,6 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       `竹篷船穿行于石山之间`,
       `小船在石山脚下平静的湖面上轻轻滑行`,
+      `春天的三谷`,
       `从卧龙山俯瞰全景`,
     ],
   },
@@ -89,7 +90,9 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `俯瞰兰下湾`,
+      `自炮台公园望海`,
       `碧绿清澈的吉哥海滩`,
+      `临湾的吉婆镇`,
       `吉婆国家森林`,
     ],
   },
@@ -113,6 +116,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `全天`,
     galleryCaptions: [
       `木麻黄树下的图山海滩`,
+      `图山的赌场建筑`,
       `传统斗牛节`,
       `图山半岛上的夕阳`,
     ],
@@ -160,6 +164,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     ticket: ``,
     openingHours: `08:00 - 17:00`,
     galleryCaptions: [
+      `东胡年画《老鼠娶亲》`,
       `艺人在蚌粉纸上印画`,
       `色彩绚丽的灶君祭祀年画`,
       `群鲤戏莲年画`,
@@ -233,6 +238,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: `07:00 - 18:00`,
     galleryCaptions: [
       `古朴的赤鳗文庙`,
+      `自庭院望赤藤文庙`,
       `铺宪母庙`,
       `收获季节的兴安笼眼龙眼`,
     ],

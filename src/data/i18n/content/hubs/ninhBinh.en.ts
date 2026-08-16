@@ -42,7 +42,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "About 100,000d (indicative)",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["The Tam Coc valley from the summit of Mua Cave", "Stone steps and the dragon along the ridge"],
+    galleryCaptions: ["The Tam Coc valley from the summit of Mua Cave", "Ninh Binh from the limestone rocks by Mua Cave", "Stone steps and the dragon along the ridge"],
   },
   "bai-dinh-pagoda": {
     name: "Bai Dinh Temple",
@@ -63,7 +63,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Buggy and pagoda tower charged separately",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["The arhat corridor with its five hundred stone figures", "The bronze Maitreya on the hilltop"],
+    galleryCaptions: ["The pagodas of the Bai Dinh complex", "The arhat corridor with its five hundred stone figures", "The bronze Maitreya on the hilltop"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "Temple of King Dinh Tien Hoang",
@@ -147,7 +147,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The Phuong Dinh, like a pagoda's triple gate", "Ironwood columns and curved roofs inside"],
+    galleryCaptions: ["The Phuong Dinh, like a pagoda's triple gate", "A stone angel inside the cathedral", "Ironwood columns and curved roofs inside"],
   },
   "kenh-ga-hot-spring": {
     name: "Kenh Ga",

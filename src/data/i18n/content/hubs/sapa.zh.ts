@@ -22,7 +22,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "石滩与村寨门票另收",
     openingHours: "全天；请在天亮时前往",
-    galleryCaptions: ["稻熟时节的芒花谷梯田", "田间刻着图案的远古石头"],
+    galleryCaptions: ["稻熟时节的芒花谷梯田", "芒花谷", "田间刻着图案的远古石头"],
   },
   "cat-cat-village": {
     name: "猫猫村",
@@ -43,7 +43,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "约15万越南盾（参考价）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["梯田间的赫蒙族房舍", "沿篱笆晾晒的靛染布"],
+    galleryCaptions: ["梯田间的赫蒙族房舍", "猫猫村中的瀑布", "沿篱笆晾晒的靛染布"],
   },
   "ta-van-village": {
     name: "左文村",
@@ -85,7 +85,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "村寨门票约4万越南盾（参考价）",
     openingHours: "全天",
-    galleryCaptions: ["正在绣锦的红瑶族妇女", "法国石砌修道院的废墟"],
+    galleryCaptions: ["左坪村的梯田", "正在绣锦的红瑶族妇女", "清晨的左坪村", "法国石砌修道院的废墟"],
   },
   "ham-rong-mountain": {
     name: "龙颔山",
@@ -148,7 +148,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["依底山谷里的云海", "盖着茅草顶的哈尼族夯土房"],
+    galleryCaptions: ["依底山谷里的云海", "依底的赫蒙族孩子", "盖着茅草顶的哈尼族夯土房"],
   },
   "lao-cai-border-gate": {
     name: "老街口岸",

@@ -112,6 +112,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     openingHours: "07:00 – 17:00",
     galleryCaptions: [
       "Brilliant coral reefs underwater",
+      "A panorama of the Nha Trang bay coastline",
       "Crystal-clear water around the island",
       "Snorkeling among the coral",
     ],
@@ -454,6 +455,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     galleryCaptions: [
       "The deep-blue lake surface amid the great wilderness",
       "A viewing pavilion jutting over the water",
+      "The water of T'Nung Sea Lake",
       "Ancient pine rows leading to the lake",
     ],
   },

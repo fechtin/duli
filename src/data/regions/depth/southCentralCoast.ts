@@ -72,7 +72,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     tags: ["island", "beach", "nature", "photography"],
     gallery: [
       { seed: "phu-quy-island-1", caption: "Vách đá đen ở gành Hang", ratio: "16/9" },
-      { seed: "phu-quy-island-2", caption: "Hồ Vô Cực nhìn ra biển khơi", ratio: "4/3" },
+      { seed: "phu-quy-island-2", caption: "Chùa Linh Sơn trên đảo Phú Quý", ratio: "4/3" },
+      { seed: "phu-quy-island-4", caption: "Hồ Vô Cực nhìn ra biển khơi", ratio: "4/3" },
       { seed: "phu-quy-island-3", caption: "Lồng bè nuôi cá quanh đảo", ratio: "1/1" },
     ],
     nearby: ["mui-ne-sand-dunes"],
@@ -148,7 +149,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     tags: ["mountain", "temple", "culture"],
     gallery: [
       { seed: "marble-mountains-1", caption: "Bờ biển Đà Nẵng nhìn từ đỉnh Thủy Sơn", ratio: "16/9" },
-      { seed: "marble-mountains-2", caption: "Chùa Tam Thai trên đỉnh Thủy Sơn", ratio: "4/3" },
+      { seed: "marble-mountains-2", caption: "Bãi xe dưới chân Ngũ Hành Sơn", ratio: "4/3" },
+      { seed: "marble-mountains-3", caption: "Chùa Tam Thai trên đỉnh Thủy Sơn", ratio: "4/3" },
     ],
     nearby: ["golden-bridge", "son-tra-peninsula"],
     featured: true,
@@ -187,7 +189,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     tags: ["mountain", "nature", "temple", "photography"],
     gallery: [
       { seed: "son-tra-peninsula-1", caption: "Đường ven bán đảo nhìn xuống biển", ratio: "16/9" },
-      { seed: "son-tra-peninsula-2", caption: "Voọc chà vá chân nâu trong rừng Sơn Trà", ratio: "4/3" },
+      { seed: "son-tra-peninsula-2", caption: "Đà Nẵng và bán đảo Sơn Trà nhìn từ trên cao", ratio: "4/3" },
+      { seed: "son-tra-peninsula-4", caption: "Voọc chà vá chân nâu trong rừng Sơn Trà", ratio: "4/3" },
       { seed: "son-tra-peninsula-3", caption: "Tượng Quan Âm chùa Linh Ứng", ratio: "1/1" },
     ],
     nearby: ["golden-bridge", "marble-mountains"],
@@ -263,7 +266,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     badges: ["verified", "hidden-gem"],
     tags: ["nature", "park", "beach", "photography"],
     gallery: [
-      { seed: "nui-chua-national-park-1", caption: "Thềm san hô cổ ở Hang Rái", ratio: "16/9" },
+      { seed: "nui-chua-national-park-1", caption: "Cung đường ven biển Phan Rang – Cam Ranh", ratio: "16/9" },
+      { seed: "nui-chua-national-park-3", caption: "Thềm san hô cổ ở Hang Rái", ratio: "16/9" },
       { seed: "nui-chua-national-park-2", caption: "Rừng khô hạn và đá granit lộ thiên", ratio: "4/3" },
     ],
     nearby: ["ntn-vinh-vinh-hy", "ntn-po-klong-garai"],
@@ -300,7 +304,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     badges: ["verified", "trending"],
     tags: ["beach", "nature", "photography"],
     gallery: [
-      { seed: "mui-dien-1", caption: "Hải đăng Mũi Điện lúc bình minh", ratio: "16/9" },
+      { seed: "mui-dien-1", caption: "Nhìn từ hải đăng Mũi Điện", ratio: "16/9" },
+      { seed: "mui-dien-3", caption: "Hải đăng Mũi Điện lúc bình minh", ratio: "16/9" },
       { seed: "mui-dien-2", caption: "Bãi Môn hình lưỡi liềm dưới chân mũi", ratio: "4/3" },
     ],
     nearby: ["pye-ganh-da-dia", "pye-bai-xep"],
@@ -340,7 +345,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     gallery: [
       { seed: "my-son-sanctuary-1", caption: "Nhóm tháp Chăm trong thung lũng Mỹ Sơn", ratio: "16/9" },
       { seed: "my-son-sanctuary-2", caption: "Gạch Chăm xếp khít không thấy mạch vữa", ratio: "4/3" },
-      { seed: "my-son-sanctuary-3", caption: "Múa Chăm biểu diễn tại khu di tích", ratio: "1/1" },
+      { seed: "my-son-sanctuary-3", caption: "Tháp E7 trong thánh địa Mỹ Sơn", ratio: "1/1" },
+      { seed: "my-son-sanctuary-4", caption: "Múa Chăm biểu diễn tại khu di tích", ratio: "1/1" },
     ],
     nearby: ["hoi-an-ancient-town", "cu-lao-cham"],
     featured: true,
@@ -379,7 +385,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     tags: ["island", "beach", "nature"],
     gallery: [
       { seed: "cu-lao-cham-1", caption: "Nước trong và rạn san hô quanh Hòn Lao", ratio: "16/9" },
-      { seed: "cu-lao-cham-2", caption: "Chùa Hải Tạng dựng từ thế kỷ 18", ratio: "4/3" },
+      { seed: "cu-lao-cham-2", caption: "Khu bảo tồn biển Cù Lao Chàm", ratio: "4/3" },
+      { seed: "cu-lao-cham-3", caption: "Chùa Hải Tạng dựng từ thế kỷ 18", ratio: "4/3" },
     ],
     nearby: ["hoi-an-ancient-town", "my-son-sanctuary"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Cù_lao_Chàm",
@@ -416,7 +423,8 @@ export const southCentralCoastDepthDestinations: Destination[] = [
     tags: ["mountain", "temple", "history"],
     gallery: [
       { seed: "thien-an-mountain-1", caption: "Chùa Thiên Ấn trên đỉnh núi bằng", ratio: "16/9" },
-      { seed: "thien-an-mountain-2", caption: "Sông Trà Khúc nhìn từ đỉnh Thiên Ấn", ratio: "4/3" },
+      { seed: "thien-an-mountain-2", caption: "Đường Mỹ Trà – Mỹ Khê bên bờ sông Trà Khúc", ratio: "4/3" },
+      { seed: "thien-an-mountain-3", caption: "Sông Trà Khúc nhìn từ đỉnh Thiên Ấn", ratio: "4/3" },
     ],
     nearby: ["qng-ly-son", "qng-sa-huynh"],
     sourceUrl: "https://www.openstreetmap.org/search?query=N%C3%BAi%20Thi%C3%AAn%20%E1%BA%A4n",

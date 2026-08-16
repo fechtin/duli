@@ -21,7 +21,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["スアンフーン湖の朝霧", "岸辺に咲く梅桜"],
+    galleryCaptions: ["スアンフーン湖の朝霧", "スアンフーン湖を望むダラット", "岸辺に咲く梅桜"],
   },
   "da-lat-market": {
     name: "ダラット市場",
@@ -189,7 +189,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "ロープウェーと舟代は別",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["トゥエンラム湖の朝霧", "松の丘のあいだに入り込む入り江"],
+    galleryCaptions: ["トゥエンラム湖観光区の管理棟", "トゥエンラム湖の朝霧", "松の丘のあいだに入り込む入り江"],
   },
   "truc-lam-monastery": {
     name: "チュックラム禅院",
@@ -210,7 +210,7 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "",
     openingHours: "05:00 - 21:00。内院は別の時間",
-    galleryCaptions: ["トゥエンラム湖を見下ろす禅院", "松林の上を行くロープウェー"],
+    galleryCaptions: ["トゥエンラム湖を見下ろす禅院", "外から見たチュックラム禅院", "松林の上を行くロープウェー"],
   },
   "valley-of-love": {
     name: "愛の谷",

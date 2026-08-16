@@ -77,7 +77,8 @@ export const ninhBinhDestinations: Destination[] = [
     tags: ["viewpoint", "mountain", "photography", "adventure"],
     gallery: [
       { seed: "mua-cave-1", caption: "Thung lũng Tam Cốc nhìn từ đỉnh Hang Múa", ratio: "16/9" },
-      { seed: "mua-cave-2", caption: "Bậc đá và rồng đá dọc sống núi", ratio: "4/3" },
+      { seed: "mua-cave-2", caption: "Ninh Bình nhìn từ mỏm đá vôi cạnh Hang Múa", ratio: "4/3" },
+      { seed: "mua-cave-3", caption: "Bậc đá và rồng đá dọc sống núi", ratio: "4/3" },
     ],
     nearby: ["tam-coc-bich-dong", "trang-an", "thung-nham-bird-park"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Hang_M%C3%BAa",
@@ -113,7 +114,8 @@ export const ninhBinhDestinations: Destination[] = [
     badges: ["popular", "verified"],
     tags: ["temple", "culture", "architecture", "mountain"],
     gallery: [
-      { seed: "bai-dinh-pagoda-1", caption: "Hành lang La Hán với năm trăm pho tượng đá", ratio: "16/9" },
+      { seed: "bai-dinh-pagoda-1", caption: "Các tháp trong quần thể chùa Bái Đính", ratio: "16/9" },
+      { seed: "bai-dinh-pagoda-3", caption: "Hành lang La Hán với năm trăm pho tượng đá", ratio: "16/9" },
       { seed: "bai-dinh-pagoda-2", caption: "Tượng Phật Di Lặc bằng đồng trên đỉnh đồi", ratio: "4/3" },
     ],
     nearby: ["trang-an", "hoa-lu-ancient-capital", "am-tien-cave"],
@@ -258,7 +260,8 @@ export const ninhBinhDestinations: Destination[] = [
     tags: ["temple", "architecture", "history", "culture"],
     gallery: [
       { seed: "phat-diem-cathedral-1", caption: "Phương Đình trông như tam quan chùa", ratio: "16/9" },
-      { seed: "phat-diem-cathedral-2", caption: "Cột lim và mái cong bên trong nhà thờ", ratio: "4/3" },
+      { seed: "phat-diem-cathedral-2", caption: "Tượng thiên thần bằng đá trong nhà thờ", ratio: "4/3" },
+      { seed: "phat-diem-cathedral-3", caption: "Cột lim và mái cong bên trong nhà thờ", ratio: "4/3" },
     ],
     nearby: ["tam-coc-bich-dong", "trang-an", "thung-nham-bird-park"],
     sourceUrl: "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_t%C3%B2a_Ph%C3%A1t_Di%E1%BB%87m",
