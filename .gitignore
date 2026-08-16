@@ -12,6 +12,11 @@ dist
 .vite
 scripts/.image-state.json
 
+# Incremental-build cache. Tracked by mistake until 2026-08-16: it is rewritten by every
+# `tsc -b`, so it turned up dirty in `git status` on every branch and every session, and its
+# diffs are machine noise nobody can review.
+*.tsbuildinfo
+
 # transient batch payload for scripts/apply-verified.mjs
 scripts/.verified-kr.json
 
