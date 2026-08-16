@@ -44,14 +44,26 @@ const STOP = new Set([
   "lake", "mountain", "cave", "waterfall", "island", "temple", "pagoda", "beach", "village",
 ]);
 
-export const tokens = (s) => fold(s).split(" ").filter((t) => t.length > 1 && !STOP.has(t));
+/**
+ * `stop` lets a caller add its own no-identity words without polluting the shared set.
+ * Destinations need it: "núi", "chùa", "thác", "đảo" carry no identity for a place, but "chua"
+ * also means *sour* and would wreck dish matching if it went into the global list.
+ *
+ * `minLen` raises the bar for what counts as a distinctive token. Destinations pass 3, because
+ * a 2-letter token matches almost anything on earth: "Y Tý" kept the single token "ty" and so
+ * scored a perfect 1-of-1 against a Welsh farmhouse, "Ty-Hwnt-y-Bwlch". Dropping it leaves no
+ * distinctive token at all, which falls through to the verbatim check below — the right answer
+ * for a name this short.
+ */
+export const tokens = (s, { stop, minLen = 2 } = {}) =>
+  fold(s).split(" ").filter((t) => t.length >= minLen && !STOP.has(t) && !stop?.has(t));
 
 /**
  * Does `title` actually name the thing `query` asked for?
  * Requires `ratio` of the query's distinctive tokens to appear in the title.
  */
-export function titleMatches(query, title, ratio) {
-  const q = tokens(query);
+export function titleMatches(query, title, ratio, opts = {}) {
+  const q = tokens(query, opts);
   // Short names are *all* stopwords ("Bún cá", "Chè Huế") — there is no distinctive token to
   // score, so fall back to requiring the whole folded name to appear in the title verbatim.
   if (!q.length) {
@@ -72,10 +84,21 @@ export const JUNK =
 
 // A Wikipedia hit whose short description says "city / plant / person" is not a photo of a
 // dish, however well the title matched. This is the filter that stops the shrub and the city.
-const NOT_A_SUBJECT =
-  /\b(city|town|province|district|commune|ward|municipality|county|politician|singer|writer|footballer|actor|company|university|list of|lists of|species|genus)\b/i;
-const NOT_A_SUBJECT_VI =
-  /(thành phố|tỉnh|huyện|xã |phường|thị trấn|thị xã|danh sách|chính trị gia|ca sĩ|nhà văn|cầu thủ|loài|chi )/i;
+// Split in two, because "is this article about a town?" is a rejection for a dish and a
+// CONFIRMATION for a destination. Hà Tiên, Vân Đồn and Y Tý are all legitimately described as a
+// town or commune; rejecting those would throw away exactly the articles we want.
+const NOT_A_PLACE =
+  /\b(politician|singer|writer|footballer|actor|company|university|list of|lists of|species|genus)\b/i;
+const NOT_A_PLACE_VI = /(danh sách|chính trị gia|ca sĩ|nhà văn|cầu thủ|loài|chi )/i;
+const IS_A_SETTLEMENT =
+  /\b(city|town|province|district|commune|ward|municipality|county)\b/i;
+const IS_A_SETTLEMENT_VI = /(thành phố|tỉnh|huyện|xã |phường|thị trấn|thị xã)/i;
+// A province is never a destination — the atlas models provinces as their own entity — so the
+// province article is always the wrong subject, even in `place` mode. Without this, "Hoa Binh
+// Lake" resolved to the article for *Hòa Bình province*: the lake's name tokens are the
+// province's name tokens, and "lake" is a stopword, so nothing else could tell them apart.
+const IS_A_PROVINCE = /\b(province|prefecture)\b/i;
+const IS_A_PROVINCE_VI = /(^|\s)tỉnh\s/i;
 
 /** Extra rejections that only make sense for food (a plant is not a plate of food). */
 const NOT_FOOD = /\b(plant|tree|shrub|flower|crop|cultivar|orchard|plantation|bird|animal|insect)\b/i;
@@ -95,8 +118,15 @@ export const FOOD_CUE =
 /** Archive and historical-survey photography: captioned with the place, never about the dish. */
 export const ARCHIVAL = /\b(19\d\d|200\d)\b|\b(collection|archive|archives|museum of|historical society)\b/i;
 
-export function describesSomethingElse(text, { food = false } = {}) {
-  if (NOT_A_SUBJECT.test(text) || NOT_A_SUBJECT_VI.test(text)) return true;
+/**
+ * `place: true` keeps the settlement descriptors, because a destination article that says
+ * "commune in Lào Cai" is the right article. Everything else — people, companies, list pages,
+ * biological taxa — is still wrong for either kind of subject.
+ */
+export function describesSomethingElse(text, { food = false, place = false } = {}) {
+  if (NOT_A_PLACE.test(text) || NOT_A_PLACE_VI.test(text)) return true;
+  if (IS_A_PROVINCE.test(text) || IS_A_PROVINCE_VI.test(text)) return true;
+  if (!place && (IS_A_SETTLEMENT.test(text) || IS_A_SETTLEMENT_VI.test(text))) return true;
   if (food && NOT_FOOD.test(text)) return true;
   return false;
 }
@@ -242,7 +272,7 @@ export async function wikiTitle(lang, term, opts = {}) {
   if (!sum || sum.title == null) return null;
   // A redirect can land somewhere broader ("Nem lụi" → "Huế"), so the landing title still has
   // to look like the thing we asked for.
-  if (!titleMatches(term, sum.title, opts.ratio)) return null;
+  if (!titleMatches(term, sum.title, opts.ratio, opts)) return null;
   return leadFromSummary(lang, sum, opts);
 }
 
@@ -252,7 +282,7 @@ export async function wikiLead(lang, term, opts = {}) {
     `https://${lang}.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(term)}&srlimit=5&format=json&origin=*`,
   );
   for (const hit of s?.query?.search ?? []) {
-    if (!titleMatches(term, hit.title, opts.ratio)) continue;
+    if (!titleMatches(term, hit.title, opts.ratio, opts)) continue;
     const sum = await getJson(
       `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(hit.title.replace(/ /g, "_"))}`,
     );
@@ -268,7 +298,7 @@ export async function commonsCategory(term, opts = {}) {
     `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(term)}&srnamespace=14&srlimit=5&format=json&origin=*`,
   );
   for (const hit of s?.query?.search ?? []) {
-    if (!titleMatches(term, hit.title.replace(/^Category:/, ""), opts.ratio)) continue;
+    if (!titleMatches(term, hit.title.replace(/^Category:/, ""), opts.ratio, opts)) continue;
     const members = await getJson(
       `https://commons.wikimedia.org/w/api.php?action=query&generator=categorymembers&gcmtitle=${encodeURIComponent(hit.title)}&gcmtype=file&gcmlimit=15&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=1280&format=json&origin=*`,
     );
@@ -289,6 +319,40 @@ export async function commonsCategory(term, opts = {}) {
   return null;
 }
 
+/**
+ * Commons geosearch — files geotagged near a coordinate, **still name-validated**.
+ *
+ * The unvalidated version of this was the atlas' worst photo bug. Taking the nearest geotagged
+ * file on trust gave a shipyard for a whale village, a high school, and Côn Đảo prison for Sơn
+ * La prison: 13 wrong heroes out of 14. The reason is structural, not bad luck — a destination
+ * is still unphotographed precisely *because* nothing correct is geotagged there, so geosearch
+ * can only return its neighbours. Proximity is therefore treated as a tiebreaker among files
+ * that already name the place, never as evidence on its own.
+ */
+export async function commonsGeo(lat, lng, term, opts = {}) {
+  for (const radius of opts.radii ?? [2000, 8000]) {
+    const d = await getJson(
+      `https://commons.wikimedia.org/w/api.php?action=query&generator=geosearch&ggscoord=${lat}|${lng}` +
+        `&ggsradius=${radius}&ggsnamespace=6&ggslimit=40&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=1280&format=json&origin=*`,
+    );
+    for (const p of Object.values(d?.query?.pages ?? {})) {
+      const ii = p.imageinfo?.[0];
+      if (!ii || !usableImage(ii) || JUNK.test(p.title)) continue;
+      const bare = p.title.replace(/^File:/, "").replace(/\.\w+$/, "");
+      if (!titleMatches(term, bare, opts.ratio, opts)) continue;
+      if (ARCHIVAL.test(p.title)) continue;
+      return {
+        url: ii.thumburl ?? ii.url,
+        file: p.title,
+        sourceTitle: p.title,
+        sourceUrl: ii.descriptionurl ?? "",
+        via: "commons-geo",
+      };
+    }
+  }
+  return null;
+}
+
 /** Commons full-text search — the file title itself has to match. */
 export async function commonsSearch(term, opts = {}) {
   const d = await getJson(
@@ -298,7 +362,7 @@ export async function commonsSearch(term, opts = {}) {
   for (const p of pages) {
     const ii = p.imageinfo?.[0];
     if (!ii || !usableImage(ii) || JUNK.test(p.title)) continue;
-    if (!titleMatches(term, p.title.replace(/^File:/, "").replace(/\.\w+$/, ""), opts.ratio)) continue;
+    if (!titleMatches(term, p.title.replace(/^File:/, "").replace(/\.\w+$/, ""), opts.ratio, opts)) continue;
     if (opts.cue && !opts.cue.test(p.title)) continue;
     if (ARCHIVAL.test(p.title)) continue;
     return {
@@ -328,7 +392,7 @@ export async function openverse(term, opts = {}) {
     // scoring against them proves nothing about the frame: a cat photo tagged "tuna, eye" beat
     // "Mắt cá ngừ đại dương", and "Wedding Cake" beat "Bánh phu thê".
     const title = rec.title ?? "";
-    if (!titleMatches(term, title, opts.ratio)) continue;
+    if (!titleMatches(term, title, opts.ratio, opts)) continue;
     if (opts.cue && !opts.cue.test(title)) continue;
     if (ARCHIVAL.test(title)) continue;
     return {

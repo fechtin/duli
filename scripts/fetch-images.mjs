@@ -1,35 +1,48 @@
-// Fetch real, openly-licensed, LOCATION-VERIFIED photos for every destination and
-// optimize to WebP. The selection strategy, in priority order:
-//   1) Commons GEOSEARCH around the destination's lat/lng (escalating radius). Geotagged
-//      photos are the strongest guarantee that the image was actually taken at the place.
-//   2) Commons text search by name — accepted ONLY if the file's title/categories contain
-//      a name token (guards against same-named places abroad and unrelated junk).
-//   3) Wikipedia lead image — accepted ONLY if the resolved article title matches a name token.
-// Every candidate is filtered to be a real PHOTO (rejects maps, flags, logos, manuscripts,
-// drawings, specimens, SVG, low-res). Picks are de-duplicated globally by Commons file title.
-// Writes src/data/generated/image-manifest.json with full provenance per seed:
-//   { src, credit, license, sourceTitle, sourceUrl, via, width }
+// Fetch openly-licensed, NAME-VERIFIED photos for every destination and optimize to WebP.
+//
+// Rewritten 2026-08-16 onto scripts/lib/image-sources.mjs. The version before it ranked
+// candidates itself and — crucially — accepted a file for being *geotagged near* the place even
+// when nothing about it named the place. That produced 13 wrong heroes out of 14 on its last
+// run: a shipyard for the whale village, a high school, an IDF house-damage photo for Nhà Trăm
+// Cột, Côn Đảo prison for Sơn La prison. The failure is structural: a destination is still
+// unphotographed precisely *because* nothing correct is geotagged there, so geosearch has only
+// neighbours left to return. Proximity is now a tiebreaker among files that already name the
+// place (`commonsGeo`), never evidence on its own.
+//
+// The other thing the lib brings is one serialised request queue with a per-host gap. An
+// unpaced run once got this machine 429'd on every Wikimedia endpoint for hours.
+//
+// Source order per destination, first hit wins:
+//   exact Wikipedia title (EN then local) → Wikipedia search → Commons category
+//   → Commons geosearch (name-validated) → Commons full-text → Openverse
+//
+// Writes src/data/generated/image-manifest.json: { src, credit, license, sourceTitle, sourceUrl,
+// via, width } per gallery seed.
+//
 // Modes:
-//   npm run images:fetch                 → fill only seeds that have no image yet (Vietnam)
+//   npm run images:fetch                 → fill only seeds with no image yet (Vietnam)
 //   npm run images:fetch -- kr           → same, for the Korea atlas
+//   LIMIT=8                              → stop after 8 destinations (sampling before a full run)
+//   ONLY=slug-a,slug-b                   → restrict to these destination ids
 //   REFETCH=scripts/.refetch-seeds.json  → re-fetch exactly the listed seeds (overwrite)
 //   FORCE=1                              → re-fetch every seed
-// Resumable + rate-limited. Run: npm run images:fetch
+//   DRY=1                                → resolve and report, download nothing, write nothing
 
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync, unlinkSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import sharp from "sharp";
 import { destinations } from "../src/data/destinations.ts";
 import { destinationsKr } from "../src/data/kr/index.ts";
+import {
+  wikiTitle, wikiLead, commonsCategory, commonsGeo, commonsSearch, openverse,
+  commonsAttribution, downloadWebp, sleep, tokens,
+} from "./lib/image-sources.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const r = (p) => resolve(root, p);
 
-// ── Atlas selection ──
-// Each atlas brings its own destinations, country name (used in text queries) and the
-// Wikipedia languages worth searching for a lead image.
 const cc = (process.argv[2] ?? process.env.COUNTRY ?? "vn").toLowerCase();
 const ATLASES = {
   vn: { destinations, countryEn: "Vietnam", wikiLangs: ["en", "vi"] },
@@ -40,266 +53,199 @@ if (!atlas) {
   console.error(`[fetch-images] unknown country "${cc}" (expected: ${Object.keys(ATLASES).join(", ")})`);
   process.exit(1);
 }
-const places = atlas.destinations;
+
 const geo = JSON.parse(readFileSync(r(`src/data/generated/geo-meta.${cc}.json`), "utf8"));
 const provinceEn = new Map(geo.provinces.map((p) => [p.slug, p.nameEn]));
-
-const UA = "VietnamAtlas/1.0 (https://github.com/fechtin/duli; educational tourism map)";
 const OUT_DIR = r("public/img");
-const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
-const stripHtml = (s) => (s ? s.replace(/<[^>]*>/g, "").replace(/&[^;]+;/g, " ").trim().slice(0, 120) : "");
-
-// Anything that is NOT a representative photo of a place. Matched against title + categories.
-const JUNK =
-  /\b(map|maps|carte|mapa|karte|plan|diagram|schema|chart|flag|flags|bandera|drapeau|banner|logo|emblem|coat of arms|escudo|seal|stamp|banknote|document|documents|manuscript|sắc phong|woodblock|mộc bản|poster|drawing|drawings|painting|paintings|engraving|gravure|illustration|sketch|icon|specimen|herbarium|insect|moth|butterfly|beetle|portrait of|svg|iss|astronaut|satellite|space station|view of earth|from space|nasa|landsat|sentinel|signboard|signpost|noticeboard|information board|tấm bia|bảng giới thiệu)\b/i;
-
-async function getJson(url, tries = 4) {
-  for (let attempt = 1; attempt <= tries; attempt++) {
-    try {
-      const res = await fetch(url, { headers: { "User-Agent": UA } });
-      if (res.status === 429 || res.status === 503) throw new Error(`throttled ${res.status}`);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`http ${res.status}`);
-      const j = await res.json();
-      if (j.error?.code === "maxlag") throw new Error("maxlag");
-      return j;
-    } catch (e) {
-      if (attempt === tries) return null;
-      await sleep(400 * attempt + 200);
-    }
-  }
-}
-
-const commonsApi = (params) =>
-  getJson(`https://commons.wikimedia.org/w/api.php?${new URLSearchParams({ format: "json", maxlag: "5", ...params })}`);
-
-// ── Candidate sources ──
-async function geoTitles(lat, lng, radius, limit = 40) {
-  const j = await commonsApi({
-    action: "query",
-    list: "geosearch",
-    gscoord: `${lat}|${lng}`,
-    gsradius: String(radius),
-    gsnamespace: "6",
-    gslimit: String(limit),
-  });
-  return (j?.query?.geosearch ?? []).map((s) => s.title);
-}
-
-async function textTitles(query, limit = 12) {
-  const j = await commonsApi({ action: "query", list: "search", srnamespace: "6", srsearch: query, srlimit: String(limit) });
-  return (j?.query?.search ?? []).map((s) => s.title);
-}
-
-async function wikiLeadCandidate(queries, tokens, langs = atlas.wikiLangs) {
-  for (const lang of langs) {
-    for (const q of queries) {
-      const s = await getJson(
-        `https://${lang}.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", action: "query", list: "search", srsearch: q, srlimit: "1" })}`,
-      );
-      const title = s?.query?.search?.[0]?.title;
-      if (!title || !matchesTokens(title, tokens)) continue; // article must actually be this place
-      const j = await getJson(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
-      if (!j || j.type === "disambiguation") continue;
-      const src = j.originalimage?.source || j.thumbnail?.source;
-      if (src) return commonsFileFromUrl(src);
-    }
-  }
-  return null;
-}
-
-// Pull imageinfo (url/size/mime/credit) + categories for a batch of File: titles.
-async function infoFor(titles) {
-  const out = {};
-  for (let i = 0; i < titles.length; i += 25) {
-    const batch = titles.slice(i, i + 25);
-    const j = await commonsApi({
-      action: "query",
-      titles: batch.join("|"),
-      prop: "imageinfo|categories",
-      cllimit: "max",
-      iiprop: "url|extmetadata|mime|size",
-      iiurlwidth: "1280",
-    });
-    for (const page of Object.values(j?.query?.pages ?? {})) {
-      const ii = page.imageinfo?.[0];
-      if (!ii) continue;
-      out[page.title] = {
-        title: page.title,
-        thumb: ii.thumburl,
-        descUrl: ii.descriptionurl || ii.descriptionshorturl || "",
-        mime: ii.mime,
-        width: ii.width || 0,
-        height: ii.height || 0,
-        credit: stripHtml(ii.extmetadata?.Artist?.value),
-        license: ii.extmetadata?.LicenseShortName?.value ?? "",
-        cats: (page.categories ?? []).map((c) => c.title).join(" "),
-      };
-    }
-  }
-  return out;
-}
-
-function commonsFileFromUrl(url) {
-  const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+?)(?:\/\d+px-[^/]+)?$/);
-  // Upload URLs use underscores; the API returns titles with spaces. Without normalising,
-  // infoFor() never finds the Wikipedia lead and every hero silently falls back to geosearch.
-  return m ? "File:" + decodeURIComponent(m[1]).replace(/_/g, " ") : null;
-}
-
-// ── Filtering & scoring ──
-function tokensOf(d) {
-  const raw = `${d.nameEn} ${d.name}`
-    .normalize("NFD").replace(/[̀-ͯ]/g, "") // strip Vietnamese accents
-    .toLowerCase();
-  const stop = new Set(["the", "of", "and", "lake", "mountain", "cave", "beach", "temple", "pagoda", "river",
-    "island", "waterfall", "bay", "valley", "village", "market", "hill", "hills", "pass", "national", "park",
-    "cao", "nguyen", "ho", "nui", "hang", "bai", "den", "chua", "thac", "song", "dao", "deo", "cua", "khu",
-    // generic words in the Korean set's names (VI source + EN) — never identify a place
-    "palace", "fortress", "grotto", "hermitage", "tower", "street", "museum", "forest", "fields", "field",
-    "peaks", "peak", "site", "complex", "square", "observatory", "cemetery", "walled", "town", "city",
-    "garden", "arboretum", "ranch", "bridge", "cable", "night", "sea", "wetland", "bamboo", "tomb", "king",
-    "cung", "bien", "thanh", "lang", "cho", "cong", "vien", "pho", "dinh", "nui", "dao", "thap", "hoa",
-    "quoc", "gia", "vuon", "khu", "mo", "tranh", "khac", "rung", "tre", "doi", "che", "duong", "ham"]);
-  return [...new Set(raw.split(/[^a-z0-9]+/).filter((t) => t.length >= 4 && !stop.has(t)))];
-}
-
-function matchesTokens(text, tokens) {
-  if (!tokens.length) return false;
-  const t = text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-  return tokens.some((tok) => t.includes(tok));
-}
-
-// Biodiversity observations (iNaturalist etc.) are geotagged inside parks/reserves and
-// pollute geosearch with specimen close-ups of fauna — never a view of the place.
-const BIO = /\b(inaturalist|coleoptera|lepidoptera|odonata|cicindela|specimen|observation|herpetolog|entomolog|aves of|fauna of|flora of|mollusca|arachnida)\b/i;
-
-function isPhoto(info) {
-  if (!info || !info.thumb) return false;
-  if (!/image\/(jpeg|png)/.test(info.mime || "")) return false; // no svg/tiff/gif
-  if (info.width && info.width < 700) return false;
-  if (JUNK.test(info.title) || JUNK.test(info.cats)) return false;
-  if (BIO.test(info.cats)) return false;
-  return true;
-}
-
-async function downloadWebp(url, destFile) {
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`img ${res.status}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  await sharp(buf).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 74 }).toFile(destFile);
-}
-
-// ── Per-destination processing ──
-async function candidatesFor(d, tokens) {
-  const seen = new Set();
-  const titles = [];
-  const add = (arr) => arr.forEach((t) => { if (t && !seen.has(t)) { seen.add(t); titles.push(t); } });
-
-  // 1) geosearch, escalating radius
-  for (const radius of [1500, 5000, 12000]) {
-    add(await geoTitles(d.lat, d.lng, radius));
-    if (titles.length >= 24) break;
-  }
-  const geoSet = new Set(titles); // remember which came from geo
-  // 2) wikipedia lead (validated) — curated, most representative; reserved for the hero.
-  const prov = provinceEn.get(d.provinceSlug) ?? atlas.countryEn;
-  const lead = await wikiLeadCandidate([`${d.nameEn}`, `${d.nameEn} ${prov}`, d.name], tokens);
-  if (lead) add([lead]);
-  const curated = new Set(lead ? [lead] : []);
-  // 3) text search fallback
-  for (const q of [`${d.nameEn} ${prov}`, `${d.nameEn} ${atlas.countryEn}`, d.nameEn]) add(await textTitles(q));
-
-  const info = await infoFor(titles);
-  // Rank candidates. A curated Wikipedia lead should top a merely-geotagged signboard of the
-  // same place; large landscape photos beat small tall ones (which tend to be signs/documents).
-  const ranked = [];
-  for (const t of titles) {
-    const i = info[t];
-    if (!isPhoto(i)) continue;
-    const isGeo = geoSet.has(t);
-    const isCurated = curated.has(t);
-    const named = matchesTokens(t, tokens) || matchesTokens(i.cats, tokens);
-    if (!isGeo && !isCurated && !named) continue; // could be anywhere → reject
-    const aspect = i.height ? i.width / i.height : 1;
-    // Heroes are landscape scenery; tall portraits are overwhelmingly signs/plaques/documents.
-    const orient = aspect >= 1.2 ? 18 : aspect < 0.8 ? -35 : 0;
-    // A file whose title/categories name the place beats one that merely sits near it —
-    // geosearch alone happily returns the car park across the road (seen on Seongsan).
-    const score =
-      (isCurated ? 60 : 0) + (isGeo ? 30 : 0) + (named ? 40 : 0) + orient + Math.min(i.width / 500, 12);
-    ranked.push({ ...i, isGeo, isCurated, named, score });
-  }
-  ranked.sort((a, b) => b.score - a.score);
-  return ranked;
-}
-
-async function processDestination(d, manifest, used, fillFn, stats) {
-  const seeds = (d.gallery ?? []).map((g) => g.seed);
-  const toFill = seeds.filter(fillFn);
-  if (!toFill.length) { stats.done++; return; }
-
-  const tokens = tokensOf(d);
-  const ranked = await candidatesFor(d, tokens);
-  let i = 0;
-  for (const seed of toFill) {
-    // next candidate not already used anywhere
-    let pick = null;
-    while (i < ranked.length) {
-      const c = ranked[i++];
-      if (used.has(c.title)) continue;
-      pick = c;
-      break;
-    }
-    if (!pick) { stats.unfilled.push(seed); continue; }
-    try {
-      await downloadWebp(pick.thumb, `${OUT_DIR}/${seed}.webp`);
-      used.add(pick.title);
-      manifest[seed] = {
-        src: `/img/${seed}.webp`,
-        credit: pick.credit,
-        license: pick.license || "Wikimedia Commons",
-        sourceTitle: pick.title,
-        sourceUrl: pick.descUrl,
-        via: pick.isCurated ? "wikipedia" : pick.isGeo ? "geosearch" : pick.named ? "name" : "other",
-        width: pick.width,
-      };
-      stats.images++;
-    } catch {
-      stats.failed++;
-    }
-  }
-  stats.done++;
-  process.stdout.write(`\r  ${stats.done}/${places.length} · ${stats.images} imgs · ${stats.unfilled.length} unfilled`);
-}
-
-async function pool(items, size, fn) {
-  const queue = [...items];
-  await Promise.all(Array.from({ length: size }, async () => { while (queue.length) await fn(queue.shift()); }));
-}
-
-// ── Entry ──
-mkdirSync(OUT_DIR, { recursive: true });
 const manifestPath = r("src/data/generated/image-manifest.json");
-const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
 
-const refetchPath = process.env.REFETCH;
+// Words that never identify a *place*. Kept here rather than in the shared STOP set because
+// several are ordinary food words too — "chua" is `chùa` (pagoda) here and *sour* in a dish name.
+const PLACE_STOP = new Set([
+  "national", "park", "lake", "mountain", "cave", "waterfall", "island", "temple", "pagoda",
+  "beach", "village", "bay", "valley", "market", "hill", "hills", "pass", "river", "street",
+  "museum", "bridge", "palace", "fortress", "tower", "garden", "town", "city", "square",
+  "peak", "site", "complex", "old", "quarter", "ancient", "royal", "grand", "great", "new",
+  "nui", "hang", "bai", "den", "chua", "thac", "song", "dao", "deo", "cua", "khu", "cao",
+  "nguyen", "ho", "cung", "bien", "thanh", "lang", "cho", "cong", "vien", "pho", "dinh",
+  "thap", "hoa", "quoc", "gia", "vuon", "mo", "tranh", "khac", "rung", "tre", "doi", "che",
+  "duong", "ham", "bao", "tang", "trung", "tam", "khach", "san", "diem",
+]);
+
+// ── Concurrency guard ────────────────────────────────────────────────────────
+// A run from an earlier session once kept going for hours, writing wrong photos, and would
+// have clobbered the manifest from its stale in-memory copy on exit. Two fetchers must never
+// share the Wikimedia budget or this file.
+const LOCK = r("scripts/.images.lock");
+if (existsSync(LOCK) && !process.env.FORCE_UNLOCK) {
+  console.error(`[fetch-images] another run holds ${LOCK} (pid ${readFileSync(LOCK, "utf8").trim()}).`);
+  console.error("If you are sure it is dead: rm scripts/.images.lock");
+  process.exit(1);
+}
+
+const opts = { place: true, stop: PLACE_STOP, minLen: 3 };
+
+// The 038 venue types are modern businesses and city features whose names are ordinary English
+// words, so a name match alone proves nothing: "The Note Coffee" (Hà Nội) matched "Ghost Note
+// Coffee, Seattle" and a stray Seattle street photo, both perfectly, on the tokens note+coffee.
+// Heritage and landscape names carry their own distinctive Vietnamese tokens and need no help;
+// these do, so free-text sources must also name the province or the country.
+const VENUE_TYPES = new Set(["cafe", "nightlife", "street", "viewpoint", "themepark"]);
+const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// Ordinary English words that name a venue without identifying one. A name built only from
+// these could be anywhere on earth, which is the whole failure: "The Note Coffee" is note+coffee.
+// A name that keeps even one Vietnamese token ("Hải Vân", "Bitexco", "Mường Hoa") is already
+// distinctive and must NOT be anchored — Hải Vân straddles two provinces, so demanding the title
+// say "Da Nang" would reject correctly-named photos captioned from the Huế side, or captioned
+// with nothing but the pass's own name.
+const GENERIC_EN = new Set([
+  "coffee", "cafe", "tea", "house", "bar", "club", "lounge", "rooftop", "deck", "observation",
+  "landmark", "walking", "night", "train", "sky", "view", "point", "central", "grand", "plaza",
+  "mall", "center", "centre", "wonders", "world", "land", "resort", "note", "corner", "hidden",
+]);
+
+/** A geographic anchor the title has to carry before a free-text hit can win. */
+function geoCue(d) {
+  if (!VENUE_TYPES.has(d.type)) return undefined;
+  // Only anchor when the name has nothing distinctive left to match on.
+  const distinctive = tokens(`${d.nameEn} ${d.name}`, opts).filter((t) => !GENERIC_EN.has(t));
+  if (distinctive.length) return undefined;
+  const prov = provinceEn.get(d.provinceSlug);
+  const words = [prov, d.provinceSlug.replace(/-/g, " "), atlas.countryEn, cc === "vn" ? "viet ?nam" : "hanguk"]
+    .filter(Boolean)
+    .map(esc);
+  return new RegExp(words.join("|"), "i");
+}
+
+/** Candidate sources for one destination, cheapest and most trustworthy first. */
+function stepsFor(d) {
+  const prov = provinceEn.get(d.provinceSlug) ?? atlas.countryEn;
+  const cue = geoCue(d);
+  const free = cue ? { ...opts, cue } : opts; // free-text sources, optionally geo-anchored
+  const steps = [];
+  // Exact article title needs no name validation — it cannot be about something else — and it
+  // uses the REST endpoint, which keeps answering when w/api.php is throttled.
+  for (const lang of atlas.wikiLangs) steps.push(() => wikiTitle(lang, d.nameEn, opts));
+  steps.push(() => wikiTitle(atlas.wikiLangs[1], d.name, opts));
+  for (const lang of atlas.wikiLangs) steps.push(() => wikiLead(lang, `${d.nameEn} ${prov}`, opts));
+  steps.push(() => commonsCategory(d.nameEn, free));
+  steps.push(() => commonsGeo(d.lat, d.lng, d.nameEn, free));
+  steps.push(() => commonsSearch(`${d.nameEn} ${prov}`, free));
+  steps.push(() => commonsSearch(d.nameEn, free));
+  steps.push(() => openverse(`${d.nameEn} ${prov}`, free));
+  steps.push(() => openverse(d.nameEn, free));
+  return steps;
+}
+
+/** Walk the chain collecting up to `need` distinct picks nothing else has claimed. */
+async function collect(d, need, used) {
+  const picks = [];
+  for (const step of stepsFor(d)) {
+    if (picks.length >= need) break;
+    let pick = null;
+    try {
+      pick = await step();
+    } catch {
+      continue;
+    }
+    if (!pick) continue;
+    const key = pick.sourceTitle || pick.url;
+    if (used.has(key) || picks.some((p) => (p.sourceTitle || p.url) === key)) continue;
+    picks.push(pick);
+  }
+  return picks;
+}
+
+// ── Entry ────────────────────────────────────────────────────────────────────
+const dry = process.env.DRY === "1";
 const force = process.env.FORCE === "1";
-const refetchSeeds = refetchPath && existsSync(r(refetchPath)) ? new Set(JSON.parse(readFileSync(r(refetchPath), "utf8"))) : null;
+const limit = Number(process.env.LIMIT ?? 0);
+const only = process.env.ONLY ? new Set(process.env.ONLY.split(",").map((s) => s.trim())) : null;
+const refetchPath = process.env.REFETCH;
+const refetchSeeds =
+  refetchPath && existsSync(r(refetchPath)) ? new Set(JSON.parse(readFileSync(r(refetchPath), "utf8"))) : null;
+
+mkdirSync(OUT_DIR, { recursive: true });
+const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
 const fillFn = force ? () => true : refetchSeeds ? (s) => refetchSeeds.has(s) : (s) => !manifest[s];
 
-// Reserve already-kept source titles so we never duplicate them onto a refetched seed.
+let places = atlas.destinations.filter((d) => (d.gallery ?? []).some((g) => fillFn(g.seed)));
+if (only) places = places.filter((d) => only.has(d.id));
+if (limit) places = places.slice(0, limit);
+
+// Reserve source titles already kept, so a refetch never duplicates one onto another seed.
 const used = new Set();
 for (const [seed, m] of Object.entries(manifest)) {
   if (m.sourceTitle && !fillFn(seed)) used.add(m.sourceTitle);
 }
 
-const mode = force ? "FORCE all" : refetchSeeds ? `REFETCH ${refetchSeeds.size} seeds` : "fill missing";
-console.log(`Fetching geo-verified photos for ${cc.toUpperCase()} (${mode})…`);
-const stats = { done: 0, images: 0, failed: 0, unfilled: [] };
-await pool(places, 2, (d) => processDestination(d, manifest, used, fillFn, stats).then(() => sleep(200)));
+if (!dry) writeFileSync(LOCK, String(process.pid));
+const releaseLock = () => { try { if (!dry) unlinkSync(LOCK); } catch {} };
+process.on("exit", releaseLock);
+process.on("SIGINT", () => { releaseLock(); process.exit(130); });
 
-writeFileSync(manifestPath, JSON.stringify(manifest, null, 0));
-const covered = places.filter((d) => (d.gallery ?? []).some((g) => manifest[g.seed])).length;
-console.log(`\n[fetch-images] ${stats.images} new imgs · ${stats.failed} failed · ${covered}/${places.length} places covered`);
-if (stats.unfilled.length) console.log(`[unfilled] ${stats.unfilled.length}: ${stats.unfilled.join(", ")}`);
+const mode = dry ? "DRY" : force ? "FORCE all" : refetchSeeds ? `REFETCH ${refetchSeeds.size}` : "fill missing";
+console.log(`[fetch-images] ${cc.toUpperCase()} · ${places.length} destinations · ${mode}`);
+
+const stats = { done: 0, images: 0, failed: 0, unfilled: [], via: {} };
+let sinceSave = 0;
+
+for (const d of places) {
+  const toFill = (d.gallery ?? []).map((g) => g.seed).filter(fillFn);
+  const picks = await collect(d, toFill.length, used);
+
+  for (let i = 0; i < toFill.length; i++) {
+    const seed = toFill[i];
+    const pick = picks[i];
+    if (!pick) { stats.unfilled.push(seed); continue; }
+    if (dry) {
+      console.log(`  ${d.nameEn}\n    ${seed} ← [${pick.via}] ${pick.sourceTitle}`);
+      used.add(pick.sourceTitle || pick.url);
+      stats.images++;
+      stats.via[pick.via] = (stats.via[pick.via] ?? 0) + 1;
+      continue;
+    }
+    try {
+      const file = `${OUT_DIR}/${seed}.webp`;
+      await downloadWebp(pick.url, file);
+      if (pick.credit === undefined || pick.license === undefined) {
+        const attr = await commonsAttribution(pick.file);
+        pick.credit ??= attr.credit;
+        pick.license ??= attr.license;
+      }
+      const meta = await sharp(file).metadata();
+      used.add(pick.sourceTitle || pick.url);
+      manifest[seed] = {
+        src: `/img/${seed}.webp`,
+        credit: pick.credit ?? "",
+        license: pick.license || "Wikimedia Commons",
+        sourceTitle: pick.sourceTitle ?? "",
+        sourceUrl: pick.sourceUrl ?? "",
+        via: pick.via,
+        width: meta.width ?? 0,
+      };
+      stats.images++;
+      stats.via[pick.via] = (stats.via[pick.via] ?? 0) + 1;
+      sinceSave++;
+    } catch {
+      stats.failed++;
+    }
+  }
+
+  stats.done++;
+  // Save often. The old save-only-at-the-end behaviour is exactly what orphaned 35 downloaded
+  // files when an earlier run was interrupted.
+  if (!dry && sinceSave >= 5) {
+    writeFileSync(manifestPath, JSON.stringify(manifest, null, 0));
+    sinceSave = 0;
+  }
+  if (!dry) process.stdout.write(`\r  ${stats.done}/${places.length} · ${stats.images} imgs · ${stats.unfilled.length} unfilled  `);
+  await sleep(60);
+}
+
+if (!dry) writeFileSync(manifestPath, JSON.stringify(manifest, null, 0));
+const covered = atlas.destinations.filter((d) => (d.gallery ?? []).some((g) => manifest[g.seed])).length;
+console.log(`\n[fetch-images] ${stats.images} picks · ${stats.failed} failed · ${stats.unfilled.length} unfilled`);
+console.log(`[fetch-images] via: ${JSON.stringify(stats.via)}`);
+console.log(`[fetch-images] coverage: ${covered}/${atlas.destinations.length} ${cc.toUpperCase()} destinations`);

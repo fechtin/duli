@@ -11,6 +11,8 @@ dist
 .DS_Store
 .vite
 scripts/.image-state.json
+# Held by a running scripts/fetch-images.mjs so a second fetcher cannot start.
+scripts/.images.lock
 
 # Incremental-build cache. Tracked by mistake until 2026-08-16: it is rewritten by every
 # `tsc -b`, so it turned up dirty in `git status` on every branch and every session, and its
