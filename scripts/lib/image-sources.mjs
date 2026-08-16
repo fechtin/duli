@@ -313,14 +313,20 @@ export async function wikidataImage(term, opts = {}) {
     );
     for (const hit of s?.search ?? []) {
       if (!titleMatches(term, hit.label ?? "", opts.ratio, opts)) continue;
-      const claims = await getJson(
-        `https://www.wikidata.org/w/api.php?action=wbgetclaims&entity=${hit.id}&property=P18%7CP17&format=json&origin=*`,
+      // wbgetentities, not wbgetclaims: the latter takes a SINGLE property, and asking it for
+      // "P18|P17" returns {error} rather than claims. Reading `?.claims?.P18` off that error
+      // object yields undefined, so the whole source failed silently on every subject — it
+      // looked exactly like "no image recorded" and stayed invisible until the raw call was read.
+      const data = await getJson(
+        `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${hit.id}&props=claims&format=json&origin=*`,
       );
+      const claims = data?.entities?.[hit.id]?.claims;
+      if (!claims) continue;
       if (opts.country) {
-        const country = claims?.claims?.P17?.[0]?.mainsnak?.datavalue?.value?.id;
+        const country = claims.P17?.[0]?.mainsnak?.datavalue?.value?.id;
         if (country !== opts.country) continue; // right name, wrong country — the whole point
       }
-      const fileName = claims?.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+      const fileName = claims.P18?.[0]?.mainsnak?.datavalue?.value;
       if (!fileName) continue;
       const file = `File:${fileName}`;
       const info = await getJson(
