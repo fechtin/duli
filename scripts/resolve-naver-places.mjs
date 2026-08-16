@@ -43,8 +43,9 @@ const UA =
 const MAX_KM = 3;
 /** A partial-name match gets less room than an exact one, but a museum's pin can still be off. */
 const NEAR_KM = 1.5;
-/** Close enough that the coordinate identifies the place and a shared word only has to agree. */
-const CLOSE_KM = 0.25;
+// No `closeKm` here on purpose: the shared-word tier was tried against the 24 entries Naver still
+// misses and matched none of them. Leaving it on would loosen a finished, verified manifest for a
+// measured gain of nothing — a later --missing run could then admit a match nobody reviewed.
 /** Facilities that sit inside a landmark and inherit its name — never the place the user wants. */
 const INFRA = /주차장|화장실|정류장|승강장|출입구|매표소|안내소|공영자전거/;
 /** "블루샥 통영중앙시장점" is a coffee branch inside the market, not the market. A restaurant
@@ -123,7 +124,6 @@ const pick = (query, places) =>
   pickPlace(query, places, {
     maxKm: MAX_KM,
     nearKm: NEAR_KM,
-    closeKm: CLOSE_KM,
     reject: (p, q) =>
       INFRA.test(p.title) || INFRA.test(p.ctg ?? "") || (BRANCH.test(p.title) && !BRANCH.test(q)),
   });
