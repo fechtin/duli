@@ -9,6 +9,7 @@ import { isCountryCode } from "@/lib/country";
 import {
   countryPath,
   destinationPath,
+  dishPath,
   foodPath,
   FOOD_SEGMENT,
   provincePath,
@@ -19,13 +20,18 @@ import type { CountryCode } from "@/lib/types";
 
 /**
  * Two-way sync between selection state and the URL (Bible 005 §3.3 — navigate by camera,
- * then sync the URL). Format: /{country}/{province}/{destination}, with an open dish carried
- * as ?dish=<id> on top of any of them. Each deeper layer PUSHES a history entry so the browser
- * Back button steps back one layer (dish → destination → province → map); shallower moves
- * REPLACE, so closing never leaves dangling forward entries.
+ * then sync the URL). Two shapes share the space after the country:
+ *   /{country}/{province}/{destination}   — the map hierarchy
+ *   /{country}/food/{dish}                — the cuisine index and its dishes (043)
+ * `food` is the one first segment that is a section rather than a province.
  *
- * `/{country}/food` is the one path that is a section rather than a province — it occupies the
- * province rung, and a dish opened from it rides on top exactly as it would over a map view.
+ * Each deeper layer PUSHES a history entry so the browser Back button steps back one layer
+ * (dish → destination → province → map); shallower moves REPLACE, so closing never leaves
+ * dangling forward entries.
+ *
+ * A dish OWNS the URL while it is open, even when opened over a province: it is the subject of
+ * the page, and one dish is one URL. The map selection underneath survives in state, so closing
+ * still returns to it.
  *
  * The country prefix is the source of truth for which atlas is on screen; the persisted
  * useCountryStore value only decides where a bare "/" lands.
@@ -69,8 +75,12 @@ function localised(path: string): string {
 function currentUrlDepth() {
   const { segments } = parsePath(window.location.pathname);
   const q = new URLSearchParams(window.location.search);
-  // `/vn/food` has no second segment, so it reads as the province rung — which is the rung it is.
-  return depthOf(q.has("dish"), Boolean(segments[1]), Boolean(segments[0]), q.has("trip"));
+  // Both shapes have two segments, but they sit on different rungs: `/vn/food/pho-bo` is a dish
+  // (3) and `/vn/quang-nam/hoi-an` a destination (2). Reading the second segment alone would put
+  // a dish on the destination rung and make Back out of it replace instead of pop.
+  const isFood = segments[0] === FOOD_SEGMENT;
+  const hasDish = (isFood && Boolean(segments[1])) || q.has("dish");
+  return depthOf(hasDish, !isFood && Boolean(segments[1]), Boolean(segments[0]), q.has("trip"));
 }
 
 export function useUrlSync() {
@@ -90,10 +100,15 @@ export function useUrlSync() {
   const applyFromUrl = useCallback(() => {
     const { country: cc, segments, legacy } = parsePath(window.location.pathname);
     const [provinceSlug, destSlug] = segments;
-    const dishId = new URLSearchParams(window.location.search).get("dish");
     const map = useMapStore.getState();
     const food = useFoodStore.getState();
     applied.current = true;
+
+    // `/vn/food/pho-bo` — the second segment is a dish id, not a destination slug. `?dish=` is
+    // the pre-043 form: the Worker 301s it, but an in-app history entry can still carry one, so
+    // it is accepted here and the write-back below rewrites it to the path form.
+    const foodIndex = provinceSlug === FOOD_SEGMENT;
+    const dishId = (foodIndex && destSlug) || new URLSearchParams(window.location.search).get("dish");
 
     // Country first — province lookups below are resolved against the active atlas.
     useCountryStore.getState().setCountry(cc);
@@ -101,7 +116,7 @@ export function useUrlSync() {
     pendingDest.current = null;
     // The cuisine index shares the province rung but resolves against no geometry — decide it
     // before the province lookup, which would otherwise send `/vn/food` down the reset path.
-    const foodIndex = provinceSlug === FOOD_SEGMENT;
+    // A dish URL opens the index underneath it, so closing the dish lands on the list.
     if (foodIndex) food.openList();
     else food.closeList();
 
@@ -126,9 +141,9 @@ export function useUrlSync() {
       map.reset();
     }
 
-    // Reconcile the dish layer that rides on top of the map context. Read the id LIVE rather
-    // than off the `food` snapshot taken above: the calls in between mutate the store, and a
-    // stale id here silently skipped `openDish` on the second pass of a `/{cc}/food?dish=` link.
+    // Reconcile the dish layer. Read the id LIVE rather than off the `food` snapshot taken
+    // above: the calls in between mutate the store, and a stale id here silently skipped
+    // `openDish` on the second pass of a deep link (042).
     if (dishId) {
       if (useFoodStore.getState().openDishId !== dishId) food.openDish(dishId);
     } else if (useFoodStore.getState().openDishId) {
@@ -178,10 +193,13 @@ export function useUrlSync() {
     const { openDishId: dishId, listOpen } = useFoodStore.getState();
     const tripId = useTripStore.getState().tripId;
 
-    // A map selection outranks the index for the URL even while the index stays open in state:
-    // the reader is looking at the place, and closing it falls back to the list underneath.
+    // An open dish is the page's subject and takes the URL outright (043) — one dish, one URL,
+    // whatever map view it was opened over. Below it, a map selection outranks the index even
+    // while the index stays open in state; closing either falls back to what is underneath.
     let path = countryPath(cc);
-    if (live.selectedDestination) {
+    if (dishId) {
+      path = dishPath(cc, dishId);
+    } else if (live.selectedDestination) {
       const d = useContentStore.getState().destinations.find((x) => x.id === live.selectedDestination);
       if (d) path = destinationPath(cc, d.provinceSlug, d.slug);
     } else if (live.selectedProvince) {
@@ -192,9 +210,8 @@ export function useUrlSync() {
     path = localised(path);
     // Build the query rather than appending one parameter. The old single-append form silently
     // dropped every other parameter on the first selection change, which `tasks/lessons.md`
-    // records biting twice — `?trip=` would have been the third.
+    // records biting twice. `?dish=` used to live here too, until 043 gave it a path.
     const q = new URLSearchParams();
-    if (dishId) q.set("dish", dishId);
     if (tripId) q.set("trip", tripId);
     const qs = q.toString();
     if (qs) path += `?${qs}`;

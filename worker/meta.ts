@@ -54,8 +54,6 @@ export interface PageMeta {
   locale: Locale;
   /** Locale-free path, used to mint the hreflang set. */
   path: string;
-  /** Query string to carry onto every alternate (only ?dish= survives canonicalisation). */
-  query: string;
   /** Set for paths that resolve to nothing — served as a real 404 rather than a soft one. */
   notFound?: boolean;
 }
@@ -80,35 +78,9 @@ export async function buildMeta(env: Env, url: URL): Promise<PageMeta> {
   // (/{province}/…) still resolve against Vietnam.
   const country = raw[0] === "kr" || raw[0] === "vn" ? raw[0] : "vn";
   const segments = raw[0] === "kr" || raw[0] === "vn" ? raw.slice(1) : raw;
-  const dishId = url.searchParams.get("dish");
   const label = countryName(country, locale);
 
-  const base = { locale, query: "" };
-
-  // A dish overlay (?dish=…) rides on top of any map context — it wins the card. Its canonical
-  // is always the country-level URL: the same card on /vn, /vn/quang-nam and /vn/qn/hoi-an is
-  // one page, and three self-referencing canonicals made it three duplicates.
-  if (dishId) {
-    const dish = await db.getDish(env.DB, dishId, locale, country);
-    if (dish) {
-      const name = dish.emoji ? `${dish.emoji} ${dish.name}` : dish.name;
-      const description = clamp(dish.summary || dish.story);
-      const dishPath = `/${country}`;
-      return {
-        ...base,
-        title: `${name} — ${t("seo.cuisine")} | ${BRAND}`,
-        description,
-        url: url.href,
-        canonical: `${abs(dishPath)}?dish=${dish.id}`,
-        image: `${origin}/img/dishes/${dish.id}.webp`,
-        type: "article",
-        jsonLd: dishLd(abs, origin, country, label, t("seo.cuisine"), dish, description, locale),
-        body: dishBody(country, locale, dish),
-        path: dishPath,
-        query: `?dish=${dish.id}`,
-      };
-    }
-  }
+  const base = { locale };
 
   // "/" is answered by Cloudflare's asset layer and never reaches the Worker, but "/en", "/ko"…
   // do — a locale-prefixed homepage is a real page and needs its own copy.
@@ -153,9 +125,35 @@ export async function buildMeta(env: Env, url: URL): Promise<PageMeta> {
 
   const [provinceSlug, destSlug] = segments;
 
-  // "/vn/food" — the cuisine index. It shares the province rung, so it has to be answered before
-  // the bundle lookup below turns it into a 404.
-  if (provinceSlug === FOOD_SEGMENT && !destSlug) {
+  // "/vn/food[/dish]" — the cuisine index and its dishes. `food` shares the province rung, so
+  // both have to be answered before the bundle lookup below turns them into a 404.
+  if (provinceSlug === FOOD_SEGMENT && destSlug) {
+    const dish = await db.getDish(env.DB, destSlug, locale, country);
+    // A dish id that resolves to nothing is a 404, not the index wearing the wrong URL — the
+    // same rule destinations follow, and for the same reason: unbounded soft duplicates.
+    if (!dish) return notFound(origin, locale, path, t);
+
+    const cuisine = t("seo.cuisine");
+    const name = dish.emoji ? `${dish.emoji} ${dish.name}` : dish.name;
+    const description = clamp(dish.summary || dish.story);
+    const thisPath = `/${country}/${FOOD_SEGMENT}/${dish.id}`;
+    return {
+      ...base,
+      title: `${name} — ${cuisine} | ${BRAND}`,
+      description,
+      url: abs(thisPath),
+      // Self-referencing at last. Pre-043 this had to point back at `/{cc}?dish=` because the
+      // same card was reachable from every map view; a path has only one form.
+      canonical: abs(thisPath),
+      image: dishImageUrl(origin, dish.id),
+      type: "article",
+      jsonLd: dishLd(abs, origin, country, label, cuisine, dish, description, locale),
+      body: dishBody(country, locale, dish),
+      path: thisPath,
+    };
+  }
+
+  if (provinceSlug === FOOD_SEGMENT) {
     const dishes = await db.getDishes(env.DB, undefined, locale, country);
     if (!dishes.length) return notFound(origin, locale, path, t);
     const cuisine = t("seo.cuisine");
@@ -243,7 +241,6 @@ function notFound(
   return {
     locale,
     path,
-    query: "",
     title: `404 | ${BRAND}`,
     description: t("seo.description", { country: BRAND }),
     url: `${origin}${withLocale(locale, path)}`,
@@ -326,7 +323,7 @@ export function injectMeta(res: Response, meta: PageMeta): Response {
           // hreflang must be reciprocal and include a self-reference, or Google discards the
           // whole cluster. x-default points at the source language.
           for (const { locale, path } of alternates) {
-            const href = escapeAttr(`${origin}${path}${meta.query}`);
+            const href = escapeAttr(`${origin}${path}`);
             el.append(
               `<link rel="alternate" hreflang="${HREFLANG[locale]}" href="${href}" />`,
               { html: true },

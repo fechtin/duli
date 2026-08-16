@@ -92,8 +92,8 @@ export function countryLd(
 
 /**
  * The cuisine index (`/{cc}/food`) — a CollectionPage whose ItemList names every dish and links
- * to its canonical `?dish=` URL. This is the only structured place the dishes are enumerated:
- * before it existed they were reachable only through the country page's flat link list.
+ * to its own page. This is the only structured place the dishes are enumerated: before it
+ * existed they were reachable only through the country page's flat link list.
  */
 export function foodIndexLd(
   abs: Abs,
@@ -120,7 +120,7 @@ export function foodIndexLd(
           "@type": "ListItem",
           position: i + 1,
           name: d.name,
-          url: `${abs(`/${cc}`)}?dish=${d.id}`,
+          url: abs(`/${cc}/${FOOD_SEGMENT}/${d.id}`),
         })),
       },
     },
@@ -240,15 +240,15 @@ export function dishLd(
       name: dish.name,
       description,
       inLanguage: locale,
-      url: `${abs(`/${cc}`)}?dish=${dish.id}`,
+      url: abs(`/${cc}/${FOOD_SEGMENT}/${dish.id}`),
       ...(img ? { image: `${origin}${img}` } : {}),
     },
-    // The dish canonical stays `/{cc}?dish=`, but the trail now names the index it belongs to —
-    // the page that finally gives every dish a parent to hang off.
+    // A trail the URL actually matches (043): every rung here is a real, self-canonical page.
     breadcrumb(abs, [
       { name: "FechTin Go", path: "/" },
       { name: countryLabel, path: `/${cc}` },
       { name: cuisineLabel, path: `/${cc}/${FOOD_SEGMENT}` },
+      { name: dish.name, path: `/${cc}/${FOOD_SEGMENT}/${dish.id}` },
     ]),
   ]);
 }

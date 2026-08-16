@@ -35,7 +35,16 @@ export const useFoodStore = create<FoodState>((set, get) => ({
     set({ openDishId: id, dish: null, loading: true });
     fetchDish(id).then((d) => {
       // Ignore stale responses if the user already opened another dish.
-      if (get().openDishId === id) set({ dish: d, loading: false });
+      if (get().openDishId !== id) return;
+      // An id that resolves to nothing opens nothing rather than a permanent skeleton: `fetchDish`
+      // swallows its error and returns null, and `DishPanel`'s `loading || !dish` guard would spin
+      // for ever. Closing lets the URL write-back drop the segment, so a dead link heals itself —
+      // the same contract `useTripStore.openTrip` has for a malformed `?trip=`.
+      if (!d) {
+        set({ openDishId: null, dish: null, loading: false });
+        return;
+      }
+      set({ dish: d, loading: false });
     });
   },
 

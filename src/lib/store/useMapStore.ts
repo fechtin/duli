@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { useFoodStore } from "@/lib/store/useFoodStore";
 import type { FocusTarget } from "@/lib/types";
 
 interface FocusRequest {
@@ -26,6 +27,22 @@ interface MapState {
   reset: () => void;
 }
 
+/**
+ * Picking a place dismisses whatever is stacked on top of the map.
+ *
+ * A dish outranks every map layer in `PanelContainer`, so with one open, tapping a province or a
+ * marker changed the selection underneath and the reader saw nothing happen at all. This lives
+ * on the store rather than on the seven call sites that select a place — the map, the search
+ * overlay, the passport, the sr-only nav — because every one of them is the same intent, and the
+ * next one added would have forgotten.
+ *
+ * `getState()` is read inside the action, never at module scope, so the import cycle with
+ * useFoodStore (which reaches the other way for `openList`) is inert.
+ */
+const dismissDish = () => {
+  if (useFoodStore.getState().openDishId) useFoodStore.getState().closeDish();
+};
+
 export const useMapStore = create<MapState>((set, get) => ({
   selectedProvince: null,
   selectedDestination: null,
@@ -34,11 +51,13 @@ export const useMapStore = create<MapState>((set, get) => ({
   focusRequest: { target: { kind: "reset" }, nonce: 0 },
 
   selectProvince: (slug) => {
+    if (slug) dismissDish();
     set({ selectedProvince: slug, selectedDestination: null });
     if (slug) get().requestFocus({ kind: "province", slug });
   },
 
   selectDestination: (id, provinceSlug) => {
+    if (id) dismissDish();
     set((s) => ({
       selectedDestination: id,
       selectedProvince: provinceSlug ?? s.selectedProvince,

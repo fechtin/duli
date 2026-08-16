@@ -383,6 +383,20 @@ app.all("*", async (c) => {
   if (redundant) return c.redirect(`${path}${url.search}`, 301);
 
   const first = path.split("/").filter(Boolean)[0];
+
+  // Pre-043 dish overlays: /{cc}?dish=x, plus every map view one could be opened over
+  // (/vn/quang-nam?dish=x). They are indexed and shared, and dishes have a page of their own
+  // now, so send them there rather than letting them resolve to a second copy.
+  const legacyDish = url.searchParams.get("dish");
+  if (legacyDish) {
+    const cc = first === "kr" ? "kr" : "vn";
+    const rest = new URLSearchParams(url.search);
+    rest.delete("dish");
+    const qs = rest.toString();
+    const target = withLocale(locale, `/${cc}/food/${encodeURIComponent(legacyDish)}`);
+    return c.redirect(`${target}${qs ? `?${qs}` : ""}`, 301);
+  }
+
   // Links minted before the country prefix (/{province}/…) are indexed and shared — send
   // crawlers to the canonical /vn/… form instead of letting them 404 into the SPA.
   if (first && first !== "vn" && first !== "kr" && !first.includes(".") && !STATIC_PREFIXES.includes(first)) {

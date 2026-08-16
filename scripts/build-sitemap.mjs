@@ -150,17 +150,16 @@ for (const { cc, geo, destinations: allDests, dishes: allDishes, sources } of AT
       return { path: `/${cc}/${p.slug}`, lastmod };
     });
 
-  // Dishes have no page of their own — they are an overlay whose canonical is the country URL
-  // plus ?dish=. Listing them here is how they get crawled at all.
+  // Dishes are pages of their own since 043 (`/{cc}/food/{id}`); they used to be listed as the
+  // country URL plus a `?dish=` query, which the Worker now 301s to these paths.
   const dishEntries = dishList.map((d) => ({
-    path: `/${cc}`,
-    query: `?dish=${d.id}`,
+    path: `/${cc}/${FOOD_SEGMENT}/${d.id}`,
     lastmod: countryDate,
     images: IMAGES[`dish-${d.id}`] ? [`${SITE}${IMAGES[`dish-${d.id}`].src}`] : [],
   }));
 
-  // The cuisine index — the page every one of those overlays now hangs off. Omitted when the
-  // atlas has no seeded dishes, since the Worker answers that path with a 404.
+  // The cuisine index — the page every one of those hangs off. Omitted when the atlas has no
+  // seeded dishes, since the Worker answers that path with a 404.
   const foodEntries = dishList.length
     ? [{ path: `/${cc}/${FOOD_SEGMENT}`, lastmod: countryDate }]
     : [];

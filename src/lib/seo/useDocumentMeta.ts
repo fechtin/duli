@@ -41,10 +41,10 @@ function upsertMeta(attr: "name" | "property", key: string, content: string) {
  * HTML, but a reader (or a rendering crawler) who navigates the map never reloads — leaving
  * Hội An advertising the homepage's alternates.
  */
-function setAlternates(origin: string, path: string, query: string) {
+function setAlternates(origin: string, path: string) {
   for (const el of document.head.querySelectorAll('link[rel="alternate"][hreflang]')) el.remove();
   for (const { locale, path: localised } of alternatesOf(path)) {
-    const href = `${origin}${localised}${query}`;
+    const href = `${origin}${localised}`;
     for (const lang of locale === DEFAULT_LOCALE ? [HREFLANG[locale], "x-default"] : [HREFLANG[locale]]) {
       const el = document.createElement("link");
       el.rel = "alternate";
@@ -77,6 +77,7 @@ export function useDocumentMeta() {
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const destinations = useContentStore((s) => s.destinations);
   const openDishId = useFoodStore((s) => s.openDishId);
+  const dish = useFoodStore((s) => s.dish);
   const foodListOpen = useFoodStore((s) => s.listOpen);
 
   // The cuisine index names its own size, and only the dish list knows it. `fetchDishes` is
@@ -104,7 +105,24 @@ export function useDocumentMeta() {
     };
 
     const dest = selectedDestination ? destinations.find((d) => d.id === selectedDestination) : undefined;
-    if (dest) {
+
+    // A dish owns the URL while it is open, so it owns the card too. Before 043 there was no
+    // branch here at all: the Worker set a dish's title on load and a client-side navigation to
+    // one left the country title in place.
+    if (openDishId && dish) {
+      const cuisine = t("seo.cuisine");
+      const name = dish.emoji ? `${dish.emoji} ${dish.name}` : dish.name;
+      title = `${name} — ${cuisine} | ${brand}`;
+      description = dish.summary || dish.story;
+      ld = {
+        "@context": "https://schema.org",
+        "@type": "Thing",
+        additionalType: "https://www.wikidata.org/wiki/Q2095",
+        name: dish.name,
+        description,
+        inLanguage: locale,
+      };
+    } else if (dest) {
       const province = getProvinceMeta(dest.provinceSlug);
       title = `${dest.name} — ${province?.name ?? ""} | ${brand}`;
       description = dest.summary;
@@ -150,18 +168,16 @@ export function useDocumentMeta() {
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:type", "website");
     upsertMeta("name", "twitter:card", "summary_large_image");
-    // Canonical is built from the path, never from location.href: tracking params must not mint
-    // a second URL, and an open dish is one page (/{cc}?dish=…) no matter which map view it
-    // opened over — three self-canonicals for the same card is three duplicates to Google.
+    // Canonical is built from the path, never from location.href — tracking params must not mint
+    // a second URL. Since 043 every subject has exactly one path, so this is a plain
+    // self-reference; it used to have to rewrite an open dish onto `/{cc}?dish=`.
     const { origin } = window.location;
     const { path } = splitLocale(window.location.pathname);
-    const cleanPath = openDishId ? `/${country}` : path;
-    const query = openDishId ? `?dish=${openDishId}` : "";
-    const canonical = `${origin}${withLocale(locale, cleanPath)}${query}`;
+    const canonical = `${origin}${withLocale(locale, path)}`;
 
     upsertMeta("property", "og:url", canonical);
     setCanonical(canonical);
-    setAlternates(origin, cleanPath, query);
+    setAlternates(origin, path);
     setJsonLd(ld);
   }, [
     locale,
@@ -171,6 +187,7 @@ export function useDocumentMeta() {
     selectedDestination,
     destinations,
     openDishId,
+    dish,
     foodListOpen,
     dishCount,
   ]);

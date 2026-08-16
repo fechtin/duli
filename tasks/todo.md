@@ -285,3 +285,57 @@ Hai chuyện chồng lên nhau ở `localhost:5199`:
    Chỉ chạy app thật mới thấy: bundle production ban đầu chỉ được test bằng *click*, mà click
    không đi qua `applyFromUrl`. Đã thêm ca deep-link và ca "bấm Tất cả khi đang mở món" vào
    kịch bản kiểm tra.
+
+# 043 — Dishes get real path URLs (`/{cc}/food/{dish}`)
+
+042 để lại một hạn chế: món ăn vẫn là query param. `/vn?dish=banh-mi` chạy được và canonical
+đúng, nhưng yếu hơn `/vn/food/banh-mi` — không có từ khoá trong path, và breadcrumb đang khai
+một trang cha mà URL không phản ánh. Giờ `/{cc}/food` đã tồn tại thì món ăn có chỗ để làm con.
+
+Đổi luôn cả canonical, nên phải 301 dạng cũ: `?dish=` đã nằm trong index và đã được chia sẻ.
+
+Việc này còn **xoá bớt** máy móc chứ không chỉ thêm: hết cảnh canonical phải gộp
+`/vn/quang-nam?dish=x` về `/vn?dish=x`, nên `PageMeta.query` thành thừa.
+
+- [x] `urls.ts` — `dishPath` → `/{cc}/food/{id}`
+- [x] `useUrlSync` — parse `/{cc}/food/{dish}`; món thắng URL; `currentUrlDepth` phân biệt
+      `food/{dish}` (bậc 3) với `{tỉnh}/{điểm}` (bậc 2); vẫn nhận `?dish=` cũ rồi tự chữa
+- [x] `useFoodStore.openDish` — id sai thì tự đóng, đừng quay skeleton mãi (idiom của `openTrip`)
+- [x] `worker/index.ts` — 301 mọi `?dish=` sang path mới, giữ locale prefix
+- [x] `worker/meta.ts` — nhánh dish theo path; món lạ → 404 thật; bỏ `PageMeta.query`
+- [x] `worker/seo-body.ts` + `seo-jsonld.ts` — link, ItemList, breadcrumb 4 bậc
+- [x] `useDocumentMeta` — bỏ phần gộp canonical; **thêm nhánh dish** (hiện client không đặt
+      title cho món, chỉ Worker đặt lúc tải trang — lỗ hổng có sẵn)
+- [x] `build-sitemap.mjs` — dish entry thành path
+- [x] Verify: 301 dạng cũ, 404 món lạ, canonical mới, hreflang, full suite
+
+## Review — 043
+
+Món ăn giờ là trang thật: `/{cc}/food/{id}`, canonical tự trỏ chính nó. Việc này **xoá** máy móc
+chứ không thêm — hết cảnh gộp canonical, và `PageMeta.query` đã bỏ hẳn.
+
+Đo trên `wrangler dev`:
+- 301 đủ mọi dạng cũ, giữ locale và tham số khác:
+  `/vn?dish=` · `/vn/quang-nam?dish=` · `/en/vn?dish=` · `/vn/food?dish=` · `?dish=&trip=`
+- `/vn/food/banh-mi` 200, canonical tự trỏ, breadcrumb 4 bậc mà URL phản ánh đúng từng bậc
+- `/vn/food/khong-co-mon-nay` và `/kr/food/<id sai>` → 404 thật
+- 0 chuỗi `?dish=` còn sót ở bất kỳ trang nào; sitemap 0; ItemList trỏ path mới
+- 149 link món trong crawler body của cả `/vn` lẫn `/vn/food`
+
+Sửa kèm, phát sinh từ báo cáo của user giữa chừng:
+- **Đang xem chi tiết món, click địa điểm trên bản đồ không có tác dụng.** `openDishId` đứng
+  trên mọi thứ trong `PanelContainer`, nên chọn tỉnh/điểm chỉ đổi state bên dưới còn panel vẫn
+  là món. Có 7 chỗ gọi `selectProvince`/`selectDestination` (bản đồ, search, passport, sr-only
+  nav…) nên sửa ở `useMapStore` — chọn một địa điểm thì đóng món đang mở. Đây là lỗi **có từ
+  trước 043**: trước đây URL đổi thành `/vn/quang-nam?dish=x` mà panel vẫn không đổi.
+- **`openDish` với id sai** giờ tự đóng thay vì quay skeleton mãi (idiom của `openTrip`).
+  `fetchDish` nuốt lỗi trả `null`, còn `DishPanel` chỉ có `loading || !dish` nên quay vô hạn —
+  chính là thứ user gặp khi API chết.
+- **`useDocumentMeta` thiếu hẳn nhánh dish** từ trước: Worker đặt title lúc tải trang, còn điều
+  hướng trong app thì để nguyên title quốc gia. Đã thêm.
+
+Chưa sửa, có chủ ý:
+- **Đóng món mở từ panel tỉnh thì về `/vn`, không về tỉnh.** `PanelContainer.onClose` gọi
+  `closeDish(); reset()` — đóng cả chồng. Đã kiểm tra bằng `git show 05c5f09`: hành vi này có
+  từ trước 042. Nó lệch với nhánh food index (đóng món thì rơi về danh sách), nhưng sửa là đổi
+  ngữ nghĩa nút đóng của cả ba panel đang chạy — việc riêng, không nhét vào đây.

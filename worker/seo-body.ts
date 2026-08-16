@@ -118,14 +118,11 @@ export function countryBody(
         `<li style="margin:0 0 .4rem">${link(withLocale(locale, `/${cc}/${p.slug}`), p.name)}</li>`,
     )
     .join("");
-  // Dishes are an overlay (?dish=…) with no page of their own, so this list plus the cuisine
-  // index are the only internal links they get — without them they are unreachable by crawl,
-  // sitemap entry or not.
   const dishItems = dishes
     .map(
       (d) =>
         `<li style="margin:0 0 .4rem">` +
-        `${link(withLocale(locale, `/${cc}?dish=${d.id}`), `${d.emoji ?? "🍽️"} ${d.name}`)}</li>`,
+        `${link(withLocale(locale, `/${cc}/${FOOD_SEGMENT}/${d.id}`), `${d.emoji ?? "🍽️"} ${d.name}`)}</li>`,
     )
     .join("");
 
@@ -158,7 +155,7 @@ export function foodBody(
   const label = countryName(cc, locale);
   const items = dishes
     .map((d) => {
-      const href = withLocale(locale, `/${cc}?dish=${d.id}`);
+      const href = withLocale(locale, `/${cc}/${FOOD_SEGMENT}/${d.id}`);
       const name = `${d.emoji ?? "🍽️"} ${d.name}`;
       return (
         `<li style="${S.item}"><h3 style="${S.h3}">${link(href, name)}</h3>` +
@@ -277,7 +274,7 @@ export function destinationBody(
   );
 }
 
-/** Dish overlay (?dish=…) — a card on top of the map, so it gets a card's worth of content. */
+/** A dish page (`/{cc}/food/{id}`) — story-first, the way the panel reads it. */
 export function dishBody(
   cc: string,
   locale: Locale,
@@ -288,6 +285,7 @@ export function dishBody(
     crumbs(locale, [
       { href: "/", label: "FechTin Go" },
       { href: `/${cc}`, label: countryName(cc, locale) },
+      { href: `/${cc}/${FOOD_SEGMENT}`, label: t("seo.cuisine") },
     ]) +
       `<h1 style="${S.h1}">${esc(dish.emoji)} ${esc(dish.name)}</h1>` +
       figure(`dish-${dish.id}`, dish.name) +

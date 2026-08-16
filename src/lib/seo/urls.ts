@@ -124,12 +124,14 @@ export function foodPath(country: string): string {
 }
 
 /**
- * A dish: `/vn?dish=pho-bo`. Dishes are an overlay on the country page rather than a page of
- * their own, which is also why `useDocumentMeta` canonicalises them onto `/{cc}` no matter which
- * map view they were opened over — including `/vn/food`, so browsing the index and opening a card
- * still yields exactly one indexable URL per dish. The query rides along in the returned string
- * because `withLocale` prefixes the whole thing — splitting it would put `/en` after the `?`.
+ * A dish: `/vn/food/pho-bo` — a child of the cuisine index (043).
+ *
+ * It was `/{cc}?dish=<id>` until the index existed to be a parent. That form put no keyword in
+ * the path and forced every map view a dish could be opened over (`/vn/quang-nam?dish=…`) to
+ * canonicalise back onto one URL. A path says the same thing without the machinery, so the
+ * collapsing in `useDocumentMeta` and `worker/meta.ts` is gone. The old query form is still
+ * indexed and shared, so `worker/index.ts` 301s it here.
  */
 export function dishPath(country: string, dishId: string): string {
-  return `${countryPath(country)}?dish=${encodeURIComponent(dishId)}`;
+  return `${foodPath(country)}/${encodeURIComponent(dishId)}`;
 }
