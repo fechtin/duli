@@ -26,7 +26,8 @@
     "verify:seo": "node scripts/verify-locale-urls.mjs",
     "verify:kr": "node --experimental-strip-types scripts/verify-content.mjs kr",
     "verify:vn": "node --experimental-strip-types scripts/verify-content.mjs vn",
-    "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql"
+    "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql",
+    "sweep:trips": "node --experimental-strip-types scripts/sweep-itineraries.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

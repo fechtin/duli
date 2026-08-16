@@ -16,6 +16,9 @@
      sizes itself from this, never from dvh/100%/inset:0: see the file for why iOS
      standalone can't be trusted to size a full-window box on its own. */
   --app-h: 100dvh;
+  /* Desktop right panel width. Shared, because the map's controls have to sit clear of it —
+     a second copy of "400px" is a second number to forget. */
+  --panel-w: 400px;
 
   /* Surfaces — Cloud White, warm and calm (Bible 002 §8) */
   --background: #f5f4ef;

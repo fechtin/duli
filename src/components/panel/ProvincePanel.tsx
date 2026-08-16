@@ -1,12 +1,14 @@
-import { MapPin, ChevronRight, Utensils } from "lucide-react";
+import { MapPin, ChevronRight, Route, Utensils } from "lucide-react";
 import { fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
 import { fetchDishesForProvince } from "@/lib/api/food";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useAsync } from "@/lib/utils/useAsync";
 import { useFoodStore } from "@/lib/store/useFoodStore";
+import { useTripStore } from "@/lib/store/useTripStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
 import { IllustratedImage, firstPhotoSeed } from "@/components/ui/IllustratedImage";
+import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { markerIcon } from "@/components/map/markerIcons";
@@ -25,6 +27,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
   );
   const selectDestination = useMapStore((s) => s.selectDestination);
   const openDish = useFoodStore((s) => s.openDish);
+  const openTripForm = useTripStore((s) => s.openForm);
 
   if (!meta) return null;
   const content = bundle?.content ?? null;
@@ -76,6 +79,15 @@ export function ProvincePanel({ slug }: { slug: string }) {
           <Section index={1}>
             <AISummary context={{ locale, provinceSlug: slug, provinceName: meta.name, provinceBundle: bundle ?? undefined }} />
           </Section>
+
+          {/* Primary action, at the mirror position of DestinationPanel's action row. A trip
+              starts from wherever the traveller is already looking. */}
+          <div className="flex gap-2 px-5 pb-1 pt-1">
+            <Button variant="primary" className="flex-1" onClick={() => openTripForm(slug)}>
+              <Route size={18} />
+              {t("trip.cta")}
+            </Button>
+          </div>
 
           <Section index={2} title={t("panel.story")}>
             <p className="text-sm leading-relaxed text-foreground/85">{content.story}</p>

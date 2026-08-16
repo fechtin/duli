@@ -9,6 +9,13 @@ function initialTheme(): Theme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
+/** Hidden map layers, persisted. Stored as the HIDDEN set so "show everything" is the empty
+ *  default and a fresh visitor gets the whole atlas without us writing anything. */
+function initialHiddenLayers(): string[] {
+  if (typeof window === "undefined") return [];
+  return (window.localStorage.getItem("via.map.hiddenLayers") ?? "").split(",").filter(Boolean);
+}
+
 function initialCollapsed(): boolean {
   if (typeof window === "undefined") return false;
   return window.localStorage.getItem("via.sidebar.collapsed") === "1";
@@ -27,6 +34,8 @@ interface UIState {
   settingsOpen: boolean;
   /** Destination id pending a check-in flow, or null. */
   checkinTarget: string | null;
+  /** Map layers switched OFF. Empty = show everything (see `src/lib/map/layers.ts`). */
+  hiddenMapLayers: string[];
 
   toggleTheme: () => void;
   applyTheme: () => void;
@@ -38,6 +47,8 @@ interface UIState {
   setSettingsOpen: (v: boolean) => void;
   openCheckin: (destinationId: string) => void;
   closeCheckin: () => void;
+  toggleMapLayer: (layer: string) => void;
+  showAllMapLayers: () => void;
 }
 
 export const useUIStore = create<UIState>((set, get) => ({
@@ -49,6 +60,19 @@ export const useUIStore = create<UIState>((set, get) => ({
   sidebarMobileOpen: false,
   settingsOpen: false,
   checkinTarget: null,
+  hiddenMapLayers: initialHiddenLayers(),
+
+  toggleMapLayer: (layer) => {
+    const hidden = get().hiddenMapLayers;
+    const next = hidden.includes(layer) ? hidden.filter((l) => l !== layer) : [...hidden, layer];
+    set({ hiddenMapLayers: next });
+    window.localStorage.setItem("via.map.hiddenLayers", next.join(","));
+  },
+
+  showAllMapLayers: () => {
+    set({ hiddenMapLayers: [] });
+    window.localStorage.removeItem("via.map.hiddenLayers");
+  },
 
   toggleTheme: () => {
     const next: Theme = get().theme === "light" ? "dark" : "light";

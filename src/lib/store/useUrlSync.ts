@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useMapStore } from "./useMapStore";
 import { useFoodStore } from "./useFoodStore";
+import { useTripStore } from "./useTripStore";
 import { useContentStore, findDestinationBySlug } from "./useContentStore";
 import { useCountryStore } from "./useCountryStore";
 import { getProvinceMeta } from "@/lib/api/content";
@@ -19,12 +20,16 @@ import type { CountryCode } from "@/lib/types";
  * useCountryStore value only decides where a bare "/" lands.
  */
 
-/** Layer depth of the current selection, used to decide push vs replace. */
-function depthOf(hasDish: boolean, hasDest: boolean, hasProvince: boolean) {
-  if (hasDish) return 3;
-  if (hasDest) return 2;
-  if (hasProvince) return 1;
-  return 0;
+/**
+ * Layer depth of the current selection, used to decide push vs replace.
+ *
+ * A trip is orthogonal to the province → destination → dish hierarchy: it is a context you keep
+ * open while drilling into places. Half a rung expresses that without renumbering anything —
+ * opening a trip still pushes (so Back closes it) and closing still replaces.
+ */
+function depthOf(hasDish: boolean, hasDest: boolean, hasProvince: boolean, hasTrip = false) {
+  const base = hasDish ? 3 : hasDest ? 2 : hasProvince ? 1 : 0;
+  return hasTrip ? base + 0.5 : base;
 }
 
 /**
@@ -52,14 +57,16 @@ function localised(path: string): string {
 
 function currentUrlDepth() {
   const { segments } = parsePath(window.location.pathname);
-  const dish = new URLSearchParams(window.location.search).has("dish");
-  return depthOf(dish, Boolean(segments[1]), Boolean(segments[0]));
+  const q = new URLSearchParams(window.location.search);
+  return depthOf(q.has("dish"), Boolean(segments[1]), Boolean(segments[0]), q.has("trip"));
 }
 
 export function useUrlSync() {
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
   const openDishId = useFoodStore((s) => s.openDishId);
+  // Subscribed for the dependency array only — the effect reads .getState(), see its comment.
+  const tripId = useTripStore((s) => s.tripId);
   const country = useCountryStore((s) => s.country);
   const ready = useContentStore((s) => s.ready);
   const applied = useRef(false);
@@ -105,6 +112,15 @@ export function useUrlSync() {
       food.closeDish();
     }
 
+    // Reconcile the trip layer, which rides alongside rather than on top of the map context.
+    const tripParam = new URLSearchParams(window.location.search).get("trip");
+    const trip = useTripStore.getState();
+    if (tripParam) {
+      if (trip.tripId !== tripParam) trip.openTrip(tripParam);
+    } else if (trip.tripId) {
+      trip.close();
+    }
+
     // Upgrade a legacy (country-less) link in place, keeping the same history entry.
     if (legacy) {
       const { path } = splitLocale(window.location.pathname);
@@ -137,6 +153,7 @@ export function useUrlSync() {
     if (pendingDest.current && !live.selectedDestination) return;
     const cc = useCountryStore.getState().country;
     const dishId = useFoodStore.getState().openDishId;
+    const tripId = useTripStore.getState().tripId;
 
     let path = `/${cc}`;
     if (live.selectedDestination) {
@@ -146,9 +163,21 @@ export function useUrlSync() {
       path = `/${cc}/${live.selectedProvince}`;
     }
     path = localised(path);
-    if (dishId) path += `?dish=${dishId}`;
+    // Build the query rather than appending one parameter. The old single-append form silently
+    // dropped every other parameter on the first selection change, which `tasks/lessons.md`
+    // records biting twice — `?trip=` would have been the third.
+    const q = new URLSearchParams();
+    if (dishId) q.set("dish", dishId);
+    if (tripId) q.set("trip", tripId);
+    const qs = q.toString();
+    if (qs) path += `?${qs}`;
 
-    const nextDepth = depthOf(Boolean(dishId), Boolean(live.selectedDestination), Boolean(live.selectedProvince));
+    const nextDepth = depthOf(
+      Boolean(dishId),
+      Boolean(live.selectedDestination),
+      Boolean(live.selectedProvince),
+      Boolean(tripId),
+    );
     const current = window.location.pathname + window.location.search;
     if (path !== current) {
       // Deeper than before → push a real back-target; same/shallower → replace in place.
@@ -156,5 +185,5 @@ export function useUrlSync() {
       else window.history.replaceState(null, "", path);
     }
     prevDepth.current = nextDepth;
-  }, [selectedProvince, selectedDestination, openDishId, country]);
+  }, [selectedProvince, selectedDestination, openDishId, country, tripId]);
 }

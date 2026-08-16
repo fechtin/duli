@@ -1,6 +1,7 @@
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useFoodStore } from "@/lib/store/useFoodStore";
+import { useTripStore } from "@/lib/store/useTripStore";
 import { splitLocale, withLocale } from "@/lib/seo/urls";
 import type { CountryCode } from "@/lib/types";
 
@@ -14,6 +15,9 @@ export function switchCountry(cc: CountryCode) {
   if (country === cc) return;
 
   useFoodStore.getState().closeDish();
+  // A Vietnamese route drawn over the Korean atlas is garbage: its province slugs mean nothing
+  // there and the map layer would render a line to nowhere.
+  useTripStore.getState().close();
   useMapStore.getState().reset();
   setCountry(cc);
   // Switching atlas must not switch language: keep whatever locale prefix the URL carries.

@@ -2,12 +2,14 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion, useTransform } from "motion/react";
 import { Minus, Plus, Locate, UtensilsCrossed } from "lucide-react";
 import { useFoodStore } from "@/lib/store/useFoodStore";
+import { useTripStore } from "@/lib/store/useTripStore";
 import { type MapModel } from "@/lib/map/projection";
 import { getMapModel } from "@/lib/map/mapModelCache";
 import { useCamera } from "@/lib/map/useCamera";
 import { COAST_GLOW, regionColor } from "@/lib/map/regionPalette";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
+import { usePanelOpen } from "@/lib/store/usePanelOpen";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { getRegions } from "@/lib/api/content";
@@ -15,6 +17,11 @@ import { useT } from "@/lib/i18n";
 import { useCountryName } from "@/lib/country/useCountryName";
 import { cn } from "@/lib/utils/cn";
 import { PhotoMedallion } from "./PhotoMedallion";
+import { MapLayerFilter } from "./MapLayerFilter";
+import { isLayerVisible } from "@/lib/map/layers";
+import { TripRouteLayer } from "./TripRouteLayer";
+import type { DayLegs } from "./TripRouteLayer";
+import { tripDayColor } from "@/lib/map/tripPalette";
 import { MapHint } from "./MapHint";
 import { useLivingStore } from "@/lib/store/useLivingStore";
 import type { HeartbeatResult } from "@/lib/living/types";
@@ -71,6 +78,7 @@ const ProvinceLayer = memo(function ProvinceLayer({
   selectedProvince,
   hovered,
   dark,
+  cityZoom,
   onEnter,
   onLeave,
   onSelect,
@@ -81,6 +89,8 @@ const ProvinceLayer = memo(function ProvinceLayer({
   selectedProvince: string | null;
   hovered: string | null;
   dark: boolean;
+  /** Zoomed past the detail the simplified geometry can honestly support. */
+  cityZoom: boolean;
   onEnter: (slug: string) => void;
   onLeave: () => void;
   onSelect: (slug: string) => void;
@@ -109,19 +119,19 @@ const ProvinceLayer = memo(function ProvinceLayer({
       {/* Coastline glow — two layered strokes; fill+stroke inside a group with GROUP opacity
           so overlapping province paths composite into one uniform silhouette halo (no seams,
           no SVG blur — 025 §Ràng buộc). Land is repainted opaquely on top. */}
-      <g fill={glow.color} stroke={glow.color} strokeWidth={11} strokeLinejoin="round" opacity={glow.wide} aria-hidden>
+      <g fill={glow.color} stroke={glow.color} strokeWidth={11} strokeLinejoin="round" opacity={cityZoom ? 0 : glow.wide} aria-hidden style={{ transition: "opacity 220ms" }}>
         {model.provinces.map((p) => (
           <path key={p.slug} d={p.d} vectorEffect="non-scaling-stroke" />
         ))}
       </g>
-      <g fill={glow.color} stroke={glow.color} strokeWidth={3.5} strokeLinejoin="round" opacity={glow.near} aria-hidden>
+      <g fill={glow.color} stroke={glow.color} strokeWidth={3.5} strokeLinejoin="round" opacity={cityZoom ? 0 : glow.near} aria-hidden style={{ transition: "opacity 220ms" }}>
         {model.provinces.map((p) => (
           <path key={p.slug} d={p.d} vectorEffect="non-scaling-stroke" />
         ))}
       </g>
 
       {/* Raised-island shadow (daylight only — Night Atlas gets its depth from the glow). */}
-      {!dark && (
+      {!dark && !cityZoom && (
         <g transform="translate(3 14)" fill="#0a201c" opacity="0.18" aria-hidden>
           {model.provinces.map((p) => (
             <path key={p.slug} d={p.d} />
@@ -272,6 +282,23 @@ export function MapEngine() {
     } else if (tgt.kind === "point") {
       const [px, py] = model.project([tgt.lng, tgt.lat]);
       cam.focusPoint(px, py, tgt.zoom);
+    } else if (tgt.kind === "bounds") {
+      const pts = tgt.points.map((p) => model.project(p));
+      if (pts.length === 1) {
+        cam.focusPoint(pts[0][0], pts[0][1], tgt.minZoom ?? 7);
+      } else if (pts.length > 1) {
+        let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+        for (const [x, y] of pts) {
+          x0 = Math.min(x0, x); y0 = Math.min(y0, y);
+          x1 = Math.max(x1, x); y1 = Math.max(y1, y);
+        }
+        // Two stops 800 m apart fit a ~4px box, which would slam into the max-zoom clamp and land
+        // at street level. Inflate to a minimum span so a tight day still reads as a map.
+        const MIN = 90;
+        if (x1 - x0 < MIN) { const c = (x0 + x1) / 2; x0 = c - MIN / 2; x1 = c + MIN / 2; }
+        if (y1 - y0 < MIN) { const c = (y0 + y1) / 2; y0 = c - MIN / 2; y1 = c + MIN / 2; }
+        cam.focusBox([x0, y0, x1, y1]);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusRequest.nonce, model]);
@@ -315,6 +342,52 @@ export function MapEngine() {
 
   // Food layer (026 §Food Explorer Map) — an open dish projects its restaurants.
   const openDishData = useFoodStore((s) => s.dish);
+  // ── Trip route ──────────────────────────────────────────────────────────
+  // Selecting raw state and deriving with useMemo: a Zustand v5 selector that builds an array
+  // re-renders forever (tasks/lessons.md).
+  const tripPlan = useTripStore((s) => s.plan);
+  const tripActiveDay = useTripStore((s) => s.activeDay);
+  const tripOpen = Boolean(tripPlan);
+  const hiddenMapLayers = useUIStore((s) => s.hiddenMapLayers);
+  const panelOpen = usePanelOpen();
+
+  const tripLegs = useMemo<DayLegs[]>(() => {
+    if (!model || !tripPlan) return [];
+    const byId = new Map(destinations.map((d) => [d.id, d]));
+    const project = (id: string) => {
+      const d = byId.get(id);
+      return d ? (model.project([d.lng, d.lat]) as [number, number]) : null;
+    };
+    const out: DayLegs[] = [];
+    let previousLast: [number, number] | null = null;
+    for (const day of tripPlan.days) {
+      const points = day.stops.map((s) => project(s.destinationId)).filter(Boolean) as [number, number][];
+      if (!points.length) continue;
+      out.push({ day: day.day, points, transferFrom: previousLast ?? undefined });
+      previousLast = points[points.length - 1];
+    }
+    return out;
+  }, [model, tripPlan, destinations]);
+
+  /** Stops get their own numbered badge, so their ordinary marker must not draw underneath it. */
+  const tripStopIds = useMemo(
+    () => new Set((tripPlan?.days ?? []).flatMap((d) => d.stops.map((s) => s.destinationId))),
+    [tripPlan],
+  );
+
+  const tripBadges = useMemo(() => {
+    if (!model || !tripPlan) return [];
+    const byId = new Map(destinations.map((d) => [d.id, d]));
+    return tripPlan.days.flatMap((day) =>
+      day.stops.flatMap((stop) => {
+        const d = byId.get(stop.destinationId);
+        if (!d) return [];
+        const [x, y] = model.project([d.lng, d.lat]);
+        return [{ id: stop.destinationId, name: d.name, order: stop.order, day: day.day, x, y, lng: d.lng, lat: d.lat, provinceSlug: d.provinceSlug }];
+      }),
+    );
+  }, [model, tripPlan, destinations]);
+
   const projectedRestaurants = useMemo(() => {
     if (!model || !openDishData) return [];
     return openDishData.restaurants.map((r) => {
@@ -450,9 +523,20 @@ export function MapEngine() {
           selectedProvince={selectedProvince}
           hovered={hovered}
           dark={dark}
+          cityZoom={zoomLevel >= 5}
           onEnter={onEnter}
           onLeave={onLeave}
           onSelect={onSelectProvince}
+        />
+
+        {/* Route sits above the land and below every Label (all of which set a positive z-index). */}
+        <TripRouteLayer
+          legs={tripLegs}
+          activeDay={tripActiveDay}
+          dark={dark}
+          width={model.width}
+          height={model.height}
+          invK={invK}
         />
 
         {/* Island flags — territorial markers in the East Sea (always shown). */}
@@ -526,7 +610,15 @@ export function MapEngine() {
         {/* Destination markers — illustrated landmarks, culled to viewport and tier. */}
         {showMarkers &&
           projectedDestinations
-            .filter((d) => d.tier <= maxMarkerTier && inView(d.x, d.y))
+            .filter(
+              (d) =>
+                d.tier <= maxMarkerTier &&
+                inView(d.x, d.y) &&
+                !tripStopIds.has(d.id) &&
+                // Trip stops are exempt above: the traveller asked for those by name, so a layer
+                // switch must not delete a stop out of their own itinerary.
+                isLayerVisible(d.type, hiddenMapLayers),
+            )
             .map((d) => {
               const isSelected = selectedDestination === d.id;
               const hb = getHeartbeat(d.id);
@@ -557,9 +649,19 @@ export function MapEngine() {
                         requestFocus({ kind: "point", lng: d.lng, lat: d.lat, zoom: 7 });
                       }}
                       className={cn(
-                        "group flex items-center rounded-full border bg-surface/95 shadow-[var(--shadow-e2)] backdrop-blur transition-transform duration-150 hover:-translate-y-0.5 hover:scale-[1.06]",
-                        d.tier === 1 ? "gap-1.5 py-1 pl-1 pr-2.5" : d.tier === 2 ? "gap-1.5 py-0.5 pl-0.5 pr-2" : "gap-1 py-0.5 pl-0.5 pr-1.5",
+                        "group flex items-center rounded-full border bg-surface/95 shadow-[var(--shadow-e2)] backdrop-blur transition-all duration-150 hover:-translate-y-0.5 hover:scale-[1.06]",
+                        tripOpen
+                          ? "p-0.5"
+                          : d.tier === 1
+                            ? "gap-1.5 py-1 pl-1 pr-2.5"
+                            : d.tier === 2
+                              ? "gap-1.5 py-0.5 pl-0.5 pr-2"
+                              : "gap-1 py-0.5 pl-0.5 pr-1.5",
                         isSelected ? "border-primary ring-2 ring-primary/30" : "border-border",
+                        // While a trip is open the route has to be the thing you read first. Dimmed,
+                        // never hidden — exploring off-route is the whole premise of the atlas, and
+                        // hiding these would amputate it. Hover restores full weight.
+                        tripOpen && !isSelected && "opacity-40 hover:opacity-100",
                       )}
                     >
                       <PhotoMedallion seed={d.gallery[0]?.seed ?? d.id} type={d.type} tier={d.tier}>
@@ -578,23 +680,77 @@ export function MapEngine() {
                           </span>
                         )}
                       </PhotoMedallion>
-                      <span
-                        className={cn(
-                          "truncate text-foreground",
-                          d.tier === 1
-                            ? "max-w-[7.5rem] text-[11px] font-semibold"
-                            : d.tier === 2
-                              ? "max-w-[6.5rem] text-[10.5px] font-medium"
-                              : "max-w-[5.5rem] text-[10px] font-medium",
-                        )}
-                      >
-                        {d.name}
-                      </span>
+                      {/* While a trip is open, off-route places keep their medallion but lose
+                          their name. The pills are what collide: eight of them inside a couple of
+                          kilometres around Hoi An turned into an unreadable pile, and the name is
+                          the part you do not need until you decide to look. */}
+                      {!tripOpen && (
+                        <span
+                          className={cn(
+                            "truncate text-foreground",
+                            d.tier === 1
+                              ? "max-w-[7.5rem] text-[11px] font-semibold"
+                              : d.tier === 2
+                                ? "max-w-[6.5rem] text-[10.5px] font-medium"
+                                : "max-w-[5.5rem] text-[10px] font-medium",
+                          )}
+                        >
+                          {d.name}
+                        </span>
+                      )}
                     </button>
                   </div>
                 </Label>
               );
             })}
+
+        {/* Trip stop badges. HTML in a <Label>, not SVG: every point-anchored chip in this app is
+            counter-scaled HTML so it keeps a constant screen size, while SVG is reserved for
+            geometry that should scale with the map.
+
+            Deliberately NOT gated on `showMarkers` — a five-day route is read at overview zoom,
+            where ordinary markers are hidden. To stop twelve badges colliding down there, only the
+            active day's badges render below zoom level 2. Same precedent as restaurant markers,
+            which are also ungated while a dish is open. */}
+        {tripBadges
+          .filter((b) => inView(b.x, b.y) && (zoomLevel >= 2 || tripActiveDay === 0 || tripActiveDay === b.day))
+          .map((b) => {
+            const onDay = tripActiveDay === 0 || tripActiveDay === b.day;
+            // The whole-route view is about SHAPE; the day view is about detail. Labelling all
+            // thirteen stops at once buried the city centre under its own captions.
+            const showName = tripActiveDay !== 0 && tripActiveDay === b.day;
+            const c = tripDayColor(b.day - 1, dark);
+            return (
+              <Label key={`trip-${b.id}`} x={b.x} y={b.y} invK={invK} z={onDay ? 28 : 22}>
+                <button
+                  aria-label={b.name}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    selectDestination(b.id, b.provinceSlug);
+                    requestFocus({ kind: "point", lng: b.lng, lat: b.lat, zoom: 8 });
+                  }}
+                  className={cn(
+                    "flex items-center rounded-full border shadow-[var(--shadow-e2)] backdrop-blur transition-opacity",
+                    showName
+                      ? "gap-1.5 border-border bg-surface/95 py-0.5 pl-0.5 pr-2.5"
+                      : onDay
+                        ? "border-transparent p-0"
+                        : "border-transparent p-0 opacity-45",
+                  )}
+                >
+                  <span
+                    className="grid h-6 w-6 place-items-center rounded-full text-[11px] font-bold text-white"
+                    style={{ background: c.line, boxShadow: "0 0 0 2px var(--color-surface)" }}
+                  >
+                    {b.order}
+                  </span>
+                  {showName && (
+                    <span className="max-w-[7rem] truncate text-[11px] font-semibold text-foreground">{b.name}</span>
+                  )}
+                </button>
+              </Label>
+            );
+          })}
 
         {/* Restaurant markers — visible while a dish is open (026 §Food Explorer Map). */}
         {projectedRestaurants
@@ -655,6 +811,7 @@ export function MapEngine() {
       />
 
       <MapControls
+        panelOpen={panelOpen}
         onZoomIn={() => cam.setK(cam.scale.get() * 1.5)}
         onZoomOut={() => cam.setK(cam.scale.get() / 1.5)}
         onReset={() => useMapStore.getState().reset()}
@@ -691,14 +848,31 @@ function MapControls({
   onZoomIn,
   onZoomOut,
   onReset,
+  panelOpen,
 }: {
   onZoomIn: () => void;
   onZoomOut: () => void;
   onReset: () => void;
+  /** The desktop side panel is showing, so the right edge of the visible map has moved. */
+  panelOpen: boolean;
 }) {
   const t = useT();
   return (
-    <div className="absolute bottom-24 right-4 z-20 flex flex-col gap-2.5 md:bottom-6 md:right-5">
+    <div
+      className={cn(
+        // The controls belong to the right edge of the VISIBLE map, not of the container. With the
+        // panel open they were rendered underneath it — measured at x 1374–1418 behind a panel
+        // spanning 1040–1440, so zoom, reset and the layer filter were all unreachable.
+        // Mobile is untouched: there the panel is a bottom sheet, not a right column.
+        "absolute bottom-24 right-4 z-20 flex flex-col gap-2.5 transition-[right] duration-300 md:bottom-6",
+        panelOpen ? "md:right-[calc(var(--panel-w)+1.25rem)]" : "md:right-5",
+      )}
+      // The controls sit inside the map's own gesture surface, which listens for pointer-down to
+      // start a pan. Without this, reaching for zoom or the layer filter also grabs the map and a
+      // few pixels of finger travel slide the whole atlas under your hand.
+      onPointerDown={(e) => e.stopPropagation()}
+      onPointerMove={(e) => e.stopPropagation()}
+    >
       <div className="flex flex-col overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-bg)] text-[color:var(--glass-text)] shadow-[var(--glass-shadow)] backdrop-blur-xl">
         <button aria-label={t("map.zoomIn")} onClick={onZoomIn} className="grid h-11 w-11 place-items-center transition-colors hover:bg-[var(--glass-hover)] active:text-[color:var(--glass-gold)]">
           <Plus size={19} />
@@ -708,6 +882,7 @@ function MapControls({
           <Minus size={19} />
         </button>
       </div>
+      <MapLayerFilter />
       <button
         aria-label={t("map.reset")}
         onClick={onReset}

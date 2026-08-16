@@ -305,3 +305,146 @@ export async function getDish(db: D1Like, id: string, locale?: string, country =
     .all<RestaurantRow>();
   return { ...mapDish(row, locale), restaurants: rests.results.map((r) => mapRestaurant(r, locale)) };
 }
+
+// ── Trip planner (docs/031.md, re-scoped) ────────────────────────────────────
+
+/**
+ * Rows for the itinerary engine.
+ *
+ * Deliberately NOT `toDestination()`. That mapper overlays the i18n translation onto
+ * `visit_duration` and `opening_hours`, and the engine parses both with a Vietnamese vocabulary —
+ * a `locale=ko` request would hand it "2시간" and "09:00~18:00", every duration would fall back to
+ * a default, every window would classify as unknown, and the SAME trip would come out different in
+ * Korean than in Vietnamese. A shared `?trip=` link would then not reproduce.
+ *
+ * So this returns the BASE columns only, and takes no locale at all. Names for display are resolved
+ * client-side from data it already holds. `plan.test.ts` pins the invariant.
+ */
+export async function getItineraryPlaces(
+  db: D1Like,
+  provinceSlugs: string[],
+  country: string,
+): Promise<ItineraryPlaceRow[]> {
+  if (!provinceSlugs.length) return [];
+  const holes = provinceSlugs.map(() => "?").join(",");
+  const rows = await db
+    .prepare(
+      `SELECT id, slug, province_slug, name, type, lng, lat, badges, tags, featured,
+              visit_duration, opening_hours, nearby
+         FROM destinations
+        WHERE country = ? AND province_slug IN (${holes})
+        ORDER BY id`,
+    )
+    .bind(country, ...provinceSlugs)
+    .all<ItineraryDestRow>();
+
+  return rows.results.map((r) => ({
+    id: r.id,
+    slug: r.slug,
+    provinceSlug: r.province_slug,
+    name: r.name,
+    type: r.type as Destination["type"],
+    lng: r.lng,
+    lat: r.lat,
+    badges: parse<Destination["badges"]>(r.badges, []),
+    tags: parse<string[]>(r.tags, []),
+    featured: r.featured === 1,
+    visitDuration: r.visit_duration ?? "",
+    openingHours: r.opening_hours ?? "",
+    nearby: parse<string[]>(r.nearby, []),
+  }));
+}
+
+/** Province centroids, for the radius ladder and for routing between bases. */
+export async function getProvinceNodes(db: D1Like, country: string): Promise<ProvinceNodeRow[]> {
+  const rows = await db
+    .prepare("SELECT slug, center_lng, center_lat FROM provinces WHERE country = ? ORDER BY slug")
+    .bind(country)
+    .all<{ slug: string; center_lng: number; center_lat: number }>();
+  return rows.results.map((r) => ({ slug: r.slug, lng: r.center_lng, lat: r.center_lat }));
+}
+
+/** Meal candidates. Base `open_hours` for the same reason as above. */
+export async function getRestaurantsByProvinces(
+  db: D1Like,
+  provinceSlugs: string[],
+  country: string,
+): Promise<MealCandidateRow[]> {
+  if (!provinceSlugs.length) return [];
+  const holes = provinceSlugs.map(() => "?").join(",");
+  const rows = await db
+    .prepare(
+      `SELECT id, name, province_slug, lng, lat, open_hours, atlas_score
+         FROM restaurants
+        WHERE country = ? AND province_slug IN (${holes})
+        ORDER BY atlas_score DESC, id`,
+    )
+    .bind(country, ...provinceSlugs)
+    .all<{
+      id: string;
+      name: string;
+      province_slug: string;
+      lng: number;
+      lat: number;
+      open_hours: string | null;
+      atlas_score: number;
+    }>();
+
+  return rows.results.map((r) => ({
+    id: r.id,
+    name: r.name,
+    provinceSlug: r.province_slug,
+    lng: r.lng,
+    lat: r.lat,
+    openHours: r.open_hours ?? "",
+    atlasScore: r.atlas_score,
+  }));
+}
+
+interface ItineraryDestRow {
+  id: string;
+  slug: string;
+  province_slug: string;
+  name: string;
+  type: string;
+  lng: number;
+  lat: number;
+  badges: string;
+  tags: string;
+  featured: number;
+  visit_duration: string | null;
+  opening_hours: string | null;
+  nearby: string;
+}
+
+export interface ItineraryPlaceRow {
+  id: string;
+  slug: string;
+  provinceSlug: string;
+  name: string;
+  type: Destination["type"];
+  lng: number;
+  lat: number;
+  badges: Destination["badges"];
+  tags: string[];
+  featured: boolean;
+  visitDuration: string;
+  openingHours: string;
+  nearby: string[];
+}
+
+export interface ProvinceNodeRow {
+  slug: string;
+  lng: number;
+  lat: number;
+}
+
+export interface MealCandidateRow {
+  id: string;
+  name: string;
+  provinceSlug: string;
+  lng: number;
+  lat: number;
+  openHours: string;
+  atlasScore: number;
+}

@@ -1,0 +1,988 @@
+[
+  {
+    "id": "ho-chi-minh-mausoleum",
+    "name": "Lăng Chủ tịch Hồ Chí Minh",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8347,
+      "lat": 21.0367,
+      "via": "en",
+      "title": "Ho Chi Minh Mausoleum",
+      "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Mausoleum"
+    },
+    "kmFromProvinceCentroid": 14.7,
+    "rejected": null
+  },
+  {
+    "id": "one-pillar-pagoda",
+    "name": "Chùa Một Cột",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8336,
+      "lat": 21.0358,
+      "via": "en",
+      "title": "One Pillar Pagoda",
+      "url": "https://en.wikipedia.org/wiki/One_Pillar_Pagoda"
+    },
+    "kmFromProvinceCentroid": 14.5,
+    "rejected": null
+  },
+  {
+    "id": "tran-quoc-pagoda",
+    "name": "Chùa Trấn Quốc",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8367,
+      "lat": 21.0478,
+      "via": "en",
+      "title": "Trấn Quốc Pagoda",
+      "url": "https://en.wikipedia.org/wiki/Tr%E1%BA%A5n_Qu%E1%BB%91c_Pagoda"
+    },
+    "kmFromProvinceCentroid": 15.3,
+    "rejected": null
+  },
+  {
+    "id": "west-lake-hanoi",
+    "name": "Hồ Tây",
+    "province": "ha-noi",
+    "resolved": null,
+    "kmFromProvinceCentroid": 1773.4,
+    "rejected": "West Lake (en, 1773km, too far)"
+  },
+  {
+    "id": "hoa-lo-prison",
+    "name": "Nhà tù Hỏa Lò",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8464,
+      "lat": 21.0253,
+      "via": "vi",
+      "title": "Nhà tù Hỏa Lò",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_t%C3%B9_H%E1%BB%8Fa_L%C3%B2"
+    },
+    "kmFromProvinceCentroid": 15.5,
+    "rejected": null
+  },
+  {
+    "id": "ngoc-son-temple",
+    "name": "Đền Ngọc Sơn",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8523,
+      "lat": 21.0307,
+      "via": "vi",
+      "title": "Đền Ngọc Sơn",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_Ng%E1%BB%8Dc_S%C6%A1n"
+    },
+    "kmFromProvinceCentroid": 16.3,
+    "rejected": null
+  },
+  {
+    "id": "long-bien-bridge",
+    "name": "Cầu Long Biên",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8589,
+      "lat": 21.0433,
+      "via": "en",
+      "title": "Long Biên Bridge",
+      "url": "https://en.wikipedia.org/wiki/Long_Bi%C3%AAn_Bridge"
+    },
+    "kmFromProvinceCentroid": 17.3,
+    "rejected": null
+  },
+  {
+    "id": "hanoi-opera-house",
+    "name": "Nhà hát Lớn Hà Nội",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8578,
+      "lat": 21.0242,
+      "via": "en",
+      "title": "Hanoi Opera House",
+      "url": "https://en.wikipedia.org/wiki/Hanoi_Opera_House"
+    },
+    "kmFromProvinceCentroid": 16.7,
+    "rejected": null
+  },
+  {
+    "id": "st-joseph-cathedral-hanoi",
+    "name": "Nhà thờ Lớn Hà Nội",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8489,
+      "lat": 21.0286,
+      "via": "osm",
+      "title": "Nhà thờ Lớn",
+      "url": "https://www.openstreetmap.org/way/28912942"
+    },
+    "kmFromProvinceCentroid": 15.9,
+    "rejected": null
+  },
+  {
+    "id": "imperial-citadel-thang-long",
+    "name": "Hoàng thành Thăng Long",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8372,
+      "lat": 21.0394,
+      "via": "vi",
+      "title": "Hoàng thành Thăng Long",
+      "url": "https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Th%C4%83ng_Long"
+    },
+    "kmFromProvinceCentroid": 15,
+    "rejected": null
+  },
+  {
+    "id": "dong-xuan-market",
+    "name": "Chợ Đồng Xuân",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.85,
+      "lat": 21.0382,
+      "via": "wikidata",
+      "title": "Chợ Đồng Xuân",
+      "url": "https://www.wikidata.org/wiki/Q1094375"
+    },
+    "kmFromProvinceCentroid": 16.2,
+    "rejected": null
+  },
+  {
+    "id": "hanoi-train-street",
+    "name": "Phố đường tàu Hà Nội",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8441,
+      "lat": 21.0302,
+      "via": "osm",
+      "title": "Hanoi Train Street",
+      "url": "https://www.openstreetmap.org/node/14096883184"
+    },
+    "kmFromProvinceCentroid": 15.4,
+    "rejected": null
+  },
+  {
+    "id": "ta-hien-street",
+    "name": "Phố Tạ Hiện",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.852,
+      "lat": 21.0353,
+      "via": "osm",
+      "title": "Phố Tạ Hiện",
+      "url": "https://www.openstreetmap.org/way/765597030"
+    },
+    "kmFromProvinceCentroid": 16.3,
+    "rejected": null
+  },
+  {
+    "id": "vietnam-museum-ethnology",
+    "name": "Bảo tàng Dân tộc học Việt Nam",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.7987,
+      "lat": 21.0406,
+      "via": "en",
+      "title": "Vietnam Museum of Ethnology",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_Museum_of_Ethnology"
+    },
+    "kmFromProvinceCentroid": 11.3,
+    "rejected": null
+  },
+  {
+    "id": "quan-thanh-temple",
+    "name": "Đền Quán Thánh",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8367,
+      "lat": 21.0431,
+      "via": "vi",
+      "title": "Đền Quán Thánh",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_Qu%C3%A1n_Th%C3%A1nh"
+    },
+    "kmFromProvinceCentroid": 15.1,
+    "rejected": null
+  },
+  {
+    "id": "the-note-coffee",
+    "name": "The Note Coffee",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8508,
+      "lat": 21.0316,
+      "via": "osm",
+      "title": "The Note Coffee",
+      "url": "https://www.openstreetmap.org/node/4486254298"
+    },
+    "kmFromProvinceCentroid": 16.1,
+    "rejected": null
+  },
+  {
+    "id": "bat-trang-pottery-village",
+    "name": "Làng gốm Bát Tràng",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.9331,
+      "lat": 20.9866,
+      "via": "vi",
+      "title": "Bát Tràng",
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1t_Tr%C3%A0ng"
+    },
+    "kmFromProvinceCentroid": 24.3,
+    "rejected": null
+  },
+  {
+    "id": "duong-lam-ancient-village",
+    "name": "Làng cổ Đường Lâm",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 106.1026,
+      "lat": 21.1519,
+      "via": "osm",
+      "title": "Chợ Lãm Làng",
+      "url": "https://www.openstreetmap.org/way/1534798449"
+    },
+    "kmFromProvinceCentroid": 45.2,
+    "rejected": null
+  },
+  {
+    "id": "hanoi-flag-tower",
+    "name": "Cột cờ Hà Nội",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8398,
+      "lat": 21.0326,
+      "via": "vi",
+      "title": "Cột cờ Hà Nội",
+      "url": "https://vi.wikipedia.org/wiki/C%E1%BB%99t_c%E1%BB%9D_H%C3%A0_N%E1%BB%99i"
+    },
+    "kmFromProvinceCentroid": 15.1,
+    "rejected": null
+  },
+  {
+    "id": "lotte-observation-deck",
+    "name": "Đài quan sát Lotte",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.8126,
+      "lat": 21.0324,
+      "via": "en",
+      "title": "Lotte Center Hanoi",
+      "url": "https://en.wikipedia.org/wiki/Lotte_Center_Hanoi"
+    },
+    "kmFromProvinceCentroid": 12.3,
+    "rejected": null
+  },
+  {
+    "id": "notre-dame-saigon",
+    "name": "Nhà thờ Đức Bà Sài Gòn",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6992,
+      "lat": 10.7797,
+      "via": "vi",
+      "title": "Nhà thờ chính tòa Đức Bà Sài Gòn",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_t%C3%B2a_%C4%90%E1%BB%A9c_B%C3%A0_S%C3%A0i_G%C3%B2n"
+    },
+    "kmFromProvinceCentroid": 4.4,
+    "rejected": null
+  },
+  {
+    "id": "saigon-central-post-office",
+    "name": "Bưu điện Trung tâm Sài Gòn",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6999,
+      "lat": 10.7799,
+      "via": "vi",
+      "title": "Bưu điện Sài Gòn",
+      "url": "https://vi.wikipedia.org/wiki/B%C6%B0u_%C4%91i%E1%BB%87n_S%C3%A0i_G%C3%B2n"
+    },
+    "kmFromProvinceCentroid": 4.4,
+    "rejected": null
+  },
+  {
+    "id": "war-remnants-museum",
+    "name": "Bảo tàng Chứng tích Chiến tranh",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6921,
+      "lat": 10.7795,
+      "via": "en",
+      "title": "War Remnants Museum",
+      "url": "https://en.wikipedia.org/wiki/War_Remnants_Museum"
+    },
+    "kmFromProvinceCentroid": 4.3,
+    "rejected": null
+  },
+  {
+    "id": "nguyen-hue-walking-street",
+    "name": "Phố đi bộ Nguyễn Huệ",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7036,
+      "lat": 10.7741,
+      "via": "en",
+      "title": "Nguyễn Huệ Boulevard",
+      "url": "https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_Hu%E1%BB%87_Boulevard"
+    },
+    "kmFromProvinceCentroid": 3.8,
+    "rejected": null
+  },
+  {
+    "id": "bui-vien-street",
+    "name": "Phố Tây Bùi Viện",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.694,
+      "lat": 10.7674,
+      "via": "en",
+      "title": "Bùi Viện Street",
+      "url": "https://en.wikipedia.org/wiki/B%C3%B9i_Vi%E1%BB%87n_Street"
+    },
+    "kmFromProvinceCentroid": 3,
+    "rejected": null
+  },
+  {
+    "id": "landmark-81",
+    "name": "Landmark 81",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7219,
+      "lat": 10.795,
+      "via": "vi",
+      "title": "Landmark 81",
+      "url": "https://vi.wikipedia.org/wiki/Landmark_81"
+    },
+    "kmFromProvinceCentroid": 6.7,
+    "rejected": null
+  },
+  {
+    "id": "bitexco-tower",
+    "name": "Tòa nhà Bitexco",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7045,
+      "lat": 10.7718,
+      "via": "vi",
+      "title": "Bitexco Financial Tower",
+      "url": "https://vi.wikipedia.org/wiki/Bitexco_Financial_Tower"
+    },
+    "kmFromProvinceCentroid": 3.6,
+    "rejected": null
+  },
+  {
+    "id": "jade-emperor-pagoda",
+    "name": "Chùa Ngọc Hoàng",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6979,
+      "lat": 10.7917,
+      "via": "en",
+      "title": "Jade Emperor Pagoda",
+      "url": "https://en.wikipedia.org/wiki/Jade_Emperor_Pagoda"
+    },
+    "kmFromProvinceCentroid": 5.7,
+    "rejected": null
+  },
+  {
+    "id": "thien-hau-temple-hcm",
+    "name": "Chùa Bà Thiên Hậu",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6548,
+      "lat": 10.9807,
+      "via": "osm",
+      "title": "Chùa Bà Thiên Hậu",
+      "url": "https://www.openstreetmap.org/way/264294894"
+    },
+    "kmFromProvinceCentroid": 27.1,
+    "rejected": null
+  },
+  {
+    "id": "binh-tay-market",
+    "name": "Chợ Bình Tây",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6511,
+      "lat": 10.7494,
+      "via": "vi",
+      "title": "Chợ Bình Tây",
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_B%C3%ACnh_T%C3%A2y"
+    },
+    "kmFromProvinceCentroid": 4.9,
+    "rejected": null
+  },
+  {
+    "id": "saigon-opera-house",
+    "name": "Nhà hát Thành phố Hồ Chí Minh",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7033,
+      "lat": 10.7768,
+      "via": "vi",
+      "title": "Nhà hát Thành phố Hồ Chí Minh",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_h%C3%A1t_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh"
+    },
+    "kmFromProvinceCentroid": 4.1,
+    "rejected": null
+  },
+  {
+    "id": "tao-dan-park",
+    "name": "Công viên Tao Đàn",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6925,
+      "lat": 10.7746,
+      "via": "vi",
+      "title": "Công viên Tao Đàn",
+      "url": "https://vi.wikipedia.org/wiki/C%C3%B4ng_vi%C3%AAn_Tao_%C4%90%C3%A0n"
+    },
+    "kmFromProvinceCentroid": 3.8,
+    "rejected": null
+  },
+  {
+    "id": "saigon-zoo",
+    "name": "Thảo Cầm Viên Sài Gòn",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7047,
+      "lat": 10.7881,
+      "via": "vi",
+      "title": "Thảo Cầm Viên Sài Gòn",
+      "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A3o_C%E1%BA%A7m_Vi%C3%AAn_S%C3%A0i_G%C3%B2n"
+    },
+    "kmFromProvinceCentroid": 5.4,
+    "rejected": null
+  },
+  {
+    "id": "can-gio-mangrove",
+    "name": "Rừng ngập mặn Cần Giờ",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.8676,
+      "lat": 10.5011,
+      "via": "vi",
+      "title": "Khu dự trữ sinh quyển rừng ngập mặn Cần Giờ",
+      "url": "https://vi.wikipedia.org/wiki/Khu_d%E1%BB%B1_tr%E1%BB%AF_sinh_quy%E1%BB%83n_r%E1%BB%ABng_ng%E1%BA%ADp_m%E1%BA%B7n_C%E1%BA%A7n_Gi%E1%BB%9D"
+    },
+    "kmFromProvinceCentroid": 32.6,
+    "rejected": null
+  },
+  {
+    "id": "cafe-apartment-nguyen-hue",
+    "name": "Chung cư cà phê 42 Nguyễn Huệ",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "giac-lam-pagoda",
+    "name": "Chùa Giác Lâm",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6492,
+      "lat": 10.7794,
+      "via": "vi",
+      "title": "Chùa Giác Lâm",
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_Gi%C3%A1c_L%C3%A2m"
+    },
+    "kmFromProvinceCentroid": 6.7,
+    "rejected": null
+  },
+  {
+    "id": "fine-arts-museum-hcm",
+    "name": "Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7,
+      "lat": 10.7694,
+      "via": "en",
+      "title": "Ho Chi Minh City Museum of Fine Arts",
+      "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_Museum_of_Fine_Arts"
+    },
+    "kmFromProvinceCentroid": 3.3,
+    "rejected": null
+  },
+  {
+    "id": "bach-dang-wharf",
+    "name": "Bến Bạch Đằng",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.7069,
+      "lat": 10.7753,
+      "via": "vi",
+      "title": "Bến Bạch Đằng",
+      "url": "https://vi.wikipedia.org/wiki/B%E1%BA%BFn_B%E1%BA%A1ch_%C4%90%E1%BA%B1ng"
+    },
+    "kmFromProvinceCentroid": 4.1,
+    "rejected": null
+  },
+  {
+    "id": "cho-lon-district",
+    "name": "Chợ Lớn",
+    "province": "ho-chi-minh",
+    "resolved": {
+      "lng": 106.6592,
+      "lat": 10.7507,
+      "via": "vi",
+      "title": "Chợ Lớn",
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_L%E1%BB%9Bn"
+    },
+    "kmFromProvinceCentroid": 4.1,
+    "rejected": null
+  },
+  {
+    "id": "tu-duc-tomb",
+    "name": "Lăng Tự Đức",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5653,
+      "lat": 16.4328,
+      "via": "vi",
+      "title": "Lăng Tự Đức",
+      "url": "https://vi.wikipedia.org/wiki/L%C4%83ng_T%E1%BB%B1_%C4%90%E1%BB%A9c"
+    },
+    "kmFromProvinceCentroid": 12.7,
+    "rejected": null
+  },
+  {
+    "id": "minh-mang-tomb",
+    "name": "Lăng Minh Mạng",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5678,
+      "lat": 16.3878,
+      "via": "vi",
+      "title": "Lăng Minh Mạng",
+      "url": "https://vi.wikipedia.org/wiki/L%C4%83ng_Minh_M%E1%BA%A1ng"
+    },
+    "kmFromProvinceCentroid": 9,
+    "rejected": null
+  },
+  {
+    "id": "gia-long-tomb",
+    "name": "Lăng Gia Long",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5967,
+      "lat": 16.3619,
+      "via": "vi",
+      "title": "Lăng Gia Long",
+      "url": "https://vi.wikipedia.org/wiki/L%C4%83ng_Gia_Long"
+    },
+    "kmFromProvinceCentroid": 10.2,
+    "rejected": null
+  },
+  {
+    "id": "perfume-river",
+    "name": "Sông Hương",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.6333,
+      "lat": 16.55,
+      "via": "en",
+      "title": "Perfume River",
+      "url": "https://en.wikipedia.org/wiki/Perfume_River"
+    },
+    "kmFromProvinceCentroid": 27.7,
+    "rejected": null
+  },
+  {
+    "id": "trang-tien-bridge",
+    "name": "Cầu Trường Tiền",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5886,
+      "lat": 16.4689,
+      "via": "vi",
+      "title": "Cầu Trường Tiền",
+      "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Tr%C6%B0%E1%BB%9Dng_Ti%E1%BB%81n"
+    },
+    "kmFromProvinceCentroid": 17.5,
+    "rejected": null
+  },
+  {
+    "id": "dong-ba-market",
+    "name": "Chợ Đông Ba",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5885,
+      "lat": 16.4726,
+      "via": "vi",
+      "title": "Chợ Đông Ba",
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_%C4%90%C3%B4ng_Ba"
+    },
+    "kmFromProvinceCentroid": 17.8,
+    "rejected": null
+  },
+  {
+    "id": "hon-chen-temple",
+    "name": "Điện Hòn Chén",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.563,
+      "lat": 16.422,
+      "via": "wikidata",
+      "title": "Điện Hòn Chén",
+      "url": "https://www.wikidata.org/wiki/Q10840229"
+    },
+    "kmFromProvinceCentroid": 11.6,
+    "rejected": null
+  },
+  {
+    "id": "bach-ma-national-park",
+    "name": "Vườn quốc gia Bạch Mã",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.8667,
+      "lat": 16.2,
+      "via": "en",
+      "title": "Bạch Mã National Park",
+      "url": "https://en.wikipedia.org/wiki/B%E1%BA%A1ch_M%C3%A3_National_Park"
+    },
+    "kmFromProvinceCentroid": 41.2,
+    "rejected": null
+  },
+  {
+    "id": "lang-co-beach",
+    "name": "Biển Lăng Cô",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 108.0622,
+      "lat": 16.2693,
+      "via": "osm",
+      "title": "Lăng Cô",
+      "url": "https://www.openstreetmap.org/way/256675637"
+    },
+    "kmFromProvinceCentroid": 59.8,
+    "rejected": null
+  },
+  {
+    "id": "thuan-an-beach",
+    "name": "Biển Thuận An",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.6348,
+      "lat": 16.5399,
+      "via": "vi",
+      "title": "Thuận An, Huế",
+      "url": "https://vi.wikipedia.org/wiki/Thu%E1%BA%ADn_An%2C_Hu%E1%BA%BF"
+    },
+    "kmFromProvinceCentroid": 26.8,
+    "rejected": null
+  },
+  {
+    "id": "tam-giang-lagoon",
+    "name": "Phá Tam Giang",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.4719,
+      "lat": 16.6319,
+      "via": "vi",
+      "title": "Phá Tam Giang",
+      "url": "https://vi.wikipedia.org/wiki/Ph%C3%A1_Tam_Giang"
+    },
+    "kmFromProvinceCentroid": 33.4,
+    "rejected": null
+  },
+  {
+    "id": "an-dinh-palace",
+    "name": "Cung An Định",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5984,
+      "lat": 16.4565,
+      "via": "wikidata",
+      "title": "Cung An Định",
+      "url": "https://www.wikidata.org/wiki/Q10751137"
+    },
+    "kmFromProvinceCentroid": 16.9,
+    "rejected": null
+  },
+  {
+    "id": "thanh-toan-tile-bridge",
+    "name": "Cầu ngói Thanh Toàn",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.6427,
+      "lat": 16.4668,
+      "via": "wikidata",
+      "title": "Cầu ngói Thanh Toàn",
+      "url": "https://www.wikidata.org/wiki/Q10752425"
+    },
+    "kmFromProvinceCentroid": 20.8,
+    "rejected": null
+  },
+  {
+    "id": "quoc-hoc-hue",
+    "name": "Trường Quốc Học Huế",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5838,
+      "lat": 16.4595,
+      "via": "osm",
+      "title": "Trường Trung học phổ thông chuyên Quốc Học Huế",
+      "url": "https://www.openstreetmap.org/way/695775622"
+    },
+    "kmFromProvinceCentroid": 16.3,
+    "rejected": null
+  },
+  {
+    "id": "thien-an-hill-hue",
+    "name": "Đồi Thiên An",
+    "province": "thua-thien-hue",
+    "resolved": null,
+    "kmFromProvinceCentroid": 14.9,
+    "rejected": "Chung cư Trường An (osm, 15km, name mismatch)"
+  },
+  {
+    "id": "ru-cha-mangrove",
+    "name": "Rú Chá",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.6116,
+      "lat": 16.558,
+      "via": "vi",
+      "title": "Rú Chá",
+      "url": "https://vi.wikipedia.org/wiki/R%C3%BA_Ch%C3%A1"
+    },
+    "kmFromProvinceCentroid": 27.4,
+    "rejected": null
+  },
+  {
+    "id": "xuan-huong-lake",
+    "name": "Hồ Xuân Hương",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4487,
+      "lat": 11.9451,
+      "via": "osm",
+      "title": "Hồ Xuân Hương",
+      "url": "https://www.openstreetmap.org/relation/2390139"
+    },
+    "kmFromProvinceCentroid": 44.1,
+    "rejected": null
+  },
+  {
+    "id": "bao-dai-summer-palace",
+    "name": "Dinh Bảo Đại",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4297,
+      "lat": 11.93,
+      "via": "osm",
+      "title": "Dinh III Bảo Đại",
+      "url": "https://www.openstreetmap.org/node/5274759821"
+    },
+    "kmFromProvinceCentroid": 41.5,
+    "rejected": null
+  },
+  {
+    "id": "crazy-house-dalat",
+    "name": "Biệt thự Hằng Nga",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4306,
+      "lat": 11.9347,
+      "via": "vi",
+      "title": "Biệt thự Hằng Nga",
+      "url": "https://vi.wikipedia.org/wiki/Bi%E1%BB%87t_th%E1%BB%B1_H%E1%BA%B1ng_Nga"
+    },
+    "kmFromProvinceCentroid": 41.9,
+    "rejected": null
+  },
+  {
+    "id": "da-lat-railway-station",
+    "name": "Ga Đà Lạt",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4556,
+      "lat": 11.9422,
+      "via": "vi",
+      "title": "Ga Đà Lạt",
+      "url": "https://vi.wikipedia.org/wiki/Ga_%C4%90%C3%A0_L%E1%BA%A1t"
+    },
+    "kmFromProvinceCentroid": 44.6,
+    "rejected": null
+  },
+  {
+    "id": "linh-phuoc-pagoda",
+    "name": "Chùa Linh Phước",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4995,
+      "lat": 11.9443,
+      "via": "vi",
+      "title": "Chùa Linh Phước",
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_Linh_Ph%C6%B0%E1%BB%9Bc"
+    },
+    "kmFromProvinceCentroid": 49,
+    "rejected": null
+  },
+  {
+    "id": "truc-lam-monastery",
+    "name": "Thiền viện Trúc Lâm",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4364,
+      "lat": 11.9025,
+      "via": "en",
+      "title": "Trúc Lâm Monastery of Da Lat",
+      "url": "https://en.wikipedia.org/wiki/Tr%C3%BAc_L%C3%A2m_Monastery_of_Da_Lat"
+    },
+    "kmFromProvinceCentroid": 40.8,
+    "rejected": null
+  },
+  {
+    "id": "tuyen-lam-lake",
+    "name": "Hồ Tuyền Lâm",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4323,
+      "lat": 11.8997,
+      "via": "vi",
+      "title": "Hồ Tuyền Lâm",
+      "url": "https://vi.wikipedia.org/wiki/H%E1%BB%93_Tuy%E1%BB%81n_L%C3%A2m"
+    },
+    "kmFromProvinceCentroid": 40.3,
+    "rejected": null
+  },
+  {
+    "id": "da-lat-market",
+    "name": "Chợ Đà Lạt",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4368,
+      "lat": 11.943,
+      "via": "vi",
+      "title": "Chợ Đà Lạt",
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_%C4%90%C3%A0_L%E1%BA%A1t"
+    },
+    "kmFromProvinceCentroid": 42.9,
+    "rejected": null
+  },
+  {
+    "id": "valley-of-love",
+    "name": "Thung lũng Tình Yêu",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4504,
+      "lat": 11.9808,
+      "via": "vi",
+      "title": "Thung lũng Tình Yêu",
+      "url": "https://vi.wikipedia.org/wiki/Thung_l%C5%A9ng_T%C3%ACnh_Y%C3%AAu"
+    },
+    "kmFromProvinceCentroid": 46.4,
+    "rejected": null
+  },
+  {
+    "id": "pongour-waterfall",
+    "name": "Thác Pongour",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.2665,
+      "lat": 11.6884,
+      "via": "vi",
+      "title": "Thác Pongour",
+      "url": "https://vi.wikipedia.org/wiki/Th%C3%A1c_Pongour"
+    },
+    "kmFromProvinceCentroid": 20.1,
+    "rejected": null
+  },
+  {
+    "id": "elephant-waterfall-dalat",
+    "name": "Thác Voi",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.3349,
+      "lat": 11.8235,
+      "via": "osm",
+      "title": "Thác Voi",
+      "url": "https://www.openstreetmap.org/node/2706917665"
+    },
+    "kmFromProvinceCentroid": 27.4,
+    "rejected": null
+  },
+  {
+    "id": "cau-dat-tea-hill",
+    "name": "Đồi chè Cầu Đất",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.5633,
+      "lat": 11.8847,
+      "via": "osm",
+      "title": "Cau dat Farm Cafe",
+      "url": "https://www.openstreetmap.org/node/6253507485"
+    },
+    "kmFromProvinceCentroid": 53.1,
+    "rejected": null
+  },
+  {
+    "id": "da-lat-night-market",
+    "name": "Chợ đêm Đà Lạt",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "da-lat-cathedral",
+    "name": "Nhà thờ chính tòa Đà Lạt",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4376,
+      "lat": 11.9364,
+      "via": "vi",
+      "title": "Nhà thờ chính tòa Đà Lạt",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_t%C3%B2a_%C4%90%C3%A0_L%E1%BA%A1t"
+    },
+    "kmFromProvinceCentroid": 42.6,
+    "rejected": null
+  },
+  {
+    "id": "domaine-de-marie-church",
+    "name": "Nhà thờ Domaine de Marie",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4303,
+      "lat": 11.9495,
+      "via": "vi",
+      "title": "Nhà thờ Domaine de Marie",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_Domaine_de_Marie"
+    },
+    "kmFromProvinceCentroid": 42.7,
+    "rejected": null
+  },
+  {
+    "id": "me-linh-coffee-garden",
+    "name": "Mê Linh Coffee Garden",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.3467,
+      "lat": 11.9001,
+      "via": "osm",
+      "title": "Mê Linh Coffee Garden",
+      "url": "https://www.openstreetmap.org/node/6089622990"
+    },
+    "kmFromProvinceCentroid": 32,
+    "rejected": null
+  },
+  {
+    "id": "clay-tunnel-dalat",
+    "name": "Đường hầm điêu khắc đất sét",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "xq-historical-village",
+    "name": "XQ Sử quán",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  }
+]

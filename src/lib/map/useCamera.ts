@@ -14,6 +14,30 @@ interface Box {
   y1: number;
 }
 
+/**
+ * How far in the camera may go, as a multiple of the whole-country fit.
+ *
+ * 18× was set when the atlas held province-scale landmarks tens of kilometres apart. It is far too
+ * shallow now that a province carries eighteen city venues: measured, at 18× one kilometre spans
+ * 9.5 screen pixels, so the eight entries inside downtown Đà Nẵng share **14 pixels** while their
+ * labels are 120 wide. No amount of label suppression fixes a scale problem.
+ *
+ * 400× puts a kilometre at roughly 210 pixels, which is the point at which places 500 m apart
+ * stop touching. See `CITY_DETAIL_RATIO` in MapEngine for what the map stops drawing up there.
+ */
+const MAX_ZOOM_RATIO = 400;
+
+/**
+ * Where the atlas runs out of geometry.
+ *
+ * The province outlines are mapshaper-simplified for a country-wide view; past roughly 40× fit,
+ * a "coastline" is a handful of straight segments kilometres long and the coastal glow inflates
+ * into a white band across half the screen. That reads as a broken map. Beyond this ratio the map
+ * drops the decorative relief and shows a plain ground instead — honest about being a pin board at
+ * street scale rather than pretending to detail it does not have.
+ */
+export const CITY_DETAIL_RATIO = 40;
+
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
 
 /** Screen-space camera over a fixed map of `model.width × model.height` px. */
@@ -34,13 +58,17 @@ export function useCamera(model: MapModel | null, { onZoomLevel }: Options = {})
     anim.current = [];
   }, []);
 
-  const limits = useCallback(() => ({ min: baseK.current * 0.85, max: baseK.current * 18 }), []);
+
+  const limits = useCallback(() => ({ min: baseK.current * 0.85, max: baseK.current * MAX_ZOOM_RATIO }), []);
 
   const reportLevel = useCallback(() => {
     if (!onZoomLevel) return;
     const ratio = k.get() / baseK.current;
     // Levels 0..4 (Bible 005 §4) from zoom ratio thresholds.
-    const level = ratio < 1.4 ? 0 : ratio < 3 ? 1 : ratio < 6 ? 2 : ratio < 11 ? 3 : 4;
+    // Level 5 is "closer than the atlas has geometry for". Past it the map stops drawing coastal
+    // detail it does not have — see ProvinceLayer's `cityZoom`.
+    const level =
+      ratio < 1.4 ? 0 : ratio < 3 ? 1 : ratio < 6 ? 2 : ratio < 11 ? 3 : ratio < CITY_DETAIL_RATIO ? 4 : 5;
     onZoomLevel(level);
   }, [k, onZoomLevel]);
 

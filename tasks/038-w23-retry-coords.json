@@ -1,0 +1,190 @@
+[
+  {
+    "id": "west-lake-hanoi",
+    "name": "Hồ Tây",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.82,
+      "lat": 21.055,
+      "via": "wikidata",
+      "title": "Hồ Tây",
+      "url": "https://www.wikidata.org/wiki/Q1187394"
+    },
+    "kmFromProvinceCentroid": 14,
+    "rejected": null
+  },
+  {
+    "id": "duong-lam-ancient-village",
+    "name": "Đường Lâm",
+    "province": "ha-noi",
+    "resolved": {
+      "lng": 105.4747,
+      "lat": 21.1542,
+      "via": "osm",
+      "title": "Xã Đường Lâm",
+      "url": "https://www.openstreetmap.org/relation/18772124"
+    },
+    "kmFromProvinceCentroid": 29,
+    "rejected": null
+  },
+  {
+    "id": "thien-hau-temple-hcm",
+    "name": "Chùa Bà Thiên Hậu",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "cafe-apartment-nguyen-hue",
+    "name": "Chung cư cà phê Nguyễn Huệ",
+    "province": "ho-chi-minh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "thien-an-hill-hue",
+    "name": "Đồi Thiên An",
+    "province": "thua-thien-hue",
+    "resolved": {
+      "lng": 107.5932,
+      "lat": 16.4676,
+      "via": "osm",
+      "title": "Công an tỉnh Thừa Thiên-Huế",
+      "url": "https://www.openstreetmap.org/way/1033694883"
+    },
+    "kmFromProvinceCentroid": 17.6,
+    "rejected": null
+  },
+  {
+    "id": "da-lat-night-market",
+    "name": "Chợ Âm Phủ",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": 189.1,
+    "rejected": "Khu phố ẨM THỰC ĐÊM Phú Mỹ Hưng -Sky Garden (osm, 189km, name mismatch)"
+  },
+  {
+    "id": "clay-tunnel-dalat",
+    "name": "Đường hầm điêu khắc",
+    "province": "lam-dong",
+    "resolved": {
+      "lng": 108.4112,
+      "lat": 11.8829,
+      "via": "osm",
+      "title": "Đường hầm điêu khắc",
+      "url": "https://www.openstreetmap.org/node/4368051989"
+    },
+    "kmFromProvinceCentroid": 37.4,
+    "rejected": null
+  },
+  {
+    "id": "xq-historical-village",
+    "name": "XQ Sử Quán",
+    "province": "lam-dong",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "vinwonders-nha-trang",
+    "name": "VinWonders Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "diep-son-island",
+    "name": "Điệp Sơn",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": 1261.5,
+    "rejected": "Điệp Sơn (wikidata, 1261km, too far)"
+  },
+  {
+    "id": "nha-trang-night-market",
+    "name": "Chợ đêm Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.1958,
+      "lat": 12.2396,
+      "via": "osm",
+      "title": "Night market",
+      "url": "https://www.openstreetmap.org/way/196749901"
+    },
+    "kmFromProvinceCentroid": 21.3,
+    "rejected": null
+  },
+  {
+    "id": "sunset-town-phu-quoc",
+    "name": "Sunset Town",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": 113.4,
+    "rejected": "Sun Premier Village Primavera (osm, 113km, name mismatch)"
+  },
+  {
+    "id": "muong-hoa-valley",
+    "name": "Thung lũng Mường Hoa",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.825,
+      "lat": 22.3366,
+      "via": "osm",
+      "title": "Mường Hoa",
+      "url": "https://www.openstreetmap.org/node/5592212588"
+    },
+    "kmFromProvinceCentroid": 29.5,
+    "rejected": null
+  },
+  {
+    "id": "love-waterfall-sapa",
+    "name": "Thác Tình Yêu",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "sapa-stone-church",
+    "name": "Nhà thờ đá Sa Pa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "quan-lan-island",
+    "name": "Quan Lạn",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": 51,
+    "rejected": "Đảo Cảnh Cước (vi, 51km, name mismatch)"
+  },
+  {
+    "id": "sun-world-ha-long",
+    "name": "Sun World Hạ Long",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "van-long-nature-reserve",
+    "name": "Vân Long",
+    "province": "ninh-binh",
+    "resolved": null,
+    "kmFromProvinceCentroid": 50.9,
+    "rejected": "Đường cao tốc Cầu Giẽ - Ninh Bình (osm, 51km, name mismatch)"
+  },
+  {
+    "id": "thai-vi-temple",
+    "name": "Đền Thái Vi",
+    "province": "ninh-binh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  }
+]

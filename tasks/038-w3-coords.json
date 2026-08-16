@@ -1,0 +1,747 @@
+[
+  {
+    "id": "vinwonders-nha-trang",
+    "name": "VinWonders Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": 26.1,
+    "rejected": "Tuyến cáp treo Vinpearl Land (osm, 26km, name mismatch)"
+  },
+  {
+    "id": "long-son-pagoda",
+    "name": "Chùa Long Sơn",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.1808,
+      "lat": 12.2516,
+      "via": "en",
+      "title": "Long Sơn Temple",
+      "url": "https://en.wikipedia.org/wiki/Long_S%C6%A1n_Temple"
+    },
+    "kmFromProvinceCentroid": 19.3,
+    "rejected": null
+  },
+  {
+    "id": "nha-trang-cathedral",
+    "name": "Nhà thờ Núi Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.1878,
+      "lat": 12.2469,
+      "via": "vi",
+      "title": "Nhà thờ Núi Nha Trang",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_N%C3%BAi_Nha_Trang"
+    },
+    "kmFromProvinceCentroid": 20.2,
+    "rejected": null
+  },
+  {
+    "id": "hon-chong-promontory",
+    "name": "Hòn Chồng",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.2066,
+      "lat": 12.2728,
+      "via": "osm",
+      "title": "Hòn Chồng",
+      "url": "https://www.openstreetmap.org/way/792392852"
+    },
+    "kmFromProvinceCentroid": 20.9,
+    "rejected": null
+  },
+  {
+    "id": "dam-market-nha-trang",
+    "name": "Chợ Đầm",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.1917,
+      "lat": 12.2553,
+      "via": "osm",
+      "title": "Chợ Đầm",
+      "url": "https://www.openstreetmap.org/relation/21159862"
+    },
+    "kmFromProvinceCentroid": 20.1,
+    "rejected": null
+  },
+  {
+    "id": "doc-let-beach",
+    "name": "Biển Dốc Lết",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.2293,
+      "lat": 12.5494,
+      "via": "osm",
+      "title": "Doc Let",
+      "url": "https://www.openstreetmap.org/node/4796131321"
+    },
+    "kmFromProvinceCentroid": 32.7,
+    "rejected": null
+  },
+  {
+    "id": "oceanographic-museum-vn",
+    "name": "Viện Hải dương học",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.2147,
+      "lat": 12.2076,
+      "via": "osm",
+      "title": "Viện Hải Dương Học",
+      "url": "https://www.openstreetmap.org/way/1158459582"
+    },
+    "kmFromProvinceCentroid": 25,
+    "rejected": null
+  },
+  {
+    "id": "binh-ba-island",
+    "name": "Đảo Bình Ba",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.2402,
+      "lat": 11.8377,
+      "via": "vi",
+      "title": "Đảo Bình Ba",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3o_B%C3%ACnh_Ba"
+    },
+    "kmFromProvinceCentroid": 59.9,
+    "rejected": null
+  },
+  {
+    "id": "diep-son-island",
+    "name": "Đảo Điệp Sơn",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": 266,
+    "rejected": "anh đào (osm, 266km, name mismatch)"
+  },
+  {
+    "id": "yang-bay-waterfall",
+    "name": "Thác Yang Bay",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 108.9101,
+      "lat": 12.19,
+      "via": "vi",
+      "title": "Thác Yang Bay",
+      "url": "https://vi.wikipedia.org/wiki/Th%C3%A1c_Yang_Bay"
+    },
+    "kmFromProvinceCentroid": 20.2,
+    "rejected": null
+  },
+  {
+    "id": "ba-ho-stream",
+    "name": "Suối Ba Hồ",
+    "province": "khanh-hoa",
+    "resolved": {
+      "lng": 109.0749,
+      "lat": 12.1012,
+      "via": "osm",
+      "title": "Suối Ba Li parking",
+      "url": "https://www.openstreetmap.org/node/2288735242"
+    },
+    "kmFromProvinceCentroid": 26.4,
+    "rejected": null
+  },
+  {
+    "id": "nha-trang-night-market",
+    "name": "Chợ đêm Nha Trang",
+    "province": "khanh-hoa",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "hon-thom-cable-car",
+    "name": "Cáp treo Hòn Thơm",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.0158,
+      "lat": 9.9564,
+      "via": "vi",
+      "title": "Hòn Thơm",
+      "url": "https://vi.wikipedia.org/wiki/H%C3%B2n_Th%C6%A1m"
+    },
+    "kmFromProvinceCentroid": 112.4,
+    "rejected": null
+  },
+  {
+    "id": "sunset-town-phu-quoc",
+    "name": "Thị trấn Hoàng Hôn",
+    "province": "kien-giang",
+    "resolved": null,
+    "kmFromProvinceCentroid": 112.6,
+    "rejected": "An Thới (osm, 113km, name mismatch)"
+  },
+  {
+    "id": "dinh-cau-phu-quoc",
+    "name": "Dinh Cậu",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 103.9564,
+      "lat": 10.2172,
+      "via": "vi",
+      "title": "Dinh Cậu",
+      "url": "https://vi.wikipedia.org/wiki/Dinh_C%E1%BA%ADu"
+    },
+    "kmFromProvinceCentroid": 121.9,
+    "rejected": null
+  },
+  {
+    "id": "phu-quoc-prison",
+    "name": "Nhà tù Phú Quốc",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.0182,
+      "lat": 10.0439,
+      "via": "vi",
+      "title": "Nhà tù Phú Quốc",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_t%C3%B9_Ph%C3%BA_Qu%E1%BB%91c"
+    },
+    "kmFromProvinceCentroid": 112.4,
+    "rejected": null
+  },
+  {
+    "id": "ham-ninh-fishing-village",
+    "name": "Làng chài Hàm Ninh",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.0326,
+      "lat": 10.1763,
+      "via": "osm",
+      "title": "Hàm Ninh",
+      "url": "https://www.openstreetmap.org/way/152287522"
+    },
+    "kmFromProvinceCentroid": 112.8,
+    "rejected": null
+  },
+  {
+    "id": "vinwonders-phu-quoc",
+    "name": "VinWonders Phú Quốc",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 103.8547,
+      "lat": 10.3384,
+      "via": "osm",
+      "title": "VinWonders Phú Quốc",
+      "url": "https://www.openstreetmap.org/way/660104575"
+    },
+    "kmFromProvinceCentroid": 136.1,
+    "rejected": null
+  },
+  {
+    "id": "phu-quoc-night-market",
+    "name": "Chợ đêm Phú Quốc",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 103.9606,
+      "lat": 10.2163,
+      "via": "osm",
+      "title": "Chợ Đêm Dinh Cậu",
+      "url": "https://www.openstreetmap.org/way/152800945"
+    },
+    "kmFromProvinceCentroid": 121.4,
+    "rejected": null
+  },
+  {
+    "id": "ganh-dau-cape",
+    "name": "Mũi Gành Dầu",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 103.8476,
+      "lat": 10.3731,
+      "via": "vi",
+      "title": "Gành Dầu",
+      "url": "https://vi.wikipedia.org/wiki/G%C3%A0nh_D%E1%BA%A7u"
+    },
+    "kmFromProvinceCentroid": 138.1,
+    "rejected": null
+  },
+  {
+    "id": "suoi-tranh-waterfall",
+    "name": "Suối Tranh",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.0153,
+      "lat": 10.1838,
+      "via": "osm",
+      "title": "Suối Tranh",
+      "url": "https://www.openstreetmap.org/node/357411250"
+    },
+    "kmFromProvinceCentroid": 114.8,
+    "rejected": null
+  },
+  {
+    "id": "ha-tien-town",
+    "name": "Hà Tiên",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.4833,
+      "lat": 10.3833,
+      "via": "en",
+      "title": "Hà Tiên",
+      "url": "https://en.wikipedia.org/wiki/H%C3%A0_Ti%C3%AAn"
+    },
+    "kmFromProvinceCentroid": 76.2,
+    "rejected": null
+  },
+  {
+    "id": "mui-nai-beach",
+    "name": "Bãi Mũi Nai",
+    "province": "kien-giang",
+    "resolved": {
+      "lng": 104.4435,
+      "lat": 10.3644,
+      "via": "osm",
+      "title": "Mũi Nai",
+      "url": "https://www.openstreetmap.org/node/11347979294"
+    },
+    "kmFromProvinceCentroid": 78.6,
+    "rejected": null
+  },
+  {
+    "id": "cat-cat-village",
+    "name": "Bản Cát Cát",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.8341,
+      "lat": 22.3277,
+      "via": "wikidata",
+      "title": "Bản Cát Cát",
+      "url": "https://www.wikidata.org/wiki/Q10743160"
+    },
+    "kmFromProvinceCentroid": 28.7,
+    "rejected": null
+  },
+  {
+    "id": "muong-hoa-valley",
+    "name": "Thung lũng Mường Hoa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": 218,
+    "rejected": "Mường Hoa (vi, 218km, too far)"
+  },
+  {
+    "id": "ta-van-village",
+    "name": "Bản Tả Van",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.8896,
+      "lat": 22.3029,
+      "via": "vi",
+      "title": "Tả Van",
+      "url": "https://vi.wikipedia.org/wiki/T%E1%BA%A3_Van"
+    },
+    "kmFromProvinceCentroid": 23.8,
+    "rejected": null
+  },
+  {
+    "id": "o-quy-ho-pass",
+    "name": "Đèo Ô Quy Hồ",
+    "province": "lao-cai",
+    "duplicateOfAtlasEntry": true,
+    "resolved": {
+      "lng": 103.7645,
+      "lat": 22.3532,
+      "via": "vi",
+      "title": "Đèo Ô Quý Hồ",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%A8o_%C3%94_Qu%C3%BD_H%E1%BB%93"
+    },
+    "kmFromProvinceCentroid": 35.6,
+    "rejected": null
+  },
+  {
+    "id": "silver-waterfall-sapa",
+    "name": "Thác Bạc Sa Pa",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.7768,
+      "lat": 22.3632,
+      "via": "osm",
+      "title": "Thác Bạc",
+      "url": "https://www.openstreetmap.org/node/13043101392"
+    },
+    "kmFromProvinceCentroid": 34.3,
+    "rejected": null
+  },
+  {
+    "id": "love-waterfall-sapa",
+    "name": "Thác Tình Yêu",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "ham-rong-mountain",
+    "name": "Núi Hàm Rồng",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.8629,
+      "lat": 22.3608,
+      "via": "osm",
+      "title": "Hàm Rồng",
+      "url": "https://www.openstreetmap.org/node/7171941247"
+    },
+    "kmFromProvinceCentroid": 25.4,
+    "rejected": null
+  },
+  {
+    "id": "sapa-stone-church",
+    "name": "Nhà thờ đá Sa Pa",
+    "province": "lao-cai",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "y-ty-village",
+    "name": "Y Tý",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.6144,
+      "lat": 22.6578,
+      "via": "vi",
+      "title": "Y Tý",
+      "url": "https://vi.wikipedia.org/wiki/Y_T%C3%BD"
+    },
+    "kmFromProvinceCentroid": 60.4,
+    "rejected": null
+  },
+  {
+    "id": "ta-phin-village",
+    "name": "Bản Tả Phìn",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.8429,
+      "lat": 22.3951,
+      "via": "vi",
+      "title": "Tả Phìn",
+      "url": "https://vi.wikipedia.org/wiki/T%E1%BA%A3_Ph%C3%ACn"
+    },
+    "kmFromProvinceCentroid": 27.7,
+    "rejected": null
+  },
+  {
+    "id": "lao-cai-border-gate",
+    "name": "Cửa khẩu Lào Cai",
+    "province": "lao-cai",
+    "resolved": {
+      "lng": 103.9653,
+      "lat": 22.5067,
+      "via": "vi",
+      "title": "Cửa khẩu Lào Cai",
+      "url": "https://vi.wikipedia.org/wiki/C%E1%BB%ADa_kh%E1%BA%A9u_L%C3%A0o_Cai"
+    },
+    "kmFromProvinceCentroid": 21.6,
+    "rejected": null
+  },
+  {
+    "id": "sung-sot-cave",
+    "name": "Hang Sửng Sốt",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.0904,
+      "lat": 20.8448,
+      "via": "vi",
+      "title": "Hang Sửng Sốt",
+      "url": "https://vi.wikipedia.org/wiki/Hang_S%E1%BB%ADng_S%E1%BB%91t"
+    },
+    "kmFromProvinceCentroid": 48.4,
+    "rejected": null
+  },
+  {
+    "id": "thien-cung-cave",
+    "name": "Động Thiên Cung",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.075,
+      "lat": 20.8733,
+      "via": "vi",
+      "title": "Động Thiên Cung",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_Thi%C3%AAn_Cung"
+    },
+    "kmFromProvinceCentroid": 45.9,
+    "rejected": null
+  },
+  {
+    "id": "ti-top-island",
+    "name": "Đảo Ti Tốp",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.0801,
+      "lat": 20.859,
+      "via": "wikidata",
+      "title": "Đảo Ti Tốp",
+      "url": "https://www.wikidata.org/wiki/Q16481033"
+    },
+    "kmFromProvinceCentroid": 47.2,
+    "rejected": null
+  },
+  {
+    "id": "bai-tu-long-bay",
+    "name": "Vịnh Bái Tử Long",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.5665,
+      "lat": 21.0797,
+      "via": "en",
+      "title": "Bai Tu Long Bay",
+      "url": "https://en.wikipedia.org/wiki/Bai_Tu_Long_Bay"
+    },
+    "kmFromProvinceCentroid": 41.8,
+    "rejected": null
+  },
+  {
+    "id": "quan-lan-island",
+    "name": "Đảo Quan Lạn",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": 51,
+    "rejected": "Đảo Cảnh Cước (vi, 51km, name mismatch)"
+  },
+  {
+    "id": "sun-world-ha-long",
+    "name": "Sun World Hạ Long",
+    "province": "quang-ninh",
+    "resolved": null,
+    "kmFromProvinceCentroid": null,
+    "rejected": null
+  },
+  {
+    "id": "bai-chay-bridge",
+    "name": "Cầu Bãi Cháy",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.0658,
+      "lat": 20.9603,
+      "via": "en",
+      "title": "Bãi Cháy Bridge",
+      "url": "https://en.wikipedia.org/wiki/B%C3%A3i_Ch%C3%A1y_Bridge"
+    },
+    "kmFromProvinceCentroid": 37.2,
+    "rejected": null
+  },
+  {
+    "id": "quang-ninh-museum",
+    "name": "Bảo tàng Quảng Ninh",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.0975,
+      "lat": 20.9488,
+      "via": "wikidata",
+      "title": "Bảo tàng Quảng Ninh",
+      "url": "https://www.wikidata.org/wiki/Q112182634"
+    },
+    "kmFromProvinceCentroid": 37.2,
+    "rejected": null
+  },
+  {
+    "id": "van-don-island",
+    "name": "Vân Đồn",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.4212,
+      "lat": 21.0714,
+      "via": "vi",
+      "title": "Vân Đồn",
+      "url": "https://vi.wikipedia.org/wiki/V%C3%A2n_%C4%90%E1%BB%93n"
+    },
+    "kmFromProvinceCentroid": 30.3,
+    "rejected": null
+  },
+  {
+    "id": "cua-van-fishing-village",
+    "name": "Làng chài Cửa Vạn",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.1179,
+      "lat": 20.8072,
+      "via": "osm",
+      "title": "Cửa Vạn",
+      "url": "https://www.openstreetmap.org/node/4730877540"
+    },
+    "kmFromProvinceCentroid": 51.8,
+    "rejected": null
+  },
+  {
+    "id": "tuan-chau-island",
+    "name": "Đảo Tuần Châu",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 106.9899,
+      "lat": 20.9233,
+      "via": "vi",
+      "title": "Đảo Tuần Châu",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3o_Tu%E1%BA%A7n_Ch%C3%A2u"
+    },
+    "kmFromProvinceCentroid": 44.6,
+    "rejected": null
+  },
+  {
+    "id": "binh-lieu",
+    "name": "Bình Liêu",
+    "province": "quang-ninh",
+    "resolved": {
+      "lng": 107.3975,
+      "lat": 21.5236,
+      "via": "en",
+      "title": "Bình Liêu",
+      "url": "https://en.wikipedia.org/wiki/B%C3%ACnh_Li%C3%AAu"
+    },
+    "kmFromProvinceCentroid": 34.4,
+    "rejected": null
+  },
+  {
+    "id": "tam-coc-bich-dong",
+    "name": "Tam Cốc – Bích Động",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.9147,
+      "lat": 20.2185,
+      "via": "vi",
+      "title": "Tam Cốc – Bích Động",
+      "url": "https://vi.wikipedia.org/wiki/Tam_C%E1%BB%91c_%E2%80%93_B%C3%ADch_%C4%90%E1%BB%99ng"
+    },
+    "kmFromProvinceCentroid": 1.6,
+    "rejected": null
+  },
+  {
+    "id": "mua-cave",
+    "name": "Hang Múa",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.9317,
+      "lat": 20.2286,
+      "via": "vi",
+      "title": "Hang Múa",
+      "url": "https://vi.wikipedia.org/wiki/Hang_M%C3%BAa"
+    },
+    "kmFromProvinceCentroid": 3.4,
+    "rejected": null
+  },
+  {
+    "id": "bai-dinh-pagoda",
+    "name": "Chùa Bái Đính",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.8628,
+      "lat": 20.2769,
+      "via": "vi",
+      "title": "Chùa Bái Đính",
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_B%C3%A1i_%C4%90%C3%ADnh"
+    },
+    "kmFromProvinceCentroid": 7.1,
+    "rejected": null
+  },
+  {
+    "id": "phat-diem-cathedral",
+    "name": "Nhà thờ đá Phát Diệm",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 106.0794,
+      "lat": 20.0928,
+      "via": "vi",
+      "title": "Nhà thờ chính tòa Phát Diệm",
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_t%C3%B2a_Ph%C3%A1t_Di%E1%BB%87m"
+    },
+    "kmFromProvinceCentroid": 23.7,
+    "rejected": null
+  },
+  {
+    "id": "van-long-nature-reserve",
+    "name": "Đầm Vân Long",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.7842,
+      "lat": 21.1522,
+      "via": "osm",
+      "title": "Đầm Vân Trì",
+      "url": "https://www.openstreetmap.org/relation/17621321"
+    },
+    "kmFromProvinceCentroid": 104,
+    "rejected": null
+  },
+  {
+    "id": "thung-nham-bird-park",
+    "name": "Thung Nham",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.8888,
+      "lat": 20.2211,
+      "via": "osm",
+      "title": "Thung Nham Bird Park",
+      "url": "https://www.openstreetmap.org/way/1362964177"
+    },
+    "kmFromProvinceCentroid": 1.2,
+    "rejected": null
+  },
+  {
+    "id": "am-tien-cave",
+    "name": "Động Am Tiên",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.9119,
+      "lat": 20.2831,
+      "via": "vi",
+      "title": "Động Am Tiên",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_Am_Ti%C3%AAn"
+    },
+    "kmFromProvinceCentroid": 6.7,
+    "rejected": null
+  },
+  {
+    "id": "bich-dong-pagoda",
+    "name": "Chùa Bích Động",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.9144,
+      "lat": 20.2181,
+      "via": "vi",
+      "title": "Chùa Bích Động",
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_B%C3%ADch_%C4%90%E1%BB%99ng"
+    },
+    "kmFromProvinceCentroid": 1.6,
+    "rejected": null
+  },
+  {
+    "id": "thai-vi-temple",
+    "name": "Đền Thái Vi",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.9589,
+      "lat": 21.1109,
+      "via": "osm",
+      "title": "Đường Lý Thái Tổ",
+      "url": "https://www.openstreetmap.org/way/902641887"
+    },
+    "kmFromProvinceCentroid": 98.9,
+    "rejected": null
+  },
+  {
+    "id": "kenh-ga-hot-spring",
+    "name": "Kênh Gà",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.8151,
+      "lat": 20.3306,
+      "via": "vi",
+      "title": "Suối nước nóng Kênh Gà",
+      "url": "https://vi.wikipedia.org/wiki/Su%E1%BB%91i_n%C6%B0%E1%BB%9Bc_n%C3%B3ng_K%C3%AAnh_G%C3%A0"
+    },
+    "kmFromProvinceCentroid": 14.9,
+    "rejected": null
+  },
+  {
+    "id": "hoa-lu-ancient-capital-gate",
+    "name": "Đền Vua Đinh Tiên Hoàng",
+    "province": "ninh-binh",
+    "resolved": {
+      "lng": 105.9033,
+      "lat": 20.2856,
+      "via": "vi",
+      "title": "Đền thờ Vua Đinh Tiên Hoàng",
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_th%E1%BB%9D_Vua_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng"
+    },
+    "kmFromProvinceCentroid": 6.9,
+    "rejected": null
+  }
+]

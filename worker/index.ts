@@ -9,6 +9,10 @@ import type { Locale } from "../src/lib/i18n/dictionaries";
 import { ok, fail, streamText } from "./respond";
 import { buildMeta, injectMeta } from "./meta";
 import { splitLocale, withLocale } from "../src/lib/seo/urls";
+import { generateTrip } from "../src/lib/itinerary/plan.ts";
+import { ENGINE_VERSION } from "../src/lib/itinerary/config.ts";
+import { itineraryPatterns } from "../src/data/itinerary-patterns.ts";
+import type { TripInput, TripInterest, TripPace, TripStyle } from "../src/lib/itinerary/types.ts";
 
 interface Env {
   ASSETS: { fetch: (req: Request) => Promise<Response> };
@@ -124,6 +128,60 @@ api.get("/food/dishes", async (c) =>
 api.get("/food/dish/:id", async (c) => {
   const d = await db.getDish(c.env.DB, c.req.param("id"), loc(c), cty(c));
   return d ? ok(c, d, 43200) : fail(c, "not_found", "Dish not found", 404);
+});
+
+// ── Trip planner (docs/031.md, re-scoped to inter-province routes) ────────────
+//
+// GET rather than POST, and the plan is identified by its PARAMETERS rather than by a stored id.
+// The engine is a pure function, so the parameters *are* the plan's identity: the response is
+// edge-cacheable, the URL is shareable, and "regenerate day 3" is a seed change rather than server
+// state. Five of the seven endpoints docs/031.md suggested are unnecessary because of it.
+
+const STYLES: TripStyle[] = ["nature", "heritage", "food", "beach", "mixed"];
+const PACES: TripPace[] = ["relaxed", "balanced", "packed"];
+const INTERESTS: TripInterest[] = ["heritage", "nature", "beach", "mountain", "city", "spiritual", "food"];
+
+api.get("/trip/plan", async (c) => {
+  const origin = (c.req.query("origin") ?? "").trim();
+  if (!origin) return fail(c, "bad_request", "Missing origin province", 400);
+
+  const days = Number(c.req.query("days") ?? 5);
+  if (!Number.isInteger(days) || days < 2 || days > 10) {
+    return fail(c, "bad_request", "days must be an integer between 2 and 10", 400);
+  }
+
+  const style = (c.req.query("style") ?? "mixed") as TripStyle;
+  if (!STYLES.includes(style)) return fail(c, "bad_request", "Unknown style", 400);
+  const pace = (c.req.query("pace") ?? "balanced") as TripPace;
+  if (!PACES.includes(pace)) return fail(c, "bad_request", "Unknown pace", 400);
+
+  // Sorted and de-duplicated so permutations of the same request share one edge-cache entry —
+  // Cloudflare keys on the full query string.
+  const interests = [...new Set((c.req.query("interests") ?? "").split(",").filter(Boolean))]
+    .filter((i): i is TripInterest => INTERESTS.includes(i as TripInterest))
+    .sort();
+  const pinned = [...new Set((c.req.query("pinned") ?? "").split(",").filter(Boolean))].sort();
+  const country = cty(c);
+
+  const provinces = await db.getProvinceNodes(c.env.DB, country);
+  if (!provinces.some((p) => p.slug === origin)) {
+    return fail(c, "not_found", "Province not found", 404);
+  }
+
+  // The whole country's places, because the radius ladder decides its own reach and this is a few
+  // hundred rows — cheaper than querying twice to find out what to query for.
+  const [places, meals] = await Promise.all([
+    db.getItineraryPlaces(c.env.DB, provinces.map((p) => p.slug), country),
+    db.getRestaurantsByProvinces(c.env.DB, provinces.map((p) => p.slug), country),
+  ]);
+
+  const input: TripInput = { originProvince: origin, days, style, pace, interests, country, pinned };
+  const plan = generateTrip(input, { places, provinces, meals, patterns: itineraryPatterns });
+
+  // A trip that could not be built is a 200 with a shortened plan and a notice, never an error:
+  // `fail()` only types 400/404/500, and "your area has less content than you asked for" is
+  // information the UI should render, not a failure the client has to interpret.
+  return ok(c, { ...plan, engineVersion: ENGINE_VERSION }, 3600);
 });
 
 // ── Search ────────────────────────────────────────────────────

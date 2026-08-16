@@ -4,6 +4,7 @@ import { Sparkles, Send, X } from "lucide-react";
 import { ai, type AIContext, type AIMessage } from "@/lib/ai";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useMapStore } from "@/lib/store/useMapStore";
+import { useTripStore } from "@/lib/store/useTripStore";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { useContentStore } from "@/lib/store/useContentStore";
 import { fetchDestination, fetchProvinceBundle, getProvinceMeta } from "@/lib/api/content";
@@ -23,10 +24,14 @@ export function AIChat() {
   const setOpen = useUIStore((s) => s.setAiOpen);
   const selectedProvince = useMapStore((s) => s.selectedProvince);
   const selectedDestination = useMapStore((s) => s.selectedDestination);
+  // Opening a trip clears the map selection (the trip becomes the context), which otherwise drops
+  // the guide all the way back to "Việt Nam". The trip's origin province is the right grounding
+  // while one is open — it is where the traveller is asking from.
+  const tripOrigin = useTripStore((s) => s.plan?.originProvince ?? s.params?.originProvince ?? null);
   const country = useCountryStore((s) => s.country);
 
   const lightDest = useContentStore((s) => s.destinations).find((d) => d.id === selectedDestination);
-  const provinceSlug = selectedProvince ?? lightDest?.provinceSlug;
+  const provinceSlug = selectedProvince ?? lightDest?.provinceSlug ?? tripOrigin ?? undefined;
   const provinceName = provinceSlug ? getProvinceMeta(provinceSlug)?.name : undefined;
 
   // Fetch grounding content for the current selection (Bible 010 §4 context-aware).

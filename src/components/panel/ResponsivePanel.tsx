@@ -31,7 +31,7 @@ export function ResponsivePanel({ open, onClose, children, contentKey }: Props) 
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={panelTransition}
-            className="absolute right-0 top-0 z-30 flex h-full w-[400px] flex-col border-l border-border bg-surface shadow-[var(--shadow-e3)]"
+            className="absolute right-0 top-0 z-30 flex h-full w-[var(--panel-w)] flex-col border-l border-border bg-surface shadow-[var(--shadow-e3)]"
             aria-label={t("panel.aria")}
           >
             <button

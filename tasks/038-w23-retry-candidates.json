@@ -1,0 +1,22 @@
+[
+  { "id": "west-lake-hanoi", "name": "Hồ Tây", "nameEn": "Ho Tay", "provinceSlug": "ha-noi", "query": "Hồ Tây" },
+  { "id": "duong-lam-ancient-village", "name": "Đường Lâm", "nameEn": "Duong Lam", "provinceSlug": "ha-noi", "query": "Đường Lâm, Sơn Tây" },
+  { "id": "thien-hau-temple-hcm", "name": "Chùa Bà Thiên Hậu", "nameEn": "Thien Hau Temple", "provinceSlug": "ho-chi-minh", "query": "Chùa Bà Thiên Hậu, Quận 5" },
+  { "id": "cafe-apartment-nguyen-hue", "name": "Chung cư cà phê Nguyễn Huệ", "nameEn": "The Cafe Apartment", "provinceSlug": "ho-chi-minh", "query": "The Cafe Apartment" },
+  { "id": "thien-an-hill-hue", "name": "Đồi Thiên An", "nameEn": "Thien An Hill", "provinceSlug": "thua-thien-hue", "query": "Thiên An, Huế" },
+  { "id": "da-lat-night-market", "name": "Chợ Âm Phủ", "nameEn": "Da Lat Night Market", "provinceSlug": "lam-dong", "query": "Chợ Âm Phủ" },
+  { "id": "clay-tunnel-dalat", "name": "Đường hầm điêu khắc", "nameEn": "Clay Tunnel", "provinceSlug": "lam-dong", "query": "Đường hầm điêu khắc" },
+  { "id": "xq-historical-village", "name": "XQ Sử Quán", "nameEn": "XQ Historical Village", "provinceSlug": "lam-dong", "query": "XQ Sử Quán" },
+
+  { "id": "vinwonders-nha-trang", "name": "VinWonders Nha Trang", "nameEn": "VinWonders Nha Trang", "provinceSlug": "khanh-hoa", "query": "VinWonders Nha Trang" },
+  { "id": "diep-son-island", "name": "Điệp Sơn", "nameEn": "Diep Son", "provinceSlug": "khanh-hoa", "query": "Điệp Sơn" },
+  { "id": "nha-trang-night-market", "name": "Chợ đêm Nha Trang", "nameEn": "Nha Trang Night Market", "provinceSlug": "khanh-hoa", "query": "Nha Trang Night Market" },
+  { "id": "sunset-town-phu-quoc", "name": "Sunset Town", "nameEn": "Sunset Town", "provinceSlug": "kien-giang", "query": "Sunset Town Phú Quốc" },
+  { "id": "muong-hoa-valley", "name": "Thung lũng Mường Hoa", "nameEn": "Muong Hoa Valley", "provinceSlug": "lao-cai", "query": "Mường Hoa, Sa Pa" },
+  { "id": "love-waterfall-sapa", "name": "Thác Tình Yêu", "nameEn": "Love Waterfall", "provinceSlug": "lao-cai", "query": "Love Waterfall Sapa" },
+  { "id": "sapa-stone-church", "name": "Nhà thờ đá Sa Pa", "nameEn": "Sapa Stone Church", "provinceSlug": "lao-cai", "query": "Nhà thờ Đá Sapa" },
+  { "id": "quan-lan-island", "name": "Quan Lạn", "nameEn": "Quan Lan", "provinceSlug": "quang-ninh", "query": "Quan Lạn" },
+  { "id": "sun-world-ha-long", "name": "Sun World Hạ Long", "nameEn": "Sun World Ha Long", "provinceSlug": "quang-ninh", "query": "Sun World Hạ Long" },
+  { "id": "van-long-nature-reserve", "name": "Vân Long", "nameEn": "Van Long", "provinceSlug": "ninh-binh", "query": "Vân Long, Ninh Bình" },
+  { "id": "thai-vi-temple", "name": "Đền Thái Vi", "nameEn": "Thai Vi Temple", "provinceSlug": "ninh-binh", "query": "Đền Thái Vi, Ninh Bình" }
+]
