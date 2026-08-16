@@ -43,6 +43,10 @@
     "id": "11664007",
     "name": "봉은사"
   },
+  "boseong-tea-fields": {
+    "id": "11869929",
+    "name": "대한다원"
+  },
   "bosu-dong-book-street": {
     "id": "12848261",
     "name": "보수동책방골목"
@@ -95,6 +99,10 @@
     "id": "13491093",
     "name": "청계천"
   },
+  "cheongju-jikji": {
+    "id": "12302966",
+    "name": "청주고인쇄박물관"
+  },
   "cheongnamdae": {
     "id": "13118260",
     "name": "청남대"
@@ -130,6 +138,10 @@
   "daegu-yangnyeongsi": {
     "id": "15966612",
     "name": "대구약령시한의약박물관"
+  },
+  "daegwallyeong-sky-ranch": {
+    "id": "35438640",
+    "name": "대관령 하늘목장"
   },
   "daejeon-expo-park": {
     "id": "11621573",
@@ -215,6 +227,10 @@
     "id": "38300945",
     "name": "고창고인돌유적"
   },
+  "gongju-tomb": {
+    "id": "20103341",
+    "name": "공주무령왕릉과왕릉원"
+  },
   "gosu-cave": {
     "id": "11491273",
     "name": "고수동굴"
@@ -226,6 +242,10 @@
   "guinsa": {
     "id": "12811723",
     "name": "구인사"
+  },
+  "gunsan-modern-quarter": {
+    "id": "68032504",
+    "name": "군산근대화거리"
   },
   "gurye-sansuyu": {
     "id": "13491718",
@@ -335,6 +355,10 @@
     "id": "16855498",
     "name": "이기대해안산책로"
   },
+  "ikseon-dong": {
+    "id": "37684387",
+    "name": "익선동한옥거리"
+  },
   "imjingak-dmz": {
     "id": "1405440752",
     "name": "임진각"
@@ -362,6 +386,14 @@
   "jangsaengpo-whale-village": {
     "id": "36241732",
     "name": "장생포고래문화마을"
+  },
+  "jangtaesan-metasequoia": {
+    "id": "11491053",
+    "name": "장태산자연휴양림"
+  },
+  "jeondeungsa": {
+    "id": "11664022",
+    "name": "전등사"
   },
   "jeongbang-waterfall": {
     "id": "11491630",
@@ -423,6 +455,10 @@
     "id": "11620801",
     "name": "한국민속촌"
   },
+  "kr-andong-jjimdak-alley": {
+    "id": "19497096",
+    "name": "안동찜닭골목"
+  },
   "kr-anjirang-gopchang": {
     "id": "21198304",
     "name": "안지랑 곱창 골목"
@@ -443,6 +479,10 @@
     "id": "21761823",
     "name": "흑돼지거리"
   },
+  "kr-samjin-eomuk": {
+    "id": "34218651",
+    "name": "삼진어묵 본점"
+  },
   "kr-sindang-tteokbokki-town": {
     "id": "1438806884",
     "name": "신당동 떡볶이"
@@ -450,6 +490,10 @@
   "kr-sungsimdang": {
     "id": "11871325",
     "name": "성심당 본점"
+  },
+  "kr-tongyeong-jungang-market": {
+    "id": "13347933",
+    "name": "통영중앙전통시장"
   },
   "kr-tosokchon": {
     "id": "35597924",
@@ -474,6 +518,14 @@
   "manjanggul": {
     "id": "4354449381",
     "name": "만장굴"
+  },
+  "may18-memorial-park": {
+    "id": "37345711",
+    "name": "국립아시아문화전당5.18민주광장"
+  },
+  "mokpo-modern-history": {
+    "id": "1281942881",
+    "name": "목포근대역사관 1관"
   },
   "mudeungsan": {
     "id": "250957178",
@@ -631,6 +683,10 @@
     "id": "12108687",
     "name": "아바이마을"
   },
+  "songdo-cable-car": {
+    "id": "594242077",
+    "name": "송도해상케이블카"
+  },
   "songdo-central-park": {
     "id": "20118926",
     "name": "송도 센트럴파크"
@@ -638,6 +694,10 @@
   "songgwangsa": {
     "id": "11664039",
     "name": "송광사"
+  },
+  "songnisan-beopjusa": {
+    "id": "11815705",
+    "name": "법주사"
   },
   "songwol-fairy-tale-village": {
     "id": "34590409",
@@ -671,6 +731,10 @@
     "id": "12079965",
     "name": "태종대"
   },
+  "tongyeong-dongpirang": {
+    "id": "13491714",
+    "name": "동피랑 벽화마을"
+  },
   "tongyeong-mireuksan": {
     "id": "13490889",
     "name": "미륵산"
@@ -691,6 +755,10 @@
     "id": "13491907",
     "name": "우포늪"
   },
+  "wando-cheongsando": {
+    "id": "36072773",
+    "name": "청산도"
+  },
   "wolmido": {
     "id": "13491282",
     "name": "월미도"
@@ -699,9 +767,17 @@
     "id": "12765760",
     "name": "경주 양동마을"
   },
+  "yangnim-dong": {
+    "id": "1064586690",
+    "name": "양림 근대역사문화마을"
+  },
   "yeosu-night-sea": {
     "id": "1080459348",
     "name": "여수밤바다"
+  },
+  "yongdusan-busan-tower": {
+    "id": "20058995",
+    "name": "부산타워"
   },
   "yongmunsa": {
     "id": "11663934",
