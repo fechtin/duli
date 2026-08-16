@@ -7,7 +7,9 @@ import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useTripStore } from "@/lib/store/useTripStore";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
+import { destinationPath, dishPath } from "@/lib/seo/urls";
 import { IllustratedImage, firstPhotoSeed } from "@/components/ui/IllustratedImage";
+import { AppLink } from "@/components/ui/AppLink";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -56,9 +58,10 @@ export function ProvincePanel({ slug }: { slug: string }) {
             <MapPin size={13} />
             {t(`region.${meta.regionId}`)}
           </div>
-          <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+          {/* Subject line of a province page — see DestinationPanel for why this is an <h1>. */}
+          <h1 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
             {t(`province.${meta.slug}`)}
-          </h2>
+          </h1>
         </div>
       </div>
 
@@ -99,9 +102,10 @@ export function ProvincePanel({ slug }: { slug: string }) {
               {(dishes?.length ?? 0) > 0 && (
                 <div className="mb-2 flex flex-col gap-2">
                   {dishes!.map((d) => (
-                    <button
+                    <AppLink
                       key={d.id}
-                      onClick={() => openDish(d.id)}
+                      to={dishPath(country, d.id)}
+                      onNavigate={() => openDish(d.id)}
                       className="group flex items-center gap-3 rounded-[var(--radius-md)] border border-border p-2 text-left transition-colors hover:bg-surface-2"
                     >
                       <IllustratedImage seed={`dish-${d.id}`} ratio="1/1" className="w-14 shrink-0" />
@@ -112,7 +116,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
                         <p className="mt-0.5 line-clamp-1 text-xs text-muted">{d.summary}</p>
                       </div>
                       <ChevronRight size={16} className="shrink-0 text-faint transition-transform group-hover:translate-x-0.5" />
-                    </button>
+                    </AppLink>
                   ))}
                 </div>
               )}
@@ -139,9 +143,10 @@ export function ProvincePanel({ slug }: { slug: string }) {
               {destinations.map((d) => {
                 const Icon = markerIcon(d.type);
                 return (
-                  <button
+                  <AppLink
                     key={d.id}
-                    onClick={() => {
+                    to={destinationPath(country, slug, d.slug)}
+                    onNavigate={() => {
                       selectDestination(d.id, slug);
                       useMapStore.getState().requestFocus({ kind: "point", lng: d.lng, lat: d.lat, zoom: 7 });
                     }}
@@ -156,7 +161,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
                       <p className="mt-0.5 line-clamp-2 text-xs text-muted">{d.summary}</p>
                     </div>
                     <ChevronRight size={16} className="shrink-0 text-faint transition-transform group-hover:translate-x-0.5" />
-                  </button>
+                  </AppLink>
                 );
               })}
             </div>

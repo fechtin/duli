@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { UtensilsCrossed, ArrowRight } from "lucide-react";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { AppLink } from "@/components/ui/AppLink";
+import { dishPath } from "@/lib/seo/urls";
 import { fetchDishes } from "@/lib/api/food";
 import { useFoodStore } from "@/lib/store/useFoodStore";
 import { useUIStore } from "@/lib/store/useUIStore";
@@ -51,9 +53,10 @@ export function FoodExplorerSection() {
       </div>
       <div className="flex flex-col gap-2">
         {dishes.map((d) => (
-          <button
+          <AppLink
             key={d.id}
-            onClick={() => open(d.id)}
+            to={dishPath(country, d.id)}
+            onNavigate={() => open(d.id)}
             className="group flex items-center gap-3 overflow-hidden rounded-[18px] border border-[var(--sb-border)] bg-[var(--sb-surface)] p-2 text-left transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--sb-hover)] hover:shadow-[var(--sb-shadow-hover)]"
           >
             <div className="h-[60px] w-[80px] shrink-0 overflow-hidden rounded-[12px]">
@@ -70,7 +73,7 @@ export function FoodExplorerSection() {
               </p>
               <p className="mt-0.5 truncate text-[11.5px] text-[color:var(--sb-text-dim)]">{d.summary}</p>
             </div>
-          </button>
+          </AppLink>
         ))}
       </div>
     </section>

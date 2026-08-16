@@ -77,9 +77,11 @@ export function DishPanel() {
             <UtensilsCrossed size={13} />
             {t("dish.specialtyOf", { place: origin ? origin.name : countryName })}
           </div>
-          <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+          {/* `?dish=` is its own canonical URL, so the dish is this page's subject — see
+              DestinationPanel for why the atlas rendered no <h1> at all before 040. */}
+          <h1 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
             {dish.emoji} {dish.name}
-          </h2>
+          </h1>
         </div>
       </div>
 

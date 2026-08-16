@@ -6,7 +6,7 @@ import { useContentStore, findDestinationBySlug } from "./useContentStore";
 import { useCountryStore } from "./useCountryStore";
 import { getProvinceMeta } from "@/lib/api/content";
 import { isCountryCode } from "@/lib/country";
-import { splitLocale, withLocale } from "@/lib/seo/urls";
+import { countryPath, destinationPath, provincePath, splitLocale, withLocale } from "@/lib/seo/urls";
 import type { CountryCode } from "@/lib/types";
 
 /**
@@ -155,12 +155,12 @@ export function useUrlSync() {
     const dishId = useFoodStore.getState().openDishId;
     const tripId = useTripStore.getState().tripId;
 
-    let path = `/${cc}`;
+    let path = countryPath(cc);
     if (live.selectedDestination) {
       const d = useContentStore.getState().destinations.find((x) => x.id === live.selectedDestination);
-      if (d) path = `/${cc}/${d.provinceSlug}/${d.slug}`;
+      if (d) path = destinationPath(cc, d.provinceSlug, d.slug);
     } else if (live.selectedProvince) {
-      path = `/${cc}/${live.selectedProvince}`;
+      path = provincePath(cc, live.selectedProvince);
     }
     path = localised(path);
     // Build the query rather than appending one parameter. The old single-append form silently

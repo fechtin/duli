@@ -5,6 +5,7 @@ import { TopBar } from "@/components/shell/TopBar";
 import { MobileTopBar } from "@/components/shell/MobileTopBar";
 import { WeatherWidget } from "@/components/shell/WeatherWidget";
 import { BottomNav } from "@/components/shell/BottomNav";
+import { CrawlNav } from "@/components/shell/CrawlNav";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
 import { useDocumentMeta } from "@/lib/seo/useDocumentMeta";
 import { useUIStore } from "@/lib/store/useUIStore";
@@ -57,6 +58,9 @@ export default function App() {
 
   return (
     <main className="relative h-full w-full overflow-hidden bg-background">
+      {/* Page subject + the province link graph — see the component for why the map can't be it. */}
+      <CrawlNav />
+
       <MapEngine />
 
       <LeftSidebar />

@@ -84,3 +84,36 @@ export function withLocale(locale: Locale, path: string): string {
 export function alternatesOf(path: string): { locale: Locale; path: string }[] {
   return SEO_LOCALES.map((locale) => ({ locale, path: withLocale(locale, path) }));
 }
+
+// ---------------------------------------------------------------------------
+// Selection → path.
+//
+// `useUrlSync` writes these shapes after a selection changes and parses them back on a deep
+// link; `AppLink` renders them as the href a crawler follows. Both must produce the same bytes,
+// so neither builds the string itself — an href that disagreed with the URL the app writes on
+// click would hand Google two URLs for one place.
+
+/** The country atlas itself: `/vn`. */
+export function countryPath(country: string): string {
+  return `/${country}`;
+}
+
+/** A province page: `/vn/quang-nam`. */
+export function provincePath(country: string, provinceSlug: string): string {
+  return `${countryPath(country)}/${provinceSlug}`;
+}
+
+/** A destination page: `/vn/quang-nam/hoi-an-ancient-town`. */
+export function destinationPath(country: string, provinceSlug: string, slug: string): string {
+  return `${provincePath(country, provinceSlug)}/${slug}`;
+}
+
+/**
+ * A dish: `/vn?dish=pho-bo`. Dishes are an overlay on the country page rather than a page of
+ * their own, which is also why `useDocumentMeta` canonicalises them onto `/{cc}` no matter which
+ * map view they were opened over. The query rides along in the returned string because
+ * `withLocale` prefixes the whole thing — splitting it would put `/en` after the `?`.
+ */
+export function dishPath(country: string, dishId: string): string {
+  return `${countryPath(country)}?dish=${encodeURIComponent(dishId)}`;
+}

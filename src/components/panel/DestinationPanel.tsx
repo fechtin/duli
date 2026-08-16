@@ -5,10 +5,13 @@ import { useAsync } from "@/lib/utils/useAsync";
 import { useMapStore } from "@/lib/store/useMapStore";
 import { useUIStore } from "@/lib/store/useUIStore";
 import { useContentStore } from "@/lib/store/useContentStore";
+import { useCountryStore } from "@/lib/store/useCountryStore";
 import { usePassportStore } from "@/lib/store/usePassportStore";
+import { destinationPath } from "@/lib/seo/urls";
 import { useI18n, useT } from "@/lib/i18n";
 import { tagLabel } from "@/lib/i18n/tags";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { AppLink } from "@/components/ui/AppLink";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -23,6 +26,7 @@ export function DestinationPanel({ id }: { id: string }) {
   const { locale } = useI18n();
   const { data: dest, loading } = useAsync(() => fetchDestination(id, locale), [id, locale]);
   const allDestinations = useContentStore((s) => s.destinations);
+  const country = useCountryStore((s) => s.country);
   const selectDestination = useMapStore((s) => s.selectDestination);
   const setAiOpen = useUIStore((s) => s.setAiOpen);
   const openCheckin = useUIStore((s) => s.openCheckin);
@@ -68,7 +72,9 @@ export function DestinationPanel({ id }: { id: string }) {
             {province && t(`province.${province.slug}`)} ·{" "}
             {province && t(`region.${province.regionId}`)}
           </div>
-          <h2 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{dest.name}</h2>
+          {/* The page's subject line. `<h1>` because this URL is a destination page — the atlas
+              rendered none at all until 040, so Google indexed every place headless. */}
+          <h1 className="type-display text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{dest.name}</h1>
         </div>
       </div>
 
@@ -161,9 +167,10 @@ export function DestinationPanel({ id }: { id: string }) {
           <Section index={5} title={t("panel.nearby")}>
             <div className="flex flex-col gap-2">
               {nearby.map((nb) => (
-                <button
+                <AppLink
                   key={nb.id}
-                  onClick={() => {
+                  to={destinationPath(country, nb.provinceSlug, nb.slug)}
+                  onNavigate={() => {
                     selectDestination(nb.id, nb.provinceSlug);
                     useMapStore.getState().requestFocus({ kind: "point", lng: nb.lng, lat: nb.lat, zoom: 7 });
                   }}
@@ -174,7 +181,7 @@ export function DestinationPanel({ id }: { id: string }) {
                     <p className="truncate text-sm font-medium text-foreground">{nb.name}</p>
                     <p className="truncate text-xs text-muted">{nb.summary}</p>
                   </div>
-                </button>
+                </AppLink>
               ))}
             </div>
           </Section>
