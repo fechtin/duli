@@ -71,27 +71,48 @@ export function heroOfTheDay(country: CountryCode = "vn"): HeroPlace {
   return HERO_PLACES[doy % HERO_PLACES.length];
 }
 
-// Coordinates for the living-calendar destination ids (seasonal/festival/flower), which use
-// their own id namespace distinct from the content destinations (see briefGenerator DEST_NAMES).
+/**
+ * The living calendars (seasonal/festival/flower) name places in their own id namespace, so
+ * `sapa-terraces` and friends have no entry in the authoring data. Unjoined, a card could only
+ * ever move the camera — `selectDestination` never fired, so the detail panel stayed shut.
+ * This table is that join: calendar id → the real destination it names.
+ *
+ * `navHelpers.test.ts` fails if an id here stops resolving, or if a new calendar id lands with
+ * no home: an unmapped id falls through to `reset()`, which silently zooms the map back out.
+ */
+const CALENDAR_DESTINATION: Record<string, string> = {
+  "cat-ba-island": "hp-cat-ba-island",
+  "da-nang-coast": "my-khe-beach",
+  "ha-giang-loop": "ma-pi-leng-pass",
+  "ha-noi-old-quarter": "old-quarter-hanoi",
+  "hoi-an-old-town": "hoi-an-ancient-town",
+  "nha-trang-coast": "nha-trang-beach",
+  "ninh-binh-trang-an": "trang-an",
+  // The Katê entry names the tower the festival is actually held at.
+  "phan-rang-ninh-thuan": "ntn-po-klong-garai",
+  "phan-thiet-coast": "mui-ne-sand-dunes",
+  "phong-nha-caves": "phong-nha-cave",
+  "phu-yen-coast": "pye-ganh-da-dia",
+  "sapa-terraces": "sa-pa-town",
+};
+
+/**
+ * Calendar ids that name a whole city rather than a place. Their seasonal state is city-wide
+ * weather ("mùa mưa chiều, sáng nắng đẹp"), so the province panel is the honest target —
+ * promoting one landmark to stand for the city would put the wrong subject on screen.
+ */
+const CALENDAR_PROVINCE: Record<string, string> = {
+  "ho-chi-minh-city": "ho-chi-minh",
+};
+
+/**
+ * Last resort for a calendar id with no destination behind it. Chùa Hương (Mỹ Đức, Hà Nội) is
+ * the only one left — the authoring data has Chùa Hương Tích in Hà Tĩnh, a different pagoda
+ * 230km south, so the near-miss name must not be mapped. Its card flies the map and opens
+ * nothing, which is honest rather than wrong.
+ */
 const CALENDAR_COORDS: Record<string, { lng: number; lat: number }> = {
-  "cat-ba-island": { lng: 107.048, lat: 20.797 },
-  "da-lat-city": { lng: 108.458, lat: 11.94 },
-  "da-nang-coast": { lng: 108.22, lat: 16.06 },
-  "ha-giang-loop": { lng: 105.0, lat: 23.1 },
-  "ha-long-bay": { lng: 107.078, lat: 20.91 },
-  "ho-chi-minh-city": { lng: 106.7, lat: 10.776 },
-  "hoi-an-old-town": { lng: 108.338, lat: 15.88 },
-  "hue-imperial-city": { lng: 107.59, lat: 16.463 },
-  "moc-chau-plateau": { lng: 104.63, lat: 20.84 },
-  "mu-cang-chai-terraces": { lng: 104.15, lat: 21.71 },
-  "nha-trang-coast": { lng: 109.196, lat: 12.238 },
-  "ninh-binh-trang-an": { lng: 105.89, lat: 20.25 },
   "perfume-pagoda": { lng: 105.75, lat: 20.62 },
-  "phan-thiet-coast": { lng: 108.1, lat: 10.93 },
-  "phong-nha-caves": { lng: 106.28, lat: 17.59 },
-  "phu-quoc-island": { lng: 103.96, lat: 10.22 },
-  "phu-yen-coast": { lng: 109.3, lat: 13.09 },
-  "sapa-terraces": { lng: 103.844, lat: 22.336 },
 };
 
 // Verified image-manifest seeds for living-calendar ids (their own id namespace has no photos).
@@ -203,9 +224,9 @@ export function focusPoint(lng: number, lat: number, zoom = 7): void {
 }
 
 /**
- * Best-effort "fly there" for a destination id coming from the living calendars or content.
- * Resolves coordinates from the calendar map first, then the authoring destinations, else
- * resets the map. Opens the panel when the id is a real content destination.
+ * "Show me this" for a destination id coming from the living calendars or content: open the
+ * panel that describes it, and fly the map there. Falls back to a bare camera move only when
+ * no panel can honestly be opened for the id.
  */
 export function focusDestinationById(id: string, country: CountryCode = "vn"): void {
   if (country === "kr") {
@@ -217,14 +238,26 @@ export function focusDestinationById(id: string, country: CountryCode = "vn"): v
     useMapStore.getState().reset();
     return useUIStore.getState().setSidebarMobileOpen(false);
   }
-  const cal = CALENDAR_COORDS[id];
-  if (cal) return focusPoint(cal.lng, cal.lat);
 
-  const dest = destinations.find((d) => d.id === id || d.slug === id);
+  const province = CALENDAR_PROVINCE[id];
+  if (province) {
+    // selectProvince already frames the province, so no focusPoint here.
+    useMapStore.getState().selectProvince(province);
+    return useUIStore.getState().setSidebarMobileOpen(false);
+  }
+
+  // Resolve the destination BEFORE any coordinate table. The old order asked the coordinates
+  // first and returned on a hit, so even ids the authoring data does have — da-lat-city,
+  // ha-long-bay — skipped `selectDestination`: every card moved the map and opened nothing.
+  const destId = CALENDAR_DESTINATION[id] ?? id;
+  const dest = destinations.find((d) => d.id === destId || d.slug === destId);
   if (dest) {
     useMapStore.getState().selectDestination(dest.id, dest.provinceSlug);
     return focusPoint(dest.lng, dest.lat);
   }
+
+  const cal = CALENDAR_COORDS[id];
+  if (cal) return focusPoint(cal.lng, cal.lat);
 
   useMapStore.getState().reset();
   useUIStore.getState().setSidebarMobileOpen(false);
