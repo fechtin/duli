@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "250,000ドン",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "石山の間を行く小舟",
-      "石山の麓、鏡のような湖面を滑る小舟",
-      "春のタムコック",
-      "ハンムアからの全景",
-    ],
   },
   "hoan-kiem-lake": {
     name: "ホアンキエム湖",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "湖の中央に佇む亀の塔",
-      "木の根もとで静かに湖面を眺める青年",
-      "霧にかすむ湖面に映る、葉を落とした枝",
-    ],
   },
   "old-quarter-hanoi": {
     name: "ハノイ旧市街",
@@ -65,10 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "伝統の職人通り",
-      "天秤棒を担ぐ物売り",
-    ],
   },
   "hp-cat-ba-island": {
     name: "カットバ島",
@@ -88,13 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1泊2日",
     ticket: "80,000ドン",
     openingHours: "終日",
-    galleryCaptions: [
-      "上空から眺めるランハ湾",
-      "砲台公園から望む海",
-      "透き通ったカットコー海水浴場",
-      "湾に面したカットバの町",
-      "カットバ国立公園",
-    ],
   },
   "hp-do-son-beach": {
     name: "ドーソンビーチ",
@@ -114,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "モクマオウ並木の下のドーソンビーチ",
-      "ドーソンのカジノの建物",
-      "伝統の闘水牛祭り",
-      "ドーソン半島の夕暮れ",
-    ],
   },
   "bn-den-do": {
     name: "デンドー（李朝廟）",
@@ -139,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "威厳あるデンドーの三関門",
-      "半月池の上の水亭",
-      "旧暦3月のデンドー祭り",
-    ],
   },
   "bn-dong-ho": {
     name: "ドンホー版画村",
@@ -163,12 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: [
-      "東湖版画「ねずみの嫁入り」",
-      "ゼップ紙に版画を刷る職人",
-      "鮮やかな民間色の竈神（タオクアン）祭祀画",
-      "蓮の間を泳ぐ鯉の群れの版画",
-    ],
   },
   "hd-con-son-kiep-bac": {
     name: "コンソン・キエプバク",
@@ -188,11 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "",
     openingHours: "06:30 - 18:00",
-    galleryCaptions: [
-      "ルクダウ川のほとりのキエプバク祠",
-      "松林の中のコンソン寺",
-      "伝統の秋祭り",
-    ],
   },
   "hd-dao-co": {
     name: "チランナム鷺島",
@@ -212,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "30,000ドン",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "夕暮れに巣へ帰る鷺の群れ",
-      "島を巡る小舟",
-      "青く澄んだアンズオン湖",
-    ],
   },
   "hy-pho-hien": {
     name: "フォーヒエン",
@@ -236,12 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "古き趣のシックダン文廟",
-      "境内から見たシックダン文廟",
-      "フォーヒエンのマウ祠",
-      "収穫期のフンイエン産リュウガン",
-    ],
   },
   "hy-chua-chuong": {
     name: "チュオン寺（鐘寺）",
@@ -261,11 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "竜の目の池に架かる石橋",
-      "十八羅漢の回廊",
-      "古き趣のチュオン寺の三関門",
-    ],
   },
   "hn-tam-chuc": {
     name: "タムチュック寺",
@@ -285,11 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: [
-      "ルックニャック湖のほとりの三世殿",
-      "仏典を刻んだ経柱の庭",
-      "山々に囲まれた寺院の全景",
-    ],
   },
   "nd-den-tran": {
     name: "デンチャン（陳朝廟）",
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "威厳あるデンチャンの五門の門",
-      "初春の開印祭",
-      "古き趣のティエンチュオン祠",
-    ],
   },
   "nd-nha-tho-do": {
     name: "ハイリーの廃教会",
@@ -333,11 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "砂浜に佇む崩れた鐘楼",
-      "廃教会に昇る朝日",
-      "苔むした壁の足元に打ち寄せる波",
-    ],
   },
   "tb-chua-keo": {
     name: "ケオ寺",
@@ -357,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "名高い三層の木造鐘楼",
-      "ケオ寺の秋祭り",
-      "左右対称に配された鉄刀木の建物群",
-    ],
   },
   "tb-con-vanh": {
     name: "コンヴァインビーチ",
@@ -381,11 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "コンヴァインビーチに昇る朝日",
-      "海辺のモクマオウ林",
-      "青々としたマングローブ林",
-    ],
   },
   "vp-tam-dao": {
     name: "タムダオ",
@@ -405,11 +320,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1泊2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "霧に包まれたタムダオの街",
-      "古き趣の石造教会",
-      "緑の森に流れるバック滝",
-    ],
   },
   "vp-tay-thien": {
     name: "チュックラム・タイティエン禅院",
@@ -429,11 +339,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "威厳ある禅院の本殿",
-      "タイティエンの上祠へ向かう道",
-      "緑の森の中の仏像の庭",
-    ],
   },
 };
 

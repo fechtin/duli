@@ -9,8 +9,10 @@ import type { Locale } from "../src/lib/i18n/dictionaries";
 import { FOOD_SEGMENT, withLocale } from "../src/lib/seo/urls";
 import { faqPairs } from "./seo-body";
 import manifest from "../src/data/generated/image-manifest.json";
+import { buildPhotoIndex, type PhotoEntry } from "../src/lib/media/photoIndex";
 
 const IMAGES = manifest as Record<string, { src: string }>;
+const photos = buildPhotoIndex(manifest as Record<string, PhotoEntry>);
 
 /** Absolute URL for a locale-free path, in the reader's locale. */
 type Abs = (path: string) => string;
@@ -28,12 +30,15 @@ export function dishImageUrl(origin: string, dishId: string): string | undefined
   return src ? `${origin}${src}` : undefined;
 }
 
-/** Gallery photos that actually exist on disk, as absolute URLs. */
+/**
+ * Every photo the atlas holds for this destination, as absolute URLs.
+ *
+ * Used to read the authoring `gallery` slots and filter them against the manifest, which meant
+ * a destination that gained photos after its slots were written published only the subset that
+ * happened to be listed — and one whose slots all died published none at all.
+ */
 export function galleryUrls(origin: string, d: Destination): string[] {
-  return (d.gallery ?? [])
-    .map((g) => IMAGES[g.seed]?.src)
-    .filter((src): src is string => Boolean(src))
-    .map((src) => `${origin}${src}`);
+  return photos.seedsFor(d.id).map((seed) => `${origin}${photos.meta(seed)!.src}`);
 }
 
 /**

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "3,000ウォン（韓服着用で無料）",
     openingHours: "09:00〜18:00（11〜2月は17:00まで、6〜8月は18:30まで）、火曜休み",
-    galleryCaptions: ["朝廷から見た勤政殿", "池に浮かぶ慶会楼"],
   },
   changdeokgung: {
     name: "昌徳宮と後苑",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "3,000ウォン（後苑の観覧は別途8,000ウォン）",
     openingHours: "09:00〜18:00（11〜1月は17:30まで、6〜8月は18:30まで）、月曜休み",
-    galleryCaptions: ["仁政殿"],
   },
   "bukchon-hanok-village": {
     name: "北村韓屋村",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "2026年1月1日から北村路11ギル一帯は観光目的の立ち入りが10:00〜17:00に制限され、時間外は10万ウォンの過料が科される。推奨ではなく強制規定である",
-    galleryCaptions: ["街を見下ろす韓屋の路地"],
   },
   "n-seoul-tower": {
     name: "Nソウルタワー（南山）",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "展望台21,000ウォン（ケーブルカーは別途）",
     openingHours: "平日10:30〜22:30、週末10:00〜23:00（入場は閉館30分前まで）",
-    galleryCaptions: ["展望台から見たソウル"],
   },
   myeongdong: {
     name: "明洞",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "公式の営業時間はない。店は10〜11時に開き21〜22時に閉まり、屋台は夕方遅くから夜まで出る",
-    galleryCaptions: ["夜の屋台通り"],
   },
   "hangang-yeouido-park": {
     name: "汝矣島漢江公園",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["漢江の夕暮れ"],
   },
   "jongmyo-shrine": {
     name: "宗廟",
@@ -155,7 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜1.5時間",
     ticket: "1,000ウォン（19歳未満・65歳以上は無料）",
     openingHours: "09:00〜18:00（11〜1月は17:30まで、6〜8月は18:30まで）、火曜休み",
-    galleryCaptions: ["正殿の長い回廊"],
   },
   "ikseon-dong": {
     name: "益善洞の韓屋路地",
@@ -177,7 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "",
     openingHours: "路地は終日開放で決まった時間はない。カフェや飲食店はおおむね11:00〜23:00",
-    galleryCaptions: ["夜の韓屋路地"],
   },
   insadong: {
     name: "仁寺洞",
@@ -199,7 +191,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "通りは常時開放、店はおおむね10:00〜21:00。週末は目抜き通りが歩行者天国になる",
-    galleryCaptions: ["週末の仁寺洞通り"],
   },
   "gwangjang-market": {
     name: "広蔵市場",
@@ -221,7 +212,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "食べ物横丁は09:00〜23:00で年中無休、布地・一般の店舗は09:00〜18:00で日曜休み",
-    galleryCaptions: ["市場中央のピンデトク屋"],
   },
   cheonggyecheon: {
     name: "清渓川",
@@ -243,7 +233,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["都心を抜ける川沿いの道"],
   },
   bongeunsa: {
     name: "奉恩寺",
@@ -265,7 +254,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "無料（テンプルライフ体験は30,000ウォン）",
     openingHours: "03:00〜22:00、年中無休",
-    galleryCaptions: ["江南の高層ビルを背にした弥勒大仏"],
   },
   "dongdaemun-ddp": {
     name: "東大門デザインプラザ（DDP）",
@@ -287,7 +275,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "屋外は無料、展示はおおむね8,000〜15,000ウォン",
     openingHours: "屋外は24時間開放、展示室は10:00〜19:00（水・金は21:00まで）、月曜休館",
-    galleryCaptions: ["夜のDDPの曲面外皮"],
   },
   hongdae: {
     name: "弘大",
@@ -309,7 +296,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "街は終日開放。バスキングやライブは主に19:00から深夜までで、週末が最も混む",
-    galleryCaptions: ["弘益大学正門前の路上公演"],
   },
   "lotte-world-tower": {
     name: "ロッテワールドタワーとソウルスカイ",
@@ -331,7 +317,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "ソウルスカイ31,000ウォン（大人）",
     openingHours: "10:30〜22:00（金・土・祝は23:00まで）、チケット販売は閉館1時間前まで",
-    galleryCaptions: ["ソウルスカイから見たソウル"],
   },
   "national-museum-korea": {
     name: "国立中央博物館",
@@ -353,7 +338,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "常設展は無料、特別展は別料金",
     openingHours: "09:30〜17:30、水・土は21:00まで（屋外庭園は07:00〜22:00）",
-    galleryCaptions: ["思惟の部屋"],
   },
   bukhansan: {
     name: "北漢山国立公園",
@@ -375,7 +359,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日〜一日",
     ticket: "",
     openingHours: "入山04:00〜17:00（12〜2月は16:00まで）、白雲台コースは定員に達すると規制",
-    galleryCaptions: ["白雲台から振り返るソウル"],
   },
   "seoul-forest": {
     name: "ソウルの森",
@@ -397,7 +380,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["秋の銀杏並木"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Tiled roofs of Jeonju hanok village"],
   },
   naejangsan: {
     name: "Naejangsan National Park",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "National park hours",
-    galleryCaptions: ["The autumn maple tunnel"],
   },
   maisan: {
     name: "Maisan & Tapsa Stone Pagodas",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "The provincial park is free; Tapsa temple charges 3,000 KRW (2,000 students, 1,000 children) — it holds only provincial-level heritage, so the 2023 fee abolition did not cover it",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["Stone pagodas below Maisan"],
   },
   "gochang-dolmen": {
     name: "Gochang Dolmen Site",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "3,000 KRW (2,000 youths, 1,000 children); the site train is a further 1,000 KRW",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["The dolmen field at Gochang"],
   },
   seonunsa: {
     name: "Seonunsa Temple & Camellia Forest",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "07:00–18:00",
-    galleryCaptions: ["Whole camellia blooms fallen on the moss"],
   },
   "muju-deogyusan": {
     name: "Deogyusan National Park, Muju",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half to a full day",
     ticket: "Gondola 25,000 KRW return (20,000 children); it can stop running in bad weather",
     openingHours: "National park hours and cable car schedule",
-    galleryCaptions: ["Ice-covered trees on Hyangjeokbong"],
   },
   "byeonsan-bando": {
     name: "Byeonsanbando National Park",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "A full day",
     ticket: "Free (Naesosa's heritage fee was abolished in May 2023)",
     openingHours: "National park hours; Chaeseokgang by tide",
-    galleryCaptions: ["The layered rock at Chaeseokgang"],
   },
   "gunsan-modern-quarter": {
     name: "Gunsan Modern Quarter",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "3,000 KRW for the combined museum ticket; 2,000 KRW for the Modern History Museum alone",
     openingHours: "09:00–18:00, museums closed Mondays",
-    galleryCaptions: ["The old Bank of Chosen building in Gunsan"],
   },
   "jeonju-nambu-market": {
     name: "Nambu Market & Youth Night Market, Jeonju",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Day market 07:00–20:00; the night market runs only on Friday and Saturday evenings, 17:00–23:00, with about 45 stalls along a 250 m aisle",
-    galleryCaptions: ["The youth night market inside Nambu market"],
   },
   "jeonju-hyanggyo": {
     name: "Jeonju Hyanggyo Confucian School",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "09:00–18:00 (March–October), 10:00–17:00 (November–February); closed Mondays",
-    galleryCaptions: ["Golden ginkgos in the school courtyard"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["㙴𥑉下的蛋石滩", "面朝大海的韩默子墓"],
   },
   "phu-quy-island": {
     name: "富贵岛",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["坑港的黑色崖壁", "富贵岛上的灵山寺", "面向外海的无极池", "环岛的养殖鱼排"],
   },
   "po-sah-inu": {
     name: "婆萨伊努塔",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "15,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["婆奈丘上的红砖塔群", "塔前举行的占族卡特仪式"],
   },
   "marble-mountains": {
     name: "五行山",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "40,000越南盾",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["从水山顶望见的岘港海岸", "五行山脚下的停车场", "水山顶上的三台寺"],
   },
   "son-tra-peninsula": {
     name: "山茶半岛",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["俯瞰大海的半岛公路", "俯瞰岘港与山茶半岛", "山茶林中的红腿白臀叶猴", "灵应寺的观音像"],
   },
   "ponagar-towers": {
     name: "婆那加塔",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "30,000越南盾",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["从仪式平台望向东北塔", "塔内的婆那加女神像"],
   },
   "nui-chua-national-park": {
     name: "主山国家公园",
@@ -151,7 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["潘朗至金兰的滨海公路", "岩𤥭的化石珊瑚台地", "旱生林与裸露的花岗岩"],
   },
   "mui-dien": {
     name: "电角",
@@ -172,7 +165,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "20,000越南盾",
     openingHours: "05:00 - 18:00",
-    galleryCaptions: ["从电角灯塔远眺", "日出时的电角灯塔", "岬角下新月形的门滩"],
   },
   "my-son-sanctuary": {
     name: "美山圣地",
@@ -194,7 +186,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "150,000越南盾",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["美山谷地中的占婆塔群", "看不出灰缝的占婆砖砌", "美山圣地的E7号塔", "遗址中演出的占族舞蹈"],
   },
   "cu-lao-cham": {
     name: "占婆岛",
@@ -216,7 +207,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日或一晚",
     ticket: "70,000越南盾（参观费）",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["𡶀牢周围清澈的海水与珊瑚", "占婆岛海洋保护区", "建于十八世纪的海藏寺"],
   },
   "thien-an-mountain": {
     name: "天印山",
@@ -237,7 +227,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["平顶之上的天印寺", "沿茶曲江的美茶—美溪公路", "从山顶望见的茶曲江"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["全州韩屋村的瓦顶"],
   },
   naejangsan: {
     name: "内藏山国立公园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "依国立公园时间",
-    galleryCaptions: ["秋天的枫叶隧道"],
   },
   maisan: {
     name: "马耳山与塔寺",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "道立公园免费；塔寺门票3,000韩元（学生2,000、儿童1,000）——塔寺仅有道级文化财，不在2023年废除门票之列",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["马耳山下的石塔"],
   },
   "gochang-dolmen": {
     name: "高敞支石墓遗址",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "3,000韩元（青少年2,000、儿童1,000）；园区游园列车另收1,000韩元",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["高敞的支石墓群"],
   },
   seonunsa: {
     name: "禅云寺与山茶花林",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "07:00–18:00",
-    galleryCaptions: ["整朵落在苔藓上的山茶"],
   },
   "muju-deogyusan": {
     name: "茂朱德裕山国立公园",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天至一整天",
     ticket: "缆车来回25,000韩元（儿童20,000）；天候不佳时可能停驶",
     openingHours: "依国立公园时间与缆车班次",
-    galleryCaptions: ["香积峰上的雾淞"],
   },
   "byeonsan-bando": {
     name: "边山半岛国立公园",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "免费（来苏寺的文化财观览费已于2023年5月废止）",
     openingHours: "依国立公园时间；彩石江依潮汐",
-    galleryCaptions: ["彩石江的层理岩壁"],
   },
   "gunsan-modern-quarter": {
     name: "群山近代文化街区",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "博物馆联票3,000韩元；仅近代历史博物馆为2,000韩元",
     openingHours: "09:00–18:00，博物馆周一休馆",
-    galleryCaptions: ["群山的旧朝鲜银行建筑"],
   },
   "jeonju-nambu-market": {
     name: "全州南部市场与青年商场",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "日市07:00–20:00；夜市仅周五、周六晚间17:00–23:00，250公尺通道上约45个摊位",
-    galleryCaptions: ["南部市场中的青年夜市"],
   },
   "jeonju-hyanggyo": {
     name: "全州乡校",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "09:00–18:00（3至10月）、10:00–17:00（11至2月）；周一休息",
-    galleryCaptions: ["乡校庭中的金黄银杏"],
   },
 };
 

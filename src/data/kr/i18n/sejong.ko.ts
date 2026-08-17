@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["세종호수와 수상무대"],
   },
   "sejong-arboretum": {
     name: "국립세종수목원",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "5,000원(청소년 4,000원, 어린이 1,000원)",
     openingHours: "09:00~17:00, 월요일과 1월 1일·명절 당일 휴원",
-    galleryCaptions: ["꽃잎 모양 온실"],
   },
   "government-complex-rooftop": {
     name: "정부세종청사 옥상정원",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "무료지만 신분증이 필수이며 네이버 사전예약(회당 50명) 또는 현장접수로 참여한다",
     openingHours: "평일·주말 하루 3회(10:00, 13:30, 15:30) 안내원 인솔로 60~90분간 진행된다. 운영기간은 2026년 상반기 3.14~6.14, 하반기 8.31~11.29이며 명절과 혹서기·혹한기에는 쉰다",
-    galleryCaptions: ["부처들을 잇는 옥상정원의 보행로"],
   },
   "bimatgil-geumgang": {
     name: "금강 보행교(이응다리)",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["금강 위에 불이 켜진 이응다리"],
   },
   "birds-nest-library": {
     name: "국립세종도서관",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "평일 09:00~21:00, 주말 09:00~18:00. 매월 둘째·넷째 월요일과 공휴일 휴관",
-    galleryCaptions: ["세종호수 옆의 책장 모양 도서관"],
   },
 };
 

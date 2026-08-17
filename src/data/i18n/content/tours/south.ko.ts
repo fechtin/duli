@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "무료",
     openingHours: "08:00 - 22:00",
-    galleryCaptions: ["타마린드 그늘 아래의 책 가판", "책거리의 카페"],
   },
   "turtle-lake-hcm": {
     name: "거북 호수",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: ["못 위로 솟은 연꽃 모양 콘크리트 탑", "해질 무렵 못 둘레 계단"],
   },
   "lam-vien-square": {
     name: "럼비엔 광장",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: ["밤에 불을 밝힌 아티초크와 해바라기 건물", "쑤언흐엉 호수를 내려다보는 광장 계단"],
   },
   "da-lat-flower-garden": {
     name: "달랏 화원",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "50,000동 (참고 가격, 입구에서 확인)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["쑤언흐엉 호수를 내다보는 꽃밭", "난을 기르는 유리 온실"],
   },
   "cu-lan-village": {
     name: "꾸란 마을",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간 30분",
     ticket: "100,000동 (참고 가격, 지프 별도)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["소나무 사이의 고상가옥과 못", "개울을 건너 골짜기로 들어가는 지프"],
   },
   "bai-dai-phu-quoc": {
     name: "바이자이 해변",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: ["서쪽 바다로 떨어지는 일몰", "북쪽으로 이어지는 완만한 모래밭"],
   },
   "grand-world-phu-quoc": {
     name: "그랜드 월드 푸꾸옥",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "입장 무료, 공연과 시설은 별도",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["어두워진 뒤의 운하와 곤돌라", "논라 대나무 돔"],
   },
   "ho-quoc-pagoda": {
     name: "호꾸옥 사원",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "무료",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["바다를 곧장 마주한 위쪽 마당", "본전으로 오르는 계단과 쇠나무 기둥"],
   },
 };
 

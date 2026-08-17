@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Included in the bay entry ticket, depending on route",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["The inner chamber the size of a theatre", "Ha Long Bay seen from the cave mouth", "Stalactite columns from floor to roof"],
   },
   "thien-cung-cave": {
     name: "Thien Cung Cave",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Included in the bay entry ticket, depending on route",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["Dense stalactites inside Thien Cung", "The looped visitor route through the cave"],
   },
   "ti-top-island": {
     name: "Ti Top Island",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Included in the bay entry ticket, depending on route",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["Ha Long bay from the summit of Ti Top", "Nightfall over the bay from Ti Top Island", "The crescent beach below the hill"],
   },
   "cua-van-fishing-village": {
     name: "Cua Van Fishing Village",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Sampan fare charged on top of the bay ticket",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["Raft houses moored between limestone walls", "A sampan threading between the islands"],
   },
   "bai-tu-long-bay": {
     name: "Bai Tu Long Bay",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day, better overnight on a boat",
     ticket: "Bay entry and tour charged separately",
     openingHours: "According to the day's boat schedule",
-    galleryCaptions: ["Limestone islands on Bai Tu Long bay", "An empty inlet between the islands"],
   },
   "van-don-island": {
     name: "Van Don",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Quan Lan Island in Van Don district", "The Van Don landing looking out over the bay", "Van Don airport at night", "The shore of Van Don island district"],
   },
   "tuan-chau-island": {
     name: "Tuan Chau Island",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day; the port follows its operating hours",
-    galleryCaptions: ["The Tuan Chau passenger port", "The park on Tuan Chau Island", "The causeway joining the island to the mainland"],
   },
   "bai-chay-bridge": {
     name: "Bai Chay Bridge",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Bai Chay bridge lit at night", "The single plane of stay cables down the centre"],
   },
   "quang-ninh-museum": {
     name: "Quang Ninh Museum",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2 hours",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "08:00 - 17:00, closed Monday",
-    galleryCaptions: ["The black glass box on the bay shore", "The museum's black glass facade up close", "The reconstructed coal mine gallery"],
   },
   "binh-lieu": {
     name: "Binh Lieu",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days",
     ticket: "",
     openingHours: "All day; visit the markers in daylight",
-    galleryCaptions: ["The patrol road running along the ridge", "Reed grass whitening the slopes in November"],
   },
 };
 

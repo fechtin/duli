@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `200,000越南盾`,
     openingHours: `07:00 – 17:30`,
-    galleryCaptions: [
-      `巍峨的午门`,
-      `从石板路入口望见的古朴午门`,
-      `皇城内的大朝广场`,
-      `暮色降临的香江`,
-    ],
   },
   "phong-nha-cave": {
     name: `风牙洞`,
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `150,000越南盾`,
     openingHours: `07:30 – 16:30`,
-    galleryCaptions: [
-      `深邃的洞穹映出红棕色岩石光泽`,
-      `静谧洞中梦幻的钟乳石`,
-      `地下河山河`,
-    ],
   },
   "son-doong-cave": {
     name: `山水洞（韩松洞）`,
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `4天3晚行程`,
     ticket: `行程7,000万越南盾起`,
     openingHours: `按行程安排`,
-    galleryCaptions: [
-      `洞内天窗洒下的光柱`,
-      `向深处弯曲延伸的红棕色洞腔`,
-      `洞中绿林天窗下渺小的人群`,
-    ],
   },
   "thanh-nha-ho": {
     name: `胡朝城`,
@@ -89,11 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `40,000越南盾`,
     openingHours: `07:00 - 17:30`,
-    galleryCaptions: [
-      `巍峨的青石南门`,
-      `历经数百年的拼石城墙`,
-      `矗立于清化乡野间的古城`,
-    ],
   },
   "bien-sam-son": {
     name: `岑山海滩`,
@@ -113,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `岑山海滩的日出`,
-      `岑山海滩上的清洁工作`,
-      `闻名的雄雌石`,
-      `俯瞰遮阳伞遍布的海滩`,
-    ],
   },
   "suoi-ca-than-cam-luong": {
     name: `锦良神鱼溪`,
@@ -138,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `20,000越南盾`,
     openingHours: `07:00 - 18:00`,
-    galleryCaptions: [
-      `山脚下的神鱼群`,
-      `清澈见底的溪流`,
-      `溪畔的芒族村寨`,
-    ],
   },
   "khu-di-tich-kim-lien": {
     name: `金莲遗迹区 - 胡伯伯故乡`,
@@ -162,11 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `胡伯伯故乡的茅屋`,
-      `莲村的谷井`,
-      `村口的古榕树`,
-    ],
   },
   "bien-cua-lo": {
     name: `门炉海滩`,
@@ -186,12 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `清晨绿树成荫的滨海大道`,
-      `夕阳下灯火璀璨的海滨小城`,
-      `门炉海滩`,
-      `紧邻海岸的兰洲岛`,
-    ],
   },
   "vuon-quoc-gia-pu-mat": {
     name: `蒲茫国家公园`,
@@ -211,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `50,000越南盾`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `依偎在苍翠林海旁的叶顶高脚屋`,
-      `辽阔的原始森林`,
-      `清澈的㵢江`,
-    ],
   },
   "chua-huong-tich": {
     name: `香迹寺`,
@@ -235,11 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `30,000越南盾`,
     openingHours: `06:00 - 18:00`,
-    galleryCaptions: [
-      `鸿岭林间的古刹`,
-      `登寺的青苔石阶`,
-      `隐没于薄雾中的青苔石阶`,
-    ],
   },
   "bien-thien-cam": {
     name: `天琴海滩`,
@@ -259,12 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `原生态的天琴海滩`,
-      `浪涛畔的天琴山`,
-      `天琴的海岸`,
-      `特产一夜干鱿鱼`,
-    ],
   },
   "nga-ba-dong-loc": {
     name: `同禄三岔路`,
@@ -284,12 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `07:00 - 17:30`,
-    galleryCaptions: [
-      `十位女青年突击队员之墓`,
-      `覆满缅怀菊花的白色墓列`,
-      `在同禄三岔路纪念地上香`,
-      `昔日弹坑的遗迹`,
-    ],
   },
   "thanh-co-quang-tri": {
     name: `广治古城`,
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `中央纪念碑`,
-      `爬满青苔的古城城门`,
-      `绿荫掩映的古城纪念碑入口`,
-    ],
   },
   "dia-dao-vinh-moc": {
     name: `永麻地道`,
@@ -333,12 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `40,000越南盾`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `永麻地道的洞口`,
-      `地底的地道通道`,
-      `地道中使用的改装油灯`,
-      `地道下的产房`,
-    ],
   },
   "dao-con-co": {
     name: `昏果岛`,
@@ -358,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `碧海环抱昏果岛`,
-      `岛上的古老灯塔`,
-      `绚丽的珊瑚礁`,
-    ],
   },
 };
 

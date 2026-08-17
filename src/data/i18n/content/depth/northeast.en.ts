@@ -23,11 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000₫",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The stream falling in steps through old forest",
-      "Suoi Mo running through the forest",
-      "The Middle Temple tucked beside the water",
-    ],
   },
   "puong-cave": {
     name: "Puong Cave",
@@ -49,10 +44,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Included in the Ba Be boat fare",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The mouth of Puong Cave seen from the Nang River",
-      "A boat slipping under the limestone vault",
-    ],
   },
   "dau-dang-waterfall": {
     name: "Dau Dang Waterfall",
@@ -74,10 +65,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "Included in the Ba Be boat fare",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The cascade forcing through a field of boulders",
-      "Old forest closing in around the falls",
-    ],
   },
   "pac-bo": {
     name: "Pac Bo Historical Site",
@@ -100,10 +87,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "25,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The jade-green water of Lenin Stream",
-      "Coc Bo Cave below Karl Marx Mountain",
-    ],
   },
   "huu-nghi-border-gate": {
     name: "Huu Nghi Border Gate",
@@ -125,11 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: [
-      "The main gate of Huu Nghi Quan",
-      "Boundary marker 1116 at Huu Nghi gate",
-      "The international crossing complex",
-    ],
   },
   fansipan: {
     name: "Fansipan",
@@ -152,12 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day (cable car) or 2 days (trek)",
     ticket: "800,000₫ (return cable car)",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: [
-      "The steel summit marker at 3,143m",
-      "Cloud rolling below the peak",
-      "The summit spiritual complex above a sea of clouds",
-      "The cable car crossing Muong Hoa valley",
-    ],
   },
   "bac-ha-market": {
     name: "Bac Ha Sunday Market",
@@ -179,11 +151,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "05:30 - 12:00, Sundays",
-    galleryCaptions: [
-      "Flower Hmong dress filling the market",
-      "A baby carried on a mother's back at the Sunday market",
-      "The Sunday horse yard",
-    ],
   },
   "xuan-son-national-park": {
     name: "Xuan Son National Park",
@@ -205,10 +172,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "20,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "Old-growth forest on limestone hills",
-      "A Dao village in the Xuan Son valley",
-    ],
   },
   "den-mau-au-co": {
     name: "Mother Au Co Temple",
@@ -230,10 +193,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "The temple gate under an ancient banyan",
-      "The main hall honouring Mother Au Co",
-    ],
   },
   "yen-tu": {
     name: "Yen Tu Mountain",
@@ -256,12 +215,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "40,000₫ (cable car extra)",
     openingHours: "05:00 - 20:00",
-    galleryCaptions: [
-      "The Bronze Pagoda in cloud at the summit",
-      "Yen Tu Mountain seen from afar",
-      "The moss-covered Hue Quang stupa garden",
-      "The ancient pine path up to Hoa Yen Pagoda",
-    ],
   },
   "co-to-island": {
     name: "Co To Island",
@@ -283,13 +236,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 days",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: [
-      "The primeval choi forest on the island",
-      "White sand and clear water at Co To",
-      "Alone before the Co To shore",
-      "The banded sediment of Cau My rock beach",
-      "Co To lighthouse at sunset",
-    ],
   },
   "phuong-hoang-cave": {
     name: "Phuong Hoang Cave",
@@ -311,10 +257,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "30,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The stone vault at the cave mouth",
-      "Mo Ga stream emerging from the mountain",
-    ],
   },
   "ban-ba-waterfall": {
     name: "Ban Ba Waterfall",
@@ -336,10 +278,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The upper tier dropping into a jade pool",
-      "Ban Ba's terraced fields below the mountain",
-    ],
   },
   "khau-pha-pass": {
     name: "Khau Pha Pass",
@@ -362,11 +300,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: [
-      "Khau Pha Pass above a sea of cloud",
-      "Khau Pha in the water-pouring season",
-      "Ripe terraces seen from the summit",
-    ],
   },
 };
 

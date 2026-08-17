@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "The quarter is open all day; restaurants generally run 11:00–21:00",
-    galleryCaptions: ["The Chinatown gate"],
   },
   "songdo-central-park": {
     name: "Songdo Central Park",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The canal between Songdo's towers"],
   },
   "ganghwa-dolmen": {
     name: "Ganghwa Dolmen Site",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The Bugeun-ri dolmen in its field"],
   },
   wolmido: {
     name: "Wolmido Island",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Wolmido seafront"],
   },
   jeondeungsa: {
     name: "Jeondeungsa Temple, Ganghwa",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["Daeungjeon hall and the eave-bearing figures"],
   },
   "ganghwa-peace-observatory": {
     name: "Ganghwa Peace Observatory",
@@ -133,7 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "2,500 KRW (1,700 teens and soldiers, 1,000 children); the telescopes cost 500 KRW for two minutes",
     openingHours: "09:00–18:00, closed Mondays",
-    galleryCaptions: ["The North Korean shore across the estuary"],
   },
   muuido: {
     name: "Muui Island & Hanagae Beach",
@@ -156,7 +150,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "The coastal boardwalk is free and open year-round; the forest park is 1,000 KRW and Hanagae beach charges separately",
     openingHours: "All day",
-    galleryCaptions: ["Wooden huts on Hanagae beach"],
   },
   "songwol-fairy-tale-village": {
     name: "Songwol-dong Fairy Tale Village",
@@ -179,7 +172,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["A fairy tale mural lane"],
   },
   "incheon-open-port-street": {
     name: "Incheon Open Port Street",
@@ -202,7 +194,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "The street is open all day and the museums run 09:00–18:00. At the annual Open Port Heritage Night festival the historic buildings stay open after dark",
-    galleryCaptions: ["The Cheongil stairway between two concessions"],
   },
   "sorae-wetland-park": {
     name: "Sorae Wetland Ecological Park",
@@ -225,7 +216,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Windmills among the red glasswort"],
   },
 };
 

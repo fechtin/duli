@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "3,000韩元（著韩服免费）",
     openingHours: "09:00–18:00（11至2月至17:00，6至8月至18:30），周二休馆",
-    galleryCaptions: ["自朝廷望向勤政殿", "池上的庆会楼"],
   },
   changdeokgung: {
     name: "昌德宫与后苑",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "3,000韩元（后苑导览另收8,000韩元）",
     openingHours: "09:00–18:00（11至1月至17:30，6至8月至18:30），周一休馆",
-    galleryCaptions: ["仁政殿"],
   },
   "bukchon-hanok-village": {
     name: "北村韩屋村",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "自2026年1月1日起，北村路11街一带观光客仅能于10:00至17:00进入，逾时进入将处10万韩元罚锾。这是强制规定，不是建议",
-    galleryCaptions: ["俯瞰城市的韩屋巷弄"],
   },
   "n-seoul-tower": {
     name: "N首尔塔（南山）",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "观景台21,000韩元（缆车另计）",
     openingHours: "平日10:30–22:30，周末10:00–23:00（闭馆前30分钟停止入场）",
-    galleryCaptions: ["自观景台俯瞰首尔"],
   },
   myeongdong: {
     name: "明洞",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "没有官方营业时间；店家约10至11点开门、21至22点打烊，路边摊则从傍晚摆到深夜",
-    galleryCaptions: ["夜晚的小吃摊"],
   },
   "hangang-yeouido-park": {
     name: "汝矣岛汉江公园",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["汉江上的日落"],
   },
   "jongmyo-shrine": {
     name: "宗庙",
@@ -155,7 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至1.5小时",
     ticket: "1,000韩元（未满19岁与65岁以上免费）",
     openingHours: "09:00–18:00（11至1月至17:30，6至8月至18:30），周二休馆",
-    galleryCaptions: ["正殿的长廊"],
   },
   "ikseon-dong": {
     name: "益善洞韩屋巷弄",
@@ -177,7 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "巷弄全日开放，没有固定时间；咖啡馆与餐厅大致11:00–23:00",
-    galleryCaptions: ["夜里的韩屋巷弄"],
   },
   insadong: {
     name: "仁寺洞",
@@ -199,7 +191,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "街道全日开放，店家大致10:00–21:00；周末主街禁行车辆，改为行人徒步区",
-    galleryCaptions: ["周末的仁寺洞街道"],
   },
   "gwangjang-market": {
     name: "广藏市场",
@@ -221,7 +212,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "美食街09:00–23:00全年无休；布料与一般店铺09:00–18:00，周日休息",
-    galleryCaptions: ["市场中央的绿豆煎饼摊"],
   },
   cheonggyecheon: {
     name: "清溪川",
@@ -243,7 +233,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["穿过市中心的溪畔步道"],
   },
   bongeunsa: {
     name: "奉恩寺",
@@ -265,7 +254,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "免费（寺庙体验课程30,000韩元）",
     openingHours: "03:00–22:00，全年无休",
-    galleryCaptions: ["以江南高楼为背景的弥勒佛"],
   },
   "dongdaemun-ddp": {
     name: "东大门设计广场（DDP）",
@@ -287,7 +275,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "户外免费，展览约8,000至15,000韩元",
     openingHours: "户外24小时开放，展厅10:00–19:00（周三与周五至21:00），周一休馆",
-    galleryCaptions: ["夜里DDP的曲面外壳"],
   },
   hongdae: {
     name: "弘大",
@@ -309,7 +296,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "街区全日开放；街头表演与现场音乐主要在19:00至午夜，周末最热闹",
-    galleryCaptions: ["弘益大学校门前的街头表演"],
   },
   "lotte-world-tower": {
     name: "乐天世界塔与Seoul Sky",
@@ -331,7 +317,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "Seoul Sky 31,000韩元（成人）",
     openingHours: "10:30–22:00（周五、周六与假日至23:00），售票至闭馆前1小时",
-    galleryCaptions: ["从Seoul Sky俯瞰首尔"],
   },
   "national-museum-korea": {
     name: "国立中央博物馆",
@@ -353,7 +338,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "常设展免费，特展另行售票",
     openingHours: "09:30–17:30，周三与周六至21:00（户外庭园07:00–22:00）",
-    galleryCaptions: ["思惟之室"],
   },
   bukhansan: {
     name: "北汉山国立公园",
@@ -375,7 +359,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天至一整天",
     ticket: "",
     openingHours: "入山04:00–17:00（12至2月至16:00），白云台路线达人数上限即管制",
-    galleryCaptions: ["白云台回望首尔"],
   },
   "seoul-forest": {
     name: "首尔林",
@@ -397,7 +380,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["秋天的银杏大道"],
   },
 };
 

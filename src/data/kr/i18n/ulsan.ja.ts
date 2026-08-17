@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["大王岩へ続く赤い橋"],
   },
   "taehwagang-bamboo": {
     name: "太和江 十里竹林",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["竹林の中の散策路"],
   },
   ganjeolgot: {
     name: "艮絶岬",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["艮絶岬の灯台"],
   },
   "bangudae-petroglyphs": {
     name: "盤亀台岩刻画",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "",
     openingHours: "岩刻画博物館は火〜日09:00〜18:00、月曜と1月1日は休館。屋外の展望台は自由に利用できる",
-    galleryCaptions: ["クジラが刻まれた岩壁"],
   },
   "jangsaengpo-whale-village": {
     name: "長生浦クジラ文化村",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "クジラ文化村3,000ウォン、クジラ博物館3,000ウォン（別売り）",
     openingHours: "09:00〜18:00、月曜休館",
-    galleryCaptions: ["復元された捕鯨の町"],
   },
   "ganwoljae-silver-grass": {
     name: "澗月嶺と嶺南アルプス",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日（日中に登るのがよい）",
-    galleryCaptions: ["澗月嶺の鞍部のススキ"],
   },
   "ulsan-bridge-observatory": {
     name: "蔚山大橋展望台",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "無料",
     openingHours: "09:00〜21:00、最終入場20:30。毎月第2・第4月曜と旧正月・秋夕当日は休館",
-    galleryCaptions: ["夜の蔚山大橋と工業港"],
   },
   "jujeon-pebble-beach": {
     name: "注田玉石海岸",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["注田の黒い玉石"],
   },
 };
 

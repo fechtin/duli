@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "900,000ドン（バーナー入場券）",
     openingHours: "08:00 – 22:00",
-    galleryCaptions: [
-      "雲の合間のゴールデンブリッジ",
-      "橋を支える両手",
-    ],
   },
   "hoi-an-ancient-town": {
     name: "ホイアン旧市街",
@@ -40,12 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日〜1日",
     ticket: "120,000ドン",
     openingHours: "終日",
-    galleryCaptions: [
-      "夜の旧市街を照らすランタン",
-      "黄色い壁に長く伸びる椰子の影、ノンラーを被った人が通り過ぎる",
-      "ホアイ川に灯籠を流す",
-      "昼の旧市街",
-    ],
   },
   "da-lat-city": {
     name: "ダラット",
@@ -64,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "夜明けの雲海狩り",
-      "スアンフオン湖",
-      "霧の中の松の丘",
-    ],
   },
   "nha-trang-beach": {
     name: "ニャチャンビーチ",
@@ -87,11 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "ニャチャン湾の日の出",
-      "柔らかく弧を描く白い砂浜",
-      "海辺の椰子並木",
-    ],
   },
   "hon-mun-island": {
     name: "ホンムン島",
@@ -110,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "22,000ドン（観覧料）",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "水中の鮮やかなサンゴ礁",
-      "ニャチャン湾の海岸線のパノラマ",
-      "島周辺の澄んだ海水",
-      "サンゴを眺めるダイビング",
-    ],
   },
   "buon-don": {
     name: "ブオンドン",
@@ -134,11 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "セレポック川を渡る竹の吊り橋",
-      "タイグエン高原の長い高床式家屋",
-      "火のそばでの銅鑼の夜",
-    ],
   },
   "dray-nur-waterfall": {
     name: "ドライヌル滝",
@@ -157,10 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "30,000ドン",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "白い飛沫を散らす水の壁",
-      "雄大なセレポック川",
-    ],
   },
   "mui-ne-sand-dunes": {
     name: "ムイネー砂丘",
@@ -179,11 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "海辺に船が停泊する賑わう漁村",
-      "ムイネーの赤い砂",
-      "砂丘の頂でのサンドボーディング",
-    ],
   },
   "qng-ly-son": {
     name: "リーソン島",
@@ -204,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1泊2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "海を望むトイロイ峰",
-      "夕日のトーヴォー門",
-      "玄武岩の上の青いニンニク畑",
-    ],
   },
   "qng-sa-huynh": {
     name: "サーフィンビーチ",
@@ -228,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "三日月形に弧を描く黄金の砂浜",
-      "穏やかな湾を抱く長く弧を描く黄金の浜",
-      "砂浜沿いにうねる海岸道路",
-    ],
   },
   "bdi-ky-co-eo-gio": {
     name: "キーコー - エオジオ",
@@ -253,11 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "25,000ドン（エオジオ）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "翡翠色の海のキーコービーチ",
-      "断崖の間をうねるエオジオ",
-      "エオジオ海岸のブーゲンビリアの道",
-    ],
   },
   "bdi-thap-banh-it": {
     name: "バインイットタワー",
@@ -278,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "15,000ドン",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "丘の上の荘厳な本塔",
-      "独特に反った屋根の鞍塔",
-      "緑の森の中にそびえる古代チャム塔群",
-    ],
   },
   "pye-ganh-da-dia": {
     name: "ガンダーディア",
@@ -303,11 +243,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "20,000ドン",
     openingHours: "06:30 - 18:00",
-    galleryCaptions: [
-      "雄大に積み重なる玄武岩の柱",
-      "岩盤に白く砕ける波",
-      "海へと伸びる岩盤の全景",
-    ],
   },
   "pye-bai-xep": {
     name: "バイセップ",
@@ -327,11 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "人気のない浜へと傾くサボテンの斜面",
-      "岩の岬の後ろから昇る太陽、砂浜に打ち寄せる波",
-      "海へと突き出る黒い岩盤",
-    ],
   },
   "ntn-vinh-vinh-hy": {
     name: "ヴィンヒー湾",
@@ -352,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "ボートサービスにより異なる",
     openingHours: "終日",
-    galleryCaptions: [
-      "森の山々を抱く翡翠色のヴィンヒー湾",
-      "数百隻の漁船が停泊する小さな湾",
-      "ヌイチュア海岸道路",
-    ],
   },
   "ntn-po-klong-garai": {
     name: "ポークロンガライ塔",
@@ -377,11 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "チャウの丘の上の本塔",
-      "チャム族のカテー祭",
-      "草の丘の上の苔むしたチャム煉瓦塔群",
-    ],
   },
   "ktm-nha-tho-go": {
     name: "コントゥム木造教会",
@@ -402,11 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日（ミサは教会の予定による）",
-    galleryCaptions: [
-      "百年を経た木造教会の正面",
-      "ステンドグラスの窓がある木造の内部",
-      "山あいの町にそびえる鐘楼",
-    ],
   },
   "ktm-mang-den": {
     name: "マンデン観光地",
@@ -427,11 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1泊2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "森の中の青い湖へ流れ落ちる白い滝",
-      "森の中で白く砕けるパシー滝",
-      "早朝の静かなダクケ湖",
-    ],
   },
   "gli-bien-ho-tnung": {
     name: "ビエンホー・トゥヌン湖",
@@ -452,12 +362,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "大自然の中の深く青い湖面",
-      "水面へ突き出た展望台",
-      "ビエンホー・トゥヌン湖の水面",
-      "湖へ続く古木の松並木",
-    ],
   },
   "gli-chua-minh-thanh": {
     name: "ミンタイン寺",
@@ -478,11 +382,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "06:00 - 20:00",
-    galleryCaptions: [
-      "九層の舎利塔",
-      "堂々たる反り屋根の本堂",
-      "境内の金箔の仏像",
-    ],
   },
   "dno-cong-vien-dia-chat": {
     name: "ダクノン・ユネスコ世界ジオパーク",
@@ -503,11 +402,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3日",
     ticket: "観光地により異なる",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "玄武岩の中の火山洞窟",
-      "緑の森の中の古代噴火口",
-      "ムノン族の銅鑼文化",
-    ],
   },
   "dno-thac-dray-sap": {
     name: "ドライサップ滝",
@@ -528,11 +422,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "30,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "白い飛沫を散らすドライサップ滝",
-      "滝の下のもやがかった水煙",
-      "滝を囲む原生林",
-    ],
   },
 };
 

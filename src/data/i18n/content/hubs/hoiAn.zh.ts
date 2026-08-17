@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30分钟",
     ticket: "包含在会安古镇门票内（见会安古镇条目）",
     openingHours: "全天；桥内开放时间随古镇售票时间",
-    galleryCaptions: ["倒映在水渠里的来远桥", "嵌在桥身中央的小祠"],
   },
   "tan-ky-house": {
     name: "进记古宅",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "包含在会安古镇门票内",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["进记古宅的中厅", "屋内留下的洪水水位刻痕", "木柱与嵌螺钿的楹联"],
   },
   "phuc-kien-assembly-hall": {
     name: "福建会馆",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "包含在会安古镇门票内",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["会馆内的龙形水池", "福建会馆的三门", "挂满正殿天顶的盘香"],
   },
   "hoi-an-night-market": {
     name: "会安夜市",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 23:00",
-    galleryCaptions: ["安会江心洲上的灯笼街", "会安市场旁的夜间食摊", "怀河上漂流的水灯"],
   },
   "faifo-coffee": {
     name: "费福咖啡",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "按店铺营业时间，一般从早到晚",
-    galleryCaptions: ["从天台看到的古镇瓦屋顶", "栏杆边俯视街道的一杯咖啡"],
   },
   "reaching-out-teahouse": {
     name: "静语茶馆",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟 - 1小时",
     ticket: "",
     openingHours: "按店铺营业时间，一般从早到晚",
-    galleryCaptions: ["用来点单的刻字木块", "木托盘上的茶具与沙漏"],
   },
   "tra-que-vegetable-village": {
     name: "茶桂菜村",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含农事体验约2 - 3小时",
     ticket: "村内参观票约3.5万越南盾；体验活动另计",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["清晨的茶桂香菜地", "用扁担挑水浇菜"],
   },
   "kim-bong-carpentry-village": {
     name: "金峰木匠村",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含渡船约2小时",
     ticket: "",
     openingHours: "按作坊作息，约07:30 - 17:00",
-    galleryCaptions: ["金峰作坊里雕木的匠人", "渡往锦金洲的小船"],
   },
   "bay-mau-coconut-forest": {
     name: "七亩水椰林",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "门票与船费另计，每条簸箕船约15万 - 25万越南盾",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["穿行水椰水道的簸箕船", "高过人头的水椰叶"],
   },
   "an-bang-beach": {
     name: "安邦海滩",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["安邦沙滩上的木椅与茅草店", "安邦的小庙", "倒扣在沙滩尽头的簸箕船"],
   },
   "cua-dai-beach": {
     name: "大占海滩",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["秋盆江河口通向大海", "沿大占岸边修筑的石护岸"],
   },
 };
 

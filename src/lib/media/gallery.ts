@@ -1,4 +1,5 @@
 import manifest from "@/data/generated/image-manifest.json";
+import { buildPhotoIndex, type PhotoEntry } from "./photoIndex";
 import type { Locale } from "@/lib/i18n/dictionaries";
 
 // Gallery của một điểm đến suy ra từ MANIFEST, không phải từ D1.
@@ -23,29 +24,22 @@ import type { Locale } from "@/lib/i18n/dictionaries";
 /** Một điểm đến hiển thị tối đa ngần này ô. Quá số đó thì thư viện thôi còn là thư viện. */
 export const MAX_TILES = 10;
 
-interface Entry {
-  dest?: string;
-  order?: number;
-  caption?: Partial<Record<Locale, string>>;
-}
-const images = manifest as Record<string, Entry>;
+/**
+ * Trọng tài DUY NHẤT cho "ảnh nào đại diện cho X" ở phía trình duyệt.
+ *
+ * Mọi ô ảnh gọi `photos.thumbSeedFor(dest.id)`. Đọc `dest.gallery[0].seed` là dựng lại đúng cái
+ * bảng song song đã đẻ ra 17 ô gradient trên ảnh có thật — `check:photos` (I2) chặn ở CI.
+ */
+export const photos = buildPhotoIndex(manifest as Record<string, PhotoEntry>);
 
-/** destId → seed đã sắp thứ tự. Dựng một lần, manifest là hằng số lúc chạy. */
-let index: Map<string, string[]> | null = null;
-function byDest(): Map<string, string[]> {
-  if (index) return index;
-  const rows: { dest: string; seed: string; order: number }[] = [];
-  for (const [seed, v] of Object.entries(images)) {
-    if (v.dest) rows.push({ dest: v.dest, seed, order: v.order ?? 999 });
-  }
-  rows.sort((a, b) => a.order - b.order);
-  index = new Map();
-  for (const r of rows) {
-    const list = index.get(r.dest) ?? [];
-    list.push(r.seed);
-    index.set(r.dest, list);
-  }
-  return index;
+/** Ảnh bìa: ô đầu tiên. Panel dựng hero từ đúng seed này. */
+export function heroSeedFor(destId: string): string | null {
+  return photos.heroSeedFor(destId);
+}
+
+/** Seed để vẽ cho một điểm đến — ảnh bìa, hoặc chính id khi chưa có ảnh nào (→ gradient). */
+export function thumbSeedFor(destId: string): string {
+  return photos.thumbSeedFor(destId);
 }
 
 export interface Tile {
@@ -56,9 +50,15 @@ export interface Tile {
   alt: string;
 }
 
-/** Ảnh bìa: ô đầu tiên. Panel dựng hero từ đúng seed này. */
-export function heroSeedFor(destId: string): string | null {
-  return byDest().get(destId)?.[0] ?? null;
+/** Một ô cho MỖI ảnh có thật của điểm đến, kể cả ảnh bìa. Dùng khi ảnh bìa chưa hiện ở đâu cả. */
+export function tilesFor(destId: string, locale: Locale, destName: string): Tile[] {
+  return photos
+    .seedsFor(destId)
+    .slice(0, MAX_TILES)
+    .map((seed) => {
+      const caption = photos.captionFor(seed, locale);
+      return { seed, caption, alt: caption || destName };
+    });
 }
 
 /**
@@ -71,16 +71,10 @@ export function heroSeedFor(destId: string): string | null {
  * Trần vẫn tính cả ảnh bìa: tối đa MAX_TILES ảnh cho một điểm đến, 1 bìa + phần còn lại.
  */
 export function galleryFor(destId: string, locale: Locale, destName: string): Tile[] {
-  const seeds = byDest().get(destId);
-  if (!seeds?.length) return [];
-  return seeds.slice(1, MAX_TILES).map((seed) => {
-    const c = images[seed]?.caption;
-    const caption = c?.[locale] ?? c?.vi ?? c?.en ?? "";
-    return { seed, caption, alt: caption || destName };
-  });
+  return tilesFor(destId, locale, destName).slice(1);
 }
 
 /** Còn nhận thêm được bao nhiêu ảnh trước khi chạm trần. */
 export function slotsLeft(destId: string): number {
-  return Math.max(0, MAX_TILES - (byDest().get(destId)?.length ?? 0));
+  return Math.max(0, MAX_TILES - photos.seedsFor(destId).length);
 }

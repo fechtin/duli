@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day or one night",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["Morning mist on Lak Lake", "A M'nong dugout canoe"],
   },
   "ta-dung-national-park": {
     name: "Ta Dung National Park",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "One day",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Islands scattered across Ta Dung lake", "Low cloud over the lake at dawn"],
   },
   "chu-dang-ya": {
     name: "Chu Dang Ya Volcano",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Concentric fields inside the crater", "Wild sunflowers on the slopes in November"],
   },
   "kon-klor-bridge": {
     name: "Kon Klor Suspension Bridge",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["The orange bridge over the Dak Bla", "The Kon Klor rong house at the bridgehead"],
   },
   langbiang: {
     name: "Lang Biang Mountain",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "50,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The twin peaks above a sea of cloud", "The Da Lat valley from Radar peak"],
   },
   "datanla-waterfall": {
     name: "Datanla Waterfall",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "50,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The falls dropping through pine forest", "A vendor on the path down to Datanla", "The alpine coaster along the slope"],
   },
 };
 

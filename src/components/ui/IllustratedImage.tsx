@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils/cn";
-import manifest from "@/data/generated/image-manifest.json";
-import type { Locale } from "@/lib/i18n/dictionaries";
+import { photos } from "@/lib/media/gallery";
+import type { PhotoEntry } from "@/lib/media/photoIndex";
 import { AmbientVideo } from "./AmbientVideo";
 import { ambientClip } from "@/lib/media/videoManifest";
 
@@ -13,41 +13,25 @@ import { ambientClip } from "@/lib/media/videoManifest";
 // It is opt-in rather than automatic because decode slots are scarce: thumbnails and gallery
 // tiles must not compete with the hero for them.
 
-export interface PhotoMeta {
-  src: string;
-  credit: string;
-  license: string;
-  sourceUrl?: string;
-  /** A 2048px variant exists at /img/lg/<seed>.webp — fetched only when the lightbox opens. */
-  lg?: boolean;
-  /**
-   * Caption written FOR THIS PHOTO at review time, in whatever locales we have.
-   *
-   * The older model put the caption on the gallery *slot*: authored first, in D1, in five
-   * index-aligned arrays, describing a photo that did not exist yet. That is what produced 109
-   * tiles whose caption described something the photo did not show. A caption that belongs to
-   * the photo cannot drift from it, and it lives here — static, no reseed.
-   *
-   * Partial on purpose: `worker/db.ts` already falls back per index, and so does `photoCaption`.
-   */
-  caption?: Partial<Record<Locale, string>>;
-}
+/** Đúng một mô tả cho một tấm ảnh — xem `PhotoEntry` trong `lib/media/photoIndex`. */
+export type PhotoMeta = PhotoEntry;
 
-const images = manifest as Record<string, PhotoMeta>;
+// Ba hàm dưới từng tự đọc manifest ở đây. Giờ chúng chuyển tiếp sang `photos` để cả app chỉ có
+// MỘT câu trả lời cho "seed này có ảnh không" — hai bản cài đặt là hai bản có thể lệch nhau.
 
 /** Does this seed have a real photo behind it? Lets callers pick a seed that will actually render. */
 export function hasPhoto(seed: string | undefined | null): boolean {
-  return !!seed && !!images[seed];
+  return photos.has(seed);
 }
 
 /** Everything known about a seed's photo: source, attribution, whether a zoomable variant exists. */
 export function photoMeta(seed: string | undefined | null): PhotoMeta | undefined {
-  return seed ? images[seed] : undefined;
+  return photos.meta(seed);
 }
 
 /** First seed in `seeds` that has a real photo, else the first entry (illustrated fallback). */
 export function firstPhotoSeed(...seeds: (string | undefined | null)[]): string {
-  return seeds.find(hasPhoto) ?? seeds.find(Boolean) ?? "";
+  return photos.firstWithPhoto(...seeds);
 }
 
 const palettes: [string, string, string][] = [
@@ -113,7 +97,7 @@ export function IllustratedImage({
   ambient = false,
   ambientPriority,
 }: Props) {
-  const photo = images[seed];
+  const photo = photos.meta(seed);
   const clip = ambient ? ambientClip(seed) : undefined;
   const [loaded, setLoaded] = useState(false);
 

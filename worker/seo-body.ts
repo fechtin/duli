@@ -19,9 +19,15 @@ import { labelOf } from "../src/lib/country/names";
 import { translate, type Locale } from "../src/lib/i18n/dictionaries";
 import { FOOD_SEGMENT, withLocale } from "../src/lib/seo/urls";
 import manifest from "../src/data/generated/image-manifest.json";
+import { buildPhotoIndex, type PhotoEntry } from "../src/lib/media/photoIndex";
 
-/** seed → real file. 98 of 531 gallery seeds have no photo, so every <img> is gated on this. */
-const IMAGES = manifest as Record<string, { src: string; credit?: string; license?: string }>;
+/**
+ * Cùng một trọng tài ảnh mà trình duyệt dùng — dựng lại từ chính manifest đó chứ không tra tay.
+ *
+ * Đây là nơi hậu quả nặng nhất mà không ai nhìn thấy: `figure()` trả về chuỗi rỗng khi seed chết,
+ * nên 17 điểm đến có ảnh thật đã lên Google với trang không một tấm hình, im lặng suốt.
+ */
+const photos = buildPhotoIndex(manifest as Record<string, PhotoEntry>);
 
 /** Country name in the reader's language. */
 export const countryName = (cc: string, locale: Locale) => labelOf(cc, locale);
@@ -66,8 +72,8 @@ function bullets(items: string[] | undefined): string {
  * costs more than the missing image does. `alt` carries the place name, which is the whole
  * point: without it these 400-odd photos are invisible to Google Images.
  */
-function figure(seed: string | undefined, alt: string, caption?: string): string {
-  const img = seed ? IMAGES[seed] : undefined;
+function figure(seed: string | null | undefined, alt: string, caption?: string): string {
+  const img = photos.meta(seed);
   if (!img) return "";
   const credit = [caption, img.credit, img.license].filter(Boolean).join(" · ");
   return (
@@ -200,7 +206,10 @@ export function provinceBody(
       );
     })
     .join("");
-  const hero = destinations.find((d) => d.gallery?.[0]?.seed && IMAGES[d.gallery[0].seed]);
+  // Tỉnh không có ảnh riêng, nên mượn ảnh bìa của điểm đến đầu tiên có ảnh — giống hệt cách
+  // ProvincePanel dựng banner.
+  const hero = destinations.find((d) => photos.heroSeedFor(d.id));
+  const heroSeed = hero ? photos.heroSeedFor(hero.id) : null;
 
   return shell(
     crumbs(locale, [
@@ -209,7 +218,11 @@ export function provinceBody(
     ]) +
       `<h1 style="${S.h1}">${esc(province.name)}</h1>` +
       `<p style="${S.dim}">${esc(province.regionName)}</p>` +
-      figure(hero?.gallery[0]?.seed, `${province.name} — ${hero?.name ?? ""}`, hero?.gallery[0]?.caption) +
+      figure(
+        heroSeed,
+        `${province.name} — ${hero?.name ?? ""}`,
+        heroSeed ? photos.captionFor(heroSeed, locale) : "",
+      ) +
       (content?.summary ? `<p style="${S.p}">${esc(content.summary)}</p>` : "") +
       (content?.story ? `<p style="${S.p}">${esc(content.story)}</p>` : "") +
       (content?.bestTime
@@ -250,6 +263,7 @@ export function destinationBody(
   d: Destination,
 ): string {
   const t = (k: string, p?: Record<string, string | number>) => translate(locale, k, p);
+  const destHero = photos.heroSeedFor(d.id);
   // Question-shaped headings instead of a label list: "Vé vào X giá bao nhiêu?" is the query a
   // reader types, and the answer is already in the data. Same facts, wording that can rank.
   const faq = faqPairs(d, locale)
@@ -263,7 +277,7 @@ export function destinationBody(
       { href: `/${cc}/${province.slug}`, label: province.name },
     ]) +
       `<h1 style="${S.h1}">${esc(d.name)}</h1>` +
-      figure(d.gallery?.[0]?.seed, `${d.name} — ${province.name}`, d.gallery?.[0]?.caption) +
+      figure(destHero, `${d.name} — ${province.name}`, destHero ? photos.captionFor(destHero, locale) : "") +
       `<p style="${S.p}">${esc(d.summary)}</p>` +
       (d.story ? `<p style="${S.p}">${esc(d.story)}</p>` : "") +
       (faq ? `<h2 style="${S.h2}">${esc(t("seo.visitInfo"))}</h2>${faq}` : "") +

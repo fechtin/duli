@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["大雄殿へ上がる石段"],
   },
   seokguram: {
     name: "石窟庵",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "09:00〜17:30",
-    galleryCaptions: ["石窟庵への参道"],
   },
   daereungwon: {
     name: "大陵苑",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "3,000ウォン",
     openingHours: "09:00〜22:00、最終入場21:30",
-    galleryCaptions: ["街なかの新羅古墳"],
   },
   cheomseongdae: {
     name: "瞻星台",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "無料",
     openingHours: "09:00〜22:00、年中無休。夜はライトアップされ、暗くなってから再訪する価値がある",
-    galleryCaptions: ["芝生の上の瞻星台"],
   },
   "hahoe-folk-village": {
     name: "安東 河回村",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "5,000ウォン",
     openingHours: "日の出から日没まで、年中無休",
-    galleryCaptions: ["川に囲まれた河回村"],
   },
   "dosan-seowon": {
     name: "安東 陶山書院",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "1,500ウォン",
     openingHours: "09:00〜18:00（冬は17:00まで）",
-    galleryCaptions: ["陶山書院の講堂"],
   },
   juwangsan: {
     name: "周王山国立公園",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "入山は04:00〜15:00（4〜10月）、05:00〜14:00（11〜3月）",
-    galleryCaptions: ["周王山の峡谷と滝"],
   },
   "anapji-donggung": {
     name: "東宮と月池（雁鴨池）",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "3,000ウォン",
     openingHours: "09:00〜22:00、最終入場21:30",
-    galleryCaptions: ["月池に映る殿舎"],
   },
   "gyeongju-national-museum": {
     name: "国立慶州博物館",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料",
     openingHours: "10:00〜18:00、日曜・祝日は19:00まで、3〜12月の土曜と毎月最終水曜は21:00まで夜間延長",
-    galleryCaptions: ["新羅の金冠"],
   },
   "yangdong-folk-village": {
     name: "慶州良洞村",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "4,000ウォン",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["良洞村の斜面に建つ両班の家"],
   },
   "bunhwangsa-hwangnyongsa": {
     name: "芬皇寺模塼石塔と皇龍寺址",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "どちらも無料（芬皇寺の文化財観覧料は2023年5月に廃止）",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["芬皇寺の模塼石塔"],
   },
   "andong-woryeonggyo": {
     name: "安東月映橋",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日（日没から点灯）",
-    galleryCaptions: ["灯のともる月映橋"],
   },
   buseoksa: {
     name: "栄州浮石寺",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "08:00〜18:00",
-    galleryCaptions: ["小白山の稜線を望む無量寿殿"],
   },
   "pohang-homigot": {
     name: "浦項虎尾串",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["日の出を受ける青銅の手"],
   },
   ulleungdo: {
     name: "鬱陵島",
@@ -329,7 +315,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3日",
     ticket: "船の往復は約160,000〜180,000ウォン（片道80,000〜90,000）、港と船社により異なる",
     openingHours: "船の運航ダイヤによる（通常1日1〜3便）",
-    galleryCaptions: ["鬱陵島の断崖の海岸"],
   },
 };
 

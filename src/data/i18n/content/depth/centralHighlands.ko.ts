@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절 또는 1박",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["락 호수의 아침 안개", "므농족의 통나무배"],
   },
   "ta-dung-national-park": {
     name: "따둥 국립공원",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["따둥 호수에 흩어진 섬들", "동틀 무렵 호수를 덮은 낮은 구름"],
   },
   "chu-dang-ya": {
     name: "쯔당야 화산",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["분화구 안의 동심원 밭", "11월 사면을 덮은 야생 해바라기"],
   },
   "kon-klor-bridge": {
     name: "꼰끌로 현수교",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["닥블라강을 건너는 주황색 다리", "다리목의 꼰끌로 롱 하우스"],
   },
   langbiang: {
     name: "랑비앙산",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "50,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["운해 위로 솟은 두 봉우리", "레이더봉에서 본 달랏 계곡"],
   },
   "datanla-waterfall": {
     name: "다딴라 폭포",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "50,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["소나무 숲 사이로 떨어지는 폭포", "다딴라 폭포로 내려가는 길의 노점", "비탈을 따라 내려가는 알파인 코스터"],
   },
 };
 

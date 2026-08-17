@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:30~18:00",
-    galleryCaptions: ["장경판전의 경판"],
   },
   "tongyeong-dongpirang": {
     name: "통영과 동피랑마을",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "미륵산 케이블카 왕복 17,000원(3~12세 13,000원), 동피랑 벽화마을은 무료",
     openingHours: "09:30~17:00(케이블카)",
-    galleryCaptions: ["동피랑마을의 벽화"],
   },
   "geoje-oedo": {
     name: "거제 외도 보타니아",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절(배편 포함)",
     ticket: "약 38,000원(배 27,000원 + 입장 11,000원), 출항지와 선사에 따라 다름",
     openingHours: "여객선 운항 시간, 08:00~17:00",
-    galleryCaptions: ["외도의 계단식 정원"],
   },
   "jinju-fortress": {
     name: "진주성과 남강유등축제",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "09:00~18:00에는 2,000원(청소년 1,000원, 어린이 600원), 그 외 시간은 무료 개방",
     openingHours: "05:00~23:00",
-    galleryCaptions: ["남강을 굽어보는 촉석루"],
   },
   "namhae-daraengi": {
     name: "남해 다랭이마을",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분~2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["바다로 내려앉는 계단논"],
   },
   "gimhae-gaya-tombs": {
     name: "김해 대성동 고분군",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료",
     openingHours: "09:00~18:00, 입장 마감 17:30. 월요일과 1월 1일·설날·추석 당일 휴관",
-    galleryCaptions: ["대성동 고분군"],
   },
   "jirisan-national-park": {
     name: "지리산국립공원",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루~사흘",
     ticket: "",
     openingHours: "국립공원 입산시간지정제가 적용된다. 입산은 3~11월 04:00, 12~2월 05:00부터 가능하며 구간마다 12:00~17:00 사이로 통제시간이 다르다. 출발 전 통제 정보를 확인하자",
-    galleryCaptions: ["새벽의 지리산 능선"],
   },
   "upo-wetland": {
     name: "창녕 우포늪",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "",
     openingHours: "탐방로는 24시간 개방되며, 1km(30분)부터 9.7km(3시간 30분)까지 다섯 개 코스가 있다",
-    galleryCaptions: ["우포늪의 새벽 물안개"],
   },
   "jinhae-cherry-blossom": {
     name: "진해 벚꽃",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["벚꽃철의 경화역 철길"],
   },
   "tongyeong-mireuksan": {
     name: "통영 미륵산 케이블카",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "케이블카 왕복 17,000원(성인)",
     openingHours: "09:30~17:00(계절에 따라 다름)",
-    galleryCaptions: ["정상에서 본 한려해상의 섬들"],
   },
   "geoje-windy-hill": {
     name: "거제 바람의 언덕과 해안",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["바람의 언덕 위의 풍차"],
   },
   "namhae-german-village": {
     name: "남해 독일마을",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "",
     openingHours: "상시(전시관 09:00~18:00)",
-    galleryCaptions: ["남해만을 내려다보는 붉은 지붕"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "入場と舟で約25万ドン（目安）",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["稲刈りのころのゴードン川のサンパン", "崖に寄りかかって建つビックドン寺"],
   },
   "mua-cave": {
     name: "ムア洞",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "約10万ドン（目安）",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["ムア洞の頂から見たタムコックの谷", "ムア洞そばの石灰岩から望むニンビン", "石段と尾根に沿う竜"],
   },
   "bai-dinh-pagoda": {
     name: "バイディン寺",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "カートと舎利塔は別料金",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["バイディン寺の塔群", "五百体の石の羅漢が並ぶ回廊", "丘の上の銅造弥勒"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "丁先皇祠",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "2万ドン（目安）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["祠の前の竜の文様の石の寝台", "石灰岩に囲まれた祠"],
   },
   "am-tien-cave": {
     name: "アムティエン洞",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "約2万ドン（目安）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["岩の窪地の中の緑の淵", "山の裾を貫く通路"],
   },
   "thung-nham-bird-park": {
     name: "トゥンニャム鳥園",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "入場と舟で約12万ドン（目安）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["夕暮れに木々を覆う鳥たち", "カルストの谷を行く小舟"],
   },
   "phat-diem-cathedral": {
     name: "ファットジエム大聖堂",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "ミサの時間外。予定は門に掲示されている",
-    galleryCaptions: ["寺の三門のような方亭", "大聖堂内の石の天使像", "内部の鉄木の柱と反った屋根"],
   },
   "kenh-ga-hot-spring": {
     name: "ケンガー",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "舟と鉱泉の湯浴みは別料金",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ホアンロン川に浮かぶ村", "ヴァンチン洞へ入っていく舟"],
   },
 };
 

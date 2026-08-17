@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "Free",
     openingHours: "08:00 - 22:00",
-    galleryCaptions: ["Book kiosks under the tamarind canopy", "A café along the book street"],
   },
   "turtle-lake-hcm": {
     name: "Turtle Lake",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: ["The concrete lotus tower over the pool", "The steps around the pool at dusk"],
   },
   "lam-vien-square": {
     name: "Lam Vien Square",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: ["The artichoke and sunflower buildings lit at night", "The square's steps looking over Xuan Huong Lake"],
   },
   "da-lat-flower-garden": {
     name: "Da Lat Flower Garden",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour 30 minutes",
     ticket: "50,000d (indicative — check at the gate)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["Flower beds looking out over Xuan Huong Lake", "The orchid glasshouse"],
   },
   "cu-lan-village": {
     name: "Cu Lan Village",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours 30 minutes",
     ticket: "100,000d (indicative, jeep ride not included)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Stilt houses and the lake among the pines", "A jeep crossing the stream into the valley"],
   },
   "bai-dai-phu-quoc": {
     name: "Long Beach",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: ["Sunset dropping into the sea off the west coast", "The gentle sand shelf running north"],
   },
   "grand-world-phu-quoc": {
     name: "Grand World Phu Quoc",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "Free entry; shows and attractions charged separately",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["The canal and its gondolas after dark", "The Non La bamboo dome"],
   },
   "ho-quoc-pagoda": {
     name: "Ho Quoc Pagoda",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Free",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The upper courtyard looking straight out to sea", "Ironwood columns and steps up to the main hall"],
   },
 };
 

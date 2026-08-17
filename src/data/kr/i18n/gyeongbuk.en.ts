@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Stone stairways rising to the main hall"],
   },
   seokguram: {
     name: "Seokguram Grotto",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "09:00–17:30",
-    galleryCaptions: ["The approach to Seokguram"],
   },
   daereungwon: {
     name: "Daereungwon Tomb Complex",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "3,000 KRW",
     openingHours: "09:00–22:00, last entry 21:30",
-    galleryCaptions: ["Silla burial mounds in the city"],
   },
   cheomseongdae: {
     name: "Cheomseongdae Observatory",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "Free",
     openingHours: "09:00–22:00, open year-round; it is floodlit after dark and worth a second visit at night",
-    galleryCaptions: ["Cheomseongdae on its lawn"],
   },
   "hahoe-folk-village": {
     name: "Hahoe Folk Village, Andong",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "5,000 KRW",
     openingHours: "Sunrise to sunset, open year-round",
-    galleryCaptions: ["Hahoe village inside the river bend"],
   },
   "dosan-seowon": {
     name: "Dosan Seowon Confucian Academy, Andong",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "1,500 KRW",
     openingHours: "09:00–18:00 (to 17:00 in winter)",
-    galleryCaptions: ["The lecture hall at Dosan Seowon"],
   },
   juwangsan: {
     name: "Juwangsan National Park",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Entry 04:00–15:00 (April–October) and 05:00–14:00 (November–March)",
-    galleryCaptions: ["The gorge and waterfalls of Juwangsan"],
   },
   "anapji-donggung": {
     name: "Donggung Palace & Wolji Pond",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "3,000 KRW",
     openingHours: "09:00–22:00, last entry 21:30",
-    galleryCaptions: ["The halls reflected in Wolji pond"],
   },
   "gyeongju-national-museum": {
     name: "Gyeongju National Museum",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free",
     openingHours: "10:00–18:00; to 19:00 on Sundays and holidays; late opening to 21:00 on Saturdays (March–December) and the last Wednesday of the month",
-    galleryCaptions: ["A Silla gold crown"],
   },
   "yangdong-folk-village": {
     name: "Yangdong Folk Village",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "4,000 KRW",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Gentry houses on the Yangdong hillside"],
   },
   "bunhwangsa-hwangnyongsa": {
     name: "Bunhwangsa Pagoda & Hwangnyongsa Site",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Both free (Bunhwangsa's heritage fee was abolished in May 2023)",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["The Bunhwangsa stone pagoda"],
   },
   "andong-woryeonggyo": {
     name: "Woryeonggyo Bridge, Andong",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "Open all day (lit from dusk)",
-    galleryCaptions: ["Woryeonggyo bridge lit at night"],
   },
   buseoksa: {
     name: "Buseoksa Temple, Yeongju",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["Muryangsujeon looking out over the Sobaeksan ridges"],
   },
   "pohang-homigot": {
     name: "Homigot Cape, Pohang",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The bronze hand catching the sunrise"],
   },
   ulleungdo: {
     name: "Ulleungdo Island",
@@ -329,7 +315,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 days",
     ticket: "Ferry around 160,000–180,000 KRW return (80,000–90,000 each way), depending on port and operator",
     openingHours: "By ferry schedule, usually 1–3 sailings a day",
-    galleryCaptions: ["The cliff coast of Ulleungdo"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "15,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["前浜を望む白い別邸", "正面の陶製レリーフ"],
   },
   "hoi-khanh-pagoda": {
     name: "ホイカイン寺",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["屋根の上の全長52mの涅槃仏", "十八世紀建立の木造本堂"],
   },
   "nui-ba-ra": {
     name: "バーラー山",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["バーラー山の中腹から見たフオックロンの町", "頂から見たタックモー湖"],
   },
   "tran-bien-temple-of-literature": {
     name: "チャンビエン文廟",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["文廟内部の拝殿", "境内の名士の像の庭"],
   },
   "independence-palace": {
     name: "統一会堂（独立宮殿）",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "65,000ドン",
     openingHours: "08:00 - 16:30",
-    galleryCaptions: ["コンクリートのルーバーが覆う正面", "地下の指揮バンカー", "前庭に展示された戦車"],
   },
   "cu-chi-tunnels": {
     name: "クチトンネル",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "125,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["クチトンネル遺跡入口の案内板", "見学用に広げられた地下道"],
   },
   "dau-tieng-reservoir": {
     name: "ザウティエン貯水池",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["奥にバーデン山を望む広い水面", "乾季の岸辺の草地"],
   },
 };
 

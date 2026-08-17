@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "25,000동",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "룽(용) 산 정상의 조국 국기",
-      "국기탑으로 오르는 길",
-      "위에서 내려다본 석회암 고원",
-      "위엄 있는 국기탑, 안개 속에 휘날리는 붉은 깃발",
-    ],
   },
   "ma-pi-leng-pass": {
     name: "마피렝 고개",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "절벽을 가로지르는 행복의 길",
-      "옥빛 뇨꾸에강",
-      "뚜산 협곡",
-    ],
   },
   "dong-van-old-town": {
     name: "동반 구시가지",
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "등불을 밝힌 구시가지",
-      "석회암 고원 속 동반 읍내",
-      "고원의 장날",
-    ],
   },
   "sa-pa-town": {
     name: "사파",
@@ -88,13 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "벼가 익는 시기의 계단식 논",
-      "사파 중심가의 로터리",
-      "므엉호아 골짜기의 아침 안개",
-      "사파 읍내 중심",
-      "구름 속 판시판 봉우리",
-    ],
   },
   "ha-long-bay": {
     name: "하롱베이",
@@ -113,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "290,000동",
     openingHours: "종일",
-    galleryCaptions: [
-      "만의 일출",
-      "석회암 섬의 숲 사이를 지나는 배",
-      "숭솟 동굴",
-      "만 위의 어촌 마을",
-    ],
   },
   "moc-chau-plateau": {
     name: "목쩌우 고원",
@@ -137,13 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "하트 모양 차밭",
-      "선라에서 목쩌우로 가는 길의 풍경",
-      "언덕을 하얗게 물들인 매화숲",
-      "호찌민 주석의 목쩌우 농장 방문 기념지",
-      "초원의 아침 안개",
-    ],
   },
   "dien-bien-phu-battlefield": {
     name: "디엔비엔푸 전적지",
@@ -162,12 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "100,000동",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "디엔비엔푸 승리 기념탑",
-      "전장에 남은 M24 채피 전차",
-      "A1 고지의 참호",
-      "드 카스트리 벙커",
-    ],
   },
   "ban-gioc-waterfall": {
     name: "반족 폭포",
@@ -187,11 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "45,000동",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "물이 많은 계절의 반족 폭포 세 단",
-      "하얀 폭포 발치에서 더위를 식히는 여행객들",
-      "푸른 숲 사이로 하얗게 쏟아지는 폭포",
-    ],
   },
   "nguom-ngao-cave": {
     name: "응으엄응아오 동굴",
@@ -211,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "45,000동",
     openingHours: "07:30 – 17:00",
-    galleryCaptions: [
-      "동굴 속 종유석의 숲",
-      "연꽃 좌대 모양의 석순",
-      "예술 조명이 비추는 통로",
-    ],
   },
   "ba-be-lake": {
     name: "바베 호수",
@@ -235,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "25,000동",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "바베 호수 위의 통나무배",
-      "아침 안개 속 작은 섬을 감싸 안고 반짝이는 호수",
-      "안개 낀 산 사이의 잔잔한 호수",
-    ],
   },
   "tam-thanh-cave": {
     name: "땀타인 동굴",
@@ -259,12 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "20,000동",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "땀타인 동굴 속 고찰",
-      "바위 벽의 아미타불 부조",
-      "막 왕조 성터에서 본 랑선",
-      "햇빛을 받아들이는 천문",
-    ],
   },
   "mau-son-mountain": {
     name: "머우선 산",
@@ -284,11 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "머우선 정상의 구름 바다",
-      "겨울에 나무를 하얗게 덮은 서리",
-      "옛 프랑스 별장의 폐허",
-    ],
   },
   "tan-trao-relic": {
     name: "떤짜오 유적지",
@@ -308,11 +240,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "오래된 떤짜오 보리수",
-      "숲속의 나느어 오두막",
-      "역사적인 떤짜오 정자",
-    ],
   },
   "mo-na-hang-waterfall": {
     name: "나항 모 폭포",
@@ -332,12 +259,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "산비탈로 흘러내리는 모 폭포",
-      "폭포 발치의 맑은 웅덩이",
-      "저녁의 나항 수력발전 댐",
-      "나항 호수 크루즈",
-    ],
   },
   "nui-coc-lake": {
     name: "누이꼭 호수",
@@ -357,11 +278,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절에서 1일",
     ticket: "50,000동",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "누이꼭 호수 한가운데의 작은 섬",
-      "수면 위의 아침 안개",
-      "호수를 도는 배",
-    ],
   },
   "tan-cuong-tea-hills": {
     name: "떤끄엉 차밭",
@@ -381,11 +297,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "푸르게 굽이치는 차밭",
-      "이른 아침 어린 찻순 따기",
-      "차밭 한가운데의 차 한 잔",
-    ],
   },
   "den-hung-temple": {
     name: "훙왕 사당",
@@ -405,12 +316,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "응이아린산의 상사당",
-      "훙왕 사당 구역의 하사당",
-      "오래된 나무 그늘이 드리운 돌계단",
-      "조상 기일에 순례하는 인파",
-    ],
   },
   "tay-yen-tu": {
     name: "떠이옌뜨",
@@ -430,11 +335,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "무료",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "숲을 넘어 정상으로 오르는 케이블카",
-      "떠이옌뜨 산 구름 속의 사찰",
-      "떠이옌뜨 봄 축제",
-    ],
   },
   "vinh-nghiem-pagoda": {
     name: "빈응이엠 사원",
@@ -454,11 +354,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "무료",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "빈응이엠 사원의 삼문",
-      "오래된 불경 목판 보관소",
-      "오래된 나무 아래의 사원 마당",
-    ],
   },
   "mu-cang-chai-terraces": {
     name: "무깡짜이 계단식 논",
@@ -478,11 +373,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "벼가 익어 황금빛으로 물든 계단식 논",
-      "라빤떤의 찰밥 봉우리",
-      "하늘빛을 반짝이는 물대기 시즌",
-    ],
   },
   "thac-ba-lake": {
     name: "탁바 호수",
@@ -502,11 +392,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "무료",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "탁바 호수 위 수천 개의 푸른 섬",
-      "호수를 덮은 아침 안개",
-      "호수를 탐험하는 배",
-    ],
   },
   "o-quy-ho-pass": {
     name: "오꾸이호 고개",
@@ -526,13 +411,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "안개 낀 골짜기를 건너는 판시판 케이블카",
-      "오꾸이호 정상의 구름 바다",
-      "판시판 케이블카에서 본 다랑논",
-      "절벽을 따라 굽이치는 고갯길",
-      "천문에서 바라본 일몰",
-    ],
   },
   "sin-suoi-ho-village": {
     name: "신쑤오이호 마을",
@@ -552,11 +430,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "라이쩌우 산중의 몽족 마을",
-      "활짝 핀 야생 난 정원",
-      "시적인 하트 폭포",
-    ],
   },
   "mai-chau-valley": {
     name: "마이쩌우 골짜기",
@@ -576,12 +449,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "고개에서 바라본 마이쩌우 골짜기",
-      "락 마을의 타이족 수상가옥",
-      "마이쩌우의 타이족 밥상",
-      "불빛 곁의 쏘에 춤",
-    ],
   },
   "hoa-binh-lake": {
     name: "호아빈 호수",
@@ -601,12 +468,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "무료",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "다강의 산수 사이의 호아빈 호수",
-      "산자락의 호아빈 호수",
-      "호숫가의 탁버 사당",
-      "호수를 도는 배",
-    ],
   },
 };
 

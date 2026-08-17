@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Rock field and village entry charged separately",
     openingHours: "All day; go in daylight",
-    galleryCaptions: ["Muong Hoa terraces at harvest time", "Muong Hoa Valley", "Carved ancient stones among the fields"],
   },
   "cat-cat-village": {
     name: "Cat Cat Village",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "About 150,000d (indicative)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Hmong houses among the terraces", "The waterfall in Cat Cat village", "Indigo cloth drying along a fence"],
   },
   "ta-van-village": {
     name: "Ta Van Village",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day, better with a night",
     ticket: "Village area entry about 75,000d (indicative)",
     openingHours: "All day",
-    galleryCaptions: ["Ta Van village among the terraces", "Morning mist over the Muong Hoa valley"],
   },
   "ta-phin-village": {
     name: "Ta Phin Village",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Village entry about 40,000d (indicative)",
     openingHours: "All day",
-    galleryCaptions: ["The rice terraces of Ta Phin", "A Red Dao woman embroidering brocade", "Early morning in Ta Phin village", "Ruins of the French stone convent"],
   },
   "ham-rong-mountain": {
     name: "Ham Rong Mountain",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "About 70,000d (indicative)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Sa Pa from the Ham Rong cloud yard", "A narrow rock cleft on the way up"],
   },
   "silver-waterfall-sapa": {
     name: "Silver Waterfall",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "About 20,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Silver Waterfall dropping beside the highway", "The stairway up the slope to the falls"],
   },
   "y-ty-village": {
     name: "Y Ty",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["A sea of cloud in the Y Ty valley", "Hmong children in Y Ty", "Ha Nhi rammed-earth houses with thatched roofs"],
   },
   "lao-cai-border-gate": {
     name: "Lao Cai Border Gate",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 22:00, following border-gate working hours",
-    galleryCaptions: ["Ho Kieu bridge over the Nam Thi river", "Hekou town seen from the Vietnamese bank"],
   },
 };
 

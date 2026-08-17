@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "250,000동",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "석회암 산 사이의 대나무 배",
-      "석회암 산기슭, 잔잔한 호수 위를 미끄러지는 작은 배",
-      "봄의 땀꼭",
-      "항무아에서 바라본 전경",
-    ],
   },
   "hoan-kiem-lake": {
     name: "호안끼엠 호수",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "호수 가운데의 거북 탑",
-      "나무 그루터기 옆에서 조용히 앉아 호수를 바라보는 청년",
-      "안개 자욱한 수면에 비친 앙상한 나뭇가지",
-    ],
   },
   "old-quarter-hanoi": {
     name: "하노이 구시가지",
@@ -65,10 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "전통 직업 거리",
-      "행상의 멜대 짐",
-    ],
   },
   "hp-cat-ba-island": {
     name: "깟바섬",
@@ -88,13 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1박 2일",
     ticket: "80,000동",
     openingHours: "종일",
-    galleryCaptions: [
-      "높은 곳에서 내려다본 란하만",
-      "포대 공원에서 본 바다",
-      "맑고 푸른 깟꼬 해변",
-      "만에 면한 깟바 읍내",
-      "깟바 국립공원",
-    ],
   },
   "hp-do-son-beach": {
     name: "도선 해변",
@@ -114,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "목마황 가로수 아래 도선 해변",
-      "도선의 카지노 건물",
-      "전통 물소 싸움 축제",
-      "도선 반도의 노을",
-    ],
   },
   "bn-den-do": {
     name: "덴도 사당",
@@ -139,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "위엄 있는 덴도 삼문",
-      "반월형 연못 위의 수상 정자",
-      "음력 3월의 덴도 축제",
-    ],
   },
   "bn-dong-ho": {
     name: "동호 그림 마을",
@@ -163,12 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: [
-      "동호 판화 ‘쥐의 혼례’",
-      "디엡 종이에 그림을 찍는 장인",
-      "민화의 화려한 색감이 살아 있는 부엌신(竈神) 그림",
-      "연꽃 사이를 헤엄치는 잉어 떼 그림",
-    ],
   },
   "hd-con-son-kiep-bac": {
     name: "꼰선-끼엡박",
@@ -188,11 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "",
     openingHours: "06:30 - 18:00",
-    galleryCaptions: [
-      "룩더우강 가의 끼엡박 사당",
-      "소나무 숲 속의 꼰선 사찰",
-      "전통 가을 축제",
-    ],
   },
   "hd-dao-co": {
     name: "찌랑남 백로섬",
@@ -212,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "30,000동",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "해 질 녘 둥지로 돌아오는 백로 떼",
-      "섬 주위를 도는 대나무 배",
-      "푸르른 안즈엉 호수",
-    ],
   },
   "hy-pho-hien": {
     name: "포히엔",
@@ -236,12 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "고풍스러운 씩당 문묘",
-      "마당에서 본 씩당 문묘",
-      "포히엔 머우 사당",
-      "수확철의 흥옌 룽안 용안",
-    ],
   },
   "hy-chua-chuong": {
     name: "쭈옹 사찰",
@@ -261,11 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "용 눈 연못을 가로지르는 돌다리",
-      "십팔 나한이 늘어선 회랑",
-      "고풍스러운 쭈옹 사찰 삼문",
-    ],
   },
   "hn-tam-chuc": {
     name: "땀쭉 사찰",
@@ -285,11 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: [
-      "룩냑 호수 가의 삼세전",
-      "불경을 새긴 경전 기둥 정원",
-      "산 속 사찰의 전경",
-    ],
   },
   "nd-den-tran": {
     name: "쩐 사당",
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "위엄 있는 쩐 사당 오문",
-      "정초 인장 개봉 의식",
-      "고풍스러운 티엔쯔엉 사당",
-    ],
   },
   "nd-nha-tho-do": {
     name: "하이리 폐성당",
@@ -333,11 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "해변 한가운데 무너진 종탑",
-      "폐성당 위로 떠오르는 새벽",
-      "이끼 낀 담장 발치를 때리는 파도",
-    ],
   },
   "tb-chua-keo": {
     name: "께오 사찰",
@@ -357,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "유명한 3층 목조 종루",
-      "께오 사찰 가을 축제",
-      "좌우 대칭의 임 목재 건물군",
-    ],
   },
   "tb-con-vanh": {
     name: "꼰바인 해변",
@@ -381,11 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "꼰바인 바다 위로 떠오르는 일출",
-      "바닷가 목마황 숲",
-      "푸르른 맹그로브 숲",
-    ],
   },
   "vp-tam-dao": {
     name: "땀다오",
@@ -405,11 +320,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1박 2일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "안개에 잠긴 땀다오 마을",
-      "고풍스러운 돌 성당",
-      "푸른 숲 속의 박 폭포",
-    ],
   },
   "vp-tay-thien": {
     name: "쭉럼 떠이티엔 선원",
@@ -429,11 +339,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "위엄 있는 선원 본전",
-      "떠이티엔 트엉 사당으로 가는 길",
-      "푸른 숲 속의 불상 정원",
-    ],
   },
 };
 

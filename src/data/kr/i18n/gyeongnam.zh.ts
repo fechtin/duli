@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "08:30–18:00",
-    galleryCaptions: ["藏经板殿内的经板"],
   },
   "tongyeong-dongpirang": {
     name: "统营与东皮廊村",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "弥勒山缆车来回17,000韩元（3至12岁13,000）；东披郎壁画村免费",
     openingHours: "09:30–17:00（缆车）",
-    galleryCaptions: ["东皮廊村的壁画"],
   },
   "geoje-oedo": {
     name: "巨济外岛Botania",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天（含船程）",
     ticket: "约38,000韩元（船票约27,000＋登岛门票约11,000），依码头与船公司而异",
     openingHours: "依船班时间，08:00–17:00",
-    galleryCaptions: ["外岛上的梯状花园"],
   },
   "jinju-fortress": {
     name: "晋州城与南江流灯节",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "09:00至18:00收费2,000韩元（青少年1,000、儿童600）；其余时段免费开放",
     openingHours: "05:00–23:00",
-    galleryCaptions: ["俯瞰南江的矗石楼"],
   },
   "namhae-daraengi": {
     name: "南海多乐里梯田",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["层层落向海面的梯田"],
   },
   "gimhae-gaya-tombs": {
     name: "金海大成洞古坟群",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费",
     openingHours: "09:00–18:00，最后入场17:30；周一、1月1日与春节、中秋当日休馆",
-    galleryCaptions: ["大成洞古坟群"],
   },
   "jirisan-national-park": {
     name: "智异山国立公园",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一天至三天",
     ticket: "",
     openingHours: "适用国家公园「入山时间指定制」：3至11月自04:00、12至2月自05:00开放入山，各路段的折返管制时间落在12:00至17:00之间。出发前请先查看步道封闭公告",
-    galleryCaptions: ["破晓时分的智异山棱线"],
   },
   "upo-wetland": {
     name: "昌宁牛浦沼",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "",
     openingHours: "步道24小时开放；共五条路线，从1公里（30分钟）到9.7公里（3小时30分钟）",
-    galleryCaptions: ["牛浦沼的清晨水雾"],
   },
   "jinhae-cherry-blossom": {
     name: "镇海樱花",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["花季中的庆和站铁道"],
   },
   "tongyeong-mireuksan": {
     name: "统营弥勒山缆车",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "缆车来回17,000韩元（成人）",
     openingHours: "09:30–17:00（依季节调整）",
-    galleryCaptions: ["自山顶望见的闲丽海上群岛"],
   },
   "geoje-windy-hill": {
     name: "巨济风之丘与海岸",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["风之丘上的风车"],
   },
   "namhae-german-village": {
     name: "南海德国村",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "全日开放（展馆09:00–18:00）",
-    galleryCaptions: ["俯瞰南海湾的红屋顶"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日または1泊",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["ラック湖の朝霧", "ムノンの丸木舟"],
   },
   "ta-dung-national-park": {
     name: "ターズン国立公園",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ターズン湖に散らばる島々", "夜明けに湖を覆う低い雲"],
   },
   "chu-dang-ya": {
     name: "チューダンヤー火山",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["火口の内側の同心円の畑", "十一月に斜面を覆う野生ヒマワリ"],
   },
   "kon-klor-bridge": {
     name: "コンクロー吊り橋",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["ダクブラ川に架かるオレンジ色の橋", "橋詰のコンクローのロン"],
   },
   langbiang: {
     name: "ランビアン山",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "50,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["雲海の上に立つ二つの峰", "レーダー峰から見たダラットの谷"],
   },
   "datanla-waterfall": {
     name: "ダタンラの滝",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "50,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["松林を落ちる多段の滝", "ダタンラの滝へ下る道の露店", "斜面沿いのアルペンコースター"],
   },
 };
 

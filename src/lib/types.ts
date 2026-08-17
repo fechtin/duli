@@ -19,8 +19,9 @@ export interface DestinationTranslation {
   visitDuration?: string;
   ticket?: string;
   openingHours?: string;
-  /** Gallery captions, aligned by index with Destination.gallery. */
-  galleryCaptions?: string[];
+  // `galleryCaptions?: string[]` sat here — five index-aligned arrays per destination, 2 128 of
+  // them, describing photos chosen later or never. A caption belongs to the photo it was written
+  // for and now lives beside it in the manifest (`PhotoEntry.caption`).
 }
 
 /** Translatable fields of province editorial content. */
@@ -158,13 +159,10 @@ export type DestinationType =
   /** A street or quarter that IS the attraction — walking streets, old quarters, train street. */
   | "street";
 
-export interface GalleryImage {
-  /** Deterministic seed used by the illustrated placeholder. */
-  seed: string;
-  caption: string;
-  author?: string;
-  ratio?: "16/9" | "4/3" | "1/1";
-}
+// `GalleryImage[]` used to hang off every destination here: a list of slots, each with a seed and
+// a caption, authored before the photos existed. It is gone. Which photos a place has is a fact
+// about `image-manifest.json` and nothing else — ask `lib/media/gallery`. Keeping a second,
+// hand-written answer is what put a gradient over 17 real photos and a wrong caption under 109.
 
 export interface Destination {
   id: string;
@@ -186,7 +184,6 @@ export interface Destination {
   openingHours: string;
   badges: BadgeKind[];
   tags: string[];
-  gallery: GalleryImage[];
   /** Slugs of nearby destinations. */
   nearby: string[];
   featured?: boolean;
@@ -245,7 +242,6 @@ export interface DestinationLight {
   summary: string;
   tags: string[];
   badges: BadgeKind[];
-  gallery: GalleryImage[];
   featured: boolean;
 }
 

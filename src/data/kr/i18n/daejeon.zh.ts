@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["河边的韩光塔"],
   },
   gyeryongsan: {
     name: "鸡龙山国立公园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "适用国家公园「入山时间指定制」：3至11月自04:00、12至2月自05:00开放入山，各路段的折返管制时间落在12:00至17:00之间。出发前请先查看步道封闭公告",
-    galleryCaptions: ["鸡龙山棱线"],
   },
   "daejeon-jungang-market": {
     name: "大田中央市场",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "没有统一时间——中部地区最大的传统市场，各摊自订营业时间，多数白天营业；若有特定店家建议先询问",
-    galleryCaptions: ["中央市场的摊位"],
   },
   "jangtaesan-metasequoia": {
     name: "长泰山水杉林",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "免费，含停车（住宿与会议室除外）",
     openingHours: "09:00–18:00（最后入场17:00），全年开放；空中塔因安全检测暂时关闭",
-    galleryCaptions: ["穿过水杉树冠的空中步道"],
   },
   "daecheongho-observatory": {
     name: "大清湖与环湖公路",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["大清湖的清晨雾气"],
   },
   "daejeon-skyroad": {
     name: "银杏洞与Sky Road",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "街道全日开放；天空之路萤幕于19:00–23:00（4至9月）与18:00–22:00（10至3月）播放",
-    galleryCaptions: ["银杏洞街道上方的LED顶棚"],
   },
   "ppuri-park": {
     name: "寻根公园",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "公园06:00–22:00（3至10月）、07:00–21:00（11至2月）；园内族谱博物馆09:00–18:00，周一休馆",
-    galleryCaptions: ["刻著宗族族徽的石碑"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "弥撒时间之外；弥撒时刻表在门口张贴",
-    galleryCaptions: ["市中心的红砖钟楼", "教堂前的和平圣母像"],
   },
   "saigon-central-post-office": {
     name: "西贡中心邮政局",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30分钟",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["横贯主厅的弧形钢拱", "墙上1892年的手绘地图"],
   },
   "saigon-opera-house": {
     name: "西贡歌剧院",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "票价视演出而定",
     openingHours: "按公布的演出时间表",
-    galleryCaptions: ["夜里亮灯的剧院立面", "入口上方雕刻的女神像"],
   },
   "nguyen-hue-walking-street": {
     name: "阮惠步行街",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "全天；周末按公告时段禁行车辆",
-    galleryCaptions: ["傍晚的阮惠步行街", "夜晚的阮惠步行街", "农历新年的花街"],
   },
   "bach-dang-wharf": {
     name: "白藤码头",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["望向守添的白藤江岸", "自白藤码头远望金融塔", "一直下到水边的公园台阶"],
   },
   "bitexco-tower": {
     name: "金融塔",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "观景台约24万越南盾（参考价）",
     openingHours: "09:30 - 21:30",
-    galleryCaptions: ["探出直升机坪的金融塔", "从49层看一区"],
   },
   "war-remnants-museum": {
     name: "战争遗迹博物馆",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "4万越南盾（参考价，请在售票处确认）",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["户外院落陈列的飞机与坦克", "院中展出的M-107自行火炮", "楼上的纪实照片展厅"],
   },
   "tao-dan-park": {
     name: "陶坛公园",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["老树成荫的园中小径", "清晨挂满鸟笼的架子"],
   },
   "fine-arts-museum-hcm": {
     name: "胡志明市美术馆",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "3万越南盾（参考价）",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["馆内的天井与楼梯", "法式黄色大宅的立面"],
   },
   "bui-vien-street": {
     name: "范五老街区裴援街",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "约18:00至天亮",
-    galleryCaptions: ["周末禁行车辆的裴援街", "摆到路面上的桌椅"],
   },
   "landmark-81": {
     name: "地标81",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "观景台约30万越南盾（参考价）",
     openingHours: "08:30 - 23:00",
-    galleryCaptions: ["高出西贡天际线的地标81", "耸立于城市之上的地标81", "从观景台看夜里的城市"],
   },
   "jade-emperor-pagoda": {
     name: "玉皇殿",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["香烟弥漫的正殿", "庙前售卖放生的陆龟与水龟", "十殿阎罗间的木雕浮雕"],
   },
   "saigon-zoo": {
     name: "西贡动植物园",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3小时",
     ticket: "6万越南盾（参考价，请在售票处确认）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["植物园里上百年的老树", "西贡动植物园入口", "园中被树荫遮住的小径"],
   },
   "binh-tay-market": {
     name: "平西市场",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["市场内院的钟楼", "市场里高高堆起的货包"],
   },
   "cho-lon-district": {
     name: "堤岸",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["堤岸街上的汉字招牌", "堤岸一带的安东市场", "门户大开到人行道的中药铺"],
   },
   "giac-lam-pagoda": {
     name: "觉林寺",
@@ -337,7 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟 - 1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["院中嵌满瓷片的舍利塔", "寺院内的菩提树", "正殿里的木雕像"],
   },
   "can-gio-mangrove": {
     name: "芹耶红树林",
@@ -358,7 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "门票与船费按路线另计",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["撑在泥面上的红树支柱根", "穿行红树林水道的船"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["斜面を巻いて登るファーディン峠", "狭く曲がりくねった旧道"],
   },
   "pa-khoang-lake": {
     name: "パーコアン湖",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["パーコアン湖の朝霧", "湖畔のタイ族の集落"],
   },
   "go-lao-waterfall": {
     name: "ゴーラオの滝",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["緑の淵へ落ちる白い水", "滝の下へ下りる石段"],
   },
   "pu-ta-leng": {
     name: "プーターレン",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["登路に咲くシャクナゲの林", "ホアンリエンソンを望む標高3,049mの頂"],
   },
   "son-la-prison": {
     name: "ソンラー刑務所",
@@ -108,7 +104,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["カウカーの丘に残る石造の房", "敷地のトーヒエウの桃の木"],
   },
   "dai-yem-waterfall": {
     name: "ザイイエムの滝",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["崖一面に広がる水の膜", "苔むした岩の間の下段"],
   },
 };
 

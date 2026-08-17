@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["通往大雄殿的石阶"],
   },
   seokguram: {
     name: "石窟庵",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "09:00–17:30",
-    galleryCaptions: ["通往石窟庵的参道"],
   },
   daereungwon: {
     name: "大陵苑",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "3,000韩元",
     openingHours: "09:00–22:00，最后入场21:30",
-    galleryCaptions: ["城中的新罗古坟"],
   },
   cheomseongdae: {
     name: "瞻星台",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "免费",
     openingHours: "09:00–22:00，全年开放；入夜后有灯光照明，值得再看一次",
-    galleryCaptions: ["草地上的瞻星台"],
   },
   "hahoe-folk-village": {
     name: "安东河回村",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "5,000韩元",
     openingHours: "日出至日落，全年开放",
-    galleryCaptions: ["被河流环抱的河回村"],
   },
   "dosan-seowon": {
     name: "安东陶山书院",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "1,500韩元",
     openingHours: "09:00–18:00（冬季至17:00）",
-    galleryCaptions: ["陶山书院的讲堂"],
   },
   juwangsan: {
     name: "周王山国立公园",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "入山04:00–15:00（4至10月）、05:00–14:00（11至3月）",
-    galleryCaptions: ["周王山的峡谷与瀑布"],
   },
   "anapji-donggung": {
     name: "东宫与月池（雁鸭池）",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "3,000韩元",
     openingHours: "09:00–22:00，最后入场21:30",
-    galleryCaptions: ["倒映在月池中的殿阁"],
   },
   "gyeongju-national-museum": {
     name: "国立庆州博物馆",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费",
     openingHours: "10:00–18:00；周日与假日至19:00；3至12月周六与每月最后一个周三延长至21:00",
-    galleryCaptions: ["新罗金冠"],
   },
   "yangdong-folk-village": {
     name: "庆州良洞村",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "4,000韩元",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["良洞村坡上的士族宅第"],
   },
   "bunhwangsa-hwangnyongsa": {
     name: "芬皇寺模塼石塔与皇龙寺址",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "两处皆免费（芬皇寺的文化财观览费已于2023年5月废止）",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["芬皇寺模塼石塔"],
   },
   "andong-woryeonggyo": {
     name: "安东月映桥",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全日开放（入夜点灯）",
-    galleryCaptions: ["点灯后的月映桥"],
   },
   buseoksa: {
     name: "荣州浮石寺",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["望向小白山棱线的无量寿殿"],
   },
   "pohang-homigot": {
     name: "浦项虎尾串",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["承接日出的青铜之手"],
   },
   ulleungdo: {
     name: "郁陵岛",
@@ -329,7 +315,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3天",
     ticket: "船票来回约160,000至180,000韩元（单程80,000至90,000），依港口与船公司而异",
     openingHours: "依船班时刻，通常每日1至3班",
-    galleryCaptions: ["郁陵岛的断崖海岸"],
   },
 };
 

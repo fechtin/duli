@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "航路により湾の入場券に含まれる",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["劇場ほどの広さの奥の部屋", "洞口から望むハロン湾", "床から天井まで伸びる鍾乳石の柱"],
   },
   "thien-cung-cave": {
     name: "ティエンクン洞",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "航路により湾の入場券に含まれる",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["ティエンクン内部の密な鍾乳石", "洞内を一周する見学順路"],
   },
   "ti-top-island": {
     name: "ティトップ島",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "航路により湾の入場券に含まれる",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["ティトップ山頂から見たハロン湾", "ティトップ島から見る湾の日暮れ", "丘の下の三日月形の浜"],
   },
   "cua-van-fishing-village": {
     name: "クアヴァン水上漁村",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "湾の入場券に加えてサンパン代が別途",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["石灰岩の壁のあいだに係留された筏の家", "島々を縫って進むサンパン"],
   },
   "bai-tu-long-bay": {
     name: "バイトゥーロン湾",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日、船で一泊するとなおよい",
     ticket: "湾の入場料とツアー代は別途",
     openingHours: "その日の運航予定による",
-    galleryCaptions: ["バイトゥーロン湾の石灰岩の島", "島々のあいだの人のいない入り江"],
   },
   "van-don-island": {
     name: "ヴァンドン",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ヴァンドン県のクアンラン島", "湾を見晴らすヴァンドンの船着き場", "夜のヴァンドン空港", "ヴァンドン島郡の海辺"],
   },
   "tuan-chau-island": {
     name: "トゥアンチャウ島",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日。港は運営時間に従う",
-    galleryCaptions: ["トゥアンチャウ旅客港", "トゥアンチャウ島の公園", "島と本土をつなぐ堤道"],
   },
   "bai-chay-bridge": {
     name: "バイチャイ橋",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["夜に照らされたバイチャイ橋", "橋床の中央に一列で並ぶケーブル"],
   },
   "quang-ninh-museum": {
     name: "クアンニン博物館",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2時間",
     ticket: "4万ドン（目安、窓口で確認を）",
     openingHours: "08:00 - 17:00、月曜休館",
-    galleryCaptions: ["湾の岸に立つ黒いガラスの箱", "間近で見る博物館の黒いガラス面", "復元された炭鉱の坑道"],
   },
   "binh-lieu": {
     name: "ビンリエウ",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2日",
     ticket: "",
     openingHours: "終日。国境標は明るいうちに訪ねること",
-    galleryCaptions: ["尾根を伝う巡視路", "十一月、斜面を白くするススキ"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["河口の岩に立つディンカウ廟", "廟の庭から見た夕日"],
   },
   "phu-quoc-night-market": {
     name: "フーコック夜市",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2時間",
     ticket: "",
     openingHours: "おおむね17:00 - 23:00",
-    galleryCaptions: ["夜市のロールアイス作り", "食堂の前に並ぶ生簀", "夜市の鮮魚の屋台", "フーコックのヌクマムと胡椒の店"],
   },
   "hon-thom-cable-car": {
     name: "ホントム・ケーブルカー",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "往復で約35万ドン（目安）",
     openingHours: "おおむね08:00 - 17:30、季節により変動",
-    galleryCaptions: ["海に立つホントム・ケーブルカーの支柱", "海上を渡るゴンドラ", "ケーブルカーから見下ろす水上の漁村"],
   },
   "phu-quoc-prison": {
     name: "フーコック刑務所",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["幾重もの有刺鉄線の向こうの収容棟", "復元された有刺鉄線の虎の檻"],
   },
   "ham-ninh-fishing-village": {
     name: "ハムニン漁村",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハムニンから海へ伸びる木の桟橋", "干潮で現れた干潟"],
   },
   "suoi-tranh-waterfall": {
     name: "スオイチャンの滝",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "約2万ドン（目安）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["木陰の下で岩を流れる渓流", "川床にできた淵"],
   },
   "ganh-dau-cape": {
     name: "ガインザウ岬",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ガインザウから見たカンボジアの海岸", "岬の岩の磯と澄んだ水"],
   },
   "vinwonders-phu-quoc": {
     name: "ヴィンワンダーズ・フーコック",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "入場は約88万ドン（目安。サファリとの共通券あり）",
     openingHours: "おおむね09:00 - 20:00、季節により変動",
-    galleryCaptions: ["園内のテーマ区画", "隣接する半野生のサファリパーク"],
   },
   "ha-tien-town": {
     name: "ハーティエン",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["タイランド湾に面したハーティエンの町", "ハーティエンの浜辺", "ビンサンの丘のマク家の墓"],
   },
   "mui-nai-beach": {
     name: "ムイナイ海岸",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "約2万ドン（目安）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["タイランド湾に沈む日", "灯台の岬の下の茶色い砂"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30분",
     ticket: "호이안 구시가 관람권에 포함(호이안 구시가 항목 참고)",
     openingHours: "종일. 다리 내부는 구시가 관람권 시간에 따름",
-    galleryCaptions: ["개울에 비친 내원교", "다리 한가운데 자리한 사당"],
   },
   "tan-ky-house": {
     name: "떤끼 고가",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "호이안 구시가 관람권에 포함",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["떤끼 고가의 중앙 대청", "집 안에 남은 홍수 수위 표시", "나무 기둥과 자개를 박은 주련"],
   },
   "phuc-kien-assembly-hall": {
     name: "푹끼엔 회관",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "호이안 구시가 관람권에 포함",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["회관 안의 용 분수", "푹끼엔 회관의 삼문", "본전 천장을 가득 채운 나선 향"],
   },
   "hoi-an-night-market": {
     name: "호이안 야시장",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2시간",
     ticket: "",
     openingHours: "대략 17:00 - 23:00",
-    galleryCaptions: ["안호이섬의 등롱 거리", "호이안 시장 옆 밤 노점", "호아이강에 떠가는 연등"],
   },
   "faifo-coffee": {
     name: "파이포 커피",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "카페 영업시간에 따름. 대체로 아침부터 저녁까지",
-    galleryCaptions: ["테라스에서 본 구시가 기와지붕", "거리를 내려다보는 난간 자리의 커피"],
   },
   "reaching-out-teahouse": {
     name: "리칭 아웃 티하우스",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분 - 1시간",
     ticket: "",
     openingHours: "찻집 영업시간에 따름. 대체로 아침부터 저녁까지",
-    galleryCaptions: ["주문에 쓰는 글자 새긴 나무 조각", "나무 쟁반에 놓인 찻그릇과 모래시계"],
   },
   "tra-que-vegetable-village": {
     name: "짜꿰 채소 마을",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "농사 체험 포함 2 - 3시간",
     ticket: "마을 입장료 약 3만 5천 동. 체험 프로그램은 별도",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["아침의 짜꿰 향채 이랑", "물지게로 물을 주는 모습"],
   },
   "kim-bong-carpentry-village": {
     name: "낌봉 목공 마을",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "배편 포함 2시간",
     ticket: "",
     openingHours: "공방 운영에 따라 대략 07:30 - 17:00",
-    galleryCaptions: ["낌봉 공방에서 나무를 새기는 장인", "껌낌섬으로 건너는 나룻배"],
   },
   "bay-mau-coconut-forest": {
     name: "바이머우 야자숲",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "입장료와 배 삯 별도, 바구니배 한 척당 약 15만 - 25만 동",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["물야자 물길을 지나는 바구니배", "사람 키를 넘는 물야자 잎"],
   },
   "an-bang-beach": {
     name: "안방 해변",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["안방 모래밭의 나무 의자와 초가 가게", "안방의 작은 사당", "해변 끝자락에 엎어 둔 바구니배"],
   },
   "cua-dai-beach": {
     name: "끄어다이 해변",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["바다로 열리는 투본강 하구", "끄어다이 해안을 따라 이어진 돌 호안"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "15,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["앞바다를 마주한 흰 별장", "정면의 도자 부조"],
   },
   "hoi-khanh-pagoda": {
     name: "호이카인 사원",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["지붕 위 길이 52m의 열반불", "18세기에 지은 목조 본전"],
   },
   "nui-ba-ra": {
     name: "바라산",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["바라산 중턱에서 내려다본 푸옥롱 시가지", "정상에서 본 탁머 호수"],
   },
   "tran-bien-temple-of-literature": {
     name: "쩐비엔 문묘",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["문묘 안쪽의 배전", "경내의 명현 조각상 정원"],
   },
   "independence-palace": {
     name: "독립궁",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "65,000동",
     openingHours: "08:00 - 16:30",
-    galleryCaptions: ["콘크리트 차양이 덮인 궁의 정면", "지하의 지휘 벙커", "앞뜰에 전시된 전차"],
   },
   "cu-chi-tunnels": {
     name: "꾸찌 땅굴",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "125,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["꾸찌 땅굴 유적 입구의 안내판", "관람객용으로 넓힌 땅굴 구간"],
   },
   "dau-tieng-reservoir": {
     name: "저우띠엥 저수지",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["멀리 바덴산이 보이는 넓은 수면", "건기의 물가 잔디밭"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–4 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Haeundae beach from Dongbaekseom"],
   },
   "gamcheon-culture-village": {
     name: "Gamcheon Culture Village",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "The village is open all day; the information centre and Haneulmaru viewpoint run 09:00–16:00",
-    galleryCaptions: ["Painted houses on the hillside"],
   },
   "jagalchi-market": {
     name: "Jagalchi Fish Market",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "05:00–22:00, closed the first and third Tuesday of each month",
-    galleryCaptions: ["Live seafood stalls at Jagalchi"],
   },
   "haedong-yonggungsa": {
     name: "Haedong Yonggungsa Temple",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "04:30–19:00 daily",
-    galleryCaptions: ["The temple on its sea rocks"],
   },
   "gwangalli-beach": {
     name: "Gwangalli Beach & Gwangan Bridge",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Gwangan Bridge from the beach"],
   },
   beomeosa: {
     name: "Beomeosa Temple",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open from early morning to dusk; admission is free",
-    galleryCaptions: ["The main hall at Beomeosa"],
   },
   taejongdae: {
     name: "Taejongdae",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Park entry is free; the Danubi train is 4,000 KRW for the full loop (2,000 for one leg)",
     openingHours: "05:00–24:00 (road train 09:00–18:00)",
-    galleryCaptions: ["The lighthouse on the Taejongdae cliffs"],
   },
   "huinnyeoul-culture-village": {
     name: "Huinnyeoul Culture Village",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The coastal path below the village"],
   },
   "oryukdo-skywalk": {
     name: "Oryukdo Skywalk",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Free",
     openingHours: "09:00–19:00 (1 Jun–30 Sep), 09:00–18:00 (1 Oct–31 May); last entry 10 minutes before closing, closed Mondays",
-    galleryCaptions: ["The glass deck looking down on Oryukdo"],
   },
   "igidae-coastal-walk": {
     name: "Igidae Coastal Walk",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "",
     openingHours: "Open all day (best walked in daylight)",
-    galleryCaptions: ["The trail looking across to Haeundae"],
   },
   "yongdusan-busan-tower": {
     name: "Yongdusan Park & Busan Tower",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "The park is free; the observatory is about 12,000 KRW at the gate, usually cheaper booked online",
     openingHours: "Park open all day; the tower 10:00–23:00",
-    galleryCaptions: ["Busan harbour from the tower"],
   },
   "bosu-dong-book-street": {
     name: "Bosu-dong Book Street",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "09:00–21:00; closed the first and third Sunday of each month and over Seollal and Chuseok",
-    galleryCaptions: ["Walls of books in the Bosu-dong lane"],
   },
   "songdo-cable-car": {
     name: "Songdo Beach & Marine Cable Car",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Cable car around 17,000 KRW return; the glass-floored Crystal cabin 22,000 KRW",
     openingHours: "Beach all day, cable car 09:00–22:00",
-    galleryCaptions: ["The cable car crossing Songdo bay"],
   },
   "busan-cinema-center": {
     name: "Busan Cinema Center",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "Plaza free",
     openingHours: "Plaza all day, cinemas by screening schedule",
-    galleryCaptions: ["The LED roof at night"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["짜이투이 언덕 위의 하얀 부처", "불상 아래에서 본 나트랑"],
   },
   "nha-trang-cathedral": {
     name: "나트랑 대성당",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "예배 시간 외. 일정은 정문에 붙어 있다",
-    galleryCaptions: ["산 성당의 민낯 회색 석벽", "나트랑 대성당 입구", "성당 앞마당에서 본 도시"],
   },
   "oceanographic-museum-vn": {
     name: "해양연구소",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "4만 동(참고 가격, 매표소에서 확인)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["18미터짜리 혹등고래 골격", "수장고의 유리병 표본들"],
   },
   "hon-chong-promontory": {
     name: "혼쫑 곶",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "3만 동(참고 가격)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["해안을 따라 쌓인 화강암 바위", "혼쫑에서 본 나트랑만"],
   },
   "dam-market-nha-trang": {
     name: "담 시장",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["담 시장의 건해산물 좌판", "제비집과 느억맘 구역"],
   },
   "nha-trang-night-market": {
     name: "나트랑 야시장",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "대략 17:00 - 23:00",
-    galleryCaptions: ["야시장의 구이 좌판", "조개와 진주 공예 좌판"],
   },
   "doc-let-beach": {
     name: "독렛 해변",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["독렛의 고운 백사장", "가까운 혼코이 염전"],
   },
   "binh-ba-island": {
     name: "빈바 섬",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "뱃삯 별도",
     openingHours: "그날의 배편 시간에 따름",
-    galleryCaptions: ["만을 가득 채운 바닷가재 뗏목", "빈바 섬의 조용한 해변"],
   },
   "ba-ho-stream": {
     name: "바호 계곡",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "약 3만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["화강암 절벽 사이의 맑은 못", "위쪽 못으로 오르는 바위길"],
   },
   "yang-bay-waterfall": {
     name: "양바이 폭포",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "입장료 약 13만 동(참고 가격)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["바위 단을 타고 떨어지는 양바이", "폭포를 둘러싼 카인빈 골짜기의 숲"],
   },
 };
 

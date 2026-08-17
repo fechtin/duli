@@ -14,7 +14,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # The guards this repo already had — check:i18n, check:content, check:photos and friends — only
+  # ever ran when someone remembered to type them. That is how 17 destinations shipped a gradient
+  # over a real photo for two weeks: nothing was broken, nothing was checked. They gate the deploy
+  # now, and a red one holds the whole push.
+  #
+  # `verify:seo` is deliberately not here: it drives a real browser against a running `wrangler
+  # dev`, so it needs an environment this job does not have. It stays a local check.
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - name: Content + i18n + photo guards
+        run: |
+          npm run check:i18n
+          npm run check:content
+          npm run check:zh
+          npm run check:provinces
+          npm run check:photos
+
   deploy:
+    needs: verify
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

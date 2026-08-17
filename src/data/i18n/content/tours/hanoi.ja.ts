@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "40,000ドン（参考価格、窓口で確認）",
     openingHours: "08:00 - 12:00, 14:00 - 16:30",
-    galleryCaptions: ["バディン広場側から見た蓮の形の白い建物", "館内の展示室"],
   },
   "thang-long-water-puppet": {
     name: "タンロン水上人形劇場",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "席種により100,000〜200,000ドン（参考価格）",
     openingHours: "毎日数回、通常15:00 - 21:00",
-    galleryCaptions: ["水の舞台と人形たち", "舞台脇で生演奏する楽師"],
   },
   "phu-tay-ho": {
     name: "タイホー廟",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "無料",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["西湖に向かって開く廟の門", "廟に近いタイ湖のほとり", "堂内の聖母の祭壇"],
   },
   "national-history-museum-vn": {
     name: "ベトナム国立歴史博物館",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "40,000ドン（参考価格、窓口で確認）",
     openingHours: "08:00 - 12:00, 13:30 - 17:00",
-    galleryCaptions: ["エブラールによるインドシナ様式の正面", "展示されたドンソン銅鼓"],
   },
   "tong-duy-tan-food-street": {
     name: "トンズイタン通り",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "無料（料理は別料金）",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["真夜中に灯る食べ物屋の通り", "トンズイタン通りのカフェ", "薬膳鶏スープの土鍋"],
   },
 };
 

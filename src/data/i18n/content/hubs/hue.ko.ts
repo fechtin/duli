@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "15만 동(참고 가격, 통합권 있음)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["르우키엠 호수와 정자", "뜨득 황제가 손수 지은 비석"],
   },
   "minh-mang-tomb": {
     name: "민망 황릉",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "15만 동(참고 가격, 통합권 있음)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["민망 황릉의 대칭 중심축", "경내 호수를 건너는 돌다리"],
   },
   "gia-long-tomb": {
     name: "자롱 황릉",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "이동 포함 1.5시간",
     ticket: "5만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["마당에 나란히 놓인 두 기의 돌무덤", "능을 둘러싼 솔 언덕"],
   },
   "an-dinh-palace": {
     name: "안딘 궁",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "5만 동(참고 가격)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["유럽식으로 지은 안딘 궁의 정면", "안딘 궁 정면", "접견실의 벽화"],
   },
   "trang-tien-bridge": {
     name: "쯔엉띠엔 다리",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["강 위에서 색이 바뀌는 쯔엉띠엔 다리", "여섯 아치 열두 칸의 철골"],
   },
   "dong-ba-market": {
     name: "동바 시장",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["동바 시장 안의 음식 구역", "시 삿갓과 메쓰응 과자 좌판"],
   },
   "quoc-hoc-hue": {
     name: "꾸옥혹 고등학교",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30분",
     ticket: "",
     openingHours: "수업 시간 외. 앞마당만 관람",
-    galleryCaptions: ["학교의 삼문과 분홍빛 담", "교정의 아치 회랑"],
   },
   "hon-chen-temple": {
     name: "혼첸 사당",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "배편 포함 2시간",
     ticket: "관람료와 뱃삯 별도",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["강에서 본 혼첸 사당", "비탈을 따라 오르는 사기 박은 굽은 지붕"],
   },
   "perfume-river": {
     name: "흐엉강",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "후에 가락 한 자리에 2시간",
     ticket: "뱃삯과 공연료는 배 단위로 책정",
     openingHours: "종일. 후에 가락은 저녁에 공연",
-    galleryCaptions: ["밤의 흐엉강 위 용선", "물 위에 띄운 종이 등"],
   },
   "thanh-toan-tile-bridge": {
     name: "타인또안 기와다리",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["논 가운데 선 타인또안 기와다리", "다리 양쪽의 나무 걸상"],
   },
   "thuan-an-beach": {
     name: "투언안 해변",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["바다로 열리는 투언안 어귀", "모래 위에 세운 해산물 가게"],
   },
   "tam-giang-lagoon": {
     name: "땀장 석호",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "뱃삯은 배 단위로 책정",
     openingHours: "종일. 늦은 오후가 가장 좋다",
-    galleryCaptions: ["어살 말뚝 숲 너머로 지는 해", "석호에서 그물을 터는 배"],
   },
   "ru-cha-mangrove": {
     name: "루짜 맹그로브",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "종일. 낮에 갈 것",
-    galleryCaptions: ["가을에 금빛으로 물든 짜나무 잎", "맹그로브를 가로지르는 길"],
   },
   "lang-co-beach": {
     name: "랑꼬 해변",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["하이번 고개에서 본 랑꼬만", "석호 어귀와 랑꼬 해변", "럽안 석호의 굴 양식 시렁"],
   },
   "bach-ma-national-park": {
     name: "박마 국립공원",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "입장료와 셔틀 요금 별도",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["박마 정상의 하이봉다이", "숲 사이로 떨어지는 도꾸옌 폭포"],
   },
 };
 

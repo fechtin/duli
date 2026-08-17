@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "무료이나 정상 코스(성판악·관음사)는 국립공원 예약 사이트에서 사전 예약이 필수다",
     openingHours: "입산은 05:00부터(겨울 06:00), 탐방로와 계절에 따라 12:00~14:00 사이에 통제된다. 성판악 코스는 진달래밭 대피소를 11:30까지 통과해야 한다. 당일 산행만 가능하며 야영은 금지",
-    galleryCaptions: ["백록담 분화구"],
   },
   "seongsan-ilchulbong": {
     name: "성산일출봉",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분~2시간",
     ticket: "5,000원",
     openingHours: "07:30~20:00(겨울에는 더 일찍 마감)",
-    galleryCaptions: ["바다에서 본 분화구"],
   },
   manjanggul: {
     name: "만장굴",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "4,000원(청소년·어린이 2,000원)",
     openingHours: "09:00~18:00, 보수 공사를 마치고 2026년 5월 30일 재개방",
-    galleryCaptions: ["용암동굴 내부"],
   },
   "jeongbang-waterfall": {
     name: "정방폭포",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "2,000원",
     openingHours: "09:00~19:00, 입장 마감 18:00",
-    galleryCaptions: ["바다로 떨어지는 폭포"],
   },
   "udo-island": {
     name: "우도",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "여객선 왕복 약 10,500원, 15분 소요, 성수기에는 30분 간격",
     openingHours: "여객선 운항 시간(대개 08:00~18:00)",
-    galleryCaptions: ["서빈백사 해변"],
   },
   "hyeopjae-beach": {
     name: "협재해수욕장",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["비양도가 보이는 협재 해변"],
   },
   "jusangjeolli-cliff": {
     name: "주상절리대",
@@ -154,7 +148,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "2,000원",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["대포 해안의 육각 돌기둥"],
   },
   "cheonjiyeon-waterfall": {
     name: "천지연폭포",
@@ -176,7 +169,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "2,000원(7~24세 1,000원)",
     openingHours: "09:00~21:20",
-    galleryCaptions: ["야간 조명 아래의 천지연폭포"],
   },
   sanbangsan: {
     name: "산방산과 용머리해안",
@@ -198,7 +190,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "용머리해안 2,000원(청소년·어린이 1,000원), 산방굴사 1,000원. 6세 이하와 65세 이상 무료",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["용머리해안에서 본 산방산"],
   },
   "seongeup-folk-village": {
     name: "성읍민속마을",
@@ -220,7 +211,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "09:00부터 일몰까지. 실제 주민이 사는 마을이니 조용히 둘러보자",
-    galleryCaptions: ["새끼줄로 묶은 초가와 검은 돌담"],
   },
   "bijarim-forest": {
     name: "비자림",
@@ -242,7 +232,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "3,000원(청소년·어린이 1,500원), 6세 이하와 65세 이상 무료",
     openingHours: "09:00~18:00, 입장 마감 17:00",
-    galleryCaptions: ["비자림의 붉은 송이길"],
   },
   "haenyeo-museum": {
     name: "해녀박물관",
@@ -264,7 +253,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "1,100원(청소년 13~24세 500원, 12세 이하 무료)",
     openingHours: "09:00~18:00, 월요일 휴관",
-    galleryCaptions: ["해녀의 물질 도구"],
   },
   "seogwipo-olle-market": {
     name: "서귀포매일올레시장",
@@ -286,7 +274,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "연중 열리며 대부분의 점포가 대략 07:00~21:00이지만 가게마다 다르다",
-    galleryCaptions: ["시장의 한라봉 가게"],
   },
   "jeju-olle-trail": {
     name: "제주올레길",
@@ -308,7 +295,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "코스당 4~6시간",
     ticket: "",
     openingHours: "상시(낮에 걷기를 권함)",
-    galleryCaptions: ["해안 올레 코스의 길 표시 리본"],
   },
 };
 

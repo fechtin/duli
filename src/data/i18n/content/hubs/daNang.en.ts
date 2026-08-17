@@ -23,7 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The dragon breathing fire over the Han River", "The dragon's body shifting colour at night"],
   },
   "han-river-bridge": {
     name: "Han River Bridge",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Han River Bridge lit up", "The span turned sideways mid-river"],
   },
   "cham-museum": {
     name: "Museum of Cham Sculpture",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2 hours",
     ticket: "60,000d (indicative — check at the counter)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["The My Son gallery", "Apsara dancer relief", "The French museum building"],
   },
   "da-nang-cathedral": {
     name: "Da Nang Cathedral",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The pink bell tower and its rooster", "Stained glass inside the church"],
   },
   "con-market": {
     name: "Con Market",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "06:00 - 20:00 (the food hall stays open later)",
-    galleryCaptions: ["The food hall inside Con Market", "A stall of dried Quang-region specialities"],
   },
   "han-market": {
     name: "Han Market",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["Dried seafood stalls in Han Market", "Fabric and tailoring on the second floor"],
   },
   "apec-park": {
     name: "APEC Park",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The kite canopy lit above the Han River", "A sculpture in the APEC garden"],
   },
   "son-tra-night-market": {
     name: "Son Tra Night Market",
@@ -170,7 +163,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "About 18:00 - 24:00",
-    galleryCaptions: ["Grill stalls lit up for the evening", "The night market looking back at the Dragon Bridge"],
   },
   "my-khe-beach": {
     name: "My Khe Beach",
@@ -191,7 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "All day; lifeguards on duty during posted hours",
-    galleryCaptions: ["Sunrise over My Khe beach", "Basket boats landing at first light"],
   },
   "linh-ung-pagoda-bai-but": {
     name: "Linh Ung Pagoda Bai But",
@@ -212,7 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["The Lady Buddha looking over Da Nang bay", "The courtyard and the city beyond"],
   },
   "ban-co-peak": {
     name: "Ban Co Peak",
@@ -233,7 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours including the drive up",
     ticket: "",
     openingHours: "Daylight hours; do not go up after dark",
-    galleryCaptions: ["Da Nang seen from Ban Co Peak", "The stone chessboard on the Son Tra summit", "The chessboard statue at the peak", "Da Nang bay seen from Ban Co Peak"],
   },
   "non-nuoc-beach": {
     name: "Non Nuoc Beach",
@@ -254,7 +243,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Non Nuoc beach below the Marble Mountains", "Basket boats on Non Nuoc Beach", "Empty sand in the morning"],
   },
   "non-nuoc-stone-village": {
     name: "Non Nuoc Stone Carving Village",
@@ -275,7 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes - 1 hour",
     ticket: "",
     openingHours: "Roughly 07:30 - 17:00, following workshop hours",
-    galleryCaptions: ["Stone figures lining the village entrance", "A carver at work in his workshop"],
   },
   "ba-na-hills": {
     name: "Ba Na Hills",
@@ -296,7 +283,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Package ticket including the cable car, roughly 900,000 - 1,100,000d (varies by season — check the published price before you go)",
     openingHours: "Roughly 07:30 - 22:00, varies by season",
-    galleryCaptions: ["The French Village on the Ba Na summit", "The cable car crossing the forest", "Cloud over the central square"],
   },
   "hai-van-pass": {
     name: "Hai Van Pass",
@@ -317,7 +303,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day including the drive",
     ticket: "",
     openingHours: "All day; cross in daylight",
-    galleryCaptions: ["The pass road winding along the coastal slope", "The Hai Van Gate at the summit"],
   },
 };
 

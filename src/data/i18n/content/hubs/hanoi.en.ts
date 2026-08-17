@@ -23,7 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "50,000d (indicative — check at the counter)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The red The Huc bridge to Jade Island", "The temple courtyard looking over the lake"],
   },
   "dong-xuan-market": {
     name: "Dong Xuan Market",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 18:00; weekend night market until about 23:00",
-    galleryCaptions: ["The five-arched facade of Dong Xuan Market", "The weekend night market outside the gates"],
   },
   "ta-hien-street": {
     name: "Ta Hien Street",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 24:00",
-    galleryCaptions: ["Red plastic stools filling the Ta Hien pavement", "Ta Hien Street in the early morning", "A glass of bia hoi in the Old Quarter at night"],
   },
   "hanoi-train-street": {
     name: "Hanoi Train Street",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "Varies; the area may be barriered off entirely",
-    galleryCaptions: ["The track running between two rows of houses", "Daily life alongside the rails"],
   },
   "the-note-coffee": {
     name: "The Note Coffee",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "Café hours, generally morning until evening",
-    galleryCaptions: ["Café walls papered in coloured sticky notes", "The note-covered staircase to the upper floors"],
   },
   "st-joseph-cathedral-hanoi": {
     name: "St Joseph's Cathedral",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The weather-stained grey bell towers", "St Joseph's Cathedral from Nha Tho street", "A lemon-tea spot on Nha Tho street"],
   },
   "hanoi-opera-house": {
     name: "Hanoi Opera House",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Ticket prices depend on the performance",
     openingHours: "According to the published performance and tour schedule",
-    galleryCaptions: ["The lit facade of the Opera House", "Paired columns and stone balconies"],
   },
   "ho-chi-minh-mausoleum": {
     name: "Ho Chi Minh Mausoleum",
@@ -170,7 +163,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours including the queue",
     ticket: "",
     openingHours: "Mornings on most weekdays, closed Monday and Friday; check the published calendar",
-    galleryCaptions: ["The mausoleum seen from Ba Dinh Square", "Ba Dinh Square in front of the mausoleum", "The changing of the guard outside"],
   },
   "one-pillar-pagoda": {
     name: "One Pillar Pagoda",
@@ -191,7 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "20 - 30 minutes",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The pagoda on its stone pillar above the pond", "The wooden steps up to the shrine"],
   },
   "imperial-citadel-thang-long": {
     name: "Imperial Citadel of Thang Long",
@@ -212,7 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "70,000d (indicative — check at the counter)",
     openingHours: "08:00 - 17:00, closed Monday",
-    galleryCaptions: ["Doan Mon gate from the inner courtyard", "Carved stone dragons of the Kinh Thien stairway", "The main gate of the Thang Long citadel", "The D67 command bunker"],
   },
   "hanoi-flag-tower": {
     name: "Hanoi Flag Tower",
@@ -233,7 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Covered by the ticket for the museum in the same grounds",
     openingHours: "08:00 - 16:30, closed some days of the week",
-    galleryCaptions: ["The flag tower seen from its base", "Flower-shaped openings in the octagonal shaft"],
   },
   "hoa-lo-prison": {
     name: "Hoa Lo Prison",
@@ -254,7 +243,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "50,000d (indicative — check at the counter)",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["The prison gate reading Maison Centrale", "Rows of ankle shackles in a communal cell"],
   },
   "quan-thanh-temple": {
     name: "Quan Thanh Temple",
@@ -275,7 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "10,000d (indicative)",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["The temple gate beside West Lake", "The black bronze statue of Huyen Thien Tran Vu"],
   },
   "tran-quoc-pagoda": {
     name: "Tran Quoc Pagoda",
@@ -296,7 +283,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "08:00 - 16:00",
-    galleryCaptions: ["The eleven-tier stupa beside West Lake", "Tran Quoc Pagoda at sunset"],
   },
   "west-lake-hanoi": {
     name: "West Lake",
@@ -317,7 +303,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Sunset over West Lake", "Thanh Nien road running between the two lakes"],
   },
   "long-bien-bridge": {
     name: "Long Bien Bridge",
@@ -338,7 +323,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Long Bien's steel trusses over the Red River", "The mid-river island seen from the bridge"],
   },
   "vietnam-museum-ethnology": {
     name: "Vietnam Museum of Ethnology",
@@ -359,7 +343,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "08:30 - 17:30, closed Monday",
-    galleryCaptions: ["A Bahnar communal house in the outdoor gallery", "A Jarai tomb house ringed by carved figures"],
   },
   "lotte-observation-deck": {
     name: "Lotte Observation Deck",
@@ -380,7 +363,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "About 230,000d (indicative, varies by period)",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["Hanoi from the 65th floor", "A glass floor panel looking straight down"],
   },
   "bat-trang-pottery-village": {
     name: "Bat Trang Pottery Village",
@@ -401,7 +383,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "08:00 - 17:30, following workshop hours",
-    galleryCaptions: ["A potter's wheel in a Bat Trang workshop", "Coal briquettes drying along a lane wall"],
   },
   "duong-lam-ancient-village": {
     name: "Duong Lam Ancient Village",
@@ -422,7 +403,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000d (indicative)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The laterite village gate at Mong Phu", "Red-brown laterite walls along a village lane"],
   },
 };
 

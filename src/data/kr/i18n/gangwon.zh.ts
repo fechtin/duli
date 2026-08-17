@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "国家公园免费入园；权金城缆车来回16,000韩元（儿童12,000）",
     openingHours: "06:00–20:00；缆车通常09:00–17:30",
-    galleryCaptions: ["蔚山岩岩壁"],
   },
   "gyeongpo-beach": {
     name: "江陵镜浦海边",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["镜浦海滩与松林"],
   },
   ojukheon: {
     name: "乌竹轩",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "3,000韩元（65岁以上免费）",
     openingHours: "08:00–18:00（冬季至17:30），闭馆前30分钟停止入场",
-    galleryCaptions: ["乌竹轩的木造宅第与竹园"],
   },
   "daegwallyeong-sky-ranch": {
     name: "平昌大关岭牧场",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "8,000韩元（儿童与长者6,000）；牵引车与喂草体验另计",
     openingHours: "09:00–17:30",
-    galleryCaptions: ["草原与风力发电机"],
   },
   jeongdongjin: {
     name: "正东津",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["紧邻海水的月台"],
   },
   naksansa: {
     name: "洛山寺",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "05:00–19:00",
-    galleryCaptions: ["望向大海的观音像"],
   },
   "nami-island": {
     name: "南怡岛",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "19,000韩元（含来回船资），较去年调涨3,000韩元",
     openingHours: "08:00–21:00，全年无休（末班船21:05）",
-    galleryCaptions: ["南怡岛的水杉大道"],
   },
   "chuncheon-soyang": {
     name: "春川与昭阳湖",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "往清平寺的渡船来回约5,500至6,000韩元（单程3,000），航程10分钟",
     openingHours: "船班09:00–17:00",
-    galleryCaptions: ["昭阳湖的晨雾"],
   },
   "hwanseongul-cave": {
     name: "三陟幻仙窟",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "4,500韩元；上洞窟的单轨来回7,000韩元（单程4,000）",
     openingHours: "08:30–17:00",
-    galleryCaptions: ["幻仙窟中的高耸洞厅"],
   },
   "odaesan-woljeongsa": {
     name: "五台山月精寺",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["通往寺院的冷杉林道"],
   },
   "gangneung-anmok-coffee": {
     name: "江陵安木咖啡街",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "没有统一时间，各咖啡馆自订，多数约09:00至22:00；前方的安木海滩全日开放",
-    galleryCaptions: ["安木海滩边的咖啡馆"],
   },
   "cheongoksan-mureung": {
     name: "东海武陵溪谷",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "2,000韩元（青少年1,500、儿童700）",
     openingHours: "夏季09:00–20:00（7至8月售票自06:00起）、冬季09:00–18:00",
-    galleryCaptions: ["武陵溪中刻满题字的岩盘"],
   },
   "taebaeksan-snow": {
     name: "太白山国立公园",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天至一整天",
     ticket: "",
     openingHours: "适用国家公园「入山时间指定制」：3至11月自04:00、12至2月自05:00开放入山，各路段的折返管制时间落在12:00至17:00之间。出发前请先查看步道封闭公告",
-    galleryCaptions: ["太白山上结冰的紫杉"],
   },
   "sokcho-abai-village": {
     name: "束草阿爸伊村",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "手拉渡船单程500韩元",
     openingHours: "渡筏约06:00–23:00运行",
-    galleryCaptions: ["横渡束草水道的手拉渡筏"],
   },
 };
 

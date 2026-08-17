@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The three peaks in the river"],
   },
   "songnisan-beopjusa": {
     name: "Songnisan & Beopjusa Temple",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "07:00–18:00",
-    galleryCaptions: ["The Palsangjeon wooden pagoda"],
   },
   guinsa: {
     name: "Guinsa Temple",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "05:00–19:00",
-    galleryCaptions: ["The temple stacked in the ravine"],
   },
   "cheongju-jikji": {
     name: "Cheongju Early Printing Museum",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "09:00–18:00 year-round; closed Mondays, 1 January, Seollal and Chuseok",
-    galleryCaptions: ["Movable metal type"],
   },
   "mancheonha-skywalk": {
     name: "Mancheonha Skywalk, Danyang",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "4,000 KRW; the zipline is a separate 30,000 KRW",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["The glass deck over the Namhan river bend"],
   },
   "gosu-cave": {
     name: "Gosu Cave, Danyang",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "11,000 KRW",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Formations inside Gosu cave"],
   },
   "chungju-lake-ferry": {
     name: "Chungju Lake & Sightseeing Ferry",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "12,000–20,000 KRW depending on route and pier (children from 8,000)",
     openingHours: "By sailing schedule, usually 2–4 a day",
-    galleryCaptions: ["The ferry between the cliffs of Chungju Lake"],
   },
   "chungju-jungangtap": {
     name: "Jungangtap Pagoda, Chungju",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "The park is open all day, year-round; the Chungju Museum and the Liquor Museum inside run 09:00–18:00",
-    galleryCaptions: ["Jungangtap pagoda beside the Namhan river"],
   },
   cheongnamdae: {
     name: "Cheongnamdae Presidential Villa",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "6,000 KRW (4,000 teens, 3,000 children); free for over-65s and under-7s",
     openingHours: "09:00–18:00 (to 17:00 in December–January), ticketing until 16:30; closed Mondays, 1 Jan, Seollal and Chuseok",
-    galleryCaptions: ["The lakeside garden at Cheongnamdae"],
   },
   sobaeksan: {
     name: "Sobaeksan National Park",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "A full day",
     ticket: "",
     openingHours: "The national park entry-time system applies: ascent opens at 04:00 (March–November) or 05:00 (December–February), and each section has its own turn-back time somewhere between 12:00 and 17:00. Check the trail-closure notices before setting out",
-    galleryCaptions: ["Royal azalea along the Sobaeksan ridge"],
   },
 };
 

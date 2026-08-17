@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:30–18:00",
-    galleryCaptions: ["The Janggyeong Panjeon woodblock hall"],
   },
   "tongyeong-dongpirang": {
     name: "Tongyeong & Dongpirang Village",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "The Mireuksan cable car is 17,000 KRW return (13,000 for ages 3–12); Dongpirang mural village is free",
     openingHours: "09:30–17:00 (cable car)",
-    galleryCaptions: ["Murals in Dongpirang village"],
   },
   "geoje-oedo": {
     name: "Oedo Botania, Geoje",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day including the ferry",
     ticket: "Around 38,000 KRW (ferry ~27,000 + island entry ~11,000); varies by harbour and operator",
     openingHours: "Ferry schedule, 08:00–17:00",
-    galleryCaptions: ["Terraced gardens on Oedo island"],
   },
   "jinju-fortress": {
     name: "Jinju Fortress & the Namgang Lantern Festival",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "2,000 KRW (1,000 teens, 600 children) between 09:00 and 18:00; outside those hours entry is free",
     openingHours: "05:00–23:00",
-    galleryCaptions: ["Chokseongnu pavilion above the Nam River"],
   },
   "namhae-daraengi": {
     name: "Daraengi Terraced Fields, Namhae",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["Terraces dropping to the sea"],
   },
   "gimhae-gaya-tombs": {
     name: "Daeseong-dong Gaya Tumuli, Gimhae",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free",
     openingHours: "09:00–18:00, last entry 17:30; closed Mondays, 1 January, Seollal and Chuseok",
-    galleryCaptions: ["The Daeseong-dong burial mounds"],
   },
   "jirisan-national-park": {
     name: "Jirisan National Park",
@@ -154,7 +148,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "A full day to three days",
     ticket: "",
     openingHours: "The national park entry-time system applies: ascent opens at 04:00 (March–November) or 05:00 (December–February), and each section has its own turn-back time somewhere between 12:00 and 17:00. Check the trail-closure notices before setting out",
-    galleryCaptions: ["The Jirisan ridge at dawn"],
   },
   "upo-wetland": {
     name: "Upo Wetland, Changnyeong",
@@ -176,7 +169,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "",
     openingHours: "The trails are open 24 hours; there are five routes, from 1 km (30 minutes) to 9.7 km (3 hours 30 minutes)",
-    galleryCaptions: ["Dawn mist over Upo"],
   },
   "jinhae-cherry-blossom": {
     name: "Jinhae Cherry Blossom",
@@ -198,7 +190,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Gyeonghwa station railway in blossom"],
   },
   "tongyeong-mireuksan": {
     name: "Mireuksan Cable Car, Tongyeong",
@@ -220,7 +211,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Cable car 17,000 KRW return (adult)",
     openingHours: "09:30–17:00 (varies by season)",
-    galleryCaptions: ["The Hallyeohaesang islands from the summit"],
   },
   "geoje-windy-hill": {
     name: "Windy Hill & Geoje Coast",
@@ -242,7 +232,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The windmill on Windy Hill"],
   },
   "namhae-german-village": {
     name: "German Village, Namhae",
@@ -264,7 +253,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "All day (museum 09:00–18:00)",
-    galleryCaptions: ["Red roofs above Namhae bay"],
   },
 };
 

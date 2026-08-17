@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。ミサの予定は門に掲示",
-    galleryCaptions: ["都心に立つ赤煉瓦の鐘塔", "大聖堂前の平和の聖母像"],
   },
   "saigon-central-post-office": {
     name: "サイゴン中央郵便局",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30分",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["中央ホールを渡る曲面の鋼ヴォールト", "壁に掛かる1892年の手描き地図"],
   },
   "saigon-opera-house": {
     name: "サイゴン・オペラハウス",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "料金は公演によって異なる",
     openingHours: "公表された公演日程に従う",
-    galleryCaptions: ["夜に灯る劇場の正面", "入口の上に彫られた女神像"],
   },
   "nguyen-hue-walking-street": {
     name: "グエンフエ通り",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "終日。週末は掲示された時間に車両通行止め",
-    galleryCaptions: ["夕暮れのグエンフエ通り", "夜のグエンフエ通り", "旧正月の花の道"],
   },
   "bach-dang-wharf": {
     name: "バクダン埠頭",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["トゥーティエムを望むバクダンの川辺", "バクダン埠頭から望むビテクスコ・タワー", "水際へ下りる公園の階段"],
   },
   "bitexco-tower": {
     name: "ビテクスコ・フィナンシャルタワー",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "展望台は約24万ドン（参考価格）",
     openingHours: "09:30 - 21:30",
-    galleryCaptions: ["ヘリポートが突き出たビテクスコ・タワー", "49階から見た一区"],
   },
   "war-remnants-museum": {
     name: "戦争証跡博物館",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "4万ドン（参考価格。窓口で確認を）",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["屋外に並ぶ航空機と戦車", "中庭に展示されたM107自走砲", "上階の記録写真の展示室"],
   },
   "tao-dan-park": {
     name: "タオダン公園",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["古木が影を落とす園内の小径", "早朝に吊るされた鳥籠の棚"],
   },
   "fine-arts-museum-hcm": {
     name: "ホーチミン市美術館",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "3万ドン（参考価格）",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["館内の明かり取りと階段", "フランス風の黄色い邸宅の正面"],
   },
   "bui-vien-street": {
     name: "ブイビエン通り",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "おおよそ18:00から明け方まで",
-    galleryCaptions: ["週末に車両を締め出したブイビエン通り", "車道まで出された卓と椅子"],
   },
   "landmark-81": {
     name: "ランドマーク81",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "展望台は約30万ドン（参考価格）",
     openingHours: "08:30 - 23:00",
-    galleryCaptions: ["サイゴンのスカイラインに抜きん出るランドマーク81", "街にそびえるランドマーク81", "展望台から見た夜の街"],
   },
   "jade-emperor-pagoda": {
     name: "玉皇殿",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["線香の煙が立ちこめる本堂", "寺の前で放生用に売られる陸亀と水亀", "十王殿の木のレリーフ"],
   },
   "saigon-zoo": {
     name: "サイゴン動植物園",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "6万ドン（参考価格。窓口で確認を）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["植物園の樹齢百年を超える木々", "サイゴン動植物園の入口", "敷地内の日陰の小径"],
   },
   "binh-tay-market": {
     name: "ビンタイ市場",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["市場の中庭に立つ時計塔", "市場の中に高く積まれた荷"],
   },
   "cho-lon-district": {
     name: "チョロン",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["チョロンの街路に並ぶ漢字の看板", "チョロン地区のアンドン市場", "歩道へ戸を開け放った漢方薬店"],
   },
   "giac-lam-pagoda": {
     name: "ザックラム寺",
@@ -336,7 +321,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分 - 1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["境内の磁器を嵌め込んだ仏塔", "寺の境内の菩提樹", "本堂の木彫像"],
   },
   "can-gio-mangrove": {
     name: "カンザーのマングローブ林",
@@ -357,7 +341,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "入場料と舟代は経路により別途",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["泥の上に張り出したマングローブの根", "マングローブの水路を進む舟"],
   },
 };
 

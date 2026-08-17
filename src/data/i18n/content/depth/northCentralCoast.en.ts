@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The calm bay facing Yen Island", "The casuarina path up to the grave"],
   },
   "thien-mu-pagoda": {
     name: "Thien Mu Pagoda",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["Phuoc Duyen tower above the Perfume River", "The great bell cast in 1710"],
   },
   "khai-dinh-tomb": {
     name: "Tomb of Khai Dinh",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "150,000₫",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The exterior and its dragon staircases", "Stone soldier statues in the tomb's courtyard", "Porcelain mosaic in Thien Dinh palace", "The rows of mandarin statues at the tomb", "The bronze statue of Emperor Khai Dinh"],
   },
 };
 

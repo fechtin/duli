@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "06:00 – 24:00（ナイトマーケット）",
-    galleryCaptions: [
-      "ベンタイン市場の南門",
-      "きらびやかなナイトマーケット",
-    ],
   },
   "vung-tau-bai-bien-tuong-chua": {
     name: "ブンタウのビーチ＆キリスト像",
@@ -41,13 +37,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "",
     openingHours: "キリスト像：07:00–17:00",
-    galleryCaptions: [
-      "賑わう黄金の砂浜のバックビーチ",
-      "ブンタウの海岸",
-      "小山の上のキリスト像",
-      "賑わうブンタウのビーチ",
-      "さくさくの名物バインコット",
-    ],
   },
   "con-dao": {
     name: "コンダオ",
@@ -67,11 +56,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "水の澄んだ手つかずのビーチ",
-      "コンダオ監獄の遺跡",
-      "霊験あらたかなハンズオン墓地",
-    ],
   },
   "cat-tien-national-park": {
     name: "カットティエン国立公園",
@@ -91,11 +75,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "60,000ドン",
     openingHours: "07:00–17:00",
-    galleryCaptions: [
-      "深い緑の原生林",
-      "黄金色の夕暮れ、湖面を漂う小舟",
-      "枯れ葉の絨毯で餌をついばむ野鶏",
-    ],
   },
   "thac-giang-dien": {
     name: "ザンディエンの滝",
@@ -115,11 +94,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "70,000ドン",
     openingHours: "07:00–17:30",
-    galleryCaptions: [
-      "幾段にも幅広く広がる滝",
-      "敷地内の色鮮やかな花畑",
-      "涼やかで緑のキャンプ芝生",
-    ],
   },
   "chua-ba-thien-hau-binh-duong": {
     name: "バー・ティエンハウ廟",
@@ -139,12 +113,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "05:00–18:00",
-    galleryCaptions: [
-      "陰陽瓦の屋根の古い廟",
-      "トゥーザウモットのバー・ティエンハウ廟",
-      "賑やかな女神の神輿行列",
-      "廟内に立ちのぼる線香の煙",
-    ],
   },
   "dai-nam-binh-duong": {
     name: "ダイナム観光地",
@@ -164,11 +132,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "150,000ドン",
     openingHours: "08:00–17:00",
-    galleryCaptions: [
-      "金箔を施したダイナム国寺",
-      "広大な人工の海",
-      "半野生のサファリ動物園",
-    ],
   },
   "bu-gia-map-national-park": {
     name: "ブザマップ国立公園",
@@ -188,11 +151,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "",
     openingHours: "07:00–16:30",
-    galleryCaptions: [
-      "深い緑の原生林",
-      "原生林の中の澄んだ渓流",
-      "ストゥエン族の銅鑼文化",
-    ],
   },
   "trang-co-bu-lach": {
     name: "ブーラックの草原",
@@ -212,12 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日〜1日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "森の只中の滑らかで青い草",
-      "ブーラックの草原へ続く道",
-      "雲を映す澄んだ湖",
-      "草原に降りる夕日",
-    ],
   },
   "nui-ba-den-tay-ninh": {
     name: "バーデン山",
@@ -237,11 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日〜1日",
     ticket: "350,000ドン（ロープウェイ）",
     openingHours: "06:00–22:00",
-    galleryCaptions: [
-      "湖畔の夕日に紫の影を落とすバーデン山",
-      "山頂の仏像",
-      "白い雲海の上にそびえ立つ仏像",
-    ],
   },
   "toa-thanh-cao-dai-tay-ninh": {
     name: "タイニン・カオダイ教総本山",
@@ -261,11 +208,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "06:00–18:00",
-    galleryCaptions: [
-      "色鮮やかなカオダイ教総本山",
-      "霊験あらたかな天眼のシンボル",
-      "白い装いで厳かに礼拝する信徒たち",
-    ],
   },
 };
 

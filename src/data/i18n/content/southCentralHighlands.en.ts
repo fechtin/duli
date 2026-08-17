@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "900,000 VND (Ba Na ticket)",
     openingHours: "08:00 – 22:00",
-    galleryCaptions: [
-      "The Golden Bridge among the clouds",
-      "The pair of hands holding the bridge",
-    ],
   },
   "hoi-an-ancient-town": {
     name: "Hoi An Ancient Town",
@@ -40,12 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day to 1 day",
     ticket: "120,000 VND",
     openingHours: "All day",
-    galleryCaptions: [
-      "Lanterns lighting the old town at night",
-      "Coconut shadows on a yellow wall as a woman in a conical hat passes by",
-      "Floating flower lanterns on the Hoai River",
-      "The ancient town by day",
-    ],
   },
   "da-lat-city": {
     name: "Da Lat",
@@ -64,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 days",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Cloud-hunting at dawn",
-      "Xuan Huong Lake",
-      "Pine hills in the mist",
-    ],
   },
   "nha-trang-beach": {
     name: "Nha Trang Beach",
@@ -87,11 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Sunrise over Nha Trang Bay",
-      "The softly curving white-sand beach",
-      "Coconut palms along the shore",
-    ],
   },
   "hon-mun-island": {
     name: "Hon Mun Island",
@@ -110,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "22,000 VND (entrance fee)",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "Brilliant coral reefs underwater",
-      "A panorama of the Nha Trang bay coastline",
-      "Crystal-clear water around the island",
-      "Snorkeling among the coral",
-    ],
   },
   "buon-don": {
     name: "Buon Don",
@@ -134,11 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000 VND",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "Bamboo suspension bridge over the Serepok River",
-      "Long stilt house of the Central Highlands",
-      "Gong night by the fire",
-    ],
   },
   "dray-nur-waterfall": {
     name: "Dray Nur Waterfall",
@@ -157,10 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "30,000 VND",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "A wall of water throwing up white spray",
-      "The majestic Serepok River",
-    ],
   },
   "mui-ne-sand-dunes": {
     name: "Mui Ne Sand Dunes",
@@ -179,11 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "A bustling fishing village with boats moored along the shore",
-      "The red sand of Mui Ne",
-      "Sandboarding atop the dunes",
-    ],
   },
   "qng-ly-son": {
     name: "Ly Son Island",
@@ -204,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days 1 night",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Thoi Loi peak overlooking the sea",
-      "To Vo Gate at sunset",
-      "Green garlic fields on basalt rock",
-    ],
   },
   "qng-sa-huynh": {
     name: "Sa Huynh Beach",
@@ -228,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "A crescent-shaped golden-sand beach",
-      "A long curving golden shore embracing a calm bay",
-      "A winding coastal road along the sandy shore",
-    ],
   },
   "bdi-ky-co-eo-gio": {
     name: "Ky Co - Eo Gio",
@@ -253,11 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "25,000 VND (Eo Gio)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "Ky Co beach with jade-green water",
-      "Eo Gio winding between the cliffs",
-      "The bougainvillea road along the Eo Gio coast",
-    ],
   },
   "bdi-thap-banh-it": {
     name: "Banh It Towers",
@@ -278,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "15,000 VND",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "The majestic Main Tower on the hill",
-      "The Saddle Tower with its unique curved roof",
-      "Ancient Cham towers rising amid green forest",
-    ],
   },
   "pye-ganh-da-dia": {
     name: "Ganh Da Dia",
@@ -303,11 +243,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "20,000 VND",
     openingHours: "06:30 - 18:00",
-    galleryCaptions: [
-      "Majestic stacked basalt columns",
-      "Waves crashing white against the reef",
-      "A full view of the reef reaching into the sea",
-    ],
   },
   "pye-bai-xep": {
     name: "Bai Xep",
@@ -327,11 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000 VND",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "A cactus-covered slope leaning down to a deserted beach",
-      "The sun rising behind a rocky headland as waves lap the sand",
-      "Black rocky reefs jutting into the sea",
-    ],
   },
   "ntn-vinh-vinh-hy": {
     name: "Vinh Hy Bay",
@@ -352,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Depends on the boat service",
     openingHours: "All day",
-    galleryCaptions: [
-      "Jade-green Vinh Hy Bay embracing the forest mountains",
-      "A small bay where hundreds of fishing boats are moored",
-      "The Nui Chua coastal road",
-    ],
   },
   "ntn-po-klong-garai": {
     name: "Po Klong Garai Towers",
@@ -377,11 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "20,000 VND",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The Main Tower on Trau Hill",
-      "The Cham people's Kate festival",
-      "A weathered Cham brick tower complex on a grassy hill",
-    ],
   },
   "ktm-nha-tho-go": {
     name: "Kon Tum Wooden Church",
@@ -402,11 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day (services per the church schedule)",
-    galleryCaptions: [
-      "The facade of the century-old wooden church",
-      "The wooden interior with stained-glass windows",
-      "The bell tower rising above the mountain town",
-    ],
   },
   "ktm-mang-den": {
     name: "Mang Den Tourist Area",
@@ -427,11 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days 1 night",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "A white waterfall tumbling into a green lake amid the forest",
-      "Pa Sy Falls white amid the forest",
-      "Placid Dak Ke Lake in the early morning",
-    ],
   },
   "gli-bien-ho-tnung": {
     name: "T'Nung Sea Lake",
@@ -452,12 +362,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "The deep-blue lake surface amid the great wilderness",
-      "A viewing pavilion jutting over the water",
-      "The water of T'Nung Sea Lake",
-      "Ancient pine rows leading to the lake",
-    ],
   },
   "gli-chua-minh-thanh": {
     name: "Minh Thanh Pagoda",
@@ -478,11 +382,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "06:00 - 20:00",
-    galleryCaptions: [
-      "The nine-story relic stupa",
-      "The majestic curved-roof main hall",
-      "A gilded Buddha statue in the grounds",
-    ],
   },
   "dno-cong-vien-dia-chat": {
     name: "Dak Nong UNESCO Global Geopark",
@@ -503,11 +402,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 days",
     ticket: "Depends on the site",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "A volcanic cave in basalt rock",
-      "An ancient crater amid green forest",
-      "Gong culture of the M'Nong people",
-    ],
   },
   "dno-thac-dray-sap": {
     name: "Dray Sap Waterfall",
@@ -528,11 +422,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "30,000 VND",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "Dray Sap Waterfall throwing up white spray",
-      "The misty haze around the foot of the falls",
-      "The primeval forest surrounding the falls",
-    ],
   },
 };
 

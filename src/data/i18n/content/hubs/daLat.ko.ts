@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["쑤언흐엉 호수의 아침 안개", "쑤언흐엉 호수를 바라보는 달랏", "호숫가를 따라 핀 매화벚꽃"],
   },
   "da-lat-market": {
     name: "달랏 시장",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "06:00 - 19:00. 야시장은 대략 17:00 - 23:00",
-    galleryCaptions: ["시장 안의 온대 농산물 좌판", "노란 불빛 아래의 저승 시장"],
   },
   "da-lat-railway-station": {
     name: "달랏역",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간. 짜이맛 열차까지 하면 1.5시간 추가",
     ticket: "역 입장료와 짜이맛 열차표는 별도",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["달랏역의 세 뾰족 지붕", "역 마당에 전시된 증기기관차"],
   },
   "crazy-house-dalat": {
     name: "크레이지 하우스",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "7만 동(참고 가격)",
     openingHours: "08:30 - 19:00",
-    galleryCaptions: ["거대한 나무 그루터기 모양의 건물", "바깥으로 감아 도는 나선 계단"],
   },
   "bao-dai-summer-palace": {
     name: "바오다이 여름 별궁",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "5만 동(참고 가격)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["제3별궁의 아르데코 정면", "원래 가구가 남아 있는 집무실"],
   },
   "da-lat-cathedral": {
     name: "달랏 대성당",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "미사 시간 외. 미사 일정은 정문에 게시",
-    galleryCaptions: ["분홍 종탑과 그 위의 수탉", "색유리를 지나 드는 빛"],
   },
   "domaine-de-marie-church": {
     name: "도맨 드 마리 성당",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "07:00 - 17:00, 미사 시간 외",
-    galleryCaptions: ["가파른 지붕과 흙빛 분홍 벽", "앞마당의 꽃밭"],
   },
   "linh-phuoc-pagoda": {
     name: "린프억 사원",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["마당의 도자기 박은 용", "도자기를 박은 칠층 종루"],
   },
   "tuyen-lam-lake": {
     name: "뚜옌럼 호수",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "케이블카와 뱃삯 별도",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["뚜옌럼 호수 관광지구 관리동", "뚜옌럼 호수의 아침 안개", "솔 언덕 사이로 파고든 후미"],
   },
   "truc-lam-monastery": {
     name: "쭉럼 선원",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "",
     openingHours: "05:00 - 21:00. 내원은 별도 시간",
-    galleryCaptions: ["뚜옌럼 호수를 내려다보는 선원", "밖에서 본 쭉럼 선원", "솔숲 위를 지나는 케이블카"],
   },
   "valley-of-love": {
     name: "사랑의 계곡",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "약 25만 동(참고 가격, 여러 등급)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["다티엔 호수로 내려가는 솔 비탈", "계곡의 다듬은 꽃밭"],
   },
   "pongour-waterfall": {
     name: "퐁구르 폭포",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "이동 포함 반나절",
     ticket: "약 5만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["퐁구르의 일곱 단 계단 바위", "이끼 낀 바위를 덮고 흐르는 물"],
   },
   "elephant-waterfall-dalat": {
     name: "코끼리 폭포",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "약 3만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["바위 협곡으로 떨어지는 코끼리 폭포", "바닥으로 내려가는 돌계단"],
   },
   "cau-dat-tea-hill": {
     name: "꺼우덧 차밭",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "구역에 따라 다르며 약 5만 동",
     openingHours: "대략 05:00 - 17:00",
-    galleryCaptions: ["동틀 무렵 차밭 위의 운해", "비탈을 따라 평평하게 다듬은 차 이랑"],
   },
   "me-linh-coffee-garden": {
     name: "메린 커피 가든",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "카페 영업시간에 따름. 대체로 아침부터 늦은 오후까지",
-    galleryCaptions: ["커피 골짜기를 내려다보는 계단식 마당", "동틀 무렵 골짜기를 지나는 구름"],
   },
   "clay-tunnel-dalat": {
     name: "달랏 점토 터널",
@@ -336,7 +321,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "약 8만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["터널을 따라 이어지는 붉은 점토 부조", "흙으로 다시 지은 달랏역"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Egg Stone Beach below Ghenh Rang", "Han Mac Tu's grave facing the sea"],
   },
   "phu-quy-island": {
     name: "Phu Quy Island",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 days",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["The black cliffs at Ganh Hang", "Linh Son Pagoda on Phu Quy island", "The Infinity Pool facing open sea", "Fish pens around the island"],
   },
   "po-sah-inu": {
     name: "Po Sah Inu Towers",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "15,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The red brick towers on Ba Nai hill", "Cham Kate ritual at the towers"],
   },
   "marble-mountains": {
     name: "Marble Mountains",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "40,000₫",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The Da Nang coast seen from Thuy Son", "The car park at the foot of the Marble Mountains", "Tam Thai Pagoda atop Thuy Son"],
   },
   "son-tra-peninsula": {
     name: "Son Tra Peninsula",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The coast road above the sea", "Da Nang and the Son Tra peninsula from above", "A red-shanked douc in Son Tra forest", "The Guanyin statue at Linh Ung Pagoda"],
   },
   "ponagar-towers": {
     name: "Po Nagar Towers",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "30,000₫",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The north-east tower from the ritual terrace", "The statue of Po Nagar inside the tower"],
   },
   "nui-chua-national-park": {
     name: "Nui Chua National Park",
@@ -151,7 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The coast road between Phan Rang and Cam Ranh", "Fossil coral terraces at Hang Rai", "Dry forest and exposed granite"],
   },
   "mui-dien": {
     name: "Cape Dien",
@@ -172,7 +165,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000₫",
     openingHours: "05:00 - 18:00",
-    galleryCaptions: ["The view from Cape Dien lighthouse", "Mui Dien lighthouse at sunrise", "The crescent of Bai Mon below the cape"],
   },
   "my-son-sanctuary": {
     name: "My Son Sanctuary",
@@ -194,7 +186,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "150,000₫",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["Cham tower groups in the My Son valley", "Cham brickwork with no visible mortar", "Temple E7 at the My Son sanctuary", "Cham dance performed at the site"],
   },
   "cu-lao-cham": {
     name: "Cham Islands",
@@ -216,7 +207,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "One day or one night",
     ticket: "70,000₫ (entry fee)",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["Clear water and coral around Hon Lao", "The Cham Islands marine park", "Hai Tang Pagoda, built in the 18th century"],
   },
   "thien-an-mountain": {
     name: "Thien An Mountain",
@@ -237,7 +227,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Thien An Pagoda on the flat summit", "The My Tra–My Khe road along the Tra Khuc river", "The Tra Khuc river seen from the top"],
   },
 };
 

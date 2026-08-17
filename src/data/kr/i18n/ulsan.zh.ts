@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["通往大王岩的红色铁桥"],
   },
   "taehwagang-bamboo": {
     name: "太和江十里竹林",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["竹林中的步道"],
   },
   ganjeolgot: {
     name: "艮绝岬",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["艮绝岬灯塔"],
   },
   "bangudae-petroglyphs": {
     name: "盘龟台岩刻画",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "岩刻画博物馆周二至周日09:00–18:00，周一与1月1日休馆；户外观景台可自由前往",
-    galleryCaptions: ["刻著鲸鱼的岩壁"],
   },
   "jangsaengpo-whale-village": {
     name: "长生浦鲸鱼文化村",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "鲸鱼文化村3,000韩元，鲸鱼博物馆3,000韩元（分开购票）",
     openingHours: "09:00–18:00，周一休馆",
-    galleryCaptions: ["重建的捕鲸聚落"],
   },
   "ganwoljae-silver-grass": {
     name: "涧月岭与岭南阿尔卑斯",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全日开放（建议白天上山）",
-    galleryCaptions: ["涧月岭鞍部的芒草"],
   },
   "ulsan-bridge-observatory": {
     name: "蔚山大桥展望台",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "免费",
     openingHours: "09:00–21:00，最后入场20:30；每月第二与第四个周一及春节、中秋当日休馆",
-    galleryCaptions: ["夜里的蔚山大桥与工业港湾"],
   },
   "jujeon-pebble-beach": {
     name: "注田砾石海滩",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["注田的黑色砾石"],
   },
 };
 

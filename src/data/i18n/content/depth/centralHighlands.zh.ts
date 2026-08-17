@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天或一晚",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["勒湖上的晨雾", "墨侬族的独木舟"],
   },
   "ta-dung-national-park": {
     name: "达栋国家公园",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一天",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["散落在达栋湖上的岛屿", "破晓时覆盖湖面的低云"],
   },
   "chu-dang-ya": {
     name: "朱当亚火山",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["火山口内的同心圆田块", "十一月铺满山坡的野葵花"],
   },
   "kon-klor-bridge": {
     name: "昆克罗吊桥",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["跨越达布拉河的橙色吊桥", "桥头的昆克罗共屋"],
   },
   langbiang: {
     name: "浪平山",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "50,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["云海之上的双峰", "从雷达峰俯瞰大叻谷地"],
   },
   "datanla-waterfall": {
     name: "达坦拉瀑布",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "50,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["跌落松林间的多级瀑布", "达坦拉瀑布步道旁的摊贩", "沿坡而下的滑道"],
   },
 };
 

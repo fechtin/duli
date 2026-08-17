@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["강변의 한빛탑"],
   },
   gyeryongsan: {
     name: "계룡산국립공원",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "국립공원 입산시간지정제가 적용된다. 입산은 3~11월 04:00, 12~2월 05:00부터 가능하며 구간마다 12:00~17:00 사이로 통제시간이 다르다. 출발 전 통제 정보를 확인하자",
-    galleryCaptions: ["계룡산 능선"],
   },
   "daejeon-jungang-market": {
     name: "대전 중앙시장",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "공통 운영시간이 없다. 중부권 최대 전통시장으로 점포마다 시간이 다르고 대체로 낮에 영업하므로, 특정 가게를 찾는다면 미리 확인하자",
-    galleryCaptions: ["중앙시장 내부"],
   },
   "jangtaesan-metasequoia": {
     name: "장태산 메타세쿼이아 숲",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "숙박·회의실을 제외한 입장료와 주차료 모두 무료",
     openingHours: "09:00~18:00(입장 마감 17:00), 연중무휴. 스카이타워는 정밀 안전점검으로 임시 폐쇄 중",
-    galleryCaptions: ["메타세쿼이아 수관 사이의 보행로"],
   },
   "daecheongho-observatory": {
     name: "대청호와 호반도로",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["대청호의 새벽 물안개"],
   },
   "daejeon-skyroad": {
     name: "은행동과 스카이로드",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "거리는 상시 개방, 스카이로드 영상은 19:00~23:00(4~9월), 18:00~22:00(10~3월)에 상영된다",
-    galleryCaptions: ["은행동 거리 위의 LED 천장"],
   },
   "ppuri-park": {
     name: "뿌리공원",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "공원은 06:00~22:00(3~10월), 07:00~21:00(11~2월). 한국족보박물관은 09:00~18:00, 월요일 휴관",
-    galleryCaptions: ["문중의 문장을 새긴 유래비"],
   },
 };
 

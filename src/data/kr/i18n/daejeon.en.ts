@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["Hanbit Tower beside the river"],
   },
   gyeryongsan: {
     name: "Gyeryongsan National Park",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "The national park entry-time system applies: ascent opens at 04:00 (March–November) or 05:00 (December–February), and each section has its own turn-back time somewhere between 12:00 and 17:00. Check the trail-closure notices before setting out",
-    galleryCaptions: ["The Gyeryongsan ridge"],
   },
   "daejeon-jungang-market": {
     name: "Daejeon Jungang Market",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "There are no shared hours — it is the largest market in the central region and each stall sets its own, most trading by day; ask ahead if you are after a particular shop",
-    galleryCaptions: ["Stalls inside Jungang Market"],
   },
   "jangtaesan-metasequoia": {
     name: "Jangtaesan Metasequoia Forest",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Free, parking included (lodging and meeting rooms excepted)",
     openingHours: "09:00–18:00, last entry 17:00, open year-round. The Skytower is temporarily closed for a safety inspection",
-    galleryCaptions: ["The walkway through the metasequoia canopy"],
   },
   "daecheongho-observatory": {
     name: "Daecheongho Lake & Lakeside Road",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Dawn mist on Daecheong lake"],
   },
   "daejeon-skyroad": {
     name: "Eunhaeng-dong & Sky Road",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "The street is open all day; the Sky Road screen runs 19:00–23:00 (April–September) and 18:00–22:00 (October–March)",
-    galleryCaptions: ["The LED canopy over Eunhaeng-dong"],
   },
   "ppuri-park": {
     name: "Ppuri Park (Roots Park)",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "The park runs 06:00–22:00 (March–October) and 07:00–21:00 (November–February); the genealogy museum inside is 09:00–18:00, closed Mondays",
-    galleryCaptions: ["Stone steles carved with clan crests"],
   },
 };
 

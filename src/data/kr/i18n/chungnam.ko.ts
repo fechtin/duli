@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "1,500원(바로 옆 국립공주박물관은 무료)",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["금강을 내려다보는 공산성 성벽"],
   },
   "buyeo-busosanseong": {
     name: "부여 부소산성과 궁남지",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "2,000원, 어린이·노인·지역주민 할인",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["궁남지 가운데의 정자"],
   },
   haemieupseong: {
     name: "서산 해미읍성",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분~2시간",
     ticket: "입장료와 주차 모두 무료",
     openingHours: "05:00~21:00(3~10월), 06:00~19:00(11~2월), 연중무휴",
-    galleryCaptions: ["해미읍성 성벽"],
   },
   "daecheon-beach": {
     name: "보령 대천해수욕장",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["대천해변의 머드축제"],
   },
   sudeoksa: {
     name: "수덕사",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["단청하지 않은 대웅전"],
   },
   "sinduri-dunes": {
     name: "태안 신두리 해안사구",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료",
     openingHours: "09:00~18:00(11~2월은 17:00까지), 월요일 휴관",
-    galleryCaptions: ["신두리의 해안 사구"],
   },
   "oeam-folk-village": {
     name: "아산 외암마을",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "2,000원(단체 1,000원)",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["외암마을 마당을 지나는 물길"],
   },
   magoksa: {
     name: "공주 마곡사",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["마곡사의 개울을 잇는 다리"],
   },
   "seosan-maae-buddha": {
     name: "서산 마애여래삼존상",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["바위에 새긴 삼존불"],
   },
   "independence-hall": {
     name: "천안 독립기념관",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "2008년부터 무료",
     openingHours: "09:30~18:00(3~10월), 09:30~17:00(11~2월, 입장 마감 16:00), 월요일 휴관",
-    galleryCaptions: ["독립기념관의 겨레의집"],
   },
 };
 

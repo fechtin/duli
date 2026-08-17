@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "06:00 – 24:00 (night market)",
-    galleryCaptions: [
-      "The South Gate of Ben Thanh Market",
-      "The dazzling night market",
-    ],
   },
   "vung-tau-bai-bien-tuong-chua": {
     name: "Vung Tau Beach & Christ the King Statue",
@@ -41,13 +37,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "",
     openingHours: "Christ statue: 07:00–17:00",
-    galleryCaptions: [
-      "Golden-sand Back Beach, lively and crowded",
-      "The Vung Tau shoreline",
-      "Christ the King statue on Small Mountain",
-      "A busy stretch of Vung Tau beach",
-      "Crispy banh khot, the local specialty",
-    ],
   },
   "con-dao": {
     name: "Con Dao",
@@ -67,11 +56,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 days",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "A pristine beach with clear water",
-      "Con Dao Prison relic",
-      "The sacred Hang Duong Cemetery",
-    ],
   },
   "cat-tien-national-park": {
     name: "Cat Tien National Park",
@@ -91,11 +75,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "60,000 VND",
     openingHours: "07:00–17:00",
-    galleryCaptions: [
-      "Deep-green primary forest",
-      "Golden sunset, a small boat drifting on the lake",
-      "A jungle fowl foraging on the carpet of dry leaves",
-    ],
   },
   "thac-giang-dien": {
     name: "Giang Dien Waterfall",
@@ -115,11 +94,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "70,000 VND",
     openingHours: "07:00–17:30",
-    galleryCaptions: [
-      "The broad, multi-tiered waterfall",
-      "Vivid flower gardens within the grounds",
-      "Cool green camping lawns",
-    ],
   },
   "chua-ba-thien-hau-binh-duong": {
     name: "Ba Thien Hau Temple",
@@ -139,12 +113,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "05:00–18:00",
-    galleryCaptions: [
-      "The ancient temple with yin-yang tiled roofs",
-      "Ba Thien Hau Temple in Thu Dau Mot",
-      "The lively palanquin procession of the Lady",
-      "Incense smoke curling inside the temple",
-    ],
   },
   "dai-nam-binh-duong": {
     name: "Dai Nam Tourist Park",
@@ -164,11 +132,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "150,000 VND",
     openingHours: "08:00–17:00",
-    galleryCaptions: [
-      "The gold-gilded Dai Nam National Temple",
-      "The vast artificial sea",
-      "The semi-wild safari zoo",
-    ],
   },
   "bu-gia-map-national-park": {
     name: "Bu Gia Map National Park",
@@ -188,11 +151,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "",
     openingHours: "07:00–16:30",
-    galleryCaptions: [
-      "Deep-green primary forest",
-      "A clear stream in the ancient forest",
-      "S'tieng gong culture",
-    ],
   },
   "trang-co-bu-lach": {
     name: "Bu Lach Grasslands",
@@ -212,12 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day to 1 day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Smooth green grass amid the forest",
-      "The road into the Bu Lach grasslands",
-      "A clear lake mirroring the clouds",
-      "Sunset descending over the grasslands",
-    ],
   },
   "nui-ba-den-tay-ninh": {
     name: "Ba Den Mountain",
@@ -237,11 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day to 1 day",
     ticket: "350,000 VND (cable car)",
     openingHours: "06:00–22:00",
-    galleryCaptions: [
-      "Ba Den Mountain casting a purple silhouette at lakeside sunset",
-      "The Buddha statue at the mountain summit",
-      "The Buddha statue rising amid a white sea of cloud",
-    ],
   },
   "toa-thanh-cao-dai-tay-ninh": {
     name: "Cao Dai Holy See of Tay Ninh",
@@ -261,11 +208,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "06:00–18:00",
-    galleryCaptions: [
-      "The vividly colorful Cao Dai Holy See",
-      "The sacred Divine Eye symbol",
-      "Followers in white performing the solemn rite",
-    ],
   },
 };
 

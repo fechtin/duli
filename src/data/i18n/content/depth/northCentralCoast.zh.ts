@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["面向燕岛的平静海湾", "通往墓地的木麻黄小路"],
   },
   "thien-mu-pagoda": {
     name: "天姥寺",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["临香江而立的福缘塔", "1710年铸造的大洪钟"],
   },
   "khai-dinh-tomb": {
     name: "启定陵",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "150,000越南盾",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["带龙阶的陵墓外观", "启定陵朝拜庭院的石兵像", "天定宫内的瓷片镶嵌", "陵中排列的文武官石像", "启定帝的青铜坐像"],
   },
 };
 

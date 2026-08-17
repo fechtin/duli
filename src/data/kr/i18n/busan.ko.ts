@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~4시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["동백섬에서 본 해운대 해변"],
   },
   "gamcheon-culture-village": {
     name: "감천문화마을",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "마을은 상시 개방, 안내센터와 하늘마루 전망대는 09:00~16:00",
-    galleryCaptions: ["비탈의 알록달록한 집들"],
   },
   "jagalchi-market": {
     name: "자갈치시장",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분~2시간",
     ticket: "",
     openingHours: "05:00~22:00, 매월 첫째·셋째 화요일 휴무",
-    galleryCaptions: ["자갈치시장의 활어 좌판"],
   },
   "haedong-yonggungsa": {
     name: "해동용궁사",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "매일 04:30~19:00",
-    galleryCaptions: ["바위 벼랑 위의 사찰"],
   },
   "gwangalli-beach": {
     name: "광안리해수욕장과 광안대교",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["해변에서 본 광안대교"],
   },
   beomeosa: {
     name: "범어사",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "이른 아침부터 해질 무렵까지 개방, 입장 무료",
-    galleryCaptions: ["범어사 대웅전"],
   },
   taejongdae: {
     name: "태종대",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "공원 입장 무료, 다누비열차는 순환 1회 4,000원(1구간 2,000원)",
     openingHours: "05:00~24:00(다누비열차 09:00~18:00)",
-    galleryCaptions: ["태종대 절벽 위의 등대"],
   },
   "huinnyeoul-culture-village": {
     name: "흰여울문화마을",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["마을 아래 해안 산책로"],
   },
   "oryukdo-skywalk": {
     name: "오륙도 스카이워크",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "무료",
     openingHours: "09:00~19:00(6/1~9/30), 09:00~18:00(10/1~5/31), 마감 10분 전 입장 종료, 월요일 휴무",
-    galleryCaptions: ["오륙도를 내려다보는 유리 바닥"],
   },
   "igidae-coastal-walk": {
     name: "이기대 해안산책로",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "",
     openingHours: "상시(낮에 걷기를 권함)",
-    galleryCaptions: ["해운대를 마주 보는 산책로"],
   },
   "yongdusan-busan-tower": {
     name: "용두산공원과 부산타워",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "공원은 무료, 전망대는 현장 약 12,000원이며 온라인 예매가 보통 더 싸다",
     openingHours: "공원은 상시, 타워는 10:00~23:00",
-    galleryCaptions: ["타워에서 본 부산항"],
   },
   "bosu-dong-book-street": {
     name: "보수동 책방골목",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "09:00~21:00, 매월 첫째·셋째 일요일과 설날·추석 연휴에 휴무",
-    galleryCaptions: ["보수동 골목의 책 벽"],
   },
   "songdo-cable-car": {
     name: "송도해수욕장과 해상케이블카",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "케이블카 왕복 약 17,000원, 크리스탈 캐빈 22,000원",
     openingHours: "해변은 상시, 케이블카는 09:00~22:00",
-    galleryCaptions: ["송도만을 가로지르는 케이블카"],
   },
   "busan-cinema-center": {
     name: "영화의전당",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "광장 무료",
     openingHours: "광장은 상시, 상영관은 상영 일정에 따름",
-    galleryCaptions: ["밤의 LED 지붕"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["河口礁岩上的定球祠", "从祠院看到的日落"],
   },
   "phu-quoc-night-market": {
     name: "富国夜市",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 23:00",
-    galleryCaptions: ["夜市里制作炒酸奶卷", "排档门口的活海鲜水箱", "夜市的鲜鱼摊", "富国鱼露与胡椒摊"],
   },
   "hon-thom-cable-car": {
     name: "香岛缆车",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "缆车往返约35万越南盾（参考价）",
     openingHours: "约08:00 - 17:30，随季节调整",
-    galleryCaptions: ["矗立海中的香岛缆车塔柱", "跨海滑行的缆车轿厢", "从缆车上俯瞰的水上渔村"],
   },
   "phu-quoc-prison": {
     name: "富国监狱",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["层层铁丝网后的监舍", "复原的铁丝网虎笼"],
   },
   "ham-ninh-fishing-village": {
     name: "咸宁渔村",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["咸宁伸向海中的木栈桥", "退潮后露出的滩涂"],
   },
   "suoi-tranh-waterfall": {
     name: "争溪瀑布",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "约2万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["树冠下漫过岩石的溪水", "溪床上的水潭"],
   },
   "ganh-dau-cape": {
     name: "岸油角",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["从岸油角望见的柬埔寨海岸", "岬角的礁石与清水"],
   },
   "vinwonders-phu-quoc": {
     name: "富国珍珠乐园",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "门票约88万越南盾（参考价，有与动物园的联票）",
     openingHours: "约09:00 - 20:00，随季节调整",
-    galleryCaptions: ["园内的一处主题区", "隔壁的半野放动物园"],
   },
   "ha-tien-town": {
     name: "河仙",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["泰国湾边的河仙城", "河仙的海滩", "平山丘上的鄚氏家族墓"],
   },
   "mui-nai-beach": {
     name: "鹿岬海滩",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3小时",
     ticket: "约2万越南盾（参考价）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["落进泰国湾的太阳", "灯塔岬下的褐色沙滩"],
   },
 };
 

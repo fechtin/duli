@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "거리는 상시 개방, 음식점은 대체로 11:00~21:00",
-    galleryCaptions: ["차이나타운 패루"],
   },
   "songdo-central-park": {
     name: "송도 센트럴파크",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["빌딩 사이를 흐르는 송도의 수로"],
   },
   "ganghwa-dolmen": {
     name: "강화 고인돌 유적",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["들판의 부근리 고인돌"],
   },
   wolmido: {
     name: "월미도",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["월미도 해안 산책로"],
   },
   jeondeungsa: {
     name: "전등사(강화)",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["대웅전과 처마를 떠받친 나부상"],
   },
   "ganghwa-peace-observatory": {
     name: "강화평화전망대",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "2,500원(청소년·군인 1,700원, 어린이 1,000원), 망원경은 2분에 500원",
     openingHours: "09:00~18:00, 월요일 휴관",
-    galleryCaptions: ["하구 건너로 보이는 북한 땅"],
   },
   muuido: {
     name: "무의도와 하나개해변",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "해상관광탐방로는 무료·연중 개방, 자연휴양림은 1,000원, 하나개해수욕장은 별도 요금",
     openingHours: "상시",
-    galleryCaptions: ["하나개해변의 나무 원두막"],
   },
   "songwol-fairy-tale-village": {
     name: "송월동 동화마을",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["동화 벽화가 그려진 골목"],
   },
   "incheon-open-port-street": {
     name: "인천 개항장 거리",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "거리는 상시 개방, 박물관은 09:00~18:00. 해마다 열리는 '개항장 문화재 야행' 기간에는 문화재를 밤까지 개방한다",
-    galleryCaptions: ["두 조계를 가르는 경계계단"],
   },
   "sorae-wetland-park": {
     name: "소래습지생태공원",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["붉은 칠면초 사이의 풍차"],
   },
 };
 

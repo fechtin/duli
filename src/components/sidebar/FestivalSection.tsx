@@ -4,6 +4,7 @@ import { krFestivals } from "@/data/kr/living";
 import { krFestivalName, krFestivalDescription } from "@/data/kr/living-i18n";
 import { destinationsKr } from "@/data/kr";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { thumbSeedFor } from "@/lib/media/gallery";
 import { useI18n } from "@/lib/i18n";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { localizeFestivalName, localizeFestivalDescription } from "@/lib/living/livingI18n";
@@ -32,7 +33,7 @@ export function FestivalSection() {
   const seedFor = (f: FestivalEntry) => {
     if (country !== "kr") return calendarSeed(f.destinationIds[0] ?? f.id);
     const d = destinationsKr.find((x) => x.id === f.destinationIds[0]);
-    return d?.gallery?.[0]?.seed ?? f.destinationIds[0] ?? f.id;
+    return d ? thumbSeedFor(d.id) : (f.destinationIds[0] ?? f.id);
   };
   if (festivals.length === 0) return null;
 

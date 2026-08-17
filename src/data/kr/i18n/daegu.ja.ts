@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "昼の市場は09:00〜18:00（店により異なる）、夜市は金・土19:00〜23:30、日曜19:00〜22:00のみ",
-    galleryCaptions: ["西門市場の夜市"],
   },
   "palgongsan-gatbawi": {
     name: "八公山 冠岩薬師如来（カッパウィ）",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["山頂のカッパウィ石仏"],
   },
   "kim-gwang-seok-street": {
     name: "キム・グァンソク通り",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["キム・グァンソク通りの壁画"],
   },
   "apsan-park": {
     name: "前山公園",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "ケーブルカー往復14,000ウォン（片道10,000）、公園は無料",
     openingHours: "10:30〜18:00（ケーブルカー）",
-    galleryCaptions: ["前山展望台から見た大邱"],
   },
   "daegu-yangnyeongsi": {
     name: "大邱薬令市",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "博物館は無料",
     openingHours: "薬令市は日中に開き、博物館は09:00〜18:00（最終入場17:30）、月曜と1月1日・旧正月・秋夕は休館",
-    galleryCaptions: ["店先に干された薬材"],
   },
   "daegu-modern-alley": {
     name: "大邱近代路地",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "路地は終日開放。青蘿の丘の宣教師住宅3棟は博物館整備工事のため休館中で、外観のみ見られる",
-    galleryCaptions: ["青蘿の丘の三・一階段"],
   },
   "bullo-tumuli": {
     name: "不老洞古墳群",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["夕日を受けた草の古墳"],
   },
   "biseulsan-azalea": {
     name: "琵瑟山のツツジ群落",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "山は日中開放。ツツジは4月初めに咲き始め4月20日前後が見頃で、祭りは4月中旬。主要な2日間は08:30〜17:30に5〜10分間隔でシャトルバスが運行する",
-    galleryCaptions: ["満開のツツジ高原"],
   },
   "daegu-arboretum": {
     name: "大邱樹木園",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "",
     openingHours: "09:00〜18:00（冬は17:00まで）、月曜休園",
-    galleryCaptions: ["秋の菊の庭"],
   },
 };
 

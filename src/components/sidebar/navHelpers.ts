@@ -4,6 +4,14 @@ import { krHeroIds, krHiddenGemIds, krSeasonalCalendar } from "@/data/kr/living"
 import { krSeasonalState } from "@/data/kr/living-i18n";
 import seasonalCalendar from "@/data/living/seasonal-calendar.json";
 import { localizeSeasonalState } from "@/lib/living/livingI18n";
+import {
+  CALENDAR_DESTINATION,
+  CALENDAR_PROVINCE,
+  CALENDAR_SEED_OVERRIDES,
+  HERO_PLACES,
+  type HeroPlace,
+} from "@/lib/living/calendarJoin";
+import { thumbSeedFor } from "@/lib/media/gallery";
 import type { Locale } from "@/lib/i18n";
 import type { CountryCode, Destination } from "@/lib/types";
 import { useContentStore } from "@/lib/store/useContentStore";
@@ -16,7 +24,6 @@ import { useUIStore } from "@/lib/store/useUIStore";
  * (which is what the Vietnam calendars, written first, still use).
  */
 const krById = new Map<string, Destination>(destinationsKr.map((d) => [d.id, d]));
-const seedOf = (d: Destination) => d.gallery?.[0]?.seed ?? d.id;
 
 /**
  * Display name for a Korean destination. The authoring data is Vietnamese, so prefer the
@@ -30,32 +37,7 @@ const krSummary = (d: Destination) =>
 /** Translate fn shape (matches i18n `t`) so these non-hook helpers stay hook-free. */
 type TFn = (key: string, params?: Record<string, string | number>) => string;
 
-/**
- * A curated hero place: reliable photo seed + coordinates for the daily Hero Banner.
- * Display name + subtitle are resolved from the dictionary (`place.<id>` / `hero.subtitle.<id>`).
- */
-export interface HeroPlace {
-  id: string;
-  /** image-manifest seed that is known to have a real photo. */
-  seed: string;
-  lng: number;
-  lat: number;
-  /** Set when the copy comes from the authoring data instead of the dictionary (Korea). */
-  name?: string;
-  subtitle?: string;
-}
-
-// Rotated daily. Every seed here is verified to resolve to a real photo in the manifest,
-// so the hero never falls back to a gradient (027 §Hero Image — "bắt buộc").
-export const HERO_PLACES: HeroPlace[] = [
-  { id: "sa-pa", seed: "sapa-1", lng: 103.844, lat: 22.336 },
-  { id: "ha-long", seed: "halong-1", lng: 107.078, lat: 20.91 },
-  { id: "da-lat", seed: "dalat-1", lng: 108.458, lat: 11.94 },
-  { id: "hue", seed: "hue-1", lng: 107.59, lat: 16.463 },
-  { id: "golden-bridge", seed: "goldenbridge-1", lng: 108.0, lat: 15.995 },
-  { id: "mu-cang-chai", seed: "mu-cang-chai-terraces-1", lng: 104.15, lat: 21.71 },
-  { id: "ban-gioc", seed: "ban-gioc-waterfall-1", lng: 106.72, lat: 22.855 },
-];
+export { HERO_PLACES, type HeroPlace };
 
 const dayOfYear = () =>
   Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
@@ -66,75 +48,30 @@ export function heroOfTheDay(country: CountryCode = "vn"): HeroPlace {
   if (country === "kr") {
     const ids = krHeroIds.filter((id) => krById.has(id));
     const d = krById.get(ids[doy % ids.length])!;
-    return { id: d.id, seed: seedOf(d), lng: d.lng, lat: d.lat, name: krName(d), subtitle: krSummary(d) };
+    return {
+      id: d.id,
+      seed: thumbSeedFor(d.id),
+      lng: d.lng,
+      lat: d.lat,
+      name: krName(d),
+      subtitle: krSummary(d),
+    };
   }
   return HERO_PLACES[doy % HERO_PLACES.length];
 }
 
 /**
- * The living calendars (seasonal/festival/flower) name places in their own id namespace, so
- * `sapa-terraces` and friends have no entry in the authoring data. Unjoined, a card could only
- * ever move the camera — `selectDestination` never fired, so the detail panel stayed shut.
- * This table is that join: calendar id → the real destination it names.
+ * The photo for a living-calendar card, DERIVED from the same table that decides where the card
+ * navigates (`CALENDAR_DESTINATION` in `lib/living/calendarJoin`).
  *
- * `navHelpers.test.ts` fails if an id here stops resolving, or if a new calendar id lands with
- * no home: an unmapped id falls through to `reset()`, which silently zooms the map back out.
+ * It used to be a second hand-kept table, and that is the whole bug: `ha-giang-loop` was in the
+ * navigation table and missing from the photo table, so the card opened Đèo Mã Pì Lèng — a place
+ * with eight photos — under a blank gradient. Nobody can forget to fill in a table that is
+ * computed. What stays hand-written is only deliberate disagreement, and `check:photos` verifies
+ * every entry of it still resolves.
  */
-const CALENDAR_DESTINATION: Record<string, string> = {
-  "cat-ba-island": "hp-cat-ba-island",
-  "da-nang-coast": "my-khe-beach",
-  "ha-giang-loop": "ma-pi-leng-pass",
-  "ha-noi-old-quarter": "old-quarter-hanoi",
-  "hoi-an-old-town": "hoi-an-ancient-town",
-  "nha-trang-coast": "nha-trang-beach",
-  "ninh-binh-trang-an": "trang-an",
-  // Chùa Hương in Hà Nội — NOT `chua-huong-tich`, a different pagoda 230km south in Hà Tĩnh.
-  "perfume-pagoda": "chua-huong",
-  // The Katê entry names the tower the festival is actually held at.
-  "phan-rang-ninh-thuan": "ntn-po-klong-garai",
-  "phan-thiet-coast": "mui-ne-sand-dunes",
-  "phong-nha-caves": "phong-nha-cave",
-  "phu-yen-coast": "pye-ganh-da-dia",
-  "sapa-terraces": "sa-pa-town",
-};
-
-/**
- * Calendar ids that name a whole city rather than a place. Their seasonal state is city-wide
- * weather ("mùa mưa chiều, sáng nắng đẹp"), so the province panel is the honest target —
- * promoting one landmark to stand for the city would put the wrong subject on screen.
- */
-const CALENDAR_PROVINCE: Record<string, string> = {
-  "ho-chi-minh-city": "ho-chi-minh",
-};
-
-// A hand-kept coordinate table used to live here as a third fallback. It is gone: every living
-// id now reaches a destination or a province, and a table that only moves the camera is exactly
-// what shadowed `selectDestination` in the first place. A new calendar id belongs in one of the
-// two maps above — or needs a destination authored for it, which is what `perfume-pagoda` got.
-
-// Verified image-manifest seeds for living-calendar ids (their own id namespace has no photos).
-// Ids omitted here have no correct Commons photo yet → the card keeps the clean gradient.
-const CALENDAR_SEEDS: Record<string, string> = {
-  "cat-ba-island": "hp-cat-ba-island-1",
-  "da-lat-city": "dalat-1",
-  "da-nang-coast": "goldenbridge-1",
-  "ha-long-bay": "halong-1",
-  "hoi-an-old-town": "hoian-1",
-  "hue-imperial-city": "hue-1",
-  "moc-chau-plateau": "mocchau-1",
-  "mu-cang-chai-terraces": "mu-cang-chai-terraces-1",
-  "nha-trang-coast": "nhatrang-1",
-  // `perfume-pagoda` used to sit here pointing at "huong-tich-chua-co" — a photo of Chùa Hương
-  // Tích in Hà Tĩnh, captioned "Chùa cổ giữa rừng Hồng Lĩnh". The Chùa Hương festival card was
-  // showing a different pagoda 230km away. No seed is better than the wrong subject; the new
-  // `chua-huong` destination has empty seeds waiting for a reviewed photo.
-  "phu-quoc-island": "phuquoc-1",
-  "sapa-terraces": "sapa-1",
-};
-
-/** Resolve a verified image seed for a living-calendar id (id itself → gradient fallback). */
 export function calendarSeed(id: string): string {
-  return CALENDAR_SEEDS[id] ?? id;
+  return CALENDAR_SEED_OVERRIDES[id] ?? thumbSeedFor(CALENDAR_DESTINATION[id] ?? id);
 }
 
 export interface SeasonalHighlight {
@@ -142,7 +79,7 @@ export interface SeasonalHighlight {
   name: string;
   state: string;
   icon: string;
-  /** image-manifest seed (falls back to the id → gradient when unmapped). */
+  /** image-manifest seed, derived from the card's destination (the id itself → gradient). */
   seed: string;
 }
 
@@ -166,7 +103,7 @@ export function seasonalHighlights(
           name: d ? krName(d) : e.destinationId,
           state: krSeasonalState(month, e.destinationId, e.state, locale),
           icon: e.icon,
-          seed: d ? seedOf(d) : e.destinationId,
+          seed: d ? thumbSeedFor(d.id) : e.destinationId,
         };
       });
   }
@@ -176,7 +113,7 @@ export function seasonalHighlights(
     name: t(`place.${e.destinationId}`),
     state: localizeSeasonalState(month, e.destinationId, e.state, locale),
     icon: e.icon,
-    seed: CALENDAR_SEEDS[e.destinationId] ?? e.destinationId,
+    seed: calendarSeed(e.destinationId),
   }));
 }
 
@@ -204,7 +141,7 @@ export function gemOfTheDay(country: CountryCode = "vn"): GemOfDay | null {
   if (country === "kr") {
     const ids = krHiddenGemIds.filter((id) => krById.has(id));
     const d = krById.get(ids[doy % ids.length]);
-    return d ? { id: d.id, name: krName(d), summary: krSummary(d), seed: seedOf(d) } : null;
+    return d ? { id: d.id, name: krName(d), summary: krSummary(d), seed: thumbSeedFor(d.id) } : null;
   }
   const id = HIDDEN_GEMS[doy % HIDDEN_GEMS.length];
   const dest = destinations.find((d) => d.id === id || d.slug === id);
@@ -213,7 +150,7 @@ export function gemOfTheDay(country: CountryCode = "vn"): GemOfDay | null {
     id: dest.id,
     name: dest.name,
     summary: dest.summary,
-    seed: dest.gallery?.[0]?.seed ?? dest.id,
+    seed: thumbSeedFor(dest.id),
   };
 }
 

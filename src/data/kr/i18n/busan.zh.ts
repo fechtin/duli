@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至4小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["自冬柏岛望向海云台"],
   },
   "gamcheon-culture-village": {
     name: "甘川文化村",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "村落全日开放；游客中心与天空瞭望台为09:00–16:00",
-    galleryCaptions: ["山坡上的彩色房舍"],
   },
   "jagalchi-market": {
     name: "札嘎其市场",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "05:00–22:00，每月第一和第三个周二休市",
-    galleryCaptions: ["札嘎其市场的活海鲜摊"],
   },
   "haedong-yonggungsa": {
     name: "海东龙宫寺",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "每日04:30–19:00",
-    galleryCaptions: ["岩崖上的寺院"],
   },
   "gwangalli-beach": {
     name: "广安里海水浴场与广安大桥",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["自海滩望向广安大桥"],
   },
   beomeosa: {
     name: "梵鱼寺",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "清晨开放至日落，免费入场",
-    galleryCaptions: ["梵鱼寺大雄殿"],
   },
   taejongdae: {
     name: "太宗台",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "公园免费入场；达努比列车全程4,000韩元（单段2,000）",
     openingHours: "05:00–24:00（小火车09:00–18:00）",
-    galleryCaptions: ["太宗台断崖上的灯塔"],
   },
   "huinnyeoul-culture-village": {
     name: "白浪文化村",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["村子下方的海岸步道"],
   },
   "oryukdo-skywalk": {
     name: "五六岛天空步道",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "免费",
     openingHours: "09:00–19:00（6/1至9/30）、09:00–18:00（10/1至5/31）；闭馆前10分钟停止入场，周一休息",
-    galleryCaptions: ["俯瞰五六岛的玻璃平台"],
   },
   "igidae-coastal-walk": {
     name: "二妓台海岸步道",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "",
     openingHours: "全日开放（建议白天行走）",
-    galleryCaptions: ["望向海云台的步道"],
   },
   "yongdusan-busan-tower": {
     name: "龙头山公园与釜山塔",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "公园免费；观景台现场约12,000韩元，线上购票通常更便宜",
     openingHours: "公园全日开放；塔为10:00–23:00",
-    galleryCaptions: ["从塔上俯瞰釜山港"],
   },
   "bosu-dong-book-street": {
     name: "宝水洞旧书街",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "09:00–21:00；每月第一与第三个周日及春节、中秋期间休息",
-    galleryCaptions: ["宝水洞巷内的书墙"],
   },
   "songdo-cable-car": {
     name: "松岛海水浴场与海上缆车",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "缆车来回约17,000韩元，水晶车厢22,000韩元",
     openingHours: "海滩全日开放，缆车09:00–22:00",
-    galleryCaptions: ["横越松岛湾的缆车"],
   },
   "busan-cinema-center": {
     name: "釜山电影殿堂",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "广场免费",
     openingHours: "广场全日开放，影厅依放映时刻",
-    galleryCaptions: ["夜里的LED屋顶"],
   },
 };
 

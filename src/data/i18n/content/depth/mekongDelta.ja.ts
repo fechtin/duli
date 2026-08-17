@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["ファットロン寺本堂の裏手", "カム山頂の弥勒仏像", "カム山頂の弥勒仏像", "山頂のトゥイリエム湖"],
   },
   "bac-lieu-vuon-chim": {
     name: "バクリエウ鳥類保護区",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["夕暮れにねぐらへ戻るサギの群れ", "マングローブ林床の木道"],
   },
   "vam-ho-bird-sanctuary": {
     name: "ヴァムホー鳥類保護区",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "40,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ナツメヤシの梢に並ぶサギの巣", "マングローブ水路を行く小舟"],
   },
   "cai-mon-nursery-village": {
     name: "カイモン苗木の村",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["路地を埋める苗木の鉢", "旧正月前に観葉植物を運ぶ舟"],
   },
   "hon-da-bac": {
     name: "ホンダーバック",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["西海岸に積み重なる丸い岩", "ホンダーバックの一対の石龍", "ホンダーバックへ渡る橋"],
   },
   "ninh-kieu-wharf": {
     name: "ニンキエウ埠頭",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハウ川を望むニンキエウ埠頭", "ニンキエウ区チャンクォックトアン通りとハイバーチュン通りの角", "夜に点灯するニンキエウ歩道橋"],
   },
   "binh-thuy-ancient-house": {
     name: "ビントゥイ古民家",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "20,000ドン",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["インドシナ様式の正面と曲線階段", "螺鈿を象嵌した木造の室内"],
   },
   "go-thap": {
     name: "ゴータップ遺跡",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["発掘されたオケオの煉瓦基壇", "ゴータップ遺跡の展示館", "増水期に丘を囲む蓮田"],
   },
   "hon-phu-tu": {
     name: "ホンフートゥ",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["キエンルオン沖のホンフートゥ", "浜へ通じるハン寺の洞"],
   },
   "nha-tram-cot": {
     name: "百柱の家",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["陰陽瓦の下の木柱", "祭祀の間の透かし彫り欄間"],
   },
   "chua-khleang": {
     name: "クレアン寺",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["クレアン寺の正門", "三重屋根の本堂", "軒を支えるクルドの像"],
   },
   "vinh-trang-pagoda": {
     name: "ヴィンチャン寺",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["磁器を象嵌した山門", "境内の涅槃仏"],
   },
   "ba-dong-beach": {
     name: "バードン海岸",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["バードンの長く遠浅の砂浜", "チャヴィンのバードン海岸", "モクマオウの林の背後の塩田"],
   },
   "van-thanh-mieu-vinh-long": {
     name: "ヴィンロン文廟",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["二層の木造ヴァンスオン閣", "古いサオの木の下のダイタイン殿"],
   },
 };
 

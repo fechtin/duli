@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Day market 09:00–18:00 (varies by stall); the night market runs only Friday and Saturday 19:00–23:30 and Sunday 19:00–22:00",
-    galleryCaptions: ["Seomun night market"],
   },
   "palgongsan-gatbawi": {
     name: "Palgongsan & the Gatbawi Buddha",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The Gatbawi Buddha on the summit"],
   },
   "kim-gwang-seok-street": {
     name: "Kim Kwang-seok Street",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Murals along Kim Kwang-seok Street"],
   },
   "apsan-park": {
     name: "Apsan Park",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Cable car 14,000 KRW return (10,000 one way); the park itself is free",
     openingHours: "10:30–18:00 (cable car)",
-    galleryCaptions: ["Daegu from the Apsan observatory"],
   },
   "daegu-yangnyeongsi": {
     name: "Yangnyeongsi Herbal Medicine Market",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "The museum is free",
     openingHours: "The medicine market runs by day; the museum is 09:00–18:00, last entry 17:30, closed Mondays, 1 January, Seollal and Chuseok",
-    galleryCaptions: ["Herbs drying outside a shop"],
   },
   "daegu-modern-alley": {
     name: "Daegu Modern History Alleys",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "The alleys are open all day. The three missionary houses on Cheongna hill are closed while they are converted into a museum — only the exteriors can be seen",
-    galleryCaptions: ["The 3·1 steps on Cheongna hill"],
   },
   "bullo-tumuli": {
     name: "Bullo-dong Tumuli Park",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Grassy mounds in the late afternoon"],
   },
   "biseulsan-azalea": {
     name: "Biseulsan Azalea Ridge",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "The mountain is open by day. The azaleas start in early April and peak around 20 April; the festival falls in mid-April, with shuttle buses every 5–10 minutes from 08:30 to 17:30 on the two main days",
-    galleryCaptions: ["The azalea plateau in full bloom"],
   },
   "daegu-arboretum": {
     name: "Daegu Arboretum",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "09:00–18:00 (to 17:00 in winter), closed Mondays",
-    galleryCaptions: ["The autumn chrysanthemum garden"],
   },
 };
 

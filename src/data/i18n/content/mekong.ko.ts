@@ -18,11 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "롱비치 위로 지는 일몰",
-      "혼톰 해상 케이블카",
-      "섬들 사이 에메랄드빛 바다 위를 가로지르는 해상 케이블카",
-    ],
   },
   "bai-sao-beach": {
     name: "사오 해변",
@@ -41,10 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "푸른 바다와 분처럼 고운 백사장",
-      "물 위에 놓인 그네",
-    ],
   },
   "tra-su-forest": {
     name: "짜스 멜라루카 숲",
@@ -63,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "100,000동",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "초록 부평초 융단 위를 떠가는 나룻배",
-      "물에 비친 멜라루카 숲",
-      "싱그러운 초록 부평초 융단에 비친 멜라루카 숲",
-    ],
   },
   "mieu-ba-chua-xu": {
     name: "삼산 바쭈아쓰 사당",
@@ -86,10 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "위엄 있는 바쭈아쓰 사당",
-      "축제일의 향 연기",
-    ],
   },
   "cai-rang-floating-market": {
     name: "까이랑 수상시장",
@@ -108,11 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "05:00 – 09:00",
-    galleryCaptions: [
-      "새벽 수상시장에 모여드는 배들",
-      "동틀 무렵 강 위에서 베오 장대를 단 채 출렁이는 상선들",
-      "양배추를 가득 싣고 노를 젓는 여인",
-    ],
   },
   "long-an-lang-noi-tan-lap": {
     name: "떤럽 수상마을",
@@ -132,11 +109,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "60,000동",
     openingHours: "매일 07:00 - 17:00",
-    galleryCaptions: [
-      "멜라루카 숲을 가로지르는 콘크리트 길",
-      "습지 한가운데의 전망탑",
-      "부평초로 뒤덮인 수로를 누비는 작은 배",
-    ],
   },
   "long-an-lang-sen": {
     name: "랑센 습지보호구역",
@@ -156,11 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "매일 07:00 - 17:00",
-    galleryCaptions: [
-      "침수된 덤불 사이를 잔잔히 흐르는 물길",
-      "지평선까지 펼쳐진 초록 침수 초원",
-      "고요한 수로를 누비는 배",
-    ],
   },
   "tien-giang-cu-lao-thoi-son": {
     name: "터이선섬",
@@ -180,11 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "투어 패키지 150,000동",
     openingHours: "매일 08:00 - 17:00",
-    galleryCaptions: [
-      "물야자수 수로를 나룻배로 젓기",
-      "꿀차와 과수원 과일 즐기기",
-      "던까따이뜨를 공연하는 명인",
-    ],
   },
   "tien-giang-cho-noi-cai-be": {
     name: "까이베 수상시장",
@@ -204,11 +166,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "매일 04:00 - 08:00 장이 섬",
-    galleryCaptions: [
-      "강 위에서 분주히 장을 보는 배들",
-      "다리 아래로 강을 건너는 논라를 쓴 뱃사공",
-      "배에 가득 쌓인 싱싱한 과일",
-    ],
   },
   "ben-tre-con-phung": {
     name: "꼰풍 - 코코넛의 고장",
@@ -228,11 +185,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "유적 관람 20,000동",
     openingHours: "매일 07:30 - 17:00",
-    galleryCaptions: [
-      "코코넛교 유적의 평화의 탑",
-      "향긋한 코코넛 캔디 공방",
-      "코코넛으로 만든 수공예품",
-    ],
   },
   "tra-vinh-ao-ba-om": {
     name: "바옴 연못",
@@ -252,11 +204,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "웅장하게 솟은 노거수 뿌리",
-      "나무를 비추는 맑고 푸른 연못",
-      "연못 곁의 고풍스러운 크메르 사원",
-    ],
   },
   "tra-vinh-chua-vam-ray": {
     name: "밤라이 사원",
@@ -276,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "매일 06:00 - 18:00",
-    galleryCaptions: [
-      "찬란하게 도금된 앙코르 양식 건축",
-      "본전의 위엄 있는 와불상",
-      "정교한 나가 뱀신 부조",
-    ],
   },
   "vinh-long-cu-lao-an-binh": {
     name: "안빈섬",
@@ -300,11 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "과일이 주렁주렁 달린 과수원",
-      "강변 수상가옥 홈스테이",
-      "나무 그늘이 드리운 마을 길을 자전거로 달리기",
-    ],
   },
   "vinh-long-lo-gach-mang-thit": {
     name: "망팃 벽돌 가마",
@@ -324,11 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "강변에 늘어선 주황빛 벽돌 가마",
-      "일몰에 황금빛으로 물든 가마탑",
-      "오래되고 이끼 낀 가마",
-    ],
   },
   "dong-thap-tram-chim": {
     name: "짬찜 국립공원",
@@ -348,11 +280,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "입장료 10,000동, 딱랑 배 개별 대여",
     openingHours: "매일 07:00 - 17:00",
-    galleryCaptions: [
-      "건기에 먹이를 찾는 붉은머리두루미",
-      "끝없이 펼쳐진 연꽃·수련 들판",
-      "비 오는 날 연꽃 늪 한가운데의 목조 망루",
-    ],
   },
   "dong-thap-lang-hoa-sa-dec": {
     name: "사덱 꽃마을",
@@ -372,11 +299,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "색색으로 화려한 꽃바다",
-      "침수를 막기 위해 높은 선반에 기른 꽃",
-      "강 위에서 꽃을 실어 나르는 배들",
-    ],
   },
   "hau-giang-cho-noi-nga-bay": {
     name: "응아바이 수상시장",
@@ -396,11 +318,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "매일 05:00 - 08:00 장이 섬",
-    galleryCaptions: [
-      "일곱 강이 만나는 곳에 분주한 배들",
-      "판매할 물건을 건 베오 장대",
-      "배 위에서 분리에우로 아침 먹기",
-    ],
   },
   "hau-giang-lung-ngoc-hoang": {
     name: "룽응옥호앙 보호구역",
@@ -420,12 +337,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "매일 07:00 - 17:00",
-    galleryCaptions: [
-      "룽응옥호앙 수면을 덮은 부레옥잠",
-      "고요한 원시 멜라루카 숲",
-      "얽히고설킨 늪 못 사이를 누비는 배",
-      "푸른 하늘 아래 멜라루카 숲을 가로지르는 대나무 다리",
-    ],
   },
   "soc-trang-chua-doi": {
     name: "박쥐 사원",
@@ -445,11 +356,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "5,000동",
     openingHours: "매일 07:00 - 18:00",
-    galleryCaptions: [
-      "노거수에 매달린 큰박쥐 무리",
-      "다층 곡선 지붕의 크메르 건축",
-      "해 질 녘 하늘을 메우며 나는 박쥐",
-    ],
   },
   "soc-trang-chua-dat-set": {
     name: "흙 사원",
@@ -469,11 +375,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "매일 07:00 - 18:00",
-    galleryCaptions: [
-      "정성껏 흙으로 빚은 불상",
-      "수십 년간 타 온 거대한 양초",
-      "흙으로 만든 연화대",
-    ],
   },
   "bac-lieu-canh-dong-dien-gio": {
     name: "박리에우 풍력발전 단지",
@@ -493,11 +394,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "관람 60,000동",
     openingHours: "매일 07:00 - 18:00",
-    galleryCaptions: [
-      "바다로 뻗은 풍력 터빈",
-      "풍력 단지 한가운데로 이어지는 길",
-      "푸른 나무 줄기 너머로 솟은 풍력 터빈들",
-    ],
   },
   "bac-lieu-nha-cong-tu": {
     name: "박리에우 공자 저택",
@@ -517,12 +413,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "30,000동",
     openingHours: "매일 07:00 - 17:30",
-    galleryCaptions: [
-      "서양식 건축의 고택",
-      "정교하게 조각된 고급 목재 내장",
-      "오늘날 박리에우의 시가지",
-      "값진 자개 골동품",
-    ],
   },
   "ca-mau-mui-ca-mau": {
     name: "까마우곶",
@@ -542,11 +432,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "관광지 입장 50,000동",
     openingHours: "매일 07:00 - 17:00",
-    galleryCaptions: [
-      "최남단 국가 좌표 표지석",
-      "짙푸른 리조포라 맹그로브 숲",
-      "곶 맨 끝의 배 상징물",
-    ],
   },
   "ca-mau-rung-u-minh-ha": {
     name: "우민하 숲",
@@ -566,12 +451,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "30,000동",
     openingHours: "매일 07:00 - 17:00",
-    galleryCaptions: [
-      "토탄 위의 원시 멜라루카 숲",
-      "위에서 본 우민하 숲",
-      "막대를 걸어 꿀을 얻는 전통 양봉업",
-      "멜라루카 숲에서 민물고기 낚기",
-    ],
   },
 };
 

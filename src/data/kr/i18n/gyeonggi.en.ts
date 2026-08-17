@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "1,000 KRW (4-site combined ticket 3,500 KRW); walking the wall itself is free",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Paldalmun gate and the fortress wall"],
   },
   "korean-folk-village": {
     name: "Korean Folk Village",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "32,000 KRW (26,000 children, 22,000 over-65s); includes the amusement village",
     openingHours: "10:00–18:00",
-    galleryCaptions: ["Thatched houses in the folk village"],
   },
   namhansanseong: {
     name: "Namhansanseong Fortress",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3–4 hours",
     ticket: "The fortress has been free since 2007; the royal lodge charges 2,000 KRW (1,000 teens), free for under-6s, over-65s and visitors in hanbok",
     openingHours: "The fortress is open all day; the royal lodge runs 10:00–18:00 (April–October) and 10:00–17:00 (November–March), closed Mondays",
-    galleryCaptions: ["The wall following the mountain ridge"],
   },
   "imjingak-dmz": {
     name: "Imjingak & the DMZ",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free at Imjingak (DMZ tours priced separately)",
     openingHours: "Pyeonghwa-Nuri park is open all day and free to enter; DMZ tours and the sites inside the controlled zone must be booked in advance and run to fixed departure times",
-    galleryCaptions: ["The Freedom Bridge over the Imjin River"],
   },
   everland: {
     name: "Everland",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "A full day",
     ticket: "Gate day pass around 62,000 KRW; pre-booked tickets are considerably cheaper",
     openingHours: "Varies by season and by day — check the official calendar before you go",
-    galleryCaptions: ["The spring tulip garden"],
   },
   "gwangmyeong-cave": {
     name: "Gwangmyeong Cave",
@@ -133,7 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "6,000 KRW",
     openingHours: "09:00–18:00, last entry 17:00, closed Mondays",
-    galleryCaptions: ["The lit mine tunnel"],
   },
   oido: {
     name: "Oido & the Siheung Tidal Flats",
@@ -156,7 +150,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The red lighthouse at the end of the Oido causeway"],
   },
   dumulmeori: {
     name: "Dumulmeori Confluence",
@@ -179,7 +172,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The zelkova in river mist"],
   },
   yongmunsa: {
     name: "Yongmunsa Temple & the Great Ginkgo",
@@ -202,7 +194,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["The thousand-year ginkgo before the temple"],
   },
   "paju-book-city": {
     name: "Paju Book City",
@@ -225,7 +216,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "The district is open all day; Forest of Wisdom halls 1 and 2 run 10:00–20:00 and hall 3 is open 24 hours. Individual publishers and bookshops keep their own hours",
-    galleryCaptions: ["The Forest of Wisdom reading hall"],
   },
   "heyri-art-valley": {
     name: "Heyri Art Valley",
@@ -248,7 +238,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "Village free, museums ticketed separately",
     openingHours: "The village is open all day; every gallery, museum and café sets its own hours, and most close on Mondays",
-    galleryCaptions: ["A concrete studio house in Heyri"],
   },
   "petite-france": {
     name: "Petite France, Gapyeong",
@@ -271,7 +260,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "12,000 KRW",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["The village square above the lake"],
   },
   "garden-of-morning-calm": {
     name: "The Garden of Morning Calm",
@@ -294,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "9,000–11,000 KRW depending on season",
     openingHours: "08:30–19:00, until 21:00 during the light festival",
-    galleryCaptions: ["The winter light festival"],
   },
   "pocheon-art-valley": {
     name: "Pocheon Art Valley",
@@ -317,7 +304,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "5,000 KRW (3,000 teens, 1,500 children); the monorail is a further 5,300 KRW return",
     openingHours: "09:00–19:00",
-    galleryCaptions: ["The jade lake in the old quarry"],
   },
 };
 

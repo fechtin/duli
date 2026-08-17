@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["Pha Din pass winding across the slope", "The narrow old pass and its bends"],
   },
   "pa-khoang-lake": {
     name: "Pa Khoang Lake",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["Morning mist on Pa Khoang lake", "A Thai hamlet on the shore"],
   },
   "go-lao-waterfall": {
     name: "Go Lao Waterfall",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The white sheet falling into a green pool", "The stone stair down to the falls"],
   },
   "pu-ta-leng": {
     name: "Pu Ta Leng",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["Rhododendrons in bloom on the climb", "The 3,049m summit facing Hoang Lien Son"],
   },
   "son-la-prison": {
     name: "Son La Prison",
@@ -108,7 +104,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "20,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Surviving stone cells on Khau Ca hill", "The To Hieu peach tree in the grounds"],
   },
   "dai-yem-waterfall": {
     name: "Dai Yem Waterfall",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "20,000₫",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The sheet of water across the cliff", "The lower tier among mossy boulders"],
   },
 };
 

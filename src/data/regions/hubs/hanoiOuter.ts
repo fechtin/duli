@@ -36,10 +36,6 @@ export const hanoiOuterDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified"],
     tags: ["lake", "nature", "sunset", "city"],
-    gallery: [
-      { seed: "west-lake-hanoi-1", caption: "Hoàng hôn trên mặt hồ Tây", ratio: "16/9" },
-      { seed: "west-lake-hanoi-2", caption: "Đường Thanh Niên chạy giữa hai hồ", ratio: "4/3" },
-    ],
     nearby: ["tran-quoc-pagoda", "quan-thanh-temple", "long-bien-bridge"],
     sourceUrl: "https://www.wikidata.org/wiki/Q1187394",
     verifiedAt: "2026-08-16",
@@ -74,10 +70,6 @@ export const hanoiOuterDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["verified", "popular"],
     tags: ["bridge", "history", "city", "photography"],
-    gallery: [
-      { seed: "long-bien-bridge-1", caption: "Dàn thép cầu Long Biên bắc qua sông Hồng", ratio: "16/9" },
-      { seed: "long-bien-bridge-2", caption: "Bãi giữa sông Hồng nhìn từ trên cầu", ratio: "4/3" },
-    ],
     nearby: ["old-quarter-hanoi", "dong-xuan-market", "west-lake-hanoi"],
     sourceUrl: "https://en.wikipedia.org/wiki/Long_Bi%C3%AAn_Bridge",
     verifiedAt: "2026-08-16",
@@ -111,10 +103,6 @@ export const hanoiOuterDestinations: Destination[] = [
     openingHours: "08:30 - 17:30, đóng cửa thứ Hai",
     badges: ["verified"],
     tags: ["museum", "culture", "family", "history"],
-    gallery: [
-      { seed: "vietnam-museum-ethnology-1", caption: "Nhà rông Bana trong khu trưng bày ngoài trời", ratio: "16/9" },
-      { seed: "vietnam-museum-ethnology-2", caption: "Nhà mồ Giarai với tượng gỗ quanh mộ", ratio: "4/3" },
-    ],
     nearby: ["temple-of-literature", "ho-chi-minh-mausoleum", "lotte-observation-deck"],
     sourceUrl: "https://en.wikipedia.org/wiki/Vietnam_Museum_of_Ethnology",
     verifiedAt: "2026-08-16",
@@ -148,10 +136,6 @@ export const hanoiOuterDestinations: Destination[] = [
     openingHours: "09:00 - 23:00",
     badges: ["verified"],
     tags: ["viewpoint", "city", "sunset", "photography"],
-    gallery: [
-      { seed: "lotte-observation-deck-1", caption: "Hà Nội nhìn từ tầng 65", ratio: "16/9" },
-      { seed: "lotte-observation-deck-2", caption: "Ô sàn kính nhìn thẳng xuống mặt đất", ratio: "4/3" },
-    ],
     nearby: ["ho-chi-minh-mausoleum", "vietnam-museum-ethnology", "west-lake-hanoi"],
     sourceUrl: "https://en.wikipedia.org/wiki/Lotte_Center_Hanoi",
     verifiedAt: "2026-08-16",
@@ -185,10 +169,6 @@ export const hanoiOuterDestinations: Destination[] = [
     openingHours: "08:00 - 17:30 theo giờ làm của các xưởng",
     badges: ["verified"],
     tags: ["village", "culture", "shopping", "family"],
-    gallery: [
-      { seed: "bat-trang-pottery-village-1", caption: "Bàn xoay gốm trong xưởng Bát Tràng", ratio: "16/9" },
-      { seed: "bat-trang-pottery-village-2", caption: "Than tổ ong phơi dọc tường ngõ", ratio: "4/3" },
-    ],
     nearby: ["old-quarter-hanoi", "long-bien-bridge", "hoan-kiem-lake"],
     sourceUrl: "https://vi.wikipedia.org/wiki/B%C3%A1t_Tr%C3%A0ng",
     verifiedAt: "2026-08-16",
@@ -222,10 +202,6 @@ export const hanoiOuterDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["verified", "hidden-gem"],
     tags: ["village", "history", "culture", "architecture"],
-    gallery: [
-      { seed: "duong-lam-ancient-village-1", caption: "Cổng làng Mông Phụ xây bằng đá ong", ratio: "16/9" },
-      { seed: "duong-lam-ancient-village-2", caption: "Tường đá ong nâu đỏ dọc ngõ làng", ratio: "4/3" },
-    ],
     nearby: ["bat-trang-pottery-village", "vietnam-museum-ethnology", "temple-of-literature"],
     sourceUrl: "https://www.openstreetmap.org/relation/18772124",
     verifiedAt: "2026-08-16",
@@ -269,11 +245,6 @@ export const hanoiOuterDestinations: Destination[] = [
     // Captions are left empty on purpose. These seeds have no photo yet, and a caption written
     // before the photo exists is precisely what produced the 109 mismatched tiles that 044 had
     // to split apart. The reviewer writes the caption onto the photo at approval time.
-    gallery: [
-      { seed: "chua-huong-1", caption: "", ratio: "16/9" },
-      { seed: "chua-huong-2", caption: "", ratio: "4/3" },
-      { seed: "chua-huong-3", caption: "", ratio: "1/1" },
-    ],
     nearby: ["hn-tam-chuc"],
     sourceUrl: "https://www.wikidata.org/wiki/Q7168306",
     verifiedAt: "2026-08-17",

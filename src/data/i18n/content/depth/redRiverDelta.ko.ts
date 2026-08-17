@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["사원 마당의 호아퐁 탑", "팝번을 모신 본전"],
   },
   "tran-thuong-temple": {
     name: "쩐트엉 사당",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["앞마당에서 본 쩐트엉 사당", "사당 앞 의문과 연못"],
   },
   "temple-of-literature": {
     name: "문묘 – 국자감",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "70,000동",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["티엔꽝 우물에 비친 규문각", "문묘의 규문각", "돌거북 위의 진사비 82기", "내부로 이어지는 다이쭝 문"],
   },
   "mao-dien-temple-of-literature": {
     name: "마오디엔 문묘",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["마오디엔 문묘의 의문", "공자와 명현 여덟 분을 모신 배전"],
   },
   "lan-ha-bay": {
     name: "란하만",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "80,000동 (만 입장료)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["란하만을 가득 채운 석회암 섬", "깟바 읍내의 해산물 가게", "까이베오 수상 마을", "깟바섬 포대 공원에서 본 바다", "절벽 뒤에 숨은 작은 백사장"],
   },
   "nom-village": {
     name: "놈 마을",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["응우옛득 강을 건너는 아홉 칸 돌다리", "연못에 비친 땀장 정자"],
   },
   "pho-minh-pagoda": {
     name: "포민 사원",
@@ -150,7 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["14층 포민 탑", "탑 기단의 쩐 시대 물결 문양"],
   },
   "hoa-lu-ancient-capital": {
     name: "호아르 고도",
@@ -172,7 +165,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["바위산에 둘러싸인 딘 띠엔 호앙 왕 사당", "사당 앞의 돌 용상", "위에서 내려다본 호아르 골짜기"],
   },
   "cuc-phuong-national-park": {
     name: "꾹프엉 국립공원",
@@ -194,7 +186,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "60,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["원시림 속 천 년 된 쩌 나무", "꾹프엉 국립공원 입구", "4월 오솔길의 나비 떼"],
   },
   "tb-den-tran": {
     name: "타이빈 쩐 사당",
@@ -215,7 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["땀드엉의 쩐 왕 사당", "타이드엉랑의 옛 봉분"],
   },
   "dai-lai-lake": {
     name: "다이라이 호수",
@@ -236,7 +226,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["땀다오 산자락 아래 다이라이 호수", "이른 아침 호숫가의 소나무 언덕"],
   },
 };
 

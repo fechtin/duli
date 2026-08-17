@@ -18,11 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "ロングビーチに沈む夕日",
-      "ホントムの海上ロープウェイ",
-      "島々の間のエメラルドの海上を渡る海上ロープウェイ",
-    ],
   },
   "bai-sao-beach": {
     name: "サオビーチ",
@@ -41,10 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "青い海辺の粉のように細かい白砂",
-      "水面に立つブランコ",
-    ],
   },
   "tra-su-forest": {
     name: "チャースー・メラルーカ林",
@@ -63,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "100,000ドン",
     openingHours: "07:00 〜 17:00",
-    galleryCaptions: [
-      "緑の浮草の絨毯の上を漂う小舟",
-      "水面に映るメラルーカ林",
-      "みずみずしい緑の浮草の絨毯に映るメラルーカ林",
-    ],
   },
   "mieu-ba-chua-xu": {
     name: "サム山バーチュアスー廟",
@@ -86,10 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "威厳あるバーチュアスー廟",
-      "祭りの日の線香の煙",
-    ],
   },
   "cai-rang-floating-market": {
     name: "カイラン水上市場",
@@ -108,11 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "05:00 〜 09:00",
-    galleryCaptions: [
-      "夜明けの水上市場に集まる舟",
-      "明け方、川の上でベオ竿を立てて揺れる商い舟",
-      "キャベツを満載して舟を漕ぐ女性",
-    ],
   },
   "long-an-lang-noi-tan-lap": {
     name: "タンラップ水上村",
@@ -132,11 +109,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "60,000ドン",
     openingHours: "毎日07:00 - 17:00",
-    galleryCaptions: [
-      "メラルーカ林を貫くコンクリートの道",
-      "湿地の真ん中の展望塔",
-      "浮草に覆われた水路を縫う小さな舟",
-    ],
   },
   "long-an-lang-sen": {
     name: "ランセン湿地保護区",
@@ -156,11 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "毎日07:00 - 17:00",
-    galleryCaptions: [
-      "冠水した茂みの間を静かに流れる水路",
-      "地平線まで広がる緑の冠水草原",
-      "穏やかな水路を縫う舟",
-    ],
   },
   "tien-giang-cu-lao-thoi-son": {
     name: "トイソン島",
@@ -180,11 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "ツアーパッケージ150,000ドン",
     openingHours: "毎日08:00 - 17:00",
-    galleryCaptions: [
-      "ニッパヤシの水路を小舟で漕ぐ",
-      "蜂蜜茶と果樹園の果物を楽しむ",
-      "ドンカータイトゥを演奏する名手",
-    ],
   },
   "tien-giang-cho-noi-cai-be": {
     name: "カイベー水上市場",
@@ -204,11 +166,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "毎日04:00 - 08:00 に市が立つ",
-    galleryCaptions: [
-      "川の上で賑わう市の舟",
-      "橋の下を、ノンラーをかぶり川を渡る漕ぎ手",
-      "舟に山と積まれた新鮮な果物",
-    ],
   },
   "ben-tre-con-phung": {
     name: "コンフン - ココナッツの里",
@@ -228,11 +185,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "遺跡見学20,000ドン",
     openingHours: "毎日07:30 - 17:00",
-    galleryCaptions: [
-      "ココナッツ教遺跡の平和の塔",
-      "香ばしいココナッツキャンディー工房",
-      "ココナッツで作った手工芸品",
-    ],
   },
   "tra-vinh-ao-ba-om": {
     name: "バーオム池",
@@ -252,11 +204,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "雄大に隆起した古木の根",
-      "木々を映す澄んだ緑の池",
-      "池のそばの古色蒼然としたクメール寺院",
-    ],
   },
   "tra-vinh-chua-vam-ray": {
     name: "ヴァムライ寺院",
@@ -276,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "",
     openingHours: "毎日06:00 - 18:00",
-    galleryCaptions: [
-      "鮮やかに金箔を施されたアンコール様式の建築",
-      "本堂の威厳ある涅槃仏",
-      "精緻な蛇神ナーガのレリーフ",
-    ],
   },
   "vinh-long-cu-lao-an-binh": {
     name: "アンビン島",
@@ -300,11 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "果実を実らせた果樹園",
-      "川辺の高床式ホームステイ",
-      "木陰の落ちる村道を自転車で走る",
-    ],
   },
   "vinh-long-lo-gach-mang-thit": {
     name: "マンティット煉瓦窯",
@@ -324,11 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "川辺に並ぶオレンジ色の煉瓦窯",
-      "夕日に黄金色に染まる窯塔",
-      "古びて苔むした窯",
-    ],
   },
   "dong-thap-tram-chim": {
     name: "チャムチム国立公園",
@@ -348,11 +280,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "入場料10,000ドン、タックラン舟は別途貸切",
     openingHours: "毎日07:00 - 17:00",
-    galleryCaptions: [
-      "乾季に餌を求めるオオヅル",
-      "果てしなく広がる蓮と睡蓮の畑",
-      "雨の日、蓮の沼の真ん中の木造の見張り台",
-    ],
   },
   "dong-thap-lang-hoa-sa-dec": {
     name: "サーデック花の村",
@@ -372,11 +299,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: [
-      "色とりどりに華やかな花の海",
-      "冠水を避けるため高い棚に育てた花",
-      "川の上で花を運ぶ舟",
-    ],
   },
   "hau-giang-cho-noi-nga-bay": {
     name: "ガーバイ水上市場",
@@ -396,11 +318,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "毎日05:00 - 08:00 に市が立つ",
-    galleryCaptions: [
-      "七本の川が出会う場所で賑わう舟",
-      "販売する品物を掛けたベオ竿",
-      "舟の上でブンリエウの朝食をとる",
-    ],
   },
   "hau-giang-lung-ngoc-hoang": {
     name: "ルンゴックホアン保護区",
@@ -420,12 +337,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "毎日07:00 - 17:00",
-    galleryCaptions: [
-      "ルンゴックホアンの水面を覆うホテイアオイ",
-      "静かな原生メラルーカ林",
-      "入り組んだ沼地を縫う舟",
-      "青空の下、メラルーカ林を貫く竹の橋",
-    ],
   },
   "soc-trang-chua-doi": {
     name: "コウモリ寺",
@@ -445,11 +356,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "5,000ドン",
     openingHours: "毎日07:00 - 18:00",
-    galleryCaptions: [
-      "古木にぶら下がるオオコウモリの群れ",
-      "多層の反り屋根のクメール建築",
-      "夕暮れに空を埋めて飛ぶコウモリ",
-    ],
   },
   "soc-trang-chua-dat-set": {
     name: "土の寺",
@@ -469,11 +375,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "毎日07:00 - 18:00",
-    galleryCaptions: [
-      "丹念に土で形作った仏像",
-      "数十年燃え続ける巨大な蝋燭",
-      "土で作った蓮華座",
-    ],
   },
   "bac-lieu-canh-dong-dien-gio": {
     name: "バクリエウ風力発電所",
@@ -493,11 +394,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "見学60,000ドン",
     openingHours: "毎日07:00 - 18:00",
-    galleryCaptions: [
-      "海へ延びる風車",
-      "風車の原の真ん中へ続く道",
-      "緑の木立の向こうにそびえる風車の列",
-    ],
   },
   "bac-lieu-nha-cong-tu": {
     name: "バクリエウの貴公子の邸宅",
@@ -517,12 +413,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "30,000ドン",
     openingHours: "毎日07:00 - 17:30",
-    galleryCaptions: [
-      "西洋様式の古邸宅",
-      "精緻に彫られた高級木材の内装",
-      "今日のバクリエウの街並み",
-      "貴重な螺鈿細工の骨董品",
-    ],
   },
   "ca-mau-mui-ca-mau": {
     name: "カマウ岬",
@@ -542,11 +432,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "観光地入場50,000ドン",
     openingHours: "毎日07:00 - 17:00",
-    galleryCaptions: [
-      "最南端の国家座標標識",
-      "深緑のオヒルギのマングローブ林",
-      "岬の最果ての船の象徴",
-    ],
   },
   "ca-mau-rung-u-minh-ha": {
     name: "ウーミンハー林",
@@ -566,12 +451,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "30,000ドン",
     openingHours: "毎日07:00 - 17:00",
-    galleryCaptions: [
-      "泥炭土の上の原生メラルーカ林",
-      "上空から見たウーミンハー林",
-      "棒を掛けて蜂蜜を採る伝統的な養蜂業",
-      "メラルーカ林で田の魚を釣る",
-    ],
   },
 };
 

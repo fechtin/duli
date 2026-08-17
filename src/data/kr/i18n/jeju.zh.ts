@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "免费，但两条登顶路线（城板岳、观音寺）须先在国家公园预约网站订位",
     openingHours: "05:00开始入山（冬季06:00）；依路线与季节，管制站约在12:00至14:00劝返，城板岳路线须于11:30前通过杜鹃花田避难小屋。当日上下山，禁止露营",
-    galleryCaptions: ["白鹿潭火口湖"],
   },
   "seongsan-ilchulbong": {
     name: "城山日出峰",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "5,000韩元",
     openingHours: "07:30–20:00（冬季提早闭园）",
-    galleryCaptions: ["自海上望向火山口"],
   },
   manjanggul: {
     name: "万丈窟",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "4,000韩元（青少年与儿童2,000韩元）",
     openingHours: "09:00–18:00；整修后于2026年5月30日重新开放",
-    galleryCaptions: ["熔岩洞内部"],
   },
   "jeongbang-waterfall": {
     name: "正房瀑布",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "2,000韩元",
     openingHours: "09:00–19:00，最后入场18:00",
-    galleryCaptions: ["直落大海的瀑布"],
   },
   "udo-island": {
     name: "牛岛",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "渡船来回约10,500韩元，航程15分钟，旺季每30分钟一班",
     openingHours: "依船班时间，多为08:00–18:00",
-    galleryCaptions: ["西滨白沙海滩"],
   },
   "hyeopjae-beach": {
     name: "挟才海水浴场",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["望向飞扬岛的挟才海滩"],
   },
   "jusangjeolli-cliff": {
     name: "柱状节理带",
@@ -154,7 +148,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "2,000韩元",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["大浦海岸的六角石柱"],
   },
   "cheonjiyeon-waterfall": {
     name: "天地渊瀑布",
@@ -176,7 +169,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "2,000韩元（7至24岁1,000韩元）",
     openingHours: "09:00–21:20",
-    galleryCaptions: ["夜灯下的天地渊瀑布"],
   },
   sanbangsan: {
     name: "山房山与龙头海岸",
@@ -198,7 +190,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "龙头海岸2,000韩元（青少年与儿童1,000）、山房窟寺1,000韩元；6岁以下与65岁以上免费",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["自龙头海岸望向山房山"],
   },
   "seongeup-folk-village": {
     name: "城邑民俗村",
@@ -220,7 +211,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "09:00至日落；这是真的有居民生活的村落，请保持安静",
-    galleryCaptions: ["绳网压住的茅顶与黑石矮墙"],
   },
   "bijarim-forest": {
     name: "榧子林",
@@ -242,7 +232,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "3,000韩元（青少年与儿童1,500）；6岁以下与65岁以上免费",
     openingHours: "09:00–18:00，最后入场17:00",
-    galleryCaptions: ["穿过榧树林的红色火山砾步道"],
   },
   "haenyeo-museum": {
     name: "海女博物馆",
@@ -264,7 +253,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "1,100韩元（13至24岁500韩元；12岁以下免费）",
     openingHours: "09:00–18:00，周一休馆",
-    galleryCaptions: ["海女的潜水工具"],
   },
   "seogwipo-olle-market": {
     name: "西归浦每日偶来市场",
@@ -286,7 +274,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全年营业，多数摊位约07:00–21:00，但各家时间不一",
-    galleryCaptions: ["市场里的汉拏峰橘摊"],
   },
   "jeju-olle-trail": {
     name: "济州偶来小路",
@@ -308,7 +295,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "每段4至6小时",
     ticket: "",
     openingHours: "全日开放（建议白天行走）",
-    galleryCaptions: ["海岸偶来路段上的指路丝带"],
   },
 };
 

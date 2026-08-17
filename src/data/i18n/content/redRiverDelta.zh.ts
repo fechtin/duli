@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `250,000越南盾`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `竹篷船穿行于石山之间`,
-      `小船在石山脚下平静的湖面上轻轻滑行`,
-      `春天的三谷`,
-      `从卧龙山俯瞰全景`,
-    ],
   },
   "hoan-kiem-lake": {
     name: `还剑湖`,
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `湖中央的龟塔`,
-      `青年静坐树下凝望湖面`,
-      `光秃的枝条倒映在薄雾笼罩的湖面上`,
-    ],
   },
   "old-quarter-hanoi": {
     name: `河内古街`,
@@ -65,10 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `传统手工艺街`,
-      `街头挑担小贩`,
-    ],
   },
   "hp-cat-ba-island": {
     name: `吉婆岛`,
@@ -88,13 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `两天一夜`,
     ticket: `80,000越南盾`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `俯瞰兰下湾`,
-      `自炮台公园望海`,
-      `碧绿清澈的吉哥海滩`,
-      `临湾的吉婆镇`,
-      `吉婆国家森林`,
-    ],
   },
   "hp-do-son-beach": {
     name: `图山海滩`,
@@ -114,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `一天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `木麻黄树下的图山海滩`,
-      `图山的赌场建筑`,
-      `传统斗牛节`,
-      `图山半岛上的夕阳`,
-    ],
   },
   "bn-den-do": {
     name: `都庙`,
@@ -139,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `07:00 - 18:00`,
-    galleryCaptions: [
-      `庄严的都庙三关门`,
-      `半月池上的水亭`,
-      `三月的都庙庙会`,
-    ],
   },
   "bn-dong-ho": {
     name: `东胡画村`,
@@ -163,12 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `08:00 - 17:00`,
-    galleryCaptions: [
-      `东胡年画《老鼠娶亲》`,
-      `艺人在蚌粉纸上印画`,
-      `色彩绚丽的灶君祭祀年画`,
-      `群鲤戏莲年画`,
-    ],
   },
   "hd-con-son-kiep-bac": {
     name: `昆山-劫泊`,
@@ -188,11 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `一天`,
     ticket: ``,
     openingHours: `06:30 - 18:00`,
-    galleryCaptions: [
-      `六头江畔的劫泊庙`,
-      `松林之中的昆山寺`,
-      `传统的秋季庙会`,
-    ],
   },
   "hd-dao-co": {
     name: `支棱南鹭岛`,
@@ -212,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `30,000越南盾`,
     openingHours: `06:00 - 18:00`,
-    galleryCaptions: [
-      `黄昏时分归巢的鹭群`,
-      `绕岛而行的竹篷船`,
-      `碧绿的安阳湖`,
-    ],
   },
   "hy-pho-hien": {
     name: `铺宪`,
@@ -236,12 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `一天`,
     ticket: ``,
     openingHours: `07:00 - 18:00`,
-    galleryCaptions: [
-      `古朴的赤鳗文庙`,
-      `自庭院望赤藤文庙`,
-      `铺宪母庙`,
-      `收获季节的兴安笼眼龙眼`,
-    ],
   },
   "hy-chua-chuong": {
     name: `钟寺`,
@@ -261,11 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `06:00 - 18:00`,
-    galleryCaptions: [
-      `横跨龙眼池的石桥`,
-      `十八罗汉长廊`,
-      `古朴的钟寺三关门`,
-    ],
   },
   "hn-tam-chuc": {
     name: `三祝寺`,
@@ -285,11 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `一天`,
     ticket: ``,
     openingHours: `06:00 - 21:00`,
-    galleryCaptions: [
-      `六乐湖畔的三世殿`,
-      `刻着佛经的经柱园`,
-      `群山环抱中的寺庙全景`,
-    ],
   },
   "nd-den-tran": {
     name: `陈庙`,
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `07:00 - 18:00`,
-    galleryCaptions: [
-      `庄严的陈庙五门门楼`,
-      `初春的开印典礼`,
-      `古朴的天长庙`,
-    ],
   },
   "nd-nha-tho-do": {
     name: `海理废弃教堂`,
@@ -333,11 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `沙滩上的废弃钟楼`,
-      `废弃教堂上的日出`,
-      `海浪拍打长满青苔的墙根`,
-    ],
   },
   "tb-chua-keo": {
     name: `翘寺`,
@@ -357,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `07:00 - 18:00`,
-    galleryCaptions: [
-      `著名的三层木钟楼`,
-      `翘寺秋季庙会`,
-      `排列对称的铁木建筑群`,
-    ],
   },
   "tb-con-vanh": {
     name: `昆望海滩`,
@@ -381,11 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `一天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `昆望海滩上的日出`,
-      `海边的木麻黄林`,
-      `郁郁葱葱的红树林`,
-    ],
   },
   "vp-tam-dao": {
     name: `三岛`,
@@ -405,11 +320,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `两天一夜`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `薄雾中的三岛小镇`,
-      `古朴的石教堂`,
-      `青翠森林中的银瀑布`,
-    ],
   },
   "vp-tay-thien": {
     name: `西天竹林禅院`,
@@ -429,11 +339,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `06:00 - 18:00`,
-    galleryCaptions: [
-      `庄严的禅院大殿`,
-      `通往西天上庙的山路`,
-      `青翠森林中的雕像园`,
-    ],
   },
 };
 

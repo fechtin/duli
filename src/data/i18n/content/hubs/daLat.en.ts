@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Morning mist on Xuan Huong lake", "Da Lat looking out over Xuan Huong Lake", "Cherry-apricot blossom along the shore"],
   },
   "da-lat-market": {
     name: "Da Lat Market",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "06:00 - 19:00; night market about 17:00 - 23:00",
-    galleryCaptions: ["Temperate produce stalls inside the market", "The Underworld Market under yellow light"],
   },
   "da-lat-railway-station": {
     name: "Da Lat Railway Station",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour; add 1.5 hours for the Trai Mat train",
     ticket: "Station entry and the Trai Mat train charged separately",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The three peaked roofs of Da Lat station", "The steam engine displayed in the station yard"],
   },
   "crazy-house-dalat": {
     name: "Crazy House",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "70,000d (indicative)",
     openingHours: "08:30 - 19:00",
-    galleryCaptions: ["The building shaped like a giant tree stump", "A spiral staircase running outdoors"],
   },
   "bao-dai-summer-palace": {
     name: "Bao Dai Summer Palace",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "50,000d (indicative)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The art déco facade of Palace III", "The study with its original furniture"],
   },
   "da-lat-cathedral": {
     name: "Da Lat Cathedral",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The pink bell tower and its rooster", "Light through the stained-glass panels"],
   },
   "domaine-de-marie-church": {
     name: "Domaine de Marie Church",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "07:00 - 17:00, outside service times",
-    galleryCaptions: ["The steep roof and earth-pink walls", "Flower gardens in the forecourt"],
   },
   "linh-phuoc-pagoda": {
     name: "Linh Phuoc Pagoda",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The ceramic-inlaid dragon in the courtyard", "The seven-tier bell tower in inlaid ceramic"],
   },
   "tuyen-lam-lake": {
     name: "Tuyen Lam Lake",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Cable car and boat charged separately",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The management building of the Tuyen Lam lake resort area", "Morning mist over Tuyen Lam lake", "Inlets working between the pine hills"],
   },
   "truc-lam-monastery": {
     name: "Truc Lam Zen Monastery",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "",
     openingHours: "05:00 - 21:00; the inner precinct keeps its own hours",
-    galleryCaptions: ["The monastery looking down on Tuyen Lam lake", "Truc Lam Zen Monastery from outside", "The cable car over pine forest"],
   },
   "valley-of-love": {
     name: "Valley of Love",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "About 250,000d (indicative, several ticket tiers)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Pine slopes running down to Da Thien lake", "Clipped flower gardens in the valley"],
   },
   "pongour-waterfall": {
     name: "Pongour Waterfall",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day including the journey",
     ticket: "About 50,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The seven stepped tiers of Pongour", "Water sheeting over mossy rock"],
   },
   "elephant-waterfall-dalat": {
     name: "Elephant Waterfall",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "About 30,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Elephant Waterfall dropping into the gorge", "Stone steps down to the base"],
   },
   "cau-dat-tea-hill": {
     name: "Cau Dat Tea Hill",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Entry varies by site, around 50,000d",
     openingHours: "About 05:00 - 17:00",
-    galleryCaptions: ["A sea of cloud over the tea hills at dawn", "Flat-clipped rows of tea on the slopes"],
   },
   "me-linh-coffee-garden": {
     name: "Me Linh Coffee Garden",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "Café hours, generally morning until late afternoon",
-    galleryCaptions: ["Terraces looking down over the coffee valley", "Cloud drifting through the valley at dawn"],
   },
   "clay-tunnel-dalat": {
     name: "Da Lat Clay Tunnel",
@@ -337,7 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "About 80,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Red clay reliefs along the tunnel", "Da Lat station rebuilt in clay"],
   },
 };
 

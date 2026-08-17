@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "미사 시간 외. 미사 일정은 정문에 게시",
-    galleryCaptions: ["도심 한복판의 붉은 벽돌 종탑", "성당 앞 평화의 성모상"],
   },
   "saigon-central-post-office": {
     name: "사이공 중앙우체국",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30분",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["중앙 홀을 가로지르는 곡선 강철 궁륭", "벽에 걸린 1892년 손그림 지도"],
   },
   "saigon-opera-house": {
     name: "사이공 오페라 하우스",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "공연에 따라 요금이 다름",
     openingHours: "공지된 공연 일정에 따름",
-    galleryCaptions: ["밤에 불을 밝힌 극장 정면", "입구 위에 새겨진 여신상"],
   },
   "nguyen-hue-walking-street": {
     name: "응우옌후에 보행자 거리",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "종일. 주말에는 게시된 시간에 차량 통제",
-    galleryCaptions: ["해 질 녘의 응우옌후에 보행자 거리", "밤의 응우옌후에 보행자 거리", "음력설의 꽃길"],
   },
   "bach-dang-wharf": {
     name: "박당 선착장",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["투티엠을 바라보는 박당 강변", "박당 선착장에서 본 비텍스코 타워", "물가까지 내려가는 공원 계단"],
   },
   "bitexco-tower": {
     name: "비텍스코 파이낸셜 타워",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "전망대 약 24만 동(참고 가격)",
     openingHours: "09:30 - 21:30",
-    galleryCaptions: ["헬기장이 돌출한 비텍스코 타워", "49층에서 본 1군"],
   },
   "war-remnants-museum": {
     name: "전쟁 증적 박물관",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "4만 동(참고 가격, 매표소에서 확인)",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["야외에 전시된 항공기와 전차", "마당에 전시된 M-107 자주포", "위층의 기록 사진 전시실"],
   },
   "tao-dan-park": {
     name: "따오단 공원",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["고목 그늘이 덮은 공원 산책로", "이른 아침 새장이 걸린 시렁"],
   },
   "fine-arts-museum-hcm": {
     name: "호찌민시 미술관",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "3만 동(참고 가격)",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["미술관 안의 채광정과 계단", "프랑스풍 노란 저택의 정면"],
   },
   "bui-vien-street": {
     name: "부이비엔 거리",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "대략 18:00부터 새벽까지",
-    galleryCaptions: ["주말에 차량을 막은 부이비엔 거리", "찻길까지 놓인 탁자와 의자"],
   },
   "landmark-81": {
     name: "랜드마크 81",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "전망대 약 30만 동(참고 가격)",
     openingHours: "08:30 - 23:00",
-    galleryCaptions: ["사이공 스카이라인 위로 솟은 랜드마크 81", "도시 위로 솟은 랜드마크 81", "전망대에서 본 밤의 도시"],
   },
   "jade-emperor-pagoda": {
     name: "옥황사",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["향 연기가 자욱한 본전", "사원 앞에서 방생용으로 파는 육지거북과 남생이", "시왕전의 나무 부조"],
   },
   "saigon-zoo": {
     name: "사이공 동식물원",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3시간",
     ticket: "6만 동(참고 가격, 매표소에서 확인)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["식물원의 백 년 넘은 고목", "사이공 동식물원 입구", "경내의 그늘진 산책로"],
   },
   "binh-tay-market": {
     name: "빈떠이 시장",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["시장 안뜰의 시계탑", "시장 안에 높이 쌓인 짐짝"],
   },
   "cho-lon-district": {
     name: "쩌런",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["쩌런 거리의 한자 간판", "쩌런 지역의 안동 시장", "인도까지 문을 연 한약방"],
   },
   "giac-lam-pagoda": {
     name: "각럼 사원",
@@ -336,7 +321,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분 - 1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["사기 조각을 박은 마당의 부도", "사원 경내의 보리수", "본전의 나무 조각상"],
   },
   "can-gio-mangrove": {
     name: "껀저 맹그로브 숲",
@@ -357,7 +341,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "입장료와 배 삯은 노선에 따라 별도",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["갯벌 위로 얽힌 맹그로브 뿌리", "맹그로브 물길을 지나는 배"],
   },
 };
 

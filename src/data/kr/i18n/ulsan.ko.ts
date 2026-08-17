@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["대왕암으로 이어지는 붉은 다리"],
   },
   "taehwagang-bamboo": {
     name: "태화강 십리대숲",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["대숲 사이의 산책로"],
   },
   ganjeolgot: {
     name: "간절곶",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["간절곶 등대"],
   },
   "bangudae-petroglyphs": {
     name: "반구대 암각화",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "암각화박물관은 화~일 09:00~18:00, 월요일과 1월 1일 휴관. 야외 전망대는 자유롭게 이용할 수 있다",
-    galleryCaptions: ["고래가 새겨진 암벽"],
   },
   "jangsaengpo-whale-village": {
     name: "장생포 고래문화마을",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "고래문화마을 3,000원, 고래박물관 3,000원(별도 발권)",
     openingHours: "09:00~18:00, 월요일 휴관",
-    galleryCaptions: ["재현된 포경 마을"],
   },
   "ganwoljae-silver-grass": {
     name: "간월재와 영남알프스",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시(낮에 오르기를 권함)",
-    galleryCaptions: ["간월재 안부의 억새"],
   },
   "ulsan-bridge-observatory": {
     name: "울산대교 전망대",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "무료",
     openingHours: "09:00~21:00, 입장 마감 20:30. 매월 둘째·넷째 월요일과 설날·추석 당일 휴관",
-    galleryCaptions: ["밤의 울산대교와 산업 항만"],
   },
   "jujeon-pebble-beach": {
     name: "주전몽돌해변",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["주전의 검은 몽돌"],
   },
 };
 

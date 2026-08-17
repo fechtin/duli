@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "국립공원 입장 무료, 권금성 케이블카 왕복 16,000원(어린이 12,000원)",
     openingHours: "06:00~20:00, 케이블카는 대개 09:00~17:30",
-    galleryCaptions: ["울산바위 암벽"],
   },
   "gyeongpo-beach": {
     name: "강릉 경포해변",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["경포해변과 솔숲"],
   },
   ojukheon: {
     name: "오죽헌",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "3,000원(만 65세 이상 무료)",
     openingHours: "08:00~18:00(겨울 17:30까지), 입장 마감 30분 전",
-    galleryCaptions: ["오죽헌의 목조 가옥과 대숲"],
   },
   "daegwallyeong-sky-ranch": {
     name: "평창 대관령 목장",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "8,000원(어린이·시니어 6,000원), 트랙터마차와 건초주기는 별도",
     openingHours: "09:00~17:30",
-    galleryCaptions: ["초원과 풍력발전기"],
   },
   jeongdongjin: {
     name: "정동진",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["바다에 맞닿은 승강장"],
   },
   naksansa: {
     name: "낙산사",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "05:00~19:00",
-    galleryCaptions: ["바다를 바라보는 해수관음상"],
   },
   "nami-island": {
     name: "남이섬",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "19,000원(왕복 배삯 포함), 지난해보다 3,000원 인상",
     openingHours: "08:00~21:00, 연중무휴(막배 21:05)",
-    galleryCaptions: ["남이섬의 메타세쿼이아길"],
   },
   "chuncheon-soyang": {
     name: "춘천과 소양호",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "청평사행 배는 왕복 약 5,500~6,000원(편도 3,000원), 편도 10분",
     openingHours: "배편 09:00~17:00",
-    galleryCaptions: ["소양호의 아침 안개"],
   },
   "hwanseongul-cave": {
     name: "삼척 환선굴",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "4,500원, 동굴까지 모노레일은 왕복 7,000원(편도 4,000원)",
     openingHours: "08:30~17:00",
-    galleryCaptions: ["환선굴의 높은 광장"],
   },
   "odaesan-woljeongsa": {
     name: "오대산 월정사",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["절로 드는 전나무 숲길"],
   },
   "gangneung-anmok-coffee": {
     name: "강릉 안목 커피거리",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "공통 운영시간은 없다. 카페마다 다르며 대체로 09:00~22:00이고, 바로 앞 안목해변은 상시 개방",
-    galleryCaptions: ["안목해변 가장자리의 카페"],
   },
   "cheongoksan-mureung": {
     name: "동해 무릉계곡",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "2,000원(청소년 1,500원, 어린이 700원)",
     openingHours: "하절기 09:00~20:00(7~8월 매표 06:00부터), 동절기 09:00~18:00",
-    galleryCaptions: ["무릉계곡의 글씨 새긴 너럭바위"],
   },
   "taebaeksan-snow": {
     name: "태백산국립공원",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~하루",
     ticket: "",
     openingHours: "국립공원 입산시간지정제가 적용된다. 입산은 3~11월 04:00, 12~2월 05:00부터 가능하며 구간마다 12:00~17:00 사이로 통제시간이 다르다. 출발 전 통제 정보를 확인하자",
-    galleryCaptions: ["태백산의 얼어붙은 주목"],
   },
   "sokcho-abai-village": {
     name: "속초 아바이마을",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "갯배 편도 500원",
     openingHours: "갯배는 대략 06:00~23:00 운행",
-    galleryCaptions: ["속초 물길을 건너는 갯배"],
   },
 };
 

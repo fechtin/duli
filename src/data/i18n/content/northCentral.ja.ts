@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "200,000ドン",
     openingHours: "07:00 – 17:30",
-    galleryCaptions: [
-      "威風堂々たる午門",
-      "石畳の入口から望む古色蒼然たる午門",
-      "王城内の大朝の庭",
-      "フォン川に訪れる夕暮れ",
-    ],
   },
   "phong-nha-cave": {
     name: "フォンニャ洞窟",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "150,000ドン",
     openingHours: "07:30 – 16:30",
-    galleryCaptions: [
-      "赤褐色の岩が照り映える深い洞窟の天井",
-      "静寂の洞窟内に広がる幻想的な鍾乳石",
-      "地下河川ソン川",
-    ],
   },
   "son-doong-cave": {
     name: "ソンドン洞窟",
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3泊4日のツアー",
     ticket: "ツアーは7,000万ドンから",
     openingHours: "ツアー日程による",
-    galleryCaptions: [
-      "洞窟内の天窓から差し込む光の柱",
-      "奥へと湾曲して続く赤褐色の洞窟内部",
-      "洞窟内の緑の森の天窓の下にたたずむ小さな人々",
-    ],
   },
   "thanh-nha-ho": {
     name: "胡朝城（ホー城）",
@@ -89,11 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "40,000ドン",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "威厳ある青石の南門",
-      "何世紀も前から組まれた石の城壁",
-      "タインホアの田園に立つ古城",
-    ],
   },
   "bien-sam-son": {
     name: "サムソンビーチ",
@@ -113,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "サムソンビーチの朝日",
-      "サムソンビーチの清掃",
-      "名高いチョンマイ岩",
-      "上空から見たパラソルが立ち並ぶ砂浜",
-    ],
   },
   "suoi-ca-than-cam-luong": {
     name: "カムルオン神魚の渓流",
@@ -138,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "山のふもとの神魚の群れ",
-      "澄み切った渓流",
-      "渓流沿いのムオン族の村",
-    ],
   },
   "khu-di-tich-kim-lien": {
     name: "キムリエン史跡 - ホーおじさんの故郷",
@@ -162,11 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "ホーおじさんの茅葺きの生家",
-      "セン村のコック井戸",
-      "村の入口の古い菩提樹",
-    ],
   },
   "bien-cua-lo": {
     name: "クアロービーチ",
@@ -186,12 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "早朝の並木が茂る海辺の大通り",
-      "夕暮れに輝く海辺の街",
-      "クアロービーチ",
-      "岸に近いランチャウ島",
-    ],
   },
   "vuon-quoc-gia-pu-mat": {
     name: "プーマット国立公園",
@@ -211,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "50,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "深い緑の原野に寄り添う葉葺きの高床式の家",
-      "広大な原生林",
-      "澄み切ったザン川",
-    ],
   },
   "chua-huong-tich": {
     name: "フオンティック寺",
@@ -235,11 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "30,000ドン",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "ホンリンの森の中の古刹",
-      "寺へ続く苔むした石段",
-      "霧にかすむ苔むした石段",
-    ],
   },
   "bien-thien-cam": {
     name: "ティエンカムビーチ",
@@ -259,12 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "手つかずのティエンカムビーチ",
-      "波打ち際のティエンカム山",
-      "ティエンカムの海辺",
-      "名物の一夜干しイカ",
-    ],
   },
   "nga-ba-dong-loc": {
     name: "ドンロック三叉路",
@@ -284,12 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "10人の女性青年突撃隊員の墓",
-      "追悼の菊で覆われた白い墓の列",
-      "ドンロック三叉路の慰霊碑に線香を供える",
-      "かつての爆弾の穴の跡",
-    ],
   },
   "thanh-co-quang-tri": {
     name: "クアンチ古城",
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "中央の慰霊碑",
-      "苔むした古城の城門",
-      "木陰が茂る古城の慰霊碑への入口",
-    ],
   },
   "dia-dao-vinh-moc": {
     name: "ヴィンモック地下トンネル",
@@ -333,12 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "40,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "ヴィンモック地下トンネルの入口",
-      "地中のトンネルの通路",
-      "地下トンネルで使われた改造式のオイルランプ",
-      "トンネルの下の産室",
-    ],
   },
   "dao-con-co": {
     name: "コンコー島",
@@ -358,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "コンコー島を抱く青い海",
-      "島の上の古い灯台",
-      "色鮮やかなサンゴ礁",
-    ],
   },
 };
 

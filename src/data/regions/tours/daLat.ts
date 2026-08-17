@@ -31,10 +31,6 @@ export const daLatTourDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified"],
     tags: ["city", "photography", "family"],
-    gallery: [
-      { seed: "lam-vien-square-1", caption: "Hai khối kính hình atisô và dã quỳ lên đèn", ratio: "16/9" },
-      { seed: "lam-vien-square-2", caption: "Bậc thềm quảng trường nhìn ra hồ Xuân Hương", ratio: "4/3" },
-    ],
     nearby: ["xuan-huong-lake", "da-lat-market", "da-lat-city"],
     sourceUrl: "https://en.wikipedia.org/wiki/Lam_Vien_Square",
     verifiedAt: "2026-08-16",
@@ -67,10 +63,6 @@ export const daLatTourDestinations: Destination[] = [
     openingHours: "07:30 - 17:00",
     badges: ["verified"],
     tags: ["nature", "photography", "family"],
-    gallery: [
-      { seed: "da-lat-flower-garden-1", caption: "Luống hoa nhìn ra hồ Xuân Hương", ratio: "16/9" },
-      { seed: "da-lat-flower-garden-2", caption: "Nhà kính trồng lan trong vườn", ratio: "4/3" },
-    ],
     nearby: ["xuan-huong-lake", "lam-vien-square", "da-lat-city"],
     sourceUrl: "https://www.wikidata.org/wiki/Q10752061",
     verifiedAt: "2026-08-16",
@@ -103,10 +95,6 @@ export const daLatTourDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified"],
     tags: ["nature", "village", "adventure", "family"],
-    gallery: [
-      { seed: "cu-lan-village-1", caption: "Nhà sàn và hồ nước giữa rừng thông", ratio: "16/9" },
-      { seed: "cu-lan-village-2", caption: "Xe jeep vượt suối vào thung lũng", ratio: "4/3" },
-    ],
     nearby: ["langbiang", "valley-of-love", "da-lat-city"],
     sourceUrl: "https://www.openstreetmap.org/way/1509937793",
     verifiedAt: "2026-08-16",

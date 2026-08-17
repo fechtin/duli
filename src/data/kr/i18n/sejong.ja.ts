@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["世宗湖と水上ステージ"],
   },
   "sejong-arboretum": {
     name: "国立世宗樹木園",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "5,000ウォン（青少年4,000、子ども1,000）",
     openingHours: "09:00〜17:00、月曜と1月1日・旧正月・秋夕は休園",
-    galleryCaptions: ["花びら形の温室"],
   },
   "government-complex-rooftop": {
     name: "政府世宗庁舎屋上庭園",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "無料だが身分証が必須で、Naverの事前予約（1回50名）または現地受付が必要",
     openingHours: "平日・週末とも1日3回（10:00、13:30、15:30）、案内員の引率で60〜90分。運営期間は2026年は3/14〜6/14と8/31〜11/29で、祝祭日や酷暑・酷寒期は休止",
-    galleryCaptions: ["省庁をつなぐ屋上庭園の歩道"],
   },
   "bimatgil-geumgang": {
     name: "錦江歩行橋（イウン橋）",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["錦江に灯るイウン橋"],
   },
   "birds-nest-library": {
     name: "国立世宗図書館",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "平日09:00〜21:00、週末09:00〜18:00。毎月第2・第4月曜と祝日は休館",
-    galleryCaptions: ["世宗湖のほとりの書物型の図書館"],
   },
 };
 

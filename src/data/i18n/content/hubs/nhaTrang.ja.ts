@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["チャイトゥイ丘の白い仏", "仏像の下から見たニャチャン"],
   },
   "nha-trang-cathedral": {
     name: "ニャチャン大聖堂",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。予定は門に掲示されている",
-    galleryCaptions: ["山の教会の素の灰色石壁", "ニャチャン大聖堂の入口", "聖堂の前庭から見た街"],
   },
   "oceanographic-museum-vn": {
     name: "海洋研究所",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "4万ドン（目安、窓口で確認を）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["18メートルのザトウクジラの骨格", "収蔵室のガラス瓶の標本"],
   },
   "hon-chong-promontory": {
     name: "ホンチョン岬",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "3万ドン（目安）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["岸に積み重なる花崗岩の巨石", "ホンチョンから見たニャチャン湾"],
   },
   "dam-market-nha-trang": {
     name: "ダム市場",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["ダム市場の干した海産物の店", "ツバメの巣とヌクマムの区画"],
   },
   "nha-trang-night-market": {
     name: "ニャチャン夜市",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "おおむね17:00 - 23:00",
-    galleryCaptions: ["夜市の焼き物の屋台", "貝殻と真珠の細工の店"],
   },
   "doc-let-beach": {
     name: "ゾックレット海岸",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ゾックレットの細かい白砂", "近くのホンコイ塩田"],
   },
   "binh-ba-island": {
     name: "ビンバー島",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "船賃は別途",
     openingHours: "その日の船の時刻による",
-    galleryCaptions: ["湾を埋めるロブスターの筏", "ビンバー島の静かな浜"],
   },
   "ba-ho-stream": {
     name: "バーホー渓流",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "約3万ドン（目安）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["花崗岩の崖に挟まれた澄んだ淵", "上の淵へ向かう岩場の登り"],
   },
   "yang-bay-waterfall": {
     name: "ヤンバイの滝",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "入場料は約13万ドン（目安）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["岩の段を落ちるヤンバイ", "滝を囲むカインヴィンの谷の森"],
   },
 };
 

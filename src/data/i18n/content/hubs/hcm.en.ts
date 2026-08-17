@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The red-brick towers in the middle of downtown", "Our Lady of Peace in front of the cathedral"],
   },
   "saigon-central-post-office": {
     name: "Saigon Central Post Office",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 minutes",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["The curved steel vault over the main hall", "A hand-painted map from 1892 on the wall"],
   },
   "saigon-opera-house": {
     name: "Saigon Opera House",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Ticket prices depend on the performance",
     openingHours: "According to the published performance schedule",
-    galleryCaptions: ["The opera house facade lit at night", "Carved goddesses above the entrance"],
   },
   "nguyen-hue-walking-street": {
     name: "Nguyen Hue Walking Street",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "All day; closed to traffic at weekends during posted hours",
-    galleryCaptions: ["Nguyen Hue walking street at dusk", "Nguyen Hue Walking Street at night", "The flower avenue at Lunar New Year"],
   },
   "bach-dang-wharf": {
     name: "Bach Dang Wharf",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Bach Dang riverside looking to Thu Thiem", "The Bitexco tower seen from Bach Dang wharf", "Park steps running down to the water"],
   },
   "bitexco-tower": {
     name: "Bitexco Financial Tower",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "About 240,000d for the observation deck (indicative)",
     openingHours: "09:30 - 21:30",
-    galleryCaptions: ["The tower with its projecting helipad", "District 1 seen from the 49th floor"],
   },
   "war-remnants-museum": {
     name: "War Remnants Museum",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["Aircraft and tanks in the outdoor yard", "An M-107 self-propelled gun in the courtyard", "A photographic gallery upstairs"],
   },
   "tao-dan-park": {
     name: "Tao Dan Park",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Shaded paths under old trees", "Frames of bird cages in the early morning"],
   },
   "fine-arts-museum-hcm": {
     name: "Ho Chi Minh City Museum of Fine Arts",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "30,000d (indicative)",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["The light well and staircase inside", "The yellow French-style mansion facade"],
   },
   "bui-vien-street": {
     name: "Bui Vien Street",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "About 18:00 until dawn",
-    galleryCaptions: ["Bui Vien closed to traffic at the weekend", "Tables set out into the roadway"],
   },
   "landmark-81": {
     name: "Landmark 81",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "About 300,000d for the observation deck (indicative)",
     openingHours: "08:30 - 23:00",
-    galleryCaptions: ["Landmark 81 far above the Saigon skyline", "Landmark 81 rising over the city", "The city at night from the observation deck"],
   },
   "jade-emperor-pagoda": {
     name: "Jade Emperor Pagoda",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The main hall thick with incense smoke", "Tortoises and terrapins sold for release at the pagoda", "Wooden reliefs in the Hall of the Ten Kings"],
   },
   "saigon-zoo": {
     name: "Saigon Zoo and Botanical Gardens",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "60,000d (indicative — check at the counter)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["Century-old trees in the botanical gardens", "The entrance to the zoo and botanical gardens", "A shaded path through the grounds"],
   },
   "binh-tay-market": {
     name: "Binh Tay Market",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["The clock tower in the market courtyard", "Bales stacked high inside the market"],
   },
   "cho-lon-district": {
     name: "Cho Lon",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Chinese shop signs along a Cho Lon street", "An Dong market in the Cho Lon area", "A herbal medicine shop open to the pavement"],
   },
   "giac-lam-pagoda": {
     name: "Giac Lam Pagoda",
@@ -337,7 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes - 1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Porcelain-studded stupas in the courtyard", "The bodhi tree in the pagoda grounds", "Wooden statues in the main hall"],
   },
   "can-gio-mangrove": {
     name: "Can Gio Mangrove Forest",
@@ -358,7 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Entry and boat fares charged separately, depending on route",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Mangrove roots braced across the mud", "A boat threading the mangrove channels"],
   },
 };
 

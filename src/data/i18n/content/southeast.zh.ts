@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1–2小时`,
     ticket: ``,
     openingHours: `06:00 – 24:00（夜市）`,
-    galleryCaptions: [
-      `滨城市场南门`,
-      `璀璨的夜市`,
-    ],
   },
   "vung-tau-bai-bien-tuong-chua": {
     name: `头顿海滩与基督像`,
@@ -41,13 +37,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1–2天`,
     ticket: ``,
     openingHours: `基督像：07:00–17:00`,
-    galleryCaptions: [
-      `热闹的金沙后滩`,
-      `头顿的海岸线`,
-      `小山上的基督像`,
-      `热闹的头顿海滩`,
-      `酥脆的招牌小煎饼`,
-    ],
   },
   "con-dao": {
     name: `昆岛`,
@@ -67,11 +56,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2–3天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `水清原始的海滩`,
-      `昆岛监狱遗迹`,
-      `灵验的杭阳公墓`,
-    ],
   },
   "cat-tien-national-park": {
     name: `吉仙国家公园`,
@@ -91,11 +75,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1–2天`,
     ticket: `60,000越南盾`,
     openingHours: `07:00–17:00`,
-    galleryCaptions: [
-      `苍翠的原始森林`,
-      `金色夕阳下，小舟漂在湖面`,
-      `在枯叶上觅食的野鸡`,
-    ],
   },
   "thac-giang-dien": {
     name: `江田瀑布`,
@@ -115,11 +94,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `70,000越南盾`,
     openingHours: `07:00–17:30`,
-    galleryCaptions: [
-      `多层宽阔铺展的瀑布`,
-      `园区内绚丽的花园`,
-      `清凉翠绿的露营草坪`,
-    ],
   },
   "chua-ba-thien-hau-binh-duong": {
     name: `天后庙`,
@@ -139,12 +113,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1–2小时`,
     ticket: ``,
     openingHours: `05:00–18:00`,
-    galleryCaptions: [
-      `阴阳瓦顶的古庙`,
-      `土龙木的天后庙`,
-      `热闹的天后娘娘抬轿巡游`,
-      `庙中缭绕的香烟`,
-    ],
   },
   "dai-nam-binh-duong": {
     name: `大南旅游区`,
@@ -164,11 +132,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `150,000越南盾`,
     openingHours: `08:00–17:00`,
-    galleryCaptions: [
-      `贴金的大南国寺`,
-      `广阔的人工海`,
-      `半野生的野生动物园`,
-    ],
   },
   "bu-gia-map-national-park": {
     name: `布嘉霉国家公园`,
@@ -188,11 +151,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1–2天`,
     ticket: ``,
     openingHours: `07:00–16:30`,
-    galleryCaptions: [
-      `苍翠的原始森林`,
-      `原始森林中的清澈溪流`,
-      `斯丁族的锣钲文化`,
-    ],
   },
   "trang-co-bu-lach": {
     name: `布勒草甸`,
@@ -212,12 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天至1天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `森林之中翠绿平整的草甸`,
-      `通往布勒草甸的道路`,
-      `倒映云天的清澈湖水`,
-      `落日洒在草甸之上`,
-    ],
   },
   "nui-ba-den-tay-ninh": {
     name: `婆田山`,
@@ -237,11 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天至1天`,
     ticket: `350,000越南盾（缆车）`,
     openingHours: `06:00–22:00`,
-    galleryCaptions: [
-      `湖畔夕照中投下紫色剪影的婆田山`,
-      `山顶上的佛像`,
-      `在白色云海中拔地而起的佛像`,
-    ],
   },
   "toa-thanh-cao-dai-tay-ninh": {
     name: `西宁高台教圣座`,
@@ -261,11 +208,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1–2小时`,
     ticket: ``,
     openingHours: `06:00–18:00`,
-    galleryCaptions: [
-      `色彩绚丽的高台教圣座`,
-      `灵验的天眼象征`,
-      `身着白衣庄严礼拜的信徒`,
-    ],
   },
 };
 

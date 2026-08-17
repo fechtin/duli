@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "石群と集落の入場料は別途",
     openingHours: "終日。明るいうちに行くこと",
-    galleryCaptions: ["稲刈りのころのムオンホアの棚田", "ムオンホア渓谷", "田のあいだの古代の彫刻岩"],
   },
   "cat-cat-village": {
     name: "カットカット村",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "約15万ドン（目安）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["棚田のあいだのモン族の家", "カットカット村の滝", "垣根に干された藍の布"],
   },
   "ta-van-village": {
     name: "ターヴァン村",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日、一泊するとなおよい",
     ticket: "集落区域の入場は約7万5千ドン（目安）",
     openingHours: "終日",
-    galleryCaptions: ["棚田のあいだのターヴァン村", "ムオンホア渓谷の朝霧"],
   },
   "ta-phin-village": {
     name: "ターフィン村",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "集落入場は約4万ドン（目安）",
     openingHours: "終日",
-    galleryCaptions: ["ターフィンの棚田", "錦に刺繍をする赤ザオ族の女性", "ターフィン村の早朝", "フランスの石造修道院の廃墟"],
   },
   "ham-rong-mountain": {
     name: "ハムロン山",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "約7万ドン（目安）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["ハムロンの雲の広場から見たサパ", "登り道の狭い岩の割れ目"],
   },
   "silver-waterfall-sapa": {
     name: "銀の滝",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "約2万ドン（目安）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["国道の脇に落ちる銀の滝", "滝へ上る斜面の階段"],
   },
   "y-ty-village": {
     name: "イーティー",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["イーティーの谷を満たす雲海", "イーティーのモン族の子どもたち", "草葺き屋根のハニ族の土の家"],
   },
   "lao-cai-border-gate": {
     name: "ラオカイ国境ゲート",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 22:00、国境ゲートの業務時間に準じる",
-    galleryCaptions: ["ナムティ川に架かるホーキエウ橋", "ベトナム側の岸から見た河口の町"],
   },
 };
 

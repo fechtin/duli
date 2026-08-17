@@ -35,11 +35,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["trending", "popular", "verified"],
     tags: ["island", "nature", "photography", "history"],
-    gallery: [
-      { seed: "lyson-thoiloi", caption: "Đỉnh Thới Lới nhìn ra biển", ratio: "16/9" },
-      { seed: "lyson-tovo", caption: "Cổng Tò Vò lúc hoàng hôn", ratio: "4/3" },
-      { seed: "lyson-toi", caption: "Ruộng tỏi xanh trên nền đá bazan", ratio: "1/1" },
-    ],
     nearby: ["qng-sa-huynh"],
     featured: true,
   },
@@ -72,11 +67,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "verified"],
     tags: ["beach", "history", "nature", "culture"],
-    gallery: [
-      { seed: "sahuynh-bai", caption: "Bãi cát vàng cong hình lưỡi liềm", ratio: "16/9" },
-      { seed: "sahuynh-muoi", caption: "Bãi cát vàng cong dài ôm vịnh biển lặng", ratio: "4/3" },
-      { seed: "sahuynh-thuyen", caption: "Cung đường ven biển uốn lượn bên bờ cát", ratio: "1/1" },
-    ],
     nearby: ["qng-ly-son"],
   },
   {
@@ -109,11 +99,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["trending", "popular", "verified"],
     tags: ["beach", "nature", "photography"],
-    gallery: [
-      { seed: "kyco-bai", caption: "Bãi tắm Kỳ Co nước xanh ngọc", ratio: "16/9" },
-      { seed: "eogio-cong", caption: "Eo Gió uốn lượn giữa vách núi", ratio: "4/3" },
-      { seed: "eogio-hoa", caption: "Đường hoa giấy ven biển Eo Gió", ratio: "1/1" },
-    ],
     nearby: ["bdi-thap-banh-it"],
     featured: true,
   },
@@ -149,11 +134,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "07:00 - 17:30",
     badges: ["verified", "popular"],
     tags: ["temple", "history", "culture", "photography"],
-    gallery: [
-      { seed: "banhit-chinh", caption: "Tháp Chính uy nghi trên đồi", ratio: "16/9" },
-      { seed: "banhit-yenngua", caption: "Tháp Yên Ngựa mái cong độc đáo", ratio: "4/3" },
-      { seed: "banhit-phudieu", caption: "Cụm tháp Chăm cổ nhô lên giữa rừng xanh", ratio: "1/1" },
-    ],
     nearby: ["bdi-ky-co-eo-gio"],
   },
   {
@@ -188,11 +168,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "06:30 - 18:00",
     badges: ["trending", "popular", "verified"],
     tags: ["nature", "photography", "history"],
-    gallery: [
-      { seed: "gddia-cot", caption: "Cột đá bazan xếp tầng kỳ vĩ", ratio: "16/9" },
-      { seed: "gddia-song", caption: "Sóng vỗ trắng xóa vào ghềnh đá", ratio: "4/3" },
-      { seed: "gddia-toancanh", caption: "Toàn cảnh gành đá vươn ra biển", ratio: "1/1" },
-    ],
     nearby: ["pye-bai-xep"],
     featured: true,
   },
@@ -225,11 +200,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["popular", "verified", "hidden-gem"],
     tags: ["beach", "nature", "photography"],
-    gallery: [
-      { seed: "baixep-doico", caption: "Triền đồi xương rồng nghiêng xuống bãi biển vắng", ratio: "16/9" },
-      { seed: "baixep-binhminh", caption: "Mặt trời ló rạng sau mỏm núi, sóng vỗ bờ cát", ratio: "4/3" },
-      { seed: "baixep-ghenh", caption: "Ghềnh đá đen nhô ra biển", ratio: "1/1" },
-    ],
     nearby: ["pye-ganh-da-dia"],
   },
   {
@@ -264,11 +234,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["trending", "popular", "verified"],
     tags: ["beach", "nature", "island", "photography"],
-    gallery: [
-      { seed: "vinhhy-vinh", caption: "Vịnh Vĩnh Hy xanh ngọc ôm rừng núi", ratio: "16/9" },
-      { seed: "vinhhy-sanho", caption: "Vịnh nhỏ neo đậu hàng trăm thuyền cá", ratio: "4/3" },
-      { seed: "vinhhy-duongven", caption: "Cung đường ven biển Núi Chúa", ratio: "1/1" },
-    ],
     nearby: ["ntn-po-klong-garai"],
     featured: true,
   },
@@ -304,11 +269,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified", "festival", "popular"],
     tags: ["temple", "history", "culture", "photography"],
-    gallery: [
-      { seed: "poklong-chinh", caption: "Tháp Chính trên đồi Trầu", ratio: "16/9" },
-      { seed: "poklong-kate", caption: "Lễ hội Katê của người Chăm", ratio: "4/3" },
-      { seed: "poklong-phudieu", caption: "Quần thể tháp gạch Chăm rêu phong trên đồi cỏ", ratio: "1/1" },
-    ],
     nearby: ["ntn-vinh-vinh-hy"],
   },
   {
@@ -341,11 +301,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "Cả ngày (lễ theo lịch nhà thờ)",
     badges: ["popular", "verified"],
     tags: ["temple", "history", "culture", "city", "photography"],
-    gallery: [
-      { seed: "nhathogo-mattien", caption: "Mặt tiền nhà thờ gỗ trăm tuổi", ratio: "16/9" },
-      { seed: "nhathogo-noithat", caption: "Không gian gỗ và cửa kính màu bên trong", ratio: "4/3" },
-      { seed: "nhathogo-thapchuong", caption: "Tháp chuông vươn cao giữa phố núi", ratio: "1/1" },
-    ],
     nearby: ["ktm-mang-den"],
     featured: true,
   },
@@ -381,11 +336,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["trending", "new", "ai-recommended"],
     tags: ["mountain", "nature", "photography", "food"],
-    gallery: [
-      { seed: "mangden-thong", caption: "Thác nước trắng xóa đổ xuống hồ xanh giữa rừng", ratio: "16/9" },
-      { seed: "mangden-pasy", caption: "Thác Pa Sỹ trắng xóa giữa rừng", ratio: "4/3" },
-      { seed: "mangden-ho", caption: "Hồ Đăk Ke phẳng lặng buổi sớm", ratio: "1/1" },
-    ],
     nearby: ["ktm-nha-tho-go"],
   },
   {
@@ -418,12 +368,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["lake", "nature", "photography"],
-    gallery: [
-      { seed: "bienho-matho", caption: "Mặt hồ xanh thẳm giữa đại ngàn", ratio: "16/9" },
-      { seed: "bienho-vongcanh", caption: "Đài vọng cảnh nhô ra mặt nước", ratio: "4/3" },
-      { seed: "bienho-thong", caption: "Mặt nước Biển Hồ T'Nưng", ratio: "1/1" },
-      { seed: "bienho-thong-2", caption: "Hàng thông cổ thụ dẫn ra hồ", ratio: "1/1" },
-    ],
     nearby: ["gli-chua-minh-thanh"],
     featured: true,
   },
@@ -457,11 +401,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "06:00 - 20:00",
     badges: ["popular", "verified"],
     tags: ["temple", "culture", "city", "photography"],
-    gallery: [
-      { seed: "minhthanh-baothap", caption: "Bảo tháp xá lợi chín tầng", ratio: "16/9" },
-      { seed: "minhthanh-chanhdien", caption: "Chánh điện mái cong uy nghi", ratio: "4/3" },
-      { seed: "minhthanh-tuong", caption: "Tượng Phật dát vàng trong khuôn viên", ratio: "1/1" },
-    ],
     nearby: ["gli-bien-ho-tnung"],
   },
   {
@@ -494,11 +433,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["unesco", "trending", "verified", "ai-recommended"],
     tags: ["park", "nature", "history", "culture", "mountain"],
-    gallery: [
-      { seed: "daknong-hangnui", caption: "Hang động núi lửa trong đá bazan", ratio: "16/9" },
-      { seed: "daknong-miengnui", caption: "Miệng núi lửa cổ giữa rừng xanh", ratio: "4/3" },
-      { seed: "daknong-congchieng", caption: "Văn hóa cồng chiêng đồng bào M'Nông", ratio: "1/1" },
-    ],
     nearby: ["dno-thac-dray-sap"],
     featured: true,
   },
@@ -532,11 +466,6 @@ export const southCentralHighlandsDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["popular", "verified", "hidden-gem"],
     tags: ["waterfall", "nature", "photography", "mountain"],
-    gallery: [
-      { seed: "draysap-thac", caption: "Thác Dray Sáp tung bọt trắng xóa", ratio: "16/9" },
-      { seed: "draysap-khoi", caption: "Màn sương khói quanh chân thác", ratio: "4/3" },
-      { seed: "draysap-rung", caption: "Rừng nguyên sinh bao quanh thác", ratio: "1/1" },
-    ],
     nearby: ["dno-cong-vien-dia-chat"],
   },
 ];

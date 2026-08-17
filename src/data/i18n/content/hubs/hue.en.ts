@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "150,000d (indicative; combined tickets available)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["Luu Khiem lake and its pavilion", "The stele Emperor Tu Duc composed himself"],
   },
   "minh-mang-tomb": {
     name: "Tomb of Minh Mang",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "150,000d (indicative; combined tickets available)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The symmetrical main axis of the tomb", "A stone bridge over a lake in the grounds"],
   },
   "gia-long-tomb": {
     name: "Tomb of Gia Long",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours including the journey",
     ticket: "50,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Two stone graves side by side in the courtyard", "Pine hills ringing the tomb"],
   },
   "an-dinh-palace": {
     name: "An Dinh Palace",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "50,000d (indicative)",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The European-style facade of An Dinh", "The front of An Dinh Palace", "Murals in the reception room"],
   },
   "trang-tien-bridge": {
     name: "Truong Tien Bridge",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Truong Tien bridge changing colour over the river", "The six-span steel frame"],
   },
   "dong-ba-market": {
     name: "Dong Ba Market",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["The food section inside Dong Ba market", "Poem hats and me xung candy stalls"],
   },
   "quoc-hoc-hue": {
     name: "Quoc Hoc High School",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 minutes",
     ticket: "",
     openingHours: "Outside teaching hours; front courtyard only",
-    galleryCaptions: ["The triple gate and pink walls of the school", "Arcaded corridors in the grounds"],
   },
   "hon-chen-temple": {
     name: "Hon Chen Temple",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours including the boat",
     ticket: "Entry and boat hire charged separately",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Hon Chen temple seen from the river", "Ceramic-studded curved roofs on the slope"],
   },
   "perfume-river": {
     name: "Perfume River",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours for a Hue song session",
     ticket: "Boat and performance priced by the trip, usually per boat",
     openingHours: "All day; Hue song performed in the evening",
-    galleryCaptions: ["A dragon boat on the Perfume River at night", "Paper lanterns floated on the water"],
   },
   "thanh-toan-tile-bridge": {
     name: "Thanh Toan Bridge",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Thanh Toan bridge among the rice fields", "Wooden benches along the bridge deck"],
   },
   "thuan-an-beach": {
     name: "Thuan An Beach",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Thuan An mouth opening to the sea", "Seafood shacks on the sand"],
   },
   "tam-giang-lagoon": {
     name: "Tam Giang Lagoon",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Boat hire priced by the trip",
     openingHours: "All day; best late in the afternoon",
-    galleryCaptions: ["Sunset behind the forest of fishing stakes", "A boat emptying nets on the lagoon"],
   },
   "ru-cha-mangrove": {
     name: "Ru Cha Mangrove",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "All day; go in daylight",
-    galleryCaptions: ["Cha leaves turning gold in autumn", "The path running through the mangrove"],
   },
   "lang-co-beach": {
     name: "Lang Co Beach",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Lang Co bay seen from Hai Van pass", "The lagoon mouth and Lang Co beach", "Oyster racks on Lap An lagoon"],
   },
   "bach-ma-national-park": {
     name: "Bach Ma National Park",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Park entry and shuttle charged separately",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["Hai Vong Dai at the Bach Ma summit", "The Do Quyen waterfall through the forest"],
   },
 };
 

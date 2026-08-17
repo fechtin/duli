@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时30分钟",
     ticket: "40,000盾（参考价，请在售票处确认）",
     openingHours: "08:00 - 12:00, 14:00 - 16:30",
-    galleryCaptions: ["从巴亭广场一侧看莲花造型的白色建筑", "馆内展厅"],
   },
   "thang-long-water-puppet": {
     name: "升龙水上木偶剧院",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "按座位等级100,000至200,000盾（参考价）",
     openingHours: "每日多场，通常15:00 - 21:00",
-    galleryCaptions: ["水上舞台与木偶", "在舞台旁现场伴奏的乐师"],
   },
   "phu-tay-ho": {
     name: "西湖府",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "免费",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["朝向西湖的祠门", "近西湖府的湖畔", "殿内的圣母神龛"],
   },
   "national-history-museum-vn": {
     name: "越南国家历史博物馆",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "40,000盾（参考价，请在售票处确认）",
     openingHours: "08:00 - 12:00, 13:30 - 17:00",
-    galleryCaptions: ["埃布拉尔设计的印度支那风格正立面", "陈列中的东山铜鼓"],
   },
   "tong-duy-tan-food-street": {
     name: "宋维新街",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "免费（餐费另计）",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["午夜仍亮着灯的美食街", "宋维新街上的咖啡馆", "一锅药膳炖鸡"],
   },
 };
 

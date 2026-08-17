@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["강어귀 바위 위의 딘꺼우 사당", "사당 마당에서 본 일몰"],
   },
   "phu-quoc-night-market": {
     name: "푸꾸옥 야시장",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2시간",
     ticket: "",
     openingHours: "대략 17:00 - 23:00",
-    galleryCaptions: ["야시장의 롤 아이스크림", "식당 앞에 늘어선 활어 수조", "야시장의 생선 좌판", "푸꾸옥 느억맘과 후추 좌판"],
   },
   "hon-thom-cable-car": {
     name: "혼텀 케이블카",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "케이블카 왕복 약 35만 동(참고 가격)",
     openingHours: "대략 08:00 - 17:30, 계절에 따라 다름",
-    galleryCaptions: ["바다에 선 혼텀 케이블카 지주", "바다 위를 건너는 캐빈", "케이블카에서 내려다본 수상 어촌"],
   },
   "phu-quoc-prison": {
     name: "푸꾸옥 감옥",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["겹겹의 철조망 너머 수용동", "재현해 놓은 철조망 호랑이 우리"],
   },
   "ham-ninh-fishing-village": {
     name: "함닌 어촌",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["함닌에서 바다로 뻗은 나무 잔교", "물이 빠지며 드러난 갯벌"],
   },
   "suoi-tranh-waterfall": {
     name: "쑤오이짜인 폭포",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "약 2만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["나무 그늘 아래 바위를 흐르는 계곡", "계곡 바닥의 못"],
   },
   "ganh-dau-cape": {
     name: "가인저우 곶",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["가인저우에서 본 캄보디아 해안", "곶의 바위 해안과 맑은 물"],
   },
   "vinwonders-phu-quoc": {
     name: "빈원더스 푸꾸옥",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "입장료 약 88만 동(참고 가격, 사파리 통합권 있음)",
     openingHours: "대략 09:00 - 20:00, 계절에 따라 다름",
-    galleryCaptions: ["공원 안의 테마 구역", "바로 옆 반야생 사파리"],
   },
   "ha-tien-town": {
     name: "하띠엔",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["타이만에 면한 하띠엔 읍내", "하띠엔의 해변", "빈선 언덕의 막씨 가문 무덤"],
   },
   "mui-nai-beach": {
     name: "무이나이 해변",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3시간",
     ticket: "약 2만 동(참고 가격)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["타이만으로 떨어지는 해", "등대 곶 아래의 갈색 모래"],
   },
 };
 

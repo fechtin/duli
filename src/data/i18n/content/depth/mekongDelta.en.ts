@@ -23,7 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000₫",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Behind the main hall of Phat Lon Pagoda", "The Maitreya Buddha at the summit", "The Maitreya Buddha statue atop Cam Mountain", "Thuy Liem lake on the mountaintop"],
   },
   "bac-lieu-vuon-chim": {
     name: "Bac Lieu Bird Sanctuary",
@@ -45,7 +44,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "20,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Egrets returning to roost at dusk", "The boardwalk under mangrove canopy"],
   },
   "vam-ho-bird-sanctuary": {
     name: "Vam Ho Bird Sanctuary",
@@ -67,7 +65,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "40,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Egrets nesting in the date palm crowns", "A sampan in the mangrove channels"],
   },
   "cai-mon-nursery-village": {
     name: "Cai Mon Nursery Village",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Potted seedlings packing the garden lanes", "Boats carrying ornamentals before Tet"],
   },
   "hon-da-bac": {
     name: "Hon Da Bac",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "20,000₫",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["Rounded boulders stacked on the western shore", "The pair of stone dragons at Hon Da Bac", "The bridge out to Hon Da Bac"],
   },
   "ninh-kieu-wharf": {
     name: "Ninh Kieu Wharf",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Ninh Kieu wharf looking out on the Hau river", "The corner of Tran Quoc Toan and Hai Ba Trung in Ninh Kieu", "The Ninh Kieu footbridge lit at night"],
   },
   "binh-thuy-ancient-house": {
     name: "Binh Thuy Ancient House",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "20,000₫",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["The Indochinese facade and curved stair", "Mother-of-pearl inlaid interiors"],
   },
   "go-thap": {
     name: "Go Thap Relic Site",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Excavated Oc Eo brick foundations", "The exhibition house at the Go Thap archaeological site", "Lotus fields around the mound in flood season"],
   },
   "hon-phu-tu": {
     name: "Hon Phu Tu",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "20,000₫",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The Hon Phu Tu stack off Kien Luong", "The tunnel through Hang Pagoda to the beach"],
   },
   "nha-tram-cot": {
     name: "Hundred-Pillar House",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Timber columns under yin-yang tiling", "Pierced carving in the ancestral bay"],
   },
   "chua-khleang": {
     name: "Kh'leang Pagoda",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The main gate of Kh'leang Pagoda", "The three-tiered sanctuary roof", "Krud figures carrying the eaves"],
   },
   "vinh-trang-pagoda": {
     name: "Vinh Trang Temple",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The porcelain-mosaic triple gate", "The reclining Buddha in the temple grounds"],
   },
   "ba-dong-beach": {
     name: "Ba Dong Beach",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The long shallow shore at Ba Dong", "Ba Dong beach in Tra Vinh", "Salt flats behind the casuarina belt"],
   },
   "van-thanh-mieu-vinh-long": {
     name: "Vinh Long Temple of Literature",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The two-storey Van Xuong pavilion", "Dai Thanh hall under old sao trees"],
   },
 };
 

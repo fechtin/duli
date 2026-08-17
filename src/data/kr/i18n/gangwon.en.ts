@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Park entry is free; the Gwongeumseong cable car is 16,000 KRW return (12,000 for children)",
     openingHours: "06:00–20:00; the cable car usually runs 09:00–17:30",
-    galleryCaptions: ["The Ulsanbawi rock walls"],
   },
   "gyeongpo-beach": {
     name: "Gyeongpo Beach, Gangneung",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Gyeongpo beach and its pine wood"],
   },
   ojukheon: {
     name: "Ojukheon House",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "3,000 KRW (free for over 65s)",
     openingHours: "08:00–18:00 (to 17:30 in winter), last admission 30 min before closing",
-    galleryCaptions: ["Ojukheon's wooden house and bamboo garden"],
   },
   "daegwallyeong-sky-ranch": {
     name: "Daegwallyeong Sky Ranch, Pyeongchang",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "8,000 KRW (6,000 children and seniors); the tractor wagon and hay-feeding cost extra",
     openingHours: "09:00–17:30",
-    galleryCaptions: ["Pasture and wind turbines"],
   },
   jeongdongjin: {
     name: "Jeongdongjin",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The platform at the water's edge"],
   },
   naksansa: {
     name: "Naksansa Temple",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "05:00–19:00",
-    galleryCaptions: ["The Avalokiteshvara looking out to sea"],
   },
   "nami-island": {
     name: "Nami Island",
@@ -154,7 +148,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "19,000 KRW including the return ferry (up 3,000 on last year)",
     openingHours: "08:00–21:00, open year-round; last ferry 21:05",
-    galleryCaptions: ["The metasequoia avenue on Nami"],
   },
   "chuncheon-soyang": {
     name: "Chuncheon & Soyang Lake",
@@ -176,7 +169,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "The ferry to Cheongpyeongsa is about 5,500–6,000 KRW return (3,000 one way), a 10-minute crossing",
     openingHours: "Ferry 09:00–17:00",
-    galleryCaptions: ["Morning mist on Soyang Lake"],
   },
   "hwanseongul-cave": {
     name: "Hwanseongul Cave, Samcheok",
@@ -198,7 +190,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "4,500 KRW; the monorail up to the cave is 7,000 KRW return (4,000 one way)",
     openingHours: "08:30–17:00",
-    galleryCaptions: ["A high chamber inside Hwanseongul"],
   },
   "odaesan-woljeongsa": {
     name: "Odaesan & Woljeongsa Temple",
@@ -220,7 +211,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["The red pine road into the temple"],
   },
   "gangneung-anmok-coffee": {
     name: "Anmok Coffee Street, Gangneung",
@@ -242,7 +232,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "There are no shared hours — each café sets its own, most running roughly 09:00 to 22:00; the beach in front is open all day",
-    galleryCaptions: ["A café at the edge of Anmok beach"],
   },
   "cheongoksan-mureung": {
     name: "Mureung Valley, Donghae",
@@ -264,7 +253,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "2,000 KRW (1,500 teens, 700 children)",
     openingHours: "Summer 09:00–20:00 (in July–August ticketing opens at 06:00), winter 09:00–18:00",
-    galleryCaptions: ["The inscribed slab in the Mureung stream"],
   },
   "taebaeksan-snow": {
     name: "Taebaeksan National Park",
@@ -286,7 +274,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half to a full day",
     ticket: "",
     openingHours: "The national park entry-time system applies: ascent opens at 04:00 (March–November) or 05:00 (December–February), and each section has its own turn-back time somewhere between 12:00 and 17:00. Check the trail-closure notices before setting out",
-    galleryCaptions: ["Iced yews on Taebaeksan"],
   },
   "sokcho-abai-village": {
     name: "Abai Village, Sokcho",
@@ -308,7 +295,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "The hand-pulled ferry across the channel costs 500 KRW each way",
     openingHours: "Raft runs roughly 06:00–23:00",
-    galleryCaptions: ["The hand-pulled galbae raft across the Sokcho channel"],
   },
 };
 

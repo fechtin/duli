@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["ゲンザン下の卵石の浜", "海を向くハン・マク・トゥの墓"],
   },
   "phu-quy-island": {
     name: "フークイ島",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["ガインハンの黒い崖", "フークイ島のリンソン寺", "外洋を望む無限の池", "島を囲む生簀"],
   },
   "po-sah-inu": {
     name: "ポーサーイヌー塔",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "15,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["バーナイ丘の赤煉瓦の塔群", "塔で行われるチャムのカテー儀礼"],
   },
   "marble-mountains": {
     name: "五行山",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "40,000ドン",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["トゥイソン頂上から見たダナンの海岸", "五行山のふもとの駐車場", "トゥイソン頂上のタムタイ寺"],
   },
   "son-tra-peninsula": {
     name: "ソンチャ半島",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["海を見下ろす半島の道", "上空から見たダナンとソンチャ半島", "ソンチャの森のアカアシドゥクラングール", "リンウン寺の観音像"],
   },
   "ponagar-towers": {
     name: "ポーナガル塔",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "30,000ドン",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["儀礼の広場から見た北東塔", "塔内のポーナガル女神像"],
   },
   "nui-chua-national-park": {
     name: "ヌイチュア国立公園",
@@ -151,7 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["ファンラン〜カムランの海岸道路", "ハンザイの化石サンゴ段丘", "乾燥林と露出した花崗岩"],
   },
   "mui-dien": {
     name: "ディエン岬",
@@ -172,7 +165,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "05:00 - 18:00",
-    galleryCaptions: ["ディエン岬灯台からの眺め", "日の出のディエン岬灯台", "岬の下の三日月形のバイモン"],
   },
   "my-son-sanctuary": {
     name: "ミーソン聖域",
@@ -194,7 +186,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "150,000ドン",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["ミーソンの谷のチャム塔群", "目地の見えないチャムの煉瓦", "ミーソン聖域の祠堂E7", "遺跡で演じられるチャム舞踊"],
   },
   "cu-lao-cham": {
     name: "クーラオチャム",
@@ -216,7 +207,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "日帰りまたは1泊",
     ticket: "70,000ドン（入場料）",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["ホンラオ周辺の澄んだ水とサンゴ", "クーラオチャム海洋保護区", "十八世紀建立のハイタン寺"],
   },
   "thien-an-mountain": {
     name: "ティエンアン山",
@@ -237,7 +227,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["平らな頂のティエンアン寺", "チャクック川沿いのミーチャ〜ミーケー道路", "頂から見たチャクック川"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "15万越南盾（参考价，有联票）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["流谦湖与湖上的亭子", "嗣德帝亲撰的石碑"],
   },
   "minh-mang-tomb": {
     name: "明命陵",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "15万越南盾（参考价，有联票）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["明命陵对称的中轴", "园内跨湖的石桥"],
   },
   "gia-long-tomb": {
     name: "嘉隆陵",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含路程1.5小时",
     ticket: "5万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["庭中并排的两座石墓", "环抱陵墓的松丘"],
   },
   "an-dinh-palace": {
     name: "安定宫",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "5万越南盾（参考价）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["欧式风格的安定宫立面", "安定宫正面", "会客厅里的壁画"],
   },
   "trang-tien-bridge": {
     name: "长前桥",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["在江面上变换灯色的长前桥", "六跨十二节的钢架"],
   },
   "dong-ba-market": {
     name: "东巴市场",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["东巴市场内的小吃区", "诗笠与芝麻糖的摊位"],
   },
   "quoc-hoc-hue": {
     name: "国学高中",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30分钟",
     ticket: "",
     openingHours: "上课时间之外；仅开放前院",
-    galleryCaptions: ["学校的三门与粉色围墙", "校园内的拱廊"],
   },
   "hon-chen-temple": {
     name: "殿和琖",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含船程2小时",
     ticket: "门票与船费另计",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["从江上望见的殿和琖", "顺坡而上的嵌瓷翘檐"],
   },
   "perfume-river": {
     name: "香江",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一场顺化小调约2小时",
     ticket: "船费与演出费按船计价",
     openingHours: "全天；顺化小调在晚间演出",
-    galleryCaptions: ["夜里香江上的龙船", "放在水面上的纸灯"],
   },
   "thanh-toan-tile-bridge": {
     name: "清全瓦桥",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["稻田之间的清全瓦桥", "桥面两侧的木凳"],
   },
   "thuan-an-beach": {
     name: "顺安海滩",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["通向大海的顺安河口", "沙滩上搭起的海鲜棚"],
   },
   "tam-giang-lagoon": {
     name: "三江潟湖",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "船费按趟计价",
     openingHours: "全天；傍晚最佳",
-    galleryCaptions: ["渔栅木桩后落下的夕阳", "在潟湖上起网的小船"],
   },
   "ru-cha-mangrove": {
     name: "如槎红树林",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "全天；请在白天前往",
-    galleryCaptions: ["秋天转金的槎叶", "穿过红树林的小道"],
   },
   "lang-co-beach": {
     name: "浪苏海滩",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["从海云关看到的浪苏湾", "潟湖口与浪苏海滩", "立安潟湖上的牡蛎养殖架"],
   },
   "bach-ma-national-park": {
     name: "白马国家公园",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "门票与接驳车费另计",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["白马山顶的海望台", "林间落下的杜鹃瀑布"],
   },
 };
 

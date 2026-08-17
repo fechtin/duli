@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "20,000越南盾",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["佛大寺正殿后侧", "禁山顶的弥勒佛像", "禁山顶上的弥勒佛像", "山顶上的水帘湖"],
   },
   "bac-lieu-vuon-chim": {
     name: "薄辽鸟园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["黄昏归巢的白鹭群", "红树林下的木栈道"],
   },
   "vam-ho-bird-sanctuary": {
     name: "泛湖鸟园",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "40,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["海枣树冠上的白鹭巢", "穿行红树水道的小船"],
   },
   "cai-mon-nursery-village": {
     name: "丐门苗木村",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["塞满小路的育苗袋", "春节前运送花木的船"],
   },
   "hon-da-bac": {
     name: "白石岛",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["西海岸层层叠起的圆石", "白石岛上的一对石龙", "通往白石岛的桥"],
   },
   "ninh-kieu-wharf": {
     name: "宁桥码头",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["面向后江的宁桥码头", "宁桥郡陈国瓒街与二征夫人街路口", "夜里亮灯的宁桥步行桥"],
   },
   "binh-thuy-ancient-house": {
     name: "平水古宅",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "20,000越南盾",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["印度支那风格的正立面与弧形台阶", "镶嵌螺钿的木作内景"],
   },
   "go-thap": {
     name: "塔丘遗址",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["发掘出的喔㖭砖砌基址", "塔丘考古遗址的展示馆", "涨水季环绕高丘的莲田"],
   },
   "hon-phu-tu": {
     name: "父子岛",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["坚良外海的父子石", "穿过岩寺通向海滩的洞道"],
   },
   "nha-tram-cot": {
     name: "百柱宅",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["阴阳瓦下的木柱", "祭祀开间的透雕花罩"],
   },
   "chua-khleang": {
     name: "克良寺",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["克良寺正门", "三重檐的正殿", "托举屋檐的伽楼罗像"],
   },
   "vinh-trang-pagoda": {
     name: "永长寺",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["以碎瓷拼贴的山门", "院中的卧佛像"],
   },
   "ba-dong-beach": {
     name: "巴洞海滩",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["巴洞又长又缓的沙滩", "茶荣的巴洞海滩", "木麻黄林后的盐田"],
   },
   "van-thanh-mieu-vinh-long": {
     name: "永隆文圣庙",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["两层木构的文昌阁", "老椎木下的大成殿"],
   },
 };
 

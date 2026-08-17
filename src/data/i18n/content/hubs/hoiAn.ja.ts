@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30分",
     ticket: "ホイアン旧市街の入場券に含まれる（ホイアン旧市街の項を参照）",
     openingHours: "終日。橋の内部は旧市街入場券の時間に従う",
-    galleryCaptions: ["水路に映る来遠橋", "橋の中ほどに据えられた祠"],
   },
   "tan-ky-house": {
     name: "タンキーの家",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "ホイアン旧市街の入場券に含まれる",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["タンキーの家の中央の広間", "家の中に残る洪水の水位の跡", "木の柱と螺鈿を嵌めた対聯"],
   },
   "phuc-kien-assembly-hall": {
     name: "福建会館",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "ホイアン旧市街の入場券に含まれる",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["会館の龍の噴水", "福建会館の三門", "本殿の天井を埋める渦巻き線香"],
   },
   "hoi-an-night-market": {
     name: "ホイアン夜市",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2時間",
     ticket: "",
     openingHours: "おおよそ17:00 - 23:00",
-    galleryCaptions: ["アンホイ中州のランタン通り", "ホイアン市場そばの夜の屋台", "ホアイ川を流れる灯籠"],
   },
   "faifo-coffee": {
     name: "ファイフォー・コーヒー",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "カフェの営業時間に従う。おおむね朝から夜まで",
-    galleryCaptions: ["テラスから見た旧市街の瓦屋根", "通りを見下ろす手すり際のコーヒー"],
   },
   "reaching-out-teahouse": {
     name: "リーチング・アウト・ティーハウス",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分 - 1時間",
     ticket: "",
     openingHours: "茶館の営業時間に従う。おおむね朝から夜まで",
-    galleryCaptions: ["注文に使う文字を彫った木片", "木の盆に置かれた茶器と砂時計"],
   },
   "tra-que-vegetable-village": {
     name: "チャクエ野菜村",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "農作業体験を含めて2 - 3時間",
     ticket: "村の入場料は約3万5千ドン。体験は別料金",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["朝のチャクエの香草畑", "天秤で水をやる様子"],
   },
   "kim-bong-carpentry-village": {
     name: "キムボン木工村",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "渡し舟を含めて2時間",
     ticket: "",
     openingHours: "工房の稼働に応じておおよそ07:30 - 17:00",
-    galleryCaptions: ["キムボンの工房で木を彫る職人", "カムキムの中州へ渡る舟"],
   },
   "bay-mau-coconut-forest": {
     name: "バイマウのニッパヤシ林",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "入場料と舟代は別、かご舟一艘あたり約15万 - 25万ドン",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["ニッパヤシの水路を進むかご舟", "背丈を越えるニッパヤシの葉"],
   },
   "an-bang-beach": {
     name: "アンバン海岸",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["アンバンの砂の上の木の椅子と茅葺きの店", "アンバンの小さな祠", "浜の端に伏せられたかご舟"],
   },
   "cua-dai-beach": {
     name: "クアダイ海岸",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["海へ開くトゥボン川の河口", "クアダイの岸に続く石の護岸"],
   },
 };
 

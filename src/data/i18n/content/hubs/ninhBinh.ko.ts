@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "입장과 뱃삯 합쳐 약 25만 동(참고 가격)",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["추수철 응오동 강의 삼판들", "절벽에 기대어 선 빅동 사원"],
   },
   "mua-cave": {
     name: "무아 동굴",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "약 10만 동(참고 가격)",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["무아 동굴 정상에서 본 땀꼭 골짜기", "무아 동굴 옆 석회암 바위에서 본 닌빈", "돌계단과 능선을 따라 놓인 용"],
   },
   "bai-dinh-pagoda": {
     name: "바이딘 사원",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "전동차와 사리탑 요금은 따로 받는다",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["바이딘 사원 단지의 탑들", "나한 석상 500위가 늘어선 회랑", "언덕 위의 청동 미륵"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "딘띠엔호앙 사당",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "2만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["사당 앞의 용무늬 돌 침상", "석회암에 둘러싸인 사당"],
   },
   "am-tien-cave": {
     name: "암띠엔 동굴",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "약 2만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["바위 분지 안의 초록 못", "산 밑을 뚫은 통로"],
   },
   "thung-nham-bird-park": {
     name: "퉁념 조류원",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "입장과 뱃삯 합쳐 약 12만 동(참고 가격)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["해 질 무렵 나무를 뒤덮은 새들", "카르스트 골짜기의 작은 배"],
   },
   "phat-diem-cathedral": {
     name: "팟지엠 대성당",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "예배 시간 외. 일정은 정문에 붙어 있다",
-    galleryCaptions: ["절의 삼문 같은 프엉딘", "대성당 안의 돌 천사상", "안쪽의 철목 기둥과 휜 지붕"],
   },
   "kenh-ga-hot-spring": {
     name: "껜가",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "뱃삯과 광천 목욕 요금은 따로 받는다",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["호앙롱 강 위의 물 마을", "번찐 동굴로 들어가는 배"],
   },
 };
 

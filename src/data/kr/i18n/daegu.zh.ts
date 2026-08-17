@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "日市09:00–18:00（各摊不一）；夜市仅周五、周六19:00–23:30与周日19:00–22:00营业",
-    galleryCaptions: ["西门夜市"],
   },
   "palgongsan-gatbawi": {
     name: "八公山冠岩药师如来（笠石佛）",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["山顶的笠石佛"],
   },
   "kim-gwang-seok-street": {
     name: "金光石路",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["金光石路上的壁画"],
   },
   "apsan-park": {
     name: "前山公园",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "缆车来回14,000韩元（单程10,000）；公园本身免费",
     openingHours: "10:30–18:00（缆车）",
-    galleryCaptions: ["自前山观景台俯瞰大邱"],
   },
   "daegu-yangnyeongsi": {
     name: "大邱药令市",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "博物馆免费参观",
     openingHours: "药令市白天营业；博物馆09:00–18:00（最后入场17:30），周一、1月1日与春节、中秋当日休馆",
-    galleryCaptions: ["店门前晒著的药材"],
   },
   "daegu-modern-alley": {
     name: "大邱近代巷弄",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "巷弄全日开放；青萝丘上的三栋传教士住宅因改建博物馆暂停开放，仅能看外观",
-    galleryCaptions: ["青萝丘上的三一阶梯"],
   },
   "bullo-tumuli": {
     name: "不老洞古坟群",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["午后斜阳下的覆草古坟"],
   },
   "biseulsan-azalea": {
     name: "琵瑟山杜鹃花海",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "山区白天开放。杜鹃自四月初开花、约4月20日前后盛开；庆典在四月中旬举行，主要两天有接驳车于08:30至17:30每5至10分钟一班",
-    galleryCaptions: ["盛开的杜鹃高原"],
   },
   "daegu-arboretum": {
     name: "大邱树木园",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "09:00–18:00（冬季至17:00），周一休园",
-    galleryCaptions: ["秋季的菊花园"],
   },
 };
 

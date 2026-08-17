@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["寺院院中的和风塔", "供奉法云的正殿"],
   },
   "tran-thuong-temple": {
     name: "陈商庙",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["从前庭望向陈商庙", "庙前的仪门与水池"],
   },
   "temple-of-literature": {
     name: "文庙－国子监",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "70,000越南盾",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["天光井中倒映的奎文阁", "文庙的奎文阁", "82座石龟驮进士碑", "通往内区的大中门"],
   },
   "mao-dien-temple-of-literature": {
     name: "茅田文庙",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["茅田文庙的仪门", "供奉孔子与八位先贤的拜堂"],
   },
   "lan-ha-bay": {
     name: "兰下湾",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2天",
     ticket: "80,000越南盾（海湾门票）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["布满兰下湾的石灰岩岛", "吉婆镇上的海鲜店", "改𠰚水上村", "从吉婆岛炮台公园望海", "藏在崖后的小沙滩"],
   },
   "nom-village": {
     name: "农村",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["横跨月德河的九孔石桥", "倒映在村塘中的三江亭"],
   },
   "pho-minh-pagoda": {
     name: "普明寺",
@@ -150,7 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["十四层的普明塔", "塔基上的陈代水波雕纹"],
   },
   "hoa-lu-ancient-capital": {
     name: "华闾古都",
@@ -172,7 +165,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["群山环抱中的丁先皇庙", "庙前的石制龙床", "俯瞰华闾谷地"],
   },
   "cuc-phuong-national-park": {
     name: "菊芳国家公园",
@@ -194,7 +186,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2天",
     ticket: "60,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["原始林中的千年楮树", "菊芳国家公园入口", "四月小径上的蝴蝶季"],
   },
   "tb-den-tran": {
     name: "太平陈庙",
@@ -215,7 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["三堂村的陈王庙", "太堂陵中的古坟"],
   },
   "dai-lai-lake": {
     name: "大莱湖",
@@ -236,7 +226,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["三岛山下的大莱湖", "清晨湖畔的松丘"],
   },
 };
 

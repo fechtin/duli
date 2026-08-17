@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "8,000원, 12,000원 순천 통합권으로 국가정원과 함께 이용 가능",
     openingHours: "08:00~19:00",
-    galleryCaptions: ["순천만의 갈대밭"],
   },
   "boseong-tea-fields": {
     name: "보성 녹차밭",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "자료에 따라 4,000~5,000원(어린이 3,000원)",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["언덕을 따라 휘어지는 차 이랑"],
   },
   "yeosu-night-sea": {
     name: "여수 밤바다와 케이블카",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "케이블카 왕복 17,000원(크리스탈 캐빈은 더 비쌈)",
     openingHours: "09:30~22:00(케이블카)",
-    galleryCaptions: ["불 밝힌 돌산대교"],
   },
   hyangiram: {
     name: "향일암",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "2,000원",
     openingHours: "05:00~19:00",
-    galleryCaptions: ["바다 절벽 위의 암자"],
   },
   "damyang-bamboo": {
     name: "담양 죽녹원",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "3,000원(어린이 1,500원), 65세 이상 무료",
     openingHours: "09:00~19:00(3~10월), 09:00~18:00(11~2월)",
-    galleryCaptions: ["대숲 사이의 산책로"],
   },
   songgwangsa: {
     name: "송광사",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "07:00~19:00",
-    galleryCaptions: ["일주문 앞의 지붕 얹은 나무다리"],
   },
   naganeupseong: {
     name: "낙안읍성",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "4,000원, 12,000원 순천 통합권에 포함",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["성벽에서 내려다본 초가지붕"],
   },
   "wando-cheongsando": {
     name: "완도 청산도",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "여객선 편도 약 8,700원(왕복 약 17,400원), 차량 선적은 훨씬 비싸다",
     openingHours: "배편 운항 일정에 따름",
-    galleryCaptions: ["청산도의 구들장논"],
   },
   "jindo-sea-parting": {
     name: "진도 신비의 바닷길",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료이며 일부 체험 프로그램만 유료다",
     openingHours: "바닷길은 조위가 가장 낮아질 때 한 시간 남짓만 열리고 그 시각은 날마다 다르다. 축제는 봄에 나흘간 열리므로 그해 물때표를 확인하고 1~2시간 일찍 도착하자. 길은 서서히 드러난다",
-    galleryCaptions: ["갈라진 바닷길을 걷는 사람들"],
   },
   "mokpo-modern-history": {
     name: "목포 근대역사거리",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "2,000원(청소년·군인 1,000원, 초등학생 500원, 유치원생 무료)",
     openingHours: "09:00~18:00, 역사관은 월요일 휴관",
-    galleryCaptions: ["유달산 자락의 옛 일본영사관"],
   },
   "gurye-sansuyu": {
     name: "구례 산수유마을",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["산동마을 돌담을 두른 노란 산수유"],
   },
   "suncheon-national-garden": {
     name: "순천만국가정원",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "8,000원, 순천 통합권 12,000원(정원·습지·낙안읍성, 2일간 유효)",
     openingHours: "09:00~19:00(겨울에는 18:00까지)",
-    galleryCaptions: ["국가정원 가운데의 인공 잔디 언덕"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["古い森を段になって落ちる流れ", "森を流れるスオイ・モー", "水辺に佇む中廟"],
   },
   "puong-cave": {
     name: "プオン洞",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "バーベー遊覧船料金に込み",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ナン川から見たプオン洞の入口", "石灰岩の天井の下を進む舟"],
   },
   "dau-dang-waterfall": {
     name: "ダウダン滝",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "バーベー遊覧船料金に込み",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["巨岩の原を突き抜ける滝", "滝を包む原生林"],
   },
   "pac-bo": {
     name: "パクボー遺跡",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "25,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["翡翠色に澄むレーニン渓流", "マルクス山の麓のコックボー洞"],
   },
   "huu-nghi-border-gate": {
     name: "フウギ国境ゲート",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["友誼関の正門", "フウギゲートの国境標石1116号", "国際ゲートの合同庁舎"],
   },
   fansipan: {
     name: "ファンシーパン",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日（ロープウェイ）または2日（登山）",
     ticket: "800,000ドン（ロープウェイ往復）",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["標高3,143mの山頂標", "峰の下を流れる雲海", "雲海の上に立つ山頂の宗教施設群", "ムオンホア谷を渡るロープウェイ"],
   },
   "bac-ha-market": {
     name: "バックハー日曜市",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "",
     openingHours: "05:30 - 12:00、日曜",
-    galleryCaptions: ["市を埋める花モン族の装い", "日曜市で子を背負う母", "日曜朝の馬市"],
   },
   "xuan-son-national-park": {
     name: "スアンソン国立公園",
@@ -170,7 +163,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2日",
     ticket: "20,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["石灰岩の山地に広がる原生林", "スアンソンの谷のザオ族集落"],
   },
   "den-mau-au-co": {
     name: "アウコー聖母廟",
@@ -191,7 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["古いガジュマルの下の廟門", "アウコー聖母を祀る正殿"],
   },
   "yen-tu": {
     name: "イエントゥ山",
@@ -213,7 +204,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "終日",
     ticket: "40,000ドン（ロープウェイ別）",
     openingHours: "05:00 - 20:00",
-    galleryCaptions: ["雲に沈む山頂のチュアドン", "遠望するイエントゥ山", "苔むしたフエクアン塔林", "ホアイエン寺へ続く古い松の道"],
   },
   "co-to-island": {
     name: "コートー島",
@@ -234,7 +224,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["島の原生チョイ林", "コートーの白砂と澄んだ海", "コートー島の浜辺にひとり", "縞状の堆積層が並ぶカウミー岩浜", "夕暮れのコートー灯台"],
   },
   "phuong-hoang-cave": {
     name: "フオンホアン洞",
@@ -255,7 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "30,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["洞窟入口の巨大な岩の丸天井", "山から湧き出すモーガー渓流"],
   },
   "ban-ba-waterfall": {
     name: "バンバー滝",
@@ -276,7 +264,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["翡翠色の淵へ落ちる最上段", "山裾に広がるバンバーの棚田"],
   },
   "khau-pha-pass": {
     name: "カウファ峠",
@@ -298,7 +285,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["雲海の上のカウファ峠", "水入れの季節のカウファ", "峠の頂から見た黄金の棚田"],
   },
 };
 

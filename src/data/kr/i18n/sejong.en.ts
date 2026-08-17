@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["Sejong lake and its floating stage"],
   },
   "sejong-arboretum": {
     name: "Sejong National Arboretum",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "5,000 KRW (4,000 teens, 1,000 children)",
     openingHours: "09:00–17:00; closed Mondays, 1 January and the main holidays",
-    galleryCaptions: ["The petal-shaped glasshouse"],
   },
   "government-complex-rooftop": {
     name: "Sejong Government Complex Rooftop Garden",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Free, but bring photo ID and book ahead on Naver (50 people per session) or register on site",
     openingHours: "Three guided sessions a day at 10:00, 13:30 and 15:30, weekdays and weekends alike, each lasting 60–90 minutes. It only runs in seasonal windows: in 2026, 14 March–14 June and 31 August–29 November; closed on major holidays and during extreme heat or cold",
-    galleryCaptions: ["The walkway along the ministries' rooftop garden"],
   },
   "bimatgil-geumgang": {
     name: "Geumgang Riverside & Ihan Bridge",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Ihan bridge lit over the Geumgang"],
   },
   "birds-nest-library": {
     name: "National Library of Korea, Sejong",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "09:00–21:00 on weekdays, 09:00–18:00 at weekends; closed the second and fourth Monday of each month and on public holidays",
-    galleryCaptions: ["The page-shaped library beside Sejong lake"],
   },
 };
 

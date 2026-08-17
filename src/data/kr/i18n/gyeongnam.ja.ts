@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "08:30〜18:00",
-    galleryCaptions: ["蔵経板殿の経板"],
   },
   "tongyeong-dongpirang": {
     name: "統営と東ピラン村",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "弥勒山ケーブルカー往復17,000ウォン（3〜12歳13,000）、東披郎壁画村は無料",
     openingHours: "09:30〜17:00（ケーブルカー）",
-    galleryCaptions: ["東ピラン村の壁画"],
   },
   "geoje-oedo": {
     name: "巨済 外島ボタニア",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日（船を含む）",
     ticket: "約38,000ウォン（船27,000＋入場11,000）、出発港と船社により変動",
     openingHours: "旅客船の運航時間、08:00〜17:00",
-    galleryCaptions: ["外島の段々の庭園"],
   },
   "jinju-fortress": {
     name: "晋州城と南江流灯祭り",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "09:00〜18:00は2,000ウォン（青少年1,000、子ども600）、それ以外の時間は無料開放",
     openingHours: "05:00〜23:00",
-    galleryCaptions: ["南江を見下ろす矗石楼"],
   },
   "namhae-daraengi": {
     name: "南海 タレンイ村",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分〜2時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["海へ下る棚田"],
   },
   "gimhae-gaya-tombs": {
     name: "金海大成洞古墳群",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料",
     openingHours: "09:00〜18:00、最終入場17:30。月曜と1月1日・旧正月・秋夕は休館",
-    galleryCaptions: ["大成洞の古墳群"],
   },
   "jirisan-national-park": {
     name: "智異山国立公園",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日〜三日",
     ticket: "",
     openingHours: "国立公園の入山時間指定制が適用される。入山は3〜11月は04:00、12〜2月は05:00から可能で、区間ごとに12:00〜17:00の間で規制時刻が異なる。出発前に通行規制情報の確認を",
-    galleryCaptions: ["夜明けの智異山の稜線"],
   },
   "upo-wetland": {
     name: "昌寧牛浦沼",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "",
     openingHours: "遊歩道は24時間開放。1km（30分）から9.7km（3時間30分）まで5つのコースがある",
-    galleryCaptions: ["牛浦沼の明け方の水霧"],
   },
   "jinhae-cherry-blossom": {
     name: "鎮海の桜",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["桜の季節の慶和駅の線路"],
   },
   "tongyeong-mireuksan": {
     name: "統営弥勒山ロープウェー",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "ケーブルカー往復17,000ウォン（大人）",
     openingHours: "09:30〜17:00（季節により変動）",
-    galleryCaptions: ["頂上から見た閑麗海上の島々"],
   },
   "geoje-windy-hill": {
     name: "巨済「風の丘」と海岸",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["風の丘に立つ風車"],
   },
   "namhae-german-village": {
     name: "南海ドイツ村",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "",
     openingHours: "終日（展示館は09:00〜18:00）",
-    galleryCaptions: ["南海湾を見下ろす赤い屋根"],
   },
 };
 

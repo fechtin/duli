@@ -107,7 +107,10 @@ for (const atlas of ATLASES) {
       `INSERT OR REPLACE INTO destinations (id, slug, province_slug, name, name_en, type, lng, lat, summary, story, facts, travel_tips, best_time, visit_duration, ticket, opening_hours, badges, tags, gallery, nearby, featured, source_url, verified_at, i18n, country) VALUES (` +
         `${q(d.id)}, ${q(d.slug)}, ${q(d.provinceSlug)}, ${q(d.name)}, ${q(d.nameEn)}, ${q(d.type)}, ${num(d.lng)}, ${num(d.lat)}, ` +
         `${q(d.summary)}, ${q(d.story)}, ${j(d.facts)}, ${j(d.travelTips)}, ${q(d.bestTime)}, ${q(d.visitDuration)}, ${q(d.ticket)}, ${q(d.openingHours)}, ` +
-        `${j(d.badges)}, ${j(d.tags)}, ${j(d.gallery)}, ${j(d.nearby)}, ${d.featured ? 1 : 0}, ` +
+        // `gallery` là cột NOT NULL của schema 0001 mà không còn ai đọc: worker thôi SELECT nó,
+        // client hỏi manifest. Ghi mảng rỗng cho tới khi có migration bỏ hẳn cột — bỏ cột trước
+        // khi worker mới lên sóng thì bản worker cũ sẽ SELECT một cột không còn tồn tại.
+        `${j(d.badges)}, ${j(d.tags)}, '[]', ${j(d.nearby)}, ${d.featured ? 1 : 0}, ` +
         `${q(d.sourceUrl ?? null)}, ${q(d.verifiedAt ?? null)}, ${i18nCol(atlas.destinationI18n[d.id])}, ${q(cc)});`,
     );
   }

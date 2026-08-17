@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["盘绕山坡的坡丁山口", "又窄又绕的旧山路"],
   },
   "pa-khoang-lake": {
     name: "巴宽湖",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["巴宽湖上的晨雾", "湖畔的泰族村寨"],
   },
   "go-lao-waterfall": {
     name: "𡎏牢瀑布",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["直落碧潭的白色水帘", "通往瀑底的石阶"],
   },
   "pu-ta-leng": {
     name: "普达岭",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["登山途中盛开的杜鹃林", "面向黄连山脉的3049米峰顶"],
   },
   "son-la-prison": {
     name: "山萝监狱",
@@ -108,7 +104,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["㟒吗丘上残存的石砌牢房", "院中的苏孝桃树"],
   },
   "dai-yem-waterfall": {
     name: "带襜瀑布",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["铺满崖面的水帘", "青苔乱石间的下级瀑布"],
   },
 };
 

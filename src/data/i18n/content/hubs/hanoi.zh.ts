@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "5万越南盾（参考价，请在售票处确认）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["通往玉岛的朱红栖旭桥", "望向湖面的祠庙庭院"],
   },
   "dong-xuan-market": {
     name: "同春市场",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 18:00；周末夜市约到23:00",
-    galleryCaptions: ["同春市场的五拱立面", "市场门前的周末夜市"],
   },
   "ta-hien-street": {
     name: "多贤街",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 24:00",
-    galleryCaptions: ["铺满多贤街人行道的红色塑料凳", "清晨的多贤街", "夜晚老城区的一杯生啤"],
   },
   "hanoi-train-street": {
     name: "河内火车街",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "",
     openingHours: "视时期而定；区域可能被完全围挡",
-    galleryCaptions: ["穿行于两排住宅之间的铁轨", "铁轨旁的日常生活"],
   },
   "the-note-coffee": {
     name: "便利贴咖啡馆",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "按店铺营业时间，一般从早到晚",
-    galleryCaptions: ["贴满彩色便利贴的店内墙面", "贴满便利贴的楼梯"],
   },
   "st-joseph-cathedral-hanoi": {
     name: "河内大教堂",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "弥撒时间之外；弥撒时刻表在门口张贴",
-    galleryCaptions: ["被风雨浸出灰斑的钟楼", "自教堂街望河内大教堂", "教堂街上的柠檬茶座"],
   },
   "hanoi-opera-house": {
     name: "河内大剧院",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "票价视演出而定",
     openingHours: "按公布的演出与参观时间表",
-    galleryCaptions: ["亮起灯的大剧院立面", "双柱与石阳台"],
   },
   "ho-chi-minh-mausoleum": {
     name: "胡志明陵",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含排队约1 - 1.5小时",
     ticket: "",
     openingHours: "多数工作日上午开放，周一和周五闭馆；请查公布日程",
-    galleryCaptions: ["从巴亭广场望向陵墓", "陵前的巴亭广场", "陵前的换岗仪式"],
   },
   "one-pillar-pagoda": {
     name: "一柱寺",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "20 - 30分钟",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["池上石柱托起的一柱寺", "通往殿内的木阶"],
   },
   "imperial-citadel-thang-long": {
     name: "升龙皇城",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "7万越南盾（参考价，请在售票处确认）",
     openingHours: "08:00 - 17:00，周一闭馆",
-    galleryCaptions: ["从内院看端门", "敬天殿台阶上的石龙", "升龙皇城正门", "D67指挥地堡"],
   },
   "hanoi-flag-tower": {
     name: "河内旗台",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "包含在同园区博物馆门票内",
     openingHours: "08:00 - 16:30，部分日子闭馆",
-    galleryCaptions: ["从底部仰望河内旗台", "八角塔身上的花形窗洞"],
   },
   "hoa-lo-prison": {
     name: "火炉监狱",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "5万越南盾（参考价，请在售票处确认）",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["刻着中央之家字样的监狱大门", "集体牢房里成排的脚镣"],
   },
   "quan-thanh-temple": {
     name: "镇武观",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "1万越南盾（参考价）",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["西湖边的镇武观山门", "玄天镇武黑铜像"],
   },
   "tran-quoc-pagoda": {
     name: "镇国寺",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "",
     openingHours: "08:00 - 16:00",
-    galleryCaptions: ["西湖畔的十一层宝塔", "日落时分的镇国寺"],
   },
   "west-lake-hanoi": {
     name: "西湖",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["西湖上的落日", "穿行于两湖之间的青年路"],
   },
   "long-bien-bridge": {
     name: "龙编桥",
@@ -337,7 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["跨越红河的龙编桥钢桁架", "从桥上俯看红河江心洲"],
   },
   "vietnam-museum-ethnology": {
     name: "越南民族学博物馆",
@@ -358,7 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3小时",
     ticket: "4万越南盾（参考价，请在售票处确认）",
     openingHours: "08:30 - 17:30，周一闭馆",
-    galleryCaptions: ["户外展区的巴拿族公共屋", "木雕像环绕的嘉莱族墓屋"],
   },
   "lotte-observation-deck": {
     name: "乐天观景台",
@@ -379,7 +362,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "约23万越南盾（参考价，随时期浮动）",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["从65层看河内", "可直接看到地面的玻璃地板"],
   },
   "bat-trang-pottery-village": {
     name: "钵场陶瓷村",
@@ -400,7 +382,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "按作坊作息08:00 - 17:30",
-    galleryCaptions: ["钵场作坊里的辘轳", "晾在巷墙边的蜂窝煤"],
   },
   "duong-lam-ancient-village": {
     name: "唐林古村",
@@ -421,7 +402,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "2万越南盾（参考价）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["红土石砌成的蒙富村门", "巷子里红褐色的红土石墙"],
   },
 };
 

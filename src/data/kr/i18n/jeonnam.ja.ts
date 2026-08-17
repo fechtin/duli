@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "8,000ウォン、12,000ウォンの順天統合券で国家庭園と共通利用可",
     openingHours: "08:00〜19:00",
-    galleryCaptions: ["順天湾の葦原"],
   },
   "boseong-tea-fields": {
     name: "宝城の緑茶畑",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "資料により4,000〜5,000ウォン（子ども3,000）",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["丘に沿って弧を描く茶の畝"],
   },
   "yeosu-night-sea": {
     name: "麗水の夜の海とケーブルカー",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "ケーブルカー往復17,000ウォン（クリスタルキャビンは割高）",
     openingHours: "09:30〜22:00（ケーブルカー）",
-    galleryCaptions: ["灯りをまとった突山大橋"],
   },
   hyangiram: {
     name: "向日庵",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "2,000ウォン",
     openingHours: "05:00〜19:00",
-    galleryCaptions: ["海の崖の上の庵"],
   },
   "damyang-bamboo": {
     name: "潭陽 竹緑苑",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "3,000ウォン（子ども1,500）、65歳以上は無料",
     openingHours: "09:00〜19:00（3〜10月）、09:00〜18:00（11〜2月）",
-    galleryCaptions: ["竹林の中の散策路"],
   },
   songgwangsa: {
     name: "松広寺",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "07:00〜19:00",
-    galleryCaptions: ["一柱門前の屋根つき木橋"],
   },
   naganeupseong: {
     name: "楽安邑城",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "4,000ウォン、12,000ウォンの順天統合券に含まれる",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["城壁から見下ろす茅葺きの屋根"],
   },
   "wando-cheongsando": {
     name: "莞島青山島",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "船は片道約8,700ウォン（往復約17,400）、車を載せるとかなり高くなる",
     openingHours: "船の運航ダイヤによる",
-    galleryCaptions: ["青山島の棚田"],
   },
   "jindo-sea-parting": {
     name: "珍島の神秘の海割れ",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料で、一部の体験プログラムのみ有料",
     openingHours: "海の道は干潮の最も低い時にだけ約1時間開き、その時刻は日ごとに変わる。祭りは春に4日間。その年の潮見表を確認し、1〜2時間前に到着したい。道は徐々に現れる",
-    galleryCaptions: ["割れた海の道を歩く人々"],
   },
   "mokpo-modern-history": {
     name: "木浦近代歴史通り",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "2,000ウォン（青少年・軍人1,000、小学生500、幼稚園児は無料）",
     openingHours: "09:00〜18:00、歴史館は月曜休館",
-    galleryCaptions: ["儒達山中腹の旧日本領事館"],
   },
   "gurye-sansuyu": {
     name: "求礼サンシュユ村",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["山洞の石垣を囲む黄色いサンシュユ"],
   },
   "suncheon-national-garden": {
     name: "順天湾国家庭園",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "8,000ウォン、順天統合券は12,000ウォン（庭園・湿地・楽安邑城、2日間有効）",
     openingHours: "09:00〜19:00（冬は18:00まで）",
-    galleryCaptions: ["国家庭園の人工の芝の丘"],
   },
 };
 

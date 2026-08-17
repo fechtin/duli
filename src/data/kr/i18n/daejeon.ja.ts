@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日開放",
-    galleryCaptions: ["川辺のハンビッ塔"],
   },
   gyeryongsan: {
     name: "鶏龍山国立公園",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "国立公園の入山時間指定制が適用される。入山は3〜11月は04:00、12〜2月は05:00から可能で、区間ごとに12:00〜17:00の間で規制時刻が異なる。出発前に通行規制情報の確認を",
-    galleryCaptions: ["鶏龍山の稜線"],
   },
   "daejeon-jungang-market": {
     name: "大田中央市場",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "",
     openingHours: "共通の営業時間はない。中部圏最大の伝統市場で店ごとに時間が異なり、多くは日中営業。目当ての店があるなら事前確認を",
-    galleryCaptions: ["中央市場の店先"],
   },
   "jangtaesan-metasequoia": {
     name: "長泰山メタセコイアの森",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "宿泊と会議室を除き、入場も駐車も無料",
     openingHours: "09:00〜18:00（最終入場17:00）、年中無休。スカイタワーは精密安全点検のため一時閉鎖中",
-    galleryCaptions: ["メタセコイアの樹冠を抜ける歩道"],
   },
   "daecheongho-observatory": {
     name: "大清湖と湖畔道路",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["大清湖の明け方の霧"],
   },
   "daejeon-skyroad": {
     name: "銀杏洞とスカイロード",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "通りは終日開放、スカイロードの映像は19:00〜23:00（4〜9月）、18:00〜22:00（10〜3月）に上映される",
-    galleryCaptions: ["銀杏洞の通りの上のLED天井"],
   },
   "ppuri-park": {
     name: "ルーツ公園（뿌리공원）",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "公園は06:00〜22:00（3〜10月）、07:00〜21:00（11〜2月）。族譜博物館は09:00〜18:00、月曜休館",
-    galleryCaptions: ["一族の紋章を刻んだ由来碑"],
   },
 };
 

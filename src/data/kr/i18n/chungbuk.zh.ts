@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["江心的三座石峰"],
   },
   "songnisan-beopjusa": {
     name: "俗离山与法住寺",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "07:00–18:00",
-    galleryCaptions: ["五层木塔捌相殿"],
   },
   guinsa: {
     name: "救仁寺",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "05:00–19:00",
-    galleryCaptions: ["层叠于峡谷中的寺院"],
   },
   "cheongju-jikji": {
     name: "清州古印刷博物馆（兴德寺址）",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "全年09:00–18:00；周一、1月1日与春节、中秋当日休馆",
-    galleryCaptions: ["金属活字"],
   },
   "mancheonha-skywalk": {
     name: "丹阳万天下天空步道",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "4,000韩元；滑索另收30,000韩元",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["俯瞰南汉江河湾的玻璃平台"],
   },
   "gosu-cave": {
     name: "丹阳古薮洞窟",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "11,000韩元",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["古薮洞窟中的钟乳石"],
   },
   "chungju-lake-ferry": {
     name: "忠州湖与游览船",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "依航线与码头为12,000至20,000韩元（儿童8,000起）",
     openingHours: "依航班时刻，通常每日2至4班",
-    galleryCaptions: ["穿行于忠州湖崖壁之间的游览船"],
   },
   "chungju-jungangtap": {
     name: "忠州中央塔",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "公园全日全年开放；园内忠州博物馆与酒博物馆09:00–18:00",
-    galleryCaptions: ["南汉江畔的中央塔"],
   },
   cheongnamdae: {
     name: "青南台",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "6,000韩元（青少年4,000、儿童3,000）；65岁以上与7岁以下免费",
     openingHours: "09:00–18:00（12月至1月至17:00），售票至16:30；周一、1月1日、春节与中秋当日休馆",
-    galleryCaptions: ["青南台的湖畔庭园"],
   },
   sobaeksan: {
     name: "小白山国立公园",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "",
     openingHours: "适用国家公园「入山时间指定制」：3至11月自04:00、12至2月自05:00开放入山，各路段的折返管制时间落在12:00至17:00之间。出发前请先查看步道封闭公告",
-    galleryCaptions: ["小白山棱线上的皇家杜鹃"],
   },
 };
 

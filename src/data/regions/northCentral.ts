@@ -34,11 +34,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 17:30",
     badges: ["unesco", "verified", "popular"],
     tags: ["history", "culture", "photography"],
-    gallery: [
-      { seed: "thanh-nha-ho-cong-nam", caption: "Cổng Nam đá xanh uy nghi", ratio: "16/9" },
-      { seed: "thanh-nha-ho-tuong-thanh", caption: "Tường thành ghép đá hàng thế kỷ", ratio: "4/3" },
-      { seed: "thanh-nha-ho-canh-dong", caption: "Thành cổ giữa đồng quê xứ Thanh", ratio: "1/1" },
-    ],
     nearby: ["suoi-ca-than-cam-luong"],
     featured: true,
   },
@@ -71,12 +66,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "trending", "festival"],
     tags: ["beach", "nature", "food"],
-    gallery: [
-      { seed: "sam-son-binh-minh", caption: "Bình minh trên bãi tắm Sầm Sơn", ratio: "16/9" },
-      { seed: "sam-son-trong-mai", caption: "Dọn vệ sinh trên bãi biển Sầm Sơn", ratio: "4/3" },
-      { seed: "sam-son-trong-mai-2", caption: "Hòn Trống Mái lừng danh", ratio: "4/3" },
-      { seed: "sam-son-hai-san", caption: "Bãi tắm rợp dù che nhìn từ trên cao", ratio: "1/1" },
-    ],
     nearby: ["thanh-nha-ho"],
   },
   {
@@ -108,11 +97,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["hidden-gem", "verified"],
     tags: ["nature", "culture", "photography"],
-    gallery: [
-      { seed: "cam-luong-dan-ca", caption: "Đàn cá thần dưới chân núi", ratio: "16/9" },
-      { seed: "cam-luong-suoi-trong", caption: "Dòng suối trong vắt", ratio: "4/3" },
-      { seed: "cam-luong-nha-san", caption: "Bản Mường ven suối", ratio: "1/1" },
-    ],
     nearby: ["thanh-nha-ho"],
   },
   {
@@ -144,11 +128,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified", "popular", "festival"],
     tags: ["history", "culture"],
-    gallery: [
-      { seed: "kim-lien-nha-tranh", caption: "Ngôi nhà tranh quê Bác", ratio: "16/9" },
-      { seed: "kim-lien-gieng-coc", caption: "Giếng Cốc làng Sen", ratio: "4/3" },
-      { seed: "kim-lien-cay-da", caption: "Cây đa cổ thụ đầu làng", ratio: "1/1" },
-    ],
     nearby: ["bien-cua-lo"],
     featured: true,
   },
@@ -181,12 +160,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "trending"],
     tags: ["beach", "food", "nature"],
-    gallery: [
-      { seed: "cua-lo-bai-cat", caption: "Đại lộ ven biển rợp bóng cây buổi sớm", ratio: "16/9" },
-      { seed: "cua-lo-muc-nhay", caption: "Phố biển lên đèn lung linh lúc hoàng hôn", ratio: "4/3" },
-      { seed: "cua-lo-dao-lan-chau", caption: "Bãi biển Cửa Lò", ratio: "1/1" },
-      { seed: "cua-lo-dao-lan-chau-2", caption: "Đảo Lan Châu sát bờ", ratio: "1/1" },
-    ],
     nearby: ["khu-di-tich-kim-lien"],
   },
   {
@@ -220,11 +193,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["hidden-gem", "verified", "ai-recommended"],
     tags: ["nature", "mountain", "photography"],
-    gallery: [
-      { seed: "pu-mat-thac-khe-kem", caption: "Nhà sàn mái lá nép bên đại ngàn xanh thẳm", ratio: "16/9" },
-      { seed: "pu-mat-rung-nguyen-sinh", caption: "Rừng nguyên sinh đại ngàn", ratio: "4/3" },
-      { seed: "pu-mat-song-giang", caption: "Dòng sông Giăng trong vắt", ratio: "1/1" },
-    ],
     nearby: ["khu-di-tich-kim-lien"],
   },
   {
@@ -258,11 +226,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["festival", "verified", "popular"],
     tags: ["temple", "culture", "history"],
-    gallery: [
-      { seed: "huong-tich-chua-co", caption: "Chùa cổ giữa rừng Hồng Lĩnh", ratio: "16/9" },
-      { seed: "huong-tich-bac-da", caption: "Bậc đá rêu phong lên chùa", ratio: "4/3" },
-      { seed: "huong-tich-may-trang", caption: "Bậc đá rêu phong khuất trong sương mờ", ratio: "1/1" },
-    ],
     nearby: ["bien-thien-cam"],
   },
   {
@@ -294,12 +257,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "new"],
     tags: ["beach", "nature", "food"],
-    gallery: [
-      { seed: "thien-cam-bai-bien", caption: "Bãi biển hoang sơ Thiên Cầm", ratio: "16/9" },
-      { seed: "thien-cam-nui", caption: "Núi Thiên Cầm bên bờ sóng", ratio: "4/3" },
-      { seed: "thien-cam-muc-mot-nang", caption: "Bờ biển Thiên Cầm", ratio: "1/1" },
-      { seed: "thien-cam-muc-mot-nang-2", caption: "Mực một nắng đặc sản", ratio: "1/1" },
-    ],
     nearby: ["chua-huong-tich", "nga-ba-dong-loc"],
   },
   {
@@ -331,12 +288,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 17:30",
     badges: ["verified", "popular"],
     tags: ["history", "culture"],
-    gallery: [
-      { seed: "dong-loc-mo-liet-si", caption: "Mười ngôi mộ nữ thanh niên xung phong", ratio: "16/9" },
-      { seed: "dong-loc-thap-chuong", caption: "Hàng mộ trắng phủ hoa cúc tưởng niệm", ratio: "4/3" },
-      { seed: "dong-loc-ho-bom", caption: "Thắp hương tại khu tưởng niệm Ngã ba Đồng Lộc", ratio: "1/1" },
-      { seed: "dong-loc-ho-bom-2", caption: "Dấu tích hố bom năm xưa", ratio: "1/1" },
-    ],
     nearby: ["bien-thien-cam"],
   },
   {
@@ -370,11 +321,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified", "popular"],
     tags: ["history", "culture"],
-    gallery: [
-      { seed: "thanh-co-dai-tuong-niem", caption: "Đài tưởng niệm trung tâm", ratio: "16/9" },
-      { seed: "thanh-co-cong-thanh", caption: "Cổng thành cổ rêu phong", ratio: "4/3" },
-      { seed: "thanh-co-thach-han", caption: "Lối vào đài tưởng niệm thành cổ rợp bóng cây", ratio: "1/1" },
-    ],
     nearby: ["dia-dao-vinh-moc"],
     featured: true,
   },
@@ -409,12 +355,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified", "ai-recommended", "popular"],
     tags: ["history", "culture"],
-    gallery: [
-      { seed: "vinh-moc-cua-ham", caption: "Cửa hầm địa đạo Vịnh Mốc", ratio: "16/9" },
-      { seed: "vinh-moc-long-dat", caption: "Đường hầm trong lòng đất", ratio: "4/3" },
-      { seed: "vinh-moc-nha-ho-sinh", caption: "Đèn dầu cải tiến dùng dưới địa đạo", ratio: "1/1" },
-      { seed: "vinh-moc-nha-ho-sinh-2", caption: "Căn nhà hộ sinh dưới hầm", ratio: "1/1" },
-    ],
     nearby: ["thanh-co-quang-tri", "dao-con-co"],
   },
   {
@@ -448,11 +388,6 @@ export const northCentralDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "new", "ai-recommended"],
     tags: ["island", "nature", "beach"],
-    gallery: [
-      { seed: "con-co-bien-xanh", caption: "Biển xanh ôm đảo Cồn Cỏ", ratio: "16/9" },
-      { seed: "con-co-hai-dang", caption: "Ngọn hải đăng cổ trên đảo", ratio: "4/3" },
-      { seed: "con-co-san-ho", caption: "Rạn san hô rực rỡ", ratio: "1/1" },
-    ],
     nearby: ["dia-dao-vinh-moc"],
   },
 ];

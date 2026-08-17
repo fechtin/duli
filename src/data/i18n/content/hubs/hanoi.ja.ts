@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "5万ドン（参考価格。窓口で確認を）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["玉の島へ渡る朱のテフック橋", "湖を望む祠の境内"],
   },
   "dong-xuan-market": {
     name: "ドンスアン市場",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00、週末の夜市は23時ごろまで",
-    galleryCaptions: ["ドンスアン市場の五連アーチ正面", "門前に立つ週末の夜市"],
   },
   "ta-hien-street": {
     name: "タヒエン通り",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "おおよそ17:00 - 24:00",
-    galleryCaptions: ["タヒエンの歩道を埋める赤いプラスチック椅子", "早朝のタヒエン通り", "夜の旧市街で飲むビアホイ"],
   },
   "hanoi-train-street": {
     name: "ハノイ線路の路地",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "時期による。一帯が完全に閉鎖されることがある",
-    galleryCaptions: ["二列の家並みの間を走る線路", "線路のかたわらの日常"],
   },
   "the-note-coffee": {
     name: "ザ・ノート・コーヒー",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "カフェの営業時間に従う。おおむね朝から夜まで",
-    galleryCaptions: ["色とりどりの付箋に覆われた店内の壁", "付箋だらけの階段"],
   },
   "st-joseph-cathedral-hanoi": {
     name: "聖ヨセフ大聖堂",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。ミサの予定は門に掲示",
-    galleryCaptions: ["風雨に染みた灰色の鐘塔", "ニャートー通りから見た聖ヨセフ大聖堂", "ニャート通りのチャーチャインの店"],
   },
   "hanoi-opera-house": {
     name: "ハノイ・オペラハウス",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "料金は公演によって異なる",
     openingHours: "公表された公演・見学日程に従う",
-    galleryCaptions: ["灯りのともるオペラハウス正面", "双柱と石のバルコニー"],
   },
   "ho-chi-minh-mausoleum": {
     name: "ホーチミン廟",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "行列を含めて1 - 1.5時間",
     ticket: "",
     openingHours: "平日の午前、月曜と金曜は休み。公表日程を確認",
-    galleryCaptions: ["バディン広場から見た廟", "廟前のバディン広場", "廟前の衛兵交代"],
   },
   "one-pillar-pagoda": {
     name: "一柱寺",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "20 - 30分",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["池の上、石柱に載る一柱寺", "堂へ上がる木の階段"],
   },
   "imperial-citadel-thang-long": {
     name: "タンロン皇城",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "7万ドン（参考価格。窓口で確認を）",
     openingHours: "08:00 - 17:00、月曜休み",
-    galleryCaptions: ["中庭から見た端門", "敬天殿の階段に残る石龍", "タンロン皇城の正門", "D67の指揮壕"],
   },
   "hanoi-flag-tower": {
     name: "ハノイ旗台",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "同じ敷地内の博物館の入場券に含まれる",
     openingHours: "08:00 - 16:30、一部曜日は休み",
-    galleryCaptions: ["真下から見上げたハノイ旗台", "八角の胴に穿たれた花形の窓"],
   },
   "hoa-lo-prison": {
     name: "ホアロー収容所",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "5万ドン（参考価格。窓口で確認を）",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["メゾン・サントラルと記された門", "雑居房に並ぶ足枷"],
   },
   "quan-thanh-temple": {
     name: "鎮武観",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "1万ドン（参考価格）",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["西湖のほとりの鎮武観の門", "玄天鎮武の黒銅像"],
   },
   "tran-quoc-pagoda": {
     name: "鎮国寺",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "08:00 - 16:00",
-    galleryCaptions: ["西湖のほとりに立つ十一層の塔", "夕暮れの鎮国寺"],
   },
   "west-lake-hanoi": {
     name: "西湖",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["西湖に沈む夕日", "二つの湖の間を通るタインニエン通り"],
   },
   "long-bien-bridge": {
     name: "ロンビエン橋",
@@ -336,7 +321,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["紅河に架かるロンビエンの鉄トラス", "橋から見下ろす中州"],
   },
   "vietnam-museum-ethnology": {
     name: "ベトナム民族学博物館",
@@ -357,7 +341,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "4万ドン（参考価格。窓口で確認を）",
     openingHours: "08:30 - 17:30、月曜休み",
-    galleryCaptions: ["屋外展示のバナー族共同家屋", "木彫像が囲むジャライ族の墓屋"],
   },
   "lotte-observation-deck": {
     name: "ロッテ展望台",
@@ -378,7 +361,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "約23万ドン（参考価格。時期により変動）",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["65階から見たハノイ", "真下が見えるガラス床"],
   },
   "bat-trang-pottery-village": {
     name: "バッチャン陶器村",
@@ -399,7 +381,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "工房の稼働に応じて08:00 - 17:30",
-    galleryCaptions: ["バッチャンの工房のろくろ", "路地の塀に干された豆炭"],
   },
   "duong-lam-ancient-village": {
     name: "ドゥオンラム古村",
@@ -420,7 +401,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "2万ドン（参考価格）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["ラテライトで築いたモンフーの村門", "路地に続く赤褐色のラテライトの塀"],
   },
 };
 

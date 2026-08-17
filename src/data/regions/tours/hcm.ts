@@ -31,10 +31,6 @@ export const hcmTourDestinations: Destination[] = [
     openingHours: "08:00 - 22:00",
     badges: ["verified"],
     tags: ["culture", "city", "photography"],
-    gallery: [
-      { seed: "nguyen-van-binh-book-street-1", caption: "Dãy ki-ốt sách dưới tán me", ratio: "16/9" },
-      { seed: "nguyen-van-binh-book-street-2", caption: "Quán cà phê giữa đường sách", ratio: "4/3" },
-    ],
     nearby: ["notre-dame-saigon", "saigon-central-post-office", "independence-palace"],
     sourceUrl: "https://www.openstreetmap.org/node/11708010270",
     verifiedAt: "2026-08-16",
@@ -67,10 +63,6 @@ export const hcmTourDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["verified"],
     tags: ["city", "food", "nightlife"],
-    gallery: [
-      { seed: "turtle-lake-hcm-1", caption: "Tháp bê tông hình cánh sen giữa hồ", ratio: "16/9" },
-      { seed: "turtle-lake-hcm-2", caption: "Bậc thềm quanh hồ lúc chập tối", ratio: "4/3" },
-    ],
     nearby: ["notre-dame-saigon", "independence-palace", "nguyen-hue-walking-street"],
     sourceUrl: "https://vi.wikipedia.org/wiki/H%E1%BB%93_Con_R%C3%B9a",
     verifiedAt: "2026-08-16",

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["スアンフーン湖の朝霧", "スアンフーン湖を望むダラット", "岸辺に咲く梅桜"],
   },
   "da-lat-market": {
     name: "ダラット市場",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "06:00 - 19:00。夜市はおおよそ17:00 - 23:00",
-    galleryCaptions: ["市場のなかの温帯農産物の売り場", "黄色い灯りの下の冥界市場"],
   },
   "da-lat-railway-station": {
     name: "ダラット駅",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間。チャイマット列車を含めるとさらに1.5時間",
     ticket: "駅の入場料とチャイマット列車の運賃は別",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ダラット駅の三つの尖った屋根", "構内に展示された蒸気機関車"],
   },
   "crazy-house-dalat": {
     name: "クレイジー・ハウス",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "7万ドン（参考価格）",
     openingHours: "08:30 - 19:00",
-    galleryCaptions: ["巨大な切り株の形をした建物", "屋外を巻いて上がる螺旋階段"],
   },
   "bao-dai-summer-palace": {
     name: "バオダイ夏の離宮",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "5万ドン（参考価格）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["第三離宮のアールデコの正面", "当時の家具が残る執務室"],
   },
   "da-lat-cathedral": {
     name: "ダラット大聖堂",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。ミサの予定は門に掲示",
-    galleryCaptions: ["桃色の鐘塔とその上の雄鶏", "色ガラスを通して差す光"],
   },
   "domaine-de-marie-church": {
     name: "ドメーヌ・ド・マリー教会",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "07:00 - 17:00、ミサの時間外",
-    galleryCaptions: ["急勾配の屋根と土色の桃色の壁", "前庭の花壇"],
   },
   "linh-phuoc-pagoda": {
     name: "リンフオック寺",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["境内の陶片を嵌めた龍", "陶片で覆われた七層の鐘楼"],
   },
   "tuyen-lam-lake": {
     name: "トゥエンラム湖",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "ロープウェーと舟代は別",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["トゥエンラム湖観光区の管理棟", "トゥエンラム湖の朝霧", "松の丘のあいだに入り込む入り江"],
   },
   "truc-lam-monastery": {
     name: "チュックラム禅院",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "",
     openingHours: "05:00 - 21:00。内院は別の時間",
-    galleryCaptions: ["トゥエンラム湖を見下ろす禅院", "外から見たチュックラム禅院", "松林の上を行くロープウェー"],
   },
   "valley-of-love": {
     name: "愛の谷",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "約25万ドン（参考価格。券種が複数ある）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ダーティエン湖へ下る松の斜面", "谷の刈り込まれた花壇"],
   },
   "pongour-waterfall": {
     name: "ポングール滝",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "移動を含めて半日",
     ticket: "約5万ドン（参考価格）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ポングールの七段の岩の階段", "苔むした岩を覆って流れる水"],
   },
   "elephant-waterfall-dalat": {
     name: "象の滝",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "約3万ドン（参考価格）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["岩の峡谷へ落ちる象の滝", "滝壺へ下りる石段"],
   },
   "cau-dat-tea-hill": {
     name: "カウダットの茶畑",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "区画により異なり、およそ5万ドン",
     openingHours: "おおよそ05:00 - 17:00",
-    galleryCaptions: ["夜明けの茶畑を覆う雲海", "斜面に平らに刈り込まれた茶の畝"],
   },
   "me-linh-coffee-garden": {
     name: "メーリン・コーヒーガーデン",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "カフェの営業時間に従う。おおむね朝から夕方遅くまで",
-    galleryCaptions: ["コーヒーの谷を見下ろす段になった庭", "夜明けに谷を流れる雲"],
   },
   "clay-tunnel-dalat": {
     name: "ダラット粘土のトンネル",
@@ -336,7 +321,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "約8万ドン（参考価格）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["トンネルに沿う赤い粘土の浮き彫り", "土で建て直されたダラット駅"],
   },
 };
 

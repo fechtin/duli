@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "200,000동",
     openingHours: "07:00 – 17:30",
-    galleryCaptions: [
-      "위엄 있는 응오몬",
-      "돌로 포장된 입구에서 바라본 고풍스러운 응오몬",
-      "황성 안의 대조 마당",
-      "흐엉강에 내려앉는 저녁",
-    ],
   },
   "phong-nha-cave": {
     name: "퐁냐 동굴",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "150,000동",
     openingHours: "07:30 – 16:30",
-    galleryCaptions: [
-      "붉은빛 도는 바위로 빛나는 깊은 동굴 천장",
-      "고요한 동굴 속 환상적인 종유석",
-      "지하강 손강",
-    ],
   },
   "son-doong-cave": {
     name: "선동(썬도옹) 동굴",
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3박 4일 투어",
     ticket: "투어 7천만 동부터",
     openingHours: "투어 일정에 따름",
-    galleryCaptions: [
-      "동굴 속 천창에서 쏟아지는 빛기둥",
-      "안쪽으로 굽이쳐 들어가는 붉은빛 동굴 내부",
-      "동굴 속 푸른 숲 천창 아래 작아 보이는 사람들",
-    ],
   },
   "thanh-nha-ho": {
     name: "호 왕조 성채",
@@ -89,11 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "40,000동",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "위엄 있는 청석 남문",
-      "수 세기 된 석조 성벽",
-      "타인호아 시골 한가운데의 고성",
-    ],
   },
   "bien-sam-son": {
     name: "삼손 해변",
@@ -113,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "삼손 해변의 일출",
-      "삼손 해변 청소",
-      "이름난 쫑마이 바위",
-      "위에서 본 파라솔 가득한 해변",
-    ],
   },
   "suoi-ca-than-cam-luong": {
     name: "껌르엉 신어 계곡",
@@ -138,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "산기슭의 신어 떼",
-      "맑디맑은 계곡",
-      "계곡가의 므엉족 마을",
-    ],
   },
   "khu-di-tich-kim-lien": {
     name: "낌리엔 유적지 - 호 아저씨의 고향",
@@ -162,11 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "호 아저씨의 초가 생가",
-      "센 마을의 꼭 우물",
-      "마을 어귀의 오래된 보리수",
-    ],
   },
   "bien-cua-lo": {
     name: "끄어로 해변",
@@ -186,12 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "이른 아침 가로수 우거진 해안 대로",
-      "노을 질 무렵 반짝이는 바닷가 도시",
-      "끄어로 해변",
-      "해안에 가까운 란쩌우섬",
-    ],
   },
   "vuon-quoc-gia-pu-mat": {
     name: "푸맛 국립공원",
@@ -211,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "50,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "짙푸른 숲 곁에 자리한 잎 지붕 고상가옥",
-      "광대한 원시림",
-      "맑디맑은 장강",
-    ],
   },
   "chua-huong-tich": {
     name: "흐엉띡 사원",
@@ -235,11 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "30,000동",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "홍린 숲속의 고찰",
-      "사원으로 오르는 이끼 낀 돌계단",
-      "안개 속에 가린 이끼 낀 돌계단",
-    ],
   },
   "bien-thien-cam": {
     name: "티엔껌 해변",
@@ -259,12 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "청정한 티엔껌 해변",
-      "파도 곁의 티엔껌산",
-      "티엔껌의 바닷가",
-      "별미 반건조 오징어",
-    ],
   },
   "nga-ba-dong-loc": {
     name: "동록 삼거리",
@@ -284,12 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "여성 청년돌격대원 열 명의 묘",
-      "추모 국화로 덮인 하얀 묘 행렬",
-      "동록 삼거리 추모지에 향을 올리다",
-      "그 시절 폭탄 구덩이의 흔적",
-    ],
   },
   "thanh-co-quang-tri": {
     name: "꽝찌 고성",
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "중앙 위령비",
-      "이끼 낀 고성 성문",
-      "나무 그늘 우거진 고성 위령비 입구",
-    ],
   },
   "dia-dao-vinh-moc": {
     name: "빈목 땅굴",
@@ -333,12 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "40,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "빈목 땅굴 입구",
-      "땅속의 땅굴 통로",
-      "땅굴에서 쓰던 개조 기름등",
-      "땅굴 아래의 산실",
-    ],
   },
   "dao-con-co": {
     name: "꼰꼬섬",
@@ -358,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "무료",
     openingHours: "종일",
-    galleryCaptions: [
-      "꼰꼬섬을 감싼 푸른 바다",
-      "섬 위의 오래된 등대",
-      "화려한 산호초",
-    ],
   },
 };
 

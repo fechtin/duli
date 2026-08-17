@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The white Buddha on Trai Thuy hill", "Nha Trang from the foot of the statue"],
   },
   "nha-trang-cathedral": {
     name: "Nha Trang Cathedral",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The bare grey stone face of the Mountain Church", "The entrance to Nha Trang Cathedral", "The city from the cathedral forecourt"],
   },
   "oceanographic-museum-vn": {
     name: "Institute of Oceanography",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The 18-metre humpback whale skeleton", "Specimens in glass jars in the store"],
   },
   "hon-chong-promontory": {
     name: "Hon Chong Promontory",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "30,000d (indicative)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Granite boulders stacked along the shore", "Nha Trang bay from Hon Chong"],
   },
   "dam-market-nha-trang": {
     name: "Dam Market",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Dried seafood stalls in Dam market", "The bird's nest and fish sauce section"],
   },
   "nha-trang-night-market": {
     name: "Nha Trang Night Market",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 23:00",
-    galleryCaptions: ["Grill stalls in the night market", "Shell and pearl craft stalls"],
   },
   "doc-let-beach": {
     name: "Doc Let Beach",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Fine white sand at Doc Let", "The Hon Khoi salt fields nearby"],
   },
   "binh-ba-island": {
     name: "Binh Ba Island",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Boat fare charged separately",
     openingHours: "According to the day's boat times",
-    galleryCaptions: ["Lobster rafts filling the bay", "A quiet beach on Binh Ba island"],
   },
   "ba-ho-stream": {
     name: "Ba Ho Stream",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "About 30,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["A clear pool between granite cliffs", "The boulder scramble to the upper pools"],
   },
   "yang-bay-waterfall": {
     name: "Yang Bay Waterfall",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Site entry about 130,000d (indicative)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["Yang Bay falling over tiers of rock", "Forest of the Khanh Vinh valley around the falls"],
   },
 };
 

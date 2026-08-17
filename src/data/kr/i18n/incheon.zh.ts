@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "街区全日开放；餐厅大致11:00–21:00",
-    galleryCaptions: ["中华街牌楼"],
   },
   "songdo-central-park": {
     name: "松岛中央公园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["高楼之间的松岛运河"],
   },
   "ganghwa-dolmen": {
     name: "江华支石墓遗址",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["田野中的富近里支石墓"],
   },
   wolmido: {
     name: "月尾岛",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["月尾岛海滨步道"],
   },
   jeondeungsa: {
     name: "传灯寺（江华）",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["大雄殿与撑簷的人像"],
   },
   "ganghwa-peace-observatory": {
     name: "江华和平展望台",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "2,500韩元（青少年与军人1,700、儿童1,000）；望远镜每次两分钟500韩元",
     openingHours: "09:00–18:00，周一休馆",
-    galleryCaptions: ["隔著河口望见的北韩岸边"],
   },
   muuido: {
     name: "舞衣岛与霞娜盖海水浴场",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "海上观光步道免费且全年开放；自然休养林1,000韩元，霞那开海水浴场另行收费",
     openingHours: "全日开放",
-    galleryCaptions: ["霞娜盖海滩上的木屋"],
   },
   "songwol-fairy-tale-village": {
     name: "松月洞童话村",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["画满童话的巷弄"],
   },
   "incheon-open-port-street": {
     name: "仁川开港场街区",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "街道全日开放，博物馆09:00–18:00；每年的「开港场文化财夜行」期间，古迹会开放至夜间",
-    galleryCaptions: ["分隔两处租界的境界阶梯"],
   },
   "sorae-wetland-park": {
     name: "苏莱湿地生态公园",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["红色碱蓬间的风车"],
   },
 };
 

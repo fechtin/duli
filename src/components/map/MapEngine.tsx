@@ -17,6 +17,7 @@ import { useT } from "@/lib/i18n";
 import { useCountryName } from "@/lib/country/useCountryName";
 import { cn } from "@/lib/utils/cn";
 import { PhotoMedallion } from "./PhotoMedallion";
+import { thumbSeedFor } from "@/lib/media/gallery";
 import { MapLayerFilter } from "./MapLayerFilter";
 import { isLayerVisible } from "@/lib/map/layers";
 import { TripRouteLayer } from "./TripRouteLayer";
@@ -665,7 +666,7 @@ export function MapEngine() {
                         tripOpen && !isSelected && "opacity-40 hover:opacity-100",
                       )}
                     >
-                      <PhotoMedallion seed={d.gallery[0]?.seed ?? d.id} type={d.type} tier={d.tier}>
+                      <PhotoMedallion seed={thumbSeedFor(d.id)} type={d.type} tier={d.tier}>
                         {/* Seasonal glow dot */}
                         {showDot && (
                           <span

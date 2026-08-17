@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["Dinh Cau shrine on its rock at the river mouth", "Sunset from the shrine yard"],
   },
   "phu-quoc-night-market": {
     name: "Phu Quoc Night Market",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 23:00",
-    galleryCaptions: ["Rolled ice cream made at the night market", "Live seafood tanks outside the restaurants", "A fish stall at the night market", "Phu Quoc fish sauce and pepper stalls"],
   },
   "hon-thom-cable-car": {
     name: "Hon Thom Cable Car",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Return cable car about 350,000d (indicative)",
     openingHours: "About 08:00 - 17:30, varies by season",
-    galleryCaptions: ["A Hon Thom cable car pylon standing in the sea", "A cabin crossing above the sea", "Floating fishing villages seen from the cable car"],
   },
   "phu-quoc-prison": {
     name: "Phu Quoc Prison",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5 hours",
     ticket: "",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["Cell blocks behind layers of barbed wire", "A reconstructed barbed-wire tiger cage"],
   },
   "ham-ninh-fishing-village": {
     name: "Ham Ninh Fishing Village",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The wooden pier running out to sea at Ham Ninh", "The flat exposed at low tide"],
   },
   "suoi-tranh-waterfall": {
     name: "Suoi Tranh Waterfall",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "About 20,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The stream running over rock under the canopy", "A pool in the streambed"],
   },
   "ganh-dau-cape": {
     name: "Ganh Dau Cape",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Cambodian coast seen from Ganh Dau", "Rocky shore and clear water at the cape"],
   },
   "vinwonders-phu-quoc": {
     name: "VinWonders Phu Quoc",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Entry about 880,000d (indicative; combined safari tickets available)",
     openingHours: "About 09:00 - 20:00, varies by season",
-    galleryCaptions: ["A themed zone inside the park", "The semi-wild safari park next door"],
   },
   "ha-tien-town": {
     name: "Ha Tien",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Ha Tien town on the Gulf of Thailand", "The beach at Ha Tien", "The Mac family tombs on Binh San hill"],
   },
   "mui-nai-beach": {
     name: "Mui Nai Beach",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "About 20,000d (indicative)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The sun setting into the Gulf of Thailand", "Brown sand below the lighthouse headland"],
   },
 };
 

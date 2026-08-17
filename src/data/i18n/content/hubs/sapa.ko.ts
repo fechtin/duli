@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "바위밭과 마을 입장료는 따로 받는다",
     openingHours: "하루 종일. 해 있을 때 가라",
-    galleryCaptions: ["추수철의 므엉호아 다랑논", "므엉호아 계곡", "논 사이의 고대 새김 바위"],
   },
   "cat-cat-village": {
     name: "깟깟 마을",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "약 15만 동(참고 가격)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["다랑논 사이의 몽족 집들", "깟깟 마을의 폭포", "울타리를 따라 널린 쪽빛 천"],
   },
   "ta-van-village": {
     name: "따반 마을",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일. 하룻밤 자면 더 좋다",
     ticket: "마을 구역 입장 약 7만 5천 동(참고 가격)",
     openingHours: "하루 종일",
-    galleryCaptions: ["다랑논 사이의 따반 마을", "므엉호아 계곡의 아침 안개"],
   },
   "ta-phin-village": {
     name: "따핀 마을",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "마을 입장 약 4만 동(참고 가격)",
     openingHours: "하루 종일",
-    galleryCaptions: ["따핀의 다랑논", "비단에 자수를 놓는 붉은 자오족 여인", "이른 아침의 따핀 마을", "프랑스 석조 수녀원의 폐허"],
   },
   "ham-rong-mountain": {
     name: "함종산",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "약 7만 동(참고 가격)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["함종 구름 마당에서 본 사파", "오르는 길의 좁은 바위틈"],
   },
   "silver-waterfall-sapa": {
     name: "은폭포",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "약 2만 동(참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["국도 옆으로 떨어지는 은폭포", "폭포로 오르는 비탈의 계단"],
   },
   "y-ty-village": {
     name: "이띠",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2일",
     ticket: "",
     openingHours: "하루 종일",
-    galleryCaptions: ["이띠 골짜기를 채운 운해", "이띠의 몽족 아이들", "초가지붕을 얹은 하니족 흙집"],
   },
   "lao-cai-border-gate": {
     name: "라오까이 국경 관문",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 22:00, 국경 관문 업무 시간에 따름",
-    galleryCaptions: ["남티 강 위의 호끼에우 다리", "베트남 쪽 기슭에서 본 허커우"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "免费",
     openingHours: "08:00 - 22:00",
-    galleryCaptions: ["罗望子树荫下的书亭", "书街上的咖啡馆"],
   },
   "turtle-lake-hcm": {
     name: "龟湖",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "免费",
     openingHours: "全天",
-    galleryCaptions: ["水池上方莲花造型的混凝土塔", "黄昏时池边的台阶"],
   },
   "lam-vien-square": {
     name: "林园广场",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "免费",
     openingHours: "全天",
-    galleryCaptions: ["夜里亮灯的朝鲜蓟与向日葵建筑", "俯瞰春香湖的广场台阶"],
   },
   "da-lat-flower-garden": {
     name: "大叻花园",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时30分钟",
     ticket: "50,000盾（参考价，请在门口确认）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["望向春香湖的花坛", "种兰花的玻璃温室"],
   },
   "cu-lan-village": {
     name: "古兰村",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时30分钟",
     ticket: "100,000盾（参考价，不含吉普车）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["松林之间的高脚屋与水塘", "涉溪进谷的吉普车"],
   },
   "bai-dai-phu-quoc": {
     name: "长滩",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费",
     openingHours: "全天",
-    galleryCaptions: ["落进西边海里的日落", "向北延伸的平缓沙滩"],
   },
   "grand-world-phu-quoc": {
     name: "富国大世界",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "免费入园，演出与项目另计",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["天黑后的运河与贡多拉", "斗笠竹穹顶"],
   },
   "ho-quoc-pagoda": {
     name: "护国寺",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "免费",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["直对大海的上层庭院", "通往大殿的台阶与铁木柱"],
   },
 };
 

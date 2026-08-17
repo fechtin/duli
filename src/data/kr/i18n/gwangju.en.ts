@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["May 18th Democracy Square"],
   },
   mudeungsan: {
     name: "Mudeungsan National Park",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "The national park entry-time system applies: ascent opens at 04:00 (March–November) or 05:00 (December–February), and each section has its own turn-back time somewhere between 12:00 and 17:00. Check the trail-closure notices before setting out",
-    galleryCaptions: ["The Seoseokdae stone columns"],
   },
   "yangnim-dong": {
     name: "Yangnim-dong Historic Village",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Red-brick buildings in Yangnim-dong"],
   },
   "asia-culture-center": {
     name: "Asia Culture Center",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Permanent galleries free",
     openingHours: "10:00–18:00, to 20:00 on Wednesdays and Saturdays, closed Mondays; hours can shift with the performance and exhibition schedule",
-    galleryCaptions: ["A skylight over the underground galleries"],
   },
   "gwangju-daein-market": {
     name: "Daein Market & Night Market",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Day market 09:00–19:00. The 2026 Daein Art Night Market runs just 12 sessions, on Friday or Saturday evenings 16:00–21:00, ending 31 October — check the schedule before going",
-    galleryCaptions: ["String lights in the Daein night market"],
   },
   "gwangju-biennale": {
     name: "Gwangju Biennale",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half to a full day",
     ticket: "16,000 KRW; advance sales can bring it down to 8,000 KRW",
     openingHours: "10:00–18:00, closed Mondays",
-    galleryCaptions: ["The Gwangju Biennale exhibition halls"],
   },
   "gwangju-penguin-village": {
     name: "Penguin Village, Yangnim-dong",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["A lane wall covered in old household objects"],
   },
 };
 

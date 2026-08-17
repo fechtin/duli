@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "8,000 KRW; the 12,000 KRW Suncheon integrated ticket also covers the national garden",
     openingHours: "08:00–19:00",
-    galleryCaptions: ["Reed beds at Suncheonman Bay"],
   },
   "boseong-tea-fields": {
     name: "Boseong Green Tea Fields",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "4,000–5,000 KRW depending on source (3,000 children)",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Tea rows curving around the hill"],
   },
   "yeosu-night-sea": {
     name: "Yeosu Night Sea & Cable Car",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Cable car 17,000 KRW return (glass-floor cabin costs more)",
     openingHours: "09:30–22:00 (cable car)",
-    galleryCaptions: ["Dolsan Bridge lit at night"],
   },
   hyangiram: {
     name: "Hyangiram Hermitage",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "2,000 KRW",
     openingHours: "05:00–19:00",
-    galleryCaptions: ["The hermitage on its sea cliff"],
   },
   "damyang-bamboo": {
     name: "Juknokwon Bamboo Forest, Damyang",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "3,000 KRW (1,500 children); free for over-65s",
     openingHours: "09:00–19:00 (March–October), 09:00–18:00 (November–February)",
-    galleryCaptions: ["A path inside the bamboo forest"],
   },
   songgwangsa: {
     name: "Songgwangsa Temple",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "07:00–19:00",
-    galleryCaptions: ["The roofed wooden bridge at the temple gate"],
   },
   naganeupseong: {
     name: "Naganeupseong Walled Town",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "4,000 KRW; included in the 12,000 KRW Suncheon integrated ticket",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Thatched roofs seen from the town wall"],
   },
   "wando-cheongsando": {
     name: "Cheongsando Island, Wando",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "A full day",
     ticket: "The ferry is about 8,700 KRW one way (roughly 17,400 return); taking a car costs far more",
     openingHours: "By ferry schedule",
-    galleryCaptions: ["Terraced paddies on Cheongsando"],
   },
   "jindo-sea-parting": {
     name: "Jindo Sea Parting",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free; only some of the hands-on activities are ticketed",
     openingHours: "The sea road only opens at the lowest tide, for about an hour, and the time shifts every day. The festival runs four days in spring — look up that year's tide table and arrive one or two hours early, since the path emerges gradually rather than all at once",
-    galleryCaptions: ["Walkers on the parted sea road"],
   },
   "mokpo-modern-history": {
     name: "Mokpo Modern History Quarter",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "2,000 KRW (1,000 teens and soldiers, 500 primary pupils, free for preschoolers)",
     openingHours: "09:00–18:00, museum closed Mondays",
-    galleryCaptions: ["The old Japanese consulate on Yudalsan"],
   },
   "gurye-sansuyu": {
     name: "Gurye Sansuyu Village",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Yellow sansuyu around the stone walls of Sandong"],
   },
   "suncheon-national-garden": {
     name: "Suncheon Bay National Garden",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "8,000 KRW; the Suncheon integrated ticket is 12,000 KRW (garden + wetland + Naganeupseong, valid 2 days)",
     openingHours: "09:00–19:00 (until 18:00 in winter)",
-    galleryCaptions: ["The artificial grass hill in the national garden"],
   },
 };
 

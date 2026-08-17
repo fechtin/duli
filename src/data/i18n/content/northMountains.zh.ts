@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `25,000越南盾`,
     openingHours: `07:00 – 18:00`,
-    galleryCaptions: [
-      `龙山之巅的祖国国旗`,
-      `通往国旗塔的山路`,
-      `从高处俯瞰的岩石高原`,
-      `庄严的国旗塔，红旗在薄雾中飘扬`,
-    ],
   },
   "ma-pi-leng-pass": {
     name: `马皮龙山口`,
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `横贯山崖的幸福之路`,
-      `翡翠般碧绿的纳奎河`,
-      `徒山峡谷`,
-    ],
   },
   "dong-van-old-town": {
     name: `同文古镇`,
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `点亮灯笼的古镇`,
-      `岩石高原上的同文镇`,
-      `高原集市`,
-    ],
   },
   "sa-pa-town": {
     name: `沙巴`,
@@ -88,13 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `稻谷成熟季的梯田`,
-      `沙巴市中心的环岛`,
-      `孟华谷的清晨薄雾`,
-      `沙巴镇中心`,
-      `云中的番西邦峰`,
-    ],
   },
   "ha-long-bay": {
     name: `下龙湾`,
@@ -113,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `290,000越南盾`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `湾上的日出`,
-      `穿行于石灰岩岛屿之林的船只`,
-      `惊讶洞`,
-      `湾上的渔村`,
-    ],
   },
   "moc-chau-plateau": {
     name: `木州高原`,
@@ -137,13 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `心形茶山`,
-      `从山萝前往木州途中的风景`,
-      `梅花将山坡染成一片洁白`,
-      `胡志明主席视察木州农场纪念地`,
-      `草原上的晨雾`,
-    ],
   },
   "dien-bien-phu-battlefield": {
     name: `奠边府战场遗址`,
@@ -162,12 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `100,000越南盾`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `奠边府大捷纪念碑`,
-      `遗留在战场上的M24霞飞坦克`,
-      `A1高地上的战壕`,
-      `德卡斯特里地堡`,
-    ],
   },
   "ban-gioc-waterfall": {
     name: `板约瀑布`,
@@ -187,11 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `45,000越南盾`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `丰水季节板约瀑布的三层瀑水`,
-      `在雪白瀑布脚下纳凉的游客`,
-      `雪白瀑布在青翠山林间倾泻而下`,
-    ],
   },
   "nguom-ngao-cave": {
     name: `嫩傲洞`,
@@ -211,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `45,000越南盾`,
     openingHours: `07:30 – 17:00`,
-    galleryCaptions: [
-      `洞中的钟乳石之林`,
-      `莲座状的石笋`,
-      `艺术灯光映照的通道`,
-    ],
   },
   "ba-be-lake": {
     name: `巴贝湖`,
@@ -235,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `25,000越南盾`,
     openingHours: `06:00 – 18:00`,
-    galleryCaptions: [
-      `巴贝湖上的独木舟`,
-      `晨雾中环抱小岛、波光粼粼的湖面`,
-      `薄雾笼罩的群山间平静的湖泊`,
-    ],
   },
   "tam-thanh-cave": {
     name: `三清洞`,
@@ -259,12 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `20,000越南盾`,
     openingHours: `07:00 – 18:00`,
-    galleryCaptions: [
-      `三清洞中的古寺`,
-      `岩壁上的阿弥陀佛浮雕`,
-      `自莫朝城台俯瞰谅山`,
-      `迎入阳光的天门`,
-    ],
   },
   "mau-son-mountain": {
     name: `母山`,
@@ -284,11 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `母山之巅的云海`,
-      `冬季将树木覆成一片洁白的冰霜`,
-      `古老法国别墅的遗迹`,
-    ],
   },
   "tan-trao-relic": {
     name: `新潮遗址区`,
@@ -308,11 +240,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `古老的新潮榕树`,
-      `森林中的那纳棚屋`,
-      `历史性的新潮亭`,
-    ],
   },
   "mo-na-hang-waterfall": {
     name: `那杭梦瀑布`,
@@ -332,12 +259,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `07:00 – 18:00`,
-    galleryCaptions: [
-      `垂落山坡的梦瀑布`,
-      `瀑布脚下的清澈水潭`,
-      `傍晚的那杭水电站大坝`,
-      `那杭湖游船`,
-    ],
   },
   "nui-coc-lake": {
     name: `𡶀谷湖`,
@@ -357,11 +278,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天至1天`,
     ticket: `50,000越南盾`,
     openingHours: `07:00 – 18:00`,
-    galleryCaptions: [
-      `𡶀谷湖中央的小岛`,
-      `湖面上的清晨薄雾`,
-      `环游湖区的船只`,
-    ],
   },
   "tan-cuong-tea-hills": {
     name: `新疆茶山`,
@@ -381,11 +297,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `苍翠蜿蜒的茶山`,
-      `清晨采摘嫩茶芽`,
-      `茶山间的一杯香茗`,
-    ],
   },
   "den-hung-temple": {
     name: `雄王庙`,
@@ -405,12 +316,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `06:00 – 18:00`,
-    galleryCaptions: [
-      `义岭山上的上庙`,
-      `雄王庙区内的下庙`,
-      `古树掩映的石阶`,
-      `祭祖大典上朝圣的人流`,
-    ],
   },
   "tay-yen-tu": {
     name: `西安子`,
@@ -430,11 +335,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `免费`,
     openingHours: `06:00 – 18:00`,
-    galleryCaptions: [
-      `越过森林登上峰顶的缆车`,
-      `西安子山云间的寺庙`,
-      `西安子春季庙会`,
-    ],
   },
   "vinh-nghiem-pagoda": {
     name: `永严寺`,
@@ -454,11 +354,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `免费`,
     openingHours: `06:00 – 18:00`,
-    galleryCaptions: [
-      `永严寺的三关门`,
-      `古老的佛经木版收藏处`,
-      `古树掩映下的寺院庭院`,
-    ],
   },
   "mu-cang-chai-terraces": {
     name: `木江界梯田`,
@@ -478,11 +373,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `稻谷成熟时金黄一片的梯田`,
-      `罗板潭的糯米饭山`,
-      `映出天光的灌水季节`,
-    ],
   },
   "thac-ba-lake": {
     name: `婆瀑湖`,
@@ -502,11 +392,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `免费`,
     openingHours: `06:00 – 18:00`,
-    galleryCaptions: [
-      `婆瀑湖上数千座绿岛`,
-      `笼罩湖面的清晨薄雾`,
-      `探索湖区的船只`,
-    ],
   },
   "o-quy-ho-pass": {
     name: `乌贵湖山口`,
@@ -526,13 +411,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `穿越雾谷的番西邦缆车`,
-      `乌贵湖之巅的云海`,
-      `自番西邦缆车俯瞰梯田`,
-      `沿峭壁蜿蜒的山口道路`,
-      `从天门眺望的落日`,
-    ],
   },
   "sin-suoi-ho-village": {
     name: `辛水湖村`,
@@ -552,11 +430,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `莱州山林中的苗族村寨`,
-      `竞相绽放的地兰花园`,
-      `诗意的心形瀑布`,
-    ],
   },
   "mai-chau-valley": {
     name: `梅州谷`,
@@ -576,12 +449,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: `免费`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `从山口眺望的梅州谷`,
-      `摆寨的泰族高脚屋`,
-      `梅州的泰族餐桌`,
-      `火光旁的圈舞`,
-    ],
   },
   "hoa-binh-lake": {
     name: `和平湖`,
@@ -601,12 +468,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `免费`,
     openingHours: `06:00 – 18:00`,
-    galleryCaptions: [
-      `沱江山水间的和平湖`,
-      `群山之间的和平湖`,
-      `湖畔的瀑坡庙`,
-      `游湖的船只`,
-    ],
   },
 };
 

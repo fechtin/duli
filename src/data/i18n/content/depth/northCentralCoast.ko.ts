@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["옌섬을 마주한 잔잔한 만", "묘로 오르는 목마황 길"],
   },
   "thien-mu-pagoda": {
     name: "티엔무 사원",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["흐엉강 위의 푹주옌 탑", "1710년에 주조한 대종"],
   },
   "khai-dinh-tomb": {
     name: "카이딘 황릉",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "150,000동",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["용 계단이 있는 능의 외관", "카이딘 황릉 참배 마당의 돌 병사상", "티엔딘 궁의 도자기 모자이크", "능묘에 늘어선 문무관 석상", "카이딘 황제의 청동 좌상"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["팟런 사원 본전 뒤편", "껌산 정상의 미륵불상", "껌산 정상의 미륵불상", "산 정상의 투이리엠 호수"],
   },
   "bac-lieu-vuon-chim": {
     name: "박리에우 조류보호구",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "20,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["해질녘 둥지로 돌아오는 백로 떼", "맹그로브 아래의 나무 데크"],
   },
   "vam-ho-bird-sanctuary": {
     name: "밤호 조류보호구",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "40,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["대추야자 꼭대기의 백로 둥지", "맹그로브 수로를 지나는 작은 배"],
   },
   "cai-mon-nursery-village": {
     name: "까이먼 묘목 마을",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["골목을 가득 채운 묘목 화분", "설 직전 관상식물을 실어 나르는 배"],
   },
   "hon-da-bac": {
     name: "혼다박",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["서해안에 쌓인 둥근 바위", "혼다박의 돌용 한 쌍", "혼다박으로 이어지는 다리"],
   },
   "ninh-kieu-wharf": {
     name: "닌끼에우 선착장",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["허우 강을 바라보는 닌끼에우 선착장", "닌끼에우군 쩐꾸옥또안·하이바쯩 교차로", "불을 밝힌 닌끼에우 보도교"],
   },
   "binh-thuy-ancient-house": {
     name: "빈투이 고택",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "20,000동",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["인도차이나풍 정면과 곡선 계단", "자개를 박은 목조 실내"],
   },
   "go-thap": {
     name: "고탑 유적지",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["발굴된 옥에오 벽돌 기단", "고탑 고고 유적의 전시관", "홍수철 언덕을 둘러싼 연꽃 들판"],
   },
   "hon-phu-tu": {
     name: "혼푸뜨",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["끼엔르엉 앞바다의 혼푸뜨 바위", "해변으로 이어지는 항 사원의 동굴 통로"],
   },
   "nha-tram-cot": {
     name: "백주(百柱) 고택",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["음양 기와 아래의 목조 기둥", "제사 칸의 투각 가림판"],
   },
   "chua-khleang": {
     name: "크렁 사원",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["크렁 사원 정문", "세 겹 지붕의 본전", "처마를 떠받치는 크루드 상"],
   },
   "vinh-trang-pagoda": {
     name: "빈짱 사원",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["도자기로 모자이크한 삼문", "경내의 열반불상"],
   },
   "ba-dong-beach": {
     name: "바동 해변",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["바동의 길고 완만한 모래사장", "짜빈의 바동 해변", "목마황 숲 뒤의 염전"],
   },
   "van-thanh-mieu-vinh-long": {
     name: "빈롱 문묘",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["이층 목조 반쓰엉 각", "오래된 사오 나무 아래의 다이타인 전각"],
   },
 };
 

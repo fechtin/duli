@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハン川へ炎を吐く龍の頭", "夜ごと色を変える龍の胴"],
   },
   "han-river-bridge": {
     name: "ハン川橋",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["灯りをともしたハン川橋", "川の真ん中で横を向いた桁"],
   },
   "cham-museum": {
     name: "チャム彫刻博物館",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2時間",
     ticket: "6万ドン（参考価格。窓口で確認を）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["ミーソン展示室", "アプサラの舞姫のレリーフ", "フランス様式の博物館建築"],
   },
   "da-nang-cathedral": {
     name: "ダナン大聖堂",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "ミサの時間外。ミサの予定は門に掲示",
-    galleryCaptions: ["桃色の鐘楼と雄鶏の像", "聖堂内のステンドグラス"],
   },
   "con-market": {
     name: "コン市場",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "06:00 - 20:00（食堂区画はより遅くまで）",
-    galleryCaptions: ["コン市場の中の食堂区画", "クアンナム地方の乾物を並べる屋台"],
   },
   "han-market": {
     name: "ハン市場",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["ハン市場の干し海産物の店", "二階の布地と仕立ての区画"],
   },
   "apec-park": {
     name: "アペック公園",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハン川の上で灯る凧形の屋根", "アペック庭園の彫刻作品"],
   },
   "son-tra-night-market": {
     name: "ソンチャー夜市",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "おおよそ18:00 - 24:00",
-    galleryCaptions: ["灯りのともる焼き物の屋台", "ドラゴン橋の方を望む夜市"],
   },
   "my-khe-beach": {
     name: "ミーケー海岸",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "",
     openingHours: "終日。監視員は掲示された時間に勤務",
-    galleryCaptions: ["ミーケー海岸の日の出", "夜明けに戻るかご舟"],
   },
   "linh-ung-pagoda-bai-but": {
     name: "リンウン寺バイブット",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["ダナン湾を見下ろす観世音菩薩像", "境内とその向こうの街"],
   },
   "ban-co-peak": {
     name: "バンコー峰",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "上りを含めて2時間",
     ticket: "",
     openingHours: "日中。日が暮れてから上らないこと",
-    galleryCaptions: ["バンコー峰から望むダナン全景", "ソンチャーの頂上にある石の将棋盤", "頂上の碁盤の石像", "バンコー峰から見たダナン湾"],
   },
   "non-nuoc-beach": {
     name: "ノンヌォック海岸",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["五行山の下のノンヌォック海岸", "ノンヌォック海岸の丸舟", "朝の人けのない砂浜"],
   },
   "non-nuoc-stone-village": {
     name: "ノンヌォック石彫村",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分 - 1時間",
     ticket: "",
     openingHours: "工房の稼働に応じておおよそ07:30 - 17:00",
-    galleryCaptions: ["村の入口に並ぶ石像", "工房で石を彫る職人"],
   },
   "ba-na-hills": {
     name: "バーナーヒルズ",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "ロープウェイ込みの通し券でおよそ90万 - 110万ドン（季節により変動。行く前に公表運賃を確認）",
     openingHours: "季節によりおおよそ07:30 - 22:00",
-    galleryCaptions: ["バーナー山頂のフランス村", "森を越えていくロープウェイ", "中央広場を覆う雲"],
   },
   "hai-van-pass": {
     name: "ハイヴァン峠",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "移動を含めて半日",
     ticket: "",
     openingHours: "終日。日中に越えるのが望ましい",
-    galleryCaptions: ["海沿いの斜面を巻く峠道", "峠の頂上に立つハイヴァン関門"],
   },
 };
 

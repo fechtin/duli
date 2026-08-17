@@ -24,7 +24,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour 30 minutes",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "08:00 - 12:00, 14:00 - 16:30",
-    galleryCaptions: ["The white lotus block seen from the Ba Dinh grounds", "An exhibition room inside"],
   },
   "thang-long-water-puppet": {
     name: "Thang Long Water Puppet Theatre",
@@ -46,7 +45,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "100,000d - 200,000d by seat class (indicative)",
     openingHours: "Several shows daily, typically 15:00 - 21:00",
-    galleryCaptions: ["The water stage and its puppets", "Musicians playing live beside the stage"],
   },
   "phu-tay-ho": {
     name: "Tay Ho Temple",
@@ -68,7 +66,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "Free",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["The temple gate facing out over West Lake", "The West Lake shore near the temple", "The mother-goddess altar inside"],
   },
   "national-history-museum-vn": {
     name: "Vietnam National Museum of History",
@@ -90,7 +87,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "40,000d (indicative — check at the counter)",
     openingHours: "08:00 - 12:00, 13:30 - 17:00",
-    galleryCaptions: ["Hébrard's Indochinese facade", "Dong Son bronze drums on display"],
   },
   "tong-duy-tan-food-street": {
     name: "Tong Duy Tan Street",
@@ -111,7 +107,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Free (pay per dish)",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["The food street lit up at midnight", "A café on Tong Duy Tan street", "A bowl of herbal chicken soup"],
   },
 };
 

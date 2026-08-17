@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "900,000동 (바나힐 입장권)",
     openingHours: "08:00 – 22:00",
-    galleryCaptions: [
-      "구름 사이의 골든 브리지",
-      "다리를 떠받친 두 손",
-    ],
   },
   "hoi-an-ancient-town": {
     name: "호이안 구시가지",
@@ -40,12 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~1일",
     ticket: "120,000동",
     openingHours: "종일",
-    galleryCaptions: [
-      "밤 구시가지를 밝히는 등불",
-      "노란 벽에 길게 드리운 야자수 그림자, 농라를 쓴 사람이 지나갑니다",
-      "호아이강에 연꽃등 띄우기",
-      "낮의 구시가지",
-    ],
   },
   "da-lat-city": {
     name: "달랏",
@@ -64,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "새벽 구름 사냥",
-      "쑤언흐엉 호수",
-      "안개 속 소나무 언덕",
-    ],
   },
   "nha-trang-beach": {
     name: "나트랑 해변",
@@ -87,11 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "나트랑 만의 일출",
-      "부드럽게 굽은 백사장",
-      "해안가 야자수",
-    ],
   },
   "hon-mun-island": {
     name: "혼문 섬",
@@ -110,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "22,000동 (관람료)",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "물속의 화려한 산호초",
-      "나트랑만 해안선 파노라마",
-      "섬 주변의 맑은 바닷물",
-      "산호를 감상하는 스쿠버다이빙",
-    ],
   },
   "buon-don": {
     name: "부온돈",
@@ -134,11 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "세레폭강을 가로지르는 대나무 흔들다리",
-      "떠이응우옌의 긴 고상가옥",
-      "불 곁의 공 연주 밤",
-    ],
   },
   "dray-nur-waterfall": {
     name: "드라이누르 폭포",
@@ -157,10 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "30,000동",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "하얀 물보라를 흩뿌리는 물의 벽",
-      "웅장한 세레폭강",
-    ],
   },
   "mui-ne-sand-dunes": {
     name: "무이네 사구",
@@ -179,11 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "해안가에 배들이 정박한 분주한 어촌",
-      "무이네의 붉은 모래",
-      "모래언덕 정상에서의 모래 썰매",
-    ],
   },
   "qng-ly-son": {
     name: "리선 섬",
@@ -204,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1박 2일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "바다를 바라보는 터이러이 봉우리",
-      "노을 속 또보 관문",
-      "현무암 위 푸른 마늘밭",
-    ],
   },
   "qng-sa-huynh": {
     name: "사후인 해변",
@@ -228,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "초승달 모양으로 굽은 황금빛 모래해변",
-      "잔잔한 만을 감싸 안은 길게 굽은 황금빛 해변",
-      "모래해변을 따라 굽이치는 해안 도로",
-    ],
   },
   "bdi-ky-co-eo-gio": {
     name: "끼꼬 - 에오지오",
@@ -253,11 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "25,000동 (에오지오)",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "비취빛 바다의 끼꼬 해변",
-      "절벽 사이로 굽이치는 에오지오",
-      "에오지오 해안의 부겐빌레아 길",
-    ],
   },
   "bdi-thap-banh-it": {
     name: "반잇 탑",
@@ -278,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "15,000동",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "언덕 위 위풍당당한 본탑",
-      "독특하게 굽은 지붕의 안장 탑",
-      "푸른 숲 사이로 솟은 고대 참 탑 군",
-    ],
   },
   "pye-ganh-da-dia": {
     name: "간다디아",
@@ -303,11 +243,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "20,000동",
     openingHours: "06:30 - 18:00",
-    galleryCaptions: [
-      "웅장하게 켜켜이 쌓인 현무암 기둥",
-      "암반에 하얗게 부서지는 파도",
-      "바다로 뻗은 암반의 전경",
-    ],
   },
   "pye-bai-xep": {
     name: "바이쎕",
@@ -327,11 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "20,000동",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "한적한 해변으로 기운 선인장 비탈",
-      "바위 곶 뒤로 떠오르는 해, 모래밭에 부서지는 파도",
-      "바다로 솟은 검은 암반",
-    ],
   },
   "ntn-vinh-vinh-hy": {
     name: "빈히 만",
@@ -352,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "보트 서비스에 따라 다름",
     openingHours: "종일",
-    galleryCaptions: [
-      "산림을 감싼 비취빛 빈히 만",
-      "수백 척의 고깃배가 정박한 작은 만",
-      "누이쭈아 해안 도로",
-    ],
   },
   "ntn-po-klong-garai": {
     name: "포클롱가라이 탑",
@@ -377,11 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "20,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "쩌우 언덕 위의 본탑",
-      "참족의 카테 축제",
-      "풀 언덕 위 이끼 낀 참 벽돌 탑 군",
-    ],
   },
   "ktm-nha-tho-go": {
     name: "꼰뚬 목조 성당",
@@ -402,11 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "종일 (미사는 성당 일정에 따름)",
-    galleryCaptions: [
-      "백 년 된 목조 성당의 정면",
-      "스테인드글라스 창이 있는 목조 내부",
-      "산간 도시 위로 솟은 종탑",
-    ],
   },
   "ktm-mang-den": {
     name: "망덴 관광지",
@@ -427,11 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1박 2일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "숲 속 푸른 호수로 쏟아지는 하얀 폭포",
-      "숲 속 하얗게 부서지는 빠시 폭포",
-      "이른 아침 잔잔한 닥께 호수",
-    ],
   },
   "gli-bien-ho-tnung": {
     name: "비엔호 트능 호수",
@@ -452,12 +362,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "대자연 속 깊고 푸른 호수면",
-      "물 위로 뻗은 전망대",
-      "비엔호 트능 호수의 수면",
-      "호수로 이어지는 고목 소나무 길",
-    ],
   },
   "gli-chua-minh-thanh": {
     name: "민탄 사원",
@@ -478,11 +382,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "06:00 - 20:00",
-    galleryCaptions: [
-      "9층 사리탑",
-      "위풍당당한 굽은 처마의 대웅전",
-      "경내의 금빛 불상",
-    ],
   },
   "dno-cong-vien-dia-chat": {
     name: "닥농 유네스코 세계지질공원",
@@ -503,11 +402,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "관광지에 따라 다름",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "현무암 속 화산 동굴",
-      "푸른 숲 속 고대 분화구",
-      "므농족의 공 문화",
-    ],
   },
   "dno-thac-dray-sap": {
     name: "드라이삽 폭포",
@@ -528,11 +422,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "30,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "하얀 물보라를 흩뿌리는 드라이삽 폭포",
-      "폭포 아래 자욱한 물안개",
-      "폭포를 둘러싼 원시림",
-    ],
   },
 };
 

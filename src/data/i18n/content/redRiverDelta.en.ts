@@ -19,12 +19,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "250,000 VND",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "A sampan amid the limestone mountains",
-      "A small boat skimming across a glassy lake beneath the karst peaks",
-      "Tam Coc in spring",
-      "Panorama from Mua Cave",
-    ],
   },
   "hoan-kiem-lake": {
     name: "Hoan Kiem Lake",
@@ -44,11 +38,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "The Turtle Tower in the middle of the lake",
-      "A young man sitting quietly by a tree trunk, gazing out over the water",
-      "Bare branches reflected on the mist-veiled surface of the lake",
-    ],
   },
   "old-quarter-hanoi": {
     name: "Hanoi Old Quarter",
@@ -65,7 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Traditional trade streets", "A street vendor's carrying pole"],
   },
   "hp-cat-ba-island": {
     name: "Cat Ba Island",
@@ -86,13 +74,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days, 1 night",
     ticket: "80,000 VND",
     openingHours: "All day",
-    galleryCaptions: [
-      "Lan Ha Bay seen from above",
-      "The sea from Cannon Fort",
-      "The clear waters of Cat Co Beach",
-      "Cat Ba town on the bay",
-      "Cat Ba National Park",
-    ],
   },
   "hp-do-son-beach": {
     name: "Do Son Beach",
@@ -113,12 +94,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Do Son Beach beneath the rows of casuarinas",
-      "The casino building at Do Son",
-      "The traditional buffalo-fighting festival",
-      "Sunset over the Do Son peninsula",
-    ],
   },
   "bn-den-do": {
     name: "Do Temple",
@@ -139,11 +114,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The imposing triple gate of Do Temple",
-      "The Water Pavilion on the crescent pond",
-      "The Do Temple Festival in the third lunar month",
-    ],
   },
   "bn-dong-ho": {
     name: "Dong Ho Painting Village",
@@ -164,12 +134,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: [
-      "The Mouse's Wedding, a Dong Ho print",
-      "An artisan printing a painting on diep paper",
-      "A worship painting of the Kitchen Gods, radiant with folk colors",
-      "A painting of carp swimming among lotus flowers",
-    ],
   },
   "hd-con-son-kiep-bac": {
     name: "Con Son - Kiep Bac",
@@ -190,11 +154,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "",
     openingHours: "06:30 - 18:00",
-    galleryCaptions: [
-      "Kiep Bac Temple beside the Luc Dau River",
-      "Con Son Pagoda amid the pine forest",
-      "The traditional autumn festival",
-    ],
   },
   "hd-dao-co": {
     name: "Chi Lang Nam Stork Island",
@@ -215,11 +174,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "30,000 VND",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "Storks returning to their nests at dusk",
-      "A bamboo boat circling the island",
-      "The blue-green An Duong Lake",
-    ],
   },
   "hy-pho-hien": {
     name: "Pho Hien",
@@ -240,12 +194,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The ancient Xich Dang Temple of Literature",
-      "Xich Dang Temple of Literature from the yard",
-      "Mau Temple of Pho Hien",
-      "Hung Yen longan at harvest time",
-    ],
   },
   "hy-chua-chuong": {
     name: "Chuong Pagoda",
@@ -266,11 +214,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 hours",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "The stone bridge across the Dragon's Eye Pond",
-      "The corridor of eighteen Arhats",
-      "The ancient triple gate of Chuong Pagoda",
-    ],
   },
   "hn-tam-chuc": {
     name: "Tam Chuc Pagoda",
@@ -291,11 +234,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: [
-      "The Tam The Hall beside Luc Nhac Lake",
-      "The Sutra Pillar Garden carved with Buddhist scriptures",
-      "A panorama of the pagoda amid the mountains",
-    ],
   },
   "nd-den-tran": {
     name: "Tran Temple",
@@ -316,11 +254,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The imposing five-gate entrance of Tran Temple",
-      "The early-spring seal-opening ceremony",
-      "The ancient Thien Truong Temple",
-    ],
   },
   "nd-nha-tho-do": {
     name: "Hai Ly Ruined Church",
@@ -341,11 +274,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "The ruined bell tower amid the beach",
-      "Sunrise over the ruined church",
-      "Waves lapping at the moss-covered walls",
-    ],
   },
   "tb-chua-keo": {
     name: "Keo Pagoda",
@@ -366,11 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The famous three-tier wooden bell tower",
-      "The autumn Keo Pagoda Festival",
-      "The symmetrical complex of ironwood structures",
-    ],
   },
   "tb-con-vanh": {
     name: "Con Vanh Beach",
@@ -391,11 +314,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Sunrise over Con Vanh Beach",
-      "The casuarina forest along the shore",
-      "The lush green mangrove forest",
-    ],
   },
   "vp-tam-dao": {
     name: "Tam Dao",
@@ -416,11 +334,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days, 1 night",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "The town of Tam Dao shrouded in mist",
-      "The ancient stone church",
-      "The Silver Waterfall amid the green forest",
-    ],
   },
   "vp-tay-thien": {
     name: "Truc Lam Tay Thien Zen Monastery",
@@ -441,11 +354,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "The majestic main hall of the monastery",
-      "The path up to the Upper Temple of Tay Thien",
-      "The statue garden amid the green forest",
-    ],
   },
 };
 

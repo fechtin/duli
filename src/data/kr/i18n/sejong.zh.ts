@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["世宗湖与水上舞台"],
   },
   "sejong-arboretum": {
     name: "国立世宗树木园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "5,000韩元（青少年4,000、儿童1,000）",
     openingHours: "09:00–17:00；周一、1月1日与节庆当日休园",
-    galleryCaptions: ["花瓣形温室"],
   },
   "government-complex-rooftop": {
     name: "世宗政府办公大楼屋顶花园",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "免费，但须携带身分证件，并透过Naver预约（每场50人）或现场报名",
     openingHours: "平日与周末每日三场（10:00、13:30、15:30），由导览人员带领，约60至90分钟。仅于特定期间开放：2026年为3月14日至6月14日、8月31日至11月29日；节庆与酷暑酷寒期间停办",
-    galleryCaptions: ["串连各部会的屋顶花园步道"],
   },
   "bimatgil-geumgang": {
     name: "锦江人行桥（이응다리）",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["锦江上亮起灯光的이응桥"],
   },
   "birds-nest-library": {
     name: "国立世宗图书馆",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "平日09:00–21:00，周末09:00–18:00；每月第二与第四个周一及国定假日休馆",
-    galleryCaptions: ["世宗湖畔如书页般的图书馆"],
   },
 };
 

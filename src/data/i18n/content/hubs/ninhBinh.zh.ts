@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "门票加船费约25万越南盾（参考价）",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["稻熟时节梧桐河上的舢板", "依崖而建的碧洞寺"],
   },
   "mua-cave": {
     name: "舞洞",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "约10万越南盾（参考价）",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["从舞洞山顶看三谷山谷", "自舞洞旁的石灰岩俯瞰宁平", "石阶与沿山脊而卧的石龙"],
   },
   "bai-dinh-pagoda": {
     name: "拜顶寺",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "电瓶车与舍利塔另行收费",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["拜顶寺建筑群的宝塔", "立着五百尊石罗汉的回廊", "山顶的铜弥勒"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "丁先皇祠",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "2万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["祠前刻满龙纹的石床", "被石灰岩环抱的祠庙"],
   },
   "am-tien-cave": {
     name: "庵仙洞",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "约2万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["岩壁洼地中的碧水", "凿穿山脚的通道"],
   },
   "thung-nham-bird-park": {
     name: "通南鸟园",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "门票加船费约12万越南盾（参考价）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["黄昏时铺满树木的鸟群", "喀斯特谷地中的小船"],
   },
   "phat-diem-cathedral": {
     name: "发艳主教座堂",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "",
     openingHours: "弥撒时间之外；时刻表贴在门口",
-    galleryCaptions: ["形似寺庙三门的方亭", "教堂内的石天使像", "堂内的铁木立柱与曲顶"],
   },
   "kenh-ga-hot-spring": {
     name: "坑加",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "船费与矿泉浴另行收费",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["黄龙河上的水上村落", "驶进云程洞的小船"],
   },
 };
 

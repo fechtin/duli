@@ -34,13 +34,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["unesco", "trending", "popular", "verified"],
     tags: ["island", "nature", "beach", "photography"],
-    gallery: [
-      { seed: "hp-cat-ba-island-1", caption: "Vịnh Lan Hạ nhìn từ trên cao", ratio: "16/9" },
-      { seed: "hp-cat-ba-island-2", caption: "Biển nhìn từ pháo đài Thần Công", ratio: "4/3" },
-      { seed: "hp-cat-ba-island-4", caption: "Bãi tắm Cát Cò trong xanh", ratio: "4/3" },
-      { seed: "hp-cat-ba-island-3", caption: "Thị trấn Cát Bà bên vịnh", ratio: "1/1" },
-      { seed: "hp-cat-ba-island-5", caption: "Rừng quốc gia Cát Bà", ratio: "1/1" },
-    ],
     nearby: ["hp-do-son-beach"],
     featured: true,
   },
@@ -73,12 +66,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["festival", "popular", "verified"],
     tags: ["beach", "culture", "food"],
-    gallery: [
-      { seed: "hp-do-son-beach-1", caption: "Bãi tắm Đồ Sơn dưới hàng phi lao", ratio: "16/9" },
-      { seed: "hp-do-son-beach-2", caption: "Toà casino ở Đồ Sơn", ratio: "4/3" },
-      { seed: "hp-do-son-beach-4", caption: "Lễ hội chọi trâu truyền thống", ratio: "4/3" },
-      { seed: "hp-do-son-beach-3", caption: "Hoàng hôn trên bán đảo Đồ Sơn", ratio: "1/1" },
-    ],
     nearby: ["hp-cat-ba-island"],
   },
   {
@@ -112,11 +99,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["festival", "verified", "popular"],
     tags: ["temple", "history", "culture"],
-    gallery: [
-      { seed: "bn-den-do-1", caption: "Cổng tam quan Đền Đô uy nghi", ratio: "16/9" },
-      { seed: "bn-den-do-2", caption: "Thủy đình trên hồ bán nguyệt", ratio: "4/3" },
-      { seed: "bn-den-do-3", caption: "Lễ hội Đền Đô tháng ba", ratio: "1/1" },
-    ],
     nearby: ["bn-dong-ho"],
     featured: true,
   },
@@ -149,12 +131,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "08:00 - 17:00",
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["village", "culture", "history"],
-    gallery: [
-      { seed: "bn-dong-ho-1", caption: "Tranh Đám cưới chuột", ratio: "16/9" },
-      { seed: "bn-dong-ho-4", caption: "Nghệ nhân in tranh trên giấy điệp", ratio: "16/9" },
-      { seed: "bn-dong-ho-2", caption: "Tranh thờ Táo Quân rực rỡ sắc màu dân gian", ratio: "4/3" },
-      { seed: "bn-dong-ho-3", caption: "Tranh đàn cá chép bơi giữa sen", ratio: "1/1" },
-    ],
     nearby: ["bn-den-do"],
   },
   {
@@ -186,11 +162,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "06:30 - 18:00",
     badges: ["festival", "verified", "popular"],
     tags: ["temple", "history", "nature", "culture"],
-    gallery: [
-      { seed: "hd-con-son-kiep-bac-1", caption: "Đền Kiếp Bạc bên Lục Đầu Giang", ratio: "16/9" },
-      { seed: "hd-con-son-kiep-bac-2", caption: "Chùa Côn Sơn giữa rừng thông", ratio: "4/3" },
-      { seed: "hd-con-son-kiep-bac-3", caption: "Lễ hội mùa thu truyền thống", ratio: "1/1" },
-    ],
     nearby: ["hd-dao-co"],
     featured: true,
   },
@@ -225,11 +196,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["hidden-gem", "verified", "ai-recommended"],
     tags: ["nature", "photography"],
-    gallery: [
-      { seed: "hd-dao-co-1", caption: "Đàn cò bay về tổ lúc hoàng hôn", ratio: "16/9" },
-      { seed: "hd-dao-co-2", caption: "Thuyền nan dạo quanh đảo", ratio: "4/3" },
-      { seed: "hd-dao-co-3", caption: "Hồ An Dương xanh biếc", ratio: "1/1" },
-    ],
     nearby: ["hd-con-son-kiep-bac"],
   },
   {
@@ -263,12 +229,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["verified", "popular", "ai-recommended"],
     tags: ["history", "culture", "city", "food"],
-    gallery: [
-      { seed: "hy-pho-hien-1", caption: "Văn Miếu Xích Đằng cổ kính", ratio: "16/9" },
-      { seed: "hy-pho-hien-2", caption: "Văn miếu Xích Đằng nhìn từ sân", ratio: "4/3" },
-      { seed: "hy-pho-hien-4", caption: "Đền Mẫu Phố Hiến", ratio: "4/3" },
-      { seed: "hy-pho-hien-3", caption: "Nhãn lồng Hưng Yên mùa thu hoạch", ratio: "1/1" },
-    ],
     nearby: ["hy-chua-chuong"],
     featured: true,
   },
@@ -303,11 +263,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["verified", "hidden-gem"],
     tags: ["temple", "history", "culture"],
-    gallery: [
-      { seed: "hy-chua-chuong-1", caption: "Cầu đá bắc qua ao mắt rồng", ratio: "16/9" },
-      { seed: "hy-chua-chuong-2", caption: "Hành lang mười tám vị La Hán", ratio: "4/3" },
-      { seed: "hy-chua-chuong-3", caption: "Tam quan chùa Chuông cổ kính", ratio: "1/1" },
-    ],
     nearby: ["hy-pho-hien"],
   },
   {
@@ -339,11 +294,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "06:00 - 21:00",
     badges: ["trending", "popular", "verified", "ai-recommended"],
     tags: ["temple", "nature", "culture", "photography"],
-    gallery: [
-      { seed: "hn-tam-chuc-1", caption: "Điện Tam Thế bên hồ Lục Nhạc", ratio: "16/9" },
-      { seed: "hn-tam-chuc-2", caption: "Vườn Cột Kinh khắc kinh Phật", ratio: "4/3" },
-      { seed: "hn-tam-chuc-3", caption: "Toàn cảnh chùa giữa núi non", ratio: "1/1" },
-    ],
     nearby: [],
     featured: true,
   },
@@ -376,11 +326,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["festival", "popular", "verified"],
     tags: ["temple", "history", "culture"],
-    gallery: [
-      { seed: "nd-den-tran-1", caption: "Cổng ngũ môn Đền Trần uy nghi", ratio: "16/9" },
-      { seed: "nd-den-tran-2", caption: "Lễ khai ấn đầu xuân", ratio: "4/3" },
-      { seed: "nd-den-tran-3", caption: "Đền Thiên Trường cổ kính", ratio: "1/1" },
-    ],
     nearby: ["nd-nha-tho-do"],
     featured: true,
   },
@@ -413,11 +358,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "trending", "ai-recommended"],
     tags: ["history", "photography", "beach"],
-    gallery: [
-      { seed: "nd-nha-tho-do-1", caption: "Tháp chuông đổ giữa bãi biển", ratio: "16/9" },
-      { seed: "nd-nha-tho-do-2", caption: "Bình minh trên nhà thờ đổ", ratio: "4/3" },
-      { seed: "nd-nha-tho-do-3", caption: "Sóng vỗ chân tường rêu phong", ratio: "1/1" },
-    ],
     nearby: ["nd-den-tran"],
   },
   {
@@ -451,11 +391,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["festival", "verified", "popular"],
     tags: ["temple", "history", "culture", "photography"],
-    gallery: [
-      { seed: "tb-chua-keo-1", caption: "Gác chuông gỗ ba tầng nổi tiếng", ratio: "16/9" },
-      { seed: "tb-chua-keo-2", caption: "Lễ hội chùa Keo mùa thu", ratio: "4/3" },
-      { seed: "tb-chua-keo-3", caption: "Quần thể nhà gỗ lim đăng đối", ratio: "1/1" },
-    ],
     nearby: ["tb-con-vanh"],
     featured: true,
   },
@@ -488,11 +423,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "new", "ai-recommended"],
     tags: ["beach", "nature", "photography"],
-    gallery: [
-      { seed: "tb-con-vanh-1", caption: "Bình minh trên biển Cồn Vành", ratio: "16/9" },
-      { seed: "tb-con-vanh-2", caption: "Rừng phi lao ven biển", ratio: "4/3" },
-      { seed: "tb-con-vanh-3", caption: "Rừng ngập mặn xanh ngắt", ratio: "1/1" },
-    ],
     nearby: ["tb-chua-keo"],
   },
   {
@@ -526,11 +456,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["trending", "popular", "verified", "ai-recommended"],
     tags: ["mountain", "nature", "photography", "food"],
-    gallery: [
-      { seed: "vp-tam-dao-1", caption: "Thị trấn Tam Đảo trong sương mù", ratio: "16/9" },
-      { seed: "vp-tam-dao-2", caption: "Nhà thờ đá cổ kính", ratio: "4/3" },
-      { seed: "vp-tam-dao-3", caption: "Thác Bạc giữa rừng xanh", ratio: "1/1" },
-    ],
     nearby: ["vp-tay-thien"],
     featured: true,
   },
@@ -563,11 +488,6 @@ export const redRiverDeltaDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["festival", "verified", "popular"],
     tags: ["temple", "nature", "culture"],
-    gallery: [
-      { seed: "vp-tay-thien-1", caption: "Chính điện thiền viện uy nghi", ratio: "16/9" },
-      { seed: "vp-tay-thien-2", caption: "Đường lên đền Thượng Tây Thiên", ratio: "4/3" },
-      { seed: "vp-tay-thien-3", caption: "Vườn tượng giữa rừng xanh", ratio: "1/1" },
-    ],
     nearby: ["vp-tam-dao"],
   },
 ];

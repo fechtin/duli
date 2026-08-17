@@ -23,7 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "3,000 KRW (free in hanbok)",
     openingHours: "09:00–18:00 (to 17:00 Nov–Feb, to 18:30 Jun–Aug), closed Tuesdays",
-    galleryCaptions: ["Geunjeongjeon Hall seen from the court", "Gyeonghoeru pavilion on its pond"],
   },
   changdeokgung: {
     name: "Changdeokgung Palace & Secret Garden",
@@ -46,7 +45,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "3,000 KRW (Huwon guided tour a further 8,000 KRW)",
     openingHours: "09:00–18:00 (to 17:30 Nov–Jan, to 18:30 Jun–Aug), closed Mondays",
-    galleryCaptions: ["Injeongjeon Hall"],
   },
   "bukchon-hanok-village": {
     name: "Bukchon Hanok Village",
@@ -68,7 +66,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "From 1 January 2026 tourists may enter the Bukchon-ro 11-gil zone only between 10:00 and 17:00; being there outside those hours carries a 100,000 KRW fine. This is enforced, not advisory",
-    galleryCaptions: ["Hanok lane looking out over the city"],
   },
   "n-seoul-tower": {
     name: "N Seoul Tower (Namsan)",
@@ -90,7 +87,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Observatory 21,000 KRW (cable car extra)",
     openingHours: "10:30–22:30 weekdays, 10:00–23:00 weekends; last entry 30 min before closing",
-    galleryCaptions: ["Seoul from the observation deck"],
   },
   myeongdong: {
     name: "Myeongdong Street",
@@ -112,7 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "There are no official hours; shops open between 10:00 and 11:00 and close between 21:00 and 22:00, while the street-food carts appear from late afternoon into the night",
-    galleryCaptions: ["Evening food carts"],
   },
   "hangang-yeouido-park": {
     name: "Yeouido Hangang Park",
@@ -134,7 +129,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["Sunset over the Han River"],
   },
   "jongmyo-shrine": {
     name: "Jongmyo Shrine",
@@ -158,7 +152,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–1.5 hours",
     ticket: "1,000 KRW (free under 19 and over 65)",
     openingHours: "09:00–18:00 (to 17:30 Nov–Jan, to 18:30 Jun–Aug), closed Tuesdays",
-    galleryCaptions: ["The Jeongjeon colonnade"],
   },
   "ikseon-dong": {
     name: "Ikseon-dong Hanok Alleys",
@@ -181,7 +174,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "",
     openingHours: "The alleys are open all day with no set hours; cafés and restaurants generally run 11:00–23:00",
-    galleryCaptions: ["Hanok alley at night"],
   },
   insadong: {
     name: "Insa-dong",
@@ -204,7 +196,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "The street is always open; shops generally run 10:00–21:00. At weekends the main street is closed to cars and becomes pedestrian-only",
-    galleryCaptions: ["Insa-dong street at the weekend"],
   },
   "gwangjang-market": {
     name: "Gwangjang Market",
@@ -227,7 +218,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "The food alley runs 09:00–23:00 every day of the year; the fabric and general stalls run 09:00–18:00 and close on Sundays",
-    galleryCaptions: ["The bindaetteok stalls"],
   },
   cheonggyecheon: {
     name: "Cheonggyecheon Stream",
@@ -250,7 +240,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The streamside path through the centre"],
   },
   bongeunsa: {
     name: "Bongeunsa Temple",
@@ -273,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "Free (Templelife programme 30,000 KRW)",
     openingHours: "03:00–22:00, open every day of the year",
-    galleryCaptions: ["The Maitreya against the Gangnam towers"],
   },
   "dongdaemun-ddp": {
     name: "Dongdaemun Design Plaza",
@@ -296,7 +284,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "Grounds free; exhibitions typically 8,000–15,000 KRW",
     openingHours: "Grounds open 24 hours; exhibition halls 10:00–19:00 (to 21:00 Wed and Fri), closed Mondays",
-    galleryCaptions: ["DDP's curved shell at night"],
   },
   hongdae: {
     name: "Hongdae",
@@ -319,7 +306,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "The streets are always open; busking and live music run mainly from 19:00 to midnight, busiest at weekends",
-    galleryCaptions: ["Street performance outside the Hongik gate"],
   },
   "lotte-world-tower": {
     name: "Lotte World Tower & Seoul Sky",
@@ -342,7 +328,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Seoul Sky 31,000 KRW (adult)",
     openingHours: "10:30–22:00 (to 23:00 Fri, Sat and holidays); last ticket 1 hour before closing",
-    galleryCaptions: ["Seoul from Seoul Sky"],
   },
   "national-museum-korea": {
     name: "National Museum of Korea",
@@ -365,7 +350,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Free (permanent galleries); special exhibitions ticketed separately",
     openingHours: "09:30–17:30, until 21:00 Wed and Sat; outdoor garden 07:00–22:00",
-    galleryCaptions: ["The Room of Quiet Contemplation"],
   },
   bukhansan: {
     name: "Bukhansan National Park",
@@ -388,7 +372,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half to a full day",
     ticket: "",
     openingHours: "Entry 04:00–17:00 (to 16:00 Dec–Feb); the Baegundae route can close once its daily cap is reached",
-    galleryCaptions: ["Baegundae summit looking back at Seoul"],
   },
   "seoul-forest": {
     name: "Seoul Forest",
@@ -411,7 +394,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The ginkgo avenue in autumn"],
   },
 };
 

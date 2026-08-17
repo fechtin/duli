@@ -9,6 +9,7 @@ import { useTripStore } from "@/lib/store/useTripStore";
 import type { TripDay } from "@/lib/itinerary/types";
 import { markerIcon } from "@/components/map/markerIcons";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { thumbSeedFor } from "@/lib/media/gallery";
 import { RailDot, RailNode } from "./primitives";
 
 /**
@@ -91,7 +92,7 @@ export function DayTimeline({ day, dark }: { day: TripDay; dark: boolean }) {
                 <RailNode order={stop.order} dark={dark} dayIndex={day.day - 1} />
               </div>
               {place && (
-                <IllustratedImage seed={place.gallery?.[0]?.seed ?? place.id} ratio="1/1" className="w-14 shrink-0" rounded credit={false} />
+                <IllustratedImage seed={thumbSeedFor(place.id)} ratio="1/1" className="w-14 shrink-0" rounded credit={false} />
               )}
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-sm font-semibold text-foreground">

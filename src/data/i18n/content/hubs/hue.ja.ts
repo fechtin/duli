@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "15万ドン（参考価格。共通券あり）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["ルーキエム池とその亭", "トゥドゥック帝が自ら撰した碑"],
   },
   "minh-mang-tomb": {
     name: "ミンマン帝陵",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "15万ドン（参考価格。共通券あり）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["ミンマン帝陵の左右対称の主軸", "境内の池に架かる石橋"],
   },
   "gia-long-tomb": {
     name: "ザーロン帝陵",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "移動を含めて1.5時間",
     ticket: "5万ドン（参考価格）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["前庭に並ぶ二基の石の墓", "陵を囲む松の丘"],
   },
   "an-dinh-palace": {
     name: "アンディン宮",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "5万ドン（参考価格）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["ヨーロッパ風のアンディン宮の正面", "アンディン宮の正面", "応接室の壁画"],
   },
   "trang-tien-bridge": {
     name: "チャンティエン橋",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["川の上で色を変えるチャンティエン橋", "六連十二区画の鉄骨"],
   },
   "dong-ba-market": {
     name: "ドンバ市場",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5時間",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["ドンバ市場のなかの食のエリア", "詩の笠とメーシュン菓子の売り場"],
   },
   "quoc-hoc-hue": {
     name: "クオックホック高校",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30分",
     ticket: "",
     openingHours: "授業時間外。前庭のみ見学",
-    galleryCaptions: ["学校の三門とピンクの壁", "校地のアーチの回廊"],
   },
   "hon-chen-temple": {
     name: "ホンチェン祠",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "舟を含めて2時間",
     ticket: "拝観料と舟代は別",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["川から見たホンチェン祠", "斜面に連なる陶片を貼った反り屋根"],
   },
   "perfume-river": {
     name: "フオン川",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "フエの歌ひと席で2時間",
     ticket: "舟代と演奏料は舟単位で決まる",
     openingHours: "終日。フエの歌は夕方に上演",
-    galleryCaptions: ["夜のフオン川に浮かぶ龍船", "水に流された紙灯籠"],
   },
   "thanh-toan-tile-bridge": {
     name: "タイントアン瓦橋",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["田の中に架かるタイントアン瓦橋", "橋の両側に置かれた木の腰掛け"],
   },
   "thuan-an-beach": {
     name: "トゥアンアン海岸",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["海へ開くトゥアンアンの河口", "砂の上に建てられた海鮮の店"],
   },
   "tam-giang-lagoon": {
     name: "タムザン潟",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "舟代は舟単位で決まる",
     openingHours: "終日。夕方遅くがもっともよい",
-    galleryCaptions: ["簗の杭の林の向こうに沈む日", "潟で網を上げる舟"],
   },
   "ru-cha-mangrove": {
     name: "ルーチャーのマングローブ",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2時間",
     ticket: "",
     openingHours: "終日。日中に行くこと",
-    galleryCaptions: ["秋に金色に染まるチャーの葉", "マングローブを抜ける道"],
   },
   "lang-co-beach": {
     name: "ランコー海岸",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["ハイヴァン峠から見たランコー湾", "ラグーンの河口とランコー海岸", "ラップアン潟の牡蠣の棚"],
   },
   "bach-ma-national-park": {
     name: "バクマー国立公園",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "入園料とシャトル代は別",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["バクマー頂上のハイヴォンダイ", "森のなかに落ちるドークエン滝"],
   },
 };
 

@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `900,000越南盾（巴拿山门票）`,
     openingHours: `08:00 – 22:00`,
-    galleryCaptions: [
-      `云雾中的黄金桥`,
-      `托起桥身的巨手`,
-    ],
   },
   "hoi-an-ancient-town": {
     name: `会安古镇`,
@@ -40,12 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天至1天`,
     ticket: `120,000越南盾`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `夜晚点亮古镇的灯笼`,
-      `椰影斜映黄墙，头戴斗笠的人走过`,
-      `在怀河上放花灯`,
-      `白天的古镇`,
-    ],
   },
   "da-lat-city": {
     name: `大叻`,
@@ -64,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `清晨追云`,
-      `春香湖`,
-      `雾中的松丘`,
-    ],
   },
   "nha-trang-beach": {
     name: `芽庄海滩`,
@@ -87,11 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `芽庄湾的日出`,
-      `柔和弯曲的白色沙滩`,
-      `海边的椰树`,
-    ],
   },
   "hon-mun-island": {
     name: `黑岛（蚝岛）`,
@@ -110,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `22,000越南盾（参观费）`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `水下绚丽的珊瑚礁`,
-      `芽庄湾海岸线全景`,
-      `环岛清澈的海水`,
-      `潜水赏珊瑚`,
-    ],
   },
   "buon-don": {
     name: `本敦`,
@@ -134,11 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `20,000越南盾`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `跨越色雷波河的竹制吊桥`,
-      `西原的长屋`,
-      `火旁的铜锣之夜`,
-    ],
   },
   "dray-nur-waterfall": {
     name: `德雷努瀑布`,
@@ -157,10 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: `30,000越南盾`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `溅起雪白水花的水墙`,
-      `雄伟的色雷波河`,
-    ],
   },
   "mui-ne-sand-dunes": {
     name: `美奈沙丘`,
@@ -179,11 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `渔船停泊岸边、热闹繁忙的渔村`,
-      `美奈的红沙`,
-      `在沙丘顶端滑沙`,
-    ],
   },
   "qng-ly-son": {
     name: `李山岛`,
@@ -204,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2天1夜`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `眺望大海的多里峰`,
-      `夕阳下的石拱门`,
-      `玄武岩上的青翠蒜田`,
-    ],
   },
   "qng-sa-huynh": {
     name: `沙黄海滩`,
@@ -228,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `弯如新月的金色沙滩`,
-      `环抱平静海湾、绵长弯曲的金色沙岸`,
-      `沿沙岸蜿蜒的海滨公路`,
-    ],
   },
   "bdi-ky-co-eo-gio": {
     name: `奇科 - 风坳`,
@@ -253,11 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `25,000越南盾（风坳）`,
     openingHours: `06:00 - 18:00`,
-    galleryCaptions: [
-      `海水碧绿的奇科海滩`,
-      `在山崖间蜿蜒的风坳`,
-      `风坳海滨的三角梅之路`,
-    ],
   },
   "bdi-thap-banh-it": {
     name: `饼怡塔`,
@@ -278,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `15,000越南盾`,
     openingHours: `07:00 - 17:30`,
-    galleryCaptions: [
-      `山丘上威严的主塔`,
-      `屋顶独特弯曲的鞍塔`,
-      `在青林中耸立的古老占族塔群`,
-    ],
   },
   "pye-ganh-da-dia": {
     name: `叠石滩`,
@@ -303,11 +243,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: `20,000越南盾`,
     openingHours: `06:30 - 18:00`,
-    galleryCaptions: [
-      `层层堆叠的壮丽玄武岩柱`,
-      `拍打岩盘的雪白浪花`,
-      `伸向大海的岩盘全景`,
-    ],
   },
   "pye-bai-xep": {
     name: `瑞滩`,
@@ -327,11 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `20,000越南盾`,
     openingHours: `06:00 - 18:00`,
-    galleryCaptions: [
-      `长满仙人掌、斜倾向僻静海滩的山坡`,
-      `太阳从岩岬后升起，海浪拍打沙岸`,
-      `伸入大海的黑色礁石`,
-    ],
   },
   "ntn-vinh-vinh-hy": {
     name: `永希湾`,
@@ -352,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1天`,
     ticket: `视乘船服务而定`,
     openingHours: `全天`,
-    galleryCaptions: [
-      `碧绿环抱林峦的永希湾`,
-      `停泊数百艘渔船的小海湾`,
-      `主山海滨公路`,
-    ],
   },
   "ntn-po-klong-garai": {
     name: `婆克朗加莱塔`,
@@ -377,11 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `20,000越南盾`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `槟榔丘上的主塔`,
-      `占族的卡特节`,
-      `草丘上斑驳青苔的占族砖塔群`,
-    ],
   },
   "ktm-nha-tho-go": {
     name: `昆嵩木教堂`,
@@ -402,11 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1小时`,
     ticket: ``,
     openingHours: `全天（弥撒依教堂时间）`,
-    galleryCaptions: [
-      `百年木教堂的正面`,
-      `内部的木构与彩色玻璃窗`,
-      `高耸于山城之上的钟楼`,
-    ],
   },
   "ktm-mang-den": {
     name: `芒登旅游区`,
@@ -427,11 +342,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2天1夜`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `林间倾泻入碧湖的雪白瀑布`,
-      `林中雪白的巴西瀑布`,
-      `清晨平静的达克客湖`,
-    ],
   },
   "gli-bien-ho-tnung": {
     name: `特能海湖`,
@@ -452,12 +362,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `大山深处深蓝的湖面`,
-      `探出水面的观景台`,
-      `特能海湖的水面`,
-      `通往湖畔的古松林荫道`,
-    ],
   },
   "gli-chua-minh-thanh": {
     name: `明成寺`,
@@ -478,11 +382,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `06:00 - 20:00`,
-    galleryCaptions: [
-      `九层舍利塔`,
-      `威严的飞檐大殿`,
-      `庭院中的镀金佛像`,
-    ],
   },
   "dno-cong-vien-dia-chat": {
     name: `得农联合国教科文组织世界地质公园`,
@@ -503,11 +402,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3天`,
     ticket: `视景点而定`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `玄武岩中的火山洞穴`,
-      `青林中的古火山口`,
-      `墨侬族的铜锣文化`,
-    ],
   },
   "dno-thac-dray-sap": {
     name: `德雷萨瀑布`,
@@ -528,11 +422,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `30,000越南盾`,
     openingHours: `07:00 - 17:00`,
-    galleryCaptions: [
-      `溅起雪白水花的德雷萨瀑布`,
-      `瀑底朦胧的水雾`,
-      `环绕瀑布的原始森林`,
-    ],
   },
 };
 

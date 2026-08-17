@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "15,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The white villa facing Front Beach", "Ceramic reliefs on the facade"],
   },
   "hoi-khanh-pagoda": {
     name: "Hoi Khanh Pagoda",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["The 52m reclining Buddha on the roof", "The 18th-century timber sanctuary"],
   },
   "nui-ba-ra": {
     name: "Ba Ra Mountain",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["Phuoc Long town seen from the slope of Ba Ra", "Thac Mo lake seen from the summit"],
   },
   "tran-bien-temple-of-literature": {
     name: "Tran Bien Temple of Literature",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Inside the ceremonial hall", "The garden of scholars' statues"],
   },
   "independence-palace": {
     name: "Independence Palace",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "65,000₫",
     openingHours: "08:00 - 16:30",
-    galleryCaptions: ["The palace facade and its concrete screen", "The command bunker in the basement", "Tanks displayed on the front lawn"],
   },
   "cu-chi-tunnels": {
     name: "Cu Chi Tunnels",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "125,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The welcome sign at the Cu Chi tunnels site", "The widened stretch open to visitors"],
   },
   "dau-tieng-reservoir": {
     name: "Dau Tieng Reservoir",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["The broad reservoir with Ba Den beyond", "The grassy shore in the dry season"],
   },
 };
 

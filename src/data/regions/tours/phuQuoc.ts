@@ -33,10 +33,6 @@ export const phuQuocTourDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["verified"],
     tags: ["beach", "nature", "photography"],
-    gallery: [
-      { seed: "bai-dai-phu-quoc-1", caption: "Hoàng hôn rơi xuống biển ở bờ tây", ratio: "16/9" },
-      { seed: "bai-dai-phu-quoc-2", caption: "Dải cát thoải chạy dài về phía bắc", ratio: "4/3" },
-    ],
     nearby: ["phu-quoc-island", "ganh-dau-cape", "vinwonders-phu-quoc"],
     sourceUrl: "https://www.openstreetmap.org/way/451452488",
     verifiedAt: "2026-08-16",
@@ -69,10 +65,6 @@ export const phuQuocTourDestinations: Destination[] = [
     openingHours: "09:00 - 23:00",
     badges: ["verified"],
     tags: ["family", "nightlife", "architecture", "photography"],
-    gallery: [
-      { seed: "grand-world-phu-quoc-1", caption: "Kênh đào và thuyền gondola lúc lên đèn", ratio: "16/9" },
-      { seed: "grand-world-phu-quoc-2", caption: "Mái vòm tre Nón Lá", ratio: "4/3" },
-    ],
     nearby: ["vinwonders-phu-quoc", "bai-dai-phu-quoc", "ganh-dau-cape"],
     sourceUrl: "https://en.wikipedia.org/wiki/Grand_World_Ph%C3%BA_Qu%E1%BB%91c",
     verifiedAt: "2026-08-16",
@@ -105,10 +97,6 @@ export const phuQuocTourDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["verified"],
     tags: ["temple", "culture", "photography"],
-    gallery: [
-      { seed: "ho-quoc-pagoda-1", caption: "Sân chùa trên cao nhìn thẳng ra biển", ratio: "16/9" },
-      { seed: "ho-quoc-pagoda-2", caption: "Bậc thang và cột gỗ lim dẫn lên chánh điện", ratio: "4/3" },
-    ],
     nearby: ["bai-sao-beach", "ham-ninh-fishing-village", "phu-quoc-island"],
     sourceUrl: "https://www.openstreetmap.org/way/1489845999",
     verifiedAt: "2026-08-16",

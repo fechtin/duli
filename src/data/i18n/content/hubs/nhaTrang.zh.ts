@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["崔水山顶的白色大佛", "从佛像脚下望见的芽庄"],
   },
   "nha-trang-cathedral": {
     name: "芽庄大教堂",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "弥撒时间之外；时刻表贴在门口",
-    galleryCaptions: ["山上教堂裸露的灰石墙面", "芽庄大教堂入口", "从教堂前庭望见的城市"],
   },
   "oceanographic-museum-vn": {
     name: "海洋研究所",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5小时",
     ticket: "4万越南盾（参考价，以窗口为准）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["十八米长的座头鲸骨架", "标本库里的玻璃罐标本"],
   },
   "hon-chong-promontory": {
     name: "婚崇石岬",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "3万越南盾（参考价）",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["沿岸层叠的花岗岩巨石", "从婚崇望见的芽庄湾"],
   },
   "dam-market-nha-trang": {
     name: "潭市场",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["潭市场的干海货摊", "燕窝与鱼露区"],
   },
   "nha-trang-night-market": {
     name: "芽庄夜市",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "约17:00 - 23:00",
-    galleryCaptions: ["夜市里的烧烤摊", "贝壳与珍珠工艺品摊"],
   },
   "doc-let-beach": {
     name: "独列海滩",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["独列细白的沙滩", "附近的婚魁盐田"],
   },
   "binh-ba-island": {
     name: "平巴岛",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "船费另计",
     openingHours: "视当日船班时间而定",
-    galleryCaptions: ["铺满海湾的龙虾养殖筏", "平巴岛上安静的海滩"],
   },
   "ba-ho-stream": {
     name: "巴湖溪",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "约3万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["花岗岩崖壁间的清澈水潭", "通往上层水潭的乱石路"],
   },
   "yang-bay-waterfall": {
     name: "杨拜瀑布",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "园区门票约13万越南盾（参考价）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["沿岩阶跌落的杨拜瀑布", "瀑布四周庆永山谷的森林"],
   },
 };
 

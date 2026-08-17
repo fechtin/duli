@@ -18,10 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "06:00 – 24:00 (야시장)",
-    galleryCaptions: [
-      "벤탄 시장 남문",
-      "화려한 야시장",
-    ],
   },
   "vung-tau-bai-bien-tuong-chua": {
     name: "붕따우 해변 & 예수상",
@@ -41,13 +37,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "",
     openingHours: "예수상: 07:00–17:00",
-    galleryCaptions: [
-      "활기차고 붐비는 금빛 모래 뒤쪽 해변",
-      "붕따우의 해안",
-      "작은 산 위의 예수상",
-      "붐비는 붕따우 해변",
-      "바삭한 특산품 반콧",
-    ],
   },
   "con-dao": {
     name: "꼰다오",
@@ -67,11 +56,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "물이 맑은 원시 해변",
-      "꼰다오 감옥 유적",
-      "영험한 항즈엉 묘지",
-    ],
   },
   "cat-tien-national-park": {
     name: "깟띠엔 국립공원",
@@ -91,11 +75,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "60,000동",
     openingHours: "07:00–17:00",
-    galleryCaptions: [
-      "짙푸른 원시림",
-      "황금빛 노을, 호수 위를 떠가는 작은 배",
-      "마른 낙엽 위에서 먹이를 찾는 들닭",
-    ],
   },
   "thac-giang-dien": {
     name: "장디엔 폭포",
@@ -115,11 +94,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "70,000동",
     openingHours: "07:00–17:30",
-    galleryCaptions: [
-      "여러 층으로 넓게 펼쳐진 폭포",
-      "관광지 안의 화사한 꽃밭",
-      "시원하고 푸른 캠핑 잔디밭",
-    ],
   },
   "chua-ba-thien-hau-binh-duong": {
     name: "바 티엔하우 사원",
@@ -139,12 +113,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "05:00–18:00",
-    galleryCaptions: [
-      "음양 기와지붕의 고찰",
-      "투저우못의 바 티엔하우 사원",
-      "흥겨운 여신 가마 행렬",
-      "사원 안에 피어오르는 향 연기",
-    ],
   },
   "dai-nam-binh-duong": {
     name: "다이남 관광지",
@@ -164,11 +132,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1일",
     ticket: "150,000동",
     openingHours: "08:00–17:00",
-    galleryCaptions: [
-      "금박을 입힌 다이남 국사",
-      "광활한 인공 바다",
-      "반야생 사파리 동물원",
-    ],
   },
   "bu-gia-map-national-park": {
     name: "부자맙 국립공원",
@@ -188,11 +151,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2일",
     ticket: "",
     openingHours: "07:00–16:30",
-    galleryCaptions: [
-      "짙푸른 원시림",
-      "원시림 속의 맑은 계곡",
-      "스띠엥족 공 문화",
-    ],
   },
   "trang-co-bu-lach": {
     name: "부락 초원",
@@ -212,12 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~1일",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: [
-      "숲 한가운데 매끄럽고 푸른 잔디",
-      "부락 초원으로 들어가는 길",
-      "구름을 비추는 맑은 호수",
-      "초원 위로 내리는 노을",
-    ],
   },
   "nui-ba-den-tay-ninh": {
     name: "바덴산",
@@ -237,11 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~1일",
     ticket: "350,000동 (케이블카)",
     openingHours: "06:00–22:00",
-    galleryCaptions: [
-      "호숫가 노을에 보랏빛 실루엣을 드리운 바덴산",
-      "산 정상의 부처상",
-      "하얀 운해 위로 솟아오른 부처상",
-    ],
   },
   "toa-thanh-cao-dai-tay-ninh": {
     name: "떠이닌 까오다이교 대성전",
@@ -261,11 +208,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "06:00–18:00",
-    galleryCaptions: [
-      "화려한 색채의 까오다이교 대성전",
-      "영험한 천안 상징",
-      "흰옷 차림으로 엄숙하게 예배하는 신도들",
-    ],
   },
 };
 

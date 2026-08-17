@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "無料",
     openingHours: "08:00 - 22:00",
-    galleryCaptions: ["タマリンドの木陰に並ぶ本の売店", "書店街のカフェ"],
   },
   "turtle-lake-hcm": {
     name: "亀の池",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: ["池の上に立つ蓮の形のコンクリート塔", "夕暮れの池のまわりの段"],
   },
   "lam-vien-square": {
     name: "ラムヴィエン広場",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: ["夜に灯るアーティチョークとニトベギクの建物", "スアンフオン湖を見下ろす広場の段"],
   },
   "da-lat-flower-garden": {
     name: "ダラット花園",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "50,000ドン（参考価格、入口で確認）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["スアンフオン湖を望む花壇", "ランのガラス温室"],
   },
   "cu-lan-village": {
     name: "クーラン村",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間30分",
     ticket: "100,000ドン（参考価格、ジープ代は別）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["松林のあいだの高床の家と池", "沢を渡って谷へ入るジープ"],
   },
   "bai-dai-phu-quoc": {
     name: "バイザイ海岸",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: ["西の海へ落ちる日没", "北へ延びるなだらかな砂浜"],
   },
   "grand-world-phu-quoc": {
     name: "グランドワールド・フーコック",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "入場無料、公演と施設は別料金",
     openingHours: "09:00 - 23:00",
-    galleryCaptions: ["暗くなってからの運河とゴンドラ", "ノンラーの竹ドーム"],
   },
   "ho-quoc-pagoda": {
     name: "ホークオック寺",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "無料",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["まっすぐ海に向く上の境内", "本堂へ上る階段と鉄木の柱"],
   },
 };
 

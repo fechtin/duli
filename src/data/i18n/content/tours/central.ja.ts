@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分",
     ticket: "無料（線香の購入や衣装の貸出は別料金）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["家の前に広げて干す色とりどりの線香の束", "手で線香を巻く職人"],
   },
   "hon-tam-island": {
     name: "ホンタム島",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "ツアー内容と島内施設により異なる（桟橋で確認）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["岸に向いた側の砂浜", "浜の背後に残る森の丘"],
   },
   "van-long-lagoon": {
     name: "ヴァンロン湿地",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "入場料80,000ドンと舟代は別（参考価格）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["静まった湿地に映る石灰岩の峰", "水面を進む手漕ぎの小舟"],
   },
 };
 

@@ -315,3 +315,37 @@ tại chỗ.
 **Bài học:** hễ một palette có hai cột tune ngược chiều nhau thì **mọi màu chữ đặt lên nó cũng
 phải đến từ palette đó**. Và chụp một mode rồi kết luận là chưa chụp gì — screenshot light mode
 không nhìn thấy được lỗi tương phản của dark mode.
+
+## 045 — Fallback im lặng biến "hỏng" thành "chưa có", và một bảng chép tay thì luôn thiếu
+
+Người dùng hỏi hai lần, hai chỗ khác nhau: "Phong Nha có ảnh rồi mà sao không hiện", rồi "Hà Giang
+bên phải có ảnh mà thẻ bên trái thì không". Cả hai là **một lỗi**: câu hỏi "ảnh nào đại diện cho X"
+có tới 5 nguồn trả lời, và 3 trong số đó là hằng số viết tay không ai đối chiếu với manifest.
+
+Điều khiến nó sống được 2 tuần không phải là bảng thiếu — bảng viết tay nào rồi cũng thiếu — mà là
+`?? d.id`: một seed đã chết và một nơi chưa có ảnh **hiện ra y hệt nhau**, một ô gradient sạch sẽ.
+Không throw, không test đỏ, diff nhìn vẫn lành. Đợt 044 xoá 66 ảnh sai chủ thể và lặng lẽ đục 17
+lỗ; hậu quả nặng nhất lại ở chỗ không ai mở ra xem: `figure()` của worker trả chuỗi rỗng, nên 17
+trang crawler lên Google **không còn tấm ảnh nào**.
+
+**Bài học 1 — đếm số nguồn trả lời trước khi sửa chỗ đầu tiên.** Sửa `ProvincePanel` xong là hết
+triệu chứng người dùng thấy, và bỏ sót thẻ sidebar, medallion bản đồ, dòng thời gian chuyến đi,
+picker check-in, cả hai file SEO của worker. Câu hỏi đúng không phải "chỗ này sai gì" mà "còn ai
+đang tự trả lời câu hỏi này nữa".
+
+**Bài học 2 — guard phải kiểm BẤT BIẾN, đừng kiểm bảng.** `check:photos` không biết gì về ba cái
+bảng cũ. Nó hỏi: có ảnh nào không ai hiện không (I4), có tên ảnh nào không có ảnh không (I1), có
+ai chọn ảnh ngoài `photoIndex` không (I2). Bảng thứ tư mọc lên tháng sau vẫn bị bắt.
+
+**Bài học 3 — danh sách miễn trừ phải tự hết hạn.** `NO_PHOTO_YET` đỏ lên cả khi thứ được miễn
+*đã có ảnh*, bắt xoá dòng miễn trừ. Một danh sách chỉ biết im lặng chính là chỗ giấu lỗi kế tiếp.
+
+**Bài học 4 — sửa 238 file dữ liệu thì dùng parser, đừng dùng regex.** Xoá 2 661 thuộc tính bằng
+TypeScript compiler API (`ts.isPropertyAssignment` → xoá đúng khoảng ký tự), và mỗi file được
+`import()` trước/sau rồi so sánh sâu, lệch là revert ngay file đó. 238/238 khớp. Regex trên object
+literal lồng nhau là đúng cái bẫy đã ăn ở đợt sửa file i18n.
+
+**Bài học 5 — guard chưa chạy trong CI thì chưa phải guard.** Repo đã có sẵn `check:i18n`,
+`check:content`, `check:zh`, `check:provinces` — `deploy.yml` không chạy cái nào, kể cả `npm test`.
+Chúng chỉ chạy khi có người nhớ gõ. Thêm job `verify` chặn trước deploy là mảnh giữ cho mọi thứ
+phía trên không mục lại sau vài tháng.

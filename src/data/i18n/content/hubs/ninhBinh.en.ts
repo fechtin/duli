@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Entry and boat about 250,000d (indicative)",
     openingHours: "07:00 - 16:00",
-    galleryCaptions: ["Sampans on the Ngo Dong river at harvest", "Bich Dong pagoda built against the cliff"],
   },
   "mua-cave": {
     name: "Mua Cave",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "About 100,000d (indicative)",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["The Tam Coc valley from the summit of Mua Cave", "Ninh Binh from the limestone rocks by Mua Cave", "Stone steps and the dragon along the ridge"],
   },
   "bai-dinh-pagoda": {
     name: "Bai Dinh Temple",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Buggy and pagoda tower charged separately",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["The pagodas of the Bai Dinh complex", "The arhat corridor with its five hundred stone figures", "The bronze Maitreya on the hilltop"],
   },
   "hoa-lu-ancient-capital-gate": {
     name: "Temple of King Dinh Tien Hoang",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "20,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The dragon-carved stone bed before the temple", "The temple within its ring of limestone"],
   },
   "am-tien-cave": {
     name: "Am Tien Cave",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "About 20,000d (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The green pool inside its bowl of rock", "The passage through the base of the mountain"],
   },
   "thung-nham-bird-park": {
     name: "Thung Nham Bird Park",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Entry and boat about 120,000d (indicative)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["Birds covering the trees at dusk", "A small boat in the karst valley"],
   },
   "phat-diem-cathedral": {
     name: "Phat Diem Cathedral",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "Outside service times; the schedule is posted at the gate",
-    galleryCaptions: ["The Phuong Dinh, like a pagoda's triple gate", "A stone angel inside the cathedral", "Ironwood columns and curved roofs inside"],
   },
   "kenh-ga-hot-spring": {
     name: "Kenh Ga",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Boat and mineral bath charged separately",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The floating village on the Hoang Long river", "A boat entering Van Trinh cave"],
   },
 };
 

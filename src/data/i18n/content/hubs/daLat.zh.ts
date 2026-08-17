@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["春香湖上的晨雾", "俯瞰春香湖的大叻", "湖岸盛开的梅樱"],
   },
   "da-lat-market": {
     name: "大叻市场",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "06:00 - 19:00；夜市约17:00 - 23:00",
-    galleryCaptions: ["市场里的温带农产摊位", "黄灯下的阴府市场"],
   },
   "da-lat-railway-station": {
     name: "大叻火车站",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时；加上寨末火车再加1.5小时",
     ticket: "车站门票与寨末火车票分开计价",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["大叻站的三个尖顶", "站院里陈列的蒸汽机车"],
   },
   "crazy-house-dalat": {
     name: "疯屋子",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "7万越南盾（参考价）",
     openingHours: "08:30 - 19:00",
-    galleryCaptions: ["形如巨大树桩的建筑", "盘旋在室外的楼梯"],
   },
   "bao-dai-summer-palace": {
     name: "保大夏宫",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "5万越南盾（参考价）",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["三号宫的装饰艺术立面", "保留原有家具的办公室"],
   },
   "da-lat-cathedral": {
     name: "大叻主教座堂",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "弥撒时间之外；弥撒时刻表在门口张贴",
-    galleryCaptions: ["粉色钟楼与顶上的公鸡", "穿过彩色玻璃照进来的光"],
   },
   "domaine-de-marie-church": {
     name: "玛利亚修道院教堂",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "07:00 - 17:00，弥撒时间之外",
-    galleryCaptions: ["陡峭的屋顶与土粉色墙面", "前院的花园"],
   },
   "linh-phuoc-pagoda": {
     name: "灵福寺",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["院中嵌瓷的龙", "嵌满瓷片的七层钟楼"],
   },
   "tuyen-lam-lake": {
     name: "宣林湖",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "缆车与船费另计",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["宣林湖旅游区管理处", "宣林湖上的晨雾", "钻进松丘之间的汊湾"],
   },
   "truc-lam-monastery": {
     name: "竹林禅院",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "",
     openingHours: "05:00 - 21:00；院内区域另有时间",
-    galleryCaptions: ["俯瞰宣林湖的禅院", "从外望竹林禅院", "飞越松林的缆车"],
   },
   "valley-of-love": {
     name: "爱情谷",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "约25万越南盾（参考价，有多种票档）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["下到多天湖的松树山坡", "谷中修剪过的花圃"],
   },
   "pongour-waterfall": {
     name: "彭古尔瀑布",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含路程半天",
     ticket: "约5万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["彭古尔的七级台阶岩层", "铺满青苔岩面流下的水"],
   },
   "elephant-waterfall-dalat": {
     name: "象瀑布",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "约3万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["跌入岩谷的象瀑布", "下到瀑底的石阶"],
   },
   "cau-dat-tea-hill": {
     name: "求达茶山",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "各处不一，约5万越南盾",
     openingHours: "约05:00 - 17:00",
-    galleryCaptions: ["拂晓时茶山上的云海", "山坡上修剪齐平的茶垄"],
   },
   "me-linh-coffee-garden": {
     name: "梅玲咖啡园",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "按店铺营业时间，一般从早到傍晚",
-    galleryCaptions: ["俯瞰咖啡山谷的层层平台", "拂晓时流过山谷的云"],
   },
   "clay-tunnel-dalat": {
     name: "大叻黏土隧道",
@@ -337,7 +322,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "约8万越南盾（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["沿隧道展开的红黏土浮雕", "用黏土重塑的大叻火车站"],
   },
 };
 

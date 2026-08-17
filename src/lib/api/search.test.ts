@@ -10,7 +10,7 @@ const provinces: ProvinceMeta[] = [
 ];
 
 const destinations: DestinationLight[] = [
-  { id: "hoi-an-ancient-town", slug: "hoi-an-ancient-town", provinceSlug: "quang-nam", name: "Phố cổ Hội An", nameEn: "Hoi An Ancient Town", type: "unesco", lng: 108.3, lat: 15.9, summary: "", tags: ["culture"], badges: [], gallery: [], featured: true },
+  { id: "hoi-an-ancient-town", slug: "hoi-an-ancient-town", provinceSlug: "quang-nam", name: "Phố cổ Hội An", nameEn: "Hoi An Ancient Town", type: "unesco", lng: 108.3, lat: 15.9, summary: "", tags: ["culture"], badges: [], featured: true },
 ];
 
 describe("normalize", () => {

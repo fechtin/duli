@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "8,000韩元；12,000韩元的顺天联票可一并使用国家庭园",
     openingHours: "08:00–19:00",
-    galleryCaptions: ["顺天湾的芦苇原"],
   },
   "boseong-tea-fields": {
     name: "宝城绿茶园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "依资料为4,000至5,000韩元（儿童3,000）",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["沿山坡起伏的茶垄"],
   },
   "yeosu-night-sea": {
     name: "丽水夜海与缆车",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "缆车来回17,000韩元（水晶车厢较贵）",
     openingHours: "09:30–22:00（缆车）",
-    galleryCaptions: ["夜里亮灯的突山大桥"],
   },
   hyangiram: {
     name: "向日庵",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "2,000韩元",
     openingHours: "05:00–19:00",
-    galleryCaptions: ["海崖上的庵堂"],
   },
   "damyang-bamboo": {
     name: "潭阳竹绿苑",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "3,000韩元（儿童1,500）；65岁以上免费",
     openingHours: "09:00–19:00（3至10月）、09:00–18:00（11至2月）",
-    galleryCaptions: ["竹林间的步道"],
   },
   songgwangsa: {
     name: "松广寺",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "07:00–19:00",
-    galleryCaptions: ["山门前的有顶木桥"],
   },
   naganeupseong: {
     name: "乐安邑城",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "4,000韩元；已含在12,000韩元的顺天联票中",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["自城墙俯瞰的茅草屋顶"],
   },
   "wando-cheongsando": {
     name: "莞岛青山岛",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "渡船单程约8,700韩元（来回约17,400）；载车费用高出许多",
     openingHours: "依船班时刻",
-    galleryCaptions: ["青山岛的梯田"],
   },
   "jindo-sea-parting": {
     name: "珍岛神秘海路",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "免费，仅部分体验活动收费",
     openingHours: "海路只在潮位最低时开启约一小时，时刻每天不同。庆典于春季举行四天——请查阅当年潮汐表并提早一至两小时抵达，因为路是慢慢浮现的",
-    galleryCaptions: ["走在分开的海路上的人们"],
   },
   "mokpo-modern-history": {
     name: "木浦近代历史街区",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "2,000韩元（青少年与军人1,000、小学生500、幼稚园生免费）",
     openingHours: "09:00–18:00，历史馆周一休馆",
-    galleryCaptions: ["儒达山腰的旧日本领事馆"],
   },
   "gurye-sansuyu": {
     name: "求礼山茱萸村",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["围著山洞石墙的黄色山茱萸"],
   },
   "suncheon-national-garden": {
     name: "顺天湾国家庭园",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "8,000韩元；顺天联票12,000韩元（庭园＋湿地＋乐安邑城，2日内有效）",
     openingHours: "09:00–19:00（冬季至18:00）",
-    galleryCaptions: ["国家庭园中的人造草丘"],
   },
 };
 

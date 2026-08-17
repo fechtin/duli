@@ -34,10 +34,6 @@ export const centralTourDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["verified"],
     tags: ["village", "culture", "photography", "shopping"],
-    gallery: [
-      { seed: "thuy-xuan-incense-village-1", caption: "Những bó chân hương xoè màu trước cửa nhà", ratio: "16/9" },
-      { seed: "thuy-xuan-incense-village-2", caption: "Người thợ se hương bằng tay", ratio: "4/3" },
-    ],
     nearby: ["tu-duc-tomb", "khai-dinh-tomb", "hue-imperial-city"],
     sourceUrl: "https://www.openstreetmap.org/way/1473275556",
     verifiedAt: "2026-08-16",
@@ -70,10 +66,6 @@ export const centralTourDestinations: Destination[] = [
     openingHours: "07:30 - 17:00",
     badges: ["verified"],
     tags: ["island", "beach", "nature", "family"],
-    gallery: [
-      { seed: "hon-tam-island-1", caption: "Bãi cát mặt đảo hướng vào bờ Nha Trang", ratio: "16/9" },
-      { seed: "hon-tam-island-2", caption: "Đồi rừng phía sau đảo", ratio: "4/3" },
-    ],
     nearby: ["hon-mun-island", "nha-trang-beach", "oceanographic-museum-vn"],
     sourceUrl: "https://www.openstreetmap.org/way/147536067",
     verifiedAt: "2026-08-16",
@@ -106,10 +98,6 @@ export const centralTourDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified"],
     tags: ["nature", "park", "photography"],
-    gallery: [
-      { seed: "van-long-lagoon-1", caption: "Núi đá vôi in bóng trên mặt đầm phẳng lặng", ratio: "16/9" },
-      { seed: "van-long-lagoon-2", caption: "Thuyền nan chèo tay giữa đầm", ratio: "4/3" },
-    ],
     nearby: ["trang-an", "hoa-lu-ancient-capital", "bai-dinh-pagoda"],
     sourceUrl: "https://www.openstreetmap.org/relation/13552106",
     verifiedAt: "2026-08-16",

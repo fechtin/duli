@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "1,000韩元（四馆联票3,500韩元）；纯走城墙免费",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["八达门与城墙"],
   },
   "korean-folk-village": {
     name: "韩国民俗村",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "32,000韩元（儿童26,000，65岁以上22,000），含游乐村设施",
     openingHours: "10:00–18:00",
-    galleryCaptions: ["民俗村的茅草屋"],
   },
   namhansanseong: {
     name: "南汉山城",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3至4小时",
     ticket: "山城自2007年起免费；行宫另收2,000韩元（青少年1,000），6岁以下、65岁以上与著韩服者免费",
     openingHours: "山城全日开放；行宫10:00–18:00（4至10月）、10:00–17:00（11至3月），周一休馆",
-    galleryCaptions: ["沿山脊延伸的城墙"],
   },
   "imjingak-dmz": {
     name: "临津阁与非军事区",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "临津阁免费（非军事区行程另计）",
     openingHours: "和平公园全日免费开放；DMZ导览与管制区内景点须事先预约，并依固定梯次出发",
-    galleryCaptions: ["跨越临津江的自由之桥"],
   },
   everland: {
     name: "爱宝乐园",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "现场一日票约62,000韩元，事先预订便宜许多",
     openingHours: "依季节与日期变动——出发前请查看官网行事历",
-    galleryCaptions: ["春天的郁金香花园"],
   },
   "gwangmyeong-cave": {
     name: "光明洞窟",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "6,000韩元",
     openingHours: "09:00–18:00，最后入场17:00，周一休馆",
-    galleryCaptions: ["点上灯的矿坑坑道"],
   },
   oido: {
     name: "乌耳岛与始兴滩涂",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["乌耳岛堤道尽头的红色灯塔"],
   },
   dumulmeori: {
     name: "两水头",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["江雾中的榉树"],
   },
   yongmunsa: {
     name: "龙门寺与千年银杏",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "免费（文化财观览费已于2023年5月废止），停车费另计",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["寺前的千年银杏"],
   },
   "paju-book-city": {
     name: "坡州出版都市",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "园区全日开放；智慧之林1、2馆10:00–20:00，3馆24小时开放；各出版社与书店自订营业时间",
-    galleryCaptions: ["智慧之森阅览厅"],
   },
   "heyri-art-valley": {
     name: "Heyri艺术村",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "村子免费，博物馆另行售票",
     openingHours: "村落全日开放；各画廊、美术馆与咖啡馆各自订定营业时间，多数周一休息",
-    galleryCaptions: ["Heyri的清水混凝土工作室"],
   },
   "petite-france": {
     name: "小法国村（加平）",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "12,000韩元",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["俯瞰湖面的村中广场"],
   },
   "garden-of-morning-calm": {
     name: "晨静树木园",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "依季节9,000至11,000韩元",
     openingHours: "08:30–19:00，光之祭期间延长至21:00",
-    galleryCaptions: ["冬季光之祭"],
   },
   "pocheon-art-valley": {
     name: "抱川艺术谷",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "5,000韩元（青少年3,000、儿童1,500）；单轨来回另收5,300韩元",
     openingHours: "09:00–19:00",
-    galleryCaptions: ["旧采石坑中的翡翠色湖"],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "1,000원(4개소 통합권 3,500원), 성곽길 자체는 무료",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["팔달문과 성벽"],
   },
   "korean-folk-village": {
     name: "한국민속촌",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "32,000원(어린이 26,000원, 65세 이상 22,000원), 놀이마을 이용 포함",
     openingHours: "10:00~18:00",
-    galleryCaptions: ["민속촌의 초가집"],
   },
   namhansanseong: {
     name: "남한산성",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3~4시간",
     ticket: "산성 입장료는 2007년에 폐지되어 무료이며, 행궁만 2,000원(청소년 1,000원)이다. 6세 이하와 65세 이상, 한복 착용자는 무료",
     openingHours: "산성은 상시 개방, 행궁은 10:00~18:00(4~10월), 10:00~17:00(11~3월)이며 월요일 휴궁",
-    galleryCaptions: ["능선을 따라 이어지는 성벽"],
   },
   "imjingak-dmz": {
     name: "임진각과 비무장지대",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "임진각 무료(DMZ 투어는 별도)",
     openingHours: "평화누리 공원은 상시 무료 개방되며, DMZ 투어와 통제구역 내 시설은 사전 예약 후 정해진 시간에만 이용할 수 있다",
-    galleryCaptions: ["임진강을 건너는 자유의 다리"],
   },
   everland: {
     name: "에버랜드",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "현장 종일권 약 62,000원, 사전 예매는 훨씬 저렴",
     openingHours: "계절과 요일마다 다름 — 방문 전 공식 홈페이지에서 확인",
-    galleryCaptions: ["봄의 튤립 정원"],
   },
   "gwangmyeong-cave": {
     name: "광명동굴",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "6,000원",
     openingHours: "09:00~18:00, 입장 마감 17:00, 월요일 휴관",
-    galleryCaptions: ["조명이 들어온 갱도"],
   },
   oido: {
     name: "오이도와 시흥 갯벌",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["오이도 제방 끝의 빨간 등대"],
   },
   dumulmeori: {
     name: "두물머리",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["물안개 속의 느티나무"],
   },
   yongmunsa: {
     name: "용문사와 천년 은행나무",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["절 앞의 천년 은행나무"],
   },
   "paju-book-city": {
     name: "파주출판도시",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "단지는 상시 개방. 지혜의숲 1·2관은 10:00~20:00, 3관은 24시간 운영되며 출판사와 서점은 각자 운영시간을 둔다",
-    galleryCaptions: ["지혜의숲 열람실"],
   },
   "heyri-art-valley": {
     name: "헤이리 예술마을",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "마을 무료, 박물관은 별도",
     openingHours: "마을은 상시 개방되고, 갤러리·박물관·카페마다 운영시간이 다르며 대부분 월요일에 쉰다",
-    galleryCaptions: ["헤이리의 콘크리트 작업실"],
   },
   "petite-france": {
     name: "쁘띠프랑스(가평)",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "12,000원",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["호수를 내려다보는 마을 광장"],
   },
   "garden-of-morning-calm": {
     name: "아침고요수목원",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "계절에 따라 9,000~11,000원",
     openingHours: "08:30~19:00, 빛축제 기간에는 21:00까지",
-    galleryCaptions: ["겨울 오색빛축제"],
   },
   "pocheon-art-valley": {
     name: "포천아트밸리",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "5,000원(청소년 3,000원, 어린이 1,500원), 모노레일 왕복 5,300원 별도",
     openingHours: "09:00~19:00",
-    galleryCaptions: ["옛 채석장에 생긴 옥빛 호수"],
   },
 };
 

@@ -18,11 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 days",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Sunset over Long Beach",
-      "The Hon Thom over-sea cable car",
-      "The over-sea cable car gliding above turquoise waters between islands",
-    ],
   },
   "bai-sao-beach": {
     name: "Sao Beach",
@@ -41,10 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Powder-soft white sand by a blue sea",
-      "A swing standing in the water",
-    ],
   },
   "tra-su-forest": {
     name: "Tra Su Cajuput Forest",
@@ -63,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "100,000 VND",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "A sampan drifting over a carpet of green duckweed",
-      "Cajuput trees mirrored in the water",
-      "Cajuput forest reflected on a lush green duckweed carpet",
-    ],
   },
   "mieu-ba-chua-xu": {
     name: "Ba Chua Xu Temple of Sam Mountain",
@@ -86,10 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "The majestic Ba Chua Xu Temple",
-      "Incense smoke on festival day",
-    ],
   },
   "cai-rang-floating-market": {
     name: "Cai Rang Floating Market",
@@ -108,11 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "05:00 – 09:00",
-    galleryCaptions: [
-      "Boats gathering at the floating market at dawn",
-      "Vendor boats with beo poles bobbing on the river at daybreak",
-      "A woman rowing a boat laden with cabbages to sell",
-    ],
   },
   "long-an-lang-noi-tan-lap": {
     name: "Tan Lap Floating Village",
@@ -132,11 +109,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "60,000 VND",
     openingHours: "07:00 - 17:00 daily",
-    galleryCaptions: [
-      "The concrete path through the cajuput forest",
-      "The observation tower amid the wetlands",
-      "A small boat threading through duckweed-covered canals",
-    ],
   },
   "long-an-lang-sen": {
     name: "Lang Sen Wetland Reserve",
@@ -156,11 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 17:00 daily",
-    galleryCaptions: [
-      "A still stream winding through flooded shrubs",
-      "A green flooded meadow stretching to the horizon",
-      "A boat threading through peaceful canals",
-    ],
   },
   "tien-giang-cu-lao-thoi-son": {
     name: "Thoi Son Islet",
@@ -180,11 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "150,000 VND full tour package",
     openingHours: "08:00 - 17:00 daily",
-    galleryCaptions: [
-      "Paddling a sampan through water-coconut canals",
-      "Enjoying honey tea and orchard fruit",
-      "Artists performing don ca tai tu",
-    ],
   },
   "tien-giang-cho-noi-cai-be": {
     name: "Cai Be Floating Market",
@@ -204,11 +166,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2-3 hours",
     ticket: "",
     openingHours: "Market runs 04:00 - 08:00 daily",
-    galleryCaptions: [
-      "Boats bustling at market on the river",
-      "A conical-hatted rower crossing the river beneath a bridge",
-      "Fresh fruit piled high on a boat",
-    ],
   },
   "ben-tre-con-phung": {
     name: "Con Phung - the Coconut Land",
@@ -228,11 +185,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000 VND to visit the relic site",
     openingHours: "07:30 - 17:00 daily",
-    galleryCaptions: [
-      "The Peace Tower of the Coconut Religion relic",
-      "A fragrant coconut-candy workshop",
-      "Handicrafts made from coconut",
-    ],
   },
   "tra-vinh-ao-ba-om": {
     name: "Ba Om Pond",
@@ -252,11 +204,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Majestic old-tree roots rising from the ground",
-      "Clear green water mirroring the trees",
-      "An ancient Khmer pagoda beside the pond",
-    ],
   },
   "tra-vinh-chua-vam-ray": {
     name: "Vam Ray Pagoda",
@@ -276,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 hours",
     ticket: "",
     openingHours: "06:00 - 18:00 daily",
-    galleryCaptions: [
-      "Brilliantly gilded Angkor architecture",
-      "The majestic reclining Buddha in the main hall",
-      "Exquisite relief of the Naga serpent deity",
-    ],
   },
   "vinh-long-cu-lao-an-binh": {
     name: "An Binh Islet",
@@ -300,11 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 days",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Orchards heavy with fruit",
-      "A riverside stilt-house homestay",
-      "Cycling along a tree-shaded village lane",
-    ],
   },
   "vinh-long-lo-gach-mang-thit": {
     name: "Mang Thit Brick Kilns",
@@ -324,11 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2-3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "Rows of orange-red brick kilns by the river",
-      "Kiln towers glowing golden at sunset",
-      "An old, moss-covered kiln",
-    ],
   },
   "dong-thap-tram-chim": {
     name: "Tram Chim National Park",
@@ -348,11 +280,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "10,000 VND entry, private tac rang boat rental",
     openingHours: "07:00 - 17:00 daily",
-    galleryCaptions: [
-      "Red-crowned cranes feeding in the dry season",
-      "Endless fields of lotus and water lily",
-      "A wooden watchtower amid the lotus marsh on a rainy day",
-    ],
   },
   "dong-thap-lang-hoa-sa-dec": {
     name: "Sa Dec Flower Village",
@@ -372,11 +299,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2-3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: [
-      "A vibrant sea of multicolored flowers",
-      "Flowers grown on high racks to avoid flooding",
-      "Boats carrying flowers on the river",
-    ],
   },
   "hau-giang-cho-noi-nga-bay": {
     name: "Nga Bay Floating Market",
@@ -396,11 +318,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2-3 hours",
     ticket: "",
     openingHours: "Market runs 05:00 - 08:00 daily",
-    galleryCaptions: [
-      "Boats bustling where seven rivers meet",
-      "A beo pole hung with goods for sale",
-      "Eating bun rieu breakfast right on the boat",
-    ],
   },
   "hau-giang-lung-ngoc-hoang": {
     name: "Lung Ngoc Hoang Reserve",
@@ -420,12 +337,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 17:00 daily",
-    galleryCaptions: [
-      "Water hyacinth covering the water at Lung Ngoc Hoang",
-      "A silent primeval cajuput forest",
-      "A boat threading through tangled marsh ponds",
-      "A bamboo bridge through the cajuput forest under a blue sky",
-    ],
   },
   "soc-trang-chua-doi": {
     name: "Bat Pagoda",
@@ -445,11 +356,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 hours",
     ticket: "5,000 VND",
     openingHours: "07:00 - 18:00 daily",
-    galleryCaptions: [
-      "Flying foxes hanging from old-growth trees",
-      "Khmer architecture with multi-tiered curved roofs",
-      "Bats filling the sky at dusk",
-    ],
   },
   "soc-trang-chua-dat-set": {
     name: "Clay Pagoda",
@@ -469,11 +375,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 18:00 daily",
-    galleryCaptions: [
-      "A meticulously clay-molded Buddha statue",
-      "A giant candle that has burned for decades",
-      "The Lien Hoa altar made of clay",
-    ],
   },
   "bac-lieu-canh-dong-dien-gio": {
     name: "Bac Lieu Wind Farm",
@@ -493,11 +394,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1-2 hours",
     ticket: "60,000 VND admission",
     openingHours: "07:00 - 18:00 daily",
-    galleryCaptions: [
-      "Wind turbines reaching out to sea",
-      "The path leading into the middle of the wind farm",
-      "Rows of wind turbines rising behind a green tree line",
-    ],
   },
   "bac-lieu-nha-cong-tu": {
     name: "House of the Bac Lieu Playboy",
@@ -517,12 +413,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "30,000 VND",
     openingHours: "07:00 - 17:30 daily",
-    galleryCaptions: [
-      "The old mansion in Western architecture",
-      "Exquisitely carved fine-wood interiors",
-      "The Bac Lieu skyline today",
-      "Valuable mother-of-pearl-inlaid antiques",
-    ],
   },
   "ca-mau-mui-ca-mau": {
     name: "Ca Mau Cape",
@@ -542,11 +432,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "50,000 VND to enter the tourist area",
     openingHours: "07:00 - 17:00 daily",
-    galleryCaptions: [
-      "The southernmost national coordinate marker",
-      "Deep-green mangrove rhizophora forest",
-      "The ship symbol at the very tip of the cape",
-    ],
   },
   "ca-mau-rung-u-minh-ha": {
     name: "U Minh Ha Forest",
@@ -566,12 +451,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "30,000 VND",
     openingHours: "07:00 - 17:00 daily",
-    galleryCaptions: [
-      "Primeval cajuput forest on peat soil",
-      "U Minh Ha forest from above",
-      "The traditional craft of beam-hanging beekeeping",
-      "Fishing for field catch amid the cajuput forest",
-    ],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "免费（买香或租衣拍照另计）",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["门前摊开晾晒的彩色香束", "手工搓香的匠人"],
   },
   "hon-tam-island": {
     name: "蚕岛",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3小时",
     ticket: "视行程与岛上项目而定（请在码头确认）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["朝向岸边一侧的沙滩", "沙滩背后的林丘"],
   },
   "van-long-lagoon": {
     name: "云龙湿地",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "门票80,000盾，船费另计（参考价）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["石灰岩峰倒映在平静的湿地水面", "水面上人手划行的小舟"],
   },
 };
 

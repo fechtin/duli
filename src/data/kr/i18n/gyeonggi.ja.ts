@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "1,000ウォン（4施設共通券3,500ウォン）、城壁を歩くだけなら無料",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["八達門と城壁"],
   },
   "korean-folk-village": {
     name: "韓国民俗村",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "32,000ウォン（子ども26,000、65歳以上22,000）、遊園村の利用込み",
     openingHours: "10:00〜18:00",
-    galleryCaptions: ["民俗村の茅葺きの家"],
   },
   namhansanseong: {
     name: "南漢山城",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3〜4時間",
     ticket: "城の入場は2007年に無料化。行宮のみ2,000ウォン（青少年1,000）で、6歳以下・65歳以上・韓服着用者は無料",
     openingHours: "城は終日開放、行宮は10:00〜18:00（4〜10月）、10:00〜17:00（11〜3月）、月曜休宮",
-    galleryCaptions: ["稜線に沿って延びる城壁"],
   },
   "imjingak-dmz": {
     name: "臨津閣と非武装地帯",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "臨津閣は無料（DMZツアーは別料金）",
     openingHours: "平和ヌリ公園は終日無料開放。DMZツアーや統制区域内の施設は事前予約が必要で、決められた時間にのみ利用できる",
-    galleryCaptions: ["臨津江を渡る自由の橋"],
   },
   everland: {
     name: "エバーランド",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "当日券は約62,000ウォン、事前購入はかなり安い",
     openingHours: "季節と曜日で変動 — 訪問前に公式サイトで確認を",
-    galleryCaptions: ["春のチューリップ庭園"],
   },
   "gwangmyeong-cave": {
     name: "光明洞窟",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "6,000ウォン",
     openingHours: "09:00〜18:00、最終入場17:00、月曜休館",
-    galleryCaptions: ["照明の入った坑道"],
   },
   oido: {
     name: "烏耳島と始興の干潟",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["烏耳島の堤防の先に立つ赤い灯台"],
   },
   dumulmeori: {
     name: "トゥムルモリ（両水里の合流点）",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["川霧の中の欅"],
   },
   yongmunsa: {
     name: "龍門寺と千年の銀杏",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "08:00〜18:00",
-    galleryCaptions: ["寺の前に立つ千年の銀杏"],
   },
   "paju-book-city": {
     name: "坡州出版都市",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "団地は終日開放。知恵の森1・2館は10:00〜20:00、3館は24時間営業で、出版社や書店は各自の営業時間",
-    galleryCaptions: ["知恵の森の閲覧室"],
   },
   "heyri-art-valley": {
     name: "ヘイリ芸術村",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "村は無料、博物館は別料金",
     openingHours: "村は終日開放。ギャラリーや美術館、カフェはそれぞれ営業時間が異なり、多くは月曜休み",
-    galleryCaptions: ["ヘイリのコンクリートのアトリエ"],
   },
   "petite-france": {
     name: "プチフランス（加平）",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "12,000ウォン",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["湖を見下ろす村の広場"],
   },
   "garden-of-morning-calm": {
     name: "晨静樹木園",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "季節により9,000〜11,000ウォン",
     openingHours: "08:30〜19:00、光の祭り期間は21:00まで",
-    galleryCaptions: ["冬の光の祭り"],
   },
   "pocheon-art-valley": {
     name: "抱川アートバレー",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "5,000ウォン（青少年3,000、子ども1,500）、モノレール往復5,300ウォン別途",
     openingHours: "09:00〜19:00",
-    galleryCaptions: ["旧採石場にできた翡翠色の湖"],
   },
 };
 

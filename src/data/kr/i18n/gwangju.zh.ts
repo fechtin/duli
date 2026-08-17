@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["5·18民主广场"],
   },
   mudeungsan: {
     name: "无等山国立公园",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "适用国家公园「入山时间指定制」：3至11月自04:00、12至2月自05:00开放入山，各路段的折返管制时间落在12:00至17:00之间。出发前请先查看步道封闭公告",
-    galleryCaptions: ["瑞石台的柱状节理"],
   },
   "yangnim-dong": {
     name: "杨林洞历史文化村",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5至2小时",
     ticket: "",
     openingHours: "全日",
-    galleryCaptions: ["杨林洞的红砖建筑"],
   },
   "asia-culture-center": {
     name: "国立亚洲文化殿堂",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "常设展免费",
     openingHours: "10:00–18:00，周三与周六至20:00，周一休馆；开馆时间可能随演出与展览行程调整",
-    galleryCaptions: ["地下展厅上方的天窗"],
   },
   "gwangju-daein-market": {
     name: "大仁市场与星夜夜市",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "日市09:00–19:00。2026年大仁艺术夜市仅有12场，于周五或周六16:00–21:00举行，至10月31日止——出发前请先查看档期",
-    galleryCaptions: ["大仁夜市里的串灯"],
   },
   "gwangju-biennale": {
     name: "光州双年展",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天至一整天",
     ticket: "16,000韩元；预售最低可到8,000韩元",
     openingHours: "10:00–18:00，周一休馆",
-    galleryCaptions: ["光州双年展展馆"],
   },
   "gwangju-penguin-village": {
     name: "杨林洞企鹅村",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全日开放",
-    galleryCaptions: ["挂满旧生活用品的巷弄墙面"],
   },
 };
 

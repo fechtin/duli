@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["전주한옥마을의 기와지붕"],
   },
   naejangsan: {
     name: "내장산국립공원",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "국립공원 운영시간",
-    galleryCaptions: ["가을 단풍 터널"],
   },
   maisan: {
     name: "마이산과 탑사",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "도립공원 입장은 무료, 탑사 관람료 3,000원(학생 2,000원, 어린이 1,000원) — 탑사는 도지정문화재만 보유해 2023년 관람료 폐지 대상이 아니다",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["마이산 아래의 돌탑"],
   },
   "gochang-dolmen": {
     name: "고창 고인돌 유적",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "3,000원(청소년 2,000원, 어린이 1,000원), 유적지 관람열차 1,000원 별도",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["고창의 고인돌 군락"],
   },
   seonunsa: {
     name: "선운사와 동백숲",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "07:00~18:00",
-    galleryCaptions: ["이끼 위에 송이째 떨어진 동백"],
   },
   "muju-deogyusan": {
     name: "무주 덕유산국립공원",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~하루",
     ticket: "곤돌라 왕복 25,000원(어린이 20,000원), 기상에 따라 운행 중단 가능",
     openingHours: "국립공원 운영시간과 곤돌라 일정에 따름",
-    galleryCaptions: ["향적봉의 상고대"],
   },
   "byeonsan-bando": {
     name: "변산반도국립공원",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "무료(내소사 문화재관람료는 2023년 5월 폐지)",
     openingHours: "국립공원 운영시간, 채석강은 물때에 따름",
-    galleryCaptions: ["채석강의 층리 바위"],
   },
   "gunsan-modern-quarter": {
     name: "군산 근대문화거리",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "박물관 통합권 3,000원, 근대역사박물관 단독 2,000원",
     openingHours: "09:00~18:00, 박물관은 월요일 휴관",
-    galleryCaptions: ["군산의 옛 조선은행 건물"],
   },
   "jeonju-nambu-market": {
     name: "전주 남부시장과 청년몰",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "낮 시장은 07:00~20:00, 야시장은 금·토요일 저녁 17:00~23:00에만 250m 통로에 45개 매대로 열린다",
-    galleryCaptions: ["남부시장 안의 청년 야시장"],
   },
   "jeonju-hyanggyo": {
     name: "전주향교",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "09:00~18:00(3~10월), 10:00~17:00(11~2월), 월요일 휴무",
-    galleryCaptions: ["향교 마당의 노란 은행나무"],
   },
 };
 

@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["Hoa Phong tower in the pagoda courtyard", "The main hall honouring Phap Van"],
   },
   "tran-thuong-temple": {
     name: "Tran Thuong Temple",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["Tran Thuong Temple from the forecourt", "The ceremonial gate and pond"],
   },
   "temple-of-literature": {
     name: "Temple of Literature",
@@ -67,12 +65,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "70,000₫",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: [
-      "Khue Van Cac reflected in Thien Quang well",
-      "The Khue Van Cac pavilion",
-      "The 82 doctoral stelae on stone tortoises",
-      "Dai Trung gate leading into the inner courtyards",
-    ],
   },
   "mao-dien-temple-of-literature": {
     name: "Mao Dien Temple of Literature",
@@ -94,7 +86,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The ceremonial gate at Mao Dien", "The hall honouring Confucius and eight scholars"],
   },
   "lan-ha-bay": {
     name: "Lan Ha Bay",
@@ -116,13 +107,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "80,000₫ (bay entry fee)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "Limestone islands scattered across Lan Ha Bay",
-      "A seafood shop in Cat Ba town",
-      "The floating village of Cai Beo",
-      "The sea from Cannon Fort on Cat Ba Island",
-      "A small beach tucked behind the cliffs",
-    ],
   },
   "nom-village": {
     name: "Nom Village",
@@ -144,7 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The nine-span stone bridge over the Nguyet Duc", "Tam Giang communal house above the pond"],
   },
   "pho-minh-pagoda": {
     name: "Pho Minh Pagoda",
@@ -167,7 +150,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The fourteen-storey Pho Minh tower", "Tran-era wave carving at the tower base"],
   },
   "hoa-lu-ancient-capital": {
     name: "Hoa Lu Ancient Capital",
@@ -190,11 +172,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours",
     ticket: "20,000₫",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "King Dinh Tien Hoang's temple ringed by limestone",
-      "The stone dragon bed before the temple",
-      "The Hoa Lu valley from above",
-    ],
   },
   "cuc-phuong-national-park": {
     name: "Cuc Phuong National Park",
@@ -217,7 +194,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "60,000₫",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["The thousand-year-old cho tree in primary forest", "The entrance to Cuc Phuong National Park", "Butterfly season along the April trails"],
   },
   "tb-den-tran": {
     name: "Tran Temple, Thai Binh",
@@ -239,7 +215,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 hours",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["The temple to the Tran kings at Tam Duong", "An old burial mound in Thai Duong Lang"],
   },
   "dai-lai-lake": {
     name: "Dai Lai Lake",
@@ -261,7 +236,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Year-round",
-    galleryCaptions: ["Dai Lai Lake below the Tam Dao range", "Pine hills on the shore at first light"],
   },
 };
 

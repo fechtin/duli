@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "1,500ウォン（隣の国立公州博物館は無料）",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["錦江を見下ろす公山城の城壁"],
   },
   "buyeo-busosanseong": {
     name: "扶余 扶蘇山城と宮南池",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "2,000ウォン、子ども・高齢者・地元住民は割引",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["宮南池の中央に建つ東屋"],
   },
   haemieupseong: {
     name: "瑞山 海美邑城",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分〜2時間",
     ticket: "入場も駐車も無料",
     openingHours: "05:00〜21:00（3〜10月）、06:00〜19:00（11〜2月）、年中無休",
-    galleryCaptions: ["海美邑城の城壁"],
   },
   "daecheon-beach": {
     name: "保寧 大川海水浴場",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["大川海水浴場の泥祭り"],
   },
   sudeoksa: {
     name: "修徳寺",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "08:00〜18:00",
-    galleryCaptions: ["彩色されていない大雄殿"],
   },
   "sinduri-dunes": {
     name: "泰安新斗里海岸砂丘",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料",
     openingHours: "09:00〜18:00（11〜2月は17:00まで）、月曜休館",
-    galleryCaptions: ["新斗里の海岸砂丘"],
   },
   "oeam-folk-village": {
     name: "牙山外岩村",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "2,000ウォン（団体1,000）",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["外岩村の庭を通る水路"],
   },
   magoksa: {
     name: "公州麻谷寺",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "08:00〜18:00",
-    galleryCaptions: ["麻谷寺の両岸を結ぶ橋"],
   },
   "seosan-maae-buddha": {
     name: "瑞山磨崖如来三尊像",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["岩壁に刻まれた三尊像"],
   },
   "independence-hall": {
     name: "天安独立記念館",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "2008年から無料",
     openingHours: "09:30〜18:00（3〜10月）、09:30〜17:00（11〜2月、最終入場16:00）、月曜休館",
-    galleryCaptions: ["独立記念館の民族の家"],
   },
 };
 

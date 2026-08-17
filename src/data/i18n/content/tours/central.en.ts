@@ -23,7 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes",
     ticket: "Free (pay only for incense or photo costume hire)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["Fanned bundles of dyed incense outside a house", "A worker rolling incense by hand"],
   },
   "hon-tam-island": {
     name: "Hon Tam Island",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "Depends on the tour package and on-island services (check at the pier)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["The island's shore-facing beach", "The forested hill behind the beach"],
   },
   "van-long-lagoon": {
     name: "Van Long Lagoon",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "80,000d entry plus the boat fee (indicative)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Limestone towers mirrored in the still lagoon", "A hand-rowed sampan crossing the water"],
   },
 };
 

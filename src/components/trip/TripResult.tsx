@@ -10,6 +10,7 @@ import type { TripPlan } from "@/lib/itinerary/types";
 import { Chip } from "@/components/ui/Chip";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
 import { firstPhotoSeed } from "@/components/ui/IllustratedImage";
+import { heroSeedFor } from "@/lib/media/gallery";
 import { DayTimeline } from "./DayTimeline";
 import { DayTab, StatTile, TripNotice } from "./primitives";
 
@@ -57,14 +58,13 @@ export function TripResult({ plan }: { plan: TripPlan }) {
   }, [activeDay]);
 
   const day = plan.days[activeDay - 1];
-  // Photos are keyed by GALLERY seed, never by destination id — passing ids yields a gradient for
-  // every stop, which is how the first build shipped a blank hero and blank thumbnails.
-  const heroSeed = useMemo(() => {
-    const byId = new Map(destinations.map((d) => [d.id, d]));
-    return firstPhotoSeed(
-      ...plan.days.flatMap((d) => d.stops.map((s) => byId.get(s.destinationId)?.gallery?.[0]?.seed)),
-    );
-  }, [plan, destinations]);
+  // Photos are keyed by SEED, never by destination id — passing ids yields a gradient for every
+  // stop, which is how the first build shipped a blank hero and blank thumbnails. `heroSeedFor`
+  // is the translation, and it returns null rather than a dead seed for a stop with no photo.
+  const heroSeed = useMemo(
+    () => firstPhotoSeed(...plan.days.flatMap((d) => d.stops.map((s) => heroSeedFor(s.destinationId)))),
+    [plan],
+  );
 
   return (
     <div>

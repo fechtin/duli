@@ -3,7 +3,17 @@ import festivalCalendar from "@/data/living/festival-calendar.json";
 import flowerCalendar from "@/data/living/flower-calendar.json";
 import seasonalCalendar from "@/data/living/seasonal-calendar.json";
 import { useMapStore } from "@/lib/store/useMapStore";
-import { focusDestinationById } from "./navHelpers";
+import { hasPhoto } from "@/components/ui/IllustratedImage";
+import { calendarSeed, focusDestinationById } from "./navHelpers";
+
+/**
+ * Ids whose card is honestly blank, mirrored from `scripts/check-photos.mjs`. `ho-chi-minh-city`
+ * opens a province and has no destination to borrow a cover from.
+ *
+ * `perfume-pagoda` sat here until chua-huong got a photo, and this assertion is what demanded the
+ * line be deleted rather than left to rot — an exemption that cannot expire is a hiding place.
+ */
+const NO_PHOTO_YET = new Set(["ho-chi-minh-city"]);
 
 /**
  * Every card in the sidebar's living sections — Today's Highlights, Festivals, Flowers — hands
@@ -46,5 +56,24 @@ describe("focusDestinationById", () => {
     // No exemptions. An id with nothing to open needs a destination authored for it — which is
     // what perfume-pagoda (Chùa Hương) got — not a coordinate that only moves the camera.
     expect(selectedDestination ?? selectedProvince).not.toBeNull();
+  });
+
+  /**
+   * The second half of the same join. `ha-giang-loop` passed the test above for months — it opened
+   * Đèo Mã Pì Lèng correctly — while its card sat under a blank gradient, because the photo lookup
+   * was a *separate* hand-kept table with a hole in it. A card that navigates somewhere real must
+   * also look like somewhere real.
+   *
+   * `calendarSeed` derives the seed from the same table the assertion above exercises, so this now
+   * reads as a tautology. It is kept because a future "just this once" override table would break
+   * it, which is exactly the mistake worth catching twice.
+   */
+  it.each(LIVING_IDS.filter((id) => !NO_PHOTO_YET.has(id)))("%s draws a real photo", (id) => {
+    expect(hasPhoto(calendarSeed(id))).toBe(true);
+  });
+
+  it.each([...NO_PHOTO_YET])("%s is still waiting for a photo", (id) => {
+    // Fails once the photo lands — the exemption has to be deleted, not left to hide a gap.
+    expect(hasPhoto(calendarSeed(id))).toBe(false);
   });
 });

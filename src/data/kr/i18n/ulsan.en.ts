@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["The red bridge to Daewangam rock"],
   },
   "taehwagang-bamboo": {
     name: "Taehwagang Bamboo Grove",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["A path inside the bamboo grove"],
   },
   ganjeolgot: {
     name: "Ganjeolgot Cape",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "Open all day",
-    galleryCaptions: ["Ganjeolgot lighthouse"],
   },
   "bangudae-petroglyphs": {
     name: "Bangudae Petroglyphs",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "The petroglyph museum runs 09:00–18:00, Tuesday to Sunday; closed Mondays and 1 January. The outdoor viewpoint over the cliff is freely accessible",
-    galleryCaptions: ["The carved whale panel"],
   },
   "jangsaengpo-whale-village": {
     name: "Jangsaengpo Whale Culture Village",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "3,000 KRW for the culture village and 3,000 KRW for the whale museum, bought separately",
     openingHours: "09:00–18:00, closed Mondays",
-    galleryCaptions: ["The rebuilt whalers' quarter"],
   },
   "ganwoljae-silver-grass": {
     name: "Ganwoljae & the Yeongnam Alps",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "Open all day (best climbed in daylight)",
-    galleryCaptions: ["Silver grass on the Ganwoljae saddle"],
   },
   "ulsan-bridge-observatory": {
     name: "Ulsan Bridge Observatory",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "Free",
     openingHours: "09:00–21:00, last entry 20:30; closed the second and fourth Monday of each month and on Seollal and Chuseok",
-    galleryCaptions: ["The Ulsan Bridge and the industrial bay at night"],
   },
   "jujeon-pebble-beach": {
     name: "Jujeon Pebble Beach",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The black pebbles of Jujeon"],
   },
 };
 

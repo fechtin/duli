@@ -9,6 +9,7 @@ import { useI18n, useT } from "@/lib/i18n";
 import { useCountryStore } from "@/lib/store/useCountryStore";
 import { countryLabel } from "@/lib/country";
 import { IllustratedImage } from "@/components/ui/IllustratedImage";
+import { heroSeedFor, photos } from "@/lib/media/gallery";
 import { Button } from "@/components/ui/Button";
 import { panelTransition, springSoft } from "@/design/motion";
 import { cn } from "@/lib/utils/cn";
@@ -41,7 +42,7 @@ export function CheckinFlow() {
   useEffect(() => {
     if (!targetId) return;
     setStep(0);
-    setPhoto(destinations.find((d) => d.id === targetId)?.gallery[0]?.seed ?? null);
+    setPhoto(heroSeedFor(targetId));
     setUploadedUrl(null);
     setUploadedPreview(null);
     setCaption("");
@@ -170,19 +171,21 @@ export function CheckinFlow() {
                     )}
                   </button>
 
-                  {/* Gallery fallback */}
-                  {!uploadedPreview && (
+                  {/* Gallery fallback — the destination's real photos. Listing authoring slots
+                      instead let empty tiles in here, so a traveller could pick a blank gradient
+                      and paste it into their own check-in card. */}
+                  {!uploadedPreview && photos.seedsFor(dest.id).length > 0 && (
                     <div className="grid grid-cols-3 gap-2">
-                      {dest.gallery.map((g) => (
+                      {photos.seedsFor(dest.id).map((seed) => (
                         <button
-                          key={g.seed}
-                          onClick={() => setPhoto(g.seed)}
+                          key={seed}
+                          onClick={() => setPhoto(seed)}
                           className={cn(
                             "overflow-hidden rounded-[var(--radius-md)] ring-2 transition",
-                            photo === g.seed ? "ring-primary" : "ring-transparent hover:ring-border-strong",
+                            photo === seed ? "ring-primary" : "ring-transparent hover:ring-border-strong",
                           )}
                         >
-                          <IllustratedImage seed={g.seed} ratio="1/1" rounded={false} credit={false} />
+                          <IllustratedImage seed={seed} ratio="1/1" rounded={false} credit={false} />
                         </button>
                       ))}
                     </div>

@@ -34,7 +34,6 @@ interface DestRow {
   opening_hours: string;
   badges: string;
   tags: string;
-  gallery: string;
   nearby: string;
   featured: number;
   source_url: string | null;
@@ -94,7 +93,6 @@ function localName(translated: string | undefined, locale: string | undefined, n
 }
 
 function toDestination(r: DestRow, locale?: string): Destination {
-  const gallery = parse<Destination["gallery"]>(r.gallery, []);
   const tr = pickTranslation<DestinationTranslation>(r.i18n, locale);
   return {
     id: r.id,
@@ -115,10 +113,8 @@ function toDestination(r: DestRow, locale?: string): Destination {
     openingHours: tr && nonEmpty(tr.openingHours) ? tr.openingHours : r.opening_hours,
     badges: parse(r.badges, []),
     tags: parse(r.tags, []),
-    gallery:
-      tr && hasItems(tr.galleryCaptions)
-        ? gallery.map((g, i) => (nonEmpty(tr.galleryCaptions?.[i]) ? { ...g, caption: tr.galleryCaptions![i] } : g))
-        : gallery,
+    // Ảnh KHÔNG đi qua đây nữa. Cột `gallery` và mảng `galleryCaptions` từng được ghép lại đúng
+    // chỗ này, theo chỉ số, giữa hai thứ không ai đối chiếu — client giờ hỏi thẳng manifest.
     nearby: parse(r.nearby, []),
     featured: !!r.featured,
     ...(r.source_url ? { sourceUrl: r.source_url } : {}),
@@ -177,7 +173,7 @@ export async function getProvinceIndex(db: D1Like, country = "vn"): Promise<{ sl
 export async function getDestinationsLight(db: D1Like, locale?: string, country = "vn") {
   const { results } = await db
     .prepare(
-      "SELECT id, slug, province_slug, name, name_en, type, lng, lat, summary, tags, badges, gallery, featured, i18n FROM destinations WHERE country = ?",
+      "SELECT id, slug, province_slug, name, name_en, type, lng, lat, summary, tags, badges, featured, i18n FROM destinations WHERE country = ?",
     )
     .bind(country)
     .all<DestRow>();
@@ -195,7 +191,6 @@ export async function getDestinationsLight(db: D1Like, locale?: string, country 
       summary: tr && nonEmpty(tr.summary) ? tr.summary : r.summary,
       tags: parse<string[]>(r.tags, []),
       badges: parse<string[]>(r.badges, []),
-      gallery: parse(r.gallery, []),
       featured: !!r.featured,
     };
   });

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜4時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["冬柏島から見た海雲台の浜"],
   },
   "gamcheon-culture-village": {
     name: "甘川文化村",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "村は終日開放、案内センターとハヌルマル展望台は09:00〜16:00",
-    galleryCaptions: ["斜面に並ぶ色とりどりの家"],
   },
   "jagalchi-market": {
     name: "チャガルチ市場",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分〜2時間",
     ticket: "",
     openingHours: "05:00〜22:00、毎月第1・第3火曜休み",
-    galleryCaptions: ["チャガルチ市場の活魚売り場"],
   },
   "haedong-yonggungsa": {
     name: "海東龍宮寺",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "",
     openingHours: "毎日04:30〜19:00",
-    galleryCaptions: ["岩の崖の上の寺"],
   },
   "gwangalli-beach": {
     name: "広安里海水浴場と広安大橋",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["浜から見た広安大橋"],
   },
   beomeosa: {
     name: "梵魚寺",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "早朝から日暮れまで開放、入場無料",
-    galleryCaptions: ["梵魚寺の大雄殿"],
   },
   taejongdae: {
     name: "太宗台",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "公園の入場は無料、ダヌビ列車は一周4,000ウォン（1区間2,000）",
     openingHours: "05:00〜24:00（ダヌビ列車は09:00〜18:00）",
-    galleryCaptions: ["太宗台の崖に立つ灯台"],
   },
   "huinnyeoul-culture-village": {
     name: "白い渓流文化村（フィニョウル）",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["村の下の海岸散策路"],
   },
   "oryukdo-skywalk": {
     name: "五六島スカイウォーク",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "無料",
     openingHours: "09:00〜19:00（6/1〜9/30）、09:00〜18:00（10/1〜5/31）、最終入場は閉場10分前、月曜休み",
-    galleryCaptions: ["五六島を見下ろすガラスの床"],
   },
   "igidae-coastal-walk": {
     name: "二妓台海岸散策路",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "",
     openingHours: "終日（日中に歩くのがよい）",
-    galleryCaptions: ["海雲台を望む散策路"],
   },
   "yongdusan-busan-tower": {
     name: "龍頭山公園と釜山タワー",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "公園は無料、展望台は現地で約12,000ウォン、オンライン購入の方が安いことが多い",
     openingHours: "公園は終日、タワーは10:00〜23:00",
-    galleryCaptions: ["タワーから見た釜山港"],
   },
   "bosu-dong-book-street": {
     name: "宝水洞古書店街",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "09:00〜21:00、毎月第1・第3日曜と旧正月・秋夕は休み",
-    galleryCaptions: ["宝水洞の路地の本の壁"],
   },
   "songdo-cable-car": {
     name: "松島海水浴場と海上ケーブルカー",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "ケーブルカー往復約17,000ウォン、クリスタルキャビンは22,000ウォン",
     openingHours: "海水浴場は終日、ケーブルカーは09:00〜22:00",
-    galleryCaptions: ["松島湾を横切るケーブルカー"],
   },
   "busan-cinema-center": {
     name: "映画の殿堂",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "広場は無料",
     openingHours: "広場は終日、上映館は上映日程による",
-    galleryCaptions: ["夜のLEDの屋根"],
   },
 };
 

@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "25,000 VND",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "The national flag atop Dragon Mountain",
-      "The path up to the flag tower",
-      "The karst plateau seen from above",
-      "The majestic tower, the red flag flying in the mist",
-    ],
   },
   "ma-pi-leng-pass": {
     name: "Ma Pi Leng Pass",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "The Happiness Road etched across the cliff",
-      "The jade-green Nho Que River",
-      "Tu San Canyon",
-    ],
   },
   "dong-van-old-town": {
     name: "Dong Van Old Town",
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "The old town aglow with lanterns",
-      "Dong Van town on the rocky plateau",
-      "A highland market day",
-    ],
   },
   "sa-pa-town": {
     name: "Sa Pa",
@@ -88,13 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "Terraced fields in the ripe rice season",
-      "The roundabout in central Sa Pa",
-      "Morning mist over the Muong Hoa Valley",
-      "The centre of Sa Pa town",
-      "Fansipan peak in the clouds",
-    ],
   },
   "ha-long-bay": {
     name: "Ha Long Bay",
@@ -113,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "290,000 VND",
     openingHours: "All day",
-    galleryCaptions: [
-      "Dawn over the bay",
-      "A boat amid a forest of limestone islands",
-      "Sung Sot Cave",
-      "A fishing village on the bay",
-    ],
   },
   "moc-chau-plateau": {
     name: "Moc Chau Plateau",
@@ -137,13 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "The heart-shaped tea hill",
-      "The landscape on the road from Son La to Moc Chau",
-      "Plum trees blossoming white across the hillside",
-      "The memorial to Ho Chi Minh's visit to the Moc Chau farm",
-      "Morning mist over the grassland",
-    ],
   },
   "dien-bien-phu-battlefield": {
     name: "Dien Bien Phu Battlefield Relic",
@@ -162,12 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "100,000 VND",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "The Dien Bien Phu Victory Monument",
-      "An M24 Chaffee tank left on the battlefield",
-      "Trenches on Hill A1",
-      "De Castries' bunker",
-    ],
   },
   "ban-gioc-waterfall": {
     name: "Ban Gioc Waterfall",
@@ -187,11 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "45,000 VND",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "The three tiers of Ban Gioc Waterfall in the high-water season",
-      "Visitors cooling off below the white cascade",
-      "The waterfall tumbling white amid green forest",
-    ],
   },
   "nguom-ngao-cave": {
     name: "Nguom Ngao Cave",
@@ -211,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "45,000 VND",
     openingHours: "07:30 – 17:00",
-    galleryCaptions: [
-      "A forest of stalactites within the cave",
-      "A stone formation shaped like a lotus throne",
-      "A path lit with artistic lighting",
-    ],
   },
   "ba-be-lake": {
     name: "Ba Be Lake",
@@ -235,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "25,000 VND",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "A dugout canoe on Ba Be Lake",
-      "The shimmering lake embracing a small island in the morning mist",
-      "The still lake amid mist-shrouded mountains",
-    ],
   },
   "tam-thanh-cave": {
     name: "Tam Thanh Cave",
@@ -259,12 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "20,000 VND",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "The ancient temple within Tam Thanh Cave",
-      "The relief of Amitabha Buddha on the rock wall",
-      "Lang Son seen from the Mac dynasty citadel",
-      "The gate of heaven catching the sunlight",
-    ],
   },
   "mau-son-mountain": {
     name: "Mau Son Mountain",
@@ -284,11 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "A sea of clouds atop Mau Son",
-      "Frost coating the trees white in winter",
-      "The ruins of an old French villa",
-    ],
   },
   "tan-trao-relic": {
     name: "Tan Trao Relic Site",
@@ -308,11 +240,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "The ancient Tan Trao banyan tree",
-      "The Na Nua hut amid the forest",
-      "The historic Tan Trao communal house",
-    ],
   },
   "mo-na-hang-waterfall": {
     name: "Mo Na Hang Waterfall",
@@ -332,12 +259,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "Mo Waterfall tumbling down the mountainside",
-      "A clear pool at the foot of the falls",
-      "Evening over the Na Hang hydropower dam",
-      "A cruise on Na Hang Lake",
-    ],
   },
   "nui-coc-lake": {
     name: "Nui Coc Lake",
@@ -357,11 +278,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day to 1 day",
     ticket: "50,000 VND",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "A small island in the heart of Nui Coc Lake",
-      "Morning mist over the water",
-      "A boat cruising around the lake",
-    ],
   },
   "tan-cuong-tea-hills": {
     name: "Tan Cuong Tea Hills",
@@ -381,11 +297,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "Lush green rolling tea hills",
-      "Picking young tea buds in the morning",
-      "A cup of tea amid the tea hills",
-    ],
   },
   "den-hung-temple": {
     name: "Hung Kings Temple",
@@ -405,12 +316,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "The Upper Temple on Nghia Linh Mountain",
-      "The Lower Temple in the Hung Kings complex",
-      "Stone steps shaded by ancient trees",
-      "The stream of pilgrims at the Commemoration",
-    ],
   },
   "tay-yen-tu": {
     name: "Tay Yen Tu",
@@ -430,11 +335,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Free",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "The cable car over the forest to the summit",
-      "A pagoda amid the clouds of Tay Yen Tu",
-      "The Tay Yen Tu spring festival",
-    ],
   },
   "vinh-nghiem-pagoda": {
     name: "Vinh Nghiem Pagoda",
@@ -454,11 +354,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 hours",
     ticket: "Free",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "The triple gate of Vinh Nghiem Pagoda",
-      "The ancient repository of Buddhist scripture woodblocks",
-      "The temple courtyard beneath ancient trees",
-    ],
   },
   "mu-cang-chai-terraces": {
     name: "Mu Cang Chai Terraced Fields",
@@ -478,11 +373,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "Terraced fields golden with ripe rice",
-      "The sticky-rice mound hill at La Pan Tan",
-      "The water-pouring season glittering with the sky's reflection",
-    ],
   },
   "thac-ba-lake": {
     name: "Thac Ba Lake",
@@ -502,11 +392,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Free",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "Thousands of green islands on Thac Ba Lake",
-      "Morning mist veiling the lake",
-      "A boat exploring the lake",
-    ],
   },
   "o-quy-ho-pass": {
     name: "O Quy Ho Pass",
@@ -526,13 +411,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "The Fansipan cable car over a misty valley",
-      "A sea of clouds atop O Quy Ho",
-      "Rice terraces seen from the Fansipan cable car",
-      "The winding pass along the cliffside",
-      "Sunset seen from Heaven's Gate",
-    ],
   },
   "sin-suoi-ho-village": {
     name: "Sin Suoi Ho Village",
@@ -552,11 +430,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "A Hmong village amid the mountains of Lai Chau",
-      "A garden of wild orchids in bloom",
-      "The poetic Heart Waterfall",
-    ],
   },
   "mai-chau-valley": {
     name: "Mai Chau Valley",
@@ -576,12 +449,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1–2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "Mai Chau Valley seen from the pass",
-      "Thai stilt houses in Lac village",
-      "A Thai meal in Mai Chau",
-      "The xoe dance by the firelight",
-    ],
   },
   "hoa-binh-lake": {
     name: "Hoa Binh Lake",
@@ -601,12 +468,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Free",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "Hoa Binh Lake amid the mountains of the Da River",
-      "Hoa Binh Lake among the mountains",
-      "Thac Bo Temple by the lake",
-      "A boat cruising the lake",
-    ],
   },
 };
 

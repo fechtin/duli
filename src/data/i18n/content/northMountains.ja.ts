@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "25,000ドン",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "龍山の頂にはためく祖国の国旗",
-      "国旗塔へ登る道",
-      "高みから見下ろす石灰岩高原",
-      "霧の中で赤旗を翻す荘厳な国旗塔",
-    ],
   },
   "ma-pi-leng-pass": {
     name: "マーピーレン峠",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "絶壁を横切る幸福の道",
-      "翡翠色のニョクエ川",
-      "トゥーサン渓谷",
-    ],
   },
   "dong-van-old-town": {
     name: "ドンヴァン旧市街",
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "提灯の灯る旧市街",
-      "石灰岩高原の中のドンヴァンの町",
-      "高原の市の日",
-    ],
   },
   "sa-pa-town": {
     name: "サパ",
@@ -88,13 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "稲の実る季節の棚田",
-      "サパ中心部のロータリー",
-      "ムオンホア谷の朝霧",
-      "サパの町の中心部",
-      "雲の中のファンシーパン山頂",
-    ],
   },
   "ha-long-bay": {
     name: "ハロン湾",
@@ -113,12 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "290,000ドン",
     openingHours: "終日",
-    galleryCaptions: [
-      "湾の夜明け",
-      "石灰岩の島々の森を進む船",
-      "スンソット洞窟",
-      "湾に浮かぶ漁村",
-    ],
   },
   "moc-chau-plateau": {
     name: "モクチャウ高原",
@@ -137,13 +108,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "ハート形の茶畑",
-      "ソンラーからモクチャウへの道の風景",
-      "丘陵を白く染める梅林",
-      "ホー・チ・ミンのモクチャウ農場訪問記念地",
-      "草原の朝霧",
-    ],
   },
   "dien-bien-phu-battlefield": {
     name: "ディエンビエンフー古戦場跡",
@@ -162,12 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "100,000ドン",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "ディエンビエンフー勝利記念碑",
-      "戦場に残るM24チャーフィー戦車",
-      "A1高地の塹壕",
-      "ド・カストリ壕",
-    ],
   },
   "ban-gioc-waterfall": {
     name: "バンゾック滝",
@@ -187,11 +145,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "45,000ドン",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "増水期のバンゾック滝の三段",
-      "白い滝の麓で涼をとる旅人たち",
-      "緑の森の中を白く流れ落ちる滝",
-    ],
   },
   "nguom-ngao-cave": {
     name: "グオムガオ洞窟",
@@ -211,11 +164,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "45,000ドン",
     openingHours: "07:30 – 17:00",
-    galleryCaptions: [
-      "洞窟内の鍾乳石の森",
-      "蓮華座の形をした石筍",
-      "芸術的な照明が照らす通路",
-    ],
   },
   "ba-be-lake": {
     name: "バーベー湖",
@@ -235,11 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "25,000ドン",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "バーベー湖の丸木舟",
-      "朝霧の中、小島を抱いて煌めく湖面",
-      "霧に包まれた山々の間の静かな湖",
-    ],
   },
   "tam-thanh-cave": {
     name: "タムタイン洞窟",
@@ -259,12 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "20,000ドン",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "タムタイン洞窟内の古寺",
-      "岩壁の阿弥陀仏の浮き彫り",
-      "マク朝の城跡から望むランソン",
-      "日差しを取り込む天門",
-    ],
   },
   "mau-son-mountain": {
     name: "マウソン山",
@@ -284,11 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "マウソン山頂の雲海",
-      "冬に木々を白く覆う霜",
-      "古いフランス別荘の廃墟",
-    ],
   },
   "tan-trao-relic": {
     name: "タンチャオ遺跡群",
@@ -308,11 +240,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "07:00 – 17:00",
-    galleryCaptions: [
-      "古いタンチャオの菩提樹",
-      "森の中のナーヌア小屋",
-      "歴史的なタンチャオの集会所",
-    ],
   },
   "mo-na-hang-waterfall": {
     name: "ナーハン・モー滝",
@@ -332,12 +259,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "山腹を流れ落ちるモー滝",
-      "滝の麓の澄んだ淵",
-      "夕暮れのナーハン水力発電ダム",
-      "ナーハン湖のクルーズ",
-    ],
   },
   "nui-coc-lake": {
     name: "ヌイコック湖",
@@ -357,11 +278,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日から1日",
     ticket: "50,000ドン",
     openingHours: "07:00 – 18:00",
-    galleryCaptions: [
-      "ヌイコック湖の中ほどの小島",
-      "水面の朝霧",
-      "湖を巡る船",
-    ],
   },
   "tan-cuong-tea-hills": {
     name: "タンクオン茶畑",
@@ -381,11 +297,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "緑にうねる茶畑",
-      "早朝の若い茶芽摘み",
-      "茶畑の中の一杯の茶",
-    ],
   },
   "den-hung-temple": {
     name: "フン王廟",
@@ -405,12 +316,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "ギアリン山の上廟",
-      "フン王廟の下の廟",
-      "古木の木陰が続く石段",
-      "命日祭に巡礼する人々の流れ",
-    ],
   },
   "tay-yen-tu": {
     name: "タイイエントゥ",
@@ -430,11 +335,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "無料",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "森を越えて頂へ登るケーブルカー",
-      "タイイエントゥの山の雲の中の寺",
-      "タイイエントゥの春祭り",
-    ],
   },
   "vinh-nghiem-pagoda": {
     name: "ヴィンギエム寺",
@@ -454,11 +354,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2時間",
     ticket: "無料",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "ヴィンギエム寺の三門",
-      "古い仏典木版の保管所",
-      "古木の下の寺の境内",
-    ],
   },
   "mu-cang-chai-terraces": {
     name: "ムーカンチャイ棚田",
@@ -478,11 +373,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "稲が実り黄金に染まる棚田",
-      "ラーパンタンのおこわ山",
-      "空の色を煌めかせる水張りの季節",
-    ],
   },
   "thac-ba-lake": {
     name: "タックバー湖",
@@ -502,11 +392,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "無料",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "タックバー湖の数千の緑の島々",
-      "湖を覆う朝霧",
-      "湖を探検する船",
-    ],
   },
   "o-quy-ho-pass": {
     name: "オークイホー峠",
@@ -526,13 +411,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "霧の谷を渡るファンシーパンのロープウェイ",
-      "オークイホー頂の雲海",
-      "ファンシーパンのロープウェイから見る棚田",
-      "絶壁を縫ってうねる峠道",
-      "天門から眺める夕陽",
-    ],
   },
   "sin-suoi-ho-village": {
     name: "シンスオイホー村",
@@ -552,11 +430,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "ライチャウの山中のモン族の村",
-      "咲き誇る野生のシンビジウムの庭",
-      "詩情あふれるハートの滝",
-    ],
   },
   "mai-chau-valley": {
     name: "マイチャウ谷",
@@ -576,12 +449,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1〜2日",
     ticket: "無料",
     openingHours: "終日",
-    galleryCaptions: [
-      "峠から眺めるマイチャウ谷",
-      "ラック村のターイ族の高床式家屋",
-      "マイチャウのターイ族の食卓",
-      "火明かりのそばのソエ踊り",
-    ],
   },
   "hoa-binh-lake": {
     name: "ホアビン湖",
@@ -601,12 +468,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1日",
     ticket: "無料",
     openingHours: "06:00 – 18:00",
-    galleryCaptions: [
-      "ダー川の山水の間のホアビン湖",
-      "山あいのホアビン湖",
-      "湖畔のタックボー廟",
-      "湖を巡る船",
-    ],
   },
 };
 

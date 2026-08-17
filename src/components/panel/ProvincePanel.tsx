@@ -9,6 +9,7 @@ import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
 import { destinationPath, dishPath } from "@/lib/seo/urls";
 import { IllustratedImage, firstPhotoSeed } from "@/components/ui/IllustratedImage";
+import { heroSeedFor, thumbSeedFor } from "@/lib/media/gallery";
 import { chipsBeforeJoin } from "@/lib/food/specialtyJoin";
 import { AppLink } from "@/components/ui/AppLink";
 import { Button } from "@/components/ui/Button";
@@ -50,7 +51,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
   // it is the same place, already credited, and costs nothing to fetch.
   const bannerSeed = firstPhotoSeed(
     `province-${slug}`,
-    ...destinations.map((d) => d.gallery?.[0]?.seed),
+    ...destinations.map((d) => heroSeedFor(d.id)),
   );
 
   return (
@@ -160,7 +161,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
                     }}
                     className="group flex items-center gap-3 rounded-[var(--radius-md)] border border-border p-2 text-left transition-colors hover:bg-surface-2"
                   >
-                    <IllustratedImage seed={d.gallery[0]?.seed ?? d.id} ratio="1/1" className="w-16 shrink-0" credit={false} />
+                    <IllustratedImage seed={thumbSeedFor(d.id)} ratio="1/1" className="w-16 shrink-0" credit={false} />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-1.5">
                         <Icon size={13} className="text-primary" />

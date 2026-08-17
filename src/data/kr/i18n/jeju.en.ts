@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Full day",
     ticket: "Free, but the two summit trails (Seongpanak and Gwaneumsa) require an advance reservation on the national park booking site",
     openingHours: "Ascent starts at 05:00 (06:00 in winter); control points turn hikers back around 12:00–14:00 depending on trail and season — on Seongpanak you must pass the Jindallaebat shelter by 11:30. Up and down the same day; camping is banned",
-    galleryCaptions: ["The Baengnokdam crater lake"],
   },
   "seongsan-ilchulbong": {
     name: "Seongsan Ilchulbong (Sunrise Peak)",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "5,000 KRW",
     openingHours: "07:30–20:00 (earlier closing in winter)",
-    galleryCaptions: ["The crater seen from the sea"],
   },
   manjanggul: {
     name: "Manjanggul Lava Tube",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "4,000 KRW (2,000 KRW teens and children)",
     openingHours: "09:00–18:00; the cave reopened on 30 May 2026 after repairs",
-    galleryCaptions: ["Inside the lava tube"],
   },
   "jeongbang-waterfall": {
     name: "Jeongbang Waterfall",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "2,000 KRW",
     openingHours: "09:00–19:00, last entry 18:00",
-    galleryCaptions: ["The waterfall dropping into the sea"],
   },
   "udo-island": {
     name: "Udo Island",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Ferry about 10,500 KRW return; the crossing takes 15 minutes, every 30 minutes at busy times",
     openingHours: "Ferry schedule, usually 08:00–18:00",
-    galleryCaptions: ["Seobinbaeksa beach"],
   },
   "hyeopjae-beach": {
     name: "Hyeopjae Beach",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Hyeopjae beach looking out to Biyangdo"],
   },
   "jusangjeolli-cliff": {
     name: "Jusangjeolli Basalt Cliffs",
@@ -154,7 +148,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "2,000 KRW",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Hexagonal columns on the Daepo shore"],
   },
   "cheonjiyeon-waterfall": {
     name: "Cheonjiyeon Waterfall",
@@ -176,7 +169,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "2,000 KRW (1,000 KRW ages 7–24)",
     openingHours: "09:00–21:20",
-    galleryCaptions: ["Cheonjiyeon falls under the night lights"],
   },
   sanbangsan: {
     name: "Sanbangsan & Yongmeori Coast",
@@ -198,7 +190,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2–3 hours",
     ticket: "Yongmeori coast 2,000 KRW (1,000 teens and children); the cave temple 1,000 KRW. Free under 6 and over 65",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Sanbangsan seen from the Yongmeori shore"],
   },
   "seongeup-folk-village": {
     name: "Seongeup Folk Village",
@@ -220,7 +211,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "09:00 until sunset; this is a village people actually live in, so keep the noise down",
-    galleryCaptions: ["Rope-lashed thatch and black stone walls"],
   },
   "bijarim-forest": {
     name: "Bijarim Nutmeg Yew Forest",
@@ -242,7 +232,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "3,000 KRW (1,500 teens and children); free under 6 and over 65",
     openingHours: "09:00–18:00, last entry 17:00",
-    galleryCaptions: ["The red scoria path through the bija forest"],
   },
   "haenyeo-museum": {
     name: "Haenyeo Museum",
@@ -264,7 +253,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "1,100 KRW (500 for ages 13–24; free under 12)",
     openingHours: "09:00–18:00, closed Mondays",
-    galleryCaptions: ["A haenyeo's diving equipment"],
   },
   "seogwipo-olle-market": {
     name: "Seogwipo Maeil Olle Market",
@@ -286,7 +274,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 hours",
     ticket: "",
     openingHours: "Open year-round; most stalls run roughly 07:00–21:00, though each keeps its own hours",
-    galleryCaptions: ["The hallabong tangerine stalls"],
   },
   "jeju-olle-trail": {
     name: "Jeju Olle Trail",
@@ -308,7 +295,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "4–6 hours per stage",
     ticket: "",
     openingHours: "Open all day (walk in daylight)",
-    galleryCaptions: ["Trail ribbons on a coastal Olle stage"],
   },
 };
 

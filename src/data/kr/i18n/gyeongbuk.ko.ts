@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["대웅전으로 오르는 돌계단"],
   },
   seokguram: {
     name: "석굴암",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "09:00~17:30",
-    galleryCaptions: ["석굴암으로 오르는 길"],
   },
   daereungwon: {
     name: "대릉원",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "3,000원",
     openingHours: "09:00~22:00, 입장 마감 21:30",
-    galleryCaptions: ["도심 속 신라 고분"],
   },
   cheomseongdae: {
     name: "첨성대",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "무료",
     openingHours: "09:00~22:00, 연중무휴. 밤에는 조명이 들어와 야간에 다시 볼 만하다",
-    galleryCaptions: ["잔디밭 위의 첨성대"],
   },
   "hahoe-folk-village": {
     name: "안동 하회마을",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "5,000원",
     openingHours: "해 뜰 때부터 해 질 때까지, 연중무휴",
-    galleryCaptions: ["강이 감아 도는 하회마을"],
   },
   "dosan-seowon": {
     name: "안동 도산서원",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "1,500원",
     openingHours: "09:00~18:00(겨울에는 17:00까지)",
-    galleryCaptions: ["도산서원 강당"],
   },
   juwangsan: {
     name: "주왕산국립공원",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "입산 04:00~15:00(4~10월), 05:00~14:00(11~3월)",
-    galleryCaptions: ["주왕산의 협곡과 폭포"],
   },
   "anapji-donggung": {
     name: "동궁과 월지(안압지)",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "3,000원",
     openingHours: "09:00~22:00, 입장 마감 21:30",
-    galleryCaptions: ["월지에 비친 전각"],
   },
   "gyeongju-national-museum": {
     name: "국립경주박물관",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료",
     openingHours: "10:00~18:00, 일요일·공휴일은 19:00까지, 3~12월 토요일과 매월 마지막 수요일은 21:00까지 야간 연장",
-    galleryCaptions: ["신라 금관"],
   },
   "yangdong-folk-village": {
     name: "경주 양동마을",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "4,000원",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["양동마을 비탈의 양반가"],
   },
   "bunhwangsa-hwangnyongsa": {
     name: "분황사 모전석탑과 황룡사지",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "두 곳 모두 무료(분황사 문화재관람료는 2023년 5월 폐지)",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["분황사 모전석탑"],
   },
   "andong-woryeonggyo": {
     name: "안동 월영교",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "상시(해질 무렵 점등)",
-    galleryCaptions: ["불이 켜진 월영교"],
   },
   buseoksa: {
     name: "영주 부석사",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "08:00~18:00",
-    galleryCaptions: ["소백산 능선을 바라보는 무량수전"],
   },
   "pohang-homigot": {
     name: "포항 호미곶",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["해돋이를 받는 청동 손"],
   },
   ulleungdo: {
     name: "울릉도",
@@ -329,7 +315,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3일",
     ticket: "여객선 왕복 약 160,000~180,000원(편도 80,000~90,000원), 출항지와 선사에 따라 다름",
     openingHours: "선박 운항 일정에 따름, 보통 하루 1~3편",
-    galleryCaptions: ["울릉도의 절벽 해안"],
   },
 };
 

@@ -34,11 +34,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["popular", "verified", "trending"],
     tags: ["nature", "photography", "mountain"],
-    gallery: [
-      { seed: "ban-gioc-waterfall-1", caption: "Ba tầng thác Bản Giốc mùa nước đổ", ratio: "16/9" },
-      { seed: "ban-gioc-waterfall-2", caption: "Du khách tắm mát dưới chân thác trắng xóa", ratio: "4/3" },
-      { seed: "ban-gioc-waterfall-3", caption: "Dòng thác đổ trắng xóa giữa rừng xanh", ratio: "1/1" },
-    ],
     nearby: ["nguom-ngao-cave"],
     featured: true,
   },
@@ -73,11 +68,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "07:30 - 17:00",
     badges: ["verified", "hidden-gem"],
     tags: ["nature", "photography"],
-    gallery: [
-      { seed: "nguom-ngao-cave-1", caption: "Rừng nhũ đá trong lòng động", ratio: "16/9" },
-      { seed: "nguom-ngao-cave-2", caption: "Măng đá hình đài sen", ratio: "4/3" },
-      { seed: "nguom-ngao-cave-3", caption: "Lối đi ánh đèn nghệ thuật", ratio: "1/1" },
-    ],
     nearby: ["ban-gioc-waterfall"],
   },
   {
@@ -109,11 +99,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["popular", "verified", "trending"],
     tags: ["nature", "photography", "culture"],
-    gallery: [
-      { seed: "ba-be-lake-1", caption: "Thuyền độc mộc trên hồ Ba Bể", ratio: "16/9" },
-      { seed: "ba-be-lake-2", caption: "Mặt hồ lấp lánh ôm đảo nhỏ trong sương sớm", ratio: "4/3" },
-      { seed: "ba-be-lake-3", caption: "Hồ nước phẳng lặng giữa núi non mờ sương", ratio: "1/1" },
-    ],
     nearby: [],
     featured: true,
   },
@@ -148,12 +133,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["verified", "popular"],
     tags: ["culture", "history", "nature"],
-    gallery: [
-      { seed: "tam-thanh-cave-1", caption: "Chùa cổ trong động Tam Thanh", ratio: "16/9" },
-      { seed: "tam-thanh-cave-2", caption: "Phù điêu Phật A Di Đà trên vách đá", ratio: "4/3" },
-      { seed: "tam-thanh-cave-3", caption: "Lạng Sơn nhìn từ Thành nhà Mạc", ratio: "1/1" },
-      { seed: "tam-thanh-cave-4", caption: "Cửa trời đón nắng", ratio: "1/1" },
-    ],
     nearby: ["mau-son-mountain"],
     featured: true,
   },
@@ -188,11 +167,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "verified"],
     tags: ["mountain", "nature", "photography"],
-    gallery: [
-      { seed: "mau-son-mountain-1", caption: "Biển mây trên đỉnh Mẫu Sơn", ratio: "16/9" },
-      { seed: "mau-son-mountain-2", caption: "Băng giá phủ trắng cây mùa đông", ratio: "4/3" },
-      { seed: "mau-son-mountain-3", caption: "Phế tích biệt thự Pháp cổ", ratio: "1/1" },
-    ],
     nearby: ["tam-thanh-cave"],
   },
   {
@@ -226,11 +200,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "07:00 - 17:00",
     badges: ["verified", "popular"],
     tags: ["history", "culture"],
-    gallery: [
-      { seed: "tan-trao-relic-1", caption: "Cây đa Tân Trào cổ thụ", ratio: "16/9" },
-      { seed: "tan-trao-relic-2", caption: "Lán Nà Nưa giữa rừng", ratio: "4/3" },
-      { seed: "tan-trao-relic-3", caption: "Đình Tân Trào lịch sử", ratio: "1/1" },
-    ],
     nearby: ["mo-na-hang-waterfall"],
     featured: true,
   },
@@ -263,12 +232,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["hidden-gem", "verified"],
     tags: ["nature", "photography", "mountain"],
-    gallery: [
-      { seed: "mo-na-hang-waterfall-1", caption: "Thác Mơ buông xuống sườn núi", ratio: "16/9" },
-      { seed: "mo-na-hang-waterfall-2", caption: "Hồ nước trong dưới chân thác", ratio: "4/3" },
-      { seed: "mo-na-hang-waterfall-3", caption: "Chiều trên đập thuỷ điện Nà Hang", ratio: "1/1" },
-      { seed: "mo-na-hang-waterfall-4", caption: "Du thuyền hồ Nà Hang", ratio: "1/1" },
-    ],
     nearby: ["tan-trao-relic"],
   },
   {
@@ -302,11 +265,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "07:00 - 18:00",
     badges: ["popular", "verified"],
     tags: ["nature", "culture", "photography"],
-    gallery: [
-      { seed: "nui-coc-lake-1", caption: "Đảo nhỏ giữa lòng hồ Núi Cốc", ratio: "16/9" },
-      { seed: "nui-coc-lake-2", caption: "Sương sớm trên mặt hồ", ratio: "4/3" },
-      { seed: "nui-coc-lake-3", caption: "Thuyền dạo quanh hồ", ratio: "1/1" },
-    ],
     nearby: ["tan-cuong-tea-hills"],
     featured: true,
   },
@@ -339,11 +297,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["verified", "hidden-gem"],
     tags: ["nature", "food", "photography"],
-    gallery: [
-      { seed: "tan-cuong-tea-hills-1", caption: "Đồi chè xanh mướt uốn lượn", ratio: "16/9" },
-      { seed: "tan-cuong-tea-hills-2", caption: "Hái búp chè non buổi sớm", ratio: "4/3" },
-      { seed: "tan-cuong-tea-hills-3", caption: "Chén trà giữa đồi chè", ratio: "1/1" },
-    ],
     nearby: ["nui-coc-lake"],
   },
   {
@@ -377,12 +330,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["unesco", "festival", "verified", "popular"],
     tags: ["temple", "history", "culture"],
-    gallery: [
-      { seed: "den-hung-temple-1", caption: "Đền Thượng trên núi Nghĩa Lĩnh", ratio: "16/9" },
-      { seed: "den-hung-temple-2", caption: "Đền Hạ trong khu di tích Đền Hùng", ratio: "4/3" },
-      { seed: "den-hung-temple-4", caption: "Bậc đá rợp bóng cây cổ thụ", ratio: "4/3" },
-      { seed: "den-hung-temple-3", caption: "Dòng người hành hương Giỗ Tổ", ratio: "1/1" },
-    ],
     nearby: [],
     featured: true,
   },
@@ -417,11 +364,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["festival", "verified", "trending"],
     tags: ["temple", "mountain", "culture"],
-    gallery: [
-      { seed: "tay-yen-tu-1", caption: "Cáp treo vượt rừng lên đỉnh núi", ratio: "16/9" },
-      { seed: "tay-yen-tu-2", caption: "Chùa giữa mây núi Tây Yên Tử", ratio: "4/3" },
-      { seed: "tay-yen-tu-3", caption: "Lễ hội xuân Tây Yên Tử", ratio: "1/1" },
-    ],
     nearby: ["vinh-nghiem-pagoda"],
     featured: true,
   },
@@ -454,11 +396,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["unesco", "verified", "festival"],
     tags: ["temple", "history", "culture"],
-    gallery: [
-      { seed: "vinh-nghiem-pagoda-1", caption: "Cổng tam quan chùa Vĩnh Nghiêm", ratio: "16/9" },
-      { seed: "vinh-nghiem-pagoda-2", caption: "Kho mộc bản kinh Phật cổ", ratio: "4/3" },
-      { seed: "vinh-nghiem-pagoda-3", caption: "Sân chùa dưới tán cây cổ thụ", ratio: "1/1" },
-    ],
     nearby: ["tay-yen-tu"],
   },
   {
@@ -490,11 +427,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["mountain", "nature", "photography", "culture"],
-    gallery: [
-      { seed: "mu-cang-chai-terraces-1", caption: "Ruộng bậc thang vàng óng mùa lúa chín", ratio: "16/9" },
-      { seed: "mu-cang-chai-terraces-2", caption: "Đồi mâm xôi La Pán Tẩn", ratio: "4/3" },
-      { seed: "mu-cang-chai-terraces-3", caption: "Mùa nước đổ lấp lánh ánh trời", ratio: "1/1" },
-    ],
     nearby: ["thac-ba-lake"],
     featured: true,
   },
@@ -529,11 +461,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["verified", "hidden-gem"],
     tags: ["nature", "photography", "culture"],
-    gallery: [
-      { seed: "thac-ba-lake-1", caption: "Hàng nghìn đảo xanh trên hồ Thác Bà", ratio: "16/9" },
-      { seed: "thac-ba-lake-2", caption: "Sương sớm giăng mặt hồ", ratio: "4/3" },
-      { seed: "thac-ba-lake-3", caption: "Thuyền khám phá lòng hồ", ratio: "1/1" },
-    ],
     nearby: ["mu-cang-chai-terraces"],
   },
   {
@@ -567,13 +494,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["mountain", "nature", "photography"],
-    gallery: [
-      { seed: "o-quy-ho-pass-1", caption: "Cáp treo Fansipan trong thung lũng mù sương", ratio: "16/9" },
-      { seed: "o-quy-ho-pass-4", caption: "Biển mây trên đỉnh Ô Quy Hồ", ratio: "16/9" },
-      { seed: "o-quy-ho-pass-2", caption: "Ruộng bậc thang nhìn từ cáp treo Fansipan", ratio: "4/3" },
-      { seed: "o-quy-ho-pass-5", caption: "Cung đèo uốn lượn bên vách núi", ratio: "4/3" },
-      { seed: "o-quy-ho-pass-3", caption: "Hoàng hôn nhìn từ Cổng Trời", ratio: "1/1" },
-    ],
     nearby: ["sin-suoi-ho-village"],
     featured: true,
   },
@@ -606,11 +526,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "verified", "new"],
     tags: ["culture", "nature", "photography"],
-    gallery: [
-      { seed: "sin-suoi-ho-village-1", caption: "Bản Mông giữa núi rừng Lai Châu", ratio: "16/9" },
-      { seed: "sin-suoi-ho-village-2", caption: "Vườn hoa địa lan khoe sắc", ratio: "4/3" },
-      { seed: "sin-suoi-ho-village-3", caption: "Thác Trái Tim thơ mộng", ratio: "1/1" },
-    ],
     nearby: ["o-quy-ho-pass"],
   },
   {
@@ -642,12 +557,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["culture", "nature", "photography", "food"],
-    gallery: [
-      { seed: "mai-chau-valley-1", caption: "Thung lũng Mai Châu nhìn từ đèo", ratio: "16/9" },
-      { seed: "mai-chau-valley-2", caption: "Nhà sàn người Thái bản Lác", ratio: "4/3" },
-      { seed: "mai-chau-valley-3", caption: "Mâm cơm người Thái ở Mai Châu", ratio: "1/1" },
-      { seed: "mai-chau-valley-4", caption: "Điệu xòe bên ánh lửa", ratio: "1/1" },
-    ],
     nearby: ["hoa-binh-lake"],
     featured: true,
   },
@@ -680,12 +589,6 @@ export const northMountainsDestinations: Destination[] = [
     openingHours: "06:00 - 18:00",
     badges: ["verified", "popular"],
     tags: ["nature", "culture", "photography"],
-    gallery: [
-      { seed: "hoa-binh-lake-1", caption: "Hồ Hòa Bình giữa núi non sông Đà", ratio: "16/9" },
-      { seed: "hoa-binh-lake-2", caption: "Mặt hồ Hoà Bình giữa núi", ratio: "4/3" },
-      { seed: "hoa-binh-lake-4", caption: "Đền Thác Bờ bên hồ", ratio: "4/3" },
-      { seed: "hoa-binh-lake-3", caption: "Thuyền dạo trên lòng hồ", ratio: "1/1" },
-    ],
     nearby: ["mai-chau-valley"],
   },
 ];

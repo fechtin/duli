@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "무료 (향 구입이나 의상 대여는 별도)",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["집 앞에 펼쳐 말리는 색색의 향대 다발", "손으로 향을 마는 장인"],
   },
   "hon-tam-island": {
     name: "혼땀섬",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3시간",
     ticket: "투어 상품과 섬 내 시설에 따라 다름 (선착장에서 확인)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["뭍을 향한 쪽의 모래 해변", "해변 뒤편의 숲 언덕"],
   },
   "van-long-lagoon": {
     name: "번롱 습지",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "입장료 80,000동에 뱃삯 별도 (참고 가격)",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["잔잔한 습지에 비친 석회암 봉우리", "물 위를 지나는 손젓는 삽판"],
   },
 };
 

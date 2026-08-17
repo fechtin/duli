@@ -32,13 +32,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "Tượng Chúa: 07:00–17:00",
     badges: ["popular", "trending", "verified"],
     tags: ["beach", "city", "nature", "food", "photography"],
-    gallery: [
-      { seed: "vungtau-baisau", caption: "Bãi Sau cát vàng đông vui", ratio: "16/9" },
-      { seed: "vungtau-christ", caption: "Bờ biển Vũng Tàu", ratio: "4/3" },
-      { seed: "vungtau-christ-2", caption: "Tượng Chúa Kitô trên Núi Nhỏ", ratio: "4/3" },
-      { seed: "vungtau-banhkhot", caption: "Bãi tắm Vũng Tàu đông người", ratio: "1/1" },
-      { seed: "vungtau-banhkhot-2", caption: "Bánh khọt giòn rụm đặc sản", ratio: "1/1" },
-    ],
     nearby: ["con-dao"],
     featured: true,
   },
@@ -73,11 +66,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "verified", "ai-recommended"],
     tags: ["island", "beach", "nature", "history", "photography"],
-    gallery: [
-      { seed: "condao-beach", caption: "Bãi biển nước trong nguyên sơ", ratio: "16/9" },
-      { seed: "condao-prison", caption: "Di tích nhà tù Côn Đảo", ratio: "4/3" },
-      { seed: "condao-hangduong", caption: "Nghĩa trang Hàng Dương linh thiêng", ratio: "1/1" },
-    ],
     nearby: ["vung-tau-bai-bien-tuong-chua"],
   },
   {
@@ -111,11 +99,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "07:00–17:00",
     badges: ["unesco", "verified", "ai-recommended"],
     tags: ["park", "nature", "photography"],
-    gallery: [
-      { seed: "cattien-forest", caption: "Rừng nguyên sinh xanh thẳm", ratio: "16/9" },
-      { seed: "cattien-bausau", caption: "Hoàng hôn vàng rực, thuyền nhỏ trôi trên mặt hồ", ratio: "4/3" },
-      { seed: "cattien-tung", caption: "Gà rừng kiếm ăn trên thảm lá khô", ratio: "1/1" },
-    ],
     nearby: ["thac-giang-dien"],
     featured: true,
   },
@@ -150,11 +133,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "07:00–17:30",
     badges: ["popular", "verified"],
     tags: ["waterfall", "nature", "photography"],
-    gallery: [
-      { seed: "giangdien-thac", caption: "Thác nước trải rộng nhiều tầng", ratio: "16/9" },
-      { seed: "giangdien-vuonhoa", caption: "Vườn hoa rực rỡ trong khu", ratio: "4/3" },
-      { seed: "giangdien-camtrai", caption: "Bãi cỏ cắm trại xanh mát", ratio: "1/1" },
-    ],
     nearby: ["cat-tien-national-park"],
   },
   {
@@ -186,12 +164,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "05:00–18:00",
     badges: ["festival", "verified", "popular"],
     tags: ["temple", "culture", "history", "photography"],
-    gallery: [
-      { seed: "thienhau-bd-mieu", caption: "Miếu cổ mái ngói âm dương", ratio: "4/3" },
-      { seed: "thienhau-bd-leruoc", caption: "Chùa Bà Thiên Hậu ở Thủ Dầu Một", ratio: "16/9" },
-      { seed: "thienhau-bd-leruoc-2", caption: "Lễ rước kiệu Bà tưng bừng", ratio: "16/9" },
-      { seed: "thienhau-bd-nhang", caption: "Khói nhang nghi ngút trong miếu", ratio: "1/1" },
-    ],
     nearby: ["dai-nam-binh-duong"],
   },
   {
@@ -223,11 +195,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "08:00–17:00",
     badges: ["popular", "trending"],
     tags: ["park", "culture", "city"],
-    gallery: [
-      { seed: "dainam-den", caption: "Đền Đại Nam Quốc Tự dát vàng", ratio: "16/9" },
-      { seed: "dainam-bien", caption: "Biển nhân tạo rộng lớn", ratio: "4/3" },
-      { seed: "dainam-safari", caption: "Vườn thú safari bán hoang dã", ratio: "1/1" },
-    ],
     nearby: ["chua-ba-thien-hau-binh-duong"],
   },
   {
@@ -261,11 +228,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "07:00–16:30",
     badges: ["hidden-gem", "verified", "new"],
     tags: ["park", "nature", "culture", "photography"],
-    gallery: [
-      { seed: "bugiamap-rung", caption: "Rừng nguyên sinh xanh thẳm", ratio: "16/9" },
-      { seed: "bugiamap-suoi", caption: "Suối trong giữa rừng già", ratio: "4/3" },
-      { seed: "bugiamap-stieng", caption: "Văn hóa cồng chiêng S'tiêng", ratio: "1/1" },
-    ],
     nearby: ["trang-co-bu-lach"],
     featured: true,
   },
@@ -298,12 +260,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "new", "ai-recommended"],
     tags: ["nature", "culture", "photography"],
-    gallery: [
-      { seed: "bulach-trangco", caption: "Thảm cỏ xanh mượt giữa rừng", ratio: "16/9" },
-      { seed: "bulach-ho", caption: "Đường vào trảng cỏ Bù Lạch", ratio: "4/3" },
-      { seed: "bulach-ho-2", caption: "Hồ nước trong soi bóng mây", ratio: "4/3" },
-      { seed: "bulach-hoanghon", caption: "Hoàng hôn buông trên trảng cỏ", ratio: "1/1" },
-    ],
     nearby: ["bu-gia-map-national-park"],
   },
   {
@@ -337,11 +293,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "06:00–22:00",
     badges: ["festival", "trending", "popular", "verified"],
     tags: ["mountain", "temple", "culture", "nature", "photography"],
-    gallery: [
-      { seed: "badennui-bienmay", caption: "Núi Bà Đen in bóng tím dưới hoàng hôn ven hồ", ratio: "16/9" },
-      { seed: "badennui-phatba", caption: "Tượng Phật Bà trên đỉnh núi", ratio: "4/3" },
-      { seed: "badennui-captreo", caption: "Tượng Phật Bà vươn lên giữa biển mây trắng", ratio: "1/1" },
-    ],
     nearby: ["toa-thanh-cao-dai-tay-ninh"],
     featured: true,
   },
@@ -374,11 +325,6 @@ export const southeastDestinations: Destination[] = [
     openingHours: "06:00–18:00",
     badges: ["verified", "popular", "ai-recommended"],
     tags: ["temple", "culture", "history", "photography"],
-    gallery: [
-      { seed: "caodai-toathanh", caption: "Tòa Thánh Cao Đài rực rỡ sắc màu", ratio: "16/9" },
-      { seed: "caodai-thiennhan", caption: "Biểu tượng Thiên Nhãn linh thiêng", ratio: "4/3" },
-      { seed: "caodai-lehoi", caption: "Tín đồ áo trắng làm lễ trang nghiêm", ratio: "1/1" },
-    ],
     nearby: ["nui-ba-den-tay-ninh"],
   },
 ];

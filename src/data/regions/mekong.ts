@@ -32,11 +32,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:00 hằng ngày",
     badges: ["popular", "verified", "hidden-gem"],
     tags: ["nature", "park", "photography"],
-    gallery: [
-      { seed: "tanlap-tram-road", caption: "Con đường bê tông xuyên rừng tràm", ratio: "16/9" },
-      { seed: "tanlap-watchtower", caption: "Tháp quan sát giữa vùng đất ngập nước", ratio: "4/3" },
-      { seed: "tanlap-boat", caption: "Xuồng nhỏ len qua rạch nước phủ bèo", ratio: "1/1" },
-    ],
     nearby: ["long-an-lang-sen"],
     featured: true,
   },
@@ -71,11 +66,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:00 hằng ngày",
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["nature", "park", "photography"],
-    gallery: [
-      { seed: "langsen-birds", caption: "Lạch nước lặng lờ len giữa bụi cây ngập nước", ratio: "16/9" },
-      { seed: "langsen-lotus", caption: "Đồng cỏ ngập nước xanh trải tới chân trời", ratio: "4/3" },
-      { seed: "langsen-canal", caption: "Xuồng len giữa kênh rạch yên ả", ratio: "1/1" },
-    ],
     nearby: ["long-an-lang-noi-tan-lap"],
   },
 
@@ -110,11 +100,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "08:00 - 17:00 hằng ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["village", "culture", "nature", "food"],
-    gallery: [
-      { seed: "thoison-sampan", caption: "Chèo xuồng ba lá qua rạch dừa nước", ratio: "16/9" },
-      { seed: "thoison-honey", caption: "Thưởng trà mật ong và trái cây miệt vườn", ratio: "4/3" },
-      { seed: "thoison-music", caption: "Nghệ nhân biểu diễn đờn ca tài tử", ratio: "1/1" },
-    ],
     nearby: ["tien-giang-cho-noi-cai-be"],
     featured: true,
   },
@@ -147,11 +132,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "Họp chợ từ 04:00 - 08:00 hằng ngày",
     badges: ["popular", "verified"],
     tags: ["market", "culture", "food", "photography"],
-    gallery: [
-      { seed: "caibe-floating", caption: "Ghe thuyền tấp nập họp chợ trên sông", ratio: "16/9" },
-      { seed: "caibe-beo", caption: "Người chèo ghe nón lá qua sông dưới chân cầu", ratio: "4/3" },
-      { seed: "caibe-fruits", caption: "Trái cây tươi chất đầy ghe", ratio: "1/1" },
-    ],
     nearby: ["tien-giang-cu-lao-thoi-son"],
   },
 
@@ -184,11 +164,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:30 - 17:00 hằng ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["village", "culture", "history", "food"],
-    gallery: [
-      { seed: "conphung-tower", caption: "Tháp Hòa bình của di tích đạo Dừa", ratio: "16/9" },
-      { seed: "conphung-candy", caption: "Lò làm kẹo dừa thơm lừng", ratio: "4/3" },
-      { seed: "conphung-handicraft", caption: "Đồ thủ công mỹ nghệ từ dừa", ratio: "1/1" },
-    ],
     nearby: ["tien-giang-cu-lao-thoi-son"],
     featured: true,
   },
@@ -222,11 +197,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["verified", "hidden-gem", "festival"],
     tags: ["lake", "culture", "nature", "photography"],
-    gallery: [
-      { seed: "baom-roots", caption: "Bộ rễ cây cổ thụ trồi lên kỳ vĩ", ratio: "16/9" },
-      { seed: "baom-pond", caption: "Hồ nước trong xanh soi bóng cây", ratio: "4/3" },
-      { seed: "baom-khmer", caption: "Chùa Khmer cổ kính bên ao", ratio: "1/1" },
-    ],
     nearby: ["tra-vinh-chua-vam-ray"],
     featured: true,
   },
@@ -261,11 +231,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "06:00 - 18:00 hằng ngày",
     badges: ["verified", "hidden-gem"],
     tags: ["temple", "culture", "history", "photography"],
-    gallery: [
-      { seed: "vamray-golden", caption: "Kiến trúc Angkor dát vàng rực rỡ", ratio: "16/9" },
-      { seed: "vamray-buddha", caption: "Tượng Phật nằm uy nghi trong chính điện", ratio: "4/3" },
-      { seed: "vamray-naga", caption: "Phù điêu thần rắn Naga tinh xảo", ratio: "1/1" },
-    ],
     nearby: ["tra-vinh-ao-ba-om"],
   },
 
@@ -300,11 +265,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["village", "nature", "food", "culture"],
-    gallery: [
-      { seed: "anbinh-orchard", caption: "Vườn trái cây sai trĩu quả", ratio: "16/9" },
-      { seed: "anbinh-homestay", caption: "Homestay nhà sàn ven sông", ratio: "4/3" },
-      { seed: "anbinh-bike", caption: "Đạp xe qua con đường làng rợp bóng cây", ratio: "1/1" },
-    ],
     nearby: ["vinh-long-lo-gach-mang-thit"],
     featured: true,
   },
@@ -337,11 +297,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["hidden-gem", "trending", "verified"],
     tags: ["village", "culture", "history", "photography"],
-    gallery: [
-      { seed: "mangthit-kilns", caption: "Hàng lò gạch đỏ cam ven sông", ratio: "16/9" },
-      { seed: "mangthit-sunset", caption: "Tháp lò nhuộm vàng lúc hoàng hôn", ratio: "4/3" },
-      { seed: "mangthit-old", caption: "Lò nung cũ kỹ rêu phong", ratio: "1/1" },
-    ],
     nearby: ["vinh-long-cu-lao-an-binh"],
   },
 
@@ -376,11 +331,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:00 hằng ngày",
     badges: ["unesco", "verified", "popular", "ai-recommended"],
     tags: ["nature", "park", "photography"],
-    gallery: [
-      { seed: "tramchim-crane", caption: "Sếu đầu đỏ về tìm ăn mùa khô", ratio: "16/9" },
-      { seed: "tramchim-lotus", caption: "Cánh đồng sen súng bạt ngàn", ratio: "4/3" },
-      { seed: "tramchim-boat", caption: "Tháp canh gỗ giữa đầm sen ngày mưa", ratio: "1/1" },
-    ],
     nearby: ["dong-thap-lang-hoa-sa-dec"],
     featured: true,
   },
@@ -413,11 +363,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "Cả ngày",
     badges: ["popular", "verified", "festival"],
     tags: ["village", "nature", "culture", "photography"],
-    gallery: [
-      { seed: "sadec-flowers", caption: "Biển hoa muôn màu rực rỡ", ratio: "16/9" },
-      { seed: "sadec-racks", caption: "Hoa trồng trên giàn cao tránh ngập", ratio: "4/3" },
-      { seed: "sadec-boat", caption: "Ghe thuyền chở hoa trên sông", ratio: "1/1" },
-    ],
     nearby: ["dong-thap-tram-chim"],
   },
 
@@ -450,11 +395,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "Họp chợ từ 05:00 - 08:00 hằng ngày",
     badges: ["popular", "verified", "festival"],
     tags: ["market", "culture", "food", "photography"],
-    gallery: [
-      { seed: "ngabay-market", caption: "Ghe thuyền tấp nập nơi bảy sông gặp nhau", ratio: "16/9" },
-      { seed: "ngabay-beo", caption: "Cây bẹo treo hàng hóa rao bán", ratio: "4/3" },
-      { seed: "ngabay-noodle", caption: "Ăn sáng bún riêu ngay trên thuyền", ratio: "1/1" },
-    ],
     nearby: ["hau-giang-lung-ngoc-hoang"],
     featured: true,
   },
@@ -487,12 +427,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:00 hằng ngày",
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["nature", "park", "photography"],
-    gallery: [
-      { seed: "lungngochoang-tram", caption: "Lục bình phủ kín mặt nước Lung Ngọc Hoàng", ratio: "16/9" },
-      { seed: "lungngochoang-tram-2", caption: "Rừng tràm nguyên sinh tĩnh lặng", ratio: "16/9" },
-      { seed: "lungngochoang-canal", caption: "Xuồng len giữa lung bàu chằng chịt", ratio: "4/3" },
-      { seed: "lungngochoang-birds", caption: "Cầu tre len giữa rừng tràm dưới trời xanh", ratio: "1/1" },
-    ],
     nearby: ["hau-giang-cho-noi-nga-bay"],
   },
 
@@ -527,11 +461,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 18:00 hằng ngày",
     badges: ["popular", "verified", "trending"],
     tags: ["temple", "culture", "history", "nature"],
-    gallery: [
-      { seed: "chuadoi-bats", caption: "Đàn dơi quạ treo mình trên cây cổ thụ", ratio: "16/9" },
-      { seed: "chuadoi-temple", caption: "Kiến trúc Khmer mái cong nhiều tầng", ratio: "4/3" },
-      { seed: "chuadoi-flight", caption: "Dơi bay rợp trời lúc chiều tà", ratio: "1/1" },
-    ],
     nearby: ["soc-trang-chua-dat-set"],
     featured: true,
   },
@@ -564,11 +493,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 18:00 hằng ngày",
     badges: ["verified", "hidden-gem"],
     tags: ["temple", "culture", "history"],
-    gallery: [
-      { seed: "datset-statues", caption: "Tượng Phật nặn từ đất sét tỉ mỉ", ratio: "16/9" },
-      { seed: "datset-candles", caption: "Cây nến khổng lồ cháy hàng chục năm", ratio: "4/3" },
-      { seed: "datset-tower", caption: "Bảo tòa Liên Hoa bằng đất sét", ratio: "1/1" },
-    ],
     nearby: ["soc-trang-chua-doi"],
   },
 
@@ -601,11 +525,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 18:00 hằng ngày",
     badges: ["trending", "verified", "popular"],
     tags: ["nature", "photography", "city"],
-    gallery: [
-      { seed: "baclieu-turbines", caption: "Tua bin gió vươn ra biển", ratio: "16/9" },
-      { seed: "baclieu-path", caption: "Con đường dẫn ra giữa cánh đồng quạt gió", ratio: "4/3" },
-      { seed: "baclieu-sunset", caption: "Hàng tuabin điện gió mọc sau rặng cây xanh", ratio: "1/1" },
-    ],
     nearby: ["bac-lieu-nha-cong-tu"],
     featured: true,
   },
@@ -638,12 +557,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:30 hằng ngày",
     badges: ["popular", "verified"],
     tags: ["museum", "history", "culture", "city"],
-    gallery: [
-      { seed: "congtu-mansion", caption: "Dinh thự cổ kiến trúc phương Tây", ratio: "16/9" },
-      { seed: "congtu-interior", caption: "Nội thất gỗ quý chạm trổ tinh xảo", ratio: "4/3" },
-      { seed: "congtu-antiques", caption: "Phố xá Bạc Liêu ngày nay", ratio: "1/1" },
-      { seed: "congtu-antiques-2", caption: "Cổ vật cẩn xà cừ giá trị", ratio: "1/1" },
-    ],
     nearby: ["bac-lieu-canh-dong-dien-gio"],
   },
 
@@ -678,11 +591,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:00 hằng ngày",
     badges: ["unesco", "verified", "popular", "trending"],
     tags: ["park", "nature", "photography", "island"],
-    gallery: [
-      { seed: "muicamau-landmark", caption: "Cột mốc tọa độ quốc gia cực Nam", ratio: "16/9" },
-      { seed: "muicamau-mangrove", caption: "Rừng đước ngập mặn xanh thẳm", ratio: "4/3" },
-      { seed: "muicamau-ship", caption: "Biểu tượng con tàu nơi chót mũi", ratio: "1/1" },
-    ],
     nearby: ["ca-mau-rung-u-minh-ha"],
     featured: true,
   },
@@ -715,12 +623,6 @@ export const mekongDestinations: Destination[] = [
     openingHours: "07:00 - 17:00 hằng ngày",
     badges: ["verified", "hidden-gem", "ai-recommended"],
     tags: ["park", "nature", "food", "photography"],
-    gallery: [
-      { seed: "uminh-tram", caption: "Rừng tràm nguyên sinh trên đất than bùn", ratio: "16/9" },
-      { seed: "uminh-honey", caption: "Rừng U Minh Hạ nhìn từ trên cao", ratio: "4/3" },
-      { seed: "uminh-honey-2", caption: "Nghề gác kèo ong lấy mật truyền thống", ratio: "4/3" },
-      { seed: "uminh-fishing", caption: "Câu cá đồng giữa rừng tràm", ratio: "1/1" },
-    ],
     nearby: ["ca-mau-mui-ca-mau"],
   },
 ];

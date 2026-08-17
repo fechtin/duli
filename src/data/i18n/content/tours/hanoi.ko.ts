@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "40,000동 (참고 가격, 매표소에서 확인)",
     openingHours: "08:00 - 12:00, 14:00 - 16:30",
-    galleryCaptions: ["바딘 광장 쪽에서 본 연꽃 모양의 흰 건물", "내부 전시실"],
   },
   "thang-long-water-puppet": {
     name: "탕롱 수상인형극장",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "좌석 등급에 따라 100,000 - 200,000동 (참고 가격)",
     openingHours: "매일 여러 회차, 보통 15:00 - 21:00",
-    galleryCaptions: ["물 무대와 인형들", "무대 옆에서 직접 연주하는 악단"],
   },
   "phu-tay-ho": {
     name: "떠이호 사당",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "무료",
     openingHours: "05:00 - 19:00",
-    galleryCaptions: ["서호를 향해 난 사당 정문", "사당 부근 서호 기슭", "안쪽의 성모 제단"],
   },
   "national-history-museum-vn": {
     name: "베트남 국립역사박물관",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "40,000동 (참고 가격, 매표소에서 확인)",
     openingHours: "08:00 - 12:00, 13:30 - 17:00",
-    galleryCaptions: ["에브라르의 인도차이나 양식 정면", "전시된 동선 청동북"],
   },
   "tong-duy-tan-food-street": {
     name: "똥주이떤 거리",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "무료 (음식값 별도)",
     openingHours: "17:00 - 02:00",
-    galleryCaptions: ["한밤중 불 켜진 먹자거리", "똥주이떤 거리의 카페", "한방 닭백숙 한 뚝배기"],
   },
 };
 

@@ -18,11 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `长滩上的落日`,
-      `和潭跨海缆车`,
-      `在岛屿间碧蓝海面上空滑行的跨海缆车`,
-    ],
   },
   "bai-sao-beach": {
     name: `星滩`,
@@ -41,10 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `碧海边细如粉末的洁白沙滩`,
-      `立于水中的秋千`,
-    ],
   },
   "tra-su-forest": {
     name: `茶师白千层林`,
@@ -63,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `100,000越南盾`,
     openingHours: `07:00 – 17:00`,
-    galleryCaptions: [
-      `漂荡在翠绿浮萍地毯上的小舟`,
-      `倒映水中的白千层林`,
-      `倒映在翠绿浮萍地毯上的白千层林`,
-    ],
   },
   "mieu-ba-chua-xu": {
     name: `森山主处圣母庙`,
@@ -86,10 +72,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `巍然庄严的主处圣母庙`,
-      `庙会日缭绕的香烟`,
-    ],
   },
   "cai-rang-floating-market": {
     name: `丐冷水上市场`,
@@ -108,11 +90,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `05:00 – 09:00`,
-    galleryCaptions: [
-      `清晨汇聚到水上市场的船只`,
-      `破晓时分河上挂着吆喝竿起伏的货船`,
-      `划着满载卷心菜小船的妇女`,
-    ],
   },
   "long-an-lang-noi-tan-lap": {
     name: `新立浮村`,
@@ -132,11 +109,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `60,000越南盾`,
     openingHours: `每日07:00 - 17:00`,
-    galleryCaptions: [
-      `穿过白千层林的混凝土栈道`,
-      `湿地之中的观景塔`,
-      `在布满浮萍的水道中穿梭的小舟`,
-    ],
   },
   "long-an-lang-sen": {
     name: `莨莲湿地保护区`,
@@ -156,11 +128,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `每日07:00 - 17:00`,
-    galleryCaptions: [
-      `在水淹灌木丛间静静流淌的水道`,
-      `延伸至天际的翠绿水淹草原`,
-      `在宁静河渠间穿梭的小舟`,
-    ],
   },
   "tien-giang-cu-lao-thoi-son": {
     name: `泰山岛`,
@@ -180,11 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `全套行程150,000越南盾`,
     openingHours: `每日08:00 - 17:00`,
-    galleryCaptions: [
-      `划三板小舟穿行水椰水道`,
-      `品尝蜂蜜茶和果园水果`,
-      `表演才子弹唱的艺人`,
-    ],
   },
   "tien-giang-cho-noi-cai-be": {
     name: `丐皮水上市场`,
@@ -204,11 +166,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: ``,
     openingHours: `每日04:00 - 08:00 开市`,
-    galleryCaptions: [
-      `河上熙攘开市的船只`,
-      `桥下戴斗笠划船过江的人`,
-      `船上堆满的新鲜水果`,
-    ],
   },
   "ben-tre-con-phung": {
     name: `凤洲——椰乡`,
@@ -228,11 +185,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `参观遗迹20,000越南盾`,
     openingHours: `每日07:30 - 17:00`,
-    galleryCaptions: [
-      `椰道教遗迹的和平塔`,
-      `香气四溢的椰子糖作坊`,
-      `用椰子制成的手工艺品`,
-    ],
   },
   "tra-vinh-ao-ba-om": {
     name: `婆嗡池`,
@@ -252,11 +204,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `雄奇隆起的古树根系`,
-      `倒映树影的清澈碧池`,
-      `池畔古朴的高棉寺庙`,
-    ],
   },
   "tra-vinh-chua-vam-ray": {
     name: `湾莱寺`,
@@ -276,11 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: ``,
     openingHours: `每日06:00 - 18:00`,
-    galleryCaptions: [
-      `金碧辉煌的吴哥风格建筑`,
-      `主殿中庄严的卧佛`,
-      `精美的那伽蛇神浮雕`,
-    ],
   },
   "vinh-long-cu-lao-an-binh": {
     name: `安平岛`,
@@ -300,11 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2天`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `硕果累累的果园`,
-      `江畔高脚屋民宿`,
-      `骑车穿行绿荫遮蔽的乡间小路`,
-    ],
   },
   "vinh-long-lo-gach-mang-thit": {
     name: `莛织砖窑`,
@@ -324,11 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `江畔成排的砖红橙色窑炉`,
-      `黄昏时分染成金色的窑塔`,
-      `古旧斑驳长满青苔的窑炉`,
-    ],
   },
   "dong-thap-tram-chim": {
     name: `茶钦国家公园`,
@@ -348,11 +280,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `门票10,000越南盾，另需包租小机动船`,
     openingHours: `每日07:00 - 17:00`,
-    galleryCaptions: [
-      `旱季前来觅食的赤颈鹤`,
-      `漫山遍野的莲花睡莲田`,
-      `雨天荷塘中央的木制瞭望塔`,
-    ],
   },
   "dong-thap-lang-hoa-sa-dec": {
     name: `沙沥花村`,
@@ -372,11 +299,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: ``,
     openingHours: `全天`,
-    galleryCaptions: [
-      `五彩绚烂的花海`,
-      `种在高架上以避水患的鲜花`,
-      `河上载花的船只`,
-    ],
   },
   "hau-giang-cho-noi-nga-bay": {
     name: `七岔水上市场`,
@@ -396,11 +318,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `2至3小时`,
     ticket: ``,
     openingHours: `每日05:00 - 08:00 开市`,
-    galleryCaptions: [
-      `七河交汇处熙攘的船只`,
-      `挂着货物招揽的吆喝竿`,
-      `在船上吃蟹肉米粉早餐`,
-    ],
   },
   "hau-giang-lung-ngoc-hoang": {
     name: `玉皇洼保护区`,
@@ -420,12 +337,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: ``,
     openingHours: `每日07:00 - 17:00`,
-    galleryCaptions: [
-      `布满玉皇洼水面的凤眼莲`,
-      `寂静的原始白千层林`,
-      `穿行于纵横交错洼塘间的小舟`,
-      `蓝天下穿过白千层林的竹桥`,
-    ],
   },
   "soc-trang-chua-doi": {
     name: `蝙蝠寺`,
@@ -445,11 +356,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `5,000越南盾`,
     openingHours: `每日07:00 - 18:00`,
-    galleryCaptions: [
-      `倒挂在古树上的狐蝠群`,
-      `多层飞檐的高棉建筑`,
-      `傍晚遮天蔽日飞翔的蝙蝠`,
-    ],
   },
   "soc-trang-chua-dat-set": {
     name: `泥土寺`,
@@ -469,11 +375,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1小时`,
     ticket: ``,
     openingHours: `每日07:00 - 18:00`,
-    galleryCaptions: [
-      `精心用泥土塑成的佛像`,
-      `燃烧了数十年的巨型蜡烛`,
-      `用泥土制成的莲华宝座`,
-    ],
   },
   "bac-lieu-canh-dong-dien-gio": {
     name: `薄辽风电场`,
@@ -493,11 +394,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1至2小时`,
     ticket: `参观60,000越南盾`,
     openingHours: `每日07:00 - 18:00`,
-    galleryCaptions: [
-      `向海延伸的风车`,
-      `通往风车原中央的栈道`,
-      `在绿树之后耸立的成排风车`,
-    ],
   },
   "bac-lieu-nha-cong-tu": {
     name: `薄辽公子宅`,
@@ -517,12 +413,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `1小时`,
     ticket: `30,000越南盾`,
     openingHours: `每日07:00 - 17:30`,
-    galleryCaptions: [
-      `西式建筑风格的古宅邸`,
-      `雕饰精美的名贵木器内饰`,
-      `今日薄辽的城市天际线`,
-      `价值连城的螺钿古董`,
-    ],
   },
   "ca-mau-mui-ca-mau": {
     name: `金瓯角`,
@@ -542,11 +432,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `进入景区50,000越南盾`,
     openingHours: `每日07:00 - 17:00`,
-    galleryCaptions: [
-      `最南端的国家坐标标志`,
-      `郁郁葱葱的水笔仔红树林`,
-      `最南端的船形标志`,
-    ],
   },
   "ca-mau-rung-u-minh-ha": {
     name: `下游民森林`,
@@ -566,12 +451,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: `半天`,
     ticket: `30,000越南盾`,
     openingHours: `每日07:00 - 17:00`,
-    galleryCaptions: [
-      `泥炭地上的原始白千层林`,
-      `俯瞰下游民森林`,
-      `传统的搭架养蜂取蜜技艺`,
-      `在白千层林中钓田鱼`,
-    ],
   },
 };
 

@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "1,500 KRW (the Gongju National Museum next door is free)",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["Gongsanseong ramparts above the Geum River"],
   },
   "buyeo-busosanseong": {
     name: "Busosanseong Fortress & Gungnamji Pond, Buyeo",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "2,000 KRW; discounts for children, seniors and local residents",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["The pavilion at the centre of Gungnamji"],
   },
   haemieupseong: {
     name: "Haemieupseong Walled Town, Seosan",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "Free, including parking",
     openingHours: "05:00–21:00 (March–October), 06:00–19:00 (November–February), open year-round",
-    galleryCaptions: ["The walls of Haemi"],
   },
   "daecheon-beach": {
     name: "Daecheon Beach, Boryeong",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The mud festival on Daecheon beach"],
   },
   sudeoksa: {
     name: "Sudeoksa Temple",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["The unpainted Daeungjeon hall"],
   },
   "sinduri-dunes": {
     name: "Sinduri Coastal Dunes, Taean",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free",
     openingHours: "09:00–18:00 (to 17:00 from November to February), closed Mondays",
-    galleryCaptions: ["The coastal dunes at Sinduri"],
   },
   "oeam-folk-village": {
     name: "Oeam Folk Village, Asan",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5–2 hours",
     ticket: "2,000 KRW (1,000 for groups)",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["A water channel running through an Oeam yard"],
   },
   magoksa: {
     name: "Magoksa Temple, Gongju",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Free (the cultural heritage fee was abolished in May 2023); parking charged separately",
     openingHours: "08:00–18:00",
-    galleryCaptions: ["The bridge joining the two banks at Magoksa"],
   },
   "seosan-maae-buddha": {
     name: "Seosan Rock-carved Buddha Triad",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "09:00–18:00",
-    galleryCaptions: ["The three figures carved into the cliff"],
   },
   "independence-hall": {
     name: "Independence Hall of Korea, Cheonan",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3 hours",
     ticket: "Free since 2008",
     openingHours: "09:30–18:00 (March–October), 09:30–17:00 (November–February, last entry 16:00), closed Mondays",
-    galleryCaptions: ["The great hall of the Independence Hall"],
   },
 };
 

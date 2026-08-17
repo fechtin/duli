@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["강 가운데의 세 봉우리"],
   },
   "songnisan-beopjusa": {
     name: "속리산과 법주사",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "무료(2023년 5월 문화재관람료 폐지), 주차료는 별도",
     openingHours: "07:00~18:00",
-    galleryCaptions: ["오층 목탑 팔상전"],
   },
   guinsa: {
     name: "구인사",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "05:00~19:00",
-    galleryCaptions: ["계곡에 층층이 선 사찰"],
   },
   "cheongju-jikji": {
     name: "청주 고인쇄박물관(흥덕사지)",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분",
     ticket: "",
     openingHours: "연중 09:00~18:00, 월요일과 1월 1일·설날·추석 당일 휴관",
-    galleryCaptions: ["금속활자"],
   },
   "mancheonha-skywalk": {
     name: "단양 만천하스카이워크",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "4,000원, 짚라인은 별도 30,000원",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["남한강 물굽이를 내려다보는 유리 바닥"],
   },
   "gosu-cave": {
     name: "단양 고수동굴",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "11,000원",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["고수동굴의 종유석"],
   },
   "chungju-lake-ferry": {
     name: "충주호와 유람선",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "항로와 선착장에 따라 12,000~20,000원(어린이 8,000원부터)",
     openingHours: "운항 일정에 따름, 보통 하루 2~4회",
-    galleryCaptions: ["충주호 절벽 사이를 지나는 유람선"],
   },
   "chungju-jungangtap": {
     name: "충주 중앙탑",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "공원은 상시·연중무휴 개방. 경내 충주박물관과 술박물관은 09:00~18:00",
-    galleryCaptions: ["남한강가의 중앙탑"],
   },
   cheongnamdae: {
     name: "청남대",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "6,000원(청소년 4,000원, 어린이 3,000원), 65세 이상과 7세 미만 무료",
     openingHours: "09:00~18:00(12~1월은 17:00까지), 매표 16:30 마감, 월요일과 1월 1일·설날·추석 당일 휴관",
-    galleryCaptions: ["청남대의 호숫가 정원"],
   },
   sobaeksan: {
     name: "소백산국립공원",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루",
     ticket: "",
     openingHours: "국립공원 입산시간지정제가 적용된다. 입산은 3~11월 04:00, 12~2월 05:00부터 가능하며 구간마다 12:00~17:00 사이로 통제시간이 다르다. 출발 전 통제 정보를 확인하자",
-    galleryCaptions: ["소백산 능선의 철쭉"],
   },
 };
 

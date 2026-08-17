@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "終日",
     ticket: "無料だが頂上コース（城板岳・観音寺）は国立公園の予約サイトで事前予約が必須",
     openingHours: "入山は05:00から（冬は06:00）。登山道と季節により12:00〜14:00頃に規制がかかり、城板岳コースはツツジ畑避難小屋を11:30までに通過する必要がある。日帰りのみで野営は禁止",
-    galleryCaptions: ["白鹿潭の火口湖"],
   },
   "seongsan-ilchulbong": {
     name: "城山日出峰",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分〜2時間",
     ticket: "5,000ウォン",
     openingHours: "07:30〜20:00（冬は早めに閉場）",
-    galleryCaptions: ["海から見た火口"],
   },
   manjanggul: {
     name: "万丈窟",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "4,000ウォン（青少年・子ども2,000ウォン）",
     openingHours: "09:00〜18:00、補修を終え2026年5月30日に再開",
-    galleryCaptions: ["溶岩洞窟の内部"],
   },
   "jeongbang-waterfall": {
     name: "正房瀑布",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "2,000ウォン",
     openingHours: "09:00〜19:00、最終入場18:00",
-    galleryCaptions: ["海へ落ちる滝"],
   },
   "udo-island": {
     name: "牛島",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "船は往復約10,500ウォン、所要15分、繁忙期は30分間隔",
     openingHours: "フェリー運航時間（おおむね08:00〜18:00）",
-    galleryCaptions: ["西浜白沙の浜"],
   },
   "hyeopjae-beach": {
     name: "挟才海水浴場",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["飛揚島を望む挟才の浜"],
   },
   "jusangjeolli-cliff": {
     name: "柱状節理帯",
@@ -154,7 +148,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "2,000ウォン",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["大浦海岸の六角石柱"],
   },
   "cheonjiyeon-waterfall": {
     name: "天地淵滝",
@@ -176,7 +169,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "2,000ウォン（7〜24歳は1,000ウォン）",
     openingHours: "09:00〜21:20",
-    galleryCaptions: ["夜間照明の天地淵滝"],
   },
   sanbangsan: {
     name: "山房山と龍頭海岸",
@@ -198,7 +190,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "龍頭海岸2,000ウォン（青少年・子ども1,000）、山房窟寺1,000ウォン。6歳以下と65歳以上は無料",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["龍頭海岸から見た山房山"],
   },
   "seongeup-folk-village": {
     name: "城邑民俗村",
@@ -220,7 +211,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "09:00から日没まで。実際に住民が暮らす集落なので静かに見学を",
-    galleryCaptions: ["縄で縛った茅葺きと黒い石垣"],
   },
   "bijarim-forest": {
     name: "榧子林",
@@ -242,7 +232,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5〜2時間",
     ticket: "3,000ウォン（青少年・子ども1,500）、6歳以下と65歳以上は無料",
     openingHours: "09:00〜18:00、最終入場17:00",
-    galleryCaptions: ["榧子林の赤い火山礫の道"],
   },
   "haenyeo-museum": {
     name: "海女博物館",
@@ -264,7 +253,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "1,100ウォン（13〜24歳500ウォン、12歳以下は無料）",
     openingHours: "09:00〜18:00、月曜休館",
-    galleryCaptions: ["海女の潜水道具"],
   },
   "seogwipo-olle-market": {
     name: "西帰浦毎日オルレ市場",
@@ -286,7 +274,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5時間",
     ticket: "",
     openingHours: "年中営業で、多くの店はおおむね07:00〜21:00だが店ごとに異なる",
-    galleryCaptions: ["市場のハルラボンの店"],
   },
   "jeju-olle-trail": {
     name: "済州オルレ",
@@ -308,7 +295,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1コースあたり4〜6時間",
     ticket: "",
     openingHours: "終日（日中に歩くのがよい）",
-    galleryCaptions: ["海岸のオルレコースの道しるべリボン"],
   },
 };
 

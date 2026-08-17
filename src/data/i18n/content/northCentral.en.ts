@@ -18,12 +18,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "200,000 VND",
     openingHours: "07:00 – 17:30",
-    galleryCaptions: [
-      "The majestic Ngo Mon Gate",
-      "The ancient Ngo Mon Gate seen from the stone-paved entrance",
-      "The ceremonial courtyard inside the imperial city",
-      "Evening falling over the Perfume River",
-    ],
   },
   "phong-nha-cave": {
     name: "Phong Nha Cave",
@@ -42,11 +36,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "150,000 VND",
     openingHours: "07:30 – 16:30",
-    galleryCaptions: [
-      "A deep cave vault glowing with reddish-brown rock",
-      "Ethereal stalactites within the silent cave",
-      "The underground Son River",
-    ],
   },
   "son-doong-cave": {
     name: "Son Doong Cave",
@@ -65,11 +54,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "4-day, 3-night tour",
     ticket: "Tours from 70 million VND",
     openingHours: "By tour schedule",
-    galleryCaptions: [
-      "A shaft of light from a skylight inside the cave",
-      "The reddish-brown cave interior curving deeper inward",
-      "A tiny group of people beneath the green-forested skylight in the cave",
-    ],
   },
   "thanh-nha-ho": {
     name: "Ho Citadel",
@@ -89,11 +73,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "40,000 VND",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "The majestic blue-stone South Gate",
-      "Centuries-old stone-assembled walls",
-      "The ancient citadel amid the Thanh Hoa countryside",
-    ],
   },
   "bien-sam-son": {
     name: "Sam Son Beach",
@@ -113,12 +92,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "Dawn over Sam Son beach",
-      "Cleaning up on Sam Son beach",
-      "The renowned Trong Mai rocks",
-      "The beach dotted with parasols seen from above",
-    ],
   },
   "suoi-ca-than-cam-luong": {
     name: "Cam Luong Sacred Fish Stream",
@@ -138,11 +111,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "20,000 VND",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: [
-      "The sacred fish at the foot of the mountain",
-      "The crystal-clear stream",
-      "A Muong village beside the stream",
-    ],
   },
   "khu-di-tich-kim-lien": {
     name: "Kim Lien Relic Site - Uncle Ho's Homeland",
@@ -162,11 +130,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "Uncle Ho's thatched childhood house",
-      "Coc Well in Sen Village",
-      "The ancient banyan tree at the village entrance",
-    ],
   },
   "bien-cua-lo": {
     name: "Cua Lo Beach",
@@ -186,12 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "The tree-lined seaside boulevard in the early morning",
-      "The seaside town aglow at sunset",
-      "Cua Lo beach",
-      "Lan Chau Island close to shore",
-    ],
   },
   "vuon-quoc-gia-pu-mat": {
     name: "Pu Mat National Park",
@@ -211,11 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "50,000 VND",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "A leaf-roofed stilt house nestled beside the deep green wilderness",
-      "The vast primeval forest",
-      "The crystal-clear Giang River",
-    ],
   },
   "chua-huong-tich": {
     name: "Huong Tich Pagoda",
@@ -235,11 +187,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "30,000 VND",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: [
-      "The ancient pagoda amid the Hong Linh forest",
-      "Moss-covered stone steps up to the pagoda",
-      "Moss-covered stone steps fading into the mist",
-    ],
   },
   "bien-thien-cam": {
     name: "Thien Cam Beach",
@@ -259,12 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 day",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "The pristine Thien Cam beach",
-      "Thien Cam Mountain by the surf",
-      "The Thien Cam shore",
-      "Sun-dried squid, a local specialty",
-    ],
   },
   "nga-ba-dong-loc": {
     name: "Dong Loc Junction",
@@ -284,12 +225,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: [
-      "The ten graves of the young volunteer women",
-      "Rows of white graves covered with memorial chrysanthemums",
-      "Lighting incense at the Dong Loc Junction memorial",
-      "Traces of the bomb craters of years past",
-    ],
   },
   "thanh-co-quang-tri": {
     name: "Quang Tri Ancient Citadel",
@@ -309,11 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "Free",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The central memorial",
-      "The moss-covered gate of the ancient citadel",
-      "The tree-shaded entrance to the citadel memorial",
-    ],
   },
   "dia-dao-vinh-moc": {
     name: "Vinh Moc Tunnels",
@@ -333,12 +263,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "40,000 VND",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: [
-      "The entrance to the Vinh Moc Tunnels",
-      "A tunnel passage underground",
-      "Converted oil lamps used in the tunnels",
-      "The maternity room beneath the tunnels",
-    ],
   },
   "dao-con-co": {
     name: "Con Co Island",
@@ -358,11 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2 days",
     ticket: "Free",
     openingHours: "All day",
-    galleryCaptions: [
-      "Blue sea embracing Con Co Island",
-      "The old lighthouse on the island",
-      "Vivid coral reefs",
-    ],
   },
 };
 

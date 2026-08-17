@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["イエン島を望む穏やかな入り江", "墓へ続くモクマオウの道"],
   },
   "thien-mu-pagoda": {
     name: "ティエンムー寺",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "08:00 - 18:00",
-    galleryCaptions: ["フオン川に臨むフオックズエン塔", "1710年鋳造の梵鐘"],
   },
   "khai-dinh-tomb": {
     name: "カイディン帝陵",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "150,000ドン",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["龍の階段を備えた陵の外観", "カイディン帝陵の参拝の庭に並ぶ石の兵士像", "ティエンディン宮の陶磁モザイク", "陵墓に並ぶ文官・武官の石像", "カイディン帝の青銅坐像"],
   },
 };
 

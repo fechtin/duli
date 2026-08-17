@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "낮 시장은 09:00~18:00(점포마다 다름), 야시장은 금·토 19:00~23:30, 일요일 19:00~22:00에만 열린다",
-    galleryCaptions: ["서문시장 야시장"],
   },
   "palgongsan-gatbawi": {
     name: "팔공산 갓바위",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["산정의 갓바위 석불"],
   },
   "kim-gwang-seok-street": {
     name: "김광석다시그리기길",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["김광석길의 벽화"],
   },
   "apsan-park": {
     name: "앞산공원",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "케이블카 왕복 14,000원(편도 10,000원), 공원은 무료",
     openingHours: "10:30~18:00(케이블카)",
-    galleryCaptions: ["앞산전망대에서 본 대구"],
   },
   "daegu-yangnyeongsi": {
     name: "대구 약령시",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "박물관 관람 무료",
     openingHours: "약령시는 낮에 열리고, 박물관은 09:00~18:00(입장 마감 17:30), 월요일과 1월 1일·설날·추석 당일 휴관",
-    galleryCaptions: ["한약방 앞에 널린 약재"],
   },
   "daegu-modern-alley": {
     name: "대구 근대골목",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "골목은 상시 개방. 청라언덕의 선교사주택 세 채는 박물관 조성 공사로 임시 휴관 중이며 외부만 볼 수 있다",
-    galleryCaptions: ["청라언덕의 3·1계단"],
   },
   "bullo-tumuli": {
     name: "불로동 고분군",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["저녁 빛을 받은 잔디 고분"],
   },
   "biseulsan-azalea": {
     name: "비슬산 참꽃군락",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "산은 낮 동안 개방된다. 참꽃은 4월 초에 피기 시작해 4월 20일 전후에 절정이며, 축제는 4월 중순에 열리고 주요 이틀간 08:30~17:30에 5~10분 간격으로 셔틀버스가 운행된다",
-    galleryCaptions: ["만개한 참꽃 고원"],
   },
   "daegu-arboretum": {
     name: "대구수목원",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "",
     openingHours: "09:00~18:00(겨울은 17:00까지), 월요일 휴원",
-    galleryCaptions: ["가을 국화 정원"],
   },
 };
 

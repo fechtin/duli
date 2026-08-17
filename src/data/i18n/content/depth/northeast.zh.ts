@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["在古林中层层跌落的溪水", "穿林而过的水梅溪", "临水而立的中祠"],
   },
   "puong-cave": {
     name: "崩洞",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "含在巴贝游船票内",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["从能江望向崩洞洞口", "小船穿过石灰岩穹顶"],
   },
   "dau-dang-waterfall": {
     name: "头等瀑布",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "含在巴贝游船票内",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["从巨石阵中挤出的瀑布", "环抱瀑布的原始森林"],
   },
   "pac-bo": {
     name: "北坡遗址",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "25,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["翡翠色的列宁溪", "马克思山下的谷坡洞"],
   },
   "huu-nghi-border-gate": {
     name: "友谊关口岸",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "",
     openingHours: "07:00 - 19:00",
-    galleryCaptions: ["友谊关正门", "友谊关的1116号界碑", "国际口岸联检大楼"],
   },
   fansipan: {
     name: "番西邦峰",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天（缆车）或2天（徒步）",
     ticket: "800,000越南盾（缆车往返）",
     openingHours: "07:30 - 17:30",
-    galleryCaptions: ["海拔3,143米峰顶的金属标志", "在峰下翻涌的云海", "云海之上的峰顶灵修建筑群", "跨越芒花谷的缆车"],
   },
   "bac-ha-market": {
     name: "北河赶集",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3小时",
     ticket: "",
     openingHours: "05:30 - 12:00，周日",
-    galleryCaptions: ["集市上的花苗族盛装", "周日集市上背着孩子的母亲", "周日清晨的马市"],
   },
   "xuan-son-national-park": {
     name: "春山国家公园",
@@ -170,7 +163,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2天",
     ticket: "20,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["石灰岩山地上的原始森林", "春山谷中的瑶族村寨"],
   },
   "den-mau-au-co": {
     name: "妪姬圣母庙",
@@ -191,7 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["古榕树下的庙门", "供奉妪姬圣母的正殿"],
   },
   "yen-tu": {
     name: "安子山",
@@ -213,7 +204,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "40,000越南盾（缆车另计）",
     openingHours: "05:00 - 20:00",
-    galleryCaptions: ["云雾中的峰顶铜寺", "远眺安子山", "布满青苔的慧光塔林", "通往花烟寺的古松道"],
   },
   "co-to-island": {
     name: "姑苏岛",
@@ -234,7 +224,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2至3天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["岛上的原始槠林", "姑苏的白沙与清澈海水", "独自面对姑苏岛的海滩", "带条纹沉积层的桥媚石滩", "夕阳下的姑苏灯塔"],
   },
   "phuong-hoang-cave": {
     name: "凤凰洞",
@@ -255,7 +244,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "30,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["洞口的巨大石穹", "自山中涌出的摩牙溪"],
   },
   "ban-ba-waterfall": {
     name: "板巴瀑布",
@@ -276,7 +264,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["最高一级落入翡翠潭", "山脚下板巴村的梯田"],
   },
   "khau-pha-pass": {
     name: "考法山口",
@@ -298,7 +285,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["云海之上的考法山口", "灌水季的考法山口", "从垭口望见的金色梯田"],
   },
 };
 

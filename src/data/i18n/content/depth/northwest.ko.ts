@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["산비탈을 감아 도는 파딘 고개", "좁고 굽이진 옛 고갯길"],
   },
   "pa-khoang-lake": {
     name: "빠코앙 호수",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["빠코앙 호수의 아침 안개", "호숫가의 타이족 마을"],
   },
   "go-lao-waterfall": {
     name: "고라오 폭포",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["초록 못으로 떨어지는 흰 물줄기", "폭포 아래로 내려가는 돌계단"],
   },
   "pu-ta-leng": {
     name: "뿌따렝",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2일",
     ticket: "",
     openingHours: "연중",
-    galleryCaptions: ["오르는 길에 붉게 핀 철쭉 숲", "호앙리엔선을 마주한 3,049m 정상"],
   },
   "son-la-prison": {
     name: "선라 감옥",
@@ -108,7 +104,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "20,000동",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["카우까 언덕에 남은 돌 감방", "경내의 또히에우 복숭아나무"],
   },
   "dai-yem-waterfall": {
     name: "자이옘 폭포",
@@ -129,7 +124,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "20,000동",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["절벽 위에 넓게 펼쳐진 물막", "이끼 낀 바위 사이의 아래 단"],
   },
 };
 

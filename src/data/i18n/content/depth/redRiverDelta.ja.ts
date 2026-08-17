@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["境内に立つホアフォン塔", "ファップヴァンを祀る本堂"],
   },
   "tran-thuong-temple": {
     name: "チャントゥオン廟",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["前庭から見たチャントゥオン廟", "廟前の儀門と池"],
   },
   "temple-of-literature": {
     name: "文廟・国子監",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "70,000ドン",
     openingHours: "08:00 - 17:00",
-    galleryCaptions: ["ティエンクアンの井戸に映るクエヴァンカク", "文廟の奎文閣", "石亀の背に載る82基の進士碑", "内区へ続くダイチュン門"],
   },
   "mao-dien-temple-of-literature": {
     name: "マオディエン文廟",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["マオディエン文廟の儀門", "孔子と名賢八人を祀る拝殿"],
   },
   "lan-ha-bay": {
     name: "ランハー湾",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2日",
     ticket: "80,000ドン（湾の入場料）",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["ランハー湾を埋める石灰岩の島", "カットバの町の海鮮店", "カイベオの水上村", "カットバ島の砲台公園から望む海", "崖の陰に隠れた小さな砂浜"],
   },
   "nom-village": {
     name: "ノム村",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["グエットドゥック川に架かる九連の石橋", "池に映るタムザンの亭"],
   },
   "pho-minh-pagoda": {
     name: "フォーミン寺",
@@ -150,7 +144,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["十四層のフォーミン塔", "塔基壇の陳代の波文"],
   },
   "hoa-lu-ancient-capital": {
     name: "ホアルー古都",
@@ -172,7 +165,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2～3時間",
     ticket: "20,000ドン",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["岩山に囲まれた丁先皇帝の廟", "廟前の石造の龍床", "上から見たホアルーの谷"],
   },
   "cuc-phuong-national-park": {
     name: "クックフオン国立公園",
@@ -194,7 +186,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2日",
     ticket: "60,000ドン",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["原生林に立つ樹齢千年のチョーの木", "クックフオン国立公園の入口", "四月の小道を舞う蝶の季節"],
   },
   "tb-den-tran": {
     name: "タイビン陳廟",
@@ -215,7 +206,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1～2時間",
     ticket: "",
     openingHours: "07:00 - 18:00",
-    galleryCaptions: ["タムドゥオンの陳王廟", "タイドゥオン陵に残る古い墳丘"],
   },
   "dai-lai-lake": {
     name: "ダイライ湖",
@@ -236,7 +226,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "通年",
-    galleryCaptions: ["タムダオ山麓のダイライ湖", "早朝の湖畔の松の丘"],
   },
 };
 

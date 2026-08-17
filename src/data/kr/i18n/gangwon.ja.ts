@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "終日",
     ticket: "国立公園の入場は無料、権金城ケーブルカーは往復16,000ウォン（子ども12,000）",
     openingHours: "06:00〜20:00、ケーブルカーは概ね09:00〜17:30",
-    galleryCaptions: ["蔚山岩の岩壁"],
   },
   "gyeongpo-beach": {
     name: "江陵 鏡浦海辺",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["鏡浦海辺と松林"],
   },
   ojukheon: {
     name: "烏竹軒",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "3,000ウォン（65歳以上は無料）",
     openingHours: "08:00〜18:00（冬は17:30まで）、入場は閉館30分前まで",
-    galleryCaptions: ["烏竹軒の木造家屋と竹林"],
   },
   "daegwallyeong-sky-ranch": {
     name: "平昌 大関嶺牧場",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "8,000ウォン（子ども・シニア6,000）、トラクター馬車と餌やりは別料金",
     openingHours: "09:00〜17:30",
-    galleryCaptions: ["草原と風力発電機"],
   },
   jeongdongjin: {
     name: "正東津",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["海に接したホーム"],
   },
   naksansa: {
     name: "洛山寺",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間30分",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "05:00〜19:00",
-    galleryCaptions: ["海を見つめる海水観音像"],
   },
   "nami-island": {
     name: "南怡島",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "19,000ウォン（往復の船代込み）、前年より3,000ウォン値上げ",
     openingHours: "08:00〜21:00、年中無休（最終便21:05）",
-    galleryCaptions: ["南怡島のメタセコイア並木"],
   },
   "chuncheon-soyang": {
     name: "春川と昭陽湖",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "清平寺行きの船は往復約5,500〜6,000ウォン（片道3,000）、片道10分",
     openingHours: "船便09:00〜17:00",
-    galleryCaptions: ["昭陽湖の朝霧"],
   },
   "hwanseongul-cave": {
     name: "三陟幻仙窟",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "4,500ウォン、洞窟までのモノレールは往復7,000ウォン（片道4,000）",
     openingHours: "08:30〜17:00",
-    galleryCaptions: ["幻仙窟の高い広間"],
   },
   "odaesan-woljeongsa": {
     name: "五台山月精寺",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "08:00〜18:00",
-    galleryCaptions: ["寺へ続くモミの森の道"],
   },
   "gangneung-anmok-coffee": {
     name: "江陵安木コーヒー通り",
@@ -241,7 +231,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "共通の営業時間はなく、カフェごとに異なりおおむね09:00〜22:00。目の前の安木海岸は終日開放",
-    galleryCaptions: ["安木海岸の際のカフェ"],
   },
   "cheongoksan-mureung": {
     name: "東海武陵渓谷",
@@ -263,7 +252,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "2,000ウォン（青少年1,500、子ども700）",
     openingHours: "夏季09:00〜20:00（7〜8月は券売06:00から）、冬季09:00〜18:00",
-    galleryCaptions: ["武陵渓谷の刻字のある一枚岩"],
   },
   "taebaeksan-snow": {
     name: "太白山国立公園",
@@ -285,7 +273,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日〜一日",
     ticket: "",
     openingHours: "国立公園の入山時間指定制が適用される。入山は3〜11月は04:00、12〜2月は05:00から可能で、区間ごとに12:00〜17:00の間で規制時刻が異なる。出発前に通行規制情報の確認を",
-    galleryCaptions: ["凍りついた太白山のイチイ"],
   },
   "sokcho-abai-village": {
     name: "束草アバイ村",
@@ -307,7 +294,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "手漕ぎ渡し船は片道500ウォン",
     openingHours: "ケッペはおよそ06:00〜23:00運航",
-    galleryCaptions: ["束草の水路を渡るケッペ"],
   },
 };
 

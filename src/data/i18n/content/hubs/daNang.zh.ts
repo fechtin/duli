@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["龙头向韩江喷火", "夜里不断变色的龙身"],
   },
   "han-river-bridge": {
     name: "韩江桥",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["亮起灯的韩江桥", "在江心横转过来的桥跨"],
   },
   "cham-museum": {
     name: "占族雕刻博物馆",
@@ -64,7 +62,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2小时",
     ticket: "6万越南盾（参考价，请在售票处确认）",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["美山展厅", "阿普萨拉舞女浮雕", "法式风格的博物馆建筑"],
   },
   "da-nang-cathedral": {
     name: "岘港主教座堂",
@@ -85,7 +82,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45分钟",
     ticket: "",
     openingHours: "弥撒时间之外；弥撒时刻表在门口张贴",
-    galleryCaptions: ["粉色钟楼与顶上的公鸡", "教堂内部的彩色玻璃窗"],
   },
   "con-market": {
     name: "琼市场",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "06:00 - 20:00（美食区营业更晚）",
-    galleryCaptions: ["琼市场内的美食区", "售卖广南干货的摊位"],
   },
   "han-market": {
     name: "韩市场",
@@ -127,7 +122,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["韩市场的干海产摊位", "二楼的布料与裁缝区"],
   },
   "apec-park": {
     name: "亚太经合公园",
@@ -148,7 +142,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["韩江上方亮起的风筝形顶棚", "亚太经合雕塑园中的作品"],
   },
   "son-tra-night-market": {
     name: "山茶夜市",
@@ -169,7 +162,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2小时",
     ticket: "",
     openingHours: "约18:00 - 24:00",
-    galleryCaptions: ["亮起灯的烧烤摊街", "从夜市望向龙桥"],
   },
   "my-khe-beach": {
     name: "美溪海滩",
@@ -190,7 +182,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3小时",
     ticket: "",
     openingHours: "全天；救生员在公告时段值班",
-    galleryCaptions: ["美溪海滩的日出", "清晨靠岸的簸箕船"],
   },
   "linh-ung-pagoda-bai-but": {
     name: "灵应寺拜佛",
@@ -211,7 +202,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5小时",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["俯瞰岘港湾的观世音菩萨像", "寺院庭院与远处的城市"],
   },
   "ban-co-peak": {
     name: "棋盘峰",
@@ -232,7 +222,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含上山路程约2小时",
     ticket: "",
     openingHours: "白天；天黑后不要上山",
-    galleryCaptions: ["从棋盘峰俯瞰岘港全景", "山茶峰顶的石棋盘", "峰顶的棋盘石像", "从棋盘峰看岘港湾全景"],
   },
   "non-nuoc-beach": {
     name: "农渃海滩",
@@ -253,7 +242,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2小时",
     ticket: "",
     openingHours: "全天",
-    galleryCaptions: ["五行山脚下的农渃海滩", "农渃海滩上的簸箕船", "清晨空旷的沙滩"],
   },
   "non-nuoc-stone-village": {
     name: "农渃石雕村",
@@ -274,7 +262,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45分钟 - 1小时",
     ticket: "",
     openingHours: "按作坊作息，约07:30 - 17:00",
-    galleryCaptions: ["村口沿路排开的石像", "作坊里凿石的师傅"],
   },
   "ba-na-hills": {
     name: "巴拿山",
@@ -295,7 +282,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一整天",
     ticket: "含索道的套票约90万 - 110万越南盾（随季节浮动，出发前请查看公布票价）",
     openingHours: "约07:30 - 22:00，随季节调整",
-    galleryCaptions: ["巴拿山顶的法国村", "越过森林的索道", "笼罩中央广场的云雾"],
   },
   "hai-van-pass": {
     name: "海云关",
@@ -316,7 +302,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "含往返约半天",
     ticket: "",
     openingHours: "全天；建议白天翻越",
-    galleryCaptions: ["盘绕临海山坡的垭口公路", "垭口顶上的海云关"],
   },
 };
 

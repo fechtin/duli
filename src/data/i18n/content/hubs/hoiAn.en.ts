@@ -23,7 +23,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 minutes",
     ticket: "Included in the Hoi An old-town ticket (see Hoi An Ancient Town)",
     openingHours: "All day; the interior follows old-town ticket hours",
-    galleryCaptions: ["The covered bridge reflected in the creek", "The shrine set into the middle of the bridge"],
   },
   "tan-ky-house": {
     name: "Tan Ky House",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Included in the Hoi An old-town ticket",
     openingHours: "08:00 - 17:30",
-    galleryCaptions: ["The central hall of Tan Ky house", "Flood level markings inside the house", "Timber columns and mother-of-pearl couplets"],
   },
   "phuc-kien-assembly-hall": {
     name: "Fujian Assembly Hall",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45 minutes",
     ticket: "Included in the Hoi An old-town ticket",
     openingHours: "07:00 - 17:30",
-    galleryCaptions: ["The dragon fountain inside the hall", "The triple gate of the Fujian hall", "Incense coils filling the main hall ceiling"],
   },
   "hoi-an-night-market": {
     name: "Hoi An Night Market",
@@ -86,7 +83,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2 hours",
     ticket: "",
     openingHours: "About 17:00 - 23:00",
-    galleryCaptions: ["The lantern street on An Hoi islet", "Night food stalls beside the Hoi An market", "Paper lanterns drifting on the Hoai river"],
   },
   "faifo-coffee": {
     name: "Faifo Coffee",
@@ -107,7 +103,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 hour",
     ticket: "",
     openingHours: "Café hours, generally morning until evening",
-    galleryCaptions: ["Old-town roofs seen from the terrace", "Coffee at the railing above the street"],
   },
   "reaching-out-teahouse": {
     name: "Reaching Out Teahouse",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45 minutes - 1 hour",
     ticket: "",
     openingHours: "Teahouse hours, generally morning until evening",
-    galleryCaptions: ["The engraved wooden blocks used to order", "Tea set and hourglass on a wooden tray"],
   },
   "tra-que-vegetable-village": {
     name: "Tra Que Vegetable Village",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3 hours with the farming session",
     ticket: "Village entry around 35,000d; hands-on sessions charged separately",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["Herb beds at Tra Que in the morning", "Watering by shoulder pole"],
   },
   "kim-bong-carpentry-village": {
     name: "Kim Bong Carpentry Village",
@@ -170,7 +163,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours including the ferry",
     ticket: "",
     openingHours: "Roughly 07:30 - 17:00, following workshop hours",
-    galleryCaptions: ["A carver at work in a Kim Bong workshop", "The ferry across to Cam Kim islet"],
   },
   "bay-mau-coconut-forest": {
     name: "Bay Mau Coconut Forest",
@@ -191,7 +183,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "Entry and boat hire charged separately, roughly 150,000 - 250,000d per basket boat",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["A basket boat threading the water-coconut channels", "Water-coconut fronds above head height"],
   },
   "an-bang-beach": {
     name: "An Bang Beach",
@@ -212,7 +203,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "Half a day",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["Wooden chairs and thatched bars on An Bang sand", "A small shrine at An Bang", "Basket boats upturned at the end of the beach"],
   },
   "cua-dai-beach": {
     name: "Cua Dai Beach",
@@ -233,7 +223,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 hours",
     ticket: "",
     openingHours: "All day",
-    galleryCaptions: ["The Thu Bon river mouth opening to the sea", "Stone revetments along the Cua Dai shore"],
   },
 };
 

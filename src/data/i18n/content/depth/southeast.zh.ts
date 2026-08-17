@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "15,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["面朝前滩的白色别墅", "正立面的陶塑浮雕"],
   },
   "hoi-khanh-pagoda": {
     name: "会庆寺",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "06:00 - 18:00",
-    galleryCaptions: ["屋顶上长52米的涅槃佛", "十八世纪的木构正殿"],
   },
   "nui-ba-ra": {
     name: "婆罗山",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "06:00 - 17:00",
-    galleryCaptions: ["从婆罗山腰俯瞰福隆镇", "从山顶望见的塔莫湖"],
   },
   "tran-bien-temple-of-literature": {
     name: "镇边文庙",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1小时",
     ticket: "",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["文庙内的拜堂", "庭中的名人塑像园"],
   },
   "independence-palace": {
     name: "独立宫",
@@ -106,7 +102,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1至2小时",
     ticket: "65,000越南盾",
     openingHours: "08:00 - 16:30",
-    galleryCaptions: ["覆着混凝土格栅的正立面", "地下的指挥地堡", "前庭草坪上的坦克"],
   },
   "cu-chi-tunnels": {
     name: "古芝地道",
@@ -128,7 +123,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "125,000越南盾",
     openingHours: "07:00 - 17:00",
-    galleryCaptions: ["古芝地道遗址入口的标牌", "供游客通行的拓宽段"],
   },
   "dau-tieng-reservoir": {
     name: "油亭水库",
@@ -149,7 +143,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半天",
     ticket: "",
     openingHours: "全年",
-    galleryCaptions: ["远处可见婆殿山的宽阔水面", "旱季的岸边草地"],
   },
 };
 

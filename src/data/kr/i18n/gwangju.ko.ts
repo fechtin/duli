@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "09:00~18:00",
-    galleryCaptions: ["5·18민주광장"],
   },
   mudeungsan: {
     name: "무등산국립공원",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절",
     ticket: "",
     openingHours: "국립공원 입산시간지정제가 적용된다. 입산은 3~11월 04:00, 12~2월 05:00부터 가능하며 구간마다 12:00~17:00 사이로 통제시간이 다르다. 출발 전 통제 정보를 확인하자",
-    galleryCaptions: ["서석대 주상절리"],
   },
   "yangnim-dong": {
     name: "양림동 역사문화마을",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간 30분~2시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["양림동의 붉은 벽돌 건물"],
   },
   "asia-culture-center": {
     name: "국립아시아문화전당",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "상설 전시 무료",
     openingHours: "10:00~18:00, 수요일과 토요일은 20:00까지, 월요일 휴관. 공연·전시 일정에 따라 개관시간이 달라질 수 있다",
-    galleryCaptions: ["지하 전시실 위의 천창"],
   },
   "gwangju-daein-market": {
     name: "대인시장과 별밤야시장",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "낮 시장은 09:00~19:00. 2026년 대인예술야시장은 금 또는 토요일 16:00~21:00에 총 12회만 열리며 10월 31일까지다. 방문 전 일정 확인이 필요하다",
-    galleryCaptions: ["대인 야시장의 전구 불빛"],
   },
   "gwangju-biennale": {
     name: "광주비엔날레",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~하루",
     ticket: "16,000원, 사전 판매 시 8,000원까지 할인",
     openingHours: "10:00~18:00, 월요일 휴관",
-    galleryCaptions: ["광주비엔날레 전시관"],
   },
   "gwangju-penguin-village": {
     name: "양림동 펭귄마을",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "상시",
-    galleryCaptions: ["옛 살림살이로 뒤덮인 골목 벽"],
   },
 };
 

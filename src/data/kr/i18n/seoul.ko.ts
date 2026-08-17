@@ -22,7 +22,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "3,000원(한복 착용 시 무료)",
     openingHours: "09:00~18:00(11~2월 17:00까지, 6~8월 18:30까지), 화요일 휴관",
-    galleryCaptions: ["조정에서 바라본 근정전", "연못 위의 경회루"],
   },
   changdeokgung: {
     name: "창덕궁과 후원",
@@ -44,7 +43,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "3,000원(후원 관람 8,000원 별도)",
     openingHours: "09:00~18:00(11~1월 17:30까지, 6~8월 18:30까지), 월요일 휴관",
-    galleryCaptions: ["인정전"],
   },
   "bukchon-hanok-village": {
     name: "북촌한옥마을",
@@ -66,7 +64,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~2시간",
     ticket: "",
     openingHours: "2026년 1월 1일부터 북촌로11길 구역은 관광 목적 방문이 10:00~17:00로 제한되며, 시간 외 출입 적발 시 과태료 10만원이 부과된다. 권고가 아니라 강제 규정이다",
-    galleryCaptions: ["도심이 내려다보이는 한옥 골목"],
   },
   "n-seoul-tower": {
     name: "N서울타워(남산)",
@@ -88,7 +85,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "전망대 21,000원(케이블카 별도)",
     openingHours: "평일 10:30~22:30, 주말 10:00~23:00(입장 마감 30분 전)",
-    galleryCaptions: ["전망대에서 본 서울"],
   },
   myeongdong: {
     name: "명동",
@@ -110,7 +106,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "공식 운영시간은 없다. 상점은 10~11시에 열어 21~22시에 닫고, 노점은 늦은 오후부터 밤까지 영업한다",
-    galleryCaptions: ["저녁의 포장마차 거리"],
   },
   "hangang-yeouido-park": {
     name: "여의도 한강공원",
@@ -132,7 +127,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["한강의 일몰"],
   },
   "jongmyo-shrine": {
     name: "종묘",
@@ -155,7 +149,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1~1.5시간",
     ticket: "1,000원(만 19세 미만·65세 이상 무료)",
     openingHours: "09:00~18:00(11~1월 17:30까지, 6~8월 18:30까지), 화요일 휴관",
-    galleryCaptions: ["정전의 긴 회랑"],
   },
   "ikseon-dong": {
     name: "익선동 한옥골목",
@@ -177,7 +170,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "",
     openingHours: "골목은 상시 개방되어 정해진 시간이 없다. 카페와 식당은 대체로 11:00~23:00",
-    galleryCaptions: ["밤의 한옥 골목"],
   },
   insadong: {
     name: "인사동",
@@ -199,7 +191,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "거리는 상시 개방, 상점은 대체로 10:00~21:00. 주말에는 큰길이 차 없는 거리로 운영된다",
-    galleryCaptions: ["주말의 인사동 거리"],
   },
   "gwangjang-market": {
     name: "광장시장",
@@ -221,7 +212,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "",
     openingHours: "먹자골목은 09:00~23:00 연중무휴, 포목·일반 점포는 09:00~18:00이며 일요일 휴무",
-    galleryCaptions: ["시장 한가운데 빈대떡 가게"],
   },
   cheonggyecheon: {
     name: "청계천",
@@ -243,7 +233,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["도심을 지나는 물길 산책로"],
   },
   bongeunsa: {
     name: "봉은사",
@@ -265,7 +254,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5시간",
     ticket: "무료(템플라이프 프로그램 30,000원)",
     openingHours: "03:00~22:00, 연중무휴",
-    galleryCaptions: ["강남 빌딩을 등진 미륵대불"],
   },
   "dongdaemun-ddp": {
     name: "동대문디자인플라자(DDP)",
@@ -287,7 +275,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5~2시간",
     ticket: "외부 공간 무료, 전시는 대체로 8,000~15,000원",
     openingHours: "외부 공간 24시간 개방, 전시관 10:00~19:00(수·금은 21:00까지), 월요일 휴관",
-    galleryCaptions: ["밤의 DDP 곡면 외피"],
   },
   hongdae: {
     name: "홍대",
@@ -309,7 +296,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "",
     openingHours: "거리는 상시 개방. 버스킹과 라이브 공연은 주로 19:00부터 자정까지이며 주말에 가장 붐빈다",
-    galleryCaptions: ["홍대 정문 앞 거리 공연"],
   },
   "lotte-world-tower": {
     name: "롯데월드타워와 서울스카이",
@@ -331,7 +317,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "서울스카이 31,000원(성인)",
     openingHours: "10:30~22:00(금·토·공휴일은 23:00까지), 매표 마감 1시간 전",
-    galleryCaptions: ["서울스카이에서 본 서울"],
   },
   "national-museum-korea": {
     name: "국립중앙박물관",
@@ -353,7 +338,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2~3시간",
     ticket: "상설전시 무료, 특별전은 별도 유료",
     openingHours: "09:30~17:30, 수·토요일은 21:00까지(야외 정원 07:00~22:00)",
-    galleryCaptions: ["사유의 방"],
   },
   bukhansan: {
     name: "북한산국립공원",
@@ -375,7 +359,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "반나절~하루",
     ticket: "",
     openingHours: "입산 04:00~17:00(12~2월은 16:00까지), 백운대 코스는 정원이 차면 통제",
-    galleryCaptions: ["백운대에서 돌아본 서울"],
   },
   "seoul-forest": {
     name: "서울숲",
@@ -397,7 +380,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "상시 개방",
-    galleryCaptions: ["가을의 은행나무길"],
   },
 };
 

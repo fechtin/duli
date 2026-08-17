@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "終日",
-    galleryCaptions: ["全州韓屋村の瓦屋根"],
   },
   naejangsan: {
     name: "内蔵山国立公園",
@@ -43,7 +42,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "",
     openingHours: "国立公園の運営時間",
-    galleryCaptions: ["秋のカエデのトンネル"],
   },
   maisan: {
     name: "馬耳山と塔寺",
@@ -65,7 +63,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "3時間",
     ticket: "道立公園の入場は無料、塔寺の拝観料は3,000ウォン（学生2,000、子ども1,000）。塔寺は道指定文化財のみのため2023年の拝観料廃止の対象外",
     openingHours: "08:00〜18:00",
-    galleryCaptions: ["馬耳山のふもとの石塔"],
   },
   "gochang-dolmen": {
     name: "高敞支石墓群",
@@ -87,7 +84,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "3,000ウォン（青少年2,000、子ども1,000）、遺跡見学列車1,000ウォン別途",
     openingHours: "09:00〜18:00",
-    galleryCaptions: ["高敞の支石墓群"],
   },
   seonunsa: {
     name: "禅雲寺と椿の森",
@@ -109,7 +105,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2〜3時間",
     ticket: "無料（2023年5月に文化財観覧料が廃止）、駐車料は別途",
     openingHours: "07:00〜18:00",
-    galleryCaptions: ["苔の上に花ごと落ちた椿"],
   },
   "muju-deogyusan": {
     name: "茂朱徳裕山国立公園",
@@ -131,7 +126,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日〜一日",
     ticket: "ゴンドラ往復25,000ウォン（子ども20,000）、天候により運休あり",
     openingHours: "国立公園の運営時間とゴンドラの運行に従う",
-    galleryCaptions: ["香積峰の樹氷"],
   },
   "byeonsan-bando": {
     name: "辺山半島国立公園",
@@ -153,7 +147,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "一日",
     ticket: "無料（来蘇寺の文化財観覧料は2023年5月に廃止）",
     openingHours: "国立公園の運営時間、彩石江は潮汐に従う",
-    galleryCaptions: ["彩石江の層理の岩"],
   },
   "gunsan-modern-quarter": {
     name: "群山近代文化通り",
@@ -175,7 +168,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "半日",
     ticket: "博物館共通券3,000ウォン、近代歴史博物館のみなら2,000ウォン",
     openingHours: "09:00〜18:00、博物館は月曜休館",
-    galleryCaptions: ["群山の旧朝鮮銀行の建物"],
   },
   "jeonju-nambu-market": {
     name: "全州南部市場と青年モール",
@@ -197,7 +189,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2時間",
     ticket: "",
     openingHours: "昼の市場は07:00〜20:00、夜市は金・土の夕方17:00〜23:00のみ、250mの通路に約45の屋台が並ぶ",
-    galleryCaptions: ["南部市場の中の青年夜市"],
   },
   "jeonju-hyanggyo": {
     name: "全州郷校",
@@ -219,7 +210,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1時間",
     ticket: "",
     openingHours: "09:00〜18:00（3〜10月）、10:00〜17:00（11〜2月）、月曜休み",
-    galleryCaptions: ["郷校の庭の黄色いイチョウ"],
   },
 };
 

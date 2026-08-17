@@ -21,7 +21,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["한강 위로 불을 뿜는 용의 머리", "밤새 색이 바뀌는 용의 몸"],
   },
   "han-river-bridge": {
     name: "한강교",
@@ -42,7 +41,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["불을 밝힌 한강교", "강 한가운데서 돌아선 상판"],
   },
   "cham-museum": {
     name: "참 조각 박물관",
@@ -63,7 +61,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1.5 - 2시간",
     ticket: "6만 동(참고 가격, 매표소에서 확인)",
     openingHours: "07:30 - 17:00",
-    galleryCaptions: ["미선 전시실", "압사라 무희 부조", "프랑스식 박물관 건물"],
   },
   "da-nang-cathedral": {
     name: "다낭 대성당",
@@ -84,7 +81,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "30 - 45분",
     ticket: "",
     openingHours: "미사 시간 외. 미사 일정은 정문에 게시",
-    galleryCaptions: ["분홍빛 종탑과 수탉 조형물", "성당 내부의 색유리창"],
   },
   "con-market": {
     name: "꼰 시장",
@@ -105,7 +101,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "06:00 - 20:00(먹거리 구역은 더 늦게까지)",
-    galleryCaptions: ["꼰 시장 안 먹거리 구역", "꽝남 지역 건어물 좌판"],
   },
   "han-market": {
     name: "한 시장",
@@ -126,7 +121,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1시간",
     ticket: "",
     openingHours: "06:00 - 19:00",
-    galleryCaptions: ["한 시장의 건해산물 좌판", "2층 옷감과 재봉 구역"],
   },
   "apec-park": {
     name: "아펙 공원",
@@ -147,7 +141,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["한강 위로 불을 밝힌 연 모양 지붕", "아펙 정원의 조각 작품"],
   },
   "son-tra-night-market": {
     name: "썬짜 야시장",
@@ -168,7 +161,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 2시간",
     ticket: "",
     openingHours: "대략 18:00 - 24:00",
-    galleryCaptions: ["불을 밝힌 구이 좌판 거리", "용다리 쪽을 바라본 야시장"],
   },
   "my-khe-beach": {
     name: "미케 해변",
@@ -189,7 +181,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2 - 3시간",
     ticket: "",
     openingHours: "종일. 안전요원은 게시된 시간에 근무",
-    galleryCaptions: ["미케 해변의 일출", "새벽에 들어오는 바구니배"],
   },
   "linh-ung-pagoda-bai-but": {
     name: "린응사 바이붓",
@@ -210,7 +201,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "1 - 1.5시간",
     ticket: "",
     openingHours: "06:00 - 21:00",
-    galleryCaptions: ["다낭만을 굽어보는 관세음보살상", "절 마당과 그 너머 도시"],
   },
   "ban-co-peak": {
     name: "반꼬봉",
@@ -231,7 +221,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "오르는 길 포함 2시간",
     ticket: "",
     openingHours: "낮 시간. 해가 진 뒤에는 오르지 말 것",
-    galleryCaptions: ["반꼬봉에서 본 다낭 전경", "썬짜 정상의 돌 장기판", "정상의 바둑판 석상", "반꼬봉에서 본 다낭만 전경"],
   },
   "non-nuoc-beach": {
     name: "논느억 해변",
@@ -252,7 +241,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "2시간",
     ticket: "",
     openingHours: "종일",
-    galleryCaptions: ["응우한선 아래 논느억 해변", "논느억 해변의 바구니 배", "아침의 한적한 모래밭"],
   },
   "non-nuoc-stone-village": {
     name: "논느억 석공예 마을",
@@ -273,7 +261,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "45분 - 1시간",
     ticket: "",
     openingHours: "공방 운영에 따라 대략 07:30 - 17:00",
-    galleryCaptions: ["마을 입구를 따라 늘어선 석상", "공방에서 돌을 쪼는 장인"],
   },
   "ba-na-hills": {
     name: "바나 힐",
@@ -294,7 +281,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "하루 종일",
     ticket: "케이블카 포함 통합권 약 90만 - 110만 동(계절에 따라 변동, 방문 전 공지 요금 확인)",
     openingHours: "계절에 따라 대략 07:30 - 22:00",
-    galleryCaptions: ["바나 정상의 프랑스 마을", "숲을 넘어가는 케이블카", "중앙 광장을 덮은 구름"],
   },
   "hai-van-pass": {
     name: "하이번 고개",
@@ -315,7 +301,6 @@ export const destinations: Record<string, DestinationTranslation> = {
     visitDuration: "이동 포함 반나절",
     ticket: "",
     openingHours: "종일. 낮에 넘는 것이 좋다",
-    galleryCaptions: ["바다를 낀 산비탈을 감아 도는 고갯길", "고개 정상의 하이번 관문"],
   },
 };
 
