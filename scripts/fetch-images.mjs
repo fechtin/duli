@@ -30,7 +30,8 @@
 //
 // Chế độ có người duyệt (xem scripts/review-server.mjs):
 //   PROPOSE=1                            → gom ứng viên, KHÔNG tải ảnh, ghi tasks/review-queue.json
-//   PROPOSE=1 FEATURED=1                 → chỉ điểm `featured`, lô đáng làm trước
+//   PROPOSE=1 FEATURED=1                 → chỉ điểm `featured`
+//   PROPOSE=1 EMPTY=1                    → chỉ điểm CHƯA CÓ ẢNH NÀO, lô đáng làm trước nhất
 //   PROPOSE=1 UPGRADE=1                  → đề xuất cả cho ô đã có ảnh, để thay bằng ảnh đẹp hơn
 //   PROPOSE=1 ALL_SOURCES=1              → bật lại chuỗi free-culture (mặc định chỉ Pexels)
 
@@ -272,6 +273,12 @@ if (only) places = places.filter((d) => only.has(d.id));
 // Duyệt tay thì nên chia lô, và lô đáng làm trước là `featured`: chúng lên trang chủ nên mỗi ô
 // trống ở đó đắt hơn hẳn một ô trống ở điểm ít ai mở.
 if (process.env.FEATURED === "1") places = places.filter((d) => d.featured);
+// Điểm chưa có tấm ảnh nào là chỗ mỗi tấm duyệt được đáng giá nhất: nó biến một trang trống
+// thành một trang có nội dung, thay vì thêm ảnh thứ tư cho nơi đã có ba.
+if (process.env.EMPTY === "1") {
+  const has = new Set(Object.values(manifest).map((v) => v.dest).filter(Boolean));
+  places = places.filter((d) => !has.has(d.id));
+}
 if (limit) places = places.slice(0, limit);
 
 // Reserve source titles already kept, so a refetch never duplicates one onto another seed.

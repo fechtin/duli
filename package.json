@@ -32,7 +32,8 @@
     "verify:vn": "node --experimental-strip-types scripts/verify-content.mjs vn",
     "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql",
     "sweep:trips": "node --experimental-strip-types scripts/sweep-itineraries.mjs",
-    "captions": "node scripts/apply-captions.mjs"
+    "captions": "node scripts/apply-captions.mjs",
+    "images:propose:empty": "EMPTY=1 PROPOSE=1 node --env-file-if-exists=.env --experimental-strip-types scripts/fetch-images.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
