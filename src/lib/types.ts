@@ -212,6 +212,13 @@ export interface ProvinceContent {
   story: string;
   bestTime: string;
   specialties: string[];
+  /**
+   * `specialties` minus the ones the province already shows as a dish card — the only ones worth
+   * a chip. Computed by the Worker on the Vietnamese base names (src/lib/food/specialtyJoin.ts);
+   * `specialties` itself stays whole for the AI grounding block and the crawler body, which list
+   * no dishes of their own.
+   */
+  specialtiesWithoutDish?: string[];
   /** ids of destinations in this province. */
   destinationIds: string[];
   /** Per-locale translations of the textual fields. VI fields above are the fallback. */

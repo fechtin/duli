@@ -1,4 +1,5 @@
 // D1 query layer for the Worker (Bible 013/015 — API exposes business shapes, not rows).
+import { coveredByDish } from "../src/lib/food/specialtyJoin";
 import type {
   Destination,
   DestinationTranslation,
@@ -227,10 +228,47 @@ export async function getProvinceBundle(db: D1Like, slug: string, locale?: strin
         story: ptr && nonEmpty(ptr.story) ? ptr.story : (row.story ?? ""),
         bestTime: ptr && nonEmpty(ptr.bestTime) ? ptr.bestTime : (row.best_time ?? ""),
         specialties: ptr && hasItems(ptr.specialties) ? ptr.specialties : parse<string[]>(row.specialties, []),
+        ...(await chipSpecialties(db, row, ptr, slug, country)),
         destinationIds: dests.map((d) => d.id),
       }
     : null;
   return { meta: toProvinceMeta(row, locale), content, destinations: dests };
+}
+
+/**
+ * The specialties that still deserve a chip: the ones with no dish card of their own.
+ *
+ * The join has to run here rather than in the panel because only this side holds both lists in
+ * one language — the Vietnamese base names. `name` and `specialties` are the untranslated columns,
+ * so the comparison never has to cross a locale (src/lib/food/specialtyJoin.ts explains why that
+ * matters), and the translated list drops the same slots because it is authored against the base
+ * one for one. If a translation ever falls out of step, every chip stays rather than the wrong
+ * ones going missing.
+ */
+async function chipSpecialties(
+  db: D1Like,
+  row: ProvRow,
+  ptr: ProvinceTranslation | null,
+  slug: string,
+  country: string,
+): Promise<{ specialtiesWithoutDish: string[] }> {
+  const base = parse<string[]>(row.specialties, []);
+  const shown = ptr && hasItems(ptr.specialties) ? ptr.specialties : base;
+  if (!base.length) return { specialtiesWithoutDish: shown };
+
+  const { results } = await db
+    .prepare("SELECT name, province_slugs FROM dishes WHERE country = ?")
+    .bind(country)
+    .all<{ name: string; province_slugs: string }>();
+  const dishNames = results
+    .filter((r) => parse<string[]>(r.province_slugs, []).includes(slug))
+    .map((r) => r.name);
+
+  const covered = coveredByDish(base, dishNames);
+  return {
+    specialtiesWithoutDish:
+      shown.length === base.length ? shown.filter((_, i) => !covered[i]) : shown,
+  };
 }
 
 // ── Food Explorer (Bible 026) ─────────────────────────────────

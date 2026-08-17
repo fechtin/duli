@@ -9,6 +9,7 @@ import { useMapStore } from "@/lib/store/useMapStore";
 import { useI18n, useT } from "@/lib/i18n";
 import { destinationPath, dishPath } from "@/lib/seo/urls";
 import { IllustratedImage, firstPhotoSeed } from "@/components/ui/IllustratedImage";
+import { chipsBeforeJoin } from "@/lib/food/specialtyJoin";
 import { AppLink } from "@/components/ui/AppLink";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
@@ -34,6 +35,15 @@ export function ProvincePanel({ slug }: { slug: string }) {
   if (!meta) return null;
   const content = bundle?.content ?? null;
   const destinations = bundle?.destinations ?? [];
+
+  // Only the specialties with no dish card of their own — a chip repeating the card above it is
+  // the card again in smaller type. The Worker settles which is which on the Vietnamese base
+  // names, because no two locales write the pair the same way (src/lib/food/specialtyJoin.ts).
+  // A cached bundle from before that join carries no answer; the shim there is the old guess, so
+  // a stale response is never worse than what it used to be.
+  const chips =
+    content?.specialtiesWithoutDish ??
+    chipsBeforeJoin(content?.specialties ?? [], dishes?.map((d) => d.name) ?? []);
 
   // No province ever had its own `province-<slug>` photo, so every one of these banners was an
   // illustrated gradient. Borrow the hero of the province's first photographed destination —
@@ -96,7 +106,7 @@ export function ProvincePanel({ slug }: { slug: string }) {
             <p className="text-sm leading-relaxed text-foreground/85">{content.story}</p>
           </Section>
 
-          {((dishes?.length ?? 0) > 0 || content.specialties.length > 0) && (
+          {((dishes?.length ?? 0) > 0 || chips.length > 0) && (
             <Section index={3} title={t("panel.specialties")}>
               {/* Food Explorer dishes (026 §Entry Points — start from the DISH, not the restaurant) */}
               {(dishes?.length ?? 0) > 0 && (
@@ -121,14 +131,12 @@ export function ProvincePanel({ slug }: { slug: string }) {
                 </div>
               )}
               <div className="flex flex-wrap gap-1.5">
-                {content.specialties
-                  .filter((s) => !dishes?.some((d) => s.toLowerCase().includes(d.name.toLowerCase())))
-                  .map((s) => (
-                    <span key={s} className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-xs text-foreground/85">
-                      <Utensils size={12} className="text-accent" />
-                      {s}
-                    </span>
-                  ))}
+                {chips.map((s) => (
+                  <span key={s} className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-xs text-foreground/85">
+                    <Utensils size={12} className="text-accent" />
+                    {s}
+                  </span>
+                ))}
               </div>
             </Section>
           )}
