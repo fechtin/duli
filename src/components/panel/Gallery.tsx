@@ -1,16 +1,18 @@
 import { IllustratedImage, hasPhoto } from "@/components/ui/IllustratedImage";
-import { galleryFor } from "@/lib/media/gallery";
+import type { Tile } from "@/lib/media/gallery";
 import { useUIStore } from "@/lib/store/useUIStore";
-import { useI18n, useT } from "@/lib/i18n";
+import { useT } from "@/lib/i18n";
 
-/** Asymmetric gallery (Bible 007 §17 — masonry feel, not a uniform grid). */
-export function Gallery({ destId, destName }: { destId: string; destName: string }) {
+/**
+ * Asymmetric gallery (Bible 007 §17 — masonry feel, not a uniform grid).
+ *
+ * Ô nào có là việc của manifest, và ảnh bìa đã bị `galleryFor` loại ra rồi — xem
+ * src/lib/media/gallery.ts.
+ */
+export function Gallery({ tiles }: { tiles: Tile[] }) {
   const t = useT();
-  const { locale } = useI18n();
   const openLightbox = useUIStore((s) => s.openLightbox);
 
-  // Which tiles exist is the manifest's call, not D1's — see src/lib/media/gallery.ts.
-  const tiles = galleryFor(destId, locale, destName);
   if (!tiles.length) return null;
 
   // Only photographed tiles open the viewer, and the viewer only ever pages through those:

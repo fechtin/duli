@@ -18,7 +18,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { MapLinks } from "@/components/ui/MapLinks";
 import { AISummary } from "./AISummary";
 import { Gallery } from "./Gallery";
-import { galleryFor } from "@/lib/media/gallery";
+import { galleryFor, heroSeedFor } from "@/lib/media/gallery";
 import { Section, InfoRow, Divider } from "./primitives";
 import { HeartbeatSection } from "./HeartbeatSection";
 
@@ -46,13 +46,15 @@ export function DestinationPanel({ id }: { id: string }) {
   const nearby = dest.nearby
     .map((nid) => allDestinations.find((x) => x.id === nid))
     .filter((d): d is NonNullable<typeof d> => Boolean(d));
+  // Ảnh bìa là ô đầu tiên; thư viện bên dưới là phần còn lại, nên không tấm nào hiện hai lần.
+  const galleryTiles = galleryFor(dest.id, locale, dest.name);
 
   return (
     <div>
       {/* 1. Hero + 2. Name */}
       <div className="relative">
         <IllustratedImage
-          seed={galleryFor(dest.id, locale, dest.name)[0]?.seed ?? dest.id}
+          seed={heroSeedFor(dest.id) ?? dest.id}
           ratio="4/3"
           rounded={false}
           className="md:rounded-none"
@@ -117,10 +119,12 @@ export function DestinationPanel({ id }: { id: string }) {
         <MapLinks place={{ id: dest.id, name: dest.nameEn || dest.name, lng: dest.lng, lat: dest.lat }} />
       </div>
 
-      {/* 5. Gallery */}
-      <Section index={2} title={t("panel.gallery")}>
-        <Gallery destId={dest.id} destName={dest.name} />
-      </Section>
+      {/* 5. Gallery — chỉ khi còn ảnh ngoài ảnh bìa; một tiêu đề rỗng không phục vụ ai. */}
+      {galleryTiles.length > 0 && (
+        <Section index={2} title={t("panel.gallery")}>
+          <Gallery tiles={galleryTiles} />
+        </Section>
+      )}
 
       <Divider />
 

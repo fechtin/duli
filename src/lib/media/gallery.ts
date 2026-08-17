@@ -56,16 +56,24 @@ export interface Tile {
   alt: string;
 }
 
+/** Ảnh bìa: ô đầu tiên. Panel dựng hero từ đúng seed này. */
+export function heroSeedFor(destId: string): string | null {
+  return byDest().get(destId)?.[0] ?? null;
+}
+
 /**
- * Các ô ảnh của một điểm đến — đúng bằng số ảnh có thật, không hơn.
+ * Các ô của thư viện ảnh — đúng bằng số ảnh có thật, TRỪ ảnh bìa.
  *
- * `legacyCaptions` là mảng gallery từ D1, dùng DUY NHẤT để mượn caption cho ảnh cũ chưa có
- * caption riêng. Nó không bao giờ thêm được một ô nào.
+ * Ô đầu tiên đã hiện to hết chiều ngang ở đầu panel rồi; lặp lại nó ngay bên dưới chỉ tốn một
+ * màn hình cuộn để nói lại điều người đọc vừa thấy. Điểm đến chỉ có một ảnh thì không có thư
+ * viện — và panel bỏ luôn mục đó thay vì để lại một tiêu đề rỗng.
+ *
+ * Trần vẫn tính cả ảnh bìa: tối đa MAX_TILES ảnh cho một điểm đến, 1 bìa + phần còn lại.
  */
 export function galleryFor(destId: string, locale: Locale, destName: string): Tile[] {
   const seeds = byDest().get(destId);
   if (!seeds?.length) return [];
-  return seeds.slice(0, MAX_TILES).map((seed) => {
+  return seeds.slice(1, MAX_TILES).map((seed) => {
     const c = images[seed]?.caption;
     const caption = c?.[locale] ?? c?.vi ?? c?.en ?? "";
     return { seed, caption, alt: caption || destName };
