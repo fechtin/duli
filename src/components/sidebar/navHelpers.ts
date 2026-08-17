@@ -88,6 +88,8 @@ const CALENDAR_DESTINATION: Record<string, string> = {
   "hoi-an-old-town": "hoi-an-ancient-town",
   "nha-trang-coast": "nha-trang-beach",
   "ninh-binh-trang-an": "trang-an",
+  // Chùa Hương in Hà Nội — NOT `chua-huong-tich`, a different pagoda 230km south in Hà Tĩnh.
+  "perfume-pagoda": "chua-huong",
   // The Katê entry names the tower the festival is actually held at.
   "phan-rang-ninh-thuan": "ntn-po-klong-garai",
   "phan-thiet-coast": "mui-ne-sand-dunes",
@@ -105,15 +107,10 @@ const CALENDAR_PROVINCE: Record<string, string> = {
   "ho-chi-minh-city": "ho-chi-minh",
 };
 
-/**
- * Last resort for a calendar id with no destination behind it. Chùa Hương (Mỹ Đức, Hà Nội) is
- * the only one left — the authoring data has Chùa Hương Tích in Hà Tĩnh, a different pagoda
- * 230km south, so the near-miss name must not be mapped. Its card flies the map and opens
- * nothing, which is honest rather than wrong.
- */
-const CALENDAR_COORDS: Record<string, { lng: number; lat: number }> = {
-  "perfume-pagoda": { lng: 105.75, lat: 20.62 },
-};
+// A hand-kept coordinate table used to live here as a third fallback. It is gone: every living
+// id now reaches a destination or a province, and a table that only moves the camera is exactly
+// what shadowed `selectDestination` in the first place. A new calendar id belongs in one of the
+// two maps above — or needs a destination authored for it, which is what `perfume-pagoda` got.
 
 // Verified image-manifest seeds for living-calendar ids (their own id namespace has no photos).
 // Ids omitted here have no correct Commons photo yet → the card keeps the clean gradient.
@@ -127,7 +124,10 @@ const CALENDAR_SEEDS: Record<string, string> = {
   "moc-chau-plateau": "mocchau-1",
   "mu-cang-chai-terraces": "mu-cang-chai-terraces-1",
   "nha-trang-coast": "nhatrang-1",
-  "perfume-pagoda": "huong-tich-chua-co",
+  // `perfume-pagoda` used to sit here pointing at "huong-tich-chua-co" — a photo of Chùa Hương
+  // Tích in Hà Tĩnh, captioned "Chùa cổ giữa rừng Hồng Lĩnh". The Chùa Hương festival card was
+  // showing a different pagoda 230km away. No seed is better than the wrong subject; the new
+  // `chua-huong` destination has empty seeds waiting for a reviewed photo.
   "phu-quoc-island": "phuquoc-1",
   "sapa-terraces": "sapa-1",
 };
@@ -225,8 +225,8 @@ export function focusPoint(lng: number, lat: number, zoom = 7): void {
 
 /**
  * "Show me this" for a destination id coming from the living calendars or content: open the
- * panel that describes it, and fly the map there. Falls back to a bare camera move only when
- * no panel can honestly be opened for the id.
+ * panel that describes it, and fly the map there. Every living-calendar id reaches one; the
+ * `reset()` at the end is for an id from nowhere, not a documented gap.
  */
 export function focusDestinationById(id: string, country: CountryCode = "vn"): void {
   if (country === "kr") {
@@ -246,18 +246,12 @@ export function focusDestinationById(id: string, country: CountryCode = "vn"): v
     return useUIStore.getState().setSidebarMobileOpen(false);
   }
 
-  // Resolve the destination BEFORE any coordinate table. The old order asked the coordinates
-  // first and returned on a hit, so even ids the authoring data does have — da-lat-city,
-  // ha-long-bay — skipped `selectDestination`: every card moved the map and opened nothing.
   const destId = CALENDAR_DESTINATION[id] ?? id;
   const dest = destinations.find((d) => d.id === destId || d.slug === destId);
   if (dest) {
     useMapStore.getState().selectDestination(dest.id, dest.provinceSlug);
     return focusPoint(dest.lng, dest.lat);
   }
-
-  const cal = CALENDAR_COORDS[id];
-  if (cal) return focusPoint(cal.lng, cal.lat);
 
   useMapStore.getState().reset();
   useUIStore.getState().setSidebarMobileOpen(false);

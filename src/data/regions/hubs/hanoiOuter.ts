@@ -230,4 +230,53 @@ export const hanoiOuterDestinations: Destination[] = [
     sourceUrl: "https://www.openstreetmap.org/relation/18772124",
     verifiedAt: "2026-08-16",
   },
+  {
+    // Do not confuse with `chua-huong-tich` in Hà Tĩnh (northCentral.ts) — a different pagoda
+    // 230km south whose name is one word longer. tasks/039-coords.json already rejected an OSM
+    // match on that basis once, and the festival card here pointed at its photos until now.
+    id: "chua-huong",
+    slug: "chua-huong",
+    provinceSlug: "ha-noi",
+    name: "Chùa Hương",
+    nameEn: "Perfume Pagoda",
+    type: "temple",
+    lng: 105.7497,
+    lat: 20.6225,
+    summary:
+      "Quần thể chùa và động rải khắp vùng núi Hương Sơn, bắt đầu bằng một chặng đò trên suối Yến chứ không bằng đường bộ.",
+    story:
+      "Chùa Hương không phải một ngôi chùa mà là cả một vùng: hàng chục chùa, động và đền nằm rải trong núi Hương Sơn, và cách vào là xuống đò ở bến Đục rồi trôi trên suối Yến. Chặng đò ấy là thứ khiến nơi này khác mọi ngôi chùa khác — hai bên là núi đá dựng lên từ đồng nước, người chèo đứng phía sau, và cả đoạn đường không có tiếng động cơ nào. Đò cập bến rồi đường lên mới chia nhánh: chùa Thiên Trù nằm ở lưng chừng, còn động Hương Tích, chỗ được xem là trung tâm của cả quần thể, nằm cao hơn nữa, leo bộ hoặc đi cáp treo. Vào hội, dòng người kéo dài từ bến đò lên tận cửa động và đi một đoạn ngắn cũng mất hàng giờ; ngoài hội, vẫn con đường đó lại thành một buổi đi núi yên tĩnh.",
+    facts: [
+      "Đây là một quần thể gồm nhiều chùa, động và đền ở xã Hương Sơn, Hà Nội, không phải một công trình đơn lẻ.",
+      "Động Hương Tích được xem là trung tâm của quần thể, nằm cao hơn chùa Thiên Trù.",
+      "Lễ hội chùa Hương khai hội ngày mồng sáu tháng giêng và kéo đến hạ tuần tháng ba âm lịch.",
+      "Cao điểm của hội là từ sau Tết Nguyên Đán đến hết tháng hai âm lịch.",
+      "Quần thể được xếp hạng di tích quốc gia đặc biệt năm 2017, theo Quyết định 2082/QĐ-TTg.",
+      "Ngoài Thiên Trù và Hương Tích, quần thể còn có đền Trình Ngũ Nhạc, chùa Giải Oan, đền Cửa Võng, chùa Tiên Sơn và chùa Hinh Bồng.",
+    ],
+    travelTips: [
+      "Đi ngoài mùa hội nếu muốn yên tĩnh — vẫn chặng đò ấy và vẫn con đường lên động, nhưng vắng người.",
+      "Có cáp treo lên động Hương Tích; leo bộ một chiều rồi đi cáp chiều còn lại là cách nhiều người chọn.",
+    ],
+    bestTime: "Tháng giêng đến tháng ba âm lịch nếu muốn xem hội, còn lại đẹp nhất vào mùa thu",
+    visitDuration: "Cả ngày",
+    // No price asserted: "" would mean free, and this is not. Wikidata carries no fee, so the
+    // shape of the cost is described and the number left to the reader (see Destination.sourceUrl).
+    ticket: "Vé thắng cảnh và vé đò tính riêng, cáp treo mua thêm",
+    openingHours: "Ban ngày, theo giờ chạy đò trên suối Yến",
+    badges: ["verified", "popular", "festival"],
+    tags: ["temple", "cave", "mountain", "nature", "history", "culture"],
+    // Captions are left empty on purpose. These seeds have no photo yet, and a caption written
+    // before the photo exists is precisely what produced the 109 mismatched tiles that 044 had
+    // to split apart. The reviewer writes the caption onto the photo at approval time.
+    gallery: [
+      { seed: "chua-huong-1", caption: "", ratio: "16/9" },
+      { seed: "chua-huong-2", caption: "", ratio: "4/3" },
+      { seed: "chua-huong-3", caption: "", ratio: "1/1" },
+    ],
+    nearby: ["hn-tam-chuc"],
+    sourceUrl: "https://www.wikidata.org/wiki/Q7168306",
+    verifiedAt: "2026-08-17",
+    featured: true,
+  },
 ];

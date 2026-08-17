@@ -26,14 +26,6 @@ const LIVING_IDS = [
   ]),
 ].sort();
 
-/**
- * Ids allowed to move the camera without opening a panel, because no destination honestly
- * matches them. Chùa Hương (Mỹ Đức, Hà Nội) is the only one: the authoring data has Chùa Hương
- * Tích in Hà Tĩnh, a different pagoda 230km south, so the near-miss name must not be mapped.
- * Add a destination rather than an entry here.
- */
-const CAMERA_ONLY = new Set(["perfume-pagoda"]);
-
 describe("focusDestinationById", () => {
   beforeEach(() => {
     useMapStore.setState({ selectedProvince: null, selectedDestination: null });
@@ -51,10 +43,8 @@ describe("focusDestinationById", () => {
     // the whole-country view. No living-calendar id may land there.
     expect(focusRequest.target.kind).not.toBe("reset");
 
-    if (CAMERA_ONLY.has(id)) {
-      expect(selectedDestination).toBeNull();
-      return;
-    }
+    // No exemptions. An id with nothing to open needs a destination authored for it — which is
+    // what perfume-pagoda (Chùa Hương) got — not a coordinate that only moves the camera.
     expect(selectedDestination ?? selectedProvince).not.toBeNull();
   });
 });
