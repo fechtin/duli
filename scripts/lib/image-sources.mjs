@@ -486,59 +486,90 @@ export async function openverse(term, opts = {}) {
  * the illustrated placeholder, which is the honest outcome.
  *   PEXELS_API_KEY      → https://www.pexels.com/api/
  *   UNSPLASH_ACCESS_KEY → https://unsplash.com/developers
- * Both licences require attribution, which is why `credit` is always recorded.
+ *
+ * Neither licence actually *requires* attribution — both only encourage it. `credit` is still
+ * always recorded, because the gallery names its photographers and a record with no author is
+ * one we cannot repair later; 2026-06-27 cost us 100 of them.
+ *
+ * What these licences do NOT give is any guarantee the photo is of the place it was filed under.
+ * Stock titles are written for search ranking, so this source belongs LAST in the chain and its
+ * picks want a human eye — see PROPOSE mode in fetch-images.mjs.
  */
-export async function stock(term, opts = {}) {
+export async function stockAll(term, opts = {}, max = 1) {
+  const out = [];
   const pexelsKey = process.env.PEXELS_API_KEY;
   if (pexelsKey) {
+    // `wide: false` bỏ ràng buộc hướng ảnh. Ô gallery vuông hoặc 4/3 và lightbox nhận mọi tỉ lệ,
+    // nên loại thẳng ảnh dọc là vứt đi phần lớn ảnh hang động và tháp — thứ vốn hay chụp dọc.
+    const orient = opts.wide === false ? "" : "&orientation=landscape";
     const d = await getJson(
-      `https://api.pexels.com/v1/search?query=${encodeURIComponent(term)}&per_page=15&orientation=landscape`,
+      `https://api.pexels.com/v1/search?query=${encodeURIComponent(term)}&per_page=15${orient}`,
       { tries: 2, headers: { Authorization: pexelsKey } },
     );
     for (const p of d?.photos ?? []) {
-      if (!usableImage({ width: p.width, height: p.height })) continue;
+      if (out.length >= max) break;
+      if (opts.wide !== false && !usableImage({ width: p.width, height: p.height })) continue;
+      // `ratio: 0` tắt hẳn phép so tên. Chỉ dùng ở đường CÓ NGƯỜI DUYỆT: bộ lọc này sinh ra để
+      // chặn máy chọn bậy khi không ai xem, nhưng Pexels đã tự xếp hạng liên quan bằng tag, vị
+      // trí và nhãn máy — so vài token trong `alt` chỉ vứt bỏ công đó. Đo trên "Phong Nha Cave
+      // Quang Binh": nó loại 12/15 tấm, mà 12 tấm ấy phần lớn đúng là Phong Nha.
       if (!titleMatches(term, p.alt ?? "", opts.ratio ?? 0.5)) continue;
-      return {
-        url: p.src?.large2x ?? p.src?.large ?? p.src?.original,
+      out.push({
+        url: p.src?.original ?? p.src?.large2x ?? p.src?.large,
+        // Bản xem trước để trang duyệt hotlink thẳng từ CDN Pexels — không tải gì về đĩa cho tới
+        // khi ảnh được duyệt. Nhờ vậy PROPOSE chỉ còn là mấy lời gọi API.
+        preview: p.src?.large ?? p.src?.medium ?? p.src?.original,
         file: null,
         sourceTitle: p.alt ?? `Pexels ${p.id}`,
         sourceUrl: p.url,
         via: "pexels",
         credit: p.photographer ?? "",
         license: "Pexels License",
-      };
+        width: p.width,
+      });
     }
   }
 
   const unsplashKey = process.env.UNSPLASH_ACCESS_KEY;
-  if (unsplashKey) {
+  if (unsplashKey && out.length < max) {
     const d = await getJson(
       `https://api.unsplash.com/search/photos?query=${encodeURIComponent(term)}&per_page=15&orientation=landscape`,
       { tries: 2, headers: { Authorization: `Client-ID ${unsplashKey}` } },
     );
     for (const p of d?.results ?? []) {
+      if (out.length >= max) break;
       if (!usableImage({ width: p.width, height: p.height })) continue;
       const alt = `${p.alt_description ?? ""} ${p.description ?? ""}`;
       if (!titleMatches(term, alt, opts.ratio ?? 0.5)) continue;
-      // Unsplash API terms require pinging the download endpoint when a photo is used.
-      if (p.links?.download_location) {
-        await fetch(p.links.download_location, {
-          headers: { "User-Agent": UA, Authorization: `Client-ID ${unsplashKey}` },
-        }).catch(() => {});
-      }
-      return {
-        url: p.urls?.regular ?? p.urls?.full,
+      out.push({
+        url: p.urls?.full ?? p.urls?.regular,
         file: null,
         sourceTitle: (p.alt_description ?? `Unsplash ${p.id}`).slice(0, 120),
         sourceUrl: p.links?.html ?? "",
         via: "unsplash",
         credit: p.user?.name ?? "",
         license: "Unsplash License",
-      };
+        width: p.width,
+        // Unsplash asks that this be pinged when a photo is actually USED, not when it merely
+        // turns up in a search. Carried on the pick so the caller can fire it on approval —
+        // reporting five downloads for one kept photo would be a false count.
+        downloadPing: p.links?.download_location ?? null,
+      });
     }
   }
 
-  return null;
+  return out;
+}
+
+/** Single best stock hit, for the automatic path. */
+export async function stock(term, opts = {}) {
+  const [first] = await stockAll(term, opts, 1);
+  if (first?.downloadPing) {
+    await fetch(first.downloadPing, {
+      headers: { "User-Agent": UA, Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}` },
+    }).catch(() => {});
+  }
+  return first ?? null;
 }
 
 export const stockAvailable = () => Boolean(process.env.PEXELS_API_KEY || process.env.UNSPLASH_ACCESS_KEY);

@@ -14,6 +14,11 @@ scripts/.image-state.json
 # Held by a running scripts/fetch-images.mjs so a second fetcher cannot start.
 scripts/.images.lock
 
+# Hàng đợi duyệt ảnh. Ứng viên KHÔNG được tải về — trang duyệt hotlink thẳng từ CDN của nguồn,
+# và chỉ tấm được duyệt mới tải, qua thư mục tạm bên dưới rồi vào public/img/.
+tasks/review-queue.json
+public/img/_tmp/
+
 # Incremental-build cache. Tracked by mistake until 2026-08-16: it is rewritten by every
 # `tsc -b`, so it turned up dirty in `git status` on every branch and every session, and its
 # diffs are machine noise nobody can review.

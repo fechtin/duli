@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils/cn";
 import manifest from "@/data/generated/image-manifest.json";
+import type { Locale } from "@/lib/i18n/dictionaries";
 import { AmbientVideo } from "./AmbientVideo";
 import { ambientClip } from "@/lib/media/videoManifest";
 
@@ -12,11 +13,36 @@ import { ambientClip } from "@/lib/media/videoManifest";
 // It is opt-in rather than automatic because decode slots are scarce: thumbnails and gallery
 // tiles must not compete with the hero for them.
 
-const images = manifest as Record<string, { src: string; credit: string; license: string }>;
+export interface PhotoMeta {
+  src: string;
+  credit: string;
+  license: string;
+  sourceUrl?: string;
+  /** A 2048px variant exists at /img/lg/<seed>.webp — fetched only when the lightbox opens. */
+  lg?: boolean;
+  /**
+   * Caption written FOR THIS PHOTO at review time, in whatever locales we have.
+   *
+   * The older model put the caption on the gallery *slot*: authored first, in D1, in five
+   * index-aligned arrays, describing a photo that did not exist yet. That is what produced 109
+   * tiles whose caption described something the photo did not show. A caption that belongs to
+   * the photo cannot drift from it, and it lives here — static, no reseed.
+   *
+   * Partial on purpose: `worker/db.ts` already falls back per index, and so does `photoCaption`.
+   */
+  caption?: Partial<Record<Locale, string>>;
+}
+
+const images = manifest as Record<string, PhotoMeta>;
 
 /** Does this seed have a real photo behind it? Lets callers pick a seed that will actually render. */
 export function hasPhoto(seed: string | undefined | null): boolean {
   return !!seed && !!images[seed];
+}
+
+/** Everything known about a seed's photo: source, attribution, whether a zoomable variant exists. */
+export function photoMeta(seed: string | undefined | null): PhotoMeta | undefined {
+  return seed ? images[seed] : undefined;
 }
 
 /** First seed in `seeds` that has a real photo, else the first entry (illustrated fallback). */
@@ -46,7 +72,14 @@ function hashString(s: string): number {
 interface Props {
   seed: string;
   ratio?: "16/9" | "4/3" | "1/1";
+  /** Chữ HIỆN dưới ảnh. Bỏ trống khi ta không chắc câu đó tả đúng tấm này. */
   caption?: string;
+  /**
+   * Chữ cho screen reader và Google Images. Luôn nên có, kể cả khi `caption` rỗng — mất nó là
+   * mất khả năng truy cập và mất tín hiệu tìm kiếm, mà nó thì không bao giờ cần phải đoán:
+   * tên điểm đến luôn đúng.
+   */
+  alt?: string;
   className?: string;
   rounded?: boolean;
   /**
@@ -62,6 +95,7 @@ export function IllustratedImage({
   seed,
   ratio = "16/9",
   caption,
+  alt,
   className,
   rounded = true,
   ambient = false,
@@ -110,7 +144,7 @@ export function IllustratedImage({
       {photo && (
         <img
           src={photo.src}
-          alt={caption ?? ""}
+          alt={alt ?? caption ?? ""}
           loading="lazy"
           decoding="async"
           onLoad={() => setLoaded(true)}
@@ -129,10 +163,14 @@ export function IllustratedImage({
           video: the illustrated fallback stays honest (030 §3). */}
       {clip && photo && <AmbientVideo id={seed} sources={clip} posterReady={loaded} priority={ambientPriority} />}
 
-      {caption && (
+      {(caption || photo?.credit) && (
         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 text-xs font-medium text-white/95">
           {caption}
-          {photo?.credit && <span className="ml-1 font-normal text-white/65">· © {photo.credit}</span>}
+          {photo?.credit && (
+            <span className={cn("font-normal text-white/65", caption && "ml-1")}>
+              {caption && "· "}© {photo.credit}
+            </span>
+          )}
         </figcaption>
       )}
     </figure>

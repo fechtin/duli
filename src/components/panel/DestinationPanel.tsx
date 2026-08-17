@@ -18,6 +18,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { MapLinks } from "@/components/ui/MapLinks";
 import { AISummary } from "./AISummary";
 import { Gallery } from "./Gallery";
+import { galleryFor } from "@/lib/media/gallery";
 import { Section, InfoRow, Divider } from "./primitives";
 import { HeartbeatSection } from "./HeartbeatSection";
 
@@ -51,7 +52,7 @@ export function DestinationPanel({ id }: { id: string }) {
       {/* 1. Hero + 2. Name */}
       <div className="relative">
         <IllustratedImage
-          seed={dest.gallery[0]?.seed ?? dest.id}
+          seed={galleryFor(dest.id, locale, dest.name)[0]?.seed ?? dest.id}
           ratio="4/3"
           rounded={false}
           className="md:rounded-none"
@@ -118,7 +119,7 @@ export function DestinationPanel({ id }: { id: string }) {
 
       {/* 5. Gallery */}
       <Section index={2} title={t("panel.gallery")}>
-        <Gallery images={dest.gallery} />
+        <Gallery destId={dest.id} destName={dest.name} />
       </Section>
 
       <Divider />

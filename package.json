@@ -23,13 +23,16 @@
     "images:fetch": "node --experimental-strip-types scripts/fetch-images.mjs",
     "images:dishes": "node --experimental-strip-types scripts/fetch-dish-images.mjs",
     "images:thumbs": "node scripts/build-thumbs.mjs",
+    "images:propose": "PROPOSE=1 node --env-file-if-exists=.env --experimental-strip-types scripts/fetch-images.mjs",
+    "review": "node scripts/review-server.mjs",
     "maps:naver": "node --experimental-strip-types scripts/resolve-naver-places.mjs",
     "maps:google": "node --env-file-if-exists=.env --experimental-strip-types scripts/resolve-google-places.mjs",
     "verify:seo": "node scripts/verify-locale-urls.mjs",
     "verify:kr": "node --experimental-strip-types scripts/verify-content.mjs kr",
     "verify:vn": "node --experimental-strip-types scripts/verify-content.mjs vn",
     "db:setup": "wrangler d1 migrations apply atlas_db --local && wrangler d1 execute atlas_db --local --file=db/seed.sql",
-    "sweep:trips": "node --experimental-strip-types scripts/sweep-itineraries.mjs"
+    "sweep:trips": "node --experimental-strip-types scripts/sweep-itineraries.mjs",
+    "captions": "node scripts/apply-captions.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

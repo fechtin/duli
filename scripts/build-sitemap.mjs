@@ -123,7 +123,13 @@ const entries = [];
 let homeDate = null;
 
 const imagesOf = (d) =>
-  (d.gallery ?? []).map((g) => IMAGES[g.seed]?.src).filter(Boolean).map((src) => `${SITE}${src}`);
+  // Ảnh của một điểm đến lấy từ MANIFEST, không từ mảng `gallery` — từ 044 mảng đó không còn
+  // quyết định thư viện nữa. Đọc nhầm nguồn thì sitemap bỏ sót đúng những ảnh vừa được duyệt:
+  // 925 thay vì 1124, tức 200 tấm mới vô hình với Google Images.
+  Object.entries(IMAGES)
+    .filter(([, v]) => v.dest === d.id)
+    .sort((a, b) => (a[1].order ?? 0) - (b[1].order ?? 0))
+    .map(([, v]) => `${SITE}${v.src}`);
 
 let skipped = 0;
 for (const { cc, geo, destinations: allDests, dishes: allDishes, sources } of ATLASES) {

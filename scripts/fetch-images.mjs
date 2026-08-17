@@ -27,6 +27,12 @@
 //   REFETCH=scripts/.refetch-seeds.json  → re-fetch exactly the listed seeds (overwrite)
 //   FORCE=1                              → re-fetch every seed
 //   DRY=1                                → resolve and report, download nothing, write nothing
+//
+// Chế độ có người duyệt (xem scripts/review-server.mjs):
+//   PROPOSE=1                            → gom ứng viên, KHÔNG tải ảnh, ghi tasks/review-queue.json
+//   PROPOSE=1 FEATURED=1                 → chỉ điểm `featured`, lô đáng làm trước
+//   PROPOSE=1 UPGRADE=1                  → đề xuất cả cho ô đã có ảnh, để thay bằng ảnh đẹp hơn
+//   PROPOSE=1 ALL_SOURCES=1              → bật lại chuỗi free-culture (mặc định chỉ Pexels)
 
 import { writeFileSync, mkdirSync, existsSync, readFileSync, unlinkSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -36,7 +42,7 @@ import { destinations } from "../src/data/destinations.ts";
 import { destinationsKr } from "../src/data/kr/index.ts";
 import {
   wikiTitle, wikiLead, wikidataImage, commonsCategory, commonsGeo, commonsSearch, openverse,
-  commonsAttribution, downloadWebp, sleep, tokens,
+  commonsAttribution, downloadWebp, sleep, tokens, titleMatches, stock, stockAll, stockAvailable,
 } from "./lib/image-sources.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -120,17 +126,23 @@ function geoCue(d) {
   return new RegExp(words.join("|"), "i");
 }
 
-/** Candidate sources for one destination, cheapest and most trustworthy first. */
-function stepsFor(d) {
+/**
+ * Candidate sources for one destination, cheapest and most trustworthy first.
+ *
+ * `ratio` loosens `titleMatches` for PROPOSE mode. Only loosen it there: the automatic path has
+ * no reviewer, so it keeps the strict threshold that stopped a Welsh farmhouse becoming Y Tý.
+ */
+function stepsFor(d, { ratio } = {}) {
   const prov = provinceEn.get(d.provinceSlug) ?? atlas.countryEn;
   const cue = geoCue(d);
-  const free = cue ? { ...opts, cue } : opts; // free-text sources, optionally geo-anchored
+  const base = ratio === undefined ? opts : { ...opts, ratio };
+  const free = cue ? { ...base, cue } : base; // free-text sources, optionally geo-anchored
   const steps = [];
   // Exact article title needs no name validation — it cannot be about something else — and it
   // uses the REST endpoint, which keeps answering when w/api.php is throttled.
   for (const lang of atlas.wikiLangs) steps.push(() => wikiTitle(lang, d.nameEn, opts));
   steps.push(() => wikiTitle(atlas.wikiLangs[1], d.name, opts));
-  for (const lang of atlas.wikiLangs) steps.push(() => wikiLead(lang, `${d.nameEn} ${prov}`, opts));
+  for (const lang of atlas.wikiLangs) steps.push(() => wikiLead(lang, `${d.nameEn} ${prov}`, free));
   // Curated pick, and the only step that validates on a fact (P17) rather than on the title.
   steps.push(() => wikidataImage(d.nameEn, { ...opts, country: atlas.qid, langs: atlas.wikiLangs }));
   steps.push(() => commonsCategory(d.nameEn, free));
@@ -139,13 +151,22 @@ function stepsFor(d) {
   steps.push(() => commonsSearch(d.nameEn, free));
   steps.push(() => openverse(`${d.nameEn} ${prov}`, free));
   steps.push(() => openverse(d.nameEn, free));
+  // Stock is LAST on purpose. Its licence is the most permissive we can get, but a stock title
+  // is written to be found, not to be true, so it must never outrank a free-culture file that
+  // actually names the place. Query in English with the province: Pexels files Vietnamese
+  // subjects under English captions, and "Ba Na Hills Da Nang" returned 6 correctly-named hits
+  // out of 8 where the bare name returned scenery.
+  if (stockAvailable()) {
+    steps.push(() => stock(`${d.nameEn} ${prov}`, free));
+    steps.push(() => stock(d.nameEn, free));
+  }
   return steps;
 }
 
 /** Walk the chain collecting up to `need` distinct picks nothing else has claimed. */
-async function collect(d, need, used) {
+async function collect(d, need, used, stepOpts) {
   const picks = [];
-  for (const step of stepsFor(d)) {
+  for (const step of stepsFor(d, stepOpts)) {
     if (picks.length >= need) break;
     let pick = null;
     try {
@@ -161,6 +182,78 @@ async function collect(d, need, used) {
   return picks;
 }
 
+// ── PROPOSE mode ─────────────────────────────────────────────────────────────
+// The automatic path has to be certain, so it rejects anything it cannot prove and leaves the
+// seed empty — which is why 66 seeds are still empty and why they are the hard tail. With a
+// human reviewer the trade inverts: gather generously, let a person pick. Everything below
+// only runs under PROPOSE=1 and writes nothing into the manifest.
+
+/** Trần ảnh mỗi điểm đến — giữ khớp với MAX_TILES trong src/lib/media/gallery.ts. */
+const MAX_TILES = 10;
+
+/** How generous to be. 0.34 lets a one-in-three token match through; strict is 1.0 / 0.6. */
+const PROPOSE_RATIO = 0.34;
+const PROPOSE_MAX = 5;
+/**
+ * URL the review grid hotlinks. Never the original file: a Commons original can be tens of MB,
+ * and pulling a dozen of those per screen is slow for the reviewer and rude to Wikimedia.
+ * `Special:FilePath?width=` is the documented resize redirect and works for any file we know the
+ * name of; stock sources already hand us a sized CDN URL.
+ */
+function previewUrl(pick) {
+  if (pick.preview) return pick.preview;
+  const file = pick.file || (pick.sourceTitle?.startsWith("File:") ? pick.sourceTitle.slice(5) : null);
+  if (file) {
+    // Special:FilePath, KHÔNG phải URL thumb tự dựng trên CDN. Đường dẫn thumb tính được bằng
+    // md5 và tôi đã thử — nhưng CDN trả 400 khi ảnh gốc hẹp hơn bề rộng yêu cầu, vì nó từ chối
+    // phóng to. Special:FilePath gặp ca đó thì trả thẳng bản gốc, nên nó đúng cho mọi kích cỡ.
+    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/^File:/, ""))}?width=1200`;
+  }
+  return pick.url;
+}
+
+/**
+ * Cờ chỉ có ích khi nó PHÂN BIỆT được. Bản đầu dán "ảnh stock" lên mọi ứng viên và "không gọi
+ * đúng tên" lên 10/11 tấm — dán lên tất cả thì không còn là cờ, mắt người sẽ học cách lờ đi.
+ * Nên giữ đúng những dấu hiệu hiếm và đáng dừng lại.
+ */
+function suspicions(d, pick) {
+  const flags = [];
+  const alt = pick.sourceTitle ?? "";
+  const foldAlt = alt.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
+
+  // Dấu hiệu MẠNH nhất: tiêu đề gọi tên một tỉnh khác. Đây là thứ đã đưa ảnh Ninh Bình và
+  // Bái Đính vào danh sách của Phong Nha.
+  const here = (provinceEn.get(d.provinceSlug) ?? "").toLowerCase();
+  for (const [slug, name] of provinceEn) {
+    if (slug === d.provinceSlug) continue;
+    const n = String(name).toLowerCase();
+    if (n.length > 4 && foldAlt.includes(n)) { flags.push(`tiêu đề nhắc tới ${name}, không phải ${provinceEn.get(d.provinceSlug)}`); break; }
+  }
+
+  // Slug của Pexels sinh từ tiêu đề lúc tải lên, `alt` có thể sửa sau — hai bên nói hai nước
+  // khác nhau là dấu hiệu gắn nhãn sai.
+  const other = (pick.sourceUrl ?? "").toLowerCase()
+    .match(/\b(thailand|cambodia|laos|china|indonesia|philippines|malaysia|myanmar|india|japan|korea)\b/);
+  if (other) flags.push(`đường dẫn nguồn nhắc tới ${other[1].toUpperCase()}`);
+
+  if (pick.via === "commons-geo") flags.push("chỉ khớp nhờ ở gần toạ độ");
+  if (pick.via === "commons-category-loose") flags.push("khớp tên CATEGORY, không phải tên ảnh");
+  if ((pick.width ?? 0) && pick.width < 1500) flags.push("nguồn nhỏ, phóng to sẽ mờ");
+  return flags;
+}
+
+/**
+ * Tiêu đề có gọi đúng tên điểm đến không — tín hiệu TÍCH CỰC, hiếm nên đáng làm nổi bật.
+ *
+ * Đòi ĐỦ token, không chấp nhận một nửa. Âm tiết tên riêng tiếng Việt ngắn và đụng nhau liên
+ * tục: "Phong Nha" tách ra `phong`+`nha`, và ở ngưỡng 0.5 thì một tấm chụp ở **Hải Phòng** khớp
+ * qua đúng chữ `phong` rồi được đánh dấu là đúng chỗ. Một nửa cái tên không phải là cái tên.
+ */
+function namesThePlace(d, pick) {
+  return titleMatches(d.nameEn, pick.sourceTitle ?? "", 1, opts);
+}
+
 // ── Entry ────────────────────────────────────────────────────────────────────
 const dry = process.env.DRY === "1";
 const force = process.env.FORCE === "1";
@@ -174,8 +267,11 @@ mkdirSync(OUT_DIR, { recursive: true });
 const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
 const fillFn = force ? () => true : refetchSeeds ? (s) => refetchSeeds.has(s) : (s) => !manifest[s];
 
-let places = atlas.destinations.filter((d) => (d.gallery ?? []).some((g) => fillFn(g.seed)));
+let places = atlas.destinations.filter((d) => (d.gallery ?? []).length);
 if (only) places = places.filter((d) => only.has(d.id));
+// Duyệt tay thì nên chia lô, và lô đáng làm trước là `featured`: chúng lên trang chủ nên mỗi ô
+// trống ở đó đắt hơn hẳn một ô trống ở điểm ít ai mở.
+if (process.env.FEATURED === "1") places = places.filter((d) => d.featured);
 if (limit) places = places.slice(0, limit);
 
 // Reserve source titles already kept, so a refetch never duplicates one onto another seed.
@@ -189,8 +285,110 @@ const releaseLock = () => { try { if (!dry) unlinkSync(LOCK); } catch {} };
 process.on("exit", releaseLock);
 process.on("SIGINT", () => { releaseLock(); process.exit(130); });
 
-const mode = dry ? "DRY" : force ? "FORCE all" : refetchSeeds ? `REFETCH ${refetchSeeds.size}` : "fill missing";
+const propose = process.env.PROPOSE === "1";
+const upgrade = process.env.UPGRADE === "1";
+const allSources = process.env.ALL_SOURCES === "1";
+const mode = propose
+  ? `PROPOSE ${allSources ? "mọi nguồn" : "chỉ Pexels"}${upgrade ? " · kể cả ô đã có ảnh" : ""}`
+  : dry ? "DRY" : force ? "FORCE all" : refetchSeeds ? `REFETCH ${refetchSeeds.size}` : "fill missing";
 console.log(`[fetch-images] ${cc.toUpperCase()} · ${places.length} destinations · ${mode}`);
+if (propose && !stockAvailable()) console.log("  · chưa có PEXELS_API_KEY — chỉ dùng nguồn free-culture");
+
+if (propose) {
+  const queuePath = r("tasks/review-queue.json");
+  const rejectedPath = r("tasks/review-rejected.json");
+  // A photo the reviewer already turned down must not come back next run. Keyed on sourceUrl
+  // because it is the one identifier stable across sources.
+  const rejected = new Set(existsSync(rejectedPath) ? JSON.parse(readFileSync(rejectedPath, "utf8")) : []);
+  // Place id từ batch 041. Trang địa điểm trên Google Maps là ảnh do khách chụp TẠI chỗ đó,
+  // nên nó là bằng chứng đối chiếu mạnh hơn hẳn một lượt tìm ảnh theo từ khoá.
+  const placesPath = r("src/data/generated/google-places.json");
+  const googlePlaces = existsSync(placesPath) ? JSON.parse(readFileSync(placesPath, "utf8")) : {};
+
+  const queue = [];
+  let done = 0;
+  for (const d of places) {
+    // UPGRADE cũng đề xuất cho ô ĐÃ CÓ ảnh, để một tấm Pexels đẹp hơn được đứng cạnh tấm đang
+    // dùng và người duyệt so trực tiếp. Không có nó thì chỉ lấp được chỗ trống, không nâng được
+    // chất lượng chỗ đã có.
+    // Chỗ trống tính theo SỐ ẢNH ĐÃ CÓ, không theo ô khai báo sẵn: seed chỉ là khoá, sinh ra khi
+    // duyệt. Điểm đến nào cũng nhận được tới MAX_TILES ảnh, kể cả điểm xưa nay chỉ có 2 ô.
+    const have = Object.values(manifest).filter((v) => v.dest === d.id);
+    const slots = upgrade ? MAX_TILES : MAX_TILES - have.length;
+    if (slots <= 0) continue;
+    const current = have
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+      .map((v) => ({ src: v.src, credit: v.credit, license: v.license, via: v.via }));
+
+    const prov = provinceEn.get(d.provinceSlug) ?? atlas.countryEn;
+    // Mặc định CHỈ Pexels: nó là nguồn có chiều sâu lựa chọn và ảnh gốc lớn, mà lại không dính
+    // nhịp giãn 1,1s của Wikimedia — một lượt 52 điểm rút từ ~70 phút xuống còn vài phút.
+    // ALL_SOURCES=1 bật lại chuỗi free-culture khi cần.
+    const free = allSources ? await collect(d, PROPOSE_MAX, used, { ratio: PROPOSE_RATIO }) : [];
+    // Hai truy vấn, hai ngôn ngữ: Pexels lập chỉ mục cả tiếng Việt (người dùng tìm "động phong
+    // nha" ra hàng loạt), và tên tiếng Anh kèm tỉnh bắt được nhóm ảnh do khách nước ngoài đặt tên.
+    // `ratio: 0` = không lọc theo tên; `wide: false` = nhận cả ảnh dọc. Cả hai chỉ đúng ở đây,
+    // nơi có người nhìn từng tấm.
+    const stockOpts = { ...opts, ratio: 0, wide: false };
+    const fromStock = stockAvailable()
+      ? [
+          ...(await stockAll(`${d.nameEn} ${prov}`, stockOpts, PROPOSE_MAX + 3)),
+          ...(await stockAll(d.name, stockOpts, PROPOSE_MAX + 3)),
+        ]
+      : [];
+    const seen = new Set();
+    const picks = [...free, ...fromStock]
+      .filter((p) => {
+        const key = p.sourceUrl || p.url;
+        if (rejected.has(key) || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      // Đủ để chọn cho mọi chỗ còn trống, cộng một ít dự phòng khi vài tấm bị loại.
+      .slice(0, Math.min(PROPOSE_MAX + slots, 12));
+
+    // Không tải gì ở bước này. Trang duyệt hotlink thẳng ảnh xem trước từ CDN của nguồn, và chỉ
+    // tấm được DUYỆT mới tải về. Trước đây mỗi ứng viên là một file 2048px trên đĩa: 52 điểm
+    // × 5 ứng viên ≈ 400 MB tạm cho một lượt mà phần lớn sẽ bị bỏ.
+    const candidates = [];
+    for (const pick of picks) {
+      if (pick.credit === undefined || pick.license === undefined) {
+        const attr = await commonsAttribution(pick.file);
+        pick.credit ??= attr.credit;
+        pick.license ??= attr.license;
+      }
+      candidates.push({
+        n: candidates.length + 1,
+        via: pick.via,
+        // `preview` chỉ để nhìn; `url` mới là thứ tải về khi duyệt.
+        preview: previewUrl(pick),
+        url: pick.url,
+        sourceTitle: pick.sourceTitle ?? "", sourceUrl: pick.sourceUrl ?? "",
+        credit: pick.credit ?? "", license: pick.license || "Wikimedia Commons",
+        srcWidth: pick.width ?? 0,
+        flags: suspicions(d, pick), named: namesThePlace(d, pick),
+      });
+    }
+
+    if (candidates.length) {
+      queue.push({
+        id: d.id, name: d.name, nameEn: d.nameEn,
+        province: provinceEn.get(d.provinceSlug) ?? "",
+        placeId: googlePlaces[d.id]?.id ?? null,
+        summary: d.summary ?? "", slots, current, candidates,
+      });
+    }
+    done++;
+    process.stdout.write(`\r  ${done}/${places.length} · ${queue.length} điểm có ứng viên  `);
+    await sleep(60);
+  }
+
+  writeFileSync(queuePath, JSON.stringify(queue, null, 1));
+  const total = queue.reduce((n, q) => n + q.candidates.length, 0);
+  console.log(`\n[fetch-images] ${queue.length} điểm đến · ${total} ứng viên → tasks/review-queue.json`);
+  console.log("  duyệt bằng:  npm run review");
+  process.exit(0);
+}
 
 const stats = { done: 0, images: 0, failed: 0, unfilled: [], via: {} };
 let sinceSave = 0;

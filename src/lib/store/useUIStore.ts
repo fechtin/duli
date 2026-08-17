@@ -34,6 +34,11 @@ interface UIState {
   settingsOpen: boolean;
   /** Destination id pending a check-in flow, or null. */
   checkinTarget: string | null;
+  /**
+   * Gallery lightbox: the tiles being viewed and which one is showing. Null when closed.
+   * Only tiles that actually have a photo are ever put here — a gradient has nothing to enlarge.
+   */
+  lightbox: { images: { seed: string; caption: string; alt: string }[]; index: number } | null;
   /** Map layers switched OFF. Empty = show everything (see `src/lib/map/layers.ts`). */
   hiddenMapLayers: string[];
 
@@ -47,6 +52,9 @@ interface UIState {
   setSettingsOpen: (v: boolean) => void;
   openCheckin: (destinationId: string) => void;
   closeCheckin: () => void;
+  openLightbox: (images: { seed: string; caption: string; alt: string }[], index: number) => void;
+  closeLightbox: () => void;
+  setLightboxIndex: (index: number) => void;
   toggleMapLayer: (layer: string) => void;
   showAllMapLayers: () => void;
 }
@@ -60,7 +68,15 @@ export const useUIStore = create<UIState>((set, get) => ({
   sidebarMobileOpen: false,
   settingsOpen: false,
   checkinTarget: null,
+  lightbox: null,
   hiddenMapLayers: initialHiddenLayers(),
+
+  openLightbox: (images, index) => set({ lightbox: { images, index } }),
+  closeLightbox: () => set({ lightbox: null }),
+  setLightboxIndex: (index) => {
+    const lb = get().lightbox;
+    if (lb) set({ lightbox: { ...lb, index } });
+  },
 
   toggleMapLayer: (layer) => {
     const hidden = get().hiddenMapLayers;

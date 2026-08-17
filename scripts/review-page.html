@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duyệt ảnh · FechTin Go</title>
+<style>
+  :root { color-scheme: dark; --bg:#111315; --card:#191c1f; --line:#2a2f34; --fg:#e8eaed; --mut:#9aa3ab;
+          --warn:#e0b341; --ok:#4bbf7b; --bad:#e0685a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+  header { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line); padding:14px 20px; }
+  h1 { margin:0; font-size:20px; }
+  .sub { color:var(--mut); font-size:13px; margin-top:2px; }
+  .wish { margin-top:10px; padding:9px 12px; border-left:3px solid var(--warn); background:#1d1a12; border-radius:0 6px 6px 0; }
+  .wish b { color:var(--warn); font-weight:600; }
+  .summary { color:var(--mut); font-size:13px; margin-top:8px; max-width:80ch; }
+  .refs { margin-top:10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:13px; }
+  .refs .dim { color:var(--mut); }
+  main { padding:18px 20px 90px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; }
+  .card.cur { border-color:var(--ok); }
+  .card.cur .title b { color:var(--ok); }
+  .card.cur.hero { border-color:#d9a13b; }
+  .card.cur.hero .title b { color:#d9a13b; }
+  .ord { display:flex; gap:6px; align-items:center; margin:0 12px 8px; }
+  .ord button { flex:1; padding:7px; border:1px solid var(--line); border-radius:6px;
+                background:#22262a; color:var(--fg); font-size:14px; cursor:pointer; }
+  .ord button:hover:not(:disabled) { background:#2e343a; }
+  .ord button:disabled { opacity:.3; cursor:default; }
+  .ord button.star { flex:0 0 42px; color:#d9a13b; }
+  .ord .pos { flex:0 0 44px; text-align:center; color:var(--mut); font-size:12px; }
+  .pick.del { background:#5c2b26; font-size:13px; }
+  .pick.del:hover { background:#7a3830; }
+  .card img { width:100%; aspect-ratio:3/2; object-fit:cover; cursor:zoom-in; display:block; background:#000; }
+  .meta { padding:10px 12px; font-size:12.5px; flex:1; display:flex; flex-direction:column; gap:6px; }
+  .title { color:var(--fg); line-height:1.35; }
+  .dim { color:var(--mut); }
+  .flag { color:var(--warn); }
+  .clean { color:var(--ok); }
+  .pick { margin:0 12px 12px; padding:9px; border:0; border-radius:7px; background:#25603f; color:#fff; font-size:14px; font-weight:600; cursor:pointer; }
+  .pick:hover { background:#2e7a4f; }
+  .bar { position:fixed; left:0; right:0; bottom:0; background:#0d0f11; border-top:1px solid var(--line);
+         padding:11px 20px; display:flex; gap:18px; align-items:center; font-size:13px; color:var(--mut); }
+  .bar b { color:var(--fg); }
+  button.ghost { background:transparent; border:1px solid var(--line); color:var(--fg); padding:7px 13px; border-radius:7px; cursor:pointer; font-size:13px; }
+  button.ghost:hover { border-color:var(--mut); }
+  kbd { background:#22262a; border:1px solid var(--line); border-radius:4px; padding:1px 6px; font:12px monospace; }
+  #zoom { position:fixed; inset:0; background:#000d; display:none; align-items:center; justify-content:center; z-index:10; cursor:zoom-out; }
+  #zoom img { max-width:96vw; max-height:96vh; object-fit:contain; }
+  #toast { position:fixed; left:50%; bottom:70px; transform:translateX(-50%); background:#25603f; color:#fff;
+           padding:10px 18px; border-radius:8px; opacity:0; transition:opacity .2s; pointer-events:none; z-index:20; }
+  .empty { text-align:center; padding:80px 20px; color:var(--mut); }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="name">…</h1>
+  <div class="sub" id="sub"></div>
+  <div class="wish" id="wish"></div>
+  <div class="summary" id="summary"></div>
+  <div class="refs">
+    <span class="dim">đối chiếu:</span>
+    <button class="ghost" onclick="ref('maps')" id="mapsBtn">Ảnh tại địa điểm · Google Maps <kbd>M</kbd></button>
+    <button class="ghost" onclick="ref('images')">Google Images <kbd>G</kbd></button>
+    <span class="dim" id="refHint">mở một lần rồi kê cạnh cửa sổ này — nó tự đổi theo từng điểm</span>
+  </div>
+</header>
+<main><div class="grid" id="grid"></div></main>
+<div class="bar">
+  <span>còn <b id="left">0</b> điểm đến</span>
+  <span><kbd>1</kbd>–<kbd>9</kbd> thêm ảnh</span>
+  <span><kbd>X</kbd> bỏ hết</span>
+  <span><kbd>S</kbd> xong điểm này</span>
+  <span><kbd>M</kbd> Maps · <kbd>G</kbd> Images</span>
+  <span><kbd>Esc</kbd> đóng phóng to</span>
+  <button class="ghost" onclick="reject()">Bỏ hết nhóm này</button>
+  <button class="ghost" onclick="skip()">Để sau</button>
+</div>
+<div id="zoom" onclick="this.style.display='none'"><img id="zoomImg" alt=""></div>
+<div id="toast"></div>
+
+<script>
+let queue = [], cur = null;
+
+// Máy chủ chết là chuyện có thật — nó chạy cục bộ trong một terminal. Không bắt lỗi mạng thì
+// cú bấm rơi vào im lặng: người duyệt tưởng đã lưu, thực ra không. Thà báo to còn hơn.
+async function api(path, body) {
+  try {
+    const r = await fetch(path, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+    });
+    return await r.json();
+  } catch {
+    return { error: "MẤT KẾT NỐI — máy chủ duyệt không chạy. Mở terminal và chạy: npm run review" };
+  }
+}
+
+function toast(msg, bad = false) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.style.background = bad ? "#7a2f27" : "#25603f";
+  t.style.opacity = 1;
+  setTimeout(() => (t.style.opacity = 0), bad ? 6000 : 2200);
+}
+
+async function load() {
+  try {
+    queue = await fetch("/api/queue").then((r) => r.json());
+  } catch {
+    toast("MẤT KẾT NỐI — chạy lại: npm run review");
+    return;
+  }
+  render();
+}
+
+function render() {
+  document.getElementById("left").textContent = queue.length;
+  cur = queue[0];
+  if (!cur) {
+    document.querySelector("header").style.display = "none";
+    document.getElementById("grid").outerHTML =
+      '<div class="empty"><h2>Hết hàng đợi</h2><p>Ảnh đã duyệt nằm trong public/img/ và manifest.<br>' +
+      'Chạy <code>npm run check:content</code> rồi commit.</p></div>';
+    return;
+  }
+  document.getElementById("name").textContent = cur.name;
+  document.getElementById("sub").textContent =
+    `${cur.province} · đang có ${cur.current.length} ảnh · còn ${cur.slots} chỗ (tối đa 10)`;
+  // Không còn "ô" nào để lấp. Có bao nhiêu ảnh thì thư viện bấy nhiêu, seed do máy sinh lúc duyệt.
+  document.getElementById("wish").innerHTML =
+    `<b>Chọn ảnh đẹp và đúng chỗ.</b> <span class="dim">Không cần gõ gì — caption sẽ được viết lại theo ảnh, đủ 5 thứ tiếng.</span>`;
+  document.getElementById("summary").textContent = cur.summary;
+
+  // Ảnh ĐANG CÓ đứng trước, để "đẹp hơn hay không" là phép so trực tiếp chứ không phải trí nhớ.
+  const currentCards = cur.current.map((p, i) => `
+    <div class="card cur${i === 0 ? " hero" : ""}">
+      <img src="${p.src}" alt="" onclick="zoom('${p.src}')">
+      <div class="meta">
+        <div class="title"><b>${i === 0 ? "★ Ảnh chính" : "Đang có"}</b></div>
+        <div class="dim">${p.via || "bản ghi cũ"} · ${escapeHtml(p.license)}${p.credit ? " · © " + escapeHtml(p.credit) : ""}</div>
+      </div>
+      <div class="ord">
+        <button ${i === 0 ? "disabled" : ""} onclick="move('${p.seed}',-1)" title="Dời lên một bậc">◀</button>
+        <span class="pos">${i + 1}/${cur.current.length}</span>
+        <button ${i === cur.current.length - 1 ? "disabled" : ""} onclick="move('${p.seed}',1)" title="Dời xuống một bậc">▶</button>
+        ${i === 0 ? "" : `<button class="star" onclick="hero('${p.seed}')" title="Đưa thẳng lên đầu">★</button>`}
+      </div>
+      <button class="pick del" onclick="drop('${p.seed}')"
+        title="Xoá hẳn ảnh này: file, bản zoom, thumb và bản ghi manifest">Gỡ ảnh này</button>
+    </div>`).join("");
+
+  document.getElementById("grid").innerHTML = currentCards + cur.candidates.map((c, i) => `
+    <div class="card">
+      <img src="${c.preview}" alt="" loading="lazy" referrerpolicy="no-referrer" onclick="zoom('${c.preview}')">
+      <div class="meta">
+        <div class="title">${escapeHtml(c.sourceTitle || "(không có tiêu đề)")}</div>
+        <div class="dim">${c.via} · ${c.srcWidth ? c.srcWidth + "px gốc" : "?"} · ${escapeHtml(c.license)}${c.credit ? " · © " + escapeHtml(c.credit) : ""}</div>
+        ${c.named ? '<div class="clean">✓ tiêu đề nguồn gọi đúng tên điểm đến</div>' : ""}
+        ${c.flags.map((f) => `<div class="flag">⚠ ${escapeHtml(f)}</div>`).join("")}
+        ${c.sourceUrl ? `<div><a href="${c.sourceUrl}" target="_blank" rel="noreferrer" class="dim">xem nguồn ↗</a></div>` : ""}
+      </div>
+      <button class="pick" onclick="pick(${c.n})">Thêm vào thư viện &nbsp;<kbd>${i + 1}</kbd></button>
+    </div>`).join("");
+
+  document.getElementById("mapsBtn").innerHTML = (cur.placeId
+    ? "Ảnh tại địa điểm · Google Maps"
+    : "Tìm trên Google Maps <i>(chưa có place id)</i>") + ' <kbd>M</kbd>';
+  syncRef();
+}
+
+const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function zoom(src) {
+  document.getElementById("zoomImg").src = src;
+  document.getElementById("zoom").style.display = "flex";
+}
+
+// ── Đối chiếu ─────────────────────────────────────────────────────────────────
+// Google chặn nhúng iframe, nên dùng một cửa sổ phụ CÓ TÊN. Mở lần thứ hai với cùng tên thì
+// trình duyệt điều hướng đúng cửa sổ đó thay vì đẻ ra cửa sổ mới — kê cạnh một lần là xong,
+// sau đó nó bám theo hàng đợi.
+let refWin = null, refKind = null;
+
+function refUrl(kind, d) {
+  if (kind === "maps" && d.placeId) return `https://www.google.com/maps/place/?q=place_id:${d.placeId}`;
+  // Không có place id thì lùi về tìm theo tên — vẫn hơn không có gì.
+  if (kind === "maps") return `https://www.google.com/maps/search/${encodeURIComponent(d.name + " " + d.province)}`;
+  return `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(d.name + " " + d.province)}`;
+}
+
+function ref(kind) {
+  if (!cur) return;
+  refKind = kind;
+  refWin = window.open(refUrl(kind, cur), "fechtinRef", "width=760,height=1000");
+  if (!refWin) toast("Trình duyệt chặn cửa sổ phụ — cho phép popup cho localhost:5180");
+  document.getElementById("refHint").textContent =
+    kind === "maps" && !cur.placeId ? "điểm này chưa có place id — đang tìm theo tên" : "";
+}
+
+/** Khi sang điểm đến mới, kéo theo cửa sổ đối chiếu nếu nó đang mở. */
+function syncRef() {
+  if (refWin && !refWin.closed && cur) refWin.location.href = refUrl(refKind ?? "maps", cur);
+}
+
+async function pick(n) {
+  const res = await api("/api/approve", { destId: cur.id, n });
+  if (res.error) return toast(res.error, true);
+  toast(`Đã thêm ${res.seed}${res.hasLg ? " · có bản zoom" : ""}`);
+  await load();
+}
+
+async function move(seed, delta) {
+  const res = await api("/api/reorder", { seed, delta });
+  if (res.error) return toast(res.error, true);
+  await load();
+}
+
+async function hero(seed) {
+  const res = await api("/api/hero", { seed });
+  if (res.error) return toast(res.error, true);
+  toast(`${res.hero} giờ là ảnh chính`);
+  await load();
+}
+
+async function drop(seed) {
+  if (!confirm(`Gỡ ${seed}? Xoá luôn file ảnh, bản zoom và thumb.`)) return;
+  const res = await api("/api/remove", { seed });
+  if (res.error) return toast(res.error, true);
+  toast(`Đã gỡ ${res.removed}`);
+  await load();
+}
+
+async function reject() {
+  if (!cur) return;
+  const res = await api("/api/reject", { destId: cur.id });
+  toast(`Bỏ ${res.rejected} ứng viên, sẽ không đề xuất lại`);
+  await load();
+}
+
+async function skip() {
+  if (!cur) return;
+  await api("/api/skip", { destId: cur.id });
+  toast("Để sau — lần chạy PROPOSE tới sẽ đề xuất lại");
+  await load();
+}
+
+addEventListener("keydown", (e) => {
+  if (e.key === "Escape") return void (document.getElementById("zoom").style.display = "none");
+  if (document.getElementById("zoom").style.display === "flex") return;
+  if (/^[1-9]$/.test(e.key)) {
+    const c = cur?.candidates[Number(e.key) - 1];
+    if (c) pick(c.n);
+  } else if (e.key.toLowerCase() === "x") reject();
+  else if (e.key.toLowerCase() === "s") skip();
+  else if (e.key.toLowerCase() === "m") ref("maps");
+  else if (e.key.toLowerCase() === "g") ref("images");
+});
+
+load();
+</script>
+</body>
+</html>
