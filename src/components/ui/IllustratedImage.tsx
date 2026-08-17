@@ -176,7 +176,15 @@ export function IllustratedImage({
       {clip && photo && <AmbientVideo id={seed} sources={clip} posterReady={loaded} priority={ambientPriority} />}
 
       {(caption || (credit && photo?.credit)) && (
-        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 text-xs font-medium text-white/95">
+        <figcaption
+          className={cn(
+            "absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 text-xs font-medium text-white/95",
+            // With a caption the credit trails it as one sentence, so the block stays flush left.
+            // Alone, it is not the subject of the frame and must not sit under the display title
+            // its owners paint bottom-left (province banner, hero, festival card) — right edge.
+            !caption && "text-right",
+          )}
+        >
           {caption}
           {credit && photo?.credit && (
             <span className={cn("font-normal text-white/65", caption && "ml-1")}>
