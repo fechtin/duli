@@ -182,7 +182,7 @@ export function CheckinFlow() {
                             photo === g.seed ? "ring-primary" : "ring-transparent hover:ring-border-strong",
                           )}
                         >
-                          <IllustratedImage seed={g.seed} ratio="1/1" rounded={false} />
+                          <IllustratedImage seed={g.seed} ratio="1/1" rounded={false} credit={false} />
                         </button>
                       ))}
                     </div>

@@ -177,7 +177,7 @@ export function DestinationPanel({ id }: { id: string }) {
                   }}
                   className="flex items-center gap-3 rounded-[var(--radius-md)] border border-border p-2 text-left transition-colors hover:bg-surface-2"
                 >
-                  <IllustratedImage seed={nb.gallery[0]?.seed ?? nb.id} ratio="1/1" className="w-14 shrink-0" />
+                  <IllustratedImage seed={nb.gallery[0]?.seed ?? nb.id} ratio="1/1" className="w-14 shrink-0" credit={false} />
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-foreground">{nb.name}</p>
                     <p className="truncate text-xs text-muted">{nb.summary}</p>

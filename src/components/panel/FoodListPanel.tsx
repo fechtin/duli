@@ -96,6 +96,7 @@ function DishRow({ dish, country, onOpen }: { dish: Dish; country: CountryCode; 
           seed={`dish-${dish.id}`}
           ratio="4/3"
           rounded={false}
+          credit={false}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
         />
       </div>

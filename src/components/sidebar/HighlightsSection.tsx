@@ -24,7 +24,7 @@ export function HighlightsSection() {
             className="group flex items-center gap-3 rounded-[18px] border border-[var(--sb-border)] bg-[var(--sb-surface)] p-2 text-left transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--sb-hover)] hover:shadow-[var(--sb-shadow-hover)]"
           >
             <div className="h-[72px] w-[72px] shrink-0 overflow-hidden rounded-[14px]">
-              <IllustratedImage seed={it.seed} ratio="1/1" rounded={false} className="h-full w-full object-cover" />
+              <IllustratedImage seed={it.seed} ratio="1/1" rounded={false} credit={false} className="h-full w-full object-cover" />
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate font-display text-[14.5px] font-semibold text-[color:var(--sb-text)]">

@@ -83,6 +83,17 @@ interface Props {
   className?: string;
   rounded?: boolean;
   /**
+   * Burn the "© author" line into the corner of the image.
+   *
+   * Off for navigation thumbnails: at 56-80px the credit wraps to three lines and covers the
+   * photo it is crediting, so it names the author to nobody while hiding the only thing the
+   * tile exists to show. The licence is still honoured — the lightbox carries the full "©
+   * author · licence" with a link to the licence text, which is where the photo is actually
+   * looked at. Defaults ON so a new call site over-attributes rather than silently dropping
+   * attribution; opt out when the tile is too small to read.
+   */
+  credit?: boolean;
+  /**
    * Give the photo motion (Bible 030). A CSS Ken Burns settle by default; if the seed has
    * curated real footage, that plays instead — see `ambientClip`.
    */
@@ -98,6 +109,7 @@ export function IllustratedImage({
   alt,
   className,
   rounded = true,
+  credit = true,
   ambient = false,
   ambientPriority,
 }: Props) {
@@ -163,10 +175,10 @@ export function IllustratedImage({
           video: the illustrated fallback stays honest (030 §3). */}
       {clip && photo && <AmbientVideo id={seed} sources={clip} posterReady={loaded} priority={ambientPriority} />}
 
-      {(caption || photo?.credit) && (
+      {(caption || (credit && photo?.credit)) && (
         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 text-xs font-medium text-white/95">
           {caption}
-          {photo?.credit && (
+          {credit && photo?.credit && (
             <span className={cn("font-normal text-white/65", caption && "ml-1")}>
               {caption && "· "}© {photo.credit}
             </span>
